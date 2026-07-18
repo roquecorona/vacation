@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Spline+Sans+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{height:100%}
+body{margin:0;background:#eef0ed}
+
+/* --- Mobile layout (<=780px) --- */
+/* Inline styles are used throughout this template, so overrides here target */
+/* them by attribute-selector + !important (the one reliable way to beat an */
+/* inline style without touching the template's sc-for/sc-if bindings). */
+@media (max-width: 780px) {
+  div[style*="grid-template-columns:236px 1fr"] {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto 1fr !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  aside[style*="border-right:1px solid #dfe4e1"] {
+    border-right: none !important;
+    border-bottom: 1px solid #dfe4e1 !important;
+    max-height: 42vh !important;
+  }
+  main[style*="overflow-y:auto"] { overflow-y: visible !important; }
+
+  section[style*="padding:34px 44px 48px"],
+  section[style*="padding:30px 44px 56px"] {
+    padding: 18px 16px 40px !important;
+    max-width: 100% !important;
+  }
+
+  h1[style*="font:800 34px"] { font-size: 25px !important; }
+  h1[style*="font:800 27px"] { font-size: 21px !important; }
+
+  /* Day view: narrower time column so the row fits without horizontal scroll */
+  div[style*="grid-template-columns:88px 30px 1fr"] {
+    grid-template-columns: 60px 22px 1fr !important;
+    gap: 6px !important;
+  }
+
+  /* Present view: stack the map under the highlights instead of side-by-side */
+  div[style*="grid-template-columns:1fr 360px"] { grid-template-columns: 1fr !important; }
+  div[style*="border-right:1px solid #eef0ed;border-top:1px solid #eef0ed"] { border-right: none !important; }
+
+  /* Money / points tables: narrower numeric columns so nothing wraps or clips */
+  div[style*="grid-template-columns:1fr 90px 90px 100px"] { grid-template-columns: 1fr 58px 58px 66px !important; gap: 4px !important; }
+  div[style*="grid-template-columns:1fr 100px 100px 110px"] { grid-template-columns: 1fr 62px 62px 70px !important; gap: 4px !important; }
+
+  /* Overview day rows: drop the summary column, it's the first thing that crowds out */
+  div[style*="grid-template-columns:52px 1fr auto auto"] { grid-template-columns: 44px 1fr auto !important; }
+  div[style*="grid-template-columns:52px 1fr auto auto"] span[style*="color:#8b9a9d"] { display: none !important; }
+}
+</style>
+</helmet>
+<div style="--accent: {{ accent }}; display:grid;grid-template-columns:236px 1fr;height:100%;min-height:760px;background:#f4f5f3;color:#1b2629;font-family:'Schibsted Grotesk',sans-serif;overflow:hidden">
+
+  <aside data-screen-label="Sidebar" style="background:#eceeea;border-right:1px solid #dfe4e1;display:flex;flex-direction:column;min-height:0">
+    <div onClick="{{ goOverview }}" style="cursor:pointer;padding:20px 18px 14px">
+      <div style="font:800 19px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ title }}</div>
+      <div style="font:500 11px 'Spline Sans Mono',monospace;color:#647579;margin-top:4px">{{ dates }}</div>
+    </div>
+    <sc-if value="{{ hasToday }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ todayGo }}" style="cursor:pointer;margin:0 18px 14px;padding:8px 12px;border-radius:8px;background:var(--accent, #16695E);color:#ffffff;font:700 12px 'Schibsted Grotesk',sans-serif;text-align:center" style-hover="opacity:0.9">📍 Jump to today</div>
+    </sc-if>
+    <div style="flex:1;overflow-y:auto;padding-bottom:12px">
+      <div onClick="{{ goOverview }}" style="cursor:pointer;margin:0 10px;padding:8px 10px;border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ ovBg }};color:{{ ovFg }}" style-hover="background:#e1e5e0">Trip</div>
+      <div style="margin:12px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">DAYS</div>
+      <sc-for list="{{ navDays }}" as="d" hint-placeholder-count="8">
+        <div onClick="{{ d.go }}" style="cursor:pointer;margin:0 10px;padding:5px 10px;border-radius:8px;display:grid;grid-template-columns:30px 1fr auto auto;gap:7px;align-items:baseline;background:{{ d.bg }};color:{{ d.fg }}" style-hover="background:#e1e5e0">
+          <span style="font:600 11px 'Spline Sans Mono',monospace;opacity:0.75">{{ d.short }}</span>
+          <span style="font:500 12.5px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ d.title }}</span>
+          <sc-if value="{{ d.isToday }}" hint-placeholder-val="{{ false }}"><span style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E)">TODAY</span></sc-if>
+          <sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:9px;opacity:0.85">✅</span></sc-if>
+        </div>
+      </sc-for>
+      <sc-if value="{{ noDays }}" hint-placeholder-val="{{ false }}">
+        <div style="margin:0 18px;font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d">None yet</div>
+      </sc-if>
+      <div style="margin:14px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">LENSES</div>
+      <sc-for list="{{ lenses }}" as="l" hint-placeholder-count="6">
+        <div onClick="{{ l.go }}" style="cursor:pointer;margin:0 10px;padding:7px 10px;border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ l.bg }};color:{{ l.fg }}" style-hover="background:#e1e5e0">{{ l.label }}</div>
+      </sc-for>
+    </div>
+    <div style="padding:12px 18px;border-top:1px solid #dfe4e1;font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d;line-height:1.6">Viewer only.
+Edits happen in chat with Claude.</div>
+  </aside>
+
+  <main style="overflow-y:auto;min-width:0">
+
+    <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
+      <section data-screen-label="Trip overview" style="padding:34px 44px 48px;max-width:900px">
+        <h1 style="margin:0;font:800 34px/1.05 'Schibsted Grotesk',sans-serif;letter-spacing:-0.8px">{{ title }}</h1>
+        <div style="font:500 13px 'Spline Sans Mono',monospace;color:#647579;margin-top:8px">{{ subLine }}</div>
+
+        <sc-if value="{{ hasRoute }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:26px;background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;overflow-x:auto">
+            <sc-for list="{{ route }}" as="stop" hint-placeholder-count="6">
+              <div style="display:flex;align-items:flex-start;flex:none">
+                <div>
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <span style="width:10px;height:10px;border-radius:50%;background:var(--accent, #16695E);flex:none"></span>
+                    <span style="font:700 14px 'Schibsted Grotesk',sans-serif;white-space:nowrap">{{ stop.name }}</span>
+                  </div>
+                  <div style="font:500 10.5px 'Spline Sans Mono',monospace;color:#647579;margin:4px 0 0 18px;white-space:nowrap">{{ stop.sub }}</div>
+                </div>
+                <sc-if value="{{ stop.conn }}" hint-placeholder-val="{{ true }}">
+                  <div style="width:42px;border-top:2px dotted #b7c2bf;margin:6px 12px 0"></div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ noDays }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:28px;background:#ffffff;border:1px dashed #b7c2bf;border-radius:14px;padding:28px;max-width:520px">
+            <div style="font:700 15px 'Schibsted Grotesk',sans-serif">Nothing on the timeline yet</div>
+            <div style="font:400 13px/1.6 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:6px;text-wrap:pretty">Tell Claude where you're going and when. It will add skeleton days here, then you fill them in together — one conversation at a time.</div>
+          </div>
+        </sc-if>
+
+        <div style="margin-top:28px;display:grid;gap:6px">
+          <sc-for list="{{ obDays }}" as="d" hint-placeholder-count="10">
+            <div onClick="{{ d.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:11px 16px;display:grid;grid-template-columns:52px 1fr auto auto;gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+              <span style="font:600 12px 'Spline Sans Mono',monospace;color:#647579">{{ d.dow }} {{ d.short }}</span>
+              <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ d.title }}<sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;margin-left:8px">✅</span></sc-if></span>
+              <span style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ d.summary }}</span>
+              <span style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;min-width:56px;text-align:right">{{ d.money }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isDay }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Day view" style="padding:30px 44px 56px;max-width:820px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font:500 12px 'Spline Sans Mono',monospace;color:#647579">{{ dayDate }}</span>
+          <sc-if value="{{ dayPlanned }}" hint-placeholder-val="{{ false }}"><span style="font:600 10px 'Spline Sans Mono',monospace;color:#257a5a">✅ PLANNED</span></sc-if>
+          <span style="flex:1"></span>
+          <button onClick="{{ dayPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ dayNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">→</button>
+        </div>
+        <h1 style="margin:10px 0 4px;font:800 27px/1.1 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;text-wrap:balance">{{ dayTitle }}</h1>
+        <div style="font:500 12px 'Spline Sans Mono',monospace;color:#647579;margin-bottom:22px">{{ dayMeta }}</div>
+
+        <sc-if value="{{ dayEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d;border-top:1px solid #e5e9e5;padding-top:16px">Nothing scheduled yet — plan this day in chat.</div>
+        </sc-if>
+
+        <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="12">
+          <div>
+            <sc-if value="{{ b.isMove }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:baseline;gap:9px;padding:6px 0 6px 96px;font:500 11.5px 'Spline Sans Mono',monospace;color:#8b9a9d">
+                <span>{{ b.emoji }}</span><span>{{ b.moveLabel }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isReceipt }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:baseline;gap:8px;padding:4px 0 4px 96px">
+                <span style="font:400 12px 'Schibsted Grotesk',sans-serif;color:#647579">{{ b.title }}</span>
+                <span style="flex:1;border-bottom:1px dotted #d3dad6;transform:translateY(-3px)"></span>
+                <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:{{ b.moneyColor }}">{{ b.money }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isNote }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:4px 0 4px 96px;font:400 12px 'Schibsted Grotesk',sans-serif;font-style:italic;color:#8b9a9d">{{ b.title }}</div>
+            </sc-if>
+            <sc-if value="{{ b.isStop }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid;grid-template-columns:88px 30px 1fr;gap:8px;padding:10px 10px;margin:0 -10px;border-top:1px solid #e5e9e5;{{ b.nowStyle }}">
+                <div style="padding-top:1px">
+                  <sc-if value="{{ b.isNow }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E);margin-bottom:2px">● NOW</div>
+                  </sc-if>
+                  <div style="font:600 12px 'Spline Sans Mono',monospace;white-space:nowrap">{{ b.timeStart }}</div>
+                  <sc-if value="{{ b.hasTimeEnd }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:600 12px 'Spline Sans Mono',monospace;white-space:nowrap;color:#9aa8aa">{{ b.timeEnd }}</div>
+                  </sc-if>
+                  <div style="font:500 10px 'Spline Sans Mono',monospace;color:#9aa8aa;margin-top:2px">{{ b.durLabel }}</div>
+                </div>
+                <div style="font-size:15px;line-height:1.4;text-align:center">{{ b.emoji }}</div>
+                <div style="min-width:0">
+                  <div style="display:flex;align-items:baseline;gap:10px">
+                    <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ b.title }}</span>
+                    <span style="flex:1"></span>
+                    <span style="flex:none;font:600 12px 'Spline Sans Mono',monospace;color:{{ b.moneyColor }}">{{ b.money }}</span>
+                  </div>
+                  <sc-if value="{{ b.hasISK }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;margin-top:2px">{{ b.iskLabel }} · {{ b.iskUsd }}</div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasMeta }}" hint-placeholder-val="{{ false }}">
+                    <div onClick="{{ b.toggle }}" style="cursor:{{ b.metaCursor }};font:400 12px/1.55 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:4px;white-space:pre-wrap;max-width:560px;text-wrap:pretty">{{ b.meta }}</div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasBooking }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:inline-flex;align-items:baseline;gap:12px;margin-top:8px;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;padding:7px 12px;flex-wrap:wrap">
+                      <sc-if value="{{ b.hasConf }}" hint-placeholder-val="{{ true }}">
+                        <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">CONF</span>
+                        <span style="font:600 12.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;white-space:pre-wrap">{{ b.conf }}</span>
+                      </sc-if>
+                      <sc-if value="{{ b.hasPts }}" hint-placeholder-val="{{ false }}">
+                        <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ b.ptsLabel }}</span>
+                      </sc-if>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasMenu }}" hint-placeholder-val="{{ false }}">
+                    <a href="{{ b.menuUrl }}" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:6px 11px">View live menu →</a>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPresent }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Present view" style="padding:30px 44px 56px;max-width:980px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <h1 style="margin:0;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Present the trip</h1>
+          <span style="flex:1"></span>
+          <button onClick="{{ presentPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ presentNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">→</button>
+        </div>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:18px">A visual, day-by-day walkthrough — real photos and a real map per day. Needs an internet connection for the map tiles and photos.</div>
+
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ presentDayChips }}" as="c" hint-placeholder-count="8">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ presentEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing planned yet — build out a day first, then come back here to present it.</div>
+        </sc-if>
+
+        <sc-if value="{{ presentHasDay }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:16px;overflow:hidden">
+            <div style="padding:22px 26px 4px">
+              <div style="font:500 11.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ presentDate }}</div>
+              <div style="font:800 24px/1.15 'Schibsted Grotesk',sans-serif;color:#1b2629;text-wrap:balance;margin-top:2px">{{ presentTitle }}</div>
+            </div>
+
+            <sc-if value="{{ hasPresentPhotos }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:12px;overflow-x:auto;padding:18px 26px 6px">
+                <sc-for list="{{ presentPhotos }}" as="ph" hint-placeholder-count="3">
+                  <div style="flex:none" onClick="{{ ph.open }}">
+                    <img src="{{ ph.url }}" style="width:100%;height:190px;object-fit:cover;border-radius:12px;display:block;background:#c8d0cb;cursor:zoom-in" style-hover="opacity:0.9" />
+                    <div style="font:400 11.5px/1.4 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:6px;text-wrap:pretty">{{ ph.caption }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <div style="display:grid;grid-template-columns:1fr 360px;gap:0;margin-top:8px">
+              <div style="padding:18px 26px 24px;border-right:1px solid #eef0ed;border-top:1px solid #eef0ed">
+                <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:10px">HERE'S WHAT WE'RE DOING</div>
+                <sc-for list="{{ presentHighlights }}" as="h" hint-placeholder-count="8">
+                  <div style="display:flex;align-items:baseline;gap:10px;padding:7px 0;border-bottom:1px solid #f0f2ef">
+                    <span style="font-size:15px">{{ h.emoji }}</span>
+                    <span style="font:500 14px 'Schibsted Grotesk',sans-serif;min-width:0">{{ h.title }}</span>
+                  </div>
+                </sc-for>
+                <div style="margin-top:16px;font:600 12px 'Spline Sans Mono',monospace;color:#1b2629">{{ presentCost }}</div>
+              </div>
+              <div style="padding:18px 20px;border-top:1px solid #eef0ed">
+                <iframe src="{{ presentMapSrc }}" style="width:100%;height:240px;border:0;border-radius:12px;display:block" loading="lazy"></iframe>
+                <a href="{{ presentMapsUrl }}" target="_blank" rel="noopener" style="display:block;margin-top:10px;text-align:center;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:8px" style-hover="border-color:var(--accent, #16695E)">Open full day route in Google Maps →</a>
+              </div>
+            </div>
+
+            <sc-if value="{{ hasPresentVideos }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:20px 26px 26px;border-top:1px solid #eef0ed">
+                <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:12px">SEE IT IN ACTION — CLICK TO WATCH ON YOUTUBE</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+                  <sc-for list="{{ presentVideos }}" as="v" hint-placeholder-count="2">
+                    <a href="{{ v.watchUrl }}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+                      <div style="position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000">
+                        <img src="{{ v.thumb }}" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover" />
+                        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center">
+                          <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center">
+                            <div style="width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:16px solid #ffffff;margin-left:4px"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="font:500 12.5px 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:8px">{{ v.title }}</div>
+                    </a>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+              <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;background:rgba(10,16,18,0.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;cursor:zoom-out">
+                <img src="{{ lightboxUrl }}" style="max-width:100%;max-height:80vh;object-fit:contain;border-radius:8px" />
+                <div style="font:500 13px 'Schibsted Grotesk',sans-serif;color:#dfe9e6;margin-top:16px;text-align:center;max-width:600px">{{ lightboxCaption }}</div>
+                <div style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;margin-top:10px">Click anywhere to close</div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isMoney }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Money lens" style="padding:34px 44px 48px;max-width:720px">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Money</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Every dollar lives on a timeline block. This is just the rollup.</div>
+        <sc-if value="{{ noMoney }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No costs recorded yet. Estimates and receipts land here as the timeline fills in.</div>
+        </sc-if>
+        <sc-if value="{{ hasMoney }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 100px;gap:10px;padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+              <span>CATEGORY</span><span style="text-align:right">PLANNED</span><span style="text-align:right">PAID</span><span style="text-align:right">TOTAL</span>
+            </div>
+            <sc-for list="{{ moneyRows }}" as="r" hint-placeholder-count="10">
+              <div style="display:grid;grid-template-columns:1fr 90px 90px 100px;gap:10px;padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+                <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.emoji }}&nbsp;&nbsp;{{ r.name }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f">{{ r.est }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.paid }}</span>
+                <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
+              </div>
+            </sc-for>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px 100px;gap:10px;padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+              <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f">{{ moneyTotEst }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ moneyTotPaid }}</span>
+              <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ moneyTotAll }}</span>
+            </div>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPoints }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Points lens" style="padding:34px 44px 48px;max-width:720px">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Points</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Award burn by program. Planned = on the timeline, not yet confirmed.</div>
+        <sc-if value="{{ noPoints }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No award bookings yet.</div>
+        </sc-if>
+        <sc-if value="{{ hasPoints }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
+            <div style="display:grid;grid-template-columns:1fr 100px 100px 110px;gap:10px;padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+              <span>PROGRAM</span><span style="text-align:right">PLANNED</span><span style="text-align:right">USED</span><span style="text-align:right">TOTAL</span>
+            </div>
+            <sc-for list="{{ pointRows }}" as="r" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:1fr 100px 100px 110px;gap:10px;padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+                <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.name }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f">{{ r.planned }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.used }}</span>
+                <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
+              </div>
+            </sc-for>
+            <div style="display:grid;grid-template-columns:1fr 100px 100px 110px;gap:10px;padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+              <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f">{{ ptsTotPlanned }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ ptsTotUsed }}</span>
+              <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ ptsTotAll }}</span>
+            </div>
+          </div>
+          <div style="margin-top:18px;display:grid;gap:6px">
+            <sc-for list="{{ pointItems }}" as="p" hint-placeholder-count="6">
+              <div onClick="{{ p.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:10px 16px;display:grid;grid-template-columns:52px 1fr auto auto;gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+                <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ p.dayLabel }}</span>
+                <span style="font:500 13px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.emoji }}&nbsp;&nbsp;{{ p.title }}</span>
+                <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:{{ p.statusColor }}">{{ p.status }}</span>
+                <span style="font:600 12px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:130px;text-align:right">{{ p.ptsLabel }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isBookings }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Bookings lens" style="padding:34px 44px 48px;max-width:940px">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Bookings</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Every block that carries a confirmation or points, gathered in one place.</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+          <sc-for list="{{ bkChips }}" as="c" hint-placeholder-count="5">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <sc-for list="{{ bookingGroups }}" as="g" hint-placeholder-count="4">
+          <div>
+            <div style="margin:20px 0 10px;font:600 10px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">{{ g.name }}</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(390px,1fr));gap:10px">
+              <sc-for list="{{ g.items }}" as="bk" hint-placeholder-count="3">
+                <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;overflow:hidden">
+                  <div style="padding:14px 16px 12px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:9px">
+                    <span style="font-size:15px">{{ bk.emoji }}</span>
+                    <span style="font:700 14.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ bk.title }}</span>
+                    <span style="flex:1"></span>
+                    <button onClick="{{ bk.go }}" style="cursor:pointer;flex:none;background:none;border:1px solid #dfe4e1;border-radius:6px;font:600 10px 'Spline Sans Mono',monospace;color:#647579;padding:3px 8px" style-hover="border-color:var(--accent, #16695E);color:var(--accent, #16695E)">{{ bk.dayLabel }} →</button>
+                  </div>
+
+                  <sc-if value="{{ bk.hasFacts }}" hint-placeholder-val="{{ true }}">
+                    <div style="padding:12px 16px;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;border-bottom:1px solid #eef0ed">
+                      <sc-for list="{{ bk.facts }}" as="ft" hint-placeholder-count="4">
+                        <div style="min-width:0">
+                          <div style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d">{{ ft.label }}</div>
+                          <div style="font:500 12.5px 'Schibsted Grotesk',sans-serif;margin-top:2px;text-wrap:pretty">{{ ft.value }}</div>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ bk.hasFlag }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin:12px 16px 0;background:#fdf3e3;border:1px solid #f0dcae;border-radius:8px;padding:9px 12px;display:flex;gap:8px;align-items:flex-start">
+                      <span style="flex:none;font-size:13px">⚠️</span>
+                      <span style="font:500 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#7a5a17;text-wrap:pretty">{{ bk.flag }}</span>
+                    </div>
+                  </sc-if>
+
+                  <div style="padding:12px 16px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+                    <sc-if value="{{ bk.hasConf }}" hint-placeholder-val="{{ true }}">
+                      <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">CONF <b style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;letter-spacing:0.5px;white-space:pre-wrap">{{ bk.conf }}</b></span>
+                    </sc-if>
+                    <sc-if value="{{ bk.noConf }}" hint-placeholder-val="{{ false }}">
+                      <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#96690f">NOT CONFIRMED</span>
+                    </sc-if>
+                    <sc-if value="{{ bk.hasPts }}" hint-placeholder-val="{{ false }}">
+                      <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ bk.ptsLabel }}</span>
+                    </sc-if>
+                    <span style="flex:1"></span>
+                    <span style="font:600 12px 'Spline Sans Mono',monospace;color:{{ bk.moneyColor }}">{{ bk.money }}</span>
+                  </div>
+
+                  <sc-if value="{{ bk.hasNotes }}" hint-placeholder-val="{{ false }}">
+                    <div onClick="{{ bk.toggleNotes }}" style="cursor:pointer;padding:9px 16px;border-top:1px solid #eef0ed;font:600 10.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ bk.notesToggleLabel }}</div>
+                    <sc-if value="{{ bk.notesOpen }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding:0 16px 14px;font:400 11.5px/1.55 'Schibsted Grotesk',sans-serif;color:#647579;white-space:pre-wrap;text-wrap:pretty">{{ bk.notes }}</div>
+                    </sc-if>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <sc-if value="{{ noBookings }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d;margin-top:16px">No bookings yet. When you book something, paste the confirmation into chat and it will land here.</div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPacking }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Packing lens" style="padding:34px 44px 48px;max-width:980px">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Outfits &amp; packing</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Per person, per day, per slot — with the rewear system intact.</div>
+        <sc-if value="{{ noPacking }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing here yet. Ask Claude to draft outfit plans or packing quantities from the itinerary.</div>
+        </sc-if>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ packChips }}" as="c" hint-placeholder-count="4">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasRollups }}" hint-placeholder-val="{{ true }}">
+          <div style="margin:0 0 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;align-items:start">
+            <sc-for list="{{ packRollups }}" as="pr" hint-placeholder-count="3">
+              <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px">
+                <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+                  <span style="font:700 12.5px 'Schibsted Grotesk',sans-serif">{{ pr.who }}</span>
+                  <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ pr.totalLabel }}</span>
+                </div>
+                <sc-if value="{{ pr.empty }}" hint-placeholder-val="{{ false }}">
+                  <div style="font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d;text-wrap:pretty">No pack list yet — ask Claude to count one from the outfit plan.</div>
+                </sc-if>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 14px">
+                  <sc-for list="{{ pr.items }}" as="it" hint-placeholder-count="6">
+                    <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
+                      <span style="font:600 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:22px;text-align:right">{{ it.count }}×</span>
+                      <span style="font:400 12px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ it.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-for list="{{ outfitDays }}" as="od" hint-placeholder-count="6">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;margin-bottom:10px;overflow:hidden">
+            <div style="padding:10px 16px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:12px">
+              <span style="font:700 13px 'Schibsted Grotesk',sans-serif">{{ od.date }}</span>
+              <span style="font:500 10.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ od.dayTitle }}</span>
+            </div>
+            <sc-for list="{{ od.slots }}" as="s" hint-placeholder-count="2">
+              <div style="display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid #f0f2ef">
+                <div style="padding:10px 14px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:#647579">{{ s.name }}</div>
+                <div style="display:flex;align-items:stretch">
+                  <sc-for list="{{ s.people }}" as="p" hint-placeholder-count="3">
+                    <div style="flex:1;min-width:0;padding:10px 12px;border-left:1px solid #f0f2ef;font:400 11px/1.5 'Schibsted Grotesk',sans-serif;white-space:pre-wrap"><span style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;display:block;margin-bottom:3px">{{ p.who }}</span>{{ p.text }}</div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ hasTracker }}" hint-placeholder-val="{{ true }}">
+          <h2 style="margin:30px 0 4px;font:700 18px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ trackerTitle }}</h2>
+          <div style="font:400 12px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Item-level, with variation numbers and rewear flags.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px">
+            <sc-for list="{{ trackerDays }}" as="tdy" hint-placeholder-count="6">
+              <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:12px 15px">
+                <div style="font:700 12.5px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">{{ tdy.date }}</div>
+                <sc-for list="{{ tdy.groups }}" as="tg" hint-placeholder-count="2">
+                  <div style="margin-bottom:7px">
+                    <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;margin-bottom:3px">{{ tg.activity }}</div>
+                    <sc-for list="{{ tg.items }}" as="it" hint-placeholder-count="2">
+                      <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
+                        <span style="font:400 11.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ it.label }}</span>
+                        <sc-if value="{{ it.rewear }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:600 8px 'Spline Sans Mono',monospace;letter-spacing:1px;color:var(--accent, #16695E);border:1px solid var(--accent, #16695E);border-radius:4px;padding:1px 4px">REWEAR</span></sc-if>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isLists }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Lists lens" style="padding:34px 44px 48px;max-width:940px">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Lists</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Supplies to bring, and things to buy once there.</div>
+        <sc-if value="{{ noLists }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No lists yet. Tell Claude what to track — supplies, groceries, pre-trip errands.</div>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;align-items:start">
+          <sc-for list="{{ supplyGroups }}" as="g" hint-placeholder-count="3">
+            <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+              <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="6">
+                <div style="display:flex;align-items:baseline;gap:8px;padding:3px 0">
+                  <span style="flex:none;width:11px;height:11px;border:1.5px solid #b7c2bf;border-radius:4px;transform:translateY(1px)"></span>
+                  <span style="font:400 12.5px 'Schibsted Grotesk',sans-serif">{{ it }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isChecklist }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Checklist lens" style="padding:34px 44px 48px;max-width:760px">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Pre-trip checklist</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:6px">Everything still open before you go — reservations to lock in, prices to confirm by phone. Checks are saved in this browser.</div>
+        <div style="font:600 11px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);margin-bottom:20px">{{ checklistDone }} / {{ checklistTotal }} done</div>
+        <sc-if value="{{ noChecklist }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing open right now — everything's confirmed.</div>
+        </sc-if>
+        <div style="display:grid;gap:8px">
+          <sc-for list="{{ checklistItems }}" as="ci" hint-placeholder-count="10">
+            <div onClick="{{ ci.toggle }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px;display:flex;gap:12px;align-items:flex-start;{{ ci.rowStyle }}" style-hover="border-color:var(--accent, #16695E)">
+              <span style="flex:none;width:19px;height:19px;border:1.5px solid #b7c2bf;border-radius:6px;margin-top:1px;display:flex;align-items:center;justify-content:center;font:700 12px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);background:#f4f5f3">{{ ci.boxChar }}</span>
+              <div style="min-width:0">
+                <div style="font:600 13.5px 'Schibsted Grotesk',sans-serif;text-decoration:{{ ci.strike }};">{{ ci.name }}</div>
+                <div style="font:400 12px/1.5 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:3px;text-wrap:pretty">{{ ci.note }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+        <sc-if value="{{ isIdeas }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Ideas lens" style="padding:34px 44px 48px;max-width:840px">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Ideas &amp; staging</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Candidates that haven't earned a spot on the timeline yet.</div>
+        <sc-if value="{{ noIdeas }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Empty. Anything you're considering — restaurants, beaches, tours — parks here until it earns a day.</div>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;align-items:start">
+          <sc-for list="{{ ideaGroups }}" as="g" hint-placeholder-count="2">
+            <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+              <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+                <div style="padding:4px 0;border-bottom:1px solid #f0f2ef;display:flex;gap:10px;align-items:baseline">
+                  <span style="font:400 12.5px 'Schibsted Grotesk',sans-serif">{{ it.name }}</span>
+                  <span style="font:400 11px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">{{ it.note }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasAlt }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:14px;background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+            <div onClick="{{ toggleAlt }}" style="cursor:pointer;display:flex;align-items:baseline;gap:10px">
+              <span style="font:700 13px 'Schibsted Grotesk',sans-serif">{{ altTitle }}</span>
+              <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ altChev }}</span>
+            </div>
+            <sc-if value="{{ altOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="font:400 11.5px/1.6 'Spline Sans Mono',monospace;color:#647579;margin-top:10px;white-space:pre-wrap">{{ altText }}</div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1360,&quot;height&quot;:860},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#16695E&quot;,&quot;#1D5F8A&quot;,&quot;#5B4A8A&quot;,&quot;#37424A&quot;],&quot;default&quot;:&quot;#16695E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;startView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;overview&quot;,&quot;money&quot;,&quot;points&quot;,&quot;bookings&quot;,&quot;packing&quot;,&quot;lists&quot;,&quot;ideas&quot;],&quot;default&quot;:&quot;overview&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+function WIKI(name) { return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(name); }
+
+// Real photos — every photo below is a specific, verified real photo of the actual place,
+// activity, or restaurant (sourced from Wikimedia Commons or the venue's own official
+// website, and visually verified via browser screenshot before inclusion — one earlier
+// candidate for the Sun Voyager sculpture turned out to be a mislabeled Danish Bronze Age
+// artifact and was caught and replaced this way). No stock or generic stand-in photos.
+// Day 1 is an overnight flight with no stop-level photos to show, so it's left empty.
+const PRESENT_GALLERY = {
+  1: [],
+  2: [
+    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Pike%20Place%20Market%20Seattle.jpg', caption: 'Pike Place Market' },
+    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Pike%20Place%20Magic%20Shop%20Pike%20Place%20Market%20Seattle%20Washington.JPG', caption: 'Pike Place Market — shops along the arcade' },
+    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Pier%2057%20and%20Seattle%20Great%20Wheel.jpg', caption: 'Seattle Great Wheel, Pier 57' },
+    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Seattle%20Great%20Wheel%2C%20Seattle%2C%20Washington%2C%20Estados%20Unidos%2C%202017-09-02%2C%20DD%2016.jpg', caption: 'Seattle Great Wheel, waterfront view' },
+    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Neukom-Vivarium-2919.jpg', caption: 'Neukom Vivarium, Olympic Sculpture Park' },
+  ],
+  3: [
+    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Leavenworth%2C%20WA%20%E2%80%94%20Victorian%20Simplicity.jpg', caption: 'Downtown Leavenworth — Bavarian-style storefronts' },
+    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Leavenworth%2C%20WA%20-%20Hotel%20Edelweiss.jpg', caption: 'Downtown Leavenworth — Hotel Edelweiss' },
+    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Leavenworth%2C%20WA%20-%20beer%20garden%2002.jpg', caption: 'Downtown Leavenworth — beer garden' },
+  ],
+  4: [],
+  5: [
+    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Leavenworth%2C%20WA%20-%20Gustav\'s.jpg', caption: 'Gustav\'s, Leavenworth — lunch stop' },
+  ],
+  6: [
+    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Wenatchee%20River%20at%20Blackbird%20Island%20Leavenworth%20Washington%203.jpg', caption: 'Wenatchee River at Blackbird Island' },
+  ],
+  7: [],
+  8: [],
+  9: [],
+};
+
+const PRESENT_VIDEOS = {
+  1: [],
+  2: [],
+  3: [],
+  4: [],
+  5: [],
+  6: [],
+  7: [],
+  8: [],
+  9: [],
+};
+
+const PRESENT_MAP = {
+  1: { lat: 47.4502, lng: -122.3088, zoom: 12 },
+  2: { lat: 47.6089, lng: -122.3411, zoom: 14 },
+  3: { lat: 47.5962, lng: -120.6615, zoom: 13 },
+  4: { lat: 47.5924, lng: -120.6156, zoom: 12 },
+  5: { lat: 47.612, lng: -120.6402, zoom: 12 },
+  6: { lat: 47.5962, lng: -120.6615, zoom: 14 },
+  7: { lat: 47.8125, lng: -120.7148, zoom: 12 },
+  8: { lat: 47.436, lng: -122.296, zoom: 12 },
+  9: { lat: 47.4502, lng: -122.3088, zoom: 12 },
+};
+
+const PRESENT_DIRECTIONS = {
+  1: '',
+  2: 'https://www.google.com/maps/dir/Grand+Hyatt+Seattle/Pike+Place+Market,+Seattle/Seattle+Great+Wheel/Olympic+Sculpture+Park,+Seattle/Din+Tai+Fung,+Pacific+Place,+Seattle/Grand+Hyatt+Seattle',
+  3: 'https://www.google.com/maps/dir/Grand+Hyatt+Seattle/Hampton+Inn+Leavenworth/Colchuck%27s,+801+Front+St,+Leavenworth/Visconti%27s,+636+Front+St,+Leavenworth',
+  4: 'https://www.google.com/maps/dir/Hampton+Inn+Leavenworth/Leavenworth+Reindeer+Farm/Red-Tail+Canyon+Farm,+Leavenworth/München+Haus,+Leavenworth/Baren+Haus,+901+Front+St,+Leavenworth/Hampton+Inn+Leavenworth',
+  5: 'https://www.google.com/maps/dir/Hampton+Inn+Leavenworth/Leavenworth+Snowmobile+Tours,+Leavenworth/Gustav%27s,+Leavenworth/Leavenworth+Ski+Hill/Ludwig%27s,+921+Front+St,+Leavenworth/Hampton+Inn+Leavenworth',
+  6: 'https://www.google.com/maps/dir/Hampton+Inn+Leavenworth/Blackbird+Island,+Leavenworth/Yodelin+Broth+Co,+Leavenworth/South,+913+Front+St,+Leavenworth/Hampton+Inn+Leavenworth',
+  7: 'https://www.google.com/maps/dir/Hampton+Inn+Leavenworth/Lake+Wenatchee+State+Park/Yodelin+Broth+Co,+Leavenworth/Icicle+Village+Resort,+Leavenworth/Hampton+Inn+Leavenworth',
+  8: 'https://www.google.com/maps/dir/Hampton+Inn+Leavenworth/München+Haus,+Leavenworth/Courtyard+by+Marriott+Seattle+SeaTac+Airport',
+  9: 'https://www.google.com/maps/dir/Courtyard+by+Marriott+Seattle+SeaTac+Airport/Seattle-Tacoma+International+Airport',
+};
+
+class Component extends DCLogic {
+  state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, bkFilter: 'All', packFilter: 'ALL', ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {} };
+
+  componentDidMount() {
+    this.loadTripData();
+    // Best-effort live ISK→USD rate; silently keep the built-in fallback if this fails
+    // (e.g. no network, or blocked when the file is opened without a server).
+    fetch('https://api.frankfurter.app/latest?from=ISK&to=USD')
+      .then(r => r.json())
+      .then(d => {
+        const rate = d && d.rates && d.rates.USD;
+        if (rate) this.setState({ fx: rate, fxLive: true });
+      })
+      .catch(() => {});
+  }
+
+  // Hosted (http/https): fetch trip.json live, so re-uploading just that one file
+  // updates the page with no rebuild step. Local (file://) or offline: fetch is
+  // blocked by the browser, so fall back to the embedded <script id="trip-data">
+  // copy that Claude keeps in sync on every edit.
+  loadTripData() {
+    const useEmbedded = () => {
+      let raw = {};
+      try {
+        const el = document.getElementById('trip-data');
+        raw = el ? JSON.parse(el.textContent) : {};
+      } catch (e) { raw = {}; }
+      this.finishLoad(raw);
+    };
+    fetch('./trip.json', { cache: 'no-store' })
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error('not ok'))))
+      .then(raw => this.finishLoad(raw))
+      .catch(useEmbedded);
+  }
+
+  finishLoad(raw) {
+    this.T = this.prepare(raw || {});
+    const sv = this.props.startView;
+    const st = { ready: true };
+    const todayN = this.findTodayDayN();
+    this.todayDayN = todayN;
+    if (sv && sv !== 'overview') { st.view = sv; }
+    else if (todayN) { st.view = 'day'; st.dayN = todayN; }
+    st.checked = this.loadChecklist();
+    this.setState(st);
+  }
+
+  // Matches the real current date against the trip's day dates (parsed the same
+  // way as the sidebar's day-of-week/short-date labels). Returns the 1-based day
+  // number if today falls within the trip, otherwise null.
+  findTodayDayN() {
+    if (!this.T || !this.T.days || !this.T.days.length) return null;
+    const now = new Date();
+    const y = now.getFullYear(), m = now.getMonth(), dd = now.getDate();
+    for (const d of this.T.days) {
+      const dt = new Date(d.date);
+      if (!isNaN(dt) && dt.getFullYear() === y && dt.getMonth() === m && dt.getDate() === dd) return d.n;
+    }
+    return null;
+  }
+
+  // Derive everything from a minimal trip.json — Claude only maintains raw facts.
+  prepare(raw) {
+    const T = raw || {};
+    const mins = t => {
+      if (!t) return null;
+      const m = String(t).trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+      if (!m) return null;
+      let h = +m[1] % 12; if (/pm/i.test(m[3])) h += 12;
+      return h * 60 + +m[2];
+    };
+    T.meta = T.meta || {};
+    T.meta.title = T.meta.title || 'New trip';
+    T.meta.dates = T.meta.dates || '';
+    T.meta.route = T.meta.route || [];
+    const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    T.days = (T.days || []).map((d, i) => {
+      const dt = new Date(d.date);
+      const blocks = (d.blocks || []).map((b, j) => {
+        const timed = !!(b.start || b.end);
+        const hasCost = b.paid != null || b.est != null;
+        let kind = b.kind;
+        if (!kind) {
+          if (!timed && hasCost) kind = 'receipt';
+          else if (!timed) kind = 'note';
+          else kind = 'stop';
+        }
+        const sM = mins(b.start), eM = mins(b.end);
+        const ptsN = b.points != null ? parseFloat(String(b.points).replace(/,/g, '')) : NaN;
+        return {
+          ...b,
+          id: 'b' + (i + 1) + '_' + j, kind,
+          sM, eM,
+          start: b.start || '', end: b.end || '',
+          dur: b.dur != null ? b.dur : (sM != null && eM != null && eM > sM ? eM - sM : null),
+          title: b.title || '(untitled)', detail: b.detail || '', notes: b.notes || '',
+          typeName: b.typeName || '', emoji: b.emoji || '',
+          est: b.est != null ? b.est : null, paid: b.paid != null ? b.paid : null,
+          program: b.program || null, points: b.points || null, conf: b.conf || null,
+          pointsN: isNaN(ptsN) ? null : ptsN,
+        };
+      });
+      return {
+        n: i + 1, date: d.date || '', title: d.title || '', planned: !!d.planned,
+        dow: d.dow || (isNaN(dt) ? '' : DOW[dt.getDay()]),
+        short: d.short || (isNaN(dt) ? '' : (dt.getMonth() + 1) + '/' + dt.getDate()),
+        blocks,
+        paid: blocks.reduce((a, b) => a + (b.paid || 0), 0),
+        est: blocks.reduce((a, b) => a + (b.paid == null ? (b.est || 0) : 0), 0),
+        stops: blocks.filter(b => b.kind === 'stop').length,
+        bookings: blocks.filter(b => b.conf || b.program).length,
+      };
+    });
+    const cats = {};
+    for (const d of T.days) for (const b of d.blocks) {
+      if (b.est == null && b.paid == null) continue;
+      const k = (b.typeName || 'Other') + '|' + b.emoji;
+      cats[k] = cats[k] || { est: 0, paid: 0 };
+      if (b.paid != null) cats[k].paid += b.paid; else cats[k].est += b.est;
+    }
+    T.costSummary = Object.entries(cats).map(([k, v]) => {
+      const [name, emoji] = k.split('|');
+      return { name, emoji, est: v.est, paid: v.paid, total: v.est + v.paid };
+    }).sort((a, b) => b.total - a.total);
+    const groupOf = t => t === 'Flight' ? 'Flights' : t === 'Hotel' ? 'Stays' : t === 'Rental Car' ? 'Cars' : 'Activities';
+    T.bookingList = [];
+    for (const d of T.days) for (const b of d.blocks) {
+      if (b.conf || b.program) T.bookingList.push({ ...b, dayN: d.n, dayLabel: (d.dow + ' ' + d.short).trim() || 'D' + d.n, group: groupOf(b.typeName) });
+    }
+    // points by program (used = confirmed, planned = not yet)
+    const progs = {};
+    for (const b of T.bookingList) {
+      if (!b.program) continue;
+      const p = progs[b.program] = progs[b.program] || { planned: 0, used: 0 };
+      if (b.pointsN != null) { if (b.conf) p.used += b.pointsN; else p.planned += b.pointsN; }
+    }
+    T.pointsByProgram = Object.entries(progs).map(([name, v]) => ({ name, ...v, total: v.planned + v.used })).sort((a, b) => b.total - a.total);
+    T.meta.totals = {
+      paid: T.days.reduce((a, d) => a + d.paid, 0),
+      est: T.days.reduce((a, d) => a + d.est, 0),
+      points: T.pointsByProgram.reduce((a, p) => a + p.total, 0),
+    };
+    const P = T.packing || {};
+    T.packing = {
+      outfitDays: (P.outfitDays || []).map(od => ({
+        date: od.date, slots: (od.slots || []).map(s => ({
+          name: s.name,
+          people: s.people || ['roque', 'chloe', 'jenny'].filter(k => k in s).map(k => ({ who: k.toUpperCase(), text: s[k] || '—' })),
+        })),
+      })),
+      trackerDays: P.trackerDays || [],
+      trackerTitle: P.trackerTitle || "Roque's item tracker",
+      packLists: P.packLists || [],
+    };
+    // Auto-derive a pack rollup for the tracker's person when no stored list exists.
+    const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [])[1];
+    if (trackerWho && T.packing.trackerDays.length && !T.packing.packLists.some(pl => pl.who.toUpperCase() === trackerWho.toUpperCase())) {
+      const seen = new Set(); const counts = {};
+      for (const td of T.packing.trackerDays) for (const g of (td.groups || [])) for (const it of (g.items || [])) {
+        const style = it.style || (it.label ? String(it.label).split(' — ')[0] : '');
+        if (!style) continue;
+        const key = it.variation && it.variation !== '#N/A' ? it.variation : (style + '|' + (it.brand || '') + '|' + (it.color || ''));
+        if (seen.has(key)) continue;
+        seen.add(key);
+        counts[style] = (counts[style] || 0) + 1;
+      }
+      const items = Object.entries(counts).map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count);
+      if (items.length) T.packing.packLists.push({ who: trackerWho.toUpperCase(), items, derived: true });
+    }
+    if (Array.isArray(T.ideas)) { /* already groups */ }
+    else if (T.ideas && (T.ideas.oahu || T.ideas.kauai)) {
+      T.ideas = [
+        { name: 'Oahu', items: (T.ideas.oahu || []).map(s => ({ name: s, note: '' })) },
+        { name: 'Kauai — food', items: T.ideas.kauai || [] },
+      ];
+    } else T.ideas = [];
+    T.ideas = T.ideas.map(g => ({ name: g.name, items: (g.items || []).map(it => typeof it === 'string' ? { name: it, note: '' } : { name: it.name, note: it.note || '' }) }));
+    if (!T.alternatives && T.mauiAlternative) {
+      T.alternatives = { title: 'Alternative considered — Maui instead of Oahu', text: T.mauiAlternative.replace(/^"|"$/gm, '').replace(/,+\s*$/gm, '') };
+    }
+    if (typeof T.alternatives === 'string' && T.alternatives) T.alternatives = { title: 'Alternatives considered', text: T.alternatives };
+    T.supplies = T.supplies || [];
+    return T;
+  }
+
+  fm(n, cents) {
+    if (n == null) return '';
+    return '$' + n.toLocaleString('en-US', cents ? { minimumFractionDigits: 2, maximumFractionDigits: 2 } : { maximumFractionDigits: 0 });
+  }
+
+  fp(n) { return n ? n.toLocaleString('en-US') : '—'; }
+
+  go(view, dayN) { this.setState(dayN ? { view, dayN } : { view }); }
+
+  // Pre-trip checklist persistence — localStorage only (this file may be opened
+  // locally or hosted on GitHub Pages; either way it's just this browser's checkbox
+  // state, nothing sent anywhere).
+  checklistStorageKey() { return 'tripChecklist:' + (this.T && this.T.meta ? this.T.meta.title : 'trip'); }
+  loadChecklist() {
+    try {
+      const raw = localStorage.getItem(this.checklistStorageKey());
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+  toggleChecklistItem(key) {
+    const next = { ...this.state.checked, [key]: !this.state.checked[key] };
+    try { localStorage.setItem(this.checklistStorageKey(), JSON.stringify(next)); } catch (e) {}
+    this.setState({ checked: next });
+  }
+
+  moneyOf(b) {
+    if (b.paid != null) return { money: this.fm(b.paid, true), moneyColor: '#1b2629' };
+    if (b.est != null) return { money: this.fm(b.est, true) + ' est', moneyColor: '#96690f' };
+    return { money: '', moneyColor: '#1b2629' };
+  }
+
+  ptsLabelOf(b) {
+    if (!b.program && !b.points) return '';
+    const p = b.points ? (b.pointsN != null ? b.pointsN.toLocaleString('en-US') + ' pts' : b.points) : '';
+    return [b.program, p].filter(Boolean).join(' · ');
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#16695E';
+    const v = this.state.view;
+    const base = {
+      accent,
+      title: 'Trip', dates: '', subLine: '',
+      goOverview: () => this.go('overview'),
+      ovBg: v === 'overview' ? '#1b2629' : 'transparent',
+      ovFg: v === 'overview' ? '#f4f5f3' : '#1b2629',
+      navDays: [], lenses: [], noDays: false, hasRoute: false,
+      isOverview: v === 'overview', isDay: false, isMoney: false, isPoints: false,
+      isBookings: false, isPacking: false, isLists: false, isIdeas: false, isPresent: false, isChecklist: false,
+      hasToday: !!this.todayDayN, todayGo: this.todayDayN ? () => this.go('day', this.todayDayN) : () => {},
+      presentEmpty: false, presentHasDay: false, presentDayChips: [],
+      presentPrev: () => {}, presentNext: () => {},
+      presentDate: '', presentTitle: '', presentPhotos: [], hasPresentPhotos: false,
+      presentVideos: [], hasPresentVideos: false,
+      presentMapSrc: '', presentMapsUrl: '', presentHighlights: [], presentCost: '',
+      lightboxOpen: !!this.state.lightbox,
+      lightboxUrl: this.state.lightbox ? this.state.lightbox.url : '',
+      lightboxCaption: this.state.lightbox ? this.state.lightbox.caption : '',
+      closeLightbox: () => this.setState({ lightbox: null }),
+      route: [], obDays: [],
+      dayDate: '', dayTitle: '', dayMeta: '', dayPlanned: false, dayEmpty: false,
+      dayPrev: () => {}, dayNext: () => {}, blocks: [],
+      moneyRows: [], moneyTotEst: '', moneyTotPaid: '', moneyTotAll: '', hasMoney: false, noMoney: false,
+      pointRows: [], pointItems: [], ptsTotPlanned: '', ptsTotUsed: '', ptsTotAll: '', hasPoints: false, noPoints: false,
+      bkChips: [], bookingGroups: [], noBookings: false,
+      outfitDays: [], trackerDays: [], trackerTitle: '', hasTracker: false, noPacking: false,
+      packChips: [], packRollups: [], hasRollups: false,
+      supplyGroups: [], noLists: false,
+      ideaGroups: [], noIdeas: false,
+      checklistItems: [], noChecklist: false, checklistDone: 0, checklistTotal: 0,
+      hasAlt: false, altTitle: '', altText: '',
+      altOpen: this.state.altOpen, altChev: this.state.altOpen ? '−' : '+ show',
+      toggleAlt: () => this.setState(s => ({ altOpen: !s.altOpen })),
+    };
+    if (!this.T) return base;
+    const T = this.T;
+
+    base.title = T.meta.title;
+    base.dates = T.meta.dates;
+    const tl = [];
+    if (T.meta.totals.paid) tl.push(this.fm(T.meta.totals.paid) + ' paid');
+    if (T.meta.totals.est) tl.push(this.fm(T.meta.totals.est) + ' planned');
+    if (T.meta.totals.points) tl.push(Math.round(T.meta.totals.points / 1000) + 'k pts');
+    base.subLine = [T.meta.dates, tl.join(' · ')].filter(Boolean).join(' · ') || 'Just getting started';
+    base.noDays = T.days.length === 0;
+    base.hasRoute = T.meta.route.length > 0;
+
+    base.navDays = T.days.map(d => ({
+      short: d.short, title: d.title || '—', planned: d.planned,
+      isToday: this.todayDayN === d.n,
+      bg: v === 'day' && this.state.dayN === d.n ? '#1b2629' : 'transparent',
+      fg: v === 'day' && this.state.dayN === d.n ? '#f4f5f3' : '#1b2629',
+      go: () => this.go('day', d.n),
+    }));
+
+    base.lenses = [
+      ['present', 'Present'],
+      ['money', 'Money'], ['points', 'Points'], ['bookings', 'Bookings'],
+      ['packing', 'Packing'], ['lists', 'Lists'], ['ideas', 'Ideas'], ['checklist', 'Checklist'],
+    ].map(([id, label]) => ({
+      label,
+      bg: v === id ? '#1b2629' : 'transparent',
+      fg: v === id ? '#f4f5f3' : '#1b2629',
+      go: () => this.go(id),
+    }));
+
+    if (v === 'overview') {
+      base.route = T.meta.route.map((s, i) => ({ ...s, conn: i < T.meta.route.length - 1 }));
+      base.obDays = T.days.map(d => {
+        const parts = [];
+        if (d.stops) parts.push(d.stops + ' stops');
+        if (d.bookings) parts.push(d.bookings + ' bk');
+        return {
+          dow: d.dow, short: d.short, title: d.title || '—', planned: d.planned,
+          summary: parts.join(' · '),
+          money: d.paid ? this.fm(d.paid) : (d.est ? this.fm(d.est) + ' est' : ''),
+          go: () => this.go('day', d.n),
+        };
+      });
+    }
+
+    if (v === 'day' && T.days.length) {
+      const d = T.days[Math.min(this.state.dayN, T.days.length) - 1];
+      base.isDay = true; base.isOverview = false;
+      base.dayDate = d.date;
+      base.dayTitle = d.title || 'Untitled day';
+      base.dayPlanned = d.planned;
+      base.dayEmpty = d.blocks.length === 0;
+      const mp = [];
+      if (d.stops) mp.push(d.stops + ' stops');
+      if (d.paid) mp.push(this.fm(d.paid, true) + ' paid');
+      if (d.est) mp.push(this.fm(d.est, true) + ' planned');
+      base.dayMeta = mp.join(' · ');
+      base.dayPrev = () => this.go('day', Math.max(1, this.state.dayN - 1));
+      base.dayNext = () => this.go('day', Math.min(T.days.length, this.state.dayN + 1));
+      base.blocks = d.blocks.map(b => {
+        const m = this.moneyOf(b);
+        const row = {
+          isMove: b.kind === 'move', isReceipt: b.kind === 'receipt',
+          isNote: b.kind === 'note', isStop: b.kind === 'stop',
+          emoji: b.emoji || '·', title: b.title,
+          timeStart: b.start || '—', hasTimeEnd: !!(b.start && b.end), timeEnd: b.end || '',
+          durLabel: b.dur ? (b.dur >= 60 ? Math.floor(b.dur / 60) + 'h' + (b.dur % 60 ? String(b.dur % 60).padStart(2, '0') : '') : b.dur + 'm') : '',
+          moveLabel: (b.dur ? b.dur + 'm — ' : '') + b.title,
+          ...m,
+          hasBooking: !!(b.conf || b.program || b.points),
+          hasConf: !!b.conf, conf: b.conf || '',
+          hasPts: !!(b.program || b.points), ptsLabel: this.ptsLabelOf(b),
+          hasMeta: false, meta: '', metaCursor: 'default', toggle: () => {},
+          hasISK: !!(b.ccy === 'ISK' && b.estISK != null),
+          iskLabel: b.estISK != null ? Math.round(b.estISK).toLocaleString('en-US') + ' ISK' : '',
+          iskUsd: b.estISK != null ? '≈ ' + this.fm(b.estISK * this.state.fx, true) + (this.state.fxLive ? '' : ' (approx)') : '',
+          hasMenu: !!b.menuUrl, menuUrl: b.menuUrl || '',
+        };
+        row.isNow = d.n === this.todayDayN && b.sM != null && b.eM != null && (() => {
+          const now = new Date();
+          const curM = now.getHours() * 60 + now.getMinutes();
+          return curM >= b.sM && curM < b.eM;
+        })();
+        row.nowStyle = row.isNow ? 'background:#eaf5f1;border-radius:10px' : '';
+        const meta = [b.detail, b.notes].filter(Boolean).join('\n');
+        if (meta) {
+          const exp = !!this.state.expanded[b.id];
+          const long = meta.length > 170;
+          row.hasMeta = true;
+          row.meta = !long || exp ? meta : meta.slice(0, 150).trimEnd() + ' …more';
+          row.metaCursor = long ? 'pointer' : 'default';
+          if (long) row.toggle = () => this.setState(s => ({ expanded: { ...s.expanded, [b.id]: !s.expanded[b.id] } }));
+        }
+        return row;
+      });
+    }
+
+    if (v === 'present') {
+      base.isPresent = true; base.isOverview = false;
+      const totalDays = T.days.length;
+      base.presentEmpty = totalDays === 0;
+      base.presentHasDay = totalDays > 0;
+      const pdN = Math.min(Math.max(this.state.presentDayN || 1, 1), Math.max(totalDays, 1));
+      base.presentDayChips = T.days.map(d => {
+        const on = d.n === pdN;
+        return {
+          label: (d.dow + ' ' + d.short).trim() || ('Day ' + d.n),
+          bg: on ? '#1b2629' : '#ffffff', fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ presentDayN: d.n }),
+        };
+      });
+      base.presentPrev = () => this.setState(s => ({ presentDayN: Math.max(1, (s.presentDayN || 1) - 1) }));
+      base.presentNext = () => this.setState(s => ({ presentDayN: Math.min(totalDays, (s.presentDayN || 1) + 1) }));
+      if (totalDays > 0) {
+        const d = T.days[pdN - 1];
+        base.presentDate = d.date;
+        base.presentTitle = d.title || 'Untitled day';
+        base.presentPhotos = (PRESENT_GALLERY[pdN] || []).map(ph => ({
+          url: ph.url, caption: ph.caption,
+          open: () => this.setState({ lightbox: { url: ph.url, caption: ph.caption } }),
+        }));
+        base.hasPresentPhotos = base.presentPhotos.length > 0;
+        base.presentVideos = (PRESENT_VIDEOS[pdN] || []).map(v => ({
+          title: v.title,
+          thumb: 'https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg',
+          watchUrl: 'https://www.youtube.com/watch?v=' + v.id,
+        }));
+        base.hasPresentVideos = base.presentVideos.length > 0;
+        const m = PRESENT_MAP[pdN] || PRESENT_MAP[1];
+        base.presentMapSrc = 'https://www.google.com/maps?q=' + m.lat + ',' + m.lng + '&z=' + m.zoom + '&output=embed';
+        base.presentMapsUrl = PRESENT_DIRECTIONS[pdN] || '';
+        // High-level only: activities and meals, not transport/logistics/walk-between-stops.
+        const skipTypes = ['Walk', 'Transportation', 'Logistics', 'Drive', 'Parking', 'Gasoline', 'Luggage', 'Free Time'];
+        base.presentHighlights = d.blocks.filter(b => b.kind === 'stop' && !skipTypes.includes(b.typeName)).map(b => ({
+          emoji: b.emoji || '·', title: b.title,
+        }));
+        const cost = (d.paid || 0) + (d.est || 0);
+        base.presentCost = cost ? ('Est. day cost: ' + this.fm(cost, true)) : '';
+      }
+    }
+
+    if (v === 'money') {
+      base.isMoney = true; base.isOverview = false;
+      base.hasMoney = T.costSummary.some(r => r.total > 0);
+      base.noMoney = !base.hasMoney;
+      base.moneyRows = T.costSummary.filter(r => r.total > 0).map(r => ({
+        name: r.name, emoji: r.emoji,
+        est: r.est ? this.fm(r.est, true) : '—',
+        paid: r.paid ? this.fm(r.paid, true) : '—',
+        total: this.fm(r.total, true),
+      }));
+      const te = T.costSummary.reduce((a, r) => a + r.est, 0);
+      const tp = T.costSummary.reduce((a, r) => a + r.paid, 0);
+      base.moneyTotEst = this.fm(te, true);
+      base.moneyTotPaid = this.fm(tp, true);
+      base.moneyTotAll = this.fm(te + tp, true);
+    }
+
+    if (v === 'points') {
+      base.isPoints = true; base.isOverview = false;
+      base.hasPoints = T.pointsByProgram.length > 0;
+      base.noPoints = !base.hasPoints;
+      base.pointRows = T.pointsByProgram.map(p => ({
+        name: p.name, planned: this.fp(p.planned), used: this.fp(p.used), total: this.fp(p.total),
+      }));
+      base.ptsTotPlanned = this.fp(T.pointsByProgram.reduce((a, p) => a + p.planned, 0));
+      base.ptsTotUsed = this.fp(T.pointsByProgram.reduce((a, p) => a + p.used, 0));
+      base.ptsTotAll = this.fp(T.meta.totals.points);
+      base.pointItems = T.bookingList.filter(b => b.program || b.points).map(b => ({
+        dayLabel: b.dayLabel, emoji: b.emoji || '·', title: b.title,
+        status: b.conf ? 'USED' : 'PLANNED',
+        statusColor: b.conf ? '#257a5a' : '#96690f',
+        ptsLabel: this.ptsLabelOf(b),
+        go: () => this.go('day', b.dayN),
+      }));
+    }
+
+    if (v === 'bookings') {
+      base.isBookings = true; base.isOverview = false;
+      const order = ['Flights', 'Stays', 'Cars', 'Activities'];
+      const present = order.filter(name => T.bookingList.some(b => b.group === name));
+      const f = this.state.bkFilter;
+      base.bkChips = ['All', ...present].map(name => {
+        const on = f === name;
+        return {
+          label: name,
+          bg: on ? '#1b2629' : '#ffffff',
+          fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ bkFilter: name }),
+        };
+      });
+      const factLabels = [
+        ['route', 'ROUTE'], ['flightNo', 'FLIGHT'], ['cabin', 'CABIN'], ['seats', 'SEATS'],
+        ['nights', 'STAY'], ['roomType', 'ROOM'], ['address', 'ADDRESS'], ['cancelBy', 'CANCEL BY'],
+      ];
+      base.bookingGroups = present.filter(name => f === 'All' || f === name).map(name => ({
+        name: name.toUpperCase(),
+        items: T.bookingList.filter(b => b.group === name).map(b => {
+          const m = this.moneyOf(b);
+          const facts = factLabels.filter(([k]) => b[k]).map(([k, label]) => ({ label, value: b[k] }));
+          const nKey = 'bk_' + b.id;
+          const nOpen = !!this.state.expanded[nKey];
+          return {
+            emoji: b.emoji || '·', title: b.title,
+            dayLabel: b.dayLabel, go: () => this.go('day', b.dayN),
+            facts, hasFacts: facts.length > 0,
+            hasFlag: !!b.flag, flag: b.flag || '',
+            hasConf: !!b.conf, conf: b.conf || '', noConf: !b.conf,
+            hasPts: !!(b.program || b.points), ptsLabel: this.ptsLabelOf(b),
+            ...m,
+            hasNotes: !!b.notes, notesOpen: nOpen, notes: nOpen ? b.notes : '',
+            notesToggleLabel: nOpen ? '− Hide pricing detail' : '+ Pricing detail',
+            toggleNotes: () => this.setState(s => ({ expanded: { ...s.expanded, [nKey]: !s.expanded[nKey] } })),
+          };
+        }),
+      }));
+      base.noBookings = T.bookingList.length === 0;
+    }
+
+    if (v === 'packing') {
+      base.isPacking = true; base.isOverview = false;
+      const dayByShort = {};
+      T.days.forEach(d => { dayByShort[d.short] = d.title; });
+      // person filter
+      const personSet = [];
+      const addP = w => { const u = String(w || '').toUpperCase(); if (u && !personSet.includes(u)) personSet.push(u); };
+      T.packing.outfitDays.forEach(od => od.slots.forEach(s => s.people.forEach(p => addP(p.who))));
+      T.packing.packLists.forEach(pl => addP(pl.who));
+      const pf = this.state.packFilter && personSet.includes(this.state.packFilter) ? this.state.packFilter : 'ALL';
+      base.packChips = ['ALL', ...personSet].map(name => {
+        const on = pf === name;
+        return {
+          label: name === 'ALL' ? 'Everyone' : name.charAt(0) + name.slice(1).toLowerCase(),
+          bg: on ? '#1b2629' : '#ffffff', fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ packFilter: name }),
+        };
+      });
+      // rollups: one card per visible person
+      const visible = pf === 'ALL' ? personSet : [pf];
+      base.packRollups = visible.map(who => {
+        const pl = T.packing.packLists.find(p => String(p.who).toUpperCase() === who);
+        const items = pl ? pl.items : [];
+        const total = items.reduce((a, it) => a + (it.count || 0), 0);
+        return {
+          who: who.charAt(0) + who.slice(1).toLowerCase(),
+          totalLabel: total ? total + ' ITEMS' + (pl && pl.derived ? ' · FROM TRACKER' : '') : '',
+          empty: items.length === 0,
+          items: items.map(it => ({ count: it.count, name: it.name })),
+        };
+      });
+      base.hasRollups = base.packRollups.length > 0;
+      base.outfitDays = T.packing.outfitDays.filter(od => od.slots.length).map(od => ({
+        date: od.date,
+        dayTitle: dayByShort[String(od.date).replace(/\/\d{4}$/, '')] || '',
+        slots: od.slots.map(s => ({
+          name: s.name,
+          people: s.people.filter(p => pf === 'ALL' || String(p.who).toUpperCase() === pf).map(p => ({ who: p.who, text: p.text || '—' })),
+        })).filter(s => s.people.length),
+      })).filter(od => od.slots.length);
+      const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [''])[1] || '';
+      const showTracker = pf === 'ALL' || trackerWho.toUpperCase() === pf;
+      base.trackerDays = (showTracker ? T.packing.trackerDays : []).map(td => ({
+        date: td.date,
+        groups: (td.groups || []).filter(g => (g.items || []).some(i => i.style || i.brand || i.label)).map(g => ({
+          activity: g.activity || '—',
+          items: g.items.filter(i => i.style || i.brand || i.label).map(i => ({
+            label: i.label || [i.style, [i.brand, i.color].filter(Boolean).join(', ')].filter(Boolean).join(' — '),
+            rewear: !!i.rewear,
+          })),
+        })),
+      })).filter(td => td.groups.length);
+      base.hasTracker = base.trackerDays.length > 0;
+      base.trackerTitle = T.packing.trackerTitle;
+      base.noPacking = base.outfitDays.length === 0 && !base.hasTracker;
+    }
+
+    if (v === 'lists') {
+      base.isLists = true; base.isOverview = false;
+      base.supplyGroups = T.supplies;
+      base.noLists = T.supplies.length === 0;
+    }
+
+    if (v === 'checklist') {
+      base.isChecklist = true; base.isOverview = false;
+      const tbd = (T.ideas || []).find(g => g.name === 'Still open / TBD');
+      const items = tbd ? tbd.items : [];
+      base.checklistTotal = items.length;
+      base.checklistItems = items.map((it, i) => {
+        const key = 'tbd_' + i + '_' + it.name;
+        const done = !!this.state.checked[key];
+        return {
+          key, name: it.name, note: it.note || '',
+          done,
+          boxChar: done ? '✓' : '',
+          rowStyle: done ? 'opacity:0.5' : 'opacity:1',
+          strike: done ? 'line-through' : 'none',
+          toggle: () => this.toggleChecklistItem(key),
+        };
+      });
+      base.checklistDone = base.checklistItems.filter(it => it.done).length;
+      base.noChecklist = items.length === 0;
+    }
+
+    if (v === 'ideas') {
+      base.isIdeas = true; base.isOverview = false;
+      base.ideaGroups = T.ideas;
+      base.noIdeas = T.ideas.length === 0 && !T.alternatives;
+      if (T.alternatives && T.alternatives.text) {
+        base.hasAlt = true;
+        base.altTitle = T.alternatives.title || 'Alternatives considered';
+        base.altText = T.alternatives.text;
+      }
+    }
+
+    return base;
+  }
+}
+</script>
+<script id="trip-data" type="application/json">{"meta": {"title": "Leavenworth Winter 2026", "dates": "Dec 19-27, 2026 (Miami → Seattle → Leavenworth → Seattle → Miami)", "route": [{"name": "Miami", "sub": "home (MIA)"}, {"name": "Seattle", "sub": "2 nights · Grand Hyatt Seattle"}, {"name": "Leavenworth", "sub": "5 nights · Hampton Inn Leavenworth"}, {"name": "Seattle (SeaTac)", "sub": "1 night · Courtyard by Marriott Seattle SeaTac Airport"}]}, "days": [{"date": "Saturday, December 19, 2026", "title": "Miami → Seattle", "planned": true, "blocks": [{"start": "8:00 AM", "end": "11:42 AM", "title": "Alaska Airlines AS 305 - Nonstop - 6h42m", "detail": "MIA -> SEA, Economy, 4 passengers. CONFIRMED -- confirmation code UUKHNQ. Seats: Roque Corona 19A, Jennifer Borges 19B, Roque Luis Corona 19C, Chloe Corona 19D (whole family together in one row).", "typeName": "Flight", "emoji": "✈️", "program": "Alaska Atmos Rewards", "points": "70000", "notes": "Booked and confirmed (confirmation UUKHNQ). Per Alaska's actual payment summary: 70,000 Atmos Rewards points total (17,500/passenger) + $22.40 cash total ($5.60/passenger in taxes/fees), charged to the Visa ending 6730 and deducted from Atmos Rewards account ending 8720. This corrects the earlier cart estimate of 50,000 miles + $24 cash -- the actual charge came in 20,000 points higher than that estimate. Note: Alaska's loyalty program is now called Atmos Rewards (rebranded from Mileage Plan).", "conf": "UUKHNQ", "paid": 22.4, "route": "MIA → SEA", "flightNo": "Alaska 305", "cabin": "Economy (Main)", "seats": "Roque 19A · Jenny 19B · Roque Luis 19C · Chloe 19D", "flag": ""}, {"start": "11:42 AM", "end": "11:55 AM", "title": "Deplane & walk to terminal", "detail": "A family of four boarding a full flight rarely deplanes first — budgeting the full walk from gate to the terminal food area, not just doorway-to-jetbridge time.", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "11:55 AM", "end": "12:30 PM", "title": "Meal — SEA terminal (restaurant TBD)", "detail": "Eating airside before baggage claim so there's no need for a separate lunch stop after reaching the car. Exact restaurant depends on AS305's arrival gate/concourse — pick once the gate is assigned closer to the trip.", "typeName": "Dining", "emoji": "🍔", "est": 60.2, "notes": "Subtotal $50.00 + SeaTac 10.4% tax ($5.20) + 10% tip on subtotal ($5.00) = $60.20 total."}, {"start": "12:30 PM", "end": "12:45 PM", "title": "Walk to baggage claim", "typeName": "Walk", "emoji": "🚶"}, {"start": "12:45 PM", "end": "1:00 PM", "title": "Baggage claim", "detail": "Domestic arrival, no customs. Shorter wait than a typical heavy-travel-day estimate since the ~35 min terminal meal already gave bags time to reach the carousel.", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "1:00 PM", "end": "1:10 PM", "title": "Walk to the shuttle curb (baggage claim exit)", "detail": "Turo pickup for this host isn't at the official rental car facility — coordinate the exact meeting spot in-app, but plan on the common airport shuttle to a nearby off-airport lot.", "typeName": "Walk", "emoji": "🚶"}, {"start": "1:10 PM", "end": "1:25 PM", "title": "Wait for / ride shuttle to Turo pickup location", "detail": "Same shuttle system used for off-airport rental lots — buses run every ~5-15 min, ride itself is ~5-8 min.", "typeName": "Transportation", "emoji": "🚌"}, {"start": "1:25 PM", "end": "1:55 PM", "title": "Turo pickup — 2024 Nissan Rogue", "detail": "Meet the host, walk-around inspection, paperwork, load luggage. Budgeting longer than a counter-rental pickup since it's an in-person host meet, not a kiosk.", "typeName": "Rental Car", "emoji": "🚗", "est": 572, "notes": "$572 total for the full rental (Dec 19 pickup - Dec 27 drop-off, ~8 days). Confirm with the host in the Turo app whether 2 car seats are included or need to be brought separately — unlike an agency rental, car seat availability is host-dependent and isn't guaranteed the way it was with the original Enterprise plan."}, {"start": "1:55 PM", "end": "2:25 PM", "title": "Drive to Grand Hyatt Seattle", "detail": "~13-14 mi from the airport into downtown; budgeting a full 30 min for a Saturday afternoon with some traffic.", "typeName": "Drive", "emoji": "🚗"}, {"start": "2:25 PM", "end": "2:40 PM", "title": "Arrive at hotel — bags held at bell desk", "detail": "Grand Hyatt Seattle's confirmed check-in time is 4:00 PM (confirmation #59319732) -- early check-in is not guaranteed. Bell desk holds the luggage while the room finishes prep.", "typeName": "Hotel", "emoji": "🏨"}, {"start": "2:40 PM", "end": "4:00 PM", "title": "Free time near the hotel (lobby/lounge)", "detail": "Waiting out the gap to the confirmed 4 PM check-in -- lobby, Hyatt Globalist club access if available, or a short walk nearby. Not a preview of Pike Place, which is Day 2's anchor.", "typeName": "Free Time", "emoji": "⏰"}, {"start": "4:00 PM", "end": "4:15 PM", "title": "Check in — Grand Hyatt Seattle", "detail": "2 nights (Sat-Sun). Room 2 Double Beds, confirmation #59319732. World of Hyatt Globalist doesn't guarantee early check-in as a stated benefit, so 4 PM is the reliable time -- worth requesting room-ready notification via the Hyatt app on arrival day in case it's ready sooner.", "typeName": "Hotel", "emoji": "🏨", "points": "30000", "program": "Hyatt", "notes": "15,000 pts/night x 2 nights = 30,000 total (confirmed, matches the reservation exactly). The $58 paid amount here is the $29/night destination fee, NOT covered by points -- billed separately to the card on file. Self-parking is $37/night in the adjacent garage (valet is $68/night with in/out privileges) -- budget ~$74 more for 2 nights of self-parking, confirm in/out access is included. Globalist perk includes complimentary breakfast both mornings (confirmed) -- used on Day 2 and Day 3 instead of paying for breakfast out.", "conf": "59319732", "paid": 58.0, "address": "721 Pine St, Seattle, WA", "nights": "2 nights (Sat–Sun)", "roomType": "2 Double Beds", "cancelBy": "Free cancel: contact hotel (no explicit deadline published)", "flag": "Check-in guaranteed 4:00 PM only — not earlier. $58 destination fee billed separately, not covered by points."}, {"start": "4:15 PM", "end": "5:00 PM", "title": "Freshen up & rest at the hotel", "detail": "Only 45 minutes of in-room decompression before heading to dinner -- a real compression from what a 2:25 PM check-in would have allowed, since the confirmed check-in is 4 PM. If the family would rather have more rest time, Cactus dinner could shift to 6-7 PM instead (tradeoff: later bedtime after an already-long travel day with a 3-hour timezone shift).", "typeName": "Free Time", "emoji": "⏰"}, {"start": "5:00 PM", "end": "5:15 PM", "title": "Drive to Cactus, South Lake Union", "detail": "~1 mi — now driving since the car is already in hand.", "typeName": "Drive", "emoji": "🚗"}, {"start": "5:15 PM", "end": "6:15 PM", "title": "Dinner — Cactus, South Lake Union", "detail": "Southwestern/Tex-Mex, confirmed kids menu, open until 10 PM.", "typeName": "Dining", "emoji": "🍔", "est": 72.46, "notes": "Green Enchilada $18.50 + Chimayo Enchilada $19 (adults) + Kid Taco $9 + Kid Quesadilla $9 (kids). Entrees only, no apps/drinks/dessert. Subtotal $55.50 + Seattle 10.55% tax ($5.86) + 20% tip on subtotal ($11.10) = $72.46 total.", "menuUrl": "https://www.cactusrestaurants.com/menus"}, {"start": "6:15 PM", "end": "6:30 PM", "title": "Drive back to Grand Hyatt Seattle, park", "typeName": "Drive", "emoji": "🚗"}, {"start": "6:30 PM", "end": "7:30 PM", "title": "Wind down & bedtime routine at the hotel", "detail": "Early night given the 3-hour body-clock jump and a full Seattle day tomorrow.", "typeName": "Free Time", "emoji": "⏰"}]}, {"date": "Sunday, December 20, 2026", "title": "Seattle — Pike Place, waterfront & Olympic Sculpture Park", "planned": true, "blocks": [{"start": "7:30 AM", "end": "8:15 AM", "title": "Breakfast — Grand Hyatt Seattle (included)", "detail": "Globalist complimentary breakfast.", "typeName": "Dining", "emoji": "🍔"}, {"start": "8:15 AM", "end": "8:30 AM", "title": "Walk to Pike Place Market", "detail": "~0.7 mi from the Grand Hyatt.", "typeName": "Walk", "emoji": "🚶"}, {"start": "8:30 AM", "end": "11:00 AM", "title": "Pike Place Market", "detail": "Gum Wall, Post Alley, the fish-throwing at Pike Place Fish, Rachel the piggy bank, browsing the craft stalls, a pastry stop at Le Panier — the morning's anchor activity.", "typeName": "Sightseeing", "emoji": "📸"}, {"start": "11:00 AM", "end": "11:15 AM", "title": "Walk to Lowell's", "typeName": "Walk", "emoji": "🚶"}, {"start": "11:15 AM", "end": "12:15 PM", "title": "Lunch — Lowell's, Pike Place Market", "detail": "Three-story market institution with water views, full seafood/American menu.", "typeName": "Dining", "emoji": "🍔", "est": 87.47, "notes": "Fish and Chips $25 + House Burger $22 (adults). Kids menu pricing not published online — estimated ~$10/plate x2 ($20). Entrees only. Subtotal $67.00 + Seattle 10.55% tax ($7.07) + 20% tip on subtotal ($13.40) = $87.47 total.", "menuUrl": "https://www.eatatlowells.com/menu"}, {"start": "12:15 PM", "end": "12:45 PM", "title": "Walk to Pier 57 / waterfront", "detail": "Downhill along the market's west side to the waterfront.", "typeName": "Walk", "emoji": "🚶"}, {"start": "12:45 PM", "end": "2:15 PM", "title": "Seattle Great Wheel + waterfront stroll", "detail": "Ferris wheel ride plus time along the rebuilt waterfront promenade.", "typeName": "Entertainment", "emoji": "🎭", "est": 82, "notes": "Adult tickets ~$23 x2 + youth (3-11) ~$18 x2 = $82."}, {"start": "2:15 PM", "end": "2:45 PM", "title": "Walk to Olympic Sculpture Park", "detail": "Scenic, mostly flat waterfront promenade walk, ~1.2 mi.", "typeName": "Walk", "emoji": "🚶"}, {"start": "2:45 PM", "end": "4:00 PM", "title": "Olympic Sculpture Park", "detail": "Free, outdoor 9-acre park overlooking Puget Sound — open-air sculpture, not an indoor exhibit, with real room for the kids to run.", "typeName": "Sightseeing", "emoji": "📸"}, {"start": "4:00 PM", "end": "4:15 PM", "title": "Snack break near the Sculpture Park", "detail": "Hot cocoa / pastry stop to bridge the gap to dinner after a long active afternoon.", "typeName": "Dining", "emoji": "🍔", "est": 18.08, "notes": "Subtotal $15.00 + Seattle 10.55% tax ($1.58) + 10% tip on subtotal ($1.50) = $18.08 total."}, {"start": "4:15 PM", "end": "4:30 PM", "title": "Walk/rideshare back toward the hotel", "typeName": "Transportation", "emoji": "🚌", "est": 10}, {"start": "4:30 PM", "end": "5:18 PM", "title": "Free time / rest at the hotel", "typeName": "Free Time", "emoji": "⏰"}, {"start": "5:18 PM", "end": "5:30 PM", "title": "Walk to Purple Café & Wine Bar", "typeName": "Walk", "emoji": "🚶"}, {"start": "5:30 PM", "end": "6:35 PM", "title": "Dinner — Purple Café & Wine Bar", "detail": "New American/wine-bar spot ~12 min walk from the Grand Hyatt — real printed \"Kids Café\" menu (grilled chicken, cheeseburger sliders, grilled cheese), swapped in for Din Tai Fung since the dumpling-only format was a kids no-go. No pizza. 4.0-4.3 stars, praised specifically for fast, hot kids plates.", "typeName": "Dining", "emoji": "🍔", "est": 101.83, "notes": "Bistro Burger $25 x2 (adults) + Kids Cheeseburger Sliders $15 + Kids Grilled Cheese $13 (kids, from the confirmed printed Kids Cafe menu). Entrees only. Subtotal $78.00 + Seattle 10.55% tax ($8.23) + 20% tip on subtotal ($15.60) = $101.83 total.", "menuUrl": "https://www.purplecafe.com/menus"}, {"start": "6:35 PM", "end": "6:47 PM", "title": "Walk back to Grand Hyatt Seattle", "typeName": "Walk", "emoji": "🚶"}]}, {"date": "Monday, December 21, 2026", "title": "Seattle → Leavenworth", "planned": true, "blocks": [{"start": "7:30 AM", "end": "8:15 AM", "title": "Breakfast — Grand Hyatt Seattle (included)", "detail": "Globalist complimentary breakfast, before checkout.", "typeName": "Dining", "emoji": "🍔"}, {"start": "8:15 AM", "end": "9:15 AM", "title": "Pack up & check out — Grand Hyatt Seattle", "typeName": "Logistics", "emoji": "⏱️", "detail": "A relaxed, unhurried morning — no need to leave before 9:30."}, {"start": "9:15 AM", "end": "9:30 AM", "title": "Load the car from the hotel garage", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "9:30 AM", "end": "11:00 AM", "title": "Drive — Seattle to Sultan/Monroe area", "detail": "Via US-2, ~1h20-1.5h.", "typeName": "Drive", "emoji": "🚗"}, {"start": "11:00 AM", "end": "11:15 AM", "title": "Rest stop", "detail": "Bathroom break, grab a snack for the road.", "typeName": "Logistics", "emoji": "⏱️", "est": 10}, {"start": "11:15 AM", "end": "12:30 PM", "title": "Drive — over Stevens Pass to Leavenworth", "detail": "~1h15m at a mountain-driving pace. Traction tires required by WSDOT policy in winter conditions — confirm the Rogue is equipped with the Turo host before the trip. Check WSDOT's live pass page morning-of for chain-up advisories or closures.", "typeName": "Drive", "emoji": "🚗"}, {"start": "12:30 PM", "end": "12:40 PM", "title": "Arrive Hampton Inn Leavenworth — hold luggage at the desk", "detail": "Confirmed check-in is 3:00 PM (confirmation #97935855, 301 Ward Strasse, (509) 470-9798) -- early check-in isn't guaranteed, so bags get held at the desk rather than counting on room access.", "typeName": "Hotel", "emoji": "🏨"}, {"start": "12:40 PM", "end": "12:50 PM", "title": "Walk to Colchuck's (formerly Bavarian Bistro & Bar)", "typeName": "Walk", "emoji": "🚶"}, {"start": "12:50 PM", "end": "1:50 PM", "title": "Lunch — Colchuck's", "detail": "German pub upstairs at 801 Front St, recently rebranded from \"Bavarian Bistro & Bar\" to Colchuck's (same menu/ownership) — Bavarian sampler, Jaeger schnitzel, and a confirmed kids menu, swapped in for Lost Pig Cafe which had nothing kid-appropriate.", "typeName": "Dining", "emoji": "🍔", "est": 74.59, "notes": "Menu prices not fully itemized online (price range posted as $10-$20). Estimated 2x Jaeger Schnitzel ~$19 (adults) + 2x kids item ~$10 (kids menu confirmed to exist, exact pricing unconfirmed) = $58.00 subtotal. Flagged as approximate -- call (509) 548-5074 to confirm exact prices. Subtotal $58.00 + Leavenworth 8.6% tax ($4.99) + 20% tip on subtotal ($11.60) = $74.59 total."}, {"start": "1:50 PM", "end": "2:00 PM", "title": "Walk back to the hotel", "typeName": "Walk", "emoji": "🚶"}, {"start": "2:00 PM", "end": "3:00 PM", "title": "Free time / wait for the room", "detail": "The guaranteed check-in time is 3 PM -- this covers the wait honestly rather than assuming the room is ready right after lunch. Downtown is right there if the family wants to keep browsing instead of sitting in the lobby.", "typeName": "Free Time", "emoji": "⏰"}, {"start": "3:00 PM", "end": "3:15 PM", "title": "Check in — Hampton Inn Leavenworth", "detail": "5 nights (Mon-Sat), confirmation #97935855. Room: 1 King bed, Hearing Accessible, Non-Smoking, Standard Room -- a single king, not two beds. Worth calling (509) 470-9798 ahead to confirm a rollaway/sofa arrangement for a family of 4, since \"Hampton Inn & Suites\" doesn't guarantee this specific room has a pull-out sofa.", "typeName": "Hotel", "emoji": "🏨", "points": "308000", "program": "Hilton Honors", "notes": "308,000 Hilton Honors points for the full 5-night stay (confirmed, matches the reservation exactly). No cash portion charged -- fully covered by points. Free cancellation until 11:59 PM hotel time on Dec 20, 2026 if plans change. Free hot breakfast included daily, self-parking complimentary.", "conf": "97935855", "address": "301 Ward Strasse, Leavenworth, WA · (509) 470-9798", "nights": "5 nights (Mon–Sat)", "roomType": "1 King, Hearing Accessible, Non-Smoking", "cancelBy": "Free cancel until 11:59 PM Dec 20, 2026", "flag": "Single king bed booked for a family of 4 — call ahead to confirm a rollaway/sofa."}, {"start": "3:15 PM", "end": "3:45 PM", "title": "Unpack essentials, settle in", "typeName": "Free Time", "emoji": "⏰"}, {"start": "3:45 PM", "end": "4:00 PM", "title": "Walk to downtown Leavenworth", "typeName": "Walk", "emoji": "🚶"}, {"start": "4:00 PM", "end": "5:15 PM", "title": "Evening village stroll", "detail": "First look at Leavenworth's Bavarian-style downtown lit up for the holidays — chocolate shops, ornament shops, window browsing. Light introduction, not an anchor activity.", "typeName": "Sightseeing", "emoji": "📸"}, {"start": "5:15 PM", "end": "5:25 PM", "title": "Walk to Visconti's", "typeName": "Walk", "emoji": "🚶"}, {"start": "5:25 PM", "end": "6:25 PM", "title": "Dinner — Visconti's, 636 Front St", "detail": "Italian ristorante on Front St -- swapped in for South, since South is being moved to Christmas Eve dinner instead (avoids stacking Mexican/Tex-Mex two days after Cactus in Seattle). Confirmed kids menu (listed as a 'known for' feature). Book an early table -- reviews note it skews date-night later in the evening.", "typeName": "Dining", "emoji": "🍔", "est": 91.31, "notes": "Lasagna Al Forno $22 + Spaghetti & Meatballs $25 (adults, confirmed current prices) + 2x kids pasta ~$12 (kids menu confirmed to exist, exact item pricing not published -- estimated). Entrees only. Subtotal $71.00 + Leavenworth 8.6% tax ($6.11) + 20% tip on subtotal ($14.20) = $91.31 total.", "menuUrl": "https://www.viscontis.com/leav-vis-dinner-menu"}, {"start": "6:25 PM", "end": "6:35 PM", "title": "Walk back to the hotel", "typeName": "Walk", "emoji": "🚶"}, {"start": "6:35 PM", "end": "8:15 PM", "title": "Free evening / bedtime routine", "detail": "First night in Leavenworth — kids can wind down while the adults look over tomorrow's reindeer/sleigh morning.", "typeName": "Free Time", "emoji": "⏰"}]}, {"date": "Tuesday, December 22, 2026", "title": "Leavenworth — Reindeer Farm & sleigh ride", "planned": true, "blocks": [{"start": "7:30 AM", "end": "8:15 AM", "title": "Breakfast — Hampton Inn Leavenworth (included)", "detail": "Free hot breakfast, included in the room rate.", "typeName": "Dining", "emoji": "🍔"}, {"start": "8:15 AM", "end": "8:35 AM", "title": "Drive to Leavenworth Reindeer Farm", "detail": "10395 Chumstick Hwy, ~1 mile from downtown.", "typeName": "Drive", "emoji": "🚗"}, {"start": "8:35 AM", "end": "9:00 AM", "title": "Check in for the reindeer tour", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "9:00 AM", "end": "10:00 AM", "title": "Leavenworth Reindeer Farm tour", "detail": "Presentation plus in-enclosure feeding/petting, optional Santa photo. Both kids are almost certainly under the farm's 55\" height cutoff, which routes them to \"Cupid's Corner\" — a separate, calmer area with a smaller herd rather than the full-herd enclosure shown in the marketing photos. Still real feeding/petting/photos, just a more contained version of the experience.", "typeName": "Excursion", "emoji": "👞", "est": 260, "notes": "\"Celebrate the Season\" December pricing: $60-75/person (age 3+, dynamic), used $65/person average x4 = $260. Timed-entry reservation required, online only, no walk-ins — the farm's own site warns holiday tours sell out months in advance; book by Sept/Oct 2026."}, {"start": "10:00 AM", "end": "10:10 AM", "title": "Goodbyes & walk back to the car", "detail": "Real wrap-up time -- say goodbye to the reindeer handlers, walk back across the farm to the parking area, load up. Not built into the drive block.", "typeName": "Walk", "emoji": "🚶"}, {"start": "10:10 AM", "end": "10:30 AM", "title": "Drive to Red-Tail Canyon Farm", "detail": "2.5 mi from downtown — routing between the two farms, not through downtown.", "typeName": "Drive", "emoji": "🚗"}, {"start": "10:30 AM", "end": "11:00 AM", "title": "Arrival, warm up by the teepee fire", "detail": "Red-Tail's sleigh rides only depart on the hour (11 AM-3 PM) -- this shorter gap is still a comfortable wait for the 11 AM slot: check in, use the restroom, browse the farm's small gift area.", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "11:00 AM", "end": "11:30 AM", "title": "Sleigh ride — Red-Tail Canyon Farm", "detail": "30-minute forward-facing horse-drawn sleigh ride with wool blankets, group capped at 14. Chosen over Eagle Creek Ranch for real per-child pricing and a kid-calibrated sleigh design.", "typeName": "Excursion", "emoji": "👞", "est": 60, "notes": "$20/adult x2 + $10/child (12 and under) x2 = $60, tax included. Reservations phone-only: (800) 678-4512 — book as soon as dates are locked, no online booking and no posted lead-time guidance from a small operator during holiday week."}, {"start": "11:30 AM", "end": "11:50 AM", "title": "Hot cocoa at the warming teepee", "detail": "Included with the ride.", "typeName": "Free Time", "emoji": "⏰"}, {"start": "11:50 AM", "end": "12:10 PM", "title": "Drive back to the hotel", "typeName": "Drive", "emoji": "🚗"}, {"start": "12:10 PM", "end": "12:25 PM", "title": "Walk to München Haus", "typeName": "Walk", "emoji": "🚶", "detail": "Hotel to downtown, then to the restaurant."}, {"start": "12:25 PM", "end": "1:15 PM", "title": "Lunch — München Haus", "detail": "Counter-service Bavarian grill with beer-garden seating — fast, casual, all-ages.", "typeName": "Dining", "emoji": "🍔", "est": 41.98, "notes": "Big Bob Bratwurst $10.65 + Dirtyface Beer Wurst $11.25 (adults) + 2x Organic Beef Dog (kid-sized) $6.75 (kids). Entrees only. Subtotal $35.40 + Leavenworth 8.6% tax ($3.04) + 10% tip on subtotal ($3.54) = $41.98 total.", "menuUrl": "https://www.munchenhaus.com/assets/pdf/Menu.pdf"}, {"start": "1:15 PM", "end": "2:35 PM", "title": "Village afternoon — chocolate & ornament shops, Gingerbread Factory", "detail": "A single unhurried stretch of village time — no second activity stacked on top of an already full morning.", "typeName": "Shopping", "emoji": "🛍️"}, {"start": "2:35 PM", "end": "2:50 PM", "title": "Walk back to the hotel", "typeName": "Walk", "emoji": "🚶"}, {"start": "2:50 PM", "end": "4:30 PM", "title": "Free time / rest at the hotel", "typeName": "Free Time", "emoji": "⏰"}, {"start": "4:30 PM", "end": "4:45 PM", "title": "Drive to Baren Haus", "typeName": "Drive", "emoji": "🚗"}, {"start": "4:45 PM", "end": "6:00 PM", "title": "Dinner — Baren Haus", "detail": "German restaurant at 901 Front St, swapped in for Kristall's (rejected -- 'doesn't look good'). Confirmed real entree pricing and a dedicated kids menu; family-friendly per reviews. 385 photos/471 reviews on Yelp.", "typeName": "Dining", "emoji": "🍔", "est": 73.17, "notes": "Jagerschnitzel $16.95 + Sauerbraten $19.95 (adults, confirmed current prices) + 2x kids item (chicken strips) ~$10 (kids menu confirmed to exist, exact pricing not published -- estimated). Entrees only. Subtotal $56.90 + Leavenworth 8.6% tax ($4.89) + 20% tip on subtotal ($11.38) = $73.17 total.", "menuUrl": "https://www.barenhaus.com/main-menu"}, {"start": "6:00 PM", "end": "6:15 PM", "title": "Drive back to the hotel", "typeName": "Drive", "emoji": "🚗"}, {"start": "6:15 PM", "end": "7:30 PM", "title": "Evening wind-down & bedtime routine", "detail": "A full morning of two farm activities plus a village afternoon — a genuinely early, easy evening.", "typeName": "Free Time", "emoji": "⏰"}]}, {"date": "Wednesday, December 23, 2026", "title": "Leavenworth — snowmobiling & tubing", "planned": true, "blocks": [{"start": "7:30 AM", "end": "8:15 AM", "title": "Breakfast — Hampton Inn Leavenworth (included)", "typeName": "Dining", "emoji": "🍔"}, {"start": "8:15 AM", "end": "8:40 AM", "title": "Drive to Leavenworth Snowmobile Tours", "detail": "Mountain Springs Lodge, ~14 mi north of downtown near Lake Wenatchee.", "typeName": "Drive", "emoji": "🚗"}, {"start": "8:40 AM", "end": "9:15 AM", "title": "Suit up & safety briefing", "detail": "Guides provide snowmobile suits, boots, gloves, and DOT-approved helmets. Budgeting real time for a first-time family to gear up and get the safety talk before riding.", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "9:15 AM", "end": "10:15 AM", "title": "Guided snowmobile tour", "detail": "1-hour guided ride toward the overlook of Lake Wenatchee and the Entiat Mountain Range. Both kids (5+) ride as passengers on a 2-person sled with an adult driving — neither can drive solo, since Washington operators require snowmobile drivers to be 16+.", "typeName": "Excursion", "emoji": "👞", "est": 298, "notes": "2-person sled $149 x 2 sleds (one per adult+kid pair) = $298. 1-hour tour is rated for ages 5+. Book in advance for holiday week — this operator, like the sleigh ride and Reindeer Farm, isn't set up for same-day walk-ins during peak season."}, {"start": "10:15 AM", "end": "10:30 AM", "title": "Return gear, wrap up", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "10:30 AM", "end": "10:50 AM", "title": "Drive to Gustav's", "typeName": "Drive", "emoji": "🚗", "detail": "Direct from Mountain Springs Lodge back toward town — Gustav's sits on the Hwy 2 route in, no need to detour through downtown or the hotel first."}, {"start": "10:50 AM", "end": "11:40 AM", "title": "Lunch — Gustav's", "detail": "Order-counter burger/sausage pub, real menu variety, right on the Hwy 2 route back from the snowmobile/farm side of town. Kids combo items verified live on Gustav's actual ordering system (not shown on their static website menu, but real and orderable).", "typeName": "Dining", "emoji": "🍔", "est": 65.23, "notes": "Gustav Burger $20 + Bratwurst $15 (adults) + Kids Cheeseburger Combo $10 + Kids Chicken Strips Combo $10 (kids -- verified live via Gustav's Toast ordering system at order.gustavsleavenworth.com; these combos don't appear on the static gustavsleavenworth.com menu page, likely a site oversight, but are real and orderable). Entrees only. Subtotal $55.00 + Leavenworth 8.6% tax ($4.73) + 10% tip on subtotal ($5.50) = $65.23 total.", "menuUrl": "https://gustavsleavenworth.com/leavenworth-gustav-s-food-menu"}, {"start": "11:40 AM", "end": "11:50 AM", "title": "Drive back to the hotel", "typeName": "Drive", "emoji": "🚗"}, {"start": "11:50 AM", "end": "2:30 PM", "title": "Free afternoon / rest at the hotel", "detail": "One continuous window between a big active morning and an evening tubing session — real recovery time, not fragmented into two short stops with driving in between.", "typeName": "Free Time", "emoji": "⏰"}, {"start": "2:30 PM", "end": "2:45 PM", "title": "Snack stop — pretzel & hot cocoa downtown", "detail": "En route to the Ski Hill; bridges the gap to a later dinner after tubing.", "typeName": "Dining", "emoji": "🍔", "est": 23.72, "notes": "Subtotal $20.00 + Leavenworth 8.6% tax ($1.72) + 10% tip on subtotal ($2.00) = $23.72 total."}, {"start": "2:45 PM", "end": "3:00 PM", "title": "Drive to Leavenworth Ski Hill", "typeName": "Drive", "emoji": "🚗"}, {"start": "3:00 PM", "end": "3:30 PM", "title": "Tickets & gear up", "detail": "Lt. Michael Adams Tubing Park — walk-up, no reservations. Park opens 3:30 PM on Wednesdays, so this covers the wait.", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "3:30 PM", "end": "5:00 PM", "title": "Tubing — Lt. Michael Adams Tubing Park", "detail": "$39/person flat, buys 6 runs. All riders go solo (no lap-riding); kids 8 and under need adult supervision on the hill. Sunset is ~4:30 PM this time of year, so the back half of this session is under the hill's lights, not daylight — worth setting that expectation with the kids ahead of time.", "typeName": "Excursion", "emoji": "👞", "est": 156, "notes": "$39/person x4 = $156, all ages, same-day only."}, {"start": "5:00 PM", "end": "5:20 PM", "title": "Changeover — dry off & warm up", "detail": "Dedicated block to get out of wet snow gear before heading to dinner, not squeezed into the drive.", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "5:20 PM", "end": "5:35 PM", "title": "Drive to Ludwig's", "typeName": "Drive", "emoji": "🚗"}, {"start": "5:35 PM", "end": "5:45 PM", "title": "Walk to Ludwig's (921 Front St)", "typeName": "Walk", "emoji": "🚶"}, {"start": "5:45 PM", "end": "7:00 PM", "title": "Dinner — Ludwig's", "detail": "Authentic German biergarten on Front St with live polka/accordion music -- swapped in for Andreas Keller (rejected -- 'looks gross'). Confirmed dedicated kids menu, 601 reviews/620 photos on Yelp, described as the closest to authentic German food in town.", "typeName": "Dining", "emoji": "🍔", "est": 90.02, "notes": "Menu prices not itemized online (per-person range reported $30-50). Estimated 2x schnitzel-tier entree ~$24 (adults) + 2x kids item ~$11 (kids menu confirmed to exist, exact pricing unconfirmed) = $70.00 subtotal. Flagged as approximate -- call (509) 548-6625 to confirm exact prices. Subtotal $70.00 + Leavenworth 8.6% tax ($6.02) + 20% tip on subtotal ($14.00) = $90.02 total.", "menuUrl": "https://www.ludwigsgermanrestaurant.com/"}, {"start": "7:00 PM", "end": "7:15 PM", "title": "Drive back to the hotel", "typeName": "Drive", "emoji": "🚗"}, {"start": "7:15 PM", "end": "8:15 PM", "title": "Bedtime routine / wind down", "typeName": "Free Time", "emoji": "⏰"}]}, {"date": "Thursday, December 24, 2026", "title": "Leavenworth — Christmas Eve", "planned": true, "blocks": [{"start": "7:30 AM", "end": "8:15 AM", "title": "Breakfast — Hampton Inn Leavenworth (included)", "typeName": "Dining", "emoji": "🍔"}, {"start": "8:15 AM", "end": "8:30 AM", "title": "Walk to Blackbird Island trailhead", "typeName": "Walk", "emoji": "🚶"}, {"start": "8:30 AM", "end": "9:15 AM", "title": "Blackbird Island / Waterfront Park walk", "detail": "Flat, packed-snow loop along the Wenatchee River, playground at Waterfront Park. Short and kid-paced — Icicle Gorge was ruled out entirely, since Forest Service plowing stops several miles short of the actual trailhead in winter.", "typeName": "Sightseeing", "emoji": "📸"}, {"start": "9:15 AM", "end": "9:30 AM", "title": "Walk back toward downtown", "typeName": "Walk", "emoji": "🚶"}, {"start": "9:30 AM", "end": "10:45 AM", "title": "Village morning — Der Sportsmann sled rental & shopping", "detail": "Renting 2 sleds for tomorrow's Lake Wenatchee visit from Der Sportsmann (downtown outdoor shop), plus last Christmas Eve browsing before shops potentially cut hours.", "typeName": "Shopping", "emoji": "🛍️", "est": 60, "notes": "~$60 for 2 sleds for the day, confirm exact rate in store. Picking up in town rather than relying on Lake Wenatchee State Park's own Camp Store, whose confirmed regular winter hours are Friday-Sunday 10 AM-5 PM only with no separately confirmed Christmas Day hours."}, {"start": "10:45 AM", "end": "11:00 AM", "title": "Walk to Yodelin Broth Co.", "typeName": "Walk", "emoji": "🚶"}, {"start": "11:00 AM", "end": "11:50 AM", "title": "Lunch — Yodelin Broth Co. & Beer Garden", "detail": "Broth/beer-garden concept on Front St (lower level), walk-ins only -- swapped in for Kristall's (rejected -- 'doesn't look good'). Confirmed open Christmas Eve via Yodelin's own posted holiday-hours event (12-8:30pm), with a real 'Cool Kids Meals' menu.", "typeName": "Dining", "emoji": "🍔", "est": 74.72, "notes": "The Cheeseburger $19 + PNW Wild Salmon Rice Bowl $29 (adults) + Tillamook Grilled Cheese $8 + Kids Noodle Soup $7 (kids). Entrees only. Subtotal $63.00 + Leavenworth 8.6% tax ($5.42) + 10% tip on subtotal ($6.30) = $74.72 total.", "menuUrl": "https://order.toasttab.com/online/yodelin-broth-company-633-front-street-lower-level"}, {"start": "11:50 AM", "end": "12:05 PM", "title": "Walk back to the hotel", "typeName": "Walk", "emoji": "🚶"}, {"start": "12:05 PM", "end": "1:30 PM", "title": "Free afternoon / rest at the hotel", "detail": "Many Leavenworth businesses close early or entirely on Christmas Eve. Hampton Inn has an indoor pool if the kids want it — a real option here, not just sitting in the room.", "typeName": "Free Time", "emoji": "⏰"}, {"start": "1:30 PM", "end": "1:45 PM", "title": "Walk to downtown village", "typeName": "Walk", "emoji": "🚶"}, {"start": "1:45 PM", "end": "3:00 PM", "title": "Christmas Eve lights & holiday stroll", "detail": "Leavenworth's holiday lights stay up through the season regardless of the Lighting Festival's early-December weekends — likely quieter today than festival weekends. Extended browsing time plus hot cocoa along the way, since most shops that are still open today are worth lingering in before an early close.", "typeName": "Sightseeing", "emoji": "📸", "est": 23.72, "notes": "Hot cocoa for the family while strolling. Subtotal $20.00 + Leavenworth 8.6% tax ($1.72) + 10% tip ($2.00) = $23.72 total."}, {"start": "3:00 PM", "end": "3:15 PM", "title": "Walk back to the hotel", "typeName": "Walk", "emoji": "🚶"}, {"start": "3:15 PM", "end": "4:35 PM", "title": "Free time / rest before dinner", "detail": "South (the new Christmas Eve dinner pick) is downtown and walkable, so no resort drive needed -- this is just breathing room before the holiday dinner.", "typeName": "Free Time", "emoji": "⏰"}, {"start": "4:35 PM", "end": "4:45 PM", "title": "Walk to South", "typeName": "Walk", "emoji": "🚶"}, {"start": "4:45 PM", "end": "6:00 PM", "title": "Dinner — South, 913 Front St (Christmas Eve)", "detail": "Mexican/Latin -- tacos, enchiladas, burritos. Moved here from Day 3 (Mon dinner) specifically so it's not stacked two days after Cactus (Tex-Mex, Seattle Day 1) -- and it happens to be one of the few Leavenworth restaurants with standard regular hours (11am-9pm) year-round, a safer Christmas Eve bet than most. Confirmed open regular hours; call (509) 888-4328 to reconfirm no holiday-hours change. Dedicated kids menu. Slightly longer seating for a Christmas Eve dinner.", "typeName": "Dining", "emoji": "🍔", "est": 72.02, "notes": "Mission Burrito $19 + Chicken Poblano Enchiladas $20 (adults) + Kid's Quesadilla $9 + Kid's Chicken Tacos $8 (kids). Entrees only. Subtotal $56.00 + Leavenworth 8.6% tax ($4.82) + 20% tip on subtotal ($11.20) = $72.02 total.", "menuUrl": "https://southrestaurants.com/leavenworth/"}, {"start": "6:00 PM", "end": "6:10 PM", "title": "Walk back to the hotel", "typeName": "Walk", "emoji": "🚶"}, {"start": "6:10 PM", "end": "7:30 PM", "title": "Christmas Eve bedtime routine", "typeName": "Free Time", "emoji": "⏰"}]}, {"date": "Friday, December 25, 2026", "title": "Leavenworth — Christmas Day at Lake Wenatchee State Park", "planned": true, "blocks": [{"start": "7:30 AM", "end": "8:15 AM", "title": "Breakfast — Hampton Inn Leavenworth (included)", "detail": "Christmas morning — a slow, unhurried start before heading out.", "typeName": "Dining", "emoji": "🍔"}, {"start": "8:15 AM", "end": "8:45 AM", "title": "Drive to Lake Wenatchee State Park", "detail": "~20.7 mi / ~30 min via Hwy 2 → SR 207. Road is plowed and open in winter (8 AM-dusk).", "typeName": "Drive", "emoji": "🚗"}, {"start": "8:45 AM", "end": "9:00 AM", "title": "Arrival, display Sno-Park permit", "detail": "A Sno-Park Permit is required here, not the Discover Pass — it was purchased online in advance, since in-person vendors are almost certainly closed on Christmas Day itself. Sleds are already in the car from Der Sportsmann.", "typeName": "Parking", "emoji": "🅿️", "est": 25, "notes": "One-day Sno-Park permit, $25, bought online ahead of time via WA State Parks."}, {"start": "9:00 AM", "end": "9:15 AM", "title": "Walk to the sled hill, unload sleds", "typeName": "Walk", "emoji": "🚶"}, {"start": "9:15 AM", "end": "11:15 AM", "title": "Sledding — groomed 150-ft sled hill", "detail": "A real 2-hour session, not a quick stop — repeat runs, breaks to warm hands by the heated warming hut. Dropped snowshoeing from the plan; sledding is the morning's actual anchor now.", "typeName": "Excursion", "emoji": "👞"}, {"start": "11:15 AM", "end": "11:25 AM", "title": "Pack up sleds & catch breath", "detail": "Real wrap-up time after 2 hours of active sledding -- gather sleds, warm hands, regroup before the next stop. Not built into the walk block.", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "11:25 AM", "end": "11:55 AM", "title": "Lake Wenatchee shoreline walk & viewpoint", "detail": "Short, flat walk along the lakeshore — no gear needed, just a look at the lake and the Cascades behind it before heading back.", "typeName": "Sightseeing", "emoji": "📸"}, {"start": "11:55 AM", "end": "12:15 PM", "title": "Changeover — warm up & dry off", "detail": "Heated bathrooms/warming hut on-site — dedicated block before the drive back, not squeezed into it.", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "12:15 PM", "end": "12:45 PM", "title": "Drive back to Leavenworth", "typeName": "Drive", "emoji": "🚗"}, {"start": "12:45 PM", "end": "12:55 PM", "title": "Walk to Yodelin Broth Co.", "typeName": "Walk", "emoji": "🚶"}, {"start": "12:55 PM", "end": "1:45 PM", "title": "Lunch — Yodelin Broth Co. & Beer Garden", "detail": "Second Yodelin visit of the trip, deliberately -- it's the only Leavenworth restaurant with directly-confirmed holiday hours on BOTH Christmas Eve and Christmas Day (posted event hours, not just an assumption), and unlike the previous Kristall's repeats, it's a well-reviewed spot (731 Yelp reviews) with a real, varied kids menu. Different order than the Christmas Eve visit to keep it from feeling identical.", "typeName": "Dining", "emoji": "🍔", "est": 59.3, "notes": "The Cheeseburger $19 + Enchantments Salad $18 (adults) + Mini Rice Bowl $5 + Tillamook Grilled Cheese $8 (kids). Entrees only. Subtotal $50.00 + Leavenworth 8.6% tax ($4.30) + 10% tip on subtotal ($5.00) = $59.30 total.", "menuUrl": "https://order.toasttab.com/online/yodelin-broth-company-633-front-street-lower-level"}, {"start": "1:45 PM", "end": "1:55 PM", "title": "Walk back to the hotel", "typeName": "Walk", "emoji": "🚶"}, {"start": "1:55 PM", "end": "4:00 PM", "title": "Free afternoon / rest at the hotel", "detail": "Almost everything in Leavenworth is closed on Christmas Day itself — a genuinely unstructured stretch, not padding. Hampton Inn's pool is an option, along with opening any small travel gifts.", "typeName": "Free Time", "emoji": "⏰"}, {"start": "4:00 PM", "end": "4:15 PM", "title": "Drive to Icicle Village Resort", "detail": "505 Hwy 2.", "typeName": "Drive", "emoji": "🚗"}, {"start": "4:15 PM", "end": "4:30 PM", "title": "Arrival, check reservation", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "4:30 PM", "end": "6:00 PM", "title": "\"Christmas Dinner in the Hills\" — JJ Hills Fresh Grill, Icicle Village Resort", "detail": "Official resort Christmas Day dinner event, 3-7:30 PM window, with a dedicated children's menu — the most solid verified Christmas Day dinner option in town.", "typeName": "Dining", "emoji": "🍔", "est": 151.75, "notes": "Event pricing listed as $9-45/person for 2025/26 without an itemized adult/kids split. Last fully itemized year (2022) was $35 adult / $14 kids 6-10 — used 2 adults @ ~$45 + 2 kids @ ~$14 = ~$118 as an estimate. Reservations required — call (509) 548-5807 to confirm current per-person pricing. Subtotal $118.00 + Leavenworth 8.6% tax ($10.15) + 20% tip on subtotal ($23.60) = $151.75 total.", "menuUrl": "https://www.iciclevillage.com/leavenworth-restaurants-jj-hills/menu/"}, {"start": "6:00 PM", "end": "6:15 PM", "title": "Drive back to the hotel", "typeName": "Drive", "emoji": "🚗"}, {"start": "6:15 PM", "end": "7:15 PM", "title": "Bedtime routine", "typeName": "Free Time", "emoji": "⏰"}]}, {"date": "Saturday, December 26, 2026", "title": "Leavenworth → Seattle (SeaTac)", "planned": true, "blocks": [{"start": "7:30 AM", "end": "8:15 AM", "title": "Breakfast — Hampton Inn Leavenworth (included)", "typeName": "Dining", "emoji": "🍔"}, {"start": "8:15 AM", "end": "9:00 AM", "title": "Pack up & check out — Hampton Inn Leavenworth", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "9:00 AM", "end": "9:15 AM", "title": "Walk to downtown Leavenworth", "typeName": "Walk", "emoji": "🚶"}, {"start": "9:15 AM", "end": "10:25 AM", "title": "Final Leavenworth village stroll", "detail": "Last gift-shop browsing and Gingerbread Factory stop before leaving town.", "typeName": "Shopping", "emoji": "🛍️"}, {"start": "10:25 AM", "end": "10:40 AM", "title": "Walk to München Haus", "typeName": "Walk", "emoji": "🚶"}, {"start": "10:40 AM", "end": "11:25 AM", "title": "Lunch — München Haus", "detail": "Second visit, deliberately — order-counter service means no wait right before a mountain-pass drive, which matters more today than menu variety.", "typeName": "Dining", "emoji": "🍔", "est": 41.22, "notes": "Helga's Giant Kelbassi $10.75 + Hans' Jalapeño & Cheddar $10.50 (adults) + 2x Organic Beef Dog $6.75 (kids). Entrees only. Subtotal $34.75 + Leavenworth 8.6% tax ($2.99) + 10% tip on subtotal ($3.48) = $41.22 total.", "menuUrl": "https://www.munchenhaus.com/assets/pdf/Menu.pdf"}, {"start": "11:25 AM", "end": "11:40 AM", "title": "Walk back to the hotel, load the car", "typeName": "Walk", "emoji": "🚶", "detail": "Back to the hotel lot where the Rogue's been parked since Monday."}, {"start": "11:40 AM", "end": "1:10 PM", "title": "Drive — Leavenworth to Monroe/Sultan area", "detail": "Via US-2 over Stevens Pass, ~1.5h.", "typeName": "Drive", "emoji": "🚗"}, {"start": "1:10 PM", "end": "1:25 PM", "title": "Rest stop", "typeName": "Logistics", "emoji": "⏱️", "est": 10}, {"start": "1:25 PM", "end": "2:25 PM", "title": "Drive — continue toward SeaTac", "detail": "~1h.", "typeName": "Drive", "emoji": "🚗"}, {"start": "2:25 PM", "end": "2:40 PM", "title": "Drive to Courtyard by Marriott Seattle SeaTac Airport", "detail": "Straight to the hotel — the Rogue isn't returned until tomorrow morning, so there's no separate rental-return stop today.", "typeName": "Drive", "emoji": "🚗"}, {"start": "2:40 PM", "end": "3:00 PM", "title": "Park & check in — Courtyard by Marriott Seattle SeaTac Airport", "detail": "1 night before tomorrow's early flight. Confirmed reservation, room 1: 9LF3MBNPLF -- 2 Queen Beds, 19031 International Boulevard. The confirmation doesn't list a check-in time, so treat standard Courtyard check-in (typically 3 PM) as the safer assumption if arriving earlier than planned.", "typeName": "Hotel", "emoji": "🏨", "points": "24000", "program": "Marriott Bonvoy", "notes": "24,000 Bonvoy points for the night (confirmed, matches the reservation exactly). No cash portion charged -- fully covered by points. Free cancellation until 5:59 PM hotel time on Dec 24, 2026 if plans change. Confirm self-parking availability/cost at check-in -- car stays in the hotel lot overnight ahead of tomorrow's 5 AM Turo drop-off.", "conf": "9LF3MBNPLF", "address": "19031 International Blvd, Seattle, WA", "nights": "1 night (Sat–Sun)", "roomType": "2 Queen Beds", "cancelBy": "Free cancel until 5:59 PM Dec 24, 2026", "flag": ""}, {"start": "3:00 PM", "end": "4:00 PM", "title": "Rest & settle in at the hotel", "typeName": "Free Time", "emoji": "⏰"}, {"start": "4:00 PM", "end": "4:45 PM", "title": "Dinner — The Bistro, Courtyard by Marriott (on-site)", "detail": "Early dinner tonight, on-site — tomorrow's 5 AM car drop-off means an early bedtime, so dinner moves up rather than the usual 5-6 PM window. Staying off the flatbread items given the family's pizza aversion.", "typeName": "Dining", "emoji": "🍔", "est": 72.24, "notes": "Full dinner menu/pricing not published online — flagged as an estimate, confirm hours (Bistro dinner service is typically 5-10 PM, worth confirming it's open this early) and current menu on site. Subtotal $60.00 + SeaTac 10.4% tax ($6.24) + 10% tip on subtotal ($6.00) = $72.24 total."}, {"start": "4:45 PM", "end": "5:00 PM", "title": "Back to the room", "typeName": "Walk", "emoji": "🚶"}, {"start": "5:00 PM", "end": "6:00 PM", "title": "Bedtime routine / wind down", "detail": "An earlier-than-usual bedtime tonight — tomorrow starts with a 4 AM wake-up ahead of the 5 AM Turo drop-off.", "typeName": "Free Time", "emoji": "⏰"}]}, {"date": "Sunday, December 27, 2026", "title": "Seattle → Miami", "planned": true, "blocks": [{"start": "4:00 AM", "end": "4:40 AM", "title": "Wake, get ready", "detail": "Bags packed the night before — a genuinely early start to hit the 5 AM car drop-off.", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "4:40 AM", "end": "4:45 AM", "title": "Check out — Courtyard by Marriott Seattle SeaTac Airport", "detail": "Mobile/express checkout.", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "4:45 AM", "end": "5:00 AM", "title": "Drive to the Turo drop-off location", "detail": "Same meeting spot as pickup — confirm the exact address and whether the host meets in person at this hour or uses a self-return/lockbox process.", "typeName": "Drive", "emoji": "🚗"}, {"start": "5:00 AM", "end": "5:15 AM", "title": "Drop off the Turo — 2024 Nissan Rogue", "detail": "Walk-around, confirm no damage, hand back keys (or lockbox, per host instructions).", "typeName": "Rental Car", "emoji": "🚗", "notes": "Cost already covered by the $572 total paid at pickup on Day 1 — no separate charge here unless the host flags damage or a late return."}, {"start": "5:15 AM", "end": "5:30 AM", "title": "Wait for / ride shuttle back to SEA terminal", "detail": "Same shuttle system as the pickup, ~5-8 min ride.", "typeName": "Transportation", "emoji": "🚌"}, {"start": "5:30 AM", "end": "5:40 AM", "title": "Walk to check-in counter", "typeName": "Walk", "emoji": "🚶"}, {"start": "5:40 AM", "end": "6:25 AM", "title": "Check bags, TSA security", "detail": "Domestic, family of 4 — budgeting a full 45 minutes, though lines are typically short this early.", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "6:25 AM", "end": "6:35 AM", "title": "Walk to the gate area", "typeName": "Walk", "emoji": "🚶"}, {"start": "6:35 AM", "end": "7:25 AM", "title": "Breakfast — SEA terminal (near gate)", "detail": "A real sit-down breakfast, not just standing around — the 5 AM drop-off leaves genuine time for this before boarding.", "typeName": "Dining", "emoji": "🍔", "est": 48.16, "notes": "Subtotal $40.00 + SeaTac 10.4% tax ($4.16) + 10% tip on subtotal ($4.00) = $48.16 total."}, {"start": "7:25 AM", "end": "7:55 AM", "title": "Wait at the gate", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "7:55 AM", "end": "8:25 AM", "title": "Boarding", "typeName": "Logistics", "emoji": "⏱️"}, {"start": "8:25 AM", "end": "5:27 PM", "title": "Delta Air Lines DL 506 - Nonstop - 6h2m", "detail": "SEA -> MIA, 4 passengers. CONFIRMED -- confirmation G4VYUR, Delta Main cabin. SEATING ISSUE: current seat map has Roque Corona, Jennifer Borges, and Roque Luis Corona together in row 27 (A/B/C), but Chloe Corona is alone across the aisle at 27D, next to an unrelated passenger in 27F with only the middle seat 27E (currently open) between them. Worth grabbing 27E now so a family member sits next to her for the 6-hour flight, or calling Delta to rearrange.", "typeName": "Flight", "emoji": "✈️", "program": "Delta SkyMiles", "points": "157200", "notes": "Booked and confirmed (confirmation G4VYUR, ticket numbers 0062447589301-304). Actual charge: 157,200 SkyMiles (39,300/passenger) + $22.40 cash ($5.60/passenger security fee), paid on the Visa ending 6730. This corrects the earlier cart estimate of 164,800 miles -- the actual charge came in 7,600 points lower than that estimate.", "conf": "G4VYUR", "paid": 22.4, "route": "SEA → MIA", "flightNo": "Delta 506", "cabin": "Delta Main", "seats": "Roque 27A · Jenny 27B · Roque Luis 27C · Chloe 27D (alone across the aisle)", "flag": "Chloe is seated alone at 27D, next to a stranger in 27F. Grab open seat 27E, or call Delta to rearrange."}]}], "packing": {"trackerTitle": "Item tracker", "outfitDays": [], "trackerDays": []}, "supplies": [], "ideas": [{"name": "Still open / TBD", "items": [{"name": "SEA terminal meal on arrival (Day 1)", "note": "depends on AS305's gate/concourse"}, {"name": "Sleigh ride reservation", "note": "Red-Tail Canyon Farm, phone-only booking, (800) 678-4512 — book as soon as dates are locked"}, {"name": "Reindeer Farm reservation", "note": "timed-entry, online only — book by Sept/Oct 2026, holiday tours sell out months out"}, {"name": "JJ Hills Christmas Dinner pricing", "note": "call (509) 548-5807 to confirm current per-person pricing, reservations required"}, {"name": "Sno-Park permit", "note": "must be purchased ONLINE in advance — in-person vendors will likely be closed Christmas Day"}, {"name": "Turo car seats", "note": "confirm with the host whether 2 car seats are included in the $572 booking or need to be brought separately"}, {"name": "Turo pickup/drop-off exact location", "note": "coordinate the specific meeting spot in the Turo app once the host is confirmed — assumed a nearby off-airport lot reached via the common SEA rental-car shuttle"}, {"name": "Colchuck's (formerly Bavarian Bistro & Bar) pricing", "note": "recently rebranded from Bavarian Bistro & Bar, same menu/ownership -- exact entree and kids-item prices not published online, call (509) 548-5074 to confirm before booking"}, {"name": "Visconti's kids menu pricing", "note": "confirmed to have a kids menu (Sirved listing) but exact kids item prices not published -- call (509) 548-1213 to confirm"}, {"name": "Baren Haus kids menu pricing", "note": "kids menu confirmed (chicken strips, pizza sandwiches) but exact prices not published -- call ahead to confirm"}, {"name": "Ludwig's pricing", "note": "menu prices not itemized online (per-person range reported $30-50) -- call (509) 548-6625 to confirm before booking"}, {"name": "South Christmas Eve hours", "note": "posted regular hours are 11am-9pm year-round with no reduced-hours pattern found, but no Christmas-Eve-specific posting like Yodelin's either -- call (509) 888-4328 to reconfirm closer to the trip"}, {"name": "Yodelin Christmas Eve/Day holiday hours (2026)", "note": "confirmed open both days via Yodelin's own posted holiday-hours events, but those postings were from the 2025 season -- reconfirm the 2026 holiday hours repeat closer to December"}]}, {"name": "Also considered", "items": [{"name": "Cashmere / Aplets & Cotlets", "note": "10 min from Leavenworth — optional half-day add-on, not included given the trip is already at 9 days"}, {"name": "Stevens Pass ski resort", "note": "skipped — matches the no-ski-lessons pattern from prior trips unless someone already skis"}, {"name": "Lake Chelan", "note": "recommended against — quiet/off-season in December, not worth the ~1hr detour"}, {"name": "Downtown Leavenworth outdoor ice rink", "note": "unreliable — the marketed rink appears to still be a proposed, not-yet-built project as of Sept 2025 city council records; not built into the plan"}]}], "alternatives": null}</script>
+</body>
+</html>

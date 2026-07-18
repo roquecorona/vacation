@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trip planners</title>
+<style>
+  html,body{margin:0;height:100%;background:#f4f5f3;color:#1b2629;font-family:'Schibsted Grotesk',-apple-system,sans-serif}
+  main{max-width:640px;margin:0 auto;padding:56px 24px}
+  h1{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin:0 0 8px}
+  p.sub{color:#647579;font-size:14px;margin:0 0 32px}
+  a.trip{display:block;background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:18px 20px;margin-bottom:12px;text-decoration:none;color:inherit}
+  a.trip:hover{border-color:#16695E}
+  a.trip .name{font-weight:700;font-size:16px}
+  a.trip .dates{font:500 12px 'Spline Sans Mono',monospace;color:#647579;margin-top:4px}
+</style>
+</head>
+<body>
+<main>
+  <h1>Trip planners</h1>
+  <p class="sub">Each link below is a self-contained live planner. Ask Claude for an updated trip.json any time and drop it into the matching folder in this repo to refresh it — no rebuild needed.</p>
+
+  <a class="trip" href="./leavenworth-winter-2026/">
+    <div class="name">Leavenworth Winter 2026</div>
+    <div class="dates">Dec 19–27, 2026 · Miami → Seattle → Leavenworth → Seattle → Miami</div>
+  </a>
+
+  <!-- Add a new trip: create a folder named like the one above, copy index.html + -->
+  <!-- support.js into it unchanged, add its trip.json, then add one more <a class="trip"> -->
+  <!-- block here. Claude will hand you all of this pre-built when a new trip is ready. -->
+</main>
+</body>
+</html>
