@@ -24,6 +24,9 @@ body{margin:0;background:#eef0ed;overflow-x:hidden}
 /* template's own inline style as var(--x-mobile, desktop-fallback). That works */
 /* regardless of how the runtime re-serializes the rest of the style object, because */
 /* var() substitution happens in the browser's CSS engine, not in the template. */
+/* Navigation on mobile is a real off-canvas drawer (the desktop sidebar itself */
+/* becomes a fixed, slide-in panel), triggered from a sticky top bar -- not a */
+/* squeezed-down copy of the desktop sidebar sitting above the content. */
 @media (max-width: 780px) {
   :root {
     --layout-cols-mobile: 1fr;
@@ -31,9 +34,19 @@ body{margin:0;background:#eef0ed;overflow-x:hidden}
     --layout-h-mobile: auto;
     --layout-minh-mobile: 100vh;
     --layout-of-mobile: visible;
-    --aside-br-mobile: none;
-    --aside-bb-mobile: 1px solid #dfe4e1;
-    --aside-maxh-mobile: 42vh;
+    --topbar-display-mobile: flex;
+    --aside-pos-mobile: fixed;
+    --aside-top-mobile: 0;
+    --aside-bottom-mobile: 0;
+    --aside-w-mobile: 84vw;
+    --aside-maxw-mobile: 320px;
+    --aside-z-mobile: 1000;
+    --aside-shadow-mobile: 0 0 32px rgba(10,16,18,0.35);
+    --aside-closed-tx-mobile: translateX(-100%);
+    --asideclose-display-mobile: flex;
+    --scrim-display-mobile: block;
+    --navrow-pad-mobile: 11px 12px;
+    --navbtn-pad-mobile: 10px 14px;
     --main-ovy-mobile: visible;
     --sec-pad-mobile: 18px 16px 40px;
     --sec-maxw-mobile: 100%;
@@ -43,10 +56,11 @@ body{margin:0;background:#eef0ed;overflow-x:hidden}
     --dayrow-gap-mobile: 6px;
     --present-cols-mobile: 1fr;
     --present-br-mobile: none;
-    --money-cols-mobile: 1fr 58px 58px 66px;
-    --money-gap-mobile: 4px;
-    --points-cols-mobile: 1fr 62px 62px 70px;
-    --points-gap-mobile: 4px;
+    --money-cols-mobile: 1fr 76px 88px;
+    --money-gap-mobile: 8px;
+    --points-cols-mobile: 1fr 80px 92px;
+    --points-gap-mobile: 8px;
+    --tbl-est-display-mobile: none;
     --ovrow-cols-mobile: 44px 1fr auto;
     --ovrow-summary-display-mobile: none;
     --bkcards-cols-mobile: 1fr;
@@ -57,19 +71,37 @@ body{margin:0;background:#eef0ed;overflow-x:hidden}
 </helmet>
 <div style="--accent: {{ accent }}; display:grid;grid-template-columns:var(--layout-cols-mobile, 236px 1fr);grid-template-rows:var(--layout-rows-mobile, none);height:var(--layout-h-mobile, 100%);min-height:var(--layout-minh-mobile, 760px);overflow:var(--layout-of-mobile, hidden);background:#f4f5f3;color:#1b2629;font-family:'Schibsted Grotesk',sans-serif">
 
-  <aside data-screen-label="Sidebar" style="background:#eceeea;border-right:var(--aside-br-mobile, 1px solid #dfe4e1);border-bottom:var(--aside-bb-mobile, none);max-height:var(--aside-maxh-mobile, none);display:flex;flex-direction:column;min-height:0">
-    <div onClick="{{ goOverview }}" style="cursor:pointer;padding:20px 18px 14px">
-      <div style="font:800 19px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ title }}</div>
-      <div style="font:500 11px 'Spline Sans Mono',monospace;color:#647579;margin-top:4px">{{ dates }}</div>
+  <div data-screen-label="Mobile top bar" style="display:var(--topbar-display-mobile, none);align-items:center;gap:10px;padding:10px 14px;background:#eceeea;border-bottom:1px solid #dfe4e1;position:sticky;top:0;z-index:500">
+    <button onClick="{{ toggleMobileNav }}" aria-label="Open menu" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;width:40px;height:40px;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">&#9776;</button>
+    <div style="min-width:0;flex:1">
+      <div style="font:800 15px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ title }}</div>
+      <div style="font:500 10.5px 'Spline Sans Mono',monospace;color:#647579;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ topbarSubLabel }}</div>
+    </div>
+    <sc-if value="{{ hasToday }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ todayGo }}" aria-label="Jump to today" style="cursor:pointer;background:var(--accent, #16695E);color:#ffffff;border:none;border-radius:8px;width:40px;height:40px;font-size:15px;display:flex;align-items:center;justify-content:center;flex:none">&#128205;</button>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ mobileNavOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ toggleMobileNav }}" style="display:var(--scrim-display-mobile, none);position:fixed;inset:0;background:rgba(10,16,18,0.45);z-index:900"></div>
+  </sc-if>
+
+  <aside data-screen-label="Sidebar" style="background:#eceeea;border-right:1px solid #dfe4e1;display:flex;flex-direction:column;min-height:0;position:var(--aside-pos-mobile, static);top:var(--aside-top-mobile, auto);bottom:var(--aside-bottom-mobile, auto);left:0;width:var(--aside-w-mobile, auto);max-width:var(--aside-maxw-mobile, none);z-index:var(--aside-z-mobile, auto);box-shadow:var(--aside-shadow-mobile, none);transform:{{ asideTransform }};transition:transform 0.28s cubic-bezier(0.4,0,0.2,1)">
+    <div style="display:flex;align-items:flex-start;gap:10px;padding:20px 18px 14px">
+      <div onClick="{{ goOverview }}" style="cursor:pointer;flex:1;min-width:0">
+        <div style="font:800 19px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ title }}</div>
+        <div style="font:500 11px 'Spline Sans Mono',monospace;color:#647579;margin-top:4px">{{ dates }}</div>
+      </div>
+      <button onClick="{{ toggleMobileNav }}" aria-label="Close menu" style="display:var(--asideclose-display-mobile, none);cursor:pointer;background:none;border:1px solid #dfe4e1;border-radius:8px;width:32px;height:32px;flex:none;align-items:center;justify-content:center;font-size:14px;color:#647579">&#10005;</button>
     </div>
     <sc-if value="{{ hasToday }}" hint-placeholder-val="{{ false }}">
       <div onClick="{{ todayGo }}" style="cursor:pointer;margin:0 18px 14px;padding:8px 12px;border-radius:8px;background:var(--accent, #16695E);color:#ffffff;font:700 12px 'Schibsted Grotesk',sans-serif;text-align:center" style-hover="opacity:0.9">📍 Jump to today</div>
     </sc-if>
     <div style="flex:1;overflow-y:auto;padding-bottom:12px">
-      <div onClick="{{ goOverview }}" style="cursor:pointer;margin:0 10px;padding:8px 10px;border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ ovBg }};color:{{ ovFg }}" style-hover="background:#e1e5e0">Trip</div>
+      <div onClick="{{ goOverview }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 8px 10px);border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ ovBg }};color:{{ ovFg }}" style-hover="background:#e1e5e0">Trip</div>
       <div style="margin:12px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">DAYS</div>
       <sc-for list="{{ navDays }}" as="d" hint-placeholder-count="8">
-        <div onClick="{{ d.go }}" style="cursor:pointer;margin:0 10px;padding:5px 10px;border-radius:8px;display:grid;grid-template-columns:30px 1fr auto auto;gap:7px;align-items:baseline;background:{{ d.bg }};color:{{ d.fg }}" style-hover="background:#e1e5e0">
+        <div onClick="{{ d.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 5px 10px);border-radius:8px;display:grid;grid-template-columns:30px 1fr auto auto;gap:7px;align-items:baseline;background:{{ d.bg }};color:{{ d.fg }}" style-hover="background:#e1e5e0">
           <span style="font:600 11px 'Spline Sans Mono',monospace;opacity:0.75">{{ d.short }}</span>
           <span style="font:500 12.5px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ d.title }}</span>
           <sc-if value="{{ d.isToday }}" hint-placeholder-val="{{ false }}"><span style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E)">TODAY</span></sc-if>
@@ -81,7 +113,7 @@ body{margin:0;background:#eef0ed;overflow-x:hidden}
       </sc-if>
       <div style="margin:14px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">LENSES</div>
       <sc-for list="{{ lenses }}" as="l" hint-placeholder-count="6">
-        <div onClick="{{ l.go }}" style="cursor:pointer;margin:0 10px;padding:7px 10px;border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ l.bg }};color:{{ l.fg }}" style-hover="background:#e1e5e0">{{ l.label }}</div>
+        <div onClick="{{ l.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 7px 10px);border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ l.bg }};color:{{ l.fg }}" style-hover="background:#e1e5e0">{{ l.label }}</div>
       </sc-for>
     </div>
     <div style="padding:12px 18px;border-top:1px solid #dfe4e1;font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d;line-height:1.6">Viewer only.
@@ -140,8 +172,8 @@ Edits happen in chat with Claude.</div>
           <span style="font:500 12px 'Spline Sans Mono',monospace;color:#647579">{{ dayDate }}</span>
           <sc-if value="{{ dayPlanned }}" hint-placeholder-val="{{ false }}"><span style="font:600 10px 'Spline Sans Mono',monospace;color:#257a5a">✅ PLANNED</span></sc-if>
           <span style="flex:1"></span>
-          <button onClick="{{ dayPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">←</button>
-          <button onClick="{{ dayNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">→</button>
+          <button onClick="{{ dayPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ dayNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">→</button>
         </div>
         <h1 style="margin:10px 0 4px;font:800 27px/1.1 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;text-wrap:balance;font-size:var(--h1-27-mobile, 27px)">{{ dayTitle }}</h1>
         <div style="font:500 12px 'Spline Sans Mono',monospace;color:#647579;margin-bottom:10px">{{ dayMeta }}</div>
@@ -229,8 +261,8 @@ Edits happen in chat with Claude.</div>
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
           <h1 style="margin:0;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Present the trip</h1>
           <span style="flex:1"></span>
-          <button onClick="{{ presentPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">←</button>
-          <button onClick="{{ presentNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">→</button>
+          <button onClick="{{ presentPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ presentNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">→</button>
         </div>
         <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:18px">A visual, day-by-day walkthrough — real photos and a real map per day. Needs an internet connection for the map tiles and photos.</div>
 
@@ -322,19 +354,19 @@ Edits happen in chat with Claude.</div>
         <sc-if value="{{ hasMoney }}" hint-placeholder-val="{{ true }}">
           <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
             <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
-              <span>CATEGORY</span><span style="text-align:right">PLANNED</span><span style="text-align:right">PAID</span><span style="text-align:right">TOTAL</span>
+              <span>CATEGORY</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">PAID</span><span style="text-align:right">TOTAL</span>
             </div>
             <sc-for list="{{ moneyRows }}" as="r" hint-placeholder-count="10">
               <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
                 <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.emoji }}&nbsp;&nbsp;{{ r.name }}</span>
-                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f">{{ r.est }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.est }}</span>
                 <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.paid }}</span>
                 <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
               </div>
             </sc-for>
             <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
               <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
-              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f">{{ moneyTotEst }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ moneyTotEst }}</span>
               <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ moneyTotPaid }}</span>
               <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ moneyTotAll }}</span>
             </div>
@@ -353,19 +385,19 @@ Edits happen in chat with Claude.</div>
         <sc-if value="{{ hasPoints }}" hint-placeholder-val="{{ true }}">
           <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
             <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
-              <span>PROGRAM</span><span style="text-align:right">PLANNED</span><span style="text-align:right">USED</span><span style="text-align:right">TOTAL</span>
+              <span>PROGRAM</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">USED</span><span style="text-align:right">TOTAL</span>
             </div>
             <sc-for list="{{ pointRows }}" as="r" hint-placeholder-count="4">
               <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
                 <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.name }}</span>
-                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f">{{ r.planned }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.planned }}</span>
                 <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.used }}</span>
                 <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
               </div>
             </sc-for>
             <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
               <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
-              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f">{{ ptsTotPlanned }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ ptsTotPlanned }}</span>
               <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ ptsTotUsed }}</span>
               <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ ptsTotAll }}</span>
             </div>
@@ -688,7 +720,7 @@ const PRESENT_DIRECTIONS = {
 };
 
 class Component extends DCLogic {
-  state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, bkFilter: 'All', packFilter: 'ALL', ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {} };
+  state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, bkFilter: 'All', packFilter: 'ALL', ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {}, mobileNavOpen: false };
 
   componentDidMount() {
     this.loadTripData();
@@ -879,7 +911,9 @@ class Component extends DCLogic {
 
   fp(n) { return n ? n.toLocaleString('en-US') : '—'; }
 
-  go(view, dayN) { this.setState(dayN ? { view, dayN } : { view }); }
+  go(view, dayN) { this.setState(dayN ? { view, dayN, mobileNavOpen: false } : { view, mobileNavOpen: false }); }
+
+  toggleMobileNav() { this.setState(s => ({ mobileNavOpen: !s.mobileNavOpen })); }
 
   // Pre-trip checklist persistence — localStorage only (this file may be opened
   // locally or hosted on GitHub Pages; either way it's just this browser's checkbox
@@ -943,6 +977,10 @@ class Component extends DCLogic {
       supplyGroups: [], noLists: false,
       ideaGroups: [], noIdeas: false,
       checklistItems: [], noChecklist: false, checklistDone: 0, checklistTotal: 0,
+      mobileNavOpen: this.state.mobileNavOpen,
+      toggleMobileNav: () => this.toggleMobileNav(),
+      asideTransform: this.state.mobileNavOpen ? 'translateX(0)' : 'var(--aside-closed-tx-mobile, translateX(0))',
+      topbarSubLabel: '',
       hasAlt: false, altTitle: '', altText: '',
       altOpen: this.state.altOpen, altChev: this.state.altOpen ? '−' : '+ show',
       toggleAlt: () => this.setState(s => ({ altOpen: !s.altOpen })),
@@ -952,6 +990,8 @@ class Component extends DCLogic {
 
     base.title = T.meta.title;
     base.dates = T.meta.dates;
+    const VIEW_LABELS = { overview: 'Trip overview', present: 'Present the trip', money: 'Money', points: 'Points', bookings: 'Bookings', packing: 'Outfits & packing', lists: 'Lists', ideas: 'Ideas & staging', checklist: 'Pre-trip checklist' };
+    base.topbarSubLabel = VIEW_LABELS[v] || '';
     const tl = [];
     if (T.meta.totals.paid) tl.push(this.fm(T.meta.totals.paid) + ' paid');
     if (T.meta.totals.est) tl.push(this.fm(T.meta.totals.est) + ' planned');
@@ -997,6 +1037,7 @@ class Component extends DCLogic {
     if (v === 'day' && T.days.length) {
       const d = T.days[Math.min(this.state.dayN, T.days.length) - 1];
       base.isDay = true; base.isOverview = false;
+      base.topbarSubLabel = d.short + ' · ' + (d.title || 'Untitled day');
       base.dayDate = d.date;
       base.dayTitle = d.title || 'Untitled day';
       base.dayPlanned = d.planned;
