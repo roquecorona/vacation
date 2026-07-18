@@ -56,12 +56,13 @@
         {
           "start": "11:55 AM",
           "end": "12:30 PM",
-          "title": "Meal — SEA terminal (restaurant TBD)",
-          "detail": "Eating airside before baggage claim so there's no need for a separate lunch stop after reaching the car. Exact restaurant depends on AS305's arrival gate/concourse — pick once the gate is assigned closer to the trip.",
+          "title": "Lunch — Lil Woody's, SEA Airport (N Gates)",
+          "detail": "Order-at-counter burgers & shakes near Gate N8 in the North Satellite -- Alaska's home concourse at SEA, and where AS305 has recently been arriving (e.g. Gate N6). Eating airside before baggage claim so there's no separate lunch stop after reaching the car. Quick-casual format fits the ~35-minute window; walk from a nearby N-gate is a few minutes at most.",
           "typeName": "Dining",
           "emoji": "🍔",
-          "est": 60.2,
-          "notes": "Subtotal $50.00 + SeaTac 10.4% tax ($5.20) + 10% tip on subtotal ($5.00) = $60.20 total."
+          "est": 40.94,
+          "notes": "Estimate: 2 signature burgers ($11 each, e.g. Big Woody) + 2 kids meals ($6 each, e.g. plain Lil Woody or chicken strips & fries) = $34.00 subtotal, + SeaTac 10.4% tax ($3.54) + 10% tip on subtotal ($3.40) = $40.94 total. Drinks/shakes/fries not included. Priced from Lil Woody's published menu (their neighborhood locations) -- the SEA airport location's own posted pricing wasn't itemized online, and airport quick-service concessions commonly run somewhat higher, so treat this as a floor rather than exact.",
+          "menuUrl": "https://www.lilwoodys.com/_files/ugd/2ab10d_b3ebf4dede1546c781ba75fa25f2a365.pdf"
         },
         {
           "start": "12:30 PM",
@@ -1378,10 +1379,6 @@
     {
       "name": "Still open / TBD",
       "items": [
-        {
-          "name": "SEA terminal meal on arrival (Day 1)",
-          "note": "depends on AS305's gate/concourse"
-        },
         {
           "name": "Sleigh ride reservation",
           "note": "Red-Tail Canyon Farm, phone-only booking, (800) 678-4512 — book as soon as dates are locked"
