@@ -14,59 +14,50 @@
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Spline+Sans+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 html,body{height:100%}
-body{margin:0;background:#eef0ed}
+body{margin:0;background:#eef0ed;overflow-x:hidden}
 
 /* --- Mobile layout (<=780px) --- */
-/* Inline styles are used throughout this template, so overrides here target */
-/* them by attribute-selector + !important (the one reliable way to beat an */
-/* inline style without touching the template's sc-for/sc-if bindings). */
+/* Inline styles are compiled into React style OBJECTS by this template's runtime */
+/* (see support.js), so plain attribute-selector overrides like div[style*="..."] */
+/* never match the rendered DOM -- they silently do nothing. Every responsive change */
+/* below instead flows through a CSS custom property referenced directly inside the */
+/* template's own inline style as var(--x-mobile, desktop-fallback). That works */
+/* regardless of how the runtime re-serializes the rest of the style object, because */
+/* var() substitution happens in the browser's CSS engine, not in the template. */
 @media (max-width: 780px) {
-  div[style*="grid-template-columns:236px 1fr"] {
-    grid-template-columns: 1fr !important;
-    grid-template-rows: auto 1fr !important;
-    min-height: 100vh !important;
-    height: auto !important;
-    overflow: visible !important;
+  :root {
+    --layout-cols-mobile: 1fr;
+    --layout-rows-mobile: auto 1fr;
+    --layout-h-mobile: auto;
+    --layout-minh-mobile: 100vh;
+    --layout-of-mobile: visible;
+    --aside-br-mobile: none;
+    --aside-bb-mobile: 1px solid #dfe4e1;
+    --aside-maxh-mobile: 42vh;
+    --main-ovy-mobile: visible;
+    --sec-pad-mobile: 18px 16px 40px;
+    --sec-maxw-mobile: 100%;
+    --h1-34-mobile: 25px;
+    --h1-27-mobile: 21px;
+    --dayrow-cols-mobile: 60px 22px 1fr;
+    --dayrow-gap-mobile: 6px;
+    --present-cols-mobile: 1fr;
+    --present-br-mobile: none;
+    --money-cols-mobile: 1fr 58px 58px 66px;
+    --money-gap-mobile: 4px;
+    --points-cols-mobile: 1fr 62px 62px 70px;
+    --points-gap-mobile: 4px;
+    --ovrow-cols-mobile: 44px 1fr auto;
+    --ovrow-summary-display-mobile: none;
+    --bkcards-cols-mobile: 1fr;
+    --packslot-cols-mobile: 92px 1fr;
   }
-  aside[style*="border-right:1px solid #dfe4e1"] {
-    border-right: none !important;
-    border-bottom: 1px solid #dfe4e1 !important;
-    max-height: 42vh !important;
-  }
-  main[style*="overflow-y:auto"] { overflow-y: visible !important; }
-
-  section[style*="padding:34px 44px 48px"],
-  section[style*="padding:30px 44px 56px"] {
-    padding: 18px 16px 40px !important;
-    max-width: 100% !important;
-  }
-
-  h1[style*="font:800 34px"] { font-size: 25px !important; }
-  h1[style*="font:800 27px"] { font-size: 21px !important; }
-
-  /* Day view: narrower time column so the row fits without horizontal scroll */
-  div[style*="grid-template-columns:88px 30px 1fr"] {
-    grid-template-columns: 60px 22px 1fr !important;
-    gap: 6px !important;
-  }
-
-  /* Present view: stack the map under the highlights instead of side-by-side */
-  div[style*="grid-template-columns:1fr 360px"] { grid-template-columns: 1fr !important; }
-  div[style*="border-right:1px solid #eef0ed;border-top:1px solid #eef0ed"] { border-right: none !important; }
-
-  /* Money / points tables: narrower numeric columns so nothing wraps or clips */
-  div[style*="grid-template-columns:1fr 90px 90px 100px"] { grid-template-columns: 1fr 58px 58px 66px !important; gap: 4px !important; }
-  div[style*="grid-template-columns:1fr 100px 100px 110px"] { grid-template-columns: 1fr 62px 62px 70px !important; gap: 4px !important; }
-
-  /* Overview day rows: drop the summary column, it's the first thing that crowds out */
-  div[style*="grid-template-columns:52px 1fr auto auto"] { grid-template-columns: 44px 1fr auto !important; }
-  div[style*="grid-template-columns:52px 1fr auto auto"] span[style*="color:#8b9a9d"] { display: none !important; }
 }
 </style>
 </helmet>
-<div style="--accent: {{ accent }}; display:grid;grid-template-columns:236px 1fr;height:100%;min-height:760px;background:#f4f5f3;color:#1b2629;font-family:'Schibsted Grotesk',sans-serif;overflow:hidden">
+<div style="--accent: {{ accent }}; display:grid;grid-template-columns:var(--layout-cols-mobile, 236px 1fr);grid-template-rows:var(--layout-rows-mobile, none);height:var(--layout-h-mobile, 100%);min-height:var(--layout-minh-mobile, 760px);overflow:var(--layout-of-mobile, hidden);background:#f4f5f3;color:#1b2629;font-family:'Schibsted Grotesk',sans-serif">
 
-  <aside data-screen-label="Sidebar" style="background:#eceeea;border-right:1px solid #dfe4e1;display:flex;flex-direction:column;min-height:0">
+  <aside data-screen-label="Sidebar" style="background:#eceeea;border-right:var(--aside-br-mobile, 1px solid #dfe4e1);border-bottom:var(--aside-bb-mobile, none);max-height:var(--aside-maxh-mobile, none);display:flex;flex-direction:column;min-height:0">
     <div onClick="{{ goOverview }}" style="cursor:pointer;padding:20px 18px 14px">
       <div style="font:800 19px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ title }}</div>
       <div style="font:500 11px 'Spline Sans Mono',monospace;color:#647579;margin-top:4px">{{ dates }}</div>
@@ -97,11 +88,11 @@ body{margin:0;background:#eef0ed}
 Edits happen in chat with Claude.</div>
   </aside>
 
-  <main style="overflow-y:auto;min-width:0">
+  <main style="overflow-y:var(--main-ovy-mobile, auto);min-width:0">
 
     <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
-      <section data-screen-label="Trip overview" style="padding:34px 44px 48px;max-width:900px">
-        <h1 style="margin:0;font:800 34px/1.05 'Schibsted Grotesk',sans-serif;letter-spacing:-0.8px">{{ title }}</h1>
+      <section data-screen-label="Trip overview" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 900px)">
+        <h1 style="margin:0;font:800 34px/1.05 'Schibsted Grotesk',sans-serif;letter-spacing:-0.8px;font-size:var(--h1-34-mobile, 34px)">{{ title }}</h1>
         <div style="font:500 13px 'Spline Sans Mono',monospace;color:#647579;margin-top:8px">{{ subLine }}</div>
 
         <sc-if value="{{ hasRoute }}" hint-placeholder-val="{{ true }}">
@@ -132,10 +123,10 @@ Edits happen in chat with Claude.</div>
 
         <div style="margin-top:28px;display:grid;gap:6px">
           <sc-for list="{{ obDays }}" as="d" hint-placeholder-count="10">
-            <div onClick="{{ d.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:11px 16px;display:grid;grid-template-columns:52px 1fr auto auto;gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+            <div onClick="{{ d.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:11px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
               <span style="font:600 12px 'Spline Sans Mono',monospace;color:#647579">{{ d.dow }} {{ d.short }}</span>
               <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ d.title }}<sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;margin-left:8px">✅</span></sc-if></span>
-              <span style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ d.summary }}</span>
+              <span style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;display:var(--ovrow-summary-display-mobile, inline)">{{ d.summary }}</span>
               <span style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;min-width:56px;text-align:right">{{ d.money }}</span>
             </div>
           </sc-for>
@@ -144,7 +135,7 @@ Edits happen in chat with Claude.</div>
     </sc-if>
 
     <sc-if value="{{ isDay }}" hint-placeholder-val="{{ false }}">
-      <section data-screen-label="Day view" style="padding:30px 44px 56px;max-width:820px">
+      <section data-screen-label="Day view" style="padding:var(--sec-pad-mobile, 30px 44px 56px);max-width:var(--sec-maxw-mobile, 820px)">
         <div style="display:flex;align-items:center;gap:10px">
           <span style="font:500 12px 'Spline Sans Mono',monospace;color:#647579">{{ dayDate }}</span>
           <sc-if value="{{ dayPlanned }}" hint-placeholder-val="{{ false }}"><span style="font:600 10px 'Spline Sans Mono',monospace;color:#257a5a">✅ PLANNED</span></sc-if>
@@ -152,7 +143,7 @@ Edits happen in chat with Claude.</div>
           <button onClick="{{ dayPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">←</button>
           <button onClick="{{ dayNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">→</button>
         </div>
-        <h1 style="margin:10px 0 4px;font:800 27px/1.1 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;text-wrap:balance">{{ dayTitle }}</h1>
+        <h1 style="margin:10px 0 4px;font:800 27px/1.1 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;text-wrap:balance;font-size:var(--h1-27-mobile, 27px)">{{ dayTitle }}</h1>
         <div style="font:500 12px 'Spline Sans Mono',monospace;color:#647579;margin-bottom:10px">{{ dayMeta }}</div>
         <sc-if value="{{ hasDayCostChips }}" hint-placeholder-val="{{ false }}">
           <div style="display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap">
@@ -184,7 +175,7 @@ Edits happen in chat with Claude.</div>
               <div style="padding:4px 0 4px 96px;font:400 12px 'Schibsted Grotesk',sans-serif;font-style:italic;color:#8b9a9d">{{ b.title }}</div>
             </sc-if>
             <sc-if value="{{ b.isStop }}" hint-placeholder-val="{{ true }}">
-              <div style="display:grid;grid-template-columns:88px 30px 1fr;gap:8px;padding:10px 10px;margin:0 -10px;border-top:1px solid #e5e9e5;{{ b.nowStyle }}">
+              <div style="display:grid;grid-template-columns:var(--dayrow-cols-mobile, 88px 30px 1fr);gap:var(--dayrow-gap-mobile, 8px);padding:10px 10px;margin:0 -10px;border-top:1px solid #e5e9e5;{{ b.nowStyle }}">
                 <div style="padding-top:1px">
                   <sc-if value="{{ b.isNow }}" hint-placeholder-val="{{ false }}">
                     <div style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E);margin-bottom:2px">● NOW</div>
@@ -234,9 +225,9 @@ Edits happen in chat with Claude.</div>
     </sc-if>
 
     <sc-if value="{{ isPresent }}" hint-placeholder-val="{{ false }}">
-      <section data-screen-label="Present view" style="padding:30px 44px 56px;max-width:980px">
+      <section data-screen-label="Present view" style="padding:var(--sec-pad-mobile, 30px 44px 56px);max-width:var(--sec-maxw-mobile, 980px)">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-          <h1 style="margin:0;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Present the trip</h1>
+          <h1 style="margin:0;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Present the trip</h1>
           <span style="flex:1"></span>
           <button onClick="{{ presentPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">←</button>
           <button onClick="{{ presentNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:5px 12px" style-hover="border-color:var(--accent, #16695E)">→</button>
@@ -271,8 +262,8 @@ Edits happen in chat with Claude.</div>
               </div>
             </sc-if>
 
-            <div style="display:grid;grid-template-columns:1fr 360px;gap:0;margin-top:8px">
-              <div style="padding:18px 26px 24px;border-right:1px solid #eef0ed;border-top:1px solid #eef0ed">
+            <div style="display:grid;grid-template-columns:var(--present-cols-mobile, 1fr 360px);gap:0;margin-top:8px">
+              <div style="padding:18px 26px 24px;border-right:var(--present-br-mobile, 1px solid #eef0ed);border-top:1px solid #eef0ed">
                 <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:10px">HERE'S WHAT WE'RE DOING</div>
                 <sc-for list="{{ presentHighlights }}" as="h" hint-placeholder-count="8">
                   <div style="display:flex;align-items:baseline;gap:10px;padding:7px 0;border-bottom:1px solid #f0f2ef">
@@ -322,26 +313,26 @@ Edits happen in chat with Claude.</div>
     </sc-if>
 
     <sc-if value="{{ isMoney }}" hint-placeholder-val="{{ false }}">
-      <section data-screen-label="Money lens" style="padding:34px 44px 48px;max-width:720px">
-        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Money</h1>
+      <section data-screen-label="Money lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 720px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Money</h1>
         <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Every dollar lives on a timeline block. This is just the rollup.</div>
         <sc-if value="{{ noMoney }}" hint-placeholder-val="{{ false }}">
           <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No costs recorded yet. Estimates and receipts land here as the timeline fills in.</div>
         </sc-if>
         <sc-if value="{{ hasMoney }}" hint-placeholder-val="{{ true }}">
           <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
-            <div style="display:grid;grid-template-columns:1fr 90px 90px 100px;gap:10px;padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
               <span>CATEGORY</span><span style="text-align:right">PLANNED</span><span style="text-align:right">PAID</span><span style="text-align:right">TOTAL</span>
             </div>
             <sc-for list="{{ moneyRows }}" as="r" hint-placeholder-count="10">
-              <div style="display:grid;grid-template-columns:1fr 90px 90px 100px;gap:10px;padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+              <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
                 <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.emoji }}&nbsp;&nbsp;{{ r.name }}</span>
                 <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f">{{ r.est }}</span>
                 <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.paid }}</span>
                 <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
               </div>
             </sc-for>
-            <div style="display:grid;grid-template-columns:1fr 90px 90px 100px;gap:10px;padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
               <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
               <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f">{{ moneyTotEst }}</span>
               <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ moneyTotPaid }}</span>
@@ -353,26 +344,26 @@ Edits happen in chat with Claude.</div>
     </sc-if>
 
     <sc-if value="{{ isPoints }}" hint-placeholder-val="{{ false }}">
-      <section data-screen-label="Points lens" style="padding:34px 44px 48px;max-width:720px">
-        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Points</h1>
+      <section data-screen-label="Points lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 720px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Points</h1>
         <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Award burn by program. Planned = on the timeline, not yet confirmed.</div>
         <sc-if value="{{ noPoints }}" hint-placeholder-val="{{ false }}">
           <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No award bookings yet.</div>
         </sc-if>
         <sc-if value="{{ hasPoints }}" hint-placeholder-val="{{ true }}">
           <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
-            <div style="display:grid;grid-template-columns:1fr 100px 100px 110px;gap:10px;padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
               <span>PROGRAM</span><span style="text-align:right">PLANNED</span><span style="text-align:right">USED</span><span style="text-align:right">TOTAL</span>
             </div>
             <sc-for list="{{ pointRows }}" as="r" hint-placeholder-count="4">
-              <div style="display:grid;grid-template-columns:1fr 100px 100px 110px;gap:10px;padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+              <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
                 <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.name }}</span>
                 <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f">{{ r.planned }}</span>
                 <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.used }}</span>
                 <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
               </div>
             </sc-for>
-            <div style="display:grid;grid-template-columns:1fr 100px 100px 110px;gap:10px;padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
               <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
               <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f">{{ ptsTotPlanned }}</span>
               <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ ptsTotUsed }}</span>
@@ -381,7 +372,7 @@ Edits happen in chat with Claude.</div>
           </div>
           <div style="margin-top:18px;display:grid;gap:6px">
             <sc-for list="{{ pointItems }}" as="p" hint-placeholder-count="6">
-              <div onClick="{{ p.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:10px 16px;display:grid;grid-template-columns:52px 1fr auto auto;gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+              <div onClick="{{ p.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:10px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
                 <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ p.dayLabel }}</span>
                 <span style="font:500 13px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.emoji }}&nbsp;&nbsp;{{ p.title }}</span>
                 <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:{{ p.statusColor }}">{{ p.status }}</span>
@@ -394,8 +385,8 @@ Edits happen in chat with Claude.</div>
     </sc-if>
 
     <sc-if value="{{ isBookings }}" hint-placeholder-val="{{ false }}">
-      <section data-screen-label="Bookings lens" style="padding:34px 44px 48px;max-width:940px">
-        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Bookings</h1>
+      <section data-screen-label="Bookings lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 940px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Bookings</h1>
         <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Every block that carries a confirmation or points, gathered in one place.</div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
           <sc-for list="{{ bkChips }}" as="c" hint-placeholder-count="5">
@@ -405,7 +396,7 @@ Edits happen in chat with Claude.</div>
         <sc-for list="{{ bookingGroups }}" as="g" hint-placeholder-count="4">
           <div>
             <div style="margin:20px 0 10px;font:600 10px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">{{ g.name }}</div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(390px,1fr));gap:10px">
+            <div style="display:grid;grid-template-columns:var(--bkcards-cols-mobile, repeat(auto-fill,minmax(390px,1fr)));gap:10px">
               <sc-for list="{{ g.items }}" as="bk" hint-placeholder-count="3">
                 <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;overflow:hidden">
                   <div style="padding:14px 16px 12px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:9px">
@@ -465,8 +456,8 @@ Edits happen in chat with Claude.</div>
     </sc-if>
 
     <sc-if value="{{ isPacking }}" hint-placeholder-val="{{ false }}">
-      <section data-screen-label="Packing lens" style="padding:34px 44px 48px;max-width:980px">
-        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Outfits &amp; packing</h1>
+      <section data-screen-label="Packing lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 980px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Outfits &amp; packing</h1>
         <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Per person, per day, per slot — with the rewear system intact.</div>
         <sc-if value="{{ noPacking }}" hint-placeholder-val="{{ false }}">
           <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing here yet. Ask Claude to draft outfit plans or packing quantities from the itinerary.</div>
@@ -506,7 +497,7 @@ Edits happen in chat with Claude.</div>
               <span style="font:500 10.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ od.dayTitle }}</span>
             </div>
             <sc-for list="{{ od.slots }}" as="s" hint-placeholder-count="2">
-              <div style="display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid #f0f2ef">
+              <div style="display:grid;grid-template-columns:var(--packslot-cols-mobile, 130px 1fr);border-bottom:1px solid #f0f2ef">
                 <div style="padding:10px 14px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:#647579">{{ s.name }}</div>
                 <div style="display:flex;align-items:stretch">
                   <sc-for list="{{ s.people }}" as="p" hint-placeholder-count="3">
@@ -544,8 +535,8 @@ Edits happen in chat with Claude.</div>
     </sc-if>
 
     <sc-if value="{{ isLists }}" hint-placeholder-val="{{ false }}">
-      <section data-screen-label="Lists lens" style="padding:34px 44px 48px;max-width:940px">
-        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Lists</h1>
+      <section data-screen-label="Lists lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 940px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Lists</h1>
         <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Supplies to bring, and things to buy once there.</div>
         <sc-if value="{{ noLists }}" hint-placeholder-val="{{ false }}">
           <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No lists yet. Tell Claude what to track — supplies, groceries, pre-trip errands.</div>
@@ -567,8 +558,8 @@ Edits happen in chat with Claude.</div>
     </sc-if>
 
     <sc-if value="{{ isChecklist }}" hint-placeholder-val="{{ false }}">
-      <section data-screen-label="Checklist lens" style="padding:34px 44px 48px;max-width:760px">
-        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Pre-trip checklist</h1>
+      <section data-screen-label="Checklist lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 760px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Pre-trip checklist</h1>
         <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:6px">Everything still open before you go — reservations to lock in, prices to confirm by phone. Checks are saved in this browser.</div>
         <div style="font:600 11px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);margin-bottom:20px">{{ checklistDone }} / {{ checklistTotal }} done</div>
         <sc-if value="{{ noChecklist }}" hint-placeholder-val="{{ false }}">
@@ -589,8 +580,8 @@ Edits happen in chat with Claude.</div>
     </sc-if>
 
         <sc-if value="{{ isIdeas }}" hint-placeholder-val="{{ false }}">
-      <section data-screen-label="Ideas lens" style="padding:34px 44px 48px;max-width:840px">
-        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px">Ideas &amp; staging</h1>
+      <section data-screen-label="Ideas lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 840px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Ideas &amp; staging</h1>
         <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Candidates that haven't earned a spot on the timeline yet.</div>
         <sc-if value="{{ noIdeas }}" hint-placeholder-val="{{ false }}">
           <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Empty. Anything you're considering — restaurants, beaches, tours — parks here until it earns a day.</div>
