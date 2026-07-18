@@ -98,11 +98,13 @@
           "start": "1:25 PM",
           "end": "1:55 PM",
           "title": "Turo pickup — 2024 Nissan Rogue",
-          "detail": "Meet the host, walk-around inspection, paperwork, load luggage. Budgeting longer than a counter-rental pickup since it's an in-person host meet, not a kiosk.",
+          "detail": "Meet the host (Indrawati — 5.0★, All-Star Host, 287 trips), walk-around inspection, paperwork, load luggage, install the 2 child seats. Budgeting longer than a counter-rental pickup since it's an in-person host meet, not a kiosk.",
           "typeName": "Rental Car",
           "emoji": "🚗",
-          "est": 572,
-          "notes": "$572 total for the full rental (Dec 19 pickup - Dec 27 drop-off, ~8 days). Confirm with the host in the Turo app whether 2 car seats are included or need to be brought separately — unlike an agency rental, car seat availability is host-dependent and isn't guaranteed the way it was with the original Enterprise plan."
+          "notes": "$561.31 total, confirmed (Reservation 59466401): 8 days @ $61.25/day less 15% week-long discount, + 2 child safety seats ($10/day each, included/confirmed), + $10 trip fee + $54.81 tax. 1,200 mi included (150 mi/day); $0.35/mi over. No payment due today — auto-charges to VISA ...9612 on Dec 12, 2026. Vehicle confirmed AWD with snow tires (host-listed feature). Snow chains are NOT included in this booking — available as a $35/trip add-on through the host, or bring/rent your own; worth deciding before the Dec 21 pass drive given how snowy this week runs historically.",
+          "paid": 561.31,
+          "conf": "59466401",
+          "flag": "Return is Dec 26 by 4:00 PM at SEA — the itinerary previously assumed a Dec 27 morning drop-off; Day 7/8 have been restructured to match."
         },
         {
           "start": "1:55 PM",
@@ -1198,59 +1200,75 @@
         {
           "start": "2:25 PM",
           "end": "2:40 PM",
-          "title": "Drive to Courtyard by Marriott Seattle SeaTac Airport",
-          "detail": "Straight to the hotel — the Rogue isn't returned until tomorrow morning, so there's no separate rental-return stop today.",
+          "title": "Drive to the Turo drop-off location",
+          "detail": "Same SEA-area meeting point used for pickup on Dec 19 (confirm exact address with Indrawati via the Turo app closer to the date).",
           "typeName": "Drive",
           "emoji": "🚗"
         },
         {
           "start": "2:40 PM",
           "end": "3:00 PM",
-          "title": "Park & check in — Courtyard by Marriott Seattle SeaTac Airport",
-          "detail": "1 night before tomorrow's early flight. Confirmed reservation, room 1: 9LF3MBNPLF -- 2 Queen Beds, 19031 International Boulevard. The confirmation doesn't list a check-in time, so treat standard Courtyard check-in (typically 3 PM) as the safer assumption if arriving earlier than planned.",
-          "typeName": "Hotel",
-          "emoji": "🏨",
-          "points": "24000",
-          "program": "Marriott Bonvoy",
-          "notes": "24,000 Bonvoy points for the night (confirmed, matches the reservation exactly). No cash portion charged -- fully covered by points. Free cancellation until 5:59 PM hotel time on Dec 24, 2026 if plans change. Confirm self-parking availability/cost at check-in -- car stays in the hotel lot overnight ahead of tomorrow's 5 AM Turo drop-off.",
-          "conf": "9LF3MBNPLF",
-          "address": "19031 International Blvd, Seattle, WA",
-          "nights": "1 night (Sat–Sun)",
-          "roomType": "2 Queen Beds",
-          "cancelBy": "Free cancel until 5:59 PM Dec 24, 2026",
-          "flag": ""
+          "title": "Drop off the Turo — 2024 Nissan Rogue",
+          "detail": "Unload luggage and the 2 child seats, walk-around with the host, close out the trip in the app. Deadline is 4:00 PM — this builds in a full hour of buffer for Saturday-before-Christmas traffic near SeaTac.",
+          "typeName": "Rental Car",
+          "emoji": "🚗",
+          "flag": "Hard deadline: 4:00 PM. Don't let village/lunch stops upstream run long today."
         },
         {
           "start": "3:00 PM",
-          "end": "4:00 PM",
+          "end": "3:15 PM",
+          "title": "Wait for / ride shuttle to Courtyard by Marriott Seattle SeaTac Airport",
+          "detail": "Same rental-car shuttle system, in reverse — or a short rideshare if the shuttle timing doesn't line up. Confirm at check-in whether the hotel also runs its own airport-area shuttle.",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "3:15 PM",
+          "end": "3:30 PM",
+          "title": "Check in — Courtyard by Marriott Seattle SeaTac Airport",
+          "detail": "No car to park this time — just check-in.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "nights": "1 night (Sat)",
+          "conf": "9LF3MBNPLF",
+          "roomType": "2 Queen Beds",
+          "address": "19031 International Blvd, Seattle, WA",
+          "cancelBy": "Free cancel until 5:59 PM Dec 24, 2026",
+          "program": "Marriott Bonvoy",
+          "points": "24000",
+          "notes": "24,000 Bonvoy points for the night (confirmed, matches the reservation exactly). No cash portion charged -- fully covered by points. Free cancellation until 5:59 PM hotel time on Dec 24, 2026 if plans change. Confirm self-parking cost isn't an issue -- there's no car to park tonight, the Turo was already returned this afternoon."
+        },
+        {
+          "start": "3:30 PM",
+          "end": "4:15 PM",
           "title": "Rest & settle in at the hotel",
+          "detail": "Shorter window than usual today since the afternoon went to the Turo return — still enough time to decompress before dinner.",
           "typeName": "Free Time",
           "emoji": "⏰"
         },
         {
-          "start": "4:00 PM",
-          "end": "4:45 PM",
+          "start": "4:15 PM",
+          "end": "5:00 PM",
           "title": "Dinner — The Bistro, Courtyard by Marriott (on-site)",
           "detail": "Early dinner tonight, on-site — tomorrow's 5 AM car drop-off means an early bedtime, so dinner moves up rather than the usual 5-6 PM window. Staying off the flatbread items given the family's pizza aversion.",
           "typeName": "Dining",
           "emoji": "🍔",
-          "est": 72.24,
-          "notes": "Full dinner menu/pricing not published online — flagged as an estimate, confirm hours (Bistro dinner service is typically 5-10 PM, worth confirming it's open this early) and current menu on site. Subtotal $60.00 + SeaTac 10.4% tax ($6.24) + 10% tip on subtotal ($6.00) = $72.24 total."
+          "est": 72.24
         },
         {
-          "start": "4:45 PM",
-          "end": "5:00 PM",
+          "start": "5:00 PM",
+          "end": "5:15 PM",
           "title": "Back to the room",
           "typeName": "Walk",
           "emoji": "🚶"
         },
         {
-          "start": "5:00 PM",
-          "end": "6:00 PM",
+          "start": "5:15 PM",
+          "end": "6:15 PM",
           "title": "Bedtime routine / wind down",
-          "detail": "An earlier-than-usual bedtime tonight — tomorrow starts with a 4 AM wake-up ahead of the 5 AM Turo drop-off.",
-          "typeName": "Free Time",
-          "emoji": "⏰"
+          "detail": "Early night — tomorrow's a 4:45 AM wake-up for the flight home.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
         }
       ]
     },
@@ -1260,71 +1278,53 @@
       "planned": true,
       "blocks": [
         {
-          "start": "4:00 AM",
-          "end": "4:40 AM",
-          "title": "Wake, get ready",
-          "detail": "Bags packed the night before — a genuinely early start to hit the 5 AM car drop-off.",
-          "typeName": "Logistics",
-          "emoji": "⏱️"
-        },
-        {
-          "start": "4:40 AM",
-          "end": "4:45 AM",
-          "title": "Check out — Courtyard by Marriott Seattle SeaTac Airport",
-          "detail": "Mobile/express checkout.",
-          "typeName": "Logistics",
-          "emoji": "⏱️"
-        },
-        {
           "start": "4:45 AM",
-          "end": "5:00 AM",
-          "title": "Drive to the Turo drop-off location",
-          "detail": "Same meeting spot as pickup — confirm the exact address and whether the host meets in person at this hour or uses a self-return/lockbox process.",
-          "typeName": "Drive",
-          "emoji": "🚗"
+          "end": "5:25 AM",
+          "title": "Wake, get ready",
+          "detail": "45 minutes later than originally planned — no Turo drop-off to do this morning, that happened yesterday afternoon.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
         },
         {
-          "start": "5:00 AM",
-          "end": "5:15 AM",
-          "title": "Drop off the Turo — 2024 Nissan Rogue",
-          "detail": "Walk-around, confirm no damage, hand back keys (or lockbox, per host instructions).",
-          "typeName": "Rental Car",
-          "emoji": "🚗",
-          "notes": "Cost already covered by the $572 total paid at pickup on Day 1 — no separate charge here unless the host flags damage or a late return."
-        },
-        {
-          "start": "5:15 AM",
+          "start": "5:25 AM",
           "end": "5:30 AM",
-          "title": "Wait for / ride shuttle back to SEA terminal",
-          "detail": "Same shuttle system as the pickup, ~5-8 min ride.",
-          "typeName": "Transportation",
-          "emoji": "🚌"
+          "title": "Check out — Courtyard by Marriott Seattle SeaTac Airport",
+          "typeName": "Hotel",
+          "emoji": "🏨"
         },
         {
           "start": "5:30 AM",
           "end": "5:40 AM",
+          "title": "Ride hotel shuttle to SEA terminal",
+          "detail": "Confirm the shuttle's early-morning schedule at check-in on Dec 26 — fall back to a quick rideshare if it doesn't run this early.",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "5:40 AM",
+          "end": "5:50 AM",
           "title": "Walk to check-in counter",
           "typeName": "Walk",
           "emoji": "🚶"
         },
         {
-          "start": "5:40 AM",
-          "end": "6:25 AM",
+          "start": "5:50 AM",
+          "end": "6:35 AM",
           "title": "Check bags, TSA security",
           "detail": "Domestic, family of 4 — budgeting a full 45 minutes, though lines are typically short this early.",
           "typeName": "Logistics",
           "emoji": "⏱️"
         },
         {
-          "start": "6:25 AM",
-          "end": "6:35 AM",
+          "start": "6:35 AM",
+          "end": "6:45 AM",
           "title": "Walk to the gate area",
           "typeName": "Walk",
           "emoji": "🚶"
         },
         {
-          "start": "6:35 AM",
-          "end": "7:25 AM",
+          "start": "6:45 AM",
+          "end": "7:35 AM",
           "title": "Breakfast — SEA terminal (near gate)",
           "detail": "A real sit-down breakfast, not just standing around — the 5 AM drop-off leaves genuine time for this before boarding.",
           "typeName": "Dining",
@@ -1333,11 +1333,12 @@
           "notes": "Subtotal $40.00 + SeaTac 10.4% tax ($4.16) + 10% tip on subtotal ($4.00) = $48.16 total."
         },
         {
-          "start": "7:25 AM",
+          "start": "7:35 AM",
           "end": "7:55 AM",
           "title": "Wait at the gate",
           "typeName": "Logistics",
-          "emoji": "⏱️"
+          "emoji": "⏱️",
+          "detail": "Trimmed to a 20-min buffer (from 30) to absorb the later start -- boarding/departure times are fixed by the airline."
         },
         {
           "start": "7:55 AM",
@@ -1398,12 +1399,8 @@
           "note": "must be purchased ONLINE in advance — in-person vendors will likely be closed Christmas Day"
         },
         {
-          "name": "Turo car seats",
-          "note": "confirm with the host whether 2 car seats are included in the $572 booking or need to be brought separately"
-        },
-        {
           "name": "Turo pickup/drop-off exact location",
-          "note": "coordinate the specific meeting spot in the Turo app once the host is confirmed — assumed a nearby off-airport lot reached via the common SEA rental-car shuttle"
+          "note": "Reservation 59466401 lists pickup/return generically as 'SEA Seattle-Tacoma Intl Airport' -- host Indrawati will send the exact meeting address via the Turo app closer to the date, for both the Dec 19 pickup AND the Dec 26 return (now 4:00 PM, not Dec 27)."
         },
         {
           "name": "Colchuck's (formerly Bavarian Bistro & Bar) pricing",
@@ -1428,6 +1425,14 @@
         {
           "name": "Yodelin Christmas Eve/Day holiday hours (2026)",
           "note": "confirmed open both days via Yodelin's own posted holiday-hours events, but those postings were from the 2025 season -- reconfirm the 2026 holiday hours repeat closer to December"
+        },
+        {
+          "name": "Turo snow chains",
+          "note": "Not included in reservation 59466401 (AWD + snow tires only). Available as a $35/trip add-on through the host, or bring/rent your own. Dec 21 falls in Stevens Pass's historically snowiest week -- worth deciding before the trip rather than at the pass."
+        },
+        {
+          "name": "Courtyard SeaTac early-morning shuttle",
+          "note": "Confirm the hotel's ~5:30 AM airport shuttle schedule at check-in on Dec 26 -- there's no car for the Dec 27 airport run anymore since the Turo is returned the afternoon before. Have a rideshare fallback in mind if the shuttle doesn't run that early."
         }
       ]
     },
