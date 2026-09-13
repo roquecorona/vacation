@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Spline+Sans+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{height:100%}
+body{margin:0;background:#eef0ed;overflow-x:hidden}
+
+/* --- Mobile layout (<=780px) --- */
+/* Inline styles are compiled into React style OBJECTS by this template's runtime */
+/* (see support.js), so plain attribute-selector overrides like div[style*="..."] */
+/* never match the rendered DOM -- they silently do nothing. Every responsive change */
+/* below instead flows through a CSS custom property referenced directly inside the */
+/* template's own inline style as var(--x-mobile, desktop-fallback). That works */
+/* regardless of how the runtime re-serializes the rest of the style object, because */
+/* var() substitution happens in the browser's CSS engine, not in the template. */
+/* Navigation on mobile is a real off-canvas drawer (the desktop sidebar itself */
+/* becomes a fixed, slide-in panel), triggered from a sticky top bar -- not a */
+/* squeezed-down copy of the desktop sidebar sitting above the content. */
+@media (max-width: 780px) {
+  :root {
+    --layout-cols-mobile: 1fr;
+    --layout-rows-mobile: auto 1fr;
+    --layout-h-mobile: auto;
+    --layout-minh-mobile: 100vh;
+    --layout-of-mobile: visible;
+    --topbar-display-mobile: flex;
+    --aside-pos-mobile: fixed;
+    --aside-top-mobile: 0;
+    --aside-bottom-mobile: 0;
+    --aside-w-mobile: 84vw;
+    --aside-maxw-mobile: 320px;
+    --aside-z-mobile: 1000;
+    --aside-shadow-mobile: 0 0 32px rgba(10,16,18,0.35);
+    --aside-closed-tx-mobile: translateX(-100%);
+    --asideclose-display-mobile: flex;
+    --scrim-display-mobile: block;
+    --navrow-pad-mobile: 11px 12px;
+    --navbtn-pad-mobile: 10px 14px;
+    --main-ovy-mobile: visible;
+    --sec-pad-mobile: 18px 16px 40px;
+    --sec-maxw-mobile: 100%;
+    --h1-34-mobile: 25px;
+    --h1-27-mobile: 21px;
+    --dayrow-cols-mobile: 60px 22px 1fr;
+    --dayrow-gap-mobile: 6px;
+    --present-cols-mobile: 1fr;
+    --present-br-mobile: none;
+    --money-cols-mobile: 1fr 76px 88px;
+    --money-gap-mobile: 8px;
+    --points-cols-mobile: 1fr 80px 92px;
+    --points-gap-mobile: 8px;
+    --tbl-est-display-mobile: none;
+    --ovrow-cols-mobile: 44px 1fr auto;
+    --ovrow-summary-display-mobile: none;
+    --bkcards-cols-mobile: 1fr;
+    --packslot-cols-mobile: 92px 1fr;
+  }
+}
+</style>
+</helmet>
+<div style="--accent: {{ accent }}; display:grid;grid-template-columns:var(--layout-cols-mobile, 236px 1fr);grid-template-rows:var(--layout-rows-mobile, none);height:var(--layout-h-mobile, 100%);min-height:var(--layout-minh-mobile, 760px);overflow:var(--layout-of-mobile, hidden);background:#f4f5f3;color:#1b2629;font-family:'Schibsted Grotesk',sans-serif">
+
+  <div data-screen-label="Mobile top bar" style="display:var(--topbar-display-mobile, none);align-items:center;gap:10px;padding:10px 14px;background:#eceeea;border-bottom:1px solid #dfe4e1;position:sticky;top:0;z-index:500">
+    <button onClick="{{ toggleMobileNav }}" aria-label="Open menu" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;width:40px;height:40px;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">&#9776;</button>
+    <div style="min-width:0;flex:1">
+      <div style="font:800 15px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ title }}</div>
+      <div style="font:500 10.5px 'Spline Sans Mono',monospace;color:#647579;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ topbarSubLabel }}</div>
+    </div>
+    <sc-if value="{{ hasToday }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ todayGo }}" aria-label="Jump to today" style="cursor:pointer;background:var(--accent, #16695E);color:#ffffff;border:none;border-radius:8px;width:40px;height:40px;font-size:15px;display:flex;align-items:center;justify-content:center;flex:none">&#128205;</button>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ mobileNavOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ toggleMobileNav }}" style="display:var(--scrim-display-mobile, none);position:fixed;inset:0;background:rgba(10,16,18,0.45);z-index:900"></div>
+  </sc-if>
+
+  <aside data-screen-label="Sidebar" style="background:#eceeea;border-right:1px solid #dfe4e1;display:flex;flex-direction:column;min-height:0;position:var(--aside-pos-mobile, static);top:var(--aside-top-mobile, auto);bottom:var(--aside-bottom-mobile, auto);left:0;width:var(--aside-w-mobile, auto);max-width:var(--aside-maxw-mobile, none);z-index:var(--aside-z-mobile, auto);box-shadow:var(--aside-shadow-mobile, none);transform:{{ asideTransform }};transition:transform 0.28s cubic-bezier(0.4,0,0.2,1)">
+    <div style="display:flex;align-items:flex-start;gap:10px;padding:20px 18px 14px">
+      <div onClick="{{ goOverview }}" style="cursor:pointer;flex:1;min-width:0">
+        <div style="font:800 19px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ title }}</div>
+        <div style="font:500 11px 'Spline Sans Mono',monospace;color:#647579;margin-top:4px">{{ dates }}</div>
+      </div>
+      <button onClick="{{ toggleMobileNav }}" aria-label="Close menu" style="display:var(--asideclose-display-mobile, none);cursor:pointer;background:none;border:1px solid #dfe4e1;border-radius:8px;width:32px;height:32px;flex:none;align-items:center;justify-content:center;font-size:14px;color:#647579">&#10005;</button>
+    </div>
+    <sc-if value="{{ hasToday }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ todayGo }}" style="cursor:pointer;margin:0 18px 14px;padding:8px 12px;border-radius:8px;background:var(--accent, #16695E);color:#ffffff;font:700 12px 'Schibsted Grotesk',sans-serif;text-align:center" style-hover="opacity:0.9">📍 Jump to today</div>
+    </sc-if>
+    <div style="flex:1;overflow-y:auto;padding-bottom:12px">
+      <div onClick="{{ goOverview }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 8px 10px);border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ ovBg }};color:{{ ovFg }}" style-hover="background:#e1e5e0">Trip</div>
+      <div style="margin:12px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">DAYS</div>
+      <sc-for list="{{ navDays }}" as="d" hint-placeholder-count="8">
+        <div onClick="{{ d.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 5px 10px);border-radius:8px;display:grid;grid-template-columns:30px 1fr auto auto;gap:7px;align-items:baseline;background:{{ d.bg }};color:{{ d.fg }}" style-hover="background:#e1e5e0">
+          <span style="font:600 11px 'Spline Sans Mono',monospace;opacity:0.75">{{ d.short }}</span>
+          <span style="font:500 12.5px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ d.title }}</span>
+          <sc-if value="{{ d.isToday }}" hint-placeholder-val="{{ false }}"><span style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E)">TODAY</span></sc-if>
+          <sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:9px;opacity:0.85">✅</span></sc-if>
+        </div>
+      </sc-for>
+      <sc-if value="{{ noDays }}" hint-placeholder-val="{{ false }}">
+        <div style="margin:0 18px;font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d">None yet</div>
+      </sc-if>
+      <div style="margin:14px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">LENSES</div>
+      <sc-for list="{{ lenses }}" as="l" hint-placeholder-count="6">
+        <div onClick="{{ l.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 7px 10px);border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ l.bg }};color:{{ l.fg }}" style-hover="background:#e1e5e0">{{ l.label }}</div>
+      </sc-for>
+    </div>
+    <div style="padding:12px 18px;border-top:1px solid #dfe4e1;font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d;line-height:1.6">Viewer only.
+Edits happen in chat with Claude.</div>
+  </aside>
+
+  <main style="overflow-y:var(--main-ovy-mobile, auto);min-width:0">
+
+    <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
+      <section data-screen-label="Trip overview" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 900px)">
+        <h1 style="margin:0;font:800 34px/1.05 'Schibsted Grotesk',sans-serif;letter-spacing:-0.8px;font-size:var(--h1-34-mobile, 34px)">{{ title }}</h1>
+        <div style="font:500 13px 'Spline Sans Mono',monospace;color:#647579;margin-top:8px">{{ subLine }}</div>
+
+        <sc-if value="{{ hasRoute }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:26px;background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;overflow-x:auto">
+            <sc-for list="{{ route }}" as="stop" hint-placeholder-count="6">
+              <div style="display:flex;align-items:flex-start;flex:none">
+                <div>
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <span style="width:10px;height:10px;border-radius:50%;background:var(--accent, #16695E);flex:none"></span>
+                    <span style="font:700 14px 'Schibsted Grotesk',sans-serif;white-space:nowrap">{{ stop.name }}</span>
+                  </div>
+                  <div style="font:500 10.5px 'Spline Sans Mono',monospace;color:#647579;margin:4px 0 0 18px;white-space:nowrap">{{ stop.sub }}</div>
+                </div>
+                <sc-if value="{{ stop.conn }}" hint-placeholder-val="{{ true }}">
+                  <div style="width:42px;border-top:2px dotted #b7c2bf;margin:6px 12px 0"></div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ noDays }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:28px;background:#ffffff;border:1px dashed #b7c2bf;border-radius:14px;padding:28px;max-width:520px">
+            <div style="font:700 15px 'Schibsted Grotesk',sans-serif">Nothing on the timeline yet</div>
+            <div style="font:400 13px/1.6 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:6px;text-wrap:pretty">Tell Claude where you're going and when. It will add skeleton days here, then you fill them in together — one conversation at a time.</div>
+          </div>
+        </sc-if>
+
+        <div style="margin-top:28px;display:grid;gap:6px">
+          <sc-for list="{{ obDays }}" as="d" hint-placeholder-count="10">
+            <div onClick="{{ d.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:11px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+              <span style="font:600 12px 'Spline Sans Mono',monospace;color:#647579">{{ d.dow }} {{ d.short }}</span>
+              <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ d.title }}<sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;margin-left:8px">✅</span></sc-if></span>
+              <span style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;display:var(--ovrow-summary-display-mobile, inline)">{{ d.summary }}</span>
+              <span style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;min-width:56px;text-align:right">{{ d.money }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isDay }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Day view" style="padding:var(--sec-pad-mobile, 30px 44px 56px);max-width:var(--sec-maxw-mobile, 820px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font:500 12px 'Spline Sans Mono',monospace;color:#647579">{{ dayDate }}</span>
+          <sc-if value="{{ dayPlanned }}" hint-placeholder-val="{{ false }}"><span style="font:600 10px 'Spline Sans Mono',monospace;color:#257a5a">✅ PLANNED</span></sc-if>
+          <span style="flex:1"></span>
+          <button onClick="{{ dayPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ dayNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">→</button>
+        </div>
+        <h1 style="margin:10px 0 4px;font:800 27px/1.1 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;text-wrap:balance;font-size:var(--h1-27-mobile, 27px)">{{ dayTitle }}</h1>
+        <div style="font:500 12px 'Spline Sans Mono',monospace;color:#647579;margin-bottom:10px">{{ dayMeta }}</div>
+        <sc-if value="{{ hasDayCostChips }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap">
+            <sc-for list="{{ dayCostChips }}" as="cc" hint-placeholder-count="2">
+              <span style="font:600 10.5px 'Spline Sans Mono',monospace;letter-spacing:0.3px;background:{{ cc.bg }};color:{{ cc.fg }};border-radius:999px;padding:5px 11px">{{ cc.label }}</span>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ dayEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d;border-top:1px solid #e5e9e5;padding-top:16px">Nothing scheduled yet — plan this day in chat.</div>
+        </sc-if>
+
+        <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="12">
+          <div>
+            <sc-if value="{{ b.isMove }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:baseline;gap:9px;padding:6px 0 6px 96px;font:500 11.5px 'Spline Sans Mono',monospace;color:#8b9a9d">
+                <span>{{ b.emoji }}</span><span>{{ b.moveLabel }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isReceipt }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:baseline;gap:8px;padding:4px 0 4px 96px">
+                <span style="font:400 12px 'Schibsted Grotesk',sans-serif;color:#647579">{{ b.title }}</span>
+                <span style="flex:1;border-bottom:1px dotted #d3dad6;transform:translateY(-3px)"></span>
+                <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:{{ b.moneyColor }}">{{ b.money }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isNote }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:4px 0 4px 96px;font:400 12px 'Schibsted Grotesk',sans-serif;font-style:italic;color:#8b9a9d">{{ b.title }}</div>
+            </sc-if>
+            <sc-if value="{{ b.isStop }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid;grid-template-columns:var(--dayrow-cols-mobile, 88px 30px 1fr);gap:var(--dayrow-gap-mobile, 8px);padding:10px 10px;margin:0 -10px;border-top:1px solid #e5e9e5;{{ b.nowStyle }}">
+                <div style="padding-top:1px">
+                  <sc-if value="{{ b.isNow }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E);margin-bottom:2px">● NOW</div>
+                  </sc-if>
+                  <div style="font:600 12px 'Spline Sans Mono',monospace;white-space:nowrap">{{ b.timeStart }}</div>
+                  <sc-if value="{{ b.hasTimeEnd }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:600 12px 'Spline Sans Mono',monospace;white-space:nowrap;color:#9aa8aa">{{ b.timeEnd }}</div>
+                  </sc-if>
+                  <div style="font:500 10px 'Spline Sans Mono',monospace;color:#9aa8aa;margin-top:2px">{{ b.durLabel }}</div>
+                </div>
+                <div style="font-size:15px;line-height:1.4;text-align:center">{{ b.emoji }}</div>
+                <div style="min-width:0">
+                  <div style="display:flex;align-items:baseline;gap:10px">
+                    <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ b.title }}</span>
+                    <span style="flex:1"></span>
+                    <sc-if value="{{ b.hasCostTag }}" hint-placeholder-val="{{ false }}">
+                      <span style="flex:none;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:0.3px;background:{{ b.costTagBg }};color:{{ b.costTagFg }};border-radius:999px;padding:2px 8px">{{ b.costTagLabel }}</span>
+                    </sc-if>
+                    <span style="flex:none;font:600 12px 'Spline Sans Mono',monospace;color:{{ b.moneyColor }}">{{ b.money }}</span>
+                  </div>
+                  <sc-if value="{{ b.hasISK }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;margin-top:2px">{{ b.iskLabel }} · {{ b.iskUsd }}</div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasMeta }}" hint-placeholder-val="{{ false }}">
+                    <div onClick="{{ b.toggle }}" style="cursor:{{ b.metaCursor }};font:400 12px/1.55 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:4px;white-space:pre-wrap;max-width:560px;text-wrap:pretty">{{ b.meta }}</div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasBooking }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:inline-flex;align-items:baseline;gap:12px;margin-top:8px;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;padding:7px 12px;flex-wrap:wrap">
+                      <sc-if value="{{ b.hasConf }}" hint-placeholder-val="{{ true }}">
+                        <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">CONF</span>
+                        <span style="font:600 12.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;white-space:pre-wrap">{{ b.conf }}</span>
+                      </sc-if>
+                      <sc-if value="{{ b.hasPts }}" hint-placeholder-val="{{ false }}">
+                        <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ b.ptsLabel }}</span>
+                      </sc-if>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasMenu }}" hint-placeholder-val="{{ false }}">
+                    <a href="{{ b.menuUrl }}" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:6px 11px">View live menu →</a>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPresent }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Present view" style="padding:var(--sec-pad-mobile, 30px 44px 56px);max-width:var(--sec-maxw-mobile, 980px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <h1 style="margin:0;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Present the trip</h1>
+          <span style="flex:1"></span>
+          <button onClick="{{ presentPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ presentNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">→</button>
+        </div>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:18px">A visual, day-by-day walkthrough — real photos and a real map per day. Needs an internet connection for the map tiles and photos.</div>
+
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ presentDayChips }}" as="c" hint-placeholder-count="8">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ presentEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing planned yet — build out a day first, then come back here to present it.</div>
+        </sc-if>
+
+        <sc-if value="{{ presentHasDay }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:16px;overflow:hidden">
+            <div style="padding:22px 26px 4px">
+              <div style="font:500 11.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ presentDate }}</div>
+              <div style="font:800 24px/1.15 'Schibsted Grotesk',sans-serif;color:#1b2629;text-wrap:balance;margin-top:2px">{{ presentTitle }}</div>
+            </div>
+
+            <sc-if value="{{ hasPresentPhotos }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:12px;overflow-x:auto;padding:18px 26px 6px">
+                <sc-for list="{{ presentPhotos }}" as="ph" hint-placeholder-count="3">
+                  <div style="flex:none" onClick="{{ ph.open }}">
+                    <img src="{{ ph.url }}" style="width:100%;height:190px;object-fit:cover;border-radius:12px;display:block;background:#c8d0cb;cursor:zoom-in" style-hover="opacity:0.9" />
+                    <div style="font:400 11.5px/1.4 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:6px;text-wrap:pretty">{{ ph.caption }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <div style="display:grid;grid-template-columns:var(--present-cols-mobile, 1fr 360px);gap:0;margin-top:8px">
+              <div style="padding:18px 26px 24px;border-right:var(--present-br-mobile, 1px solid #eef0ed);border-top:1px solid #eef0ed">
+                <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:10px">HERE'S WHAT WE'RE DOING</div>
+                <sc-for list="{{ presentHighlights }}" as="h" hint-placeholder-count="8">
+                  <div style="display:flex;align-items:baseline;gap:10px;padding:7px 0;border-bottom:1px solid #f0f2ef">
+                    <span style="font-size:15px">{{ h.emoji }}</span>
+                    <span style="font:500 14px 'Schibsted Grotesk',sans-serif;min-width:0">{{ h.title }}</span>
+                  </div>
+                </sc-for>
+                <div style="margin-top:16px;font:600 12px 'Spline Sans Mono',monospace;color:#1b2629">{{ presentCost }}</div>
+              </div>
+              <div style="padding:18px 20px;border-top:1px solid #eef0ed">
+                <iframe src="{{ presentMapSrc }}" style="width:100%;height:240px;border:0;border-radius:12px;display:block" loading="lazy"></iframe>
+                <a href="{{ presentMapsUrl }}" target="_blank" rel="noopener" style="display:block;margin-top:10px;text-align:center;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:8px" style-hover="border-color:var(--accent, #16695E)">Open full day route in Google Maps →</a>
+              </div>
+            </div>
+
+            <sc-if value="{{ hasPresentVideos }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:20px 26px 26px;border-top:1px solid #eef0ed">
+                <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:12px">SEE IT IN ACTION — CLICK TO WATCH ON YOUTUBE</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+                  <sc-for list="{{ presentVideos }}" as="v" hint-placeholder-count="2">
+                    <a href="{{ v.watchUrl }}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+                      <div style="position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000">
+                        <img src="{{ v.thumb }}" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover" />
+                        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center">
+                          <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center">
+                            <div style="width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:16px solid #ffffff;margin-left:4px"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="font:500 12.5px 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:8px">{{ v.title }}</div>
+                    </a>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+              <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;background:rgba(10,16,18,0.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;cursor:zoom-out">
+                <img src="{{ lightboxUrl }}" style="max-width:100%;max-height:80vh;object-fit:contain;border-radius:8px" />
+                <div style="font:500 13px 'Schibsted Grotesk',sans-serif;color:#dfe9e6;margin-top:16px;text-align:center;max-width:600px">{{ lightboxCaption }}</div>
+                <div style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;margin-top:10px">Click anywhere to close</div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isMoney }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Money lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 720px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Money</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Every dollar lives on a timeline block. This is just the rollup.</div>
+        <sc-if value="{{ noMoney }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No costs recorded yet. Estimates and receipts land here as the timeline fills in.</div>
+        </sc-if>
+        <sc-if value="{{ hasMoney }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+              <span>CATEGORY</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">PAID</span><span style="text-align:right">TOTAL</span>
+            </div>
+            <sc-for list="{{ moneyRows }}" as="r" hint-placeholder-count="10">
+              <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+                <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.emoji }}&nbsp;&nbsp;{{ r.name }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.est }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.paid }}</span>
+                <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
+              </div>
+            </sc-for>
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+              <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ moneyTotEst }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ moneyTotPaid }}</span>
+              <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ moneyTotAll }}</span>
+            </div>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPoints }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Points lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 720px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Points</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Award burn by program. Planned = on the timeline, not yet confirmed.</div>
+        <sc-if value="{{ noPoints }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No award bookings yet.</div>
+        </sc-if>
+        <sc-if value="{{ hasPoints }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+              <span>PROGRAM</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">USED</span><span style="text-align:right">TOTAL</span>
+            </div>
+            <sc-for list="{{ pointRows }}" as="r" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+                <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.name }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.planned }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.used }}</span>
+                <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
+              </div>
+            </sc-for>
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+              <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ ptsTotPlanned }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ ptsTotUsed }}</span>
+              <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ ptsTotAll }}</span>
+            </div>
+          </div>
+          <div style="margin-top:18px;display:grid;gap:6px">
+            <sc-for list="{{ pointItems }}" as="p" hint-placeholder-count="6">
+              <div onClick="{{ p.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:10px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+                <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ p.dayLabel }}</span>
+                <span style="font:500 13px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.emoji }}&nbsp;&nbsp;{{ p.title }}</span>
+                <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:{{ p.statusColor }}">{{ p.status }}</span>
+                <span style="font:600 12px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:130px;text-align:right">{{ p.ptsLabel }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isBookings }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Bookings lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 940px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Bookings</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Every block that carries a confirmation or points, gathered in one place.</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+          <sc-for list="{{ bkChips }}" as="c" hint-placeholder-count="5">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <sc-for list="{{ bookingGroups }}" as="g" hint-placeholder-count="4">
+          <div>
+            <div style="margin:20px 0 10px;font:600 10px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">{{ g.name }}</div>
+            <div style="display:grid;grid-template-columns:var(--bkcards-cols-mobile, repeat(auto-fill,minmax(390px,1fr)));gap:10px">
+              <sc-for list="{{ g.items }}" as="bk" hint-placeholder-count="3">
+                <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;overflow:hidden">
+                  <div style="padding:14px 16px 12px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:9px">
+                    <span style="font-size:15px">{{ bk.emoji }}</span>
+                    <span style="font:700 14.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ bk.title }}</span>
+                    <span style="flex:1"></span>
+                    <button onClick="{{ bk.go }}" style="cursor:pointer;flex:none;background:none;border:1px solid #dfe4e1;border-radius:6px;font:600 10px 'Spline Sans Mono',monospace;color:#647579;padding:3px 8px" style-hover="border-color:var(--accent, #16695E);color:var(--accent, #16695E)">{{ bk.dayLabel }} →</button>
+                  </div>
+
+                  <sc-if value="{{ bk.hasFacts }}" hint-placeholder-val="{{ true }}">
+                    <div style="padding:12px 16px;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;border-bottom:1px solid #eef0ed">
+                      <sc-for list="{{ bk.facts }}" as="ft" hint-placeholder-count="4">
+                        <div style="min-width:0">
+                          <div style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d">{{ ft.label }}</div>
+                          <div style="font:500 12.5px 'Schibsted Grotesk',sans-serif;margin-top:2px;text-wrap:pretty">{{ ft.value }}</div>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ bk.hasFlag }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin:12px 16px 0;background:#fdf3e3;border:1px solid #f0dcae;border-radius:8px;padding:9px 12px;display:flex;gap:8px;align-items:flex-start">
+                      <span style="flex:none;font-size:13px">⚠️</span>
+                      <span style="font:500 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#7a5a17;text-wrap:pretty">{{ bk.flag }}</span>
+                    </div>
+                  </sc-if>
+
+                  <div style="padding:12px 16px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+                    <sc-if value="{{ bk.hasConf }}" hint-placeholder-val="{{ true }}">
+                      <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">CONF <b style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;letter-spacing:0.5px;white-space:pre-wrap">{{ bk.conf }}</b></span>
+                    </sc-if>
+                    <sc-if value="{{ bk.noConf }}" hint-placeholder-val="{{ false }}">
+                      <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#96690f">NOT CONFIRMED</span>
+                    </sc-if>
+                    <sc-if value="{{ bk.hasPts }}" hint-placeholder-val="{{ false }}">
+                      <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ bk.ptsLabel }}</span>
+                    </sc-if>
+                    <span style="flex:1"></span>
+                    <span style="font:600 12px 'Spline Sans Mono',monospace;color:{{ bk.moneyColor }}">{{ bk.money }}</span>
+                  </div>
+
+                  <sc-if value="{{ bk.hasNotes }}" hint-placeholder-val="{{ false }}">
+                    <div onClick="{{ bk.toggleNotes }}" style="cursor:pointer;padding:9px 16px;border-top:1px solid #eef0ed;font:600 10.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ bk.notesToggleLabel }}</div>
+                    <sc-if value="{{ bk.notesOpen }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding:0 16px 14px;font:400 11.5px/1.55 'Schibsted Grotesk',sans-serif;color:#647579;white-space:pre-wrap;text-wrap:pretty">{{ bk.notes }}</div>
+                    </sc-if>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <sc-if value="{{ noBookings }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d;margin-top:16px">No bookings yet. When you book something, paste the confirmation into chat and it will land here.</div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPacking }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Packing lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 980px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Outfits &amp; packing</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Per person, per day, per slot — with the rewear system intact.</div>
+        <sc-if value="{{ noPacking }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing here yet. Ask Claude to draft outfit plans or packing quantities from the itinerary.</div>
+        </sc-if>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ packChips }}" as="c" hint-placeholder-count="4">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasRollups }}" hint-placeholder-val="{{ true }}">
+          <div style="margin:0 0 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;align-items:start">
+            <sc-for list="{{ packRollups }}" as="pr" hint-placeholder-count="3">
+              <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px">
+                <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+                  <span style="font:700 12.5px 'Schibsted Grotesk',sans-serif">{{ pr.who }}</span>
+                  <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ pr.totalLabel }}</span>
+                </div>
+                <sc-if value="{{ pr.empty }}" hint-placeholder-val="{{ false }}">
+                  <div style="font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d;text-wrap:pretty">No pack list yet — ask Claude to count one from the outfit plan.</div>
+                </sc-if>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 14px">
+                  <sc-for list="{{ pr.items }}" as="it" hint-placeholder-count="6">
+                    <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
+                      <span style="font:600 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:22px;text-align:right">{{ it.count }}×</span>
+                      <span style="font:400 12px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ it.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-for list="{{ outfitDays }}" as="od" hint-placeholder-count="6">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;margin-bottom:10px;overflow:hidden">
+            <div style="padding:10px 16px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:12px">
+              <span style="font:700 13px 'Schibsted Grotesk',sans-serif">{{ od.date }}</span>
+              <span style="font:500 10.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ od.dayTitle }}</span>
+            </div>
+            <sc-for list="{{ od.slots }}" as="s" hint-placeholder-count="2">
+              <div style="display:grid;grid-template-columns:var(--packslot-cols-mobile, 130px 1fr);border-bottom:1px solid #f0f2ef">
+                <div style="padding:10px 14px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:#647579">{{ s.name }}</div>
+                <div style="display:flex;align-items:stretch">
+                  <sc-for list="{{ s.people }}" as="p" hint-placeholder-count="3">
+                    <div style="flex:1;min-width:0;padding:10px 12px;border-left:1px solid #f0f2ef;font:400 11px/1.5 'Schibsted Grotesk',sans-serif;white-space:pre-wrap"><span style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;display:block;margin-bottom:3px">{{ p.who }}</span>{{ p.text }}</div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ hasTracker }}" hint-placeholder-val="{{ true }}">
+          <h2 style="margin:30px 0 4px;font:700 18px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ trackerTitle }}</h2>
+          <div style="font:400 12px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Item-level, with variation numbers and rewear flags.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px">
+            <sc-for list="{{ trackerDays }}" as="tdy" hint-placeholder-count="6">
+              <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:12px 15px">
+                <div style="font:700 12.5px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">{{ tdy.date }}</div>
+                <sc-for list="{{ tdy.groups }}" as="tg" hint-placeholder-count="2">
+                  <div style="margin-bottom:7px">
+                    <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;margin-bottom:3px">{{ tg.activity }}</div>
+                    <sc-for list="{{ tg.items }}" as="it" hint-placeholder-count="2">
+                      <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
+                        <span style="font:400 11.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ it.label }}</span>
+                        <sc-if value="{{ it.rewear }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:600 8px 'Spline Sans Mono',monospace;letter-spacing:1px;color:var(--accent, #16695E);border:1px solid var(--accent, #16695E);border-radius:4px;padding:1px 4px">REWEAR</span></sc-if>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isLists }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Lists lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 940px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Lists</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Supplies to bring, and things to buy once there.</div>
+        <sc-if value="{{ noLists }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No lists yet. Tell Claude what to track — supplies, groceries, pre-trip errands.</div>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;align-items:start">
+          <sc-for list="{{ supplyGroups }}" as="g" hint-placeholder-count="3">
+            <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+              <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="6">
+                <div style="display:flex;align-items:baseline;gap:8px;padding:3px 0">
+                  <span style="flex:none;width:11px;height:11px;border:1.5px solid #b7c2bf;border-radius:4px;transform:translateY(1px)"></span>
+                  <span style="font:400 12.5px 'Schibsted Grotesk',sans-serif">{{ it }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isChecklist }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Checklist lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 760px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Pre-trip checklist</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:6px">Everything still open before you go — reservations to lock in, prices to confirm by phone. Checks are saved in this browser.</div>
+        <div style="font:600 11px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);margin-bottom:20px">{{ checklistDone }} / {{ checklistTotal }} done</div>
+        <sc-if value="{{ noChecklist }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing open right now — everything's confirmed.</div>
+        </sc-if>
+        <div style="display:grid;gap:8px">
+          <sc-for list="{{ checklistItems }}" as="ci" hint-placeholder-count="10">
+            <div onClick="{{ ci.toggle }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px;display:flex;gap:12px;align-items:flex-start;{{ ci.rowStyle }}" style-hover="border-color:var(--accent, #16695E)">
+              <span style="flex:none;width:19px;height:19px;border:1.5px solid #b7c2bf;border-radius:6px;margin-top:1px;display:flex;align-items:center;justify-content:center;font:700 12px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);background:#f4f5f3">{{ ci.boxChar }}</span>
+              <div style="min-width:0">
+                <div style="font:600 13.5px 'Schibsted Grotesk',sans-serif;text-decoration:{{ ci.strike }};">{{ ci.name }}</div>
+                <div style="font:400 12px/1.5 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:3px;text-wrap:pretty">{{ ci.note }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+        <sc-if value="{{ isIdeas }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Ideas lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 840px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Ideas &amp; staging</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Candidates that haven't earned a spot on the timeline yet.</div>
+        <sc-if value="{{ noIdeas }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Empty. Anything you're considering — restaurants, beaches, tours — parks here until it earns a day.</div>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;align-items:start">
+          <sc-for list="{{ ideaGroups }}" as="g" hint-placeholder-count="2">
+            <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+              <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+                <div style="padding:4px 0;border-bottom:1px solid #f0f2ef;display:flex;gap:10px;align-items:baseline">
+                  <span style="font:400 12.5px 'Schibsted Grotesk',sans-serif">{{ it.name }}</span>
+                  <span style="font:400 11px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">{{ it.note }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasAlt }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:14px;background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+            <div onClick="{{ toggleAlt }}" style="cursor:pointer;display:flex;align-items:baseline;gap:10px">
+              <span style="font:700 13px 'Schibsted Grotesk',sans-serif">{{ altTitle }}</span>
+              <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ altChev }}</span>
+            </div>
+            <sc-if value="{{ altOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="font:400 11.5px/1.6 'Spline Sans Mono',monospace;color:#647579;margin-top:10px;white-space:pre-wrap">{{ altText }}</div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1360,&quot;height&quot;:860},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#16695E&quot;,&quot;#1D5F8A&quot;,&quot;#5B4A8A&quot;,&quot;#37424A&quot;],&quot;default&quot;:&quot;#16695E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;startView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;overview&quot;,&quot;money&quot;,&quot;points&quot;,&quot;bookings&quot;,&quot;packing&quot;,&quot;lists&quot;,&quot;ideas&quot;],&quot;default&quot;:&quot;overview&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+function WIKI(name) { return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(name); }
+
+// Real photos — every photo below is a specific, verified real photo of the actual place,
+// activity, or restaurant (sourced from Wikimedia Commons or the venue's own official
+// website, and visually verified via browser screenshot before inclusion — one earlier
+// candidate for the Sun Voyager sculpture turned out to be a mislabeled Danish Bronze Age
+// artifact and was caught and replaced this way). No stock or generic stand-in photos.
+// Day 1 is an overnight flight with no stop-level photos to show, so it's left empty.
+const PRESENT_GALLERY = {};
+const PRESENT_VIDEOS = {};
+const PRESENT_MAP = {};
+const PRESENT_DIRECTIONS = {};
+
+class Component extends DCLogic {
+  state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, bkFilter: 'All', packFilter: 'ALL', ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {}, mobileNavOpen: false };
+
+  componentDidMount() {
+    this.loadTripData();
+    // Best-effort live ISK→USD rate; silently keep the built-in fallback if this fails
+    // (e.g. no network, or blocked when the file is opened without a server).
+    fetch('https://api.frankfurter.app/latest?from=ISK&to=USD')
+      .then(r => r.json())
+      .then(d => {
+        const rate = d && d.rates && d.rates.USD;
+        if (rate) this.setState({ fx: rate, fxLive: true });
+      })
+      .catch(() => {});
+  }
+
+  // Hosted (http/https): fetch trip.json live, so re-uploading just that one file
+  // updates the page with no rebuild step. Local (file://) or offline: fetch is
+  // blocked by the browser, so fall back to the embedded <script id="trip-data">
+  // copy that Claude keeps in sync on every edit.
+  loadTripData() {
+    const useEmbedded = () => {
+      let raw = {};
+      try {
+        const el = document.getElementById('trip-data');
+        raw = el ? JSON.parse(el.textContent) : {};
+      } catch (e) { raw = {}; }
+      this.finishLoad(raw);
+    };
+    fetch('./trip.json', { cache: 'no-store' })
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error('not ok'))))
+      .then(raw => this.finishLoad(raw))
+      .catch(useEmbedded);
+  }
+
+  finishLoad(raw) {
+    this.T = this.prepare(raw || {});
+    const sv = this.props.startView;
+    const st = { ready: true };
+    const todayN = this.findTodayDayN();
+    this.todayDayN = todayN;
+    if (sv && sv !== 'overview') { st.view = sv; }
+    else if (todayN) { st.view = 'day'; st.dayN = todayN; }
+    st.checked = this.loadChecklist();
+    this.setState(st);
+  }
+
+  // Matches the real current date against the trip's day dates (parsed the same
+  // way as the sidebar's day-of-week/short-date labels). Returns the 1-based day
+  // number if today falls within the trip, otherwise null.
+  findTodayDayN() {
+    if (!this.T || !this.T.days || !this.T.days.length) return null;
+    const now = new Date();
+    const y = now.getFullYear(), m = now.getMonth(), dd = now.getDate();
+    for (const d of this.T.days) {
+      const dt = new Date(d.date);
+      if (!isNaN(dt) && dt.getFullYear() === y && dt.getMonth() === m && dt.getDate() === dd) return d.n;
+    }
+    return null;
+  }
+
+  // Derive everything from a minimal trip.json — Claude only maintains raw facts.
+  prepare(raw) {
+    const T = raw || {};
+    const mins = t => {
+      if (!t) return null;
+      const m = String(t).trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+      if (!m) return null;
+      let h = +m[1] % 12; if (/pm/i.test(m[3])) h += 12;
+      return h * 60 + +m[2];
+    };
+    T.meta = T.meta || {};
+    T.meta.title = T.meta.title || 'New trip';
+    T.meta.dates = T.meta.dates || '';
+    T.meta.route = T.meta.route || [];
+    const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    T.days = (T.days || []).map((d, i) => {
+      const dt = new Date(d.date);
+      const blocks = (d.blocks || []).map((b, j) => {
+        const timed = !!(b.start || b.end);
+        const hasCost = b.paid != null || b.est != null;
+        let kind = b.kind;
+        if (!kind) {
+          if (!timed && hasCost) kind = 'receipt';
+          else if (!timed) kind = 'note';
+          else kind = 'stop';
+        }
+        const sM = mins(b.start), eM = mins(b.end);
+        const ptsN = b.points != null ? parseFloat(String(b.points).replace(/,/g, '')) : NaN;
+        return {
+          ...b,
+          id: 'b' + (i + 1) + '_' + j, kind,
+          sM, eM,
+          start: b.start || '', end: b.end || '',
+          dur: b.dur != null ? b.dur : (sM != null && eM != null && eM > sM ? eM - sM : null),
+          title: b.title || '(untitled)', detail: b.detail || '', notes: b.notes || '',
+          typeName: b.typeName || '', emoji: b.emoji || '',
+          est: b.est != null ? b.est : null, paid: b.paid != null ? b.paid : null,
+          program: b.program || null, points: b.points || null, conf: b.conf || null,
+          pointsN: isNaN(ptsN) ? null : ptsN,
+        };
+      });
+      return {
+        n: i + 1, date: d.date || '', title: d.title || '', planned: !!d.planned,
+        dow: d.dow || (isNaN(dt) ? '' : DOW[dt.getDay()]),
+        short: d.short || (isNaN(dt) ? '' : (dt.getMonth() + 1) + '/' + dt.getDate()),
+        blocks,
+        paid: blocks.reduce((a, b) => a + (b.paid || 0), 0),
+        est: blocks.reduce((a, b) => a + (b.paid == null ? (b.est || 0) : 0), 0),
+        stops: blocks.filter(b => b.kind === 'stop').length,
+        bookings: blocks.filter(b => b.conf || b.program).length,
+      };
+    });
+    const cats = {};
+    for (const d of T.days) for (const b of d.blocks) {
+      if (b.est == null && b.paid == null) continue;
+      const k = (b.typeName || 'Other') + '|' + b.emoji;
+      cats[k] = cats[k] || { est: 0, paid: 0 };
+      if (b.paid != null) cats[k].paid += b.paid; else cats[k].est += b.est;
+    }
+    T.costSummary = Object.entries(cats).map(([k, v]) => {
+      const [name, emoji] = k.split('|');
+      return { name, emoji, est: v.est, paid: v.paid, total: v.est + v.paid };
+    }).sort((a, b) => b.total - a.total);
+    const groupOf = t => t === 'Flight' ? 'Flights' : t === 'Hotel' ? 'Stays' : t === 'Rental Car' ? 'Cars' : 'Activities';
+    T.bookingList = [];
+    for (const d of T.days) for (const b of d.blocks) {
+      if (b.conf || b.program) T.bookingList.push({ ...b, dayN: d.n, dayLabel: (d.dow + ' ' + d.short).trim() || 'D' + d.n, group: groupOf(b.typeName) });
+    }
+    // points by program (used = confirmed, planned = not yet)
+    const progs = {};
+    for (const b of T.bookingList) {
+      if (!b.program) continue;
+      const p = progs[b.program] = progs[b.program] || { planned: 0, used: 0 };
+      if (b.pointsN != null) { if (b.conf) p.used += b.pointsN; else p.planned += b.pointsN; }
+    }
+    T.pointsByProgram = Object.entries(progs).map(([name, v]) => ({ name, ...v, total: v.planned + v.used })).sort((a, b) => b.total - a.total);
+    T.meta.totals = {
+      paid: T.days.reduce((a, d) => a + d.paid, 0),
+      est: T.days.reduce((a, d) => a + d.est, 0),
+      points: T.pointsByProgram.reduce((a, p) => a + p.total, 0),
+    };
+    const P = T.packing || {};
+    T.packing = {
+      outfitDays: (P.outfitDays || []).map(od => ({
+        date: od.date, slots: (od.slots || []).map(s => ({
+          name: s.name,
+          people: s.people || ['roque', 'chloe', 'jenny'].filter(k => k in s).map(k => ({ who: k.toUpperCase(), text: s[k] || '—' })),
+        })),
+      })),
+      trackerDays: P.trackerDays || [],
+      trackerTitle: P.trackerTitle || "Roque's item tracker",
+      packLists: P.packLists || [],
+    };
+    // Auto-derive a pack rollup for the tracker's person when no stored list exists.
+    const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [])[1];
+    if (trackerWho && T.packing.trackerDays.length && !T.packing.packLists.some(pl => pl.who.toUpperCase() === trackerWho.toUpperCase())) {
+      const seen = new Set(); const counts = {};
+      for (const td of T.packing.trackerDays) for (const g of (td.groups || [])) for (const it of (g.items || [])) {
+        const style = it.style || (it.label ? String(it.label).split(' — ')[0] : '');
+        if (!style) continue;
+        const key = it.variation && it.variation !== '#N/A' ? it.variation : (style + '|' + (it.brand || '') + '|' + (it.color || ''));
+        if (seen.has(key)) continue;
+        seen.add(key);
+        counts[style] = (counts[style] || 0) + 1;
+      }
+      const items = Object.entries(counts).map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count);
+      if (items.length) T.packing.packLists.push({ who: trackerWho.toUpperCase(), items, derived: true });
+    }
+    if (Array.isArray(T.ideas)) { /* already groups */ }
+    else if (T.ideas && (T.ideas.oahu || T.ideas.kauai)) {
+      T.ideas = [
+        { name: 'Oahu', items: (T.ideas.oahu || []).map(s => ({ name: s, note: '' })) },
+        { name: 'Kauai — food', items: T.ideas.kauai || [] },
+      ];
+    } else T.ideas = [];
+    T.ideas = T.ideas.map(g => ({ name: g.name, items: (g.items || []).map(it => typeof it === 'string' ? { name: it, note: '' } : { name: it.name, note: it.note || '' }) }));
+    if (!T.alternatives && T.mauiAlternative) {
+      T.alternatives = { title: 'Alternative considered — Maui instead of Oahu', text: T.mauiAlternative.replace(/^"|"$/gm, '').replace(/,+\s*$/gm, '') };
+    }
+    if (typeof T.alternatives === 'string' && T.alternatives) T.alternatives = { title: 'Alternatives considered', text: T.alternatives };
+    T.supplies = T.supplies || [];
+    return T;
+  }
+
+  fm(n, cents) {
+    if (n == null) return '';
+    return '$' + n.toLocaleString('en-US', cents ? { minimumFractionDigits: 2, maximumFractionDigits: 2 } : { maximumFractionDigits: 0 });
+  }
+
+  fp(n) { return n ? n.toLocaleString('en-US') : '—'; }
+
+  go(view, dayN) { this.setState(dayN ? { view, dayN, mobileNavOpen: false } : { view, mobileNavOpen: false }); }
+
+  toggleMobileNav() { this.setState(s => ({ mobileNavOpen: !s.mobileNavOpen })); }
+
+  // Pre-trip checklist persistence — localStorage only (this file may be opened
+  // locally or hosted on GitHub Pages; either way it's just this browser's checkbox
+  // state, nothing sent anywhere).
+  checklistStorageKey() { return 'tripChecklist:' + (this.T && this.T.meta ? this.T.meta.title : 'trip'); }
+  loadChecklist() {
+    try {
+      const raw = localStorage.getItem(this.checklistStorageKey());
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+  toggleChecklistItem(key) {
+    const next = { ...this.state.checked, [key]: !this.state.checked[key] };
+    try { localStorage.setItem(this.checklistStorageKey(), JSON.stringify(next)); } catch (e) {}
+    this.setState({ checked: next });
+  }
+
+  moneyOf(b) {
+    if (b.paid != null) return { money: this.fm(b.paid, true), moneyColor: '#1b2629', hasCostTag: true, costTagLabel: 'PAID', costTagBg: '#e1f5ee', costTagFg: '#085041' };
+    if (b.est != null) return { money: this.fm(b.est, true), moneyColor: '#96690f', hasCostTag: true, costTagLabel: 'EST', costTagBg: '#faeeda', costTagFg: '#633806' };
+    return { money: '', moneyColor: '#1b2629', hasCostTag: false, costTagLabel: '', costTagBg: '', costTagFg: '' };
+  }
+
+  ptsLabelOf(b) {
+    if (!b.program && !b.points) return '';
+    const p = b.points ? (b.pointsN != null ? b.pointsN.toLocaleString('en-US') + ' pts' : b.points) : '';
+    return [b.program, p].filter(Boolean).join(' · ');
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#16695E';
+    const v = this.state.view;
+    const base = {
+      accent,
+      title: 'Trip', dates: '', subLine: '',
+      goOverview: () => this.go('overview'),
+      ovBg: v === 'overview' ? '#1b2629' : 'transparent',
+      ovFg: v === 'overview' ? '#f4f5f3' : '#1b2629',
+      navDays: [], lenses: [], noDays: false, hasRoute: false,
+      isOverview: v === 'overview', isDay: false, isMoney: false, isPoints: false,
+      isBookings: false, isPacking: false, isLists: false, isIdeas: false, isPresent: false, isChecklist: false,
+      hasToday: !!this.todayDayN, todayGo: this.todayDayN ? () => this.go('day', this.todayDayN) : () => {},
+      presentEmpty: false, presentHasDay: false, presentDayChips: [],
+      presentPrev: () => {}, presentNext: () => {},
+      presentDate: '', presentTitle: '', presentPhotos: [], hasPresentPhotos: false,
+      presentVideos: [], hasPresentVideos: false,
+      presentMapSrc: '', presentMapsUrl: '', presentHighlights: [], presentCost: '',
+      lightboxOpen: !!this.state.lightbox,
+      lightboxUrl: this.state.lightbox ? this.state.lightbox.url : '',
+      lightboxCaption: this.state.lightbox ? this.state.lightbox.caption : '',
+      closeLightbox: () => this.setState({ lightbox: null }),
+      route: [], obDays: [],
+      dayDate: '', dayTitle: '', dayMeta: '', dayPlanned: false, dayEmpty: false,
+      dayCostChips: [], hasDayCostChips: false,
+      dayPrev: () => {}, dayNext: () => {}, blocks: [],
+      moneyRows: [], moneyTotEst: '', moneyTotPaid: '', moneyTotAll: '', hasMoney: false, noMoney: false,
+      pointRows: [], pointItems: [], ptsTotPlanned: '', ptsTotUsed: '', ptsTotAll: '', hasPoints: false, noPoints: false,
+      bkChips: [], bookingGroups: [], noBookings: false,
+      outfitDays: [], trackerDays: [], trackerTitle: '', hasTracker: false, noPacking: false,
+      packChips: [], packRollups: [], hasRollups: false,
+      supplyGroups: [], noLists: false,
+      ideaGroups: [], noIdeas: false,
+      checklistItems: [], noChecklist: false, checklistDone: 0, checklistTotal: 0,
+      mobileNavOpen: this.state.mobileNavOpen,
+      toggleMobileNav: () => this.toggleMobileNav(),
+      asideTransform: this.state.mobileNavOpen ? 'translateX(0)' : 'var(--aside-closed-tx-mobile, translateX(0))',
+      topbarSubLabel: '',
+      hasAlt: false, altTitle: '', altText: '',
+      altOpen: this.state.altOpen, altChev: this.state.altOpen ? '−' : '+ show',
+      toggleAlt: () => this.setState(s => ({ altOpen: !s.altOpen })),
+    };
+    if (!this.T) return base;
+    const T = this.T;
+
+    base.title = T.meta.title;
+    base.dates = T.meta.dates;
+    const VIEW_LABELS = { overview: 'Trip overview', present: 'Present the trip', money: 'Money', points: 'Points', bookings: 'Bookings', packing: 'Outfits & packing', lists: 'Lists', ideas: 'Ideas & staging', checklist: 'Pre-trip checklist' };
+    base.topbarSubLabel = VIEW_LABELS[v] || '';
+    const tl = [];
+    if (T.meta.totals.paid) tl.push(this.fm(T.meta.totals.paid) + ' paid');
+    if (T.meta.totals.est) tl.push(this.fm(T.meta.totals.est) + ' planned');
+    if (T.meta.totals.points) tl.push(Math.round(T.meta.totals.points / 1000) + 'k pts');
+    base.subLine = [T.meta.dates, tl.join(' · ')].filter(Boolean).join(' · ') || 'Just getting started';
+    base.noDays = T.days.length === 0;
+    base.hasRoute = T.meta.route.length > 0;
+
+    base.navDays = T.days.map(d => ({
+      short: d.short, title: d.title || '—', planned: d.planned,
+      isToday: this.todayDayN === d.n,
+      bg: v === 'day' && this.state.dayN === d.n ? '#1b2629' : 'transparent',
+      fg: v === 'day' && this.state.dayN === d.n ? '#f4f5f3' : '#1b2629',
+      go: () => this.go('day', d.n),
+    }));
+
+    base.lenses = [
+      ['present', 'Present'],
+      ['money', 'Money'], ['points', 'Points'], ['bookings', 'Bookings'],
+      ['packing', 'Packing'], ['lists', 'Lists'], ['ideas', 'Ideas'], ['checklist', 'Checklist'],
+    ].map(([id, label]) => ({
+      label,
+      bg: v === id ? '#1b2629' : 'transparent',
+      fg: v === id ? '#f4f5f3' : '#1b2629',
+      go: () => this.go(id),
+    }));
+
+    if (v === 'overview') {
+      base.route = T.meta.route.map((s, i) => ({ ...s, conn: i < T.meta.route.length - 1 }));
+      base.obDays = T.days.map(d => {
+        const parts = [];
+        if (d.stops) parts.push(d.stops + ' stops');
+        if (d.bookings) parts.push(d.bookings + ' bk');
+        return {
+          dow: d.dow, short: d.short, title: d.title || '—', planned: d.planned,
+          summary: parts.join(' · '),
+          money: d.paid ? this.fm(d.paid) : (d.est ? this.fm(d.est) + ' est' : ''),
+          go: () => this.go('day', d.n),
+        };
+      });
+    }
+
+    if (v === 'day' && T.days.length) {
+      const d = T.days[Math.min(this.state.dayN, T.days.length) - 1];
+      base.isDay = true; base.isOverview = false;
+      base.topbarSubLabel = d.short + ' · ' + (d.title || 'Untitled day');
+      base.dayDate = d.date;
+      base.dayTitle = d.title || 'Untitled day';
+      base.dayPlanned = d.planned;
+      base.dayEmpty = d.blocks.length === 0;
+      const mp = [];
+      if (d.stops) mp.push(d.stops + ' stops');
+      base.dayMeta = mp.join(' · ');
+      base.dayCostChips = [
+        d.paid ? { label: this.fm(d.paid, true) + ' paid', bg: '#e1f5ee', fg: '#085041' } : null,
+        d.est ? { label: this.fm(d.est, true) + ' planned', bg: '#faeeda', fg: '#633806' } : null,
+      ].filter(Boolean);
+      base.hasDayCostChips = base.dayCostChips.length > 0;
+      base.dayPrev = () => this.go('day', Math.max(1, this.state.dayN - 1));
+      base.dayNext = () => this.go('day', Math.min(T.days.length, this.state.dayN + 1));
+      base.blocks = d.blocks.map(b => {
+        const m = this.moneyOf(b);
+        const row = {
+          isMove: b.kind === 'move', isReceipt: b.kind === 'receipt',
+          isNote: b.kind === 'note', isStop: b.kind === 'stop',
+          emoji: b.emoji || '·', title: b.title,
+          timeStart: b.start || '—', hasTimeEnd: !!(b.start && b.end), timeEnd: b.end || '',
+          durLabel: b.dur ? (b.dur >= 60 ? Math.floor(b.dur / 60) + 'h' + (b.dur % 60 ? String(b.dur % 60).padStart(2, '0') : '') : b.dur + 'm') : '',
+          moveLabel: (b.dur ? b.dur + 'm — ' : '') + b.title,
+          ...m,
+          hasBooking: !!(b.conf || b.program || b.points),
+          hasConf: !!b.conf, conf: b.conf || '',
+          hasPts: !!(b.program || b.points), ptsLabel: this.ptsLabelOf(b),
+          hasMeta: false, meta: '', metaCursor: 'default', toggle: () => {},
+          hasISK: !!(b.ccy === 'ISK' && b.estISK != null),
+          iskLabel: b.estISK != null ? Math.round(b.estISK).toLocaleString('en-US') + ' ISK' : '',
+          iskUsd: b.estISK != null ? '≈ ' + this.fm(b.estISK * this.state.fx, true) + (this.state.fxLive ? '' : ' (approx)') : '',
+          hasMenu: !!b.menuUrl, menuUrl: b.menuUrl || '',
+        };
+        row.isNow = d.n === this.todayDayN && b.sM != null && b.eM != null && (() => {
+          const now = new Date();
+          const curM = now.getHours() * 60 + now.getMinutes();
+          return curM >= b.sM && curM < b.eM;
+        })();
+        row.nowStyle = row.isNow ? 'background:#eaf5f1;border-radius:10px' : '';
+        const meta = [b.detail, b.notes].filter(Boolean).join('\n');
+        if (meta) {
+          const exp = !!this.state.expanded[b.id];
+          const long = meta.length > 170;
+          row.hasMeta = true;
+          row.meta = !long || exp ? meta : meta.slice(0, 150).trimEnd() + ' …more';
+          row.metaCursor = long ? 'pointer' : 'default';
+          if (long) row.toggle = () => this.setState(s => ({ expanded: { ...s.expanded, [b.id]: !s.expanded[b.id] } }));
+        }
+        return row;
+      });
+    }
+
+    if (v === 'present') {
+      base.isPresent = true; base.isOverview = false;
+      const totalDays = T.days.length;
+      base.presentEmpty = totalDays === 0;
+      base.presentHasDay = totalDays > 0;
+      const pdN = Math.min(Math.max(this.state.presentDayN || 1, 1), Math.max(totalDays, 1));
+      base.presentDayChips = T.days.map(d => {
+        const on = d.n === pdN;
+        return {
+          label: (d.dow + ' ' + d.short).trim() || ('Day ' + d.n),
+          bg: on ? '#1b2629' : '#ffffff', fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ presentDayN: d.n }),
+        };
+      });
+      base.presentPrev = () => this.setState(s => ({ presentDayN: Math.max(1, (s.presentDayN || 1) - 1) }));
+      base.presentNext = () => this.setState(s => ({ presentDayN: Math.min(totalDays, (s.presentDayN || 1) + 1) }));
+      if (totalDays > 0) {
+        const d = T.days[pdN - 1];
+        base.presentDate = d.date;
+        base.presentTitle = d.title || 'Untitled day';
+        base.presentPhotos = (PRESENT_GALLERY[pdN] || []).map(ph => ({
+          url: ph.url, caption: ph.caption,
+          open: () => this.setState({ lightbox: { url: ph.url, caption: ph.caption } }),
+        }));
+        base.hasPresentPhotos = base.presentPhotos.length > 0;
+        base.presentVideos = (PRESENT_VIDEOS[pdN] || []).map(v => ({
+          title: v.title,
+          thumb: 'https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg',
+          watchUrl: 'https://www.youtube.com/watch?v=' + v.id,
+        }));
+        base.hasPresentVideos = base.presentVideos.length > 0;
+        const m = PRESENT_MAP[pdN] || PRESENT_MAP[1];
+        base.presentMapSrc = 'https://www.google.com/maps?q=' + m.lat + ',' + m.lng + '&z=' + m.zoom + '&output=embed';
+        base.presentMapsUrl = PRESENT_DIRECTIONS[pdN] || '';
+        // High-level only: activities and meals, not transport/logistics/walk-between-stops.
+        const skipTypes = ['Walk', 'Transportation', 'Logistics', 'Drive', 'Parking', 'Gasoline', 'Luggage', 'Free Time'];
+        base.presentHighlights = d.blocks.filter(b => b.kind === 'stop' && !skipTypes.includes(b.typeName)).map(b => ({
+          emoji: b.emoji || '·', title: b.title,
+        }));
+        const cost = (d.paid || 0) + (d.est || 0);
+        base.presentCost = cost ? ('Est. day cost: ' + this.fm(cost, true)) : '';
+      }
+    }
+
+    if (v === 'money') {
+      base.isMoney = true; base.isOverview = false;
+      base.hasMoney = T.costSummary.some(r => r.total > 0);
+      base.noMoney = !base.hasMoney;
+      base.moneyRows = T.costSummary.filter(r => r.total > 0).map(r => ({
+        name: r.name, emoji: r.emoji,
+        est: r.est ? this.fm(r.est, true) : '—',
+        paid: r.paid ? this.fm(r.paid, true) : '—',
+        total: this.fm(r.total, true),
+      }));
+      const te = T.costSummary.reduce((a, r) => a + r.est, 0);
+      const tp = T.costSummary.reduce((a, r) => a + r.paid, 0);
+      base.moneyTotEst = this.fm(te, true);
+      base.moneyTotPaid = this.fm(tp, true);
+      base.moneyTotAll = this.fm(te + tp, true);
+    }
+
+    if (v === 'points') {
+      base.isPoints = true; base.isOverview = false;
+      base.hasPoints = T.pointsByProgram.length > 0;
+      base.noPoints = !base.hasPoints;
+      base.pointRows = T.pointsByProgram.map(p => ({
+        name: p.name, planned: this.fp(p.planned), used: this.fp(p.used), total: this.fp(p.total),
+      }));
+      base.ptsTotPlanned = this.fp(T.pointsByProgram.reduce((a, p) => a + p.planned, 0));
+      base.ptsTotUsed = this.fp(T.pointsByProgram.reduce((a, p) => a + p.used, 0));
+      base.ptsTotAll = this.fp(T.meta.totals.points);
+      base.pointItems = T.bookingList.filter(b => b.program || b.points).map(b => ({
+        dayLabel: b.dayLabel, emoji: b.emoji || '·', title: b.title,
+        status: b.conf ? 'USED' : 'PLANNED',
+        statusColor: b.conf ? '#257a5a' : '#96690f',
+        ptsLabel: this.ptsLabelOf(b),
+        go: () => this.go('day', b.dayN),
+      }));
+    }
+
+    if (v === 'bookings') {
+      base.isBookings = true; base.isOverview = false;
+      const order = ['Flights', 'Stays', 'Cars', 'Activities'];
+      const present = order.filter(name => T.bookingList.some(b => b.group === name));
+      const f = this.state.bkFilter;
+      base.bkChips = ['All', ...present].map(name => {
+        const on = f === name;
+        return {
+          label: name,
+          bg: on ? '#1b2629' : '#ffffff',
+          fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ bkFilter: name }),
+        };
+      });
+      const factLabels = [
+        ['route', 'ROUTE'], ['flightNo', 'FLIGHT'], ['cabin', 'CABIN'], ['seats', 'SEATS'],
+        ['nights', 'STAY'], ['roomType', 'ROOM'], ['address', 'ADDRESS'], ['cancelBy', 'CANCEL BY'],
+      ];
+      base.bookingGroups = present.filter(name => f === 'All' || f === name).map(name => ({
+        name: name.toUpperCase(),
+        items: T.bookingList.filter(b => b.group === name).map(b => {
+          const m = this.moneyOf(b);
+          const facts = factLabels.filter(([k]) => b[k]).map(([k, label]) => ({ label, value: b[k] }));
+          const nKey = 'bk_' + b.id;
+          const nOpen = !!this.state.expanded[nKey];
+          return {
+            emoji: b.emoji || '·', title: b.title,
+            dayLabel: b.dayLabel, go: () => this.go('day', b.dayN),
+            facts, hasFacts: facts.length > 0,
+            hasFlag: !!b.flag, flag: b.flag || '',
+            hasConf: !!b.conf, conf: b.conf || '', noConf: !b.conf,
+            hasPts: !!(b.program || b.points), ptsLabel: this.ptsLabelOf(b),
+            ...m,
+            hasNotes: !!b.notes, notesOpen: nOpen, notes: nOpen ? b.notes : '',
+            notesToggleLabel: nOpen ? '− Hide pricing detail' : '+ Pricing detail',
+            toggleNotes: () => this.setState(s => ({ expanded: { ...s.expanded, [nKey]: !s.expanded[nKey] } })),
+          };
+        }),
+      }));
+      base.noBookings = T.bookingList.length === 0;
+    }
+
+    if (v === 'packing') {
+      base.isPacking = true; base.isOverview = false;
+      const dayByShort = {};
+      T.days.forEach(d => { dayByShort[d.short] = d.title; });
+      // person filter
+      const personSet = [];
+      const addP = w => { const u = String(w || '').toUpperCase(); if (u && !personSet.includes(u)) personSet.push(u); };
+      T.packing.outfitDays.forEach(od => od.slots.forEach(s => s.people.forEach(p => addP(p.who))));
+      T.packing.packLists.forEach(pl => addP(pl.who));
+      const pf = this.state.packFilter && personSet.includes(this.state.packFilter) ? this.state.packFilter : 'ALL';
+      base.packChips = ['ALL', ...personSet].map(name => {
+        const on = pf === name;
+        return {
+          label: name === 'ALL' ? 'Everyone' : name.charAt(0) + name.slice(1).toLowerCase(),
+          bg: on ? '#1b2629' : '#ffffff', fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ packFilter: name }),
+        };
+      });
+      // rollups: one card per visible person
+      const visible = pf === 'ALL' ? personSet : [pf];
+      base.packRollups = visible.map(who => {
+        const pl = T.packing.packLists.find(p => String(p.who).toUpperCase() === who);
+        const items = pl ? pl.items : [];
+        const total = items.reduce((a, it) => a + (it.count || 0), 0);
+        return {
+          who: who.charAt(0) + who.slice(1).toLowerCase(),
+          totalLabel: total ? total + ' ITEMS' + (pl && pl.derived ? ' · FROM TRACKER' : '') : '',
+          empty: items.length === 0,
+          items: items.map(it => ({ count: it.count, name: it.name })),
+        };
+      });
+      base.hasRollups = base.packRollups.length > 0;
+      base.outfitDays = T.packing.outfitDays.filter(od => od.slots.length).map(od => ({
+        date: od.date,
+        dayTitle: dayByShort[String(od.date).replace(/\/\d{4}$/, '')] || '',
+        slots: od.slots.map(s => ({
+          name: s.name,
+          people: s.people.filter(p => pf === 'ALL' || String(p.who).toUpperCase() === pf).map(p => ({ who: p.who, text: p.text || '—' })),
+        })).filter(s => s.people.length),
+      })).filter(od => od.slots.length);
+      const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [''])[1] || '';
+      const showTracker = pf === 'ALL' || trackerWho.toUpperCase() === pf;
+      base.trackerDays = (showTracker ? T.packing.trackerDays : []).map(td => ({
+        date: td.date,
+        groups: (td.groups || []).filter(g => (g.items || []).some(i => i.style || i.brand || i.label)).map(g => ({
+          activity: g.activity || '—',
+          items: g.items.filter(i => i.style || i.brand || i.label).map(i => ({
+            label: i.label || [i.style, [i.brand, i.color].filter(Boolean).join(', ')].filter(Boolean).join(' — '),
+            rewear: !!i.rewear,
+          })),
+        })),
+      })).filter(td => td.groups.length);
+      base.hasTracker = base.trackerDays.length > 0;
+      base.trackerTitle = T.packing.trackerTitle;
+      base.noPacking = base.outfitDays.length === 0 && !base.hasTracker;
+    }
+
+    if (v === 'lists') {
+      base.isLists = true; base.isOverview = false;
+      base.supplyGroups = T.supplies;
+      base.noLists = T.supplies.length === 0;
+    }
+
+    if (v === 'checklist') {
+      base.isChecklist = true; base.isOverview = false;
+      const tbd = (T.ideas || []).find(g => g.name === 'Still open / TBD');
+      const items = tbd ? tbd.items : [];
+      base.checklistTotal = items.length;
+      base.checklistItems = items.map((it, i) => {
+        const key = 'tbd_' + i + '_' + it.name;
+        const done = !!this.state.checked[key];
+        return {
+          key, name: it.name, note: it.note || '',
+          done,
+          boxChar: done ? '✓' : '',
+          rowStyle: done ? 'opacity:0.5' : 'opacity:1',
+          strike: done ? 'line-through' : 'none',
+          toggle: () => this.toggleChecklistItem(key),
+        };
+      });
+      base.checklistDone = base.checklistItems.filter(it => it.done).length;
+      base.noChecklist = items.length === 0;
+    }
+
+    if (v === 'ideas') {
+      base.isIdeas = true; base.isOverview = false;
+      base.ideaGroups = T.ideas;
+      base.noIdeas = T.ideas.length === 0 && !T.alternatives;
+      if (T.alternatives && T.alternatives.text) {
+        base.hasAlt = true;
+        base.altTitle = T.alternatives.title || 'Alternatives considered';
+        base.altText = T.alternatives.text;
+      }
+    }
+
+    return base;
+  }
+}
+</script>
+<script id="trip-data" type="application/json">{"meta": {"title": "Paris & the Alps — Winter 2026", "dates": "December 16–21, 2026 (in progress)", "route": [{"name": "Miami", "sub": "MIA — departure"}, {"name": "Dublin", "sub": "DUB — 1h35m connection"}, {"name": "Paris", "sub": "4 nights — Hyatt Regency Étoile"}, {"name": "Alps", "sub": "Onward — TBD"}]}, "days": [{"date": "Wednesday, December 16, 2026", "title": "Depart Miami", "planned": false, "blocks": [{"start": "4:00 PM", "end": "7:05 PM", "title": "MIA — check bags & security", "detail": "Arrive about three hours before departure. Bags tag through to Paris on the single Aer Lingus ticket, so this is the only check-in of the trip.", "typeName": "Logistics", "emoji": "🧳"}, {"start": "7:05 PM", "end": "8:20 AM", "title": "Aer Lingus 140 · MIA → DUB (overnight)", "detail": "8h15m, Airbus A330-300, landing Dublin Terminal 2 at 8:20 AM. An evening departure means the kids go down close to a normal bedtime rather than fighting a mid-afternoon takeoff.", "typeName": "Flight", "emoji": "🌙", "route": "MIA → DUB → CDG (1 stop)", "flightNo": "Aer Lingus 140 + Aer Lingus 524", "cabin": "Economy", "seats": "Not yet assigned", "program": "Aer Lingus award — currency to confirm", "points": 110000, "est": 116.4, "notes": "27,500 points + $29.10 per person. Four passengers = 110,000 points + $116.40. Fare class P, exactly 4 seats showing at time of search. Total elapsed MIA→CDG is 11h40m.", "flag": "Only 4 award seats available — no margin. Confirm the points currency before assuming the balance covers it."}, {"start": "8:20 AM", "end": "9:55 AM", "title": "Dublin connection — 1h35m", "detail": "Both flights are Aer Lingus out of Terminal 2. Follow Flight Connections signage to passport control. On a single ticket, checked bags move to the Paris flight automatically and there is no second security screening.", "typeName": "Logistics", "emoji": "⏱️", "flag": "1h35m sits under the 1h45m–2h that Aer Lingus transfer guidance recommends for US arrivals continuing into Europe. Workable, but a late EI140 threatens the Paris leg."}]}, {"date": "Thursday, December 17, 2026", "title": "Arrive Paris — Hyatt Regency Étoile", "planned": false, "blocks": [{"start": "9:55 AM", "end": "12:45 PM", "title": "Aer Lingus 524 · DUB → CDG", "detail": "1h50m, Airbus A320, arriving Paris Charles de Gaulle Terminal 1 at 12:45 PM.", "typeName": "Flight", "emoji": "✈️"}, {"start": "12:45 PM", "end": "1:50 PM", "title": "CDG arrival — passport control, bags, customs", "detail": "Terminal 1. Ireland is outside Schengen, so this is a full external-border arrival with passport control despite the inbound leg being intra-EU. Sixty-five minutes budgeted: control, baggage claim, then customs. T1 handles a narrowbody arrival faster than the T2 halls do a widebody wave.", "typeName": "Logistics", "emoji": "🛂"}, {"start": "1:50 PM", "end": "2:05 PM", "title": "Bags to the taxi rank", "detail": "Official taxi rank is at Terminal 1 arrivals level. Use the marked rank only — ignore anyone soliciting inside the terminal.", "typeName": "Luggage", "emoji": "🧳"}, {"start": "2:05 PM", "end": "3:05 PM", "title": "Taxi CDG → Hyatt Regency Paris Étoile", "detail": "Porte Maillot is in the 17th arrondissement, north-west of the center — Right Bank, so the regulated flat rate is €56. Luggage included, no night or passenger surcharge, and the rate holds regardless of traffic. Roughly 45–60 minutes for the 30 km. Two taxis needed for four people with winter luggage, or request a van at the rank.", "typeName": "Transportation", "emoji": "🚕", "est": 62, "notes": "There is no direct bus from CDG to Porte Maillot. Roissybus runs only to Opéra, and RER B lands at Châtelet-Les Halles requiring a change onto Métro 1 westbound — two transfers with stairs, four people and winter bags after a red-eye. The flat-rate taxi is fixed-price door to door and the right call here."}, {"title": "Hyatt Regency Paris Étoile — 4 nights, 2 rooms", "detail": "3 Place du Général Kœnig, 75017 Paris. The tallest hotel in Paris, directly above Porte Maillot and attached to the Palais des Congrès. High south-facing floors have genuine Eiffel Tower views, and there is a Regency Club lounge with breakfast, all-day refreshments and evening hors d'oeuvres. Arrival around 3:05 PM lines up with standard 3:00 PM check-in, so the rooms should be ready without a bag drop.", "typeName": "Hotel", "emoji": "🏨", "nights": "4 nights (Thu Dec 17 – Mon Dec 21)", "roomType": "2 rooms — high floor, Eiffel Tower view requested", "address": "3 Place du Général Kœnig, 75017 Paris", "program": "World of Hyatt", "points": 120000, "notes": "15,000 points per room per night × 2 rooms × 4 nights = 120,000 points. Category 4 property, where the published rates are 12,000 off-peak / 15,000 standard / 18,000 peak. Porte Maillot underneath the hotel serves Métro 1 (direct to Champs-Élysées, Louvre and Châtelet with no change), RER C, and RER E since its 2024 extension — an unusually strong transit position for getting around the city.", "flag": "Two things to confirm: whether these dates price at Category 4 peak (18,000/night, which would make it 144,000 total), and whether Globalist breakfast and Regency Club access extend to the second room — they normally attach only to the room the member occupies."}]}, {"date": "Friday, December 18, 2026", "title": "Paris — open", "planned": false, "blocks": []}, {"date": "Saturday, December 19, 2026", "title": "Paris — open", "planned": false, "blocks": []}, {"date": "Sunday, December 20, 2026", "title": "Paris — open", "planned": false, "blocks": []}, {"date": "Monday, December 21, 2026", "title": "Checkout — onward to the Alps (TBD)", "planned": false, "blocks": [{"title": "Checkout — onward routing not yet decided", "detail": "Onward leg to the Alps still open. From Paris, TGV Lyria reaches Geneva in 3h11 and Lausanne in 3h45, which opens Zermatt via Visp and the Jungfrau villages, and puts Megève within easy reach of Geneva. Gare de Lyon is a straight Métro 1 ride from the hotel.", "typeName": "Logistics", "emoji": "🧭"}]}], "packing": {"trackerTitle": "Item tracker", "outfitDays": [], "trackerDays": [], "packLists": []}, "supplies": [], "ideas": [{"title": "Confirm the award rate doesn't price peak", "detail": "15,000 per night is the Category 4 standard rate, so the assumption holds structurally. But Category 4 peak is 18,000, and the week before Christmas is a plausible peak window in Paris. At peak across two rooms and four nights the total goes from 120,000 to 144,000 — a 24,000-point swing worth checking before counting on it."}, {"title": "Globalist benefits on a second room", "detail": "Regency Club access and breakfast attach to the room the member occupies. A second room on the same reservation does not automatically carry them. Confirm with the hotel, or look at whether a Guest of Honor booking covers the second room, before assuming breakfast for four."}, {"title": "Ask for high floor, south-facing", "detail": "The tower's value is the view — Eiffel Tower rooms are the reason to pick this property over a more central Hyatt. Worth requesting at booking and again at check-in rather than leaving to assignment."}, {"title": "Connecting rooms", "detail": "Two rooms with young kids raises whether connecting or adjacent rooms are available. This is a large tower property, so request it early — it is not something to sort out at the desk on arrival after a red-eye."}, {"title": "Dublin connection is under the recommended window", "detail": "1h35m at DUB. Aer Lingus transfer guidance for US arrivals continuing into Europe recommends 1h45m–2h. Bags transfer automatically on a single ticket and there is no second security screening, but passport control is required and it is the whole widebody queuing at once. A delay on EI140 puts the Paris leg at risk."}, {"title": "Two passport controls, not one", "detail": "Ireland is in the EU but not in Schengen, so Irish passport control happens at Dublin and Schengen entry happens again at Paris. The CDG arrival still needs a full immigration-and-baggage window even though the inbound leg is intra-EU."}, {"title": "Award space is exactly four seats", "detail": "4 seats showing at 27,500 points + $29.10 each — no margin for a fifth traveler and no room to absorb one seat disappearing. 110,000 points + $116.40 for the family. Confirm which currency this prices in (Avios is the likely route on Aer Lingus metal) before counting the balance."}, {"title": "PARKED — The Tribune, JdV by Hyatt (Rome)", "detail": "Previously modeled: Ludovisi district off Via Veneto, 3 nights, 1 King Junior Suite via Suite Upgrade Award, assumed 20,000 points per night. Open questions if Rome returns later in the trip: the property appears to have moved to Category 6 in Hyatt's 2025 update, SUA eligibility on the junior suite is unconfirmed, and roughly 344 sq ft is snug for four."}, {"title": "⚠ DATE CONFLICT — Leavenworth 2026", "detail": "This trip is December 16–21, 2026. The Leavenworth Winter 2026 trip is December 19–27, 2026, with MIA→SEA on Dec 19. Those overlap by three days and both start from Miami — they cannot both happen. One of the two has to move before any of this gets booked."}], "alternatives": null}</script>
+</body>
+</html>

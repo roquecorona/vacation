@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "title": "Paris & the Alps — Winter 2026",
+    "dates": "December 16–21, 2026 (in progress)",
+    "route": [
+      {
+        "name": "Miami",
+        "sub": "MIA — departure"
+      },
+      {
+        "name": "Dublin",
+        "sub": "DUB — 1h35m connection"
+      },
+      {
+        "name": "Paris",
+        "sub": "4 nights — Hyatt Regency Étoile"
+      },
+      {
+        "name": "Alps",
+        "sub": "Onward — TBD"
+      }
+    ]
+  },
+  "days": [
+    {
+      "date": "Wednesday, December 16, 2026",
+      "title": "Depart Miami",
+      "planned": false,
+      "blocks": [
+        {
+          "start": "4:00 PM",
+          "end": "7:05 PM",
+          "title": "MIA — check bags & security",
+          "detail": "Arrive about three hours before departure. Bags tag through to Paris on the single Aer Lingus ticket, so this is the only check-in of the trip.",
+          "typeName": "Logistics",
+          "emoji": "🧳"
+        },
+        {
+          "start": "7:05 PM",
+          "end": "8:20 AM",
+          "title": "Aer Lingus 140 · MIA → DUB (overnight)",
+          "detail": "8h15m, Airbus A330-300, landing Dublin Terminal 2 at 8:20 AM. An evening departure means the kids go down close to a normal bedtime rather than fighting a mid-afternoon takeoff.",
+          "typeName": "Flight",
+          "emoji": "🌙",
+          "route": "MIA → DUB → CDG (1 stop)",
+          "flightNo": "Aer Lingus 140 + Aer Lingus 524",
+          "cabin": "Economy",
+          "seats": "Not yet assigned",
+          "program": "Aer Lingus award — currency to confirm",
+          "points": 110000,
+          "est": 116.4,
+          "notes": "27,500 points + $29.10 per person. Four passengers = 110,000 points + $116.40. Fare class P, exactly 4 seats showing at time of search. Total elapsed MIA→CDG is 11h40m.",
+          "flag": "Only 4 award seats available — no margin. Confirm the points currency before assuming the balance covers it."
+        },
+        {
+          "start": "8:20 AM",
+          "end": "9:55 AM",
+          "title": "Dublin connection — 1h35m",
+          "detail": "Both flights are Aer Lingus out of Terminal 2. Follow Flight Connections signage to passport control. On a single ticket, checked bags move to the Paris flight automatically and there is no second security screening.",
+          "typeName": "Logistics",
+          "emoji": "⏱️",
+          "flag": "1h35m sits under the 1h45m–2h that Aer Lingus transfer guidance recommends for US arrivals continuing into Europe. Workable, but a late EI140 threatens the Paris leg."
+        }
+      ]
+    },
+    {
+      "date": "Thursday, December 17, 2026",
+      "title": "Arrive Paris — Hyatt Regency Étoile",
+      "planned": false,
+      "blocks": [
+        {
+          "start": "9:55 AM",
+          "end": "12:45 PM",
+          "title": "Aer Lingus 524 · DUB → CDG",
+          "detail": "1h50m, Airbus A320, arriving Paris Charles de Gaulle Terminal 1 at 12:45 PM.",
+          "typeName": "Flight",
+          "emoji": "✈️"
+        },
+        {
+          "start": "12:45 PM",
+          "end": "1:50 PM",
+          "title": "CDG arrival — passport control, bags, customs",
+          "detail": "Terminal 1. Ireland is outside Schengen, so this is a full external-border arrival with passport control despite the inbound leg being intra-EU. Sixty-five minutes budgeted: control, baggage claim, then customs. T1 handles a narrowbody arrival faster than the T2 halls do a widebody wave.",
+          "typeName": "Logistics",
+          "emoji": "🛂"
+        },
+        {
+          "start": "1:50 PM",
+          "end": "2:05 PM",
+          "title": "Bags to the taxi rank",
+          "detail": "Official taxi rank is at Terminal 1 arrivals level. Use the marked rank only — ignore anyone soliciting inside the terminal.",
+          "typeName": "Luggage",
+          "emoji": "🧳"
+        },
+        {
+          "start": "2:05 PM",
+          "end": "3:05 PM",
+          "title": "Taxi CDG → Hyatt Regency Paris Étoile",
+          "detail": "Porte Maillot is in the 17th arrondissement, north-west of the center — Right Bank, so the regulated flat rate is €56. Luggage included, no night or passenger surcharge, and the rate holds regardless of traffic. Roughly 45–60 minutes for the 30 km. Two taxis needed for four people with winter luggage, or request a van at the rank.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 62,
+          "notes": "There is no direct bus from CDG to Porte Maillot. Roissybus runs only to Opéra, and RER B lands at Châtelet-Les Halles requiring a change onto Métro 1 westbound — two transfers with stairs, four people and winter bags after a red-eye. The flat-rate taxi is fixed-price door to door and the right call here."
+        },
+        {
+          "title": "Hyatt Regency Paris Étoile — 4 nights, 2 rooms",
+          "detail": "3 Place du Général Kœnig, 75017 Paris. The tallest hotel in Paris, directly above Porte Maillot and attached to the Palais des Congrès. High south-facing floors have genuine Eiffel Tower views, and there is a Regency Club lounge with breakfast, all-day refreshments and evening hors d'oeuvres. Arrival around 3:05 PM lines up with standard 3:00 PM check-in, so the rooms should be ready without a bag drop.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "nights": "4 nights (Thu Dec 17 – Mon Dec 21)",
+          "roomType": "2 rooms — high floor, Eiffel Tower view requested",
+          "address": "3 Place du Général Kœnig, 75017 Paris",
+          "program": "World of Hyatt",
+          "points": 120000,
+          "notes": "15,000 points per room per night × 2 rooms × 4 nights = 120,000 points. Category 4 property, where the published rates are 12,000 off-peak / 15,000 standard / 18,000 peak. Porte Maillot underneath the hotel serves Métro 1 (direct to Champs-Élysées, Louvre and Châtelet with no change), RER C, and RER E since its 2024 extension — an unusually strong transit position for getting around the city.",
+          "flag": "Two things to confirm: whether these dates price at Category 4 peak (18,000/night, which would make it 144,000 total), and whether Globalist breakfast and Regency Club access extend to the second room — they normally attach only to the room the member occupies."
+        }
+      ]
+    },
+    {
+      "date": "Friday, December 18, 2026",
+      "title": "Paris — open",
+      "planned": false,
+      "blocks": []
+    },
+    {
+      "date": "Saturday, December 19, 2026",
+      "title": "Paris — open",
+      "planned": false,
+      "blocks": []
+    },
+    {
+      "date": "Sunday, December 20, 2026",
+      "title": "Paris — open",
+      "planned": false,
+      "blocks": []
+    },
+    {
+      "date": "Monday, December 21, 2026",
+      "title": "Checkout — onward to the Alps (TBD)",
+      "planned": false,
+      "blocks": [
+        {
+          "title": "Checkout — onward routing not yet decided",
+          "detail": "Onward leg to the Alps still open. From Paris, TGV Lyria reaches Geneva in 3h11 and Lausanne in 3h45, which opens Zermatt via Visp and the Jungfrau villages, and puts Megève within easy reach of Geneva. Gare de Lyon is a straight Métro 1 ride from the hotel.",
+          "typeName": "Logistics",
+          "emoji": "🧭"
+        }
+      ]
+    }
+  ],
+  "packing": {
+    "trackerTitle": "Item tracker",
+    "outfitDays": [],
+    "trackerDays": [],
+    "packLists": []
+  },
+  "supplies": [],
+  "ideas": [
+    {
+      "title": "Confirm the award rate doesn't price peak",
+      "detail": "15,000 per night is the Category 4 standard rate, so the assumption holds structurally. But Category 4 peak is 18,000, and the week before Christmas is a plausible peak window in Paris. At peak across two rooms and four nights the total goes from 120,000 to 144,000 — a 24,000-point swing worth checking before counting on it."
+    },
+    {
+      "title": "Globalist benefits on a second room",
+      "detail": "Regency Club access and breakfast attach to the room the member occupies. A second room on the same reservation does not automatically carry them. Confirm with the hotel, or look at whether a Guest of Honor booking covers the second room, before assuming breakfast for four."
+    },
+    {
+      "title": "Ask for high floor, south-facing",
+      "detail": "The tower's value is the view — Eiffel Tower rooms are the reason to pick this property over a more central Hyatt. Worth requesting at booking and again at check-in rather than leaving to assignment."
+    },
+    {
+      "title": "Connecting rooms",
+      "detail": "Two rooms with young kids raises whether connecting or adjacent rooms are available. This is a large tower property, so request it early — it is not something to sort out at the desk on arrival after a red-eye."
+    },
+    {
+      "title": "Dublin connection is under the recommended window",
+      "detail": "1h35m at DUB. Aer Lingus transfer guidance for US arrivals continuing into Europe recommends 1h45m–2h. Bags transfer automatically on a single ticket and there is no second security screening, but passport control is required and it is the whole widebody queuing at once. A delay on EI140 puts the Paris leg at risk."
+    },
+    {
+      "title": "Two passport controls, not one",
+      "detail": "Ireland is in the EU but not in Schengen, so Irish passport control happens at Dublin and Schengen entry happens again at Paris. The CDG arrival still needs a full immigration-and-baggage window even though the inbound leg is intra-EU."
+    },
+    {
+      "title": "Award space is exactly four seats",
+      "detail": "4 seats showing at 27,500 points + $29.10 each — no margin for a fifth traveler and no room to absorb one seat disappearing. 110,000 points + $116.40 for the family. Confirm which currency this prices in (Avios is the likely route on Aer Lingus metal) before counting the balance."
+    },
+    {
+      "title": "PARKED — The Tribune, JdV by Hyatt (Rome)",
+      "detail": "Previously modeled: Ludovisi district off Via Veneto, 3 nights, 1 King Junior Suite via Suite Upgrade Award, assumed 20,000 points per night. Open questions if Rome returns later in the trip: the property appears to have moved to Category 6 in Hyatt's 2025 update, SUA eligibility on the junior suite is unconfirmed, and roughly 344 sq ft is snug for four."
+    },
+    {
+      "title": "⚠ DATE CONFLICT — Leavenworth 2026",
+      "detail": "This trip is December 16–21, 2026. The Leavenworth Winter 2026 trip is December 19–27, 2026, with MIA→SEA on Dec 19. Those overlap by three days and both start from Miami — they cannot both happen. One of the two has to move before any of this gets booked."
+    }
+  ],
+  "alternatives": null
+}
