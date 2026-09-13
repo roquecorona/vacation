@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Paris & the Alps — Winter 2026",
-    "dates": "December 16–21, 2026 (in progress)",
+    "title": "Paris, Chamonix & Milan — Winter 2026",
+    "dates": "December 16–25, 2026 (in progress)",
     "route": [
       {
         "name": "Miami",
@@ -16,8 +16,12 @@
         "sub": "4 nights — Hyatt Regency Étoile"
       },
       {
-        "name": "Alps",
-        "sub": "Onward — TBD"
+        "name": "Chamonix",
+        "sub": "4 nights — Plan B"
+      },
+      {
+        "name": "Milan",
+        "sub": "Dec 25 — onward TBD"
       }
     ]
   },
@@ -80,7 +84,7 @@
           "start": "12:45 PM",
           "end": "1:50 PM",
           "title": "CDG arrival — passport control, bags, customs",
-          "detail": "Terminal 1. Ireland is outside Schengen, so this is a full external-border arrival with passport control despite the inbound leg being intra-EU. Sixty-five minutes budgeted: control, baggage claim, then customs. T1 handles a narrowbody arrival faster than the T2 halls do a widebody wave.",
+          "detail": "Terminal 1. Ireland is outside Schengen, so this is a full external-border arrival with passport control despite the inbound leg being intra-EU. Sixty-five minutes budgeted.",
           "typeName": "Logistics",
           "emoji": "🛂"
         },
@@ -88,7 +92,7 @@
           "start": "1:50 PM",
           "end": "2:05 PM",
           "title": "Bags to the taxi rank",
-          "detail": "Official taxi rank is at Terminal 1 arrivals level. Use the marked rank only — ignore anyone soliciting inside the terminal.",
+          "detail": "Official taxi rank at Terminal 1 arrivals level. Use the marked rank only.",
           "typeName": "Luggage",
           "emoji": "🧳"
         },
@@ -96,15 +100,15 @@
           "start": "2:05 PM",
           "end": "3:05 PM",
           "title": "Taxi CDG → Hyatt Regency Paris Étoile",
-          "detail": "Porte Maillot is in the 17th arrondissement, north-west of the center — Right Bank, so the regulated flat rate is €56. Luggage included, no night or passenger surcharge, and the rate holds regardless of traffic. Roughly 45–60 minutes for the 30 km. Two taxis needed for four people with winter luggage, or request a van at the rank.",
+          "detail": "Porte Maillot is in the 17th arrondissement — Right Bank, so the regulated flat rate is €56. Luggage included, no night or passenger surcharge. Roughly 45–60 minutes for the 30 km. Two taxis for four people with winter luggage, or request a van at the rank.",
           "typeName": "Transportation",
           "emoji": "🚕",
           "est": 62,
-          "notes": "There is no direct bus from CDG to Porte Maillot. Roissybus runs only to Opéra, and RER B lands at Châtelet-Les Halles requiring a change onto Métro 1 westbound — two transfers with stairs, four people and winter bags after a red-eye. The flat-rate taxi is fixed-price door to door and the right call here."
+          "notes": "No direct bus from CDG to Porte Maillot. Roissybus runs only to Opéra; RER B lands at Châtelet-Les Halles needing a change onto Métro 1 westbound. The flat-rate taxi is fixed-price door to door."
         },
         {
           "title": "Hyatt Regency Paris Étoile — 4 nights, 2 rooms",
-          "detail": "3 Place du Général Kœnig, 75017 Paris. The tallest hotel in Paris, directly above Porte Maillot and attached to the Palais des Congrès. High south-facing floors have genuine Eiffel Tower views, and there is a Regency Club lounge with breakfast, all-day refreshments and evening hors d'oeuvres. Arrival around 3:05 PM lines up with standard 3:00 PM check-in, so the rooms should be ready without a bag drop.",
+          "detail": "3 Place du Général Kœnig, 75017 Paris. The tallest hotel in Paris, directly above Porte Maillot and attached to the Palais des Congrès. High south-facing floors have genuine Eiffel Tower views, and there is a Regency Club lounge with breakfast, all-day refreshments and evening hors d'oeuvres. Arrival around 3:05 PM lines up with standard 3:00 PM check-in.",
           "typeName": "Hotel",
           "emoji": "🏨",
           "nights": "4 nights (Thu Dec 17 – Mon Dec 21)",
@@ -112,8 +116,8 @@
           "address": "3 Place du Général Kœnig, 75017 Paris",
           "program": "World of Hyatt",
           "points": 120000,
-          "notes": "15,000 points per room per night × 2 rooms × 4 nights = 120,000 points. Category 4 property, where the published rates are 12,000 off-peak / 15,000 standard / 18,000 peak. Porte Maillot underneath the hotel serves Métro 1 (direct to Champs-Élysées, Louvre and Châtelet with no change), RER C, and RER E since its 2024 extension — an unusually strong transit position for getting around the city.",
-          "flag": "Two things to confirm: whether these dates price at Category 4 peak (18,000/night, which would make it 144,000 total), and whether Globalist breakfast and Regency Club access extend to the second room — they normally attach only to the room the member occupies."
+          "notes": "15,000 points per room per night × 2 rooms × 4 nights = 120,000 points. Category 4 property: 12,000 off-peak / 15,000 standard / 18,000 peak. Porte Maillot underneath the hotel serves Métro 1 (direct to Champs-Élysées, Louvre and Châtelet with no change), RER C, and RER E since its 2024 extension.",
+          "flag": "Confirm these dates don't price at Category 4 peak (18,000/night = 144,000 total), and whether Globalist breakfast and Regency Club access extend to the second room."
         }
       ]
     },
@@ -131,20 +135,502 @@
     },
     {
       "date": "Sunday, December 20, 2026",
-      "title": "Paris — open",
-      "planned": false,
-      "blocks": []
-    },
-    {
-      "date": "Monday, December 21, 2026",
-      "title": "Checkout — onward to the Alps (TBD)",
+      "title": "Paris — open (early night before the train)",
       "planned": false,
       "blocks": [
         {
-          "title": "Checkout — onward routing not yet decided",
-          "detail": "Onward leg to the Alps still open. From Paris, TGV Lyria reaches Geneva in 3h11 and Lausanne in 3h45, which opens Zermatt via Visp and the Jungfrau villages, and puts Megève within easy reach of Geneva. Gare de Lyon is a straight Métro 1 ride from the hotel.",
+          "start": "8:15 PM",
+          "title": "Back at the hotel by 8:15 PM",
+          "detail": "Tomorrow is a 6h55 rail day starting with a 9:15 AM hotel departure. Working back: ready for breakfast 8:15 AM, minus one hour morning prep, ten hours sleep and an hour of bedtime routine puts the hard return deadline at 8:15 PM tonight. Plan the evening around that rather than discovering it at dinner.",
           "typeName": "Logistics",
-          "emoji": "🧭"
+          "emoji": "🛏️"
+        }
+      ]
+    },
+    {
+      "date": "Monday, December 21, 2026",
+      "title": "Paris → Chamonix by rail",
+      "planned": false,
+      "blocks": [
+        {
+          "start": "8:15 AM",
+          "end": "9:15 AM",
+          "title": "Breakfast & checkout",
+          "detail": "Regency Club breakfast, then checkout. Globalist late checkout is irrelevant today — the train sets the clock.",
+          "typeName": "Logistics",
+          "emoji": "🛎️"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:45 AM",
+          "title": "Métro 1 · Porte Maillot → Gare de Lyon",
+          "detail": "Line 1 runs from directly beneath the hotel to Gare de Lyon with no change — about 25 minutes. With four people and winter luggage in Monday rush hour a taxi is the softer option at roughly €25–30, and worth it on a day where missing the train breaks the whole chain.",
+          "typeName": "Transportation",
+          "emoji": "🚇",
+          "est": 30
+        },
+        {
+          "start": "9:45 AM",
+          "end": "10:15 AM",
+          "title": "Gare de Lyon — find the platform",
+          "detail": "Platform numbers post about twenty minutes before departure. Grab lunch for the train here — the TGV bar car with four people is not a plan.",
+          "typeName": "Logistics",
+          "emoji": "🚉"
+        },
+        {
+          "start": "10:15 AM",
+          "end": "1:45 PM",
+          "title": "TGV Lyria · Paris Gare de Lyon → Genève Cornavin",
+          "detail": "About 3h11 booked, roughly 3h30 in practice. Passports needed — this crosses into Switzerland.",
+          "typeName": "Flight",
+          "emoji": "🚄",
+          "route": "Paris → Genève → Annemasse → St-Gervais → Chamonix",
+          "flightNo": "TGV Lyria + Léman Express + TER P52",
+          "cabin": "2nd class",
+          "est": 346,
+          "program": "Cash — SNCF",
+          "notes": "Family estimate with one Carte Avantage Adulte (€49): two adults at the €89 over-three-hours cap plus two children at −60%, plus the Léman Express and Mont-Blanc Express legs. Roughly €300 all in. Christmas-week peak pricing will push the top end. The illico PROMO on TER Auvergne-Rhône-Alpes gives −40% for groups of 2+ during school holidays with under-12s free — worth checking on the Annemasse and Mont-Blanc Express legs.",
+          "flag": "Times are the CURRENT-season Monday pattern. The December 2026 timetable does not exist yet and sales open 30 September 2026. Re-verify the whole chain in mid-October before treating any of this as real."
+        },
+        {
+          "start": "3:31 PM",
+          "end": "4:16 PM",
+          "title": "Genève → Annemasse → Saint-Gervais-les-Bains-Le Fayet",
+          "detail": "Léman Express to Annemasse, then a 7-minute cross-platform change onto the TER for Saint-Gervais. Both are staffed interchanges and the Annemasse change is same-platform in the current timetable.",
+          "typeName": "Transportation",
+          "emoji": "🚆"
+        },
+        {
+          "start": "4:23 PM",
+          "end": "5:11 PM",
+          "title": "Mont-Blanc Express · St-Gervais → Chamonix-Aiguille-du-Midi",
+          "detail": "48 minutes on the single through train up the valley. Book to Chamonix-Aiguille-du-Midi, not Chamonix-Mont-Blanc — it is the stop before, and it cuts the walk to the hotel from 890m to 510m.",
+          "typeName": "Transportation",
+          "emoji": "🚞",
+          "flag": "Only 7 minutes between the St-Gervais arrival and this departure in the current timetable. If December keeps that gap, the fallback is the 5:23 PM service arriving 6:11 PM. Check when the real timetable publishes."
+        },
+        {
+          "start": "5:11 PM",
+          "end": "5:25 PM",
+          "title": "Walk to Plan B — 510m",
+          "detail": "Six minutes, flat, but fully dark by now — Chamonix sunset in late December is around 4:50 PM — and likely icy underfoot. Boots with grip on, not travel shoes. Station taxi rank is at Place de la Gare, +33 4 50 53 13 94, if the weather has turned.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "5:25 PM",
+          "end": "6:15 PM",
+          "title": "Check in & collect the Carte d'Hôte",
+          "detail": "Check-in is 4:00 PM so the rooms will be ready. Ask for the Carte d'Hôte at the desk — it is free and gives unlimited free travel on the Mont-Blanc Express between Servoz and Vallorcine for the whole stay, plus discounts at the pool and ice rink.",
+          "typeName": "Logistics",
+          "emoji": "🛎️"
+        },
+        {
+          "title": "Plan B Hotel — Living Chamonix, 4 nights",
+          "detail": "196 Avenue de Courmayeur, 74400 Chamonix-Mont-Blanc. Beside the Chamonix Sud bus station, about 200m from the Aiguille du Midi cable car. Two-lane mini-bowling on site (€4 per person per game, daily 10:00–22:00), a games room, a supervised kids' play area, and sauna and hammam by private reservation. No pool.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "nights": "4 nights (Mon Dec 21 – Fri Dec 25)",
+          "roomType": "2-Room Family Room, 32m² with balcony — or 1-Bedroom Apartment, 39m² with kitchenette",
+          "address": "196 Avenue de Courmayeur, 74400 Chamonix-Mont-Blanc · +33 4 85 30 01 60",
+          "est": 1512,
+          "notes": "Estimate only — roughly €280–420 per night for a four-person unit at Christmas-week pricing, so €1,120–1,680 for four nights. Breakfast is extra at €17 adult and €8 under-10 per the hotel's own site, about €50 a day for the family. City tax €1.60 per person per night, under-18s exempt. Parking €24 a night if needed.",
+          "flag": "No live rate obtainable — verify by phone. Consider the apartment over the family room: the kitchenette is a real hedge against Christmas Day closures, and it includes one sauna session."
+        },
+        {
+          "start": "6:30 PM",
+          "end": "7:15 PM",
+          "title": "Evening stroll — Chamonix centre",
+          "detail": "The centre is pedestrianised, flat and lit, about ten minutes up from the hotel. Avenue Michel Croz and Rue Joseph Vallot for the alpine facades and the Christmas lighting. Short loop tonight — everyone has been travelling since breakfast.",
+          "typeName": "Walk",
+          "emoji": "✨"
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner — La Calèche",
+          "detail": "18 rue du Docteur Paccard, about 10 minutes on foot from the hotel. Savoyard, open since 1946, 310 covers so it absorbs a family without a long wait. Real menu variety beyond cheese: Osso Bucco di Vitello €28, saucisse de montagne with Reblochon cream and purée €28, roast pork chop €29, crozets risotto with Tome des Bauges €26, tartiflette €25. Minis Gourmets children's menu €17.50 — pasta, steak or trout with dessert.",
+          "typeName": "Dining",
+          "emoji": "🍽️",
+          "est": 97,
+          "menuUrl": "https://www.restaurant-caleche.com/la-carte/",
+          "notes": "Two adult mains around €28 plus two children's menus at €17.50 comes to roughly €91 before drinks. Reserve well ahead on 04 50 55 94 68 — this is Christmas week. One listing shows Monday closed while the restaurant's own site and the tourist office say open daily; confirm by phone before relying on it tonight.",
+          "flag": "Monday opening is contradicted across sources. Phone to confirm, and hold the hotel brasserie as the fallback."
+        }
+      ]
+    },
+    {
+      "date": "Tuesday, December 22, 2026",
+      "title": "Mer de Glace & the Alpine Coaster",
+      "planned": false,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:15 AM",
+          "title": "Breakfast at the hotel",
+          "detail": "Continental buffet, 06:30–10:00. €17 adult, €8 under-10.",
+          "typeName": "Dining",
+          "emoji": "🥐",
+          "est": 54
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:40 AM",
+          "title": "Walk to the Montenvers station",
+          "detail": "About 1.1 km up through the centre to the Montenvers cogwheel station, which sits immediately beside the main SNCF station. Buy tickets on arrival — the ticket office is where the family pass and the under-5 exemption get applied.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "10:00 AM",
+          "end": "10:20 AM",
+          "title": "Montenvers Railway — the red train",
+          "detail": "Twenty minutes of cogwheel railway climbing through snow-covered pine to 1,913m, opening onto the Mer de Glace. First train of the day at 10:00 — worth taking it for the light and the empty platforms.",
+          "typeName": "Excursion",
+          "emoji": "🚂",
+          "est": 160,
+          "program": "Cash",
+          "notes": "Voyage Mer de Glace family pass €148.30 covers 2 adults and 2 children for train, gondola, ice cave and museums. Buying individually would be €49.70 + €49.70 + €42.20 + €42.20 = €183.80, so the family pass saves about €35. Age bands: adult 15–64, child 5–14, under 5 free with proof of age at the ticket office.",
+          "flag": "Winter 2026/27 fares are not published — these are the prior-season figures. Expect 3–5% higher."
+        },
+        {
+          "start": "10:20 AM",
+          "end": "12:30 PM",
+          "title": "Gondola down & the Grotte de Glace",
+          "detail": "Gondola from 1,913m down to 1,760m, then a staircase cut into the mountainside to the cave mouth carved fresh into the glacier each autumn. About 170 steps down and the same back up — roughly a ten-storey climb, on open metal treads that can ice up. Hold hands, and expect to carry the 5-year-old part of the way back. No pushchairs, and no lift alternative.",
+          "typeName": "Excursion",
+          "emoji": "🧊",
+          "flag": "The ice cave opens only days before you arrive — indicated from 13 December, but in 2025/26 it slipped to 20 December. Re-verify in late November. If it has not opened, the train and the glacier viewpoint still stand on their own."
+        },
+        {
+          "start": "12:30 PM",
+          "end": "1:00 PM",
+          "title": "Train back down to Chamonix",
+          "detail": "Twenty minutes down. Last ascent is 16:00 and last descent 16:30, so there is no pressure this early.",
+          "typeName": "Transportation",
+          "emoji": "🚂"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch — Le Cap Horn",
+          "detail": "74 rue des Moulins, a few minutes from the Montenvers station. The widest genuinely child-friendly menu in town: crispy katsu chicken €30, smash burger of Iberian pork €27, moules €25, fish of the day €26, Angus bavette €30, tteokbokki €24. Children's menu €17 — crispy chicken, fish fillet or steak haché with a side and dessert. Lunch formule €28.",
+          "typeName": "Dining",
+          "emoji": "🍽️",
+          "est": 100,
+          "menuUrl": "https://www.caphorn-chamonix.com/carte/",
+          "notes": "Two adult mains around €27 plus two children's menus at €17 is roughly €88 before drinks. Reserve on +33 4 50 21 80 80 — it takes online bookings too."
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:45 PM",
+          "title": "Back to the hotel — layer up for snow",
+          "detail": "Deliberate changeover block. Sledding and the coaster mean snow down collars and wet gloves, so everyone changes into proper snow gear now rather than improvising at the park.",
+          "typeName": "Logistics",
+          "emoji": "🧤"
+        },
+        {
+          "start": "3:00 PM",
+          "end": "5:15 PM",
+          "title": "Les Planards — Alpine Coaster & sledding",
+          "detail": "351 chemin du Pied du Grépon, a few minutes' walk behind the Montenvers station. The coaster runs 1.3 km of banked rail with 540° spirals and each sled's brake is rider-controlled, so you set the speed. The base area has the town's dedicated toboggan slopes.",
+          "typeName": "Excursion",
+          "emoji": "🛷",
+          "est": 51,
+          "notes": "6-ride pack €47.50 (5+1 free). Minimum age to ride at all is 3, seated with an adult; minimum height to ride alone is 1.35m, which neither child will meet — so each family descent uses two sleds. The 6-pack buys three descents together. Coaster runs 11:00–17:30 daily in winter. No lift pass is needed for the coaster or the sledding area.",
+          "flag": "Sledding-area hours, access price and whether sledges are rented or sold could not be confirmed — the Planards site was down throughout research. Call ahead."
+        },
+        {
+          "start": "5:15 PM",
+          "end": "6:15 PM",
+          "title": "Back to the hotel — dry off and warm up",
+          "detail": "Wet gear off, hot showers, downtime before dinner. Nothing scheduled.",
+          "typeName": "Free Time",
+          "emoji": "🛁"
+        },
+        {
+          "start": "6:30 PM",
+          "end": "8:00 PM",
+          "title": "Dinner — Plan B brasserie & bowling",
+          "detail": "In the hotel. Dinner service 19:00–21:00: Burger Montbéliard €23, Burger Karaage €21, vegetarian burger €21, children's menu €13 to age 10. Then the two-lane mini-bowling downstairs at €4 per person per game, open until 22:00, no reservation.",
+          "typeName": "Dining",
+          "emoji": "🎳",
+          "est": 90,
+          "notes": "Roughly €70 for dinner plus €16 for a family bowling game. An easy night after a full day outdoors, with no walk in the cold at either end."
+        }
+      ]
+    },
+    {
+      "date": "Wednesday, December 23, 2026",
+      "title": "Planpraz & the ice rink",
+      "planned": false,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:15 AM",
+          "title": "Breakfast at the hotel",
+          "detail": "Continental buffet, 06:30–10:00.",
+          "typeName": "Dining",
+          "emoji": "🥐",
+          "est": 54
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:40 AM",
+          "title": "Walk to the Planpraz gondola",
+          "detail": "The Brévent–Planpraz gondola base is on the north edge of the centre, about ten minutes from the hotel. Walkable, no bus needed.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:50 AM",
+          "end": "10:10 AM",
+          "title": "Gondola to Planpraz, 2,000m",
+          "detail": "Sun-facing shelf directly opposite Mont Blanc — the classic postcard angle, with the whole massif across the valley. First lift around 08:35, every fifteen minutes or so.",
+          "typeName": "Excursion",
+          "emoji": "🚡",
+          "est": 84,
+          "notes": "Pedestrian return Chamonix→Planpraz: family pass €77.60, or adult €25.00 and child 5–14 €18.00 individually. Under 5 free. Adding the top section to Brévent at 2,525m is a further €18.00 adult and €15.30 child — colder, windier, and not worth it with small kids.",
+          "flag": "Substituted for Plan de l'Aiguille, which has no refuge, no shelter and no maintained winter walking terrain, and which no source confirms pedestrians may even exit in winter. Fares shown are the summer 2026 sheet; the winter grid publishes around November."
+        },
+        {
+          "start": "10:10 AM",
+          "end": "12:30 PM",
+          "title": "Snow play at Planpraz",
+          "detail": "Deep snow, wide open ground and a big sunny terrace. Snowmen, snowball fights, and the valley floor a thousand metres below. Being honest about what this is: Planpraz is a ski-area mid-station, not a snow park — there is no toboggan run, no snow garden and no tubing here, so do not promise the kids sledding. Yesterday at Les Planards was the sledding.",
+          "typeName": "Excursion",
+          "emoji": "⛄"
+        },
+        {
+          "start": "12:30 PM",
+          "end": "1:45 PM",
+          "title": "Lunch — La Bergerie de Planpraz",
+          "detail": "The mountain restaurant at the top station, so no descending for lunch. Somewhere warm to dry gloves and get hot food into everyone before heading down.",
+          "typeName": "Dining",
+          "emoji": "🍲",
+          "est": 110,
+          "notes": "Mountain-restaurant pricing in a French ski area at Christmas runs high — budget €25–30 per adult main and €15–18 for children. Menu and 2026/27 prices not published; treat as an estimate."
+        },
+        {
+          "start": "1:45 PM",
+          "end": "2:15 PM",
+          "title": "Gondola down to Chamonix",
+          "detail": "Last descent is 17:00, so no pressure. Twenty minutes down plus the walk off.",
+          "typeName": "Transportation",
+          "emoji": "🚡"
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:45 PM",
+          "title": "Back to the hotel — dry gear, swap to indoor clothes",
+          "detail": "Changeover block. Snow gear off and drying, normal clothes and thick socks on for the rink.",
+          "typeName": "Logistics",
+          "emoji": "🧦"
+        },
+        {
+          "start": "3:00 PM",
+          "end": "5:00 PM",
+          "title": "Ice skating — Patinoire Richard Bozon",
+          "detail": "214 avenue de la Plage, about fifteen minutes on foot, or the bus to the Médiathèque stop. Olympic-size indoor rink, 60m × 30m. Public session runs 14:00–18:00 daily through the holiday period.",
+          "typeName": "Excursion",
+          "emoji": "⛸️",
+          "est": 40,
+          "notes": "Entry €6.80 adult, €5.00 child, under 6 free — so the 5-year-old is free and the 7-year-old pays €5. Skate hire €4.50 each. Family total about €36.60. The Carte d'Hôte gets a reduced rate here.",
+          "flag": "Whether this rink provides penguin-style support frames for young children could not be confirmed — they are documented at the Les Houches rink, not this one. If that is make-or-break for the 5-year-old, phone +33 4 50 53 12 36 first."
+        },
+        {
+          "start": "5:00 PM",
+          "end": "6:15 PM",
+          "title": "Walk back & downtime",
+          "detail": "Back to the hotel, warm up, nothing scheduled.",
+          "typeName": "Free Time",
+          "emoji": "🛁"
+        },
+        {
+          "start": "6:30 PM",
+          "end": "8:00 PM",
+          "title": "Dinner — Bighorn Bistro & Bakery",
+          "detail": "77 place Edmond Desailloud, three minutes from the hotel door — the shortest walk of the trip on the coldest likely night. Family-run American bistro that bakes its own bread: Bighorn burger €20, Peruvian chicken burger €20, Savoyard mac & cheese €15, farm/sea/forest bowls €18, sticky BBQ pork ribs €39. Vegetarian, vegan and gluten-free options.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 75,
+          "menuUrl": "https://www.bighornbistro.com/dinner/",
+          "notes": "Open Wednesday from 16:00 — this is the first night of the stay it is available, since it closes Monday and Tuesday. Two adult mains around €20 plus children's portions comes to roughly €65–70. A kids' menu exists but the price is not published. Reservations recommended on +33 7 89 07 79 62."
+        }
+      ]
+    },
+    {
+      "date": "Thursday, December 24, 2026",
+      "title": "Snowshoes & Christmas Eve",
+      "planned": false,
+      "blocks": [
+        {
+          "start": "7:45 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at the hotel",
+          "detail": "Earlier start than the last two days — the snowshoe walk meets at 09:00.",
+          "typeName": "Dining",
+          "emoji": "🥐",
+          "est": 54
+        },
+        {
+          "start": "9:00 AM",
+          "end": "12:00 PM",
+          "title": "Guided family snowshoe walk — ESF Chamonix",
+          "detail": "Private guided outing, meeting at the ESF centre in the town centre. Flat forest trails on the valley floor, snowshoes and poles supplied, itinerary adapted to the group. Guides work animal-track spotting into the walk for children.",
+          "typeName": "Excursion",
+          "emoji": "🥾",
+          "est": 221,
+          "program": "Cash",
+          "notes": "ESF private half-day €205 for 1–4 people, morning 09:00–12:00. Snowshoes and poles included. Chosen because the Compagnie des Guides — the town's flagship operator — sets a hard minimum age of 12 on all its snowshoe products and will not take a 5- and 7-year-old. Evolution 2 is the fallback at €230 plus €10 per person for equipment.",
+          "flag": "ESF publishes no minimum age, which is why they are the pick — but it means it is a negotiation, not a rule. State both children's ages when booking and confirm child-size snowshoes. Ask explicitly for a short flat route; three hours is a lot for a 5-year-old, and a 40-minute loop like the Boucle des Tignes may suit better."
+        },
+        {
+          "start": "12:00 PM",
+          "end": "12:30 PM",
+          "title": "Back to the hotel — dry off and change",
+          "detail": "Changeover block after three hours in snow. Wet boots and gloves out to dry, dry clothes on before lunch.",
+          "typeName": "Logistics",
+          "emoji": "🧤"
+        },
+        {
+          "start": "12:45 PM",
+          "end": "1:45 PM",
+          "title": "Lunch — Aux Petits Gourmands",
+          "detail": "168 rue du Docteur Paccard, about nine minutes on foot. Pâtisserie and tea salon with real savoury options — quiches, sandwiches, salads — so it works as a lunch rather than just a sugar stop. Their thick hot chocolate and the Christmas chocolate displays are the draw for the kids. Signatures include the Croix de Savoie and the 4810 praline.",
+          "typeName": "Dining",
+          "emoji": "☕",
+          "est": 70,
+          "notes": "Open every day, main shop 07:30–19:30. There is a second site at 191 rue Joseph Vallot in Chamonix Sud, four or five minutes from the hotel, if the weather is poor. Drinks prices are not published — estimate only."
+        },
+        {
+          "start": "2:15 PM",
+          "end": "4:30 PM",
+          "title": "Swimming — Centre Sportif Richard Bozon",
+          "detail": "Same building as the ice rink. A 25m main pool plus a leisure pool with massage jets and a current channel, a 130-metre indoor water slide, a children's water-games area and a jacuzzi. The best-value activity of the stay and the right thing after a morning of snowshoeing.",
+          "typeName": "Excursion",
+          "emoji": "🏊",
+          "est": 20,
+          "notes": "Adult €6.70, child 6–18 €4.90, under 6 free — so the 5-year-old swims free and the 7-year-old pays €4.90. Family total €18.30, less again with the Carte d'Hôte. Children under 10 must be supervised in the water; sauna is 12+.",
+          "flag": "The pool closes at 18:00 on 24 December rather than the usual 19:30 — confirmed for 2026/27 — so this has to be an afternoon visit, not an evening one. The 130m slide almost certainly carries a height minimum that is not published; check on arrival before promising it to the 5-year-old."
+        },
+        {
+          "start": "4:30 PM",
+          "end": "5:15 PM",
+          "title": "Back to the hotel — showers and change",
+          "detail": "Changeover block. Pool hair dried properly before going back out into the cold, and everyone into something decent for Christmas Eve dinner.",
+          "typeName": "Logistics",
+          "emoji": "🚿"
+        },
+        {
+          "start": "5:15 PM",
+          "end": "7:00 PM",
+          "title": "Downtime — games room and bowling",
+          "detail": "Unstructured. The hotel's games room, board games and the two bowling lanes fill the gap before dinner without anyone going back out into the cold.",
+          "typeName": "Free Time",
+          "emoji": "🎳"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "9:00 PM",
+          "title": "Christmas Eve dinner — Plan B, in the hotel",
+          "detail": "Held at the hotel deliberately. Chamonix restaurants run fixed festive menus on the 24th, they sell out, and a dark icy walk home on the one night everything is full is the wrong gamble with two young kids. Plan B has run a dedicated Christmas Eve service in prior seasons.",
+          "typeName": "Dining",
+          "emoji": "🎄",
+          "est": 195,
+          "notes": "The tourist office lists a Plan B festive menu from €74 per adult in a prior season. Chamonix norms for 24 December run €70–120 per adult with à la carte withdrawn, and several venues offer no child price at all. Estimate assumes roughly €74 × 2 plus a children's option.",
+          "flag": "No Chamonix venue has published 2026 festive menus — they appear early-to-mid November. Book this the week it opens. If you want to eat out instead, Pointe Isabelle (+33 4 50 53 12 87) publishes separate 24 and 25 December menus and Le Cap Horn runs a festive service every season — call both in mid-November."
+        }
+      ]
+    },
+    {
+      "date": "Friday, December 25, 2026",
+      "title": "Christmas Day — Chamonix → Milan by rail",
+      "planned": false,
+      "blocks": [
+        {
+          "start": "7:45 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast & pack",
+          "detail": "Buffet from 06:30. Take the €8 takeaway option for the kids if the morning runs tight.",
+          "typeName": "Dining",
+          "emoji": "🥐",
+          "est": 54
+        },
+        {
+          "start": "8:45 AM",
+          "end": "9:30 AM",
+          "title": "Checkout & buy food for the day",
+          "detail": "Checkout is 11:00, so there is slack. Critical: buy lunch and snacks for four before leaving. This is Christmas Day in the Alps — assume every shop and counter at Vallorcine, Martigny and Brig is shut, including the long stop at Brig.",
+          "typeName": "Logistics",
+          "emoji": "🥪",
+          "est": 40,
+          "flag": "Do not plan to buy food en route. Nothing will be open."
+        },
+        {
+          "start": "9:30 AM",
+          "end": "10:20 AM",
+          "title": "Walk to Chamonix-Mont-Blanc station",
+          "detail": "About 890m, 10–12 minutes, in daylight this time. Allow the full window with luggage and ice underfoot. Taxi fallback +33 4 50 53 13 94.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "10:28 AM",
+          "end": "11:01 AM",
+          "title": "Mont-Blanc Express · Chamonix → Vallorcine",
+          "detail": "33 minutes to the French–Swiss frontier station. The French SNCF service terminates here and the Swiss TMR train takes over — the two halves are marketed as one line but are separate railways.",
+          "typeName": "Transportation",
+          "emoji": "🚞",
+          "notes": "Free with the Carte d'Hôte, which covers Servoz to Vallorcine — confirm with the hotel at checkout that the card is still valid on the 25th.",
+          "flag": "A mid-morning departure is the safe choice, not just the comfortable one. On 25 December every commuter-coded French service is cancelled as a public holiday, and on the prior-season timetable the earliest daily departure was around 07:55. The hourly daily service is what you are relying on."
+        },
+        {
+          "start": "11:13 AM",
+          "end": "12:09 PM",
+          "title": "Vallorcine → Martigny",
+          "detail": "56 minutes on the Swiss TMR regional service, climbing over and down into the Rhône valley. Twelve-minute change at Vallorcine.",
+          "typeName": "Transportation",
+          "emoji": "🚆"
+        },
+        {
+          "start": "12:17 PM",
+          "end": "1:25 PM",
+          "title": "Martigny → Brig",
+          "detail": "68 minutes on the SBB regional along the Rhône. Eight-minute change at Martigny — tight but a normal cross-platform Swiss connection.",
+          "typeName": "Transportation",
+          "emoji": "🚆"
+        },
+        {
+          "start": "1:25 PM",
+          "end": "2:44 PM",
+          "title": "Brig — 1h19 buffer",
+          "detail": "This gap is the safety valve, not dead time. It absorbs a missed connection at either Vallorcine or Martigny without losing the EuroCity, and gives everyone a break. Eat the food you bought in Chamonix — the station will be shut.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "2:44 PM",
+          "end": "4:55 PM",
+          "title": "EuroCity 65 · Brig → Milano Centrale",
+          "detail": "2h11 through the Simplon Tunnel via Domodossola, arriving Milano Centrale at 16:55. Swiss Astoro or Trenitalia ETR 610 Pendolino.",
+          "typeName": "Flight",
+          "emoji": "🚄",
+          "est": 248,
+          "route": "Chamonix → Vallorcine → Martigny → Brig → Milano Centrale",
+          "flightNo": "TER P52 + TMR R85 + SBB R91 + EC 65",
+          "cabin": "2nd class",
+          "program": "Cash — SBB/Trenitalia",
+          "notes": "Total journey 6h27 with three changes. Brig→Milan advance fares start around €29 adult 2nd class; children 6–15 get roughly 50% off, and under-6s travel free without a seat — buy the seat anyway for a 2h11 international leg, it is charged at the same child rate. Swiss legs not separately priced. Estimate covers the whole chain for four.",
+          "flag": "Seat reservation is COMPULSORY on this train — you cannot walk up and board. It is also the only reachable direct service: EC 41 at 07:41 would need a 04:40 Chamonix departure that does not exist on Christmas Day, and every other option routes via Zürich or the Gotthard at 5h10–5h40. Book the moment the timetable loads, around mid-October."
+        },
+        {
+          "start": "4:55 PM",
+          "title": "Arrive Milano Centrale — plan ends here",
+          "detail": "No Milan lodging and no return flight are booked. The outbound came into Paris, so this is an open jaw and the way home still needs building.",
+          "typeName": "Logistics",
+          "emoji": "🧭",
+          "flag": "Open item: where you sleep on Christmas night and how you get home."
         }
       ]
     }
@@ -158,40 +644,88 @@
   "supplies": [],
   "ideas": [
     {
-      "title": "Confirm the award rate doesn't price peak",
-      "detail": "15,000 per night is the Category 4 standard rate, so the assumption holds structurally. But Category 4 peak is 18,000, and the week before Christmas is a plausible peak window in Paris. At peak across two rooms and four nights the total goes from 120,000 to 144,000 — a 24,000-point swing worth checking before counting on it."
+      "title": "⚠ TRIP-BREAKER — Leavenworth collision",
+      "detail": "This trip is Dec 16–25, 2026. Leavenworth Winter 2026 is Dec 19–27, 2026 with MIA→SEA booked on Dec 19 (Alaska AS305, conf UUKHNQ) and a Hampton Inn on 308K Hilton points. They overlap by seven days and both depart from Miami. These cannot both happen. Nothing here should be booked until one of them moves."
     },
     {
-      "title": "Globalist benefits on a second room",
-      "detail": "Regency Club access and breakfast attach to the room the member occupies. A second room on the same reservation does not automatically carry them. Confirm with the hotel, or look at whether a Guest of Honor booking covers the second room, before assuming breakfast for four."
+      "title": "⚠ Nothing is bookable yet",
+      "detail": "SNCF opens sales for 13 Dec 2026 – 6 Jan 2027 on 30 September 2026. The European timetable changes on 13 December 2026, so every French and Swiss time in this plan is the current-season pattern, not the published December timetable. Swiss schedules load mid-August to mid-October. Set a calendar alarm for 30 September, and re-verify the whole rail spine in mid-October."
     },
     {
-      "title": "Ask for high floor, south-facing",
-      "detail": "The tower's value is the view — Eiffel Tower rooms are the reason to pick this property over a more central Hyatt. Worth requesting at booking and again at check-in rather than leaving to assignment."
+      "title": "⚠ The trip currently ends in Milan with no way home",
+      "detail": "Dec 25 lands at Milano Centrale at 16:55 and the plan stops. No Milan lodging, no return flight. The outbound was booked into Paris, so this is now an open-jaw and the return leg needs building."
     },
     {
-      "title": "Connecting rooms",
-      "detail": "Two rooms with young kids raises whether connecting or adjacent rooms are available. This is a large tower property, so request it early — it is not something to sort out at the desk on arrival after a red-eye."
+      "title": "⚠ Christmas Day departure — the EuroCity is the whole plan",
+      "detail": "Only two direct trains run Brig→Milano Centrale: EC 41 at 07:41 (unreachable from Chamonix) and EC 65 at 14:44. Miss EC 65 and every alternative routes via Zürich or the Gotthard at 5h10–5h40. Seat reservation is compulsory on this train. Book the moment the timetable loads."
     },
     {
-      "title": "Dublin connection is under the recommended window",
-      "detail": "1h35m at DUB. Aer Lingus transfer guidance for US arrivals continuing into Europe recommends 1h45m–2h. Bags transfer automatically on a single ticket and there is no second security screening, but passport control is required and it is the whole widebody queuing at once. A delay on EI140 puts the Paris leg at risk."
+      "title": "⚠ Domodossola–Milan works — real risk of bus replacement",
+      "detail": "The four-metre-corridor upgrade runs to at least end-2028, and SBB confirms one fewer EC per direction Monday–Friday — Dec 25 is a Friday. In 2025/26 RFI fully suspended Rho–Gallarate from late December into early January and EuroCity trains to Milan were diverted, shortened or bussed, adding 45–90 minutes. RFI has not published 2026/27 notices. Re-check in mid-November; if it is bussed, leave Chamonix an hour earlier."
     },
     {
-      "title": "Two passport controls, not one",
-      "detail": "Ireland is in the EU but not in Schengen, so Irish passport control happens at Dublin and Schengen entry happens again at Paris. The CDG arrival still needs a full immigration-and-baggage window even though the inbound leg is intra-EU."
+      "title": "Plan de l'Aiguille is the wrong call in winter",
+      "detail": "The mid-station at 2,317m has no refuge, no shelter, no food and no maintained winter walking terrain — the Grand Balcon Nord is an unmaintained avalanche slope and the refuge is summer-only. No source confirms pedestrians may even exit there in winter. There is no snow play there in any meaningful sense. Planpraz at 2,000m is substituted: walkable gondola base, sun-facing, a restaurant, and room to actually run around."
+    },
+    {
+      "title": "Aiguille du Midi summit with a 5-year-old",
+      "detail": "If the top station is wanted anyway: the operator forbids under-3s and does not recommend under-5s. The ascent is 1,035m to 3,842m in about 20 minutes, faster than any acclimatisation, at roughly 60% of sea-level oxygen and commonly −15°C to −20°C before windchill in December. Cap it at 30–45 minutes up top, skip the Pas dans le Vide queue, and descend immediately on any headache or unusual lethargy."
+    },
+    {
+      "title": "Compagnie des Guides will not take these kids",
+      "detail": "Their snowshoe minimum age is 12, stated on both the half-day and animal-tracks products — this rules them out. ESF Chamonix publishes no age floor, includes snowshoes and poles, and is the cheapest private rate at €205 for up to four. State the ages of 5 and 7 explicitly when booking and confirm child-size snowshoes. Evolution 2 is the fallback at €230 plus €10pp equipment."
+    },
+    {
+      "title": "Ice cave opens only days before arrival",
+      "detail": "The Mer de Glace ice cave does not open with the train — it is re-carved each autumn. Montenvers currently indicates the ice-cave combination is available from 13 December. In 2025/26 the cave opened 20 December, one day before the equivalent arrival. Re-verify in late November; if carving runs late it slips."
+    },
+    {
+      "title": "Aiguille du Midi reopens two days before you arrive",
+      "detail": "Confirmed closed for annual maintenance 2 November – 18 December 2026, reopening 19 December. Les Planards opens 19 December and the Patinoire runs 19 Dec – 3 Jan. Everything you need opens just in time, with no margin. Verify in early December."
+    },
+    {
+      "title": "Alpine Coaster — both kids ride with an adult",
+      "detail": "Minimum age to ride at all is 3, seated with an adult. Minimum height to ride alone is 1.35m, which a 5- and 7-year-old will almost certainly not meet. So one family descent = two sleds = €19. The 6-ride pack at €47.50 buys three family descents."
+    },
+    {
+      "title": "Get off at Chamonix-Aiguille-du-Midi, not Chamonix-Mont-Blanc",
+      "detail": "Coming from Saint-Gervais the Mont-Blanc Express calls at Chamonix-Aiguille-du-Midi two minutes before the main station. From there the hotel is about 510m and 6 minutes on foot, against 890m and 10–12 minutes from Chamonix-Mont-Blanc. In the dark, below freezing, with four people and winter luggage, that halving matters. Book the ticket through to Chamonix-Aiguille-du-Midi."
+    },
+    {
+      "title": "Carte d'Hôte — free valley trains, NOT free buses",
+      "detail": "Issued free at check-in. It gives genuinely free travel on the Mont-Blanc Express between Servoz and Vallorcine, which covers the whole valley. Since the December 2023 network relaunch it is NOT a bus ticket — it only discounts Chamonix Mobilité passes (weekly €10 instead of €19). Many travel sites still say free bus travel; they are out of date. Also discounts the Richard Bozon pool and rink."
+    },
+    {
+      "title": "Pool is shut on Christmas Day",
+      "detail": "Confirmed for 2026/27: the Richard Bozon pool closes at 18:00 on 24 December and is closed all day on 25 December. The ice rink in the same building has not published 24/25 December hours — assume it may also close and phone +33 4 50 53 12 36."
+    },
+    {
+      "title": "Christmas Eve and Christmas Day dining",
+      "detail": "No Chamonix venue has published 2026 festive menus — they appear early-to-mid November. Expect fixed menus at €70–120 per adult with à la carte withdrawn, and several venues offer no child price at all on those nights. Pointe Isabelle publishes separate 24 and 25 December menus and is the strongest Christmas Day candidate; call it and Le Cap Horn in mid-November."
+    },
+    {
+      "title": "Confirm the Paris award rate doesn't price peak",
+      "detail": "15,000 per night is the Category 4 standard rate. Category 4 peak is 18,000, and the week before Christmas is a plausible peak window in Paris. At peak across two rooms and four nights the total goes from 120,000 to 144,000 points."
+    },
+    {
+      "title": "Globalist benefits on the second Paris room",
+      "detail": "Regency Club access and breakfast attach to the room the member occupies. A second room does not automatically carry them. Confirm with the hotel, or check whether a Guest of Honor booking covers it, before assuming breakfast for four."
+    },
+    {
+      "title": "Plan B room choice and the noise caveat",
+      "detail": "The 2-Room Family Room is 32m² with a balcony and separate sleeping areas. The 1-Bedroom Apartment is 39m² with a kitchenette and includes one sauna/hammam session per stay — and the kitchenette is a real hedge against Christmas Day closures. The property is explicitly social with a 700m² living area and bar, and reviews mention thin corridor insulation. Request a room away from the bar and common area."
+    },
+    {
+      "title": "Plan B nightly rate is an estimate",
+      "detail": "No live rate could be obtained for these dates — the booking engine and every OTA gate prices behind scripts. The modeled figure extrapolates from a February peak average of about $362 and published 'from' rates. Verify directly at +33 4 85 30 01 60. Breakfast is extra and sources conflict: the hotel's own site says €17 adult and €8 under-10, others say €19 and €10."
     },
     {
       "title": "Award space is exactly four seats",
-      "detail": "4 seats showing at 27,500 points + $29.10 each — no margin for a fifth traveler and no room to absorb one seat disappearing. 110,000 points + $116.40 for the family. Confirm which currency this prices in (Avios is the likely route on Aer Lingus metal) before counting the balance."
+      "detail": "4 seats showing at 27,500 points + $29.10 each — no margin. 110,000 points + $116.40 for the family. Confirm which currency this prices in (Avios is the likely route on Aer Lingus metal)."
     },
     {
-      "title": "PARKED — The Tribune, JdV by Hyatt (Rome)",
-      "detail": "Previously modeled: Ludovisi district off Via Veneto, 3 nights, 1 King Junior Suite via Suite Upgrade Award, assumed 20,000 points per night. Open questions if Rome returns later in the trip: the property appears to have moved to Category 6 in Hyatt's 2025 update, SUA eligibility on the junior suite is unconfirmed, and roughly 344 sq ft is snug for four."
-    },
-    {
-      "title": "⚠ DATE CONFLICT — Leavenworth 2026",
-      "detail": "This trip is December 16–21, 2026. The Leavenworth Winter 2026 trip is December 19–27, 2026, with MIA→SEA on Dec 19. Those overlap by three days and both start from Miami — they cannot both happen. One of the two has to move before any of this gets booked."
+      "title": "Buy one Carte Avantage Adulte",
+      "detail": "€49 per year. Gives −30% to the holder and one accompanying adult and −60% for up to three children aged 4–11 on the same booking, with 2nd-class TGV fares capped at €89 for journeys over three hours. Any trip accompanying a child aged 4–11 qualifies unconditionally. It pays for itself on the Paris–Chamonix leg alone. Note the Carte Avantage Famille no longer exists — it was folded into this card in 2021."
     }
   ],
   "alternatives": null
