@@ -107,7 +107,9 @@
           "notes": "No direct bus from CDG to Porte Maillot. Roissybus runs only to Opéra; RER B lands at Châtelet-Les Halles needing a change onto Métro 1 westbound. The flat-rate taxi is fixed-price door to door."
         },
         {
-          "title": "Hyatt Regency Paris Étoile — 4 nights, 2 rooms",
+          "start": "3:05 PM",
+          "end": "4:00 PM",
+          "title": "Check in — Hyatt Regency Paris Étoile, 4 nights, 2 rooms",
           "detail": "3 Place du Général Kœnig, 75017 Paris. The tallest hotel in Paris, directly above Porte Maillot and attached to the Palais des Congrès. High south-facing floors have genuine Eiffel Tower views, and there is a Regency Club lounge with breakfast, all-day refreshments and evening hors d'oeuvres. Arrival around 3:05 PM lines up with standard 3:00 PM check-in.",
           "typeName": "Hotel",
           "emoji": "🏨",
@@ -220,14 +222,8 @@
         {
           "start": "5:25 PM",
           "end": "6:15 PM",
-          "title": "Check in & collect the Carte d'Hôte",
-          "detail": "Check-in is 4:00 PM so the rooms will be ready. Ask for the Carte d'Hôte at the desk — it is free and gives unlimited free travel on the Mont-Blanc Express between Servoz and Vallorcine for the whole stay, plus discounts at the pool and ice rink.",
-          "typeName": "Logistics",
-          "emoji": "🛎️"
-        },
-        {
-          "title": "Plan B Hotel — Living Chamonix, 4 nights",
-          "detail": "196 Avenue de Courmayeur, 74400 Chamonix-Mont-Blanc. Beside the Chamonix Sud bus station, about 200m from the Aiguille du Midi cable car. Two-lane mini-bowling on site (€4 per person per game, daily 10:00–22:00), a games room, a supervised kids' play area, and sauna and hammam by private reservation. No pool.",
+          "title": "Check in — Plan B Hotel, Living Chamonix, 4 nights",
+          "detail": "Check-in is 4:00 PM so the rooms will be ready. Ask for the Carte d'Hôte at the desk — free, and it gives unlimited free travel on the Mont-Blanc Express between Servoz and Vallorcine for the whole stay, plus discounts at the pool and ice rink. 196 Avenue de Courmayeur, 74400 Chamonix-Mont-Blanc. Beside the Chamonix Sud bus station, about 200m from the Aiguille du Midi cable car. Two-lane mini-bowling on site (€4 per person per game, daily 10:00–22:00), a games room, a supervised kids' play area, and sauna and hammam by private reservation. No pool.",
           "typeName": "Hotel",
           "emoji": "🏨",
           "nights": "4 nights (Mon Dec 21 – Fri Dec 25)",
@@ -643,6 +639,18 @@
   },
   "supplies": [],
   "ideas": [
+    {
+      "title": "ALTERNATIVE BASE — Bourg-Saint-Maurice (one direct train, any day)",
+      "detail": "OUIGO runs a DIRECT Paris Gare de Lyon to Bourg-Saint-Maurice service December through March, about 5h42, at €19 adult and a flat €8 for children 4-11 — roughly €54 one way for the family against the ~€300 and three changes of the Chamonix routing. Five minutes from the station, the Funiculaire Arc-en-Ciel climbs 800m to Les Arcs 1600 in 7 minutes; confirmed operating 12 Dec 2026 to 25 Apr 2027, pedestrians explicitly carried, €5 return adult and €4 child 5-12, and reportedly one free round trip on presentation of your train ticket and ID. Non-ski offering is the deepest of any candidate: Luge 1800 is a 900m lit sledge run where children 3-7 ride free on an adult's sledge, Espace Mille8 has a children's snow zone with igloos and a magic carpet, and the Arc 1800 aqualudique centre is 3,800m². Pedestrian lift pass €24 adult, €20 child, funicular included. Downside: the town sits at 815m and is not itself a snow town, and Arc 1600/1800 are purpose-built 1960s-70s resorts with no old-town charm."
+    },
+    {
+      "title": "ALTERNATIVE BASE — Saint-Gervais-les-Bains-Le Fayet (lift at the station door)",
+      "detail": "This is the station the Chamonix plan already changes at, so basing here deletes the Mont-Blanc Express leg entirely. The Valléen gondola departs from the station building itself, 5 minutes to Saint-Gervais village, €2.50 a passage and under-5s free, running 07:00-20:30 year round. From the village, the Alpin gondola goes to Le Bettex at 1,404m, 12 Dec 2026 to 4 Apr 2027. The Tramway du Mont-Blanc rack railway also leaves from the station, climbing to Plateau de Bellevue at 1,800m in about an hour, 12 Dec 2026 to 29 Mar 2027, €34 adult and €28.90 child return, reservation compulsory. Bettex has FREE sledging with two zones split at ages 2-6 and 6+, which matches these two kids exactly. The village has a covered ice rink with penguin supports and the Thermes spa runs family sessions for ages 3-13. Downside: the direct TGV appears to run winter WEEKENDS only, which does not fit a Monday 21 December arrival, and the town at 807m may have no snow at street level."
+    },
+    {
+      "title": "Both alternatives beat Chamonix on transit, neither on the town itself",
+      "detail": "Chamonix is the better town — a real alpine centre at 1,035m with the Mer de Glace, Les Planards and a pedestrianised core — but it costs three changes and about seven hours from Paris. Bourg-Saint-Maurice is the fix if the priority is one train on any weekday. Saint-Gervais is the fix if the dates can move to a weekend and a lift at the station door matters most. Discarded because they need a bus or have no lift from town: Moûtiers, Albertville, Cluses, Sallanches, Modane, Chambéry, Annecy and Grenoble. Le Mont-Dore has no passenger rail service at all any more and Gérardmer has no station."
+    },
     {
       "title": "⚠ TRIP-BREAKER — Leavenworth collision",
       "detail": "This trip is Dec 16–25, 2026. Leavenworth Winter 2026 is Dec 19–27, 2026 with MIA→SEA booked on Dec 19 (Alaska AS305, conf UUKHNQ) and a Hampton Inn on 308K Hilton points. They overlap by seven days and both depart from Miami. These cannot both happen. Nothing here should be booked until one of them moves."
