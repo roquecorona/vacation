@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Spline+Sans+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{height:100%}
+body{margin:0;background:#eef0ed;overflow-x:hidden}
+
+/* --- Mobile layout (<=780px) --- */
+/* Inline styles are compiled into React style OBJECTS by this template's runtime */
+/* (see support.js), so plain attribute-selector overrides like div[style*="..."] */
+/* never match the rendered DOM -- they silently do nothing. Every responsive change */
+/* below instead flows through a CSS custom property referenced directly inside the */
+/* template's own inline style as var(--x-mobile, desktop-fallback). That works */
+/* regardless of how the runtime re-serializes the rest of the style object, because */
+/* var() substitution happens in the browser's CSS engine, not in the template. */
+/* Navigation on mobile is a real off-canvas drawer (the desktop sidebar itself */
+/* becomes a fixed, slide-in panel), triggered from a sticky top bar -- not a */
+/* squeezed-down copy of the desktop sidebar sitting above the content. */
+@media (max-width: 780px) {
+  :root {
+    --layout-cols-mobile: 1fr;
+    --layout-rows-mobile: auto 1fr;
+    --layout-h-mobile: auto;
+    --layout-minh-mobile: 100vh;
+    --layout-of-mobile: visible;
+    --topbar-display-mobile: flex;
+    --aside-pos-mobile: fixed;
+    --aside-top-mobile: 0;
+    --aside-bottom-mobile: 0;
+    --aside-w-mobile: 84vw;
+    --aside-maxw-mobile: 320px;
+    --aside-z-mobile: 1000;
+    --aside-shadow-mobile: 0 0 32px rgba(10,16,18,0.35);
+    --aside-closed-tx-mobile: translateX(-100%);
+    --asideclose-display-mobile: flex;
+    --scrim-display-mobile: block;
+    --navrow-pad-mobile: 11px 12px;
+    --navbtn-pad-mobile: 10px 14px;
+    --main-ovy-mobile: visible;
+    --sec-pad-mobile: 18px 16px 40px;
+    --sec-maxw-mobile: 100%;
+    --h1-34-mobile: 25px;
+    --h1-27-mobile: 21px;
+    --dayrow-cols-mobile: 60px 22px 1fr;
+    --dayrow-gap-mobile: 6px;
+    --present-cols-mobile: 1fr;
+    --present-br-mobile: none;
+    --money-cols-mobile: 1fr 76px 88px;
+    --money-gap-mobile: 8px;
+    --points-cols-mobile: 1fr 80px 92px;
+    --points-gap-mobile: 8px;
+    --tbl-est-display-mobile: none;
+    --ovrow-cols-mobile: 44px 1fr auto;
+    --ovrow-summary-display-mobile: none;
+    --bkcards-cols-mobile: 1fr;
+    --packslot-cols-mobile: 92px 1fr;
+  }
+}
+</style>
+</helmet>
+<div style="--accent: {{ accent }}; display:grid;grid-template-columns:var(--layout-cols-mobile, 236px 1fr);grid-template-rows:var(--layout-rows-mobile, none);height:var(--layout-h-mobile, 100%);min-height:var(--layout-minh-mobile, 760px);overflow:var(--layout-of-mobile, hidden);background:#f4f5f3;color:#1b2629;font-family:'Schibsted Grotesk',sans-serif">
+
+  <div data-screen-label="Mobile top bar" style="display:var(--topbar-display-mobile, none);align-items:center;gap:10px;padding:10px 14px;background:#eceeea;border-bottom:1px solid #dfe4e1;position:sticky;top:0;z-index:500">
+    <button onClick="{{ toggleMobileNav }}" aria-label="Open menu" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;width:40px;height:40px;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">&#9776;</button>
+    <div style="min-width:0;flex:1">
+      <div style="font:800 15px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ title }}</div>
+      <div style="font:500 10.5px 'Spline Sans Mono',monospace;color:#647579;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ topbarSubLabel }}</div>
+    </div>
+    <sc-if value="{{ hasToday }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ todayGo }}" aria-label="Jump to today" style="cursor:pointer;background:var(--accent, #16695E);color:#ffffff;border:none;border-radius:8px;width:40px;height:40px;font-size:15px;display:flex;align-items:center;justify-content:center;flex:none">&#128205;</button>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ mobileNavOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ toggleMobileNav }}" style="display:var(--scrim-display-mobile, none);position:fixed;inset:0;background:rgba(10,16,18,0.45);z-index:900"></div>
+  </sc-if>
+
+  <aside data-screen-label="Sidebar" style="background:#eceeea;border-right:1px solid #dfe4e1;display:flex;flex-direction:column;min-height:0;position:var(--aside-pos-mobile, static);top:var(--aside-top-mobile, auto);bottom:var(--aside-bottom-mobile, auto);left:0;width:var(--aside-w-mobile, auto);max-width:var(--aside-maxw-mobile, none);z-index:var(--aside-z-mobile, auto);box-shadow:var(--aside-shadow-mobile, none);transform:{{ asideTransform }};transition:transform 0.28s cubic-bezier(0.4,0,0.2,1)">
+    <div style="display:flex;align-items:flex-start;gap:10px;padding:20px 18px 14px">
+      <div onClick="{{ goOverview }}" style="cursor:pointer;flex:1;min-width:0">
+        <div style="font:800 19px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ title }}</div>
+        <div style="font:500 11px 'Spline Sans Mono',monospace;color:#647579;margin-top:4px">{{ dates }}</div>
+      </div>
+      <button onClick="{{ toggleMobileNav }}" aria-label="Close menu" style="display:var(--asideclose-display-mobile, none);cursor:pointer;background:none;border:1px solid #dfe4e1;border-radius:8px;width:32px;height:32px;flex:none;align-items:center;justify-content:center;font-size:14px;color:#647579">&#10005;</button>
+    </div>
+    <sc-if value="{{ hasToday }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ todayGo }}" style="cursor:pointer;margin:0 18px 14px;padding:8px 12px;border-radius:8px;background:var(--accent, #16695E);color:#ffffff;font:700 12px 'Schibsted Grotesk',sans-serif;text-align:center" style-hover="opacity:0.9">📍 Jump to today</div>
+    </sc-if>
+    <div style="flex:1;overflow-y:auto;padding-bottom:12px">
+      <div onClick="{{ goOverview }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 8px 10px);border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ ovBg }};color:{{ ovFg }}" style-hover="background:#e1e5e0">Trip</div>
+      <div style="margin:12px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">DAYS</div>
+      <sc-for list="{{ navDays }}" as="d" hint-placeholder-count="8">
+        <div onClick="{{ d.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 5px 10px);border-radius:8px;display:grid;grid-template-columns:30px 1fr auto auto;gap:7px;align-items:baseline;background:{{ d.bg }};color:{{ d.fg }}" style-hover="background:#e1e5e0">
+          <span style="font:600 11px 'Spline Sans Mono',monospace;opacity:0.75">{{ d.short }}</span>
+          <span style="font:500 12.5px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ d.title }}</span>
+          <sc-if value="{{ d.isToday }}" hint-placeholder-val="{{ false }}"><span style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E)">TODAY</span></sc-if>
+          <sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:9px;opacity:0.85">✅</span></sc-if>
+        </div>
+      </sc-for>
+      <sc-if value="{{ noDays }}" hint-placeholder-val="{{ false }}">
+        <div style="margin:0 18px;font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d">None yet</div>
+      </sc-if>
+      <div style="margin:14px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">LENSES</div>
+      <sc-for list="{{ lenses }}" as="l" hint-placeholder-count="6">
+        <div onClick="{{ l.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 7px 10px);border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ l.bg }};color:{{ l.fg }}" style-hover="background:#e1e5e0">{{ l.label }}</div>
+      </sc-for>
+    </div>
+    <div style="padding:12px 18px;border-top:1px solid #dfe4e1;font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d;line-height:1.6">Viewer only.
+Edits happen in chat with Claude.</div>
+  </aside>
+
+  <main style="overflow-y:var(--main-ovy-mobile, auto);min-width:0">
+
+    <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
+      <section data-screen-label="Trip overview" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 900px)">
+        <h1 style="margin:0;font:800 34px/1.05 'Schibsted Grotesk',sans-serif;letter-spacing:-0.8px;font-size:var(--h1-34-mobile, 34px)">{{ title }}</h1>
+        <div style="font:500 13px 'Spline Sans Mono',monospace;color:#647579;margin-top:8px">{{ subLine }}</div>
+
+        <sc-if value="{{ hasRoute }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:26px;background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;overflow-x:auto">
+            <sc-for list="{{ route }}" as="stop" hint-placeholder-count="6">
+              <div style="display:flex;align-items:flex-start;flex:none">
+                <div>
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <span style="width:10px;height:10px;border-radius:50%;background:var(--accent, #16695E);flex:none"></span>
+                    <span style="font:700 14px 'Schibsted Grotesk',sans-serif;white-space:nowrap">{{ stop.name }}</span>
+                  </div>
+                  <div style="font:500 10.5px 'Spline Sans Mono',monospace;color:#647579;margin:4px 0 0 18px;white-space:nowrap">{{ stop.sub }}</div>
+                </div>
+                <sc-if value="{{ stop.conn }}" hint-placeholder-val="{{ true }}">
+                  <div style="width:42px;border-top:2px dotted #b7c2bf;margin:6px 12px 0"></div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ noDays }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:28px;background:#ffffff;border:1px dashed #b7c2bf;border-radius:14px;padding:28px;max-width:520px">
+            <div style="font:700 15px 'Schibsted Grotesk',sans-serif">Nothing on the timeline yet</div>
+            <div style="font:400 13px/1.6 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:6px;text-wrap:pretty">Tell Claude where you're going and when. It will add skeleton days here, then you fill them in together — one conversation at a time.</div>
+          </div>
+        </sc-if>
+
+        <div style="margin-top:28px;display:grid;gap:6px">
+          <sc-for list="{{ obDays }}" as="d" hint-placeholder-count="10">
+            <div onClick="{{ d.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:11px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+              <span style="font:600 12px 'Spline Sans Mono',monospace;color:#647579">{{ d.dow }} {{ d.short }}</span>
+              <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ d.title }}<sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;margin-left:8px">✅</span></sc-if></span>
+              <span style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;display:var(--ovrow-summary-display-mobile, inline)">{{ d.summary }}</span>
+              <span style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;min-width:56px;text-align:right">{{ d.money }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isDay }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Day view" style="padding:var(--sec-pad-mobile, 30px 44px 56px);max-width:var(--sec-maxw-mobile, 820px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font:500 12px 'Spline Sans Mono',monospace;color:#647579">{{ dayDate }}</span>
+          <sc-if value="{{ dayPlanned }}" hint-placeholder-val="{{ false }}"><span style="font:600 10px 'Spline Sans Mono',monospace;color:#257a5a">✅ PLANNED</span></sc-if>
+          <span style="flex:1"></span>
+          <button onClick="{{ dayPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ dayNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">→</button>
+        </div>
+        <h1 style="margin:10px 0 4px;font:800 27px/1.1 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;text-wrap:balance;font-size:var(--h1-27-mobile, 27px)">{{ dayTitle }}</h1>
+        <div style="font:500 12px 'Spline Sans Mono',monospace;color:#647579;margin-bottom:10px">{{ dayMeta }}</div>
+        <sc-if value="{{ hasDayCostChips }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap">
+            <sc-for list="{{ dayCostChips }}" as="cc" hint-placeholder-count="2">
+              <span style="font:600 10.5px 'Spline Sans Mono',monospace;letter-spacing:0.3px;background:{{ cc.bg }};color:{{ cc.fg }};border-radius:999px;padding:5px 11px">{{ cc.label }}</span>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ dayEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d;border-top:1px solid #e5e9e5;padding-top:16px">Nothing scheduled yet — plan this day in chat.</div>
+        </sc-if>
+
+        <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="12">
+          <div>
+            <sc-if value="{{ b.isMove }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:baseline;gap:9px;padding:6px 0 6px 96px;font:500 11.5px 'Spline Sans Mono',monospace;color:#8b9a9d">
+                <span>{{ b.emoji }}</span><span>{{ b.moveLabel }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isReceipt }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:baseline;gap:8px;padding:4px 0 4px 96px">
+                <span style="font:400 12px 'Schibsted Grotesk',sans-serif;color:#647579">{{ b.title }}</span>
+                <span style="flex:1;border-bottom:1px dotted #d3dad6;transform:translateY(-3px)"></span>
+                <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:{{ b.moneyColor }}">{{ b.money }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isNote }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:4px 0 4px 96px;font:400 12px 'Schibsted Grotesk',sans-serif;font-style:italic;color:#8b9a9d">{{ b.title }}</div>
+            </sc-if>
+            <sc-if value="{{ b.isStop }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid;grid-template-columns:var(--dayrow-cols-mobile, 88px 30px 1fr);gap:var(--dayrow-gap-mobile, 8px);padding:10px 10px;margin:0 -10px;border-top:1px solid #e5e9e5;{{ b.nowStyle }}">
+                <div style="padding-top:1px">
+                  <sc-if value="{{ b.isNow }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E);margin-bottom:2px">● NOW</div>
+                  </sc-if>
+                  <div style="font:600 12px 'Spline Sans Mono',monospace;white-space:nowrap">{{ b.timeStart }}</div>
+                  <sc-if value="{{ b.hasTimeEnd }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:600 12px 'Spline Sans Mono',monospace;white-space:nowrap;color:#9aa8aa">{{ b.timeEnd }}</div>
+                  </sc-if>
+                  <div style="font:500 10px 'Spline Sans Mono',monospace;color:#9aa8aa;margin-top:2px">{{ b.durLabel }}</div>
+                </div>
+                <div style="font-size:15px;line-height:1.4;text-align:center">{{ b.emoji }}</div>
+                <div style="min-width:0">
+                  <div style="display:flex;align-items:baseline;gap:10px">
+                    <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ b.title }}</span>
+                    <span style="flex:1"></span>
+                    <sc-if value="{{ b.hasCostTag }}" hint-placeholder-val="{{ false }}">
+                      <span style="flex:none;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:0.3px;background:{{ b.costTagBg }};color:{{ b.costTagFg }};border-radius:999px;padding:2px 8px">{{ b.costTagLabel }}</span>
+                    </sc-if>
+                    <span style="flex:none;font:600 12px 'Spline Sans Mono',monospace;color:{{ b.moneyColor }}">{{ b.money }}</span>
+                  </div>
+                  <sc-if value="{{ b.hasISK }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;margin-top:2px">{{ b.iskLabel }} · {{ b.iskUsd }}</div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasMeta }}" hint-placeholder-val="{{ false }}">
+                    <div onClick="{{ b.toggle }}" style="cursor:{{ b.metaCursor }};font:400 12px/1.55 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:4px;white-space:pre-wrap;max-width:560px;text-wrap:pretty">{{ b.meta }}</div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasBooking }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:inline-flex;align-items:baseline;gap:12px;margin-top:8px;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;padding:7px 12px;flex-wrap:wrap">
+                      <sc-if value="{{ b.hasConf }}" hint-placeholder-val="{{ true }}">
+                        <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">CONF</span>
+                        <span style="font:600 12.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;white-space:pre-wrap">{{ b.conf }}</span>
+                      </sc-if>
+                      <sc-if value="{{ b.hasPts }}" hint-placeholder-val="{{ false }}">
+                        <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ b.ptsLabel }}</span>
+                      </sc-if>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasMenu }}" hint-placeholder-val="{{ false }}">
+                    <a href="{{ b.menuUrl }}" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:6px 11px">View live menu →</a>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPresent }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Present view" style="padding:var(--sec-pad-mobile, 30px 44px 56px);max-width:var(--sec-maxw-mobile, 980px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <h1 style="margin:0;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Present the trip</h1>
+          <span style="flex:1"></span>
+          <button onClick="{{ presentPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ presentNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">→</button>
+        </div>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:18px">A visual, day-by-day walkthrough — real photos and a real map per day. Needs an internet connection for the map tiles and photos.</div>
+
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ presentDayChips }}" as="c" hint-placeholder-count="8">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ presentEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing planned yet — build out a day first, then come back here to present it.</div>
+        </sc-if>
+
+        <sc-if value="{{ presentHasDay }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:16px;overflow:hidden">
+            <div style="padding:22px 26px 4px">
+              <div style="font:500 11.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ presentDate }}</div>
+              <div style="font:800 24px/1.15 'Schibsted Grotesk',sans-serif;color:#1b2629;text-wrap:balance;margin-top:2px">{{ presentTitle }}</div>
+            </div>
+
+            <sc-if value="{{ hasPresentPhotos }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:12px;overflow-x:auto;padding:18px 26px 6px">
+                <sc-for list="{{ presentPhotos }}" as="ph" hint-placeholder-count="3">
+                  <div style="flex:none" onClick="{{ ph.open }}">
+                    <img src="{{ ph.url }}" style="width:100%;height:190px;object-fit:cover;border-radius:12px;display:block;background:#c8d0cb;cursor:zoom-in" style-hover="opacity:0.9" />
+                    <div style="font:400 11.5px/1.4 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:6px;text-wrap:pretty">{{ ph.caption }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <div style="display:grid;grid-template-columns:var(--present-cols-mobile, 1fr 360px);gap:0;margin-top:8px">
+              <div style="padding:18px 26px 24px;border-right:var(--present-br-mobile, 1px solid #eef0ed);border-top:1px solid #eef0ed">
+                <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:10px">HERE'S WHAT WE'RE DOING</div>
+                <sc-for list="{{ presentHighlights }}" as="h" hint-placeholder-count="8">
+                  <div style="display:flex;align-items:baseline;gap:10px;padding:7px 0;border-bottom:1px solid #f0f2ef">
+                    <span style="font-size:15px">{{ h.emoji }}</span>
+                    <span style="font:500 14px 'Schibsted Grotesk',sans-serif;min-width:0">{{ h.title }}</span>
+                  </div>
+                </sc-for>
+                <div style="margin-top:16px;font:600 12px 'Spline Sans Mono',monospace;color:#1b2629">{{ presentCost }}</div>
+              </div>
+              <div style="padding:18px 20px;border-top:1px solid #eef0ed">
+                <iframe src="{{ presentMapSrc }}" style="width:100%;height:240px;border:0;border-radius:12px;display:block" loading="lazy"></iframe>
+                <a href="{{ presentMapsUrl }}" target="_blank" rel="noopener" style="display:block;margin-top:10px;text-align:center;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:8px" style-hover="border-color:var(--accent, #16695E)">Open full day route in Google Maps →</a>
+              </div>
+            </div>
+
+            <sc-if value="{{ hasPresentVideos }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:20px 26px 26px;border-top:1px solid #eef0ed">
+                <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:12px">SEE IT IN ACTION — CLICK TO WATCH ON YOUTUBE</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+                  <sc-for list="{{ presentVideos }}" as="v" hint-placeholder-count="2">
+                    <a href="{{ v.watchUrl }}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+                      <div style="position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000">
+                        <img src="{{ v.thumb }}" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover" />
+                        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center">
+                          <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center">
+                            <div style="width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:16px solid #ffffff;margin-left:4px"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="font:500 12.5px 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:8px">{{ v.title }}</div>
+                    </a>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+              <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;background:rgba(10,16,18,0.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;cursor:zoom-out">
+                <img src="{{ lightboxUrl }}" style="max-width:100%;max-height:80vh;object-fit:contain;border-radius:8px" />
+                <div style="font:500 13px 'Schibsted Grotesk',sans-serif;color:#dfe9e6;margin-top:16px;text-align:center;max-width:600px">{{ lightboxCaption }}</div>
+                <div style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;margin-top:10px">Click anywhere to close</div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isMoney }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Money lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 720px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Money</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Every dollar lives on a timeline block. This is just the rollup.</div>
+        <sc-if value="{{ noMoney }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No costs recorded yet. Estimates and receipts land here as the timeline fills in.</div>
+        </sc-if>
+        <sc-if value="{{ hasMoney }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+              <span>CATEGORY</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">PAID</span><span style="text-align:right">TOTAL</span>
+            </div>
+            <sc-for list="{{ moneyRows }}" as="r" hint-placeholder-count="10">
+              <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+                <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.emoji }}&nbsp;&nbsp;{{ r.name }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.est }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.paid }}</span>
+                <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
+              </div>
+            </sc-for>
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+              <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ moneyTotEst }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ moneyTotPaid }}</span>
+              <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ moneyTotAll }}</span>
+            </div>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPoints }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Points lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 720px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Points</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Award burn by program. Planned = on the timeline, not yet confirmed.</div>
+        <sc-if value="{{ noPoints }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No award bookings yet.</div>
+        </sc-if>
+        <sc-if value="{{ hasPoints }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+              <span>PROGRAM</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">USED</span><span style="text-align:right">TOTAL</span>
+            </div>
+            <sc-for list="{{ pointRows }}" as="r" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+                <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.name }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.planned }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.used }}</span>
+                <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
+              </div>
+            </sc-for>
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+              <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ ptsTotPlanned }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ ptsTotUsed }}</span>
+              <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ ptsTotAll }}</span>
+            </div>
+          </div>
+          <div style="margin-top:18px;display:grid;gap:6px">
+            <sc-for list="{{ pointItems }}" as="p" hint-placeholder-count="6">
+              <div onClick="{{ p.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:10px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+                <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ p.dayLabel }}</span>
+                <span style="font:500 13px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.emoji }}&nbsp;&nbsp;{{ p.title }}</span>
+                <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:{{ p.statusColor }}">{{ p.status }}</span>
+                <span style="font:600 12px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:130px;text-align:right">{{ p.ptsLabel }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isBookings }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Bookings lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 940px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Bookings</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Every block that carries a confirmation or points, gathered in one place.</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+          <sc-for list="{{ bkChips }}" as="c" hint-placeholder-count="5">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <sc-for list="{{ bookingGroups }}" as="g" hint-placeholder-count="4">
+          <div>
+            <div style="margin:20px 0 10px;font:600 10px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">{{ g.name }}</div>
+            <div style="display:grid;grid-template-columns:var(--bkcards-cols-mobile, repeat(auto-fill,minmax(390px,1fr)));gap:10px">
+              <sc-for list="{{ g.items }}" as="bk" hint-placeholder-count="3">
+                <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;overflow:hidden">
+                  <div style="padding:14px 16px 12px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:9px">
+                    <span style="font-size:15px">{{ bk.emoji }}</span>
+                    <span style="font:700 14.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ bk.title }}</span>
+                    <span style="flex:1"></span>
+                    <button onClick="{{ bk.go }}" style="cursor:pointer;flex:none;background:none;border:1px solid #dfe4e1;border-radius:6px;font:600 10px 'Spline Sans Mono',monospace;color:#647579;padding:3px 8px" style-hover="border-color:var(--accent, #16695E);color:var(--accent, #16695E)">{{ bk.dayLabel }} →</button>
+                  </div>
+
+                  <sc-if value="{{ bk.hasFacts }}" hint-placeholder-val="{{ true }}">
+                    <div style="padding:12px 16px;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;border-bottom:1px solid #eef0ed">
+                      <sc-for list="{{ bk.facts }}" as="ft" hint-placeholder-count="4">
+                        <div style="min-width:0">
+                          <div style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d">{{ ft.label }}</div>
+                          <div style="font:500 12.5px 'Schibsted Grotesk',sans-serif;margin-top:2px;text-wrap:pretty">{{ ft.value }}</div>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ bk.hasFlag }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin:12px 16px 0;background:#fdf3e3;border:1px solid #f0dcae;border-radius:8px;padding:9px 12px;display:flex;gap:8px;align-items:flex-start">
+                      <span style="flex:none;font-size:13px">⚠️</span>
+                      <span style="font:500 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#7a5a17;text-wrap:pretty">{{ bk.flag }}</span>
+                    </div>
+                  </sc-if>
+
+                  <div style="padding:12px 16px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+                    <sc-if value="{{ bk.hasConf }}" hint-placeholder-val="{{ true }}">
+                      <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">CONF <b style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;letter-spacing:0.5px;white-space:pre-wrap">{{ bk.conf }}</b></span>
+                    </sc-if>
+                    <sc-if value="{{ bk.noConf }}" hint-placeholder-val="{{ false }}">
+                      <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#96690f">NOT CONFIRMED</span>
+                    </sc-if>
+                    <sc-if value="{{ bk.hasPts }}" hint-placeholder-val="{{ false }}">
+                      <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ bk.ptsLabel }}</span>
+                    </sc-if>
+                    <span style="flex:1"></span>
+                    <span style="font:600 12px 'Spline Sans Mono',monospace;color:{{ bk.moneyColor }}">{{ bk.money }}</span>
+                  </div>
+
+                  <sc-if value="{{ bk.hasNotes }}" hint-placeholder-val="{{ false }}">
+                    <div onClick="{{ bk.toggleNotes }}" style="cursor:pointer;padding:9px 16px;border-top:1px solid #eef0ed;font:600 10.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ bk.notesToggleLabel }}</div>
+                    <sc-if value="{{ bk.notesOpen }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding:0 16px 14px;font:400 11.5px/1.55 'Schibsted Grotesk',sans-serif;color:#647579;white-space:pre-wrap;text-wrap:pretty">{{ bk.notes }}</div>
+                    </sc-if>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <sc-if value="{{ noBookings }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d;margin-top:16px">No bookings yet. When you book something, paste the confirmation into chat and it will land here.</div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPacking }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Packing lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 980px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Outfits &amp; packing</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Per person, per day, per slot — with the rewear system intact.</div>
+        <sc-if value="{{ noPacking }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing here yet. Ask Claude to draft outfit plans or packing quantities from the itinerary.</div>
+        </sc-if>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ packChips }}" as="c" hint-placeholder-count="4">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasRollups }}" hint-placeholder-val="{{ true }}">
+          <div style="margin:0 0 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;align-items:start">
+            <sc-for list="{{ packRollups }}" as="pr" hint-placeholder-count="3">
+              <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px">
+                <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+                  <span style="font:700 12.5px 'Schibsted Grotesk',sans-serif">{{ pr.who }}</span>
+                  <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ pr.totalLabel }}</span>
+                </div>
+                <sc-if value="{{ pr.empty }}" hint-placeholder-val="{{ false }}">
+                  <div style="font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d;text-wrap:pretty">No pack list yet — ask Claude to count one from the outfit plan.</div>
+                </sc-if>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 14px">
+                  <sc-for list="{{ pr.items }}" as="it" hint-placeholder-count="6">
+                    <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
+                      <span style="font:600 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:22px;text-align:right">{{ it.count }}×</span>
+                      <span style="font:400 12px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ it.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-for list="{{ outfitDays }}" as="od" hint-placeholder-count="6">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;margin-bottom:10px;overflow:hidden">
+            <div style="padding:10px 16px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:12px">
+              <span style="font:700 13px 'Schibsted Grotesk',sans-serif">{{ od.date }}</span>
+              <span style="font:500 10.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ od.dayTitle }}</span>
+            </div>
+            <sc-for list="{{ od.slots }}" as="s" hint-placeholder-count="2">
+              <div style="display:grid;grid-template-columns:var(--packslot-cols-mobile, 130px 1fr);border-bottom:1px solid #f0f2ef">
+                <div style="padding:10px 14px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:#647579">{{ s.name }}</div>
+                <div style="display:flex;align-items:stretch">
+                  <sc-for list="{{ s.people }}" as="p" hint-placeholder-count="3">
+                    <div style="flex:1;min-width:0;padding:10px 12px;border-left:1px solid #f0f2ef;font:400 11px/1.5 'Schibsted Grotesk',sans-serif;white-space:pre-wrap"><span style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;display:block;margin-bottom:3px">{{ p.who }}</span>{{ p.text }}</div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ hasTracker }}" hint-placeholder-val="{{ true }}">
+          <h2 style="margin:30px 0 4px;font:700 18px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ trackerTitle }}</h2>
+          <div style="font:400 12px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Item-level, with variation numbers and rewear flags.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px">
+            <sc-for list="{{ trackerDays }}" as="tdy" hint-placeholder-count="6">
+              <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:12px 15px">
+                <div style="font:700 12.5px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">{{ tdy.date }}</div>
+                <sc-for list="{{ tdy.groups }}" as="tg" hint-placeholder-count="2">
+                  <div style="margin-bottom:7px">
+                    <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;margin-bottom:3px">{{ tg.activity }}</div>
+                    <sc-for list="{{ tg.items }}" as="it" hint-placeholder-count="2">
+                      <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
+                        <span style="font:400 11.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ it.label }}</span>
+                        <sc-if value="{{ it.rewear }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:600 8px 'Spline Sans Mono',monospace;letter-spacing:1px;color:var(--accent, #16695E);border:1px solid var(--accent, #16695E);border-radius:4px;padding:1px 4px">REWEAR</span></sc-if>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isLists }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Lists lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 940px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Lists</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Supplies to bring, and things to buy once there.</div>
+        <sc-if value="{{ noLists }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No lists yet. Tell Claude what to track — supplies, groceries, pre-trip errands.</div>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;align-items:start">
+          <sc-for list="{{ supplyGroups }}" as="g" hint-placeholder-count="3">
+            <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+              <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="6">
+                <div style="display:flex;align-items:baseline;gap:8px;padding:3px 0">
+                  <span style="flex:none;width:11px;height:11px;border:1.5px solid #b7c2bf;border-radius:4px;transform:translateY(1px)"></span>
+                  <span style="font:400 12.5px 'Schibsted Grotesk',sans-serif">{{ it }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isChecklist }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Checklist lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 760px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Pre-trip checklist</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:6px">Everything still open before you go — reservations to lock in, prices to confirm by phone. Checks are saved in this browser.</div>
+        <div style="font:600 11px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);margin-bottom:20px">{{ checklistDone }} / {{ checklistTotal }} done</div>
+        <sc-if value="{{ noChecklist }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing open right now — everything's confirmed.</div>
+        </sc-if>
+        <div style="display:grid;gap:8px">
+          <sc-for list="{{ checklistItems }}" as="ci" hint-placeholder-count="10">
+            <div onClick="{{ ci.toggle }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px;display:flex;gap:12px;align-items:flex-start;{{ ci.rowStyle }}" style-hover="border-color:var(--accent, #16695E)">
+              <span style="flex:none;width:19px;height:19px;border:1.5px solid #b7c2bf;border-radius:6px;margin-top:1px;display:flex;align-items:center;justify-content:center;font:700 12px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);background:#f4f5f3">{{ ci.boxChar }}</span>
+              <div style="min-width:0">
+                <div style="font:600 13.5px 'Schibsted Grotesk',sans-serif;text-decoration:{{ ci.strike }};">{{ ci.name }}</div>
+                <div style="font:400 12px/1.5 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:3px;text-wrap:pretty">{{ ci.note }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+        <sc-if value="{{ isIdeas }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Ideas lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 840px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Ideas &amp; staging</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Candidates that haven't earned a spot on the timeline yet.</div>
+        <sc-if value="{{ noIdeas }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Empty. Anything you're considering — restaurants, beaches, tours — parks here until it earns a day.</div>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;align-items:start">
+          <sc-for list="{{ ideaGroups }}" as="g" hint-placeholder-count="2">
+            <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+              <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+                <div style="padding:4px 0;border-bottom:1px solid #f0f2ef;display:flex;gap:10px;align-items:baseline">
+                  <span style="font:400 12.5px 'Schibsted Grotesk',sans-serif">{{ it.name }}</span>
+                  <span style="font:400 11px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">{{ it.note }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasAlt }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:14px;background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+            <div onClick="{{ toggleAlt }}" style="cursor:pointer;display:flex;align-items:baseline;gap:10px">
+              <span style="font:700 13px 'Schibsted Grotesk',sans-serif">{{ altTitle }}</span>
+              <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ altChev }}</span>
+            </div>
+            <sc-if value="{{ altOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="font:400 11.5px/1.6 'Spline Sans Mono',monospace;color:#647579;margin-top:10px;white-space:pre-wrap">{{ altText }}</div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1360,&quot;height&quot;:860},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#16695E&quot;,&quot;#1D5F8A&quot;,&quot;#5B4A8A&quot;,&quot;#37424A&quot;],&quot;default&quot;:&quot;#16695E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;startView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;overview&quot;,&quot;money&quot;,&quot;points&quot;,&quot;bookings&quot;,&quot;packing&quot;,&quot;lists&quot;,&quot;ideas&quot;],&quot;default&quot;:&quot;overview&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+function WIKI(name) { return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(name); }
+
+// Real photos — every photo below is a specific, verified real photo of the actual place,
+// activity, or restaurant (sourced from Wikimedia Commons or the venue's own official
+// website, and visually verified via browser screenshot before inclusion — one earlier
+// candidate for the Sun Voyager sculpture turned out to be a mislabeled Danish Bronze Age
+// artifact and was caught and replaced this way). No stock or generic stand-in photos.
+// Day 1 is an overnight flight with no stop-level photos to show, so it's left empty.
+const PRESENT_GALLERY = {};
+const PRESENT_VIDEOS = {};
+const PRESENT_MAP = {};
+const PRESENT_DIRECTIONS = {};
+
+class Component extends DCLogic {
+  state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, bkFilter: 'All', packFilter: 'ALL', ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {}, mobileNavOpen: false };
+
+  componentDidMount() {
+    this.loadTripData();
+    // Best-effort live ISK→USD rate; silently keep the built-in fallback if this fails
+    // (e.g. no network, or blocked when the file is opened without a server).
+    fetch('https://api.frankfurter.app/latest?from=ISK&to=USD')
+      .then(r => r.json())
+      .then(d => {
+        const rate = d && d.rates && d.rates.USD;
+        if (rate) this.setState({ fx: rate, fxLive: true });
+      })
+      .catch(() => {});
+  }
+
+  // Hosted (http/https): fetch trip.json live, so re-uploading just that one file
+  // updates the page with no rebuild step. Local (file://) or offline: fetch is
+  // blocked by the browser, so fall back to the embedded <script id="trip-data">
+  // copy that Claude keeps in sync on every edit.
+  loadTripData() {
+    const useEmbedded = () => {
+      let raw = {};
+      try {
+        const el = document.getElementById('trip-data');
+        raw = el ? JSON.parse(el.textContent) : {};
+      } catch (e) { raw = {}; }
+      this.finishLoad(raw);
+    };
+    fetch('./trip.json', { cache: 'no-store' })
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error('not ok'))))
+      .then(raw => this.finishLoad(raw))
+      .catch(useEmbedded);
+  }
+
+  finishLoad(raw) {
+    this.T = this.prepare(raw || {});
+    const sv = this.props.startView;
+    const st = { ready: true };
+    const todayN = this.findTodayDayN();
+    this.todayDayN = todayN;
+    if (sv && sv !== 'overview') { st.view = sv; }
+    else if (todayN) { st.view = 'day'; st.dayN = todayN; }
+    st.checked = this.loadChecklist();
+    this.setState(st);
+  }
+
+  // Matches the real current date against the trip's day dates (parsed the same
+  // way as the sidebar's day-of-week/short-date labels). Returns the 1-based day
+  // number if today falls within the trip, otherwise null.
+  findTodayDayN() {
+    if (!this.T || !this.T.days || !this.T.days.length) return null;
+    const now = new Date();
+    const y = now.getFullYear(), m = now.getMonth(), dd = now.getDate();
+    for (const d of this.T.days) {
+      const dt = new Date(d.date);
+      if (!isNaN(dt) && dt.getFullYear() === y && dt.getMonth() === m && dt.getDate() === dd) return d.n;
+    }
+    return null;
+  }
+
+  // Derive everything from a minimal trip.json — Claude only maintains raw facts.
+  prepare(raw) {
+    const T = raw || {};
+    const mins = t => {
+      if (!t) return null;
+      const m = String(t).trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+      if (!m) return null;
+      let h = +m[1] % 12; if (/pm/i.test(m[3])) h += 12;
+      return h * 60 + +m[2];
+    };
+    T.meta = T.meta || {};
+    T.meta.title = T.meta.title || 'New trip';
+    T.meta.dates = T.meta.dates || '';
+    T.meta.route = T.meta.route || [];
+    const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    T.days = (T.days || []).map((d, i) => {
+      const dt = new Date(d.date);
+      const blocks = (d.blocks || []).map((b, j) => {
+        const timed = !!(b.start || b.end);
+        const hasCost = b.paid != null || b.est != null;
+        let kind = b.kind;
+        if (!kind) {
+          if (!timed && hasCost) kind = 'receipt';
+          else if (!timed) kind = 'note';
+          else kind = 'stop';
+        }
+        const sM = mins(b.start), eM = mins(b.end);
+        const ptsN = b.points != null ? parseFloat(String(b.points).replace(/,/g, '')) : NaN;
+        return {
+          ...b,
+          id: 'b' + (i + 1) + '_' + j, kind,
+          sM, eM,
+          start: b.start || '', end: b.end || '',
+          dur: b.dur != null ? b.dur : (sM != null && eM != null && eM > sM ? eM - sM : null),
+          title: b.title || '(untitled)', detail: b.detail || '', notes: b.notes || '',
+          typeName: b.typeName || '', emoji: b.emoji || '',
+          est: b.est != null ? b.est : null, paid: b.paid != null ? b.paid : null,
+          program: b.program || null, points: b.points || null, conf: b.conf || null,
+          pointsN: isNaN(ptsN) ? null : ptsN,
+        };
+      });
+      return {
+        n: i + 1, date: d.date || '', title: d.title || '', planned: !!d.planned,
+        dow: d.dow || (isNaN(dt) ? '' : DOW[dt.getDay()]),
+        short: d.short || (isNaN(dt) ? '' : (dt.getMonth() + 1) + '/' + dt.getDate()),
+        blocks,
+        paid: blocks.reduce((a, b) => a + (b.paid || 0), 0),
+        est: blocks.reduce((a, b) => a + (b.paid == null ? (b.est || 0) : 0), 0),
+        stops: blocks.filter(b => b.kind === 'stop').length,
+        bookings: blocks.filter(b => b.conf || b.program).length,
+      };
+    });
+    const CAT_EMOJI = { Hotel: '\u{1F3E8}', Flight: '\u{2708}\u{FE0F}', Train: '\u{1F684}', Transportation: '\u{1F695}', Dining: '\u{1F37D}\u{FE0F}', Excursion: '\u{1F3BF}', Walk: '\u{1F6B6}', Logistics: '\u{1F9F3}', Luggage: '\u{1F9F3}', 'Free Time': '\u{1F6C1}' };
+    const cats = {};
+    for (const d of T.days) for (const b of d.blocks) {
+      if (b.est == null && b.paid == null) continue;
+      const k = (b.typeName || 'Other');
+      cats[k] = cats[k] || { est: 0, paid: 0 };
+      if (b.paid != null) cats[k].paid += b.paid; else cats[k].est += b.est;
+    }
+    T.costSummary = Object.entries(cats).map(([k, v]) => {
+      const name = k, emoji = CAT_EMOJI[k] || '\u{2022}';
+      return { name, emoji, est: v.est, paid: v.paid, total: v.est + v.paid };
+    }).sort((a, b) => b.total - a.total);
+    const groupOf = t => t === 'Flight' ? 'Flights' : t === 'Train' ? 'Rail' : t === 'Hotel' ? 'Stays' : t === 'Rental Car' ? 'Cars' : 'Activities';
+    T.bookingList = [];
+    for (const d of T.days) for (const b of d.blocks) {
+      if (b.conf || b.program) T.bookingList.push({ ...b, dayN: d.n, dayLabel: (d.dow + ' ' + d.short).trim() || 'D' + d.n, group: groupOf(b.typeName) });
+    }
+    // points by program (used = confirmed, planned = not yet)
+    const progs = {};
+    for (const b of T.bookingList) {
+      if (!b.program) continue;
+      const p = progs[b.program] = progs[b.program] || { planned: 0, used: 0 };
+      if (b.pointsN != null) { if (b.conf) p.used += b.pointsN; else p.planned += b.pointsN; }
+    }
+    T.pointsByProgram = Object.entries(progs).map(([name, v]) => ({ name, ...v, total: v.planned + v.used })).sort((a, b) => b.total - a.total);
+    T.meta.totals = {
+      paid: T.days.reduce((a, d) => a + d.paid, 0),
+      est: T.days.reduce((a, d) => a + d.est, 0),
+      points: T.pointsByProgram.reduce((a, p) => a + p.total, 0),
+    };
+    const P = T.packing || {};
+    T.packing = {
+      outfitDays: (P.outfitDays || []).map(od => ({
+        date: od.date, slots: (od.slots || []).map(s => ({
+          name: s.name,
+          people: s.people || ['roque', 'chloe', 'jenny'].filter(k => k in s).map(k => ({ who: k.toUpperCase(), text: s[k] || '—' })),
+        })),
+      })),
+      trackerDays: P.trackerDays || [],
+      trackerTitle: P.trackerTitle || "Roque's item tracker",
+      packLists: P.packLists || [],
+    };
+    // Auto-derive a pack rollup for the tracker's person when no stored list exists.
+    const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [])[1];
+    if (trackerWho && T.packing.trackerDays.length && !T.packing.packLists.some(pl => pl.who.toUpperCase() === trackerWho.toUpperCase())) {
+      const seen = new Set(); const counts = {};
+      for (const td of T.packing.trackerDays) for (const g of (td.groups || [])) for (const it of (g.items || [])) {
+        const style = it.style || (it.label ? String(it.label).split(' — ')[0] : '');
+        if (!style) continue;
+        const key = it.variation && it.variation !== '#N/A' ? it.variation : (style + '|' + (it.brand || '') + '|' + (it.color || ''));
+        if (seen.has(key)) continue;
+        seen.add(key);
+        counts[style] = (counts[style] || 0) + 1;
+      }
+      const items = Object.entries(counts).map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count);
+      if (items.length) T.packing.packLists.push({ who: trackerWho.toUpperCase(), items, derived: true });
+    }
+    if (Array.isArray(T.ideas)) { /* already groups */ }
+    else if (T.ideas && (T.ideas.oahu || T.ideas.kauai)) {
+      T.ideas = [
+        { name: 'Oahu', items: (T.ideas.oahu || []).map(s => ({ name: s, note: '' })) },
+        { name: 'Kauai — food', items: T.ideas.kauai || [] },
+      ];
+    } else T.ideas = [];
+    T.ideas = T.ideas.map(g => ({ name: g.name, items: (g.items || []).map(it => typeof it === 'string' ? { name: it, note: '' } : { name: it.name, note: it.note || '' }) }));
+    if (!T.alternatives && T.mauiAlternative) {
+      T.alternatives = { title: 'Alternative considered — Maui instead of Oahu', text: T.mauiAlternative.replace(/^"|"$/gm, '').replace(/,+\s*$/gm, '') };
+    }
+    if (typeof T.alternatives === 'string' && T.alternatives) T.alternatives = { title: 'Alternatives considered', text: T.alternatives };
+    T.supplies = T.supplies || [];
+    return T;
+  }
+
+  fm(n, cents) {
+    if (n == null) return '';
+    return '$' + n.toLocaleString('en-US', cents ? { minimumFractionDigits: 2, maximumFractionDigits: 2 } : { maximumFractionDigits: 0 });
+  }
+
+  fp(n) { return n ? n.toLocaleString('en-US') : '—'; }
+
+  go(view, dayN) { this.setState(dayN ? { view, dayN, mobileNavOpen: false } : { view, mobileNavOpen: false }); }
+
+  toggleMobileNav() { this.setState(s => ({ mobileNavOpen: !s.mobileNavOpen })); }
+
+  // Pre-trip checklist persistence — localStorage only (this file may be opened
+  // locally or hosted on GitHub Pages; either way it's just this browser's checkbox
+  // state, nothing sent anywhere).
+  checklistStorageKey() { return 'tripChecklist:' + (this.T && this.T.meta ? this.T.meta.title : 'trip'); }
+  loadChecklist() {
+    try {
+      const raw = localStorage.getItem(this.checklistStorageKey());
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+  toggleChecklistItem(key) {
+    const next = { ...this.state.checked, [key]: !this.state.checked[key] };
+    try { localStorage.setItem(this.checklistStorageKey(), JSON.stringify(next)); } catch (e) {}
+    this.setState({ checked: next });
+  }
+
+  moneyOf(b) {
+    if (b.paid != null) return { money: this.fm(b.paid, true), moneyColor: '#1b2629', hasCostTag: true, costTagLabel: 'PAID', costTagBg: '#e1f5ee', costTagFg: '#085041' };
+    if (b.est != null) return { money: this.fm(b.est, true), moneyColor: '#96690f', hasCostTag: true, costTagLabel: 'EST', costTagBg: '#faeeda', costTagFg: '#633806' };
+    return { money: '', moneyColor: '#1b2629', hasCostTag: false, costTagLabel: '', costTagBg: '', costTagFg: '' };
+  }
+
+  ptsLabelOf(b) {
+    if (!b.program && !b.points) return '';
+    const p = b.points ? (b.pointsN != null ? b.pointsN.toLocaleString('en-US') + ' pts' : b.points) : '';
+    return [b.program, p].filter(Boolean).join(' · ');
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#16695E';
+    const v = this.state.view;
+    const base = {
+      accent,
+      title: 'Trip', dates: '', subLine: '',
+      goOverview: () => this.go('overview'),
+      ovBg: v === 'overview' ? '#1b2629' : 'transparent',
+      ovFg: v === 'overview' ? '#f4f5f3' : '#1b2629',
+      navDays: [], lenses: [], noDays: false, hasRoute: false,
+      isOverview: v === 'overview', isDay: false, isMoney: false, isPoints: false,
+      isBookings: false, isPacking: false, isLists: false, isIdeas: false, isPresent: false, isChecklist: false,
+      hasToday: !!this.todayDayN, todayGo: this.todayDayN ? () => this.go('day', this.todayDayN) : () => {},
+      presentEmpty: false, presentHasDay: false, presentDayChips: [],
+      presentPrev: () => {}, presentNext: () => {},
+      presentDate: '', presentTitle: '', presentPhotos: [], hasPresentPhotos: false,
+      presentVideos: [], hasPresentVideos: false,
+      presentMapSrc: '', presentMapsUrl: '', presentHighlights: [], presentCost: '',
+      lightboxOpen: !!this.state.lightbox,
+      lightboxUrl: this.state.lightbox ? this.state.lightbox.url : '',
+      lightboxCaption: this.state.lightbox ? this.state.lightbox.caption : '',
+      closeLightbox: () => this.setState({ lightbox: null }),
+      route: [], obDays: [],
+      dayDate: '', dayTitle: '', dayMeta: '', dayPlanned: false, dayEmpty: false,
+      dayCostChips: [], hasDayCostChips: false,
+      dayPrev: () => {}, dayNext: () => {}, blocks: [],
+      moneyRows: [], moneyTotEst: '', moneyTotPaid: '', moneyTotAll: '', hasMoney: false, noMoney: false,
+      pointRows: [], pointItems: [], ptsTotPlanned: '', ptsTotUsed: '', ptsTotAll: '', hasPoints: false, noPoints: false,
+      bkChips: [], bookingGroups: [], noBookings: false,
+      outfitDays: [], trackerDays: [], trackerTitle: '', hasTracker: false, noPacking: false,
+      packChips: [], packRollups: [], hasRollups: false,
+      supplyGroups: [], noLists: false,
+      ideaGroups: [], noIdeas: false,
+      checklistItems: [], noChecklist: false, checklistDone: 0, checklistTotal: 0,
+      mobileNavOpen: this.state.mobileNavOpen,
+      toggleMobileNav: () => this.toggleMobileNav(),
+      asideTransform: this.state.mobileNavOpen ? 'translateX(0)' : 'var(--aside-closed-tx-mobile, translateX(0))',
+      topbarSubLabel: '',
+      hasAlt: false, altTitle: '', altText: '',
+      altOpen: this.state.altOpen, altChev: this.state.altOpen ? '−' : '+ show',
+      toggleAlt: () => this.setState(s => ({ altOpen: !s.altOpen })),
+    };
+    if (!this.T) return base;
+    const T = this.T;
+
+    base.title = T.meta.title;
+    base.dates = T.meta.dates;
+    const VIEW_LABELS = { overview: 'Trip overview', present: 'Present the trip', money: 'Money', points: 'Points', bookings: 'Bookings', packing: 'Outfits & packing', lists: 'Lists', ideas: 'Ideas & staging', checklist: 'Pre-trip checklist' };
+    base.topbarSubLabel = VIEW_LABELS[v] || '';
+    const tl = [];
+    if (T.meta.totals.paid) tl.push(this.fm(T.meta.totals.paid) + ' paid');
+    if (T.meta.totals.est) tl.push(this.fm(T.meta.totals.est) + ' planned');
+    if (T.meta.totals.points) tl.push(Math.round(T.meta.totals.points / 1000) + 'k pts');
+    base.subLine = [T.meta.dates, tl.join(' · ')].filter(Boolean).join(' · ') || 'Just getting started';
+    base.noDays = T.days.length === 0;
+    base.hasRoute = T.meta.route.length > 0;
+
+    base.navDays = T.days.map(d => ({
+      short: d.short, title: d.title || '—', planned: d.planned,
+      isToday: this.todayDayN === d.n,
+      bg: v === 'day' && this.state.dayN === d.n ? '#1b2629' : 'transparent',
+      fg: v === 'day' && this.state.dayN === d.n ? '#f4f5f3' : '#1b2629',
+      go: () => this.go('day', d.n),
+    }));
+
+    base.lenses = [
+      ['present', 'Present'],
+      ['money', 'Money'], ['points', 'Points'], ['bookings', 'Bookings'],
+      ['packing', 'Packing'], ['lists', 'Lists'], ['ideas', 'Ideas'], ['checklist', 'Checklist'],
+    ].map(([id, label]) => ({
+      label,
+      bg: v === id ? '#1b2629' : 'transparent',
+      fg: v === id ? '#f4f5f3' : '#1b2629',
+      go: () => this.go(id),
+    }));
+
+    if (v === 'overview') {
+      base.route = T.meta.route.map((s, i) => ({ ...s, conn: i < T.meta.route.length - 1 }));
+      base.obDays = T.days.map(d => {
+        const parts = [];
+        if (d.stops) parts.push(d.stops + ' stops');
+        if (d.bookings) parts.push(d.bookings + ' bk');
+        return {
+          dow: d.dow, short: d.short, title: d.title || '—', planned: d.planned,
+          summary: parts.join(' · '),
+          money: d.paid ? this.fm(d.paid) : (d.est ? this.fm(d.est) + ' est' : ''),
+          go: () => this.go('day', d.n),
+        };
+      });
+    }
+
+    if (v === 'day' && T.days.length) {
+      const d = T.days[Math.min(this.state.dayN, T.days.length) - 1];
+      base.isDay = true; base.isOverview = false;
+      base.topbarSubLabel = d.short + ' · ' + (d.title || 'Untitled day');
+      base.dayDate = d.date;
+      base.dayTitle = d.title || 'Untitled day';
+      base.dayPlanned = d.planned;
+      base.dayEmpty = d.blocks.length === 0;
+      const mp = [];
+      if (d.stops) mp.push(d.stops + ' stops');
+      base.dayMeta = mp.join(' · ');
+      base.dayCostChips = [
+        d.paid ? { label: this.fm(d.paid, true) + ' paid', bg: '#e1f5ee', fg: '#085041' } : null,
+        d.est ? { label: this.fm(d.est, true) + ' planned', bg: '#faeeda', fg: '#633806' } : null,
+      ].filter(Boolean);
+      base.hasDayCostChips = base.dayCostChips.length > 0;
+      base.dayPrev = () => this.go('day', Math.max(1, this.state.dayN - 1));
+      base.dayNext = () => this.go('day', Math.min(T.days.length, this.state.dayN + 1));
+      base.blocks = d.blocks.map(b => {
+        const m = this.moneyOf(b);
+        const row = {
+          isMove: b.kind === 'move', isReceipt: b.kind === 'receipt',
+          isNote: b.kind === 'note', isStop: b.kind === 'stop',
+          emoji: b.emoji || '·', title: b.title,
+          timeStart: b.start || '—', hasTimeEnd: !!(b.start && b.end), timeEnd: b.end || '',
+          durLabel: b.dur ? (b.dur >= 60 ? Math.floor(b.dur / 60) + 'h' + (b.dur % 60 ? String(b.dur % 60).padStart(2, '0') : '') : b.dur + 'm') : '',
+          moveLabel: (b.dur ? b.dur + 'm — ' : '') + b.title,
+          ...m,
+          hasBooking: !!(b.conf || b.program || b.points),
+          hasConf: !!b.conf, conf: b.conf || '',
+          hasPts: !!(b.program || b.points), ptsLabel: this.ptsLabelOf(b),
+          hasMeta: false, meta: '', metaCursor: 'default', toggle: () => {},
+          hasISK: !!(b.ccy === 'ISK' && b.estISK != null),
+          iskLabel: b.estISK != null ? Math.round(b.estISK).toLocaleString('en-US') + ' ISK' : '',
+          iskUsd: b.estISK != null ? '≈ ' + this.fm(b.estISK * this.state.fx, true) + (this.state.fxLive ? '' : ' (approx)') : '',
+          hasMenu: !!b.menuUrl, menuUrl: b.menuUrl || '',
+        };
+        row.isNow = d.n === this.todayDayN && b.sM != null && b.eM != null && (() => {
+          const now = new Date();
+          const curM = now.getHours() * 60 + now.getMinutes();
+          return curM >= b.sM && curM < b.eM;
+        })();
+        row.nowStyle = row.isNow ? 'background:#eaf5f1;border-radius:10px' : '';
+        const meta = [b.detail, b.notes].filter(Boolean).join('\n');
+        if (meta) {
+          const exp = !!this.state.expanded[b.id];
+          const long = meta.length > 170;
+          row.hasMeta = true;
+          row.meta = !long || exp ? meta : meta.slice(0, 150).trimEnd() + ' …more';
+          row.metaCursor = long ? 'pointer' : 'default';
+          if (long) row.toggle = () => this.setState(s => ({ expanded: { ...s.expanded, [b.id]: !s.expanded[b.id] } }));
+        }
+        return row;
+      });
+    }
+
+    if (v === 'present') {
+      base.isPresent = true; base.isOverview = false;
+      const totalDays = T.days.length;
+      base.presentEmpty = totalDays === 0;
+      base.presentHasDay = totalDays > 0;
+      const pdN = Math.min(Math.max(this.state.presentDayN || 1, 1), Math.max(totalDays, 1));
+      base.presentDayChips = T.days.map(d => {
+        const on = d.n === pdN;
+        return {
+          label: (d.dow + ' ' + d.short).trim() || ('Day ' + d.n),
+          bg: on ? '#1b2629' : '#ffffff', fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ presentDayN: d.n }),
+        };
+      });
+      base.presentPrev = () => this.setState(s => ({ presentDayN: Math.max(1, (s.presentDayN || 1) - 1) }));
+      base.presentNext = () => this.setState(s => ({ presentDayN: Math.min(totalDays, (s.presentDayN || 1) + 1) }));
+      if (totalDays > 0) {
+        const d = T.days[pdN - 1];
+        base.presentDate = d.date;
+        base.presentTitle = d.title || 'Untitled day';
+        base.presentPhotos = (PRESENT_GALLERY[pdN] || []).map(ph => ({
+          url: ph.url, caption: ph.caption,
+          open: () => this.setState({ lightbox: { url: ph.url, caption: ph.caption } }),
+        }));
+        base.hasPresentPhotos = base.presentPhotos.length > 0;
+        base.presentVideos = (PRESENT_VIDEOS[pdN] || []).map(v => ({
+          title: v.title,
+          thumb: 'https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg',
+          watchUrl: 'https://www.youtube.com/watch?v=' + v.id,
+        }));
+        base.hasPresentVideos = base.presentVideos.length > 0;
+        const m = PRESENT_MAP[pdN] || PRESENT_MAP[1];
+        base.presentMapSrc = 'https://www.google.com/maps?q=' + m.lat + ',' + m.lng + '&z=' + m.zoom + '&output=embed';
+        base.presentMapsUrl = PRESENT_DIRECTIONS[pdN] || '';
+        // High-level only: activities and meals, not transport/logistics/walk-between-stops.
+        const skipTypes = ['Walk', 'Transportation', 'Logistics', 'Drive', 'Parking', 'Gasoline', 'Luggage', 'Free Time'];
+        base.presentHighlights = d.blocks.filter(b => b.kind === 'stop' && !skipTypes.includes(b.typeName)).map(b => ({
+          emoji: b.emoji || '·', title: b.title,
+        }));
+        const cost = (d.paid || 0) + (d.est || 0);
+        base.presentCost = cost ? ('Est. day cost: ' + this.fm(cost, true)) : '';
+      }
+    }
+
+    if (v === 'money') {
+      base.isMoney = true; base.isOverview = false;
+      base.hasMoney = T.costSummary.some(r => r.total > 0);
+      base.noMoney = !base.hasMoney;
+      base.moneyRows = T.costSummary.filter(r => r.total > 0).map(r => ({
+        name: r.name, emoji: r.emoji,
+        est: r.est ? this.fm(r.est, true) : '—',
+        paid: r.paid ? this.fm(r.paid, true) : '—',
+        total: this.fm(r.total, true),
+      }));
+      const te = T.costSummary.reduce((a, r) => a + r.est, 0);
+      const tp = T.costSummary.reduce((a, r) => a + r.paid, 0);
+      base.moneyTotEst = this.fm(te, true);
+      base.moneyTotPaid = this.fm(tp, true);
+      base.moneyTotAll = this.fm(te + tp, true);
+    }
+
+    if (v === 'points') {
+      base.isPoints = true; base.isOverview = false;
+      base.hasPoints = T.pointsByProgram.length > 0;
+      base.noPoints = !base.hasPoints;
+      base.pointRows = T.pointsByProgram.map(p => ({
+        name: p.name, planned: this.fp(p.planned), used: this.fp(p.used), total: this.fp(p.total),
+      }));
+      base.ptsTotPlanned = this.fp(T.pointsByProgram.reduce((a, p) => a + p.planned, 0));
+      base.ptsTotUsed = this.fp(T.pointsByProgram.reduce((a, p) => a + p.used, 0));
+      base.ptsTotAll = this.fp(T.meta.totals.points);
+      base.pointItems = T.bookingList.filter(b => b.program || b.points).map(b => ({
+        dayLabel: b.dayLabel, emoji: b.emoji || '·', title: b.title,
+        status: b.conf ? 'USED' : 'PLANNED',
+        statusColor: b.conf ? '#257a5a' : '#96690f',
+        ptsLabel: this.ptsLabelOf(b),
+        go: () => this.go('day', b.dayN),
+      }));
+    }
+
+    if (v === 'bookings') {
+      base.isBookings = true; base.isOverview = false;
+      const order = ['Flights', 'Rail', 'Stays', 'Cars', 'Activities'];
+      const present = order.filter(name => T.bookingList.some(b => b.group === name));
+      const f = this.state.bkFilter;
+      base.bkChips = ['All', ...present].map(name => {
+        const on = f === name;
+        return {
+          label: name,
+          bg: on ? '#1b2629' : '#ffffff',
+          fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ bkFilter: name }),
+        };
+      });
+      const factLabels = [
+        ['route', 'ROUTE'], ['flightNo', 'FLIGHT'], ['cabin', 'CABIN'], ['seats', 'SEATS'],
+        ['nights', 'STAY'], ['roomType', 'ROOM'], ['address', 'ADDRESS'], ['cancelBy', 'CANCEL BY'],
+      ];
+      base.bookingGroups = present.filter(name => f === 'All' || f === name).map(name => ({
+        name: name.toUpperCase(),
+        items: T.bookingList.filter(b => b.group === name).map(b => {
+          const m = this.moneyOf(b);
+          const facts = factLabels.filter(([k]) => b[k]).map(([k, label]) => ({ label, value: b[k] }));
+          const nKey = 'bk_' + b.id;
+          const nOpen = !!this.state.expanded[nKey];
+          return {
+            emoji: b.emoji || '·', title: b.title,
+            dayLabel: b.dayLabel, go: () => this.go('day', b.dayN),
+            facts, hasFacts: facts.length > 0,
+            hasFlag: !!b.flag, flag: b.flag || '',
+            hasConf: !!b.conf, conf: b.conf || '', noConf: !b.conf,
+            hasPts: !!(b.program || b.points), ptsLabel: this.ptsLabelOf(b),
+            ...m,
+            hasNotes: !!b.notes, notesOpen: nOpen, notes: nOpen ? b.notes : '',
+            notesToggleLabel: nOpen ? '− Hide pricing detail' : '+ Pricing detail',
+            toggleNotes: () => this.setState(s => ({ expanded: { ...s.expanded, [nKey]: !s.expanded[nKey] } })),
+          };
+        }),
+      }));
+      base.noBookings = T.bookingList.length === 0;
+    }
+
+    if (v === 'packing') {
+      base.isPacking = true; base.isOverview = false;
+      const dayByShort = {};
+      T.days.forEach(d => { dayByShort[d.short] = d.title; });
+      // person filter
+      const personSet = [];
+      const addP = w => { const u = String(w || '').toUpperCase(); if (u && !personSet.includes(u)) personSet.push(u); };
+      T.packing.outfitDays.forEach(od => od.slots.forEach(s => s.people.forEach(p => addP(p.who))));
+      T.packing.packLists.forEach(pl => addP(pl.who));
+      const pf = this.state.packFilter && personSet.includes(this.state.packFilter) ? this.state.packFilter : 'ALL';
+      base.packChips = ['ALL', ...personSet].map(name => {
+        const on = pf === name;
+        return {
+          label: name === 'ALL' ? 'Everyone' : name.charAt(0) + name.slice(1).toLowerCase(),
+          bg: on ? '#1b2629' : '#ffffff', fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ packFilter: name }),
+        };
+      });
+      // rollups: one card per visible person
+      const visible = pf === 'ALL' ? personSet : [pf];
+      base.packRollups = visible.map(who => {
+        const pl = T.packing.packLists.find(p => String(p.who).toUpperCase() === who);
+        const items = pl ? pl.items : [];
+        const total = items.reduce((a, it) => a + (it.count || 0), 0);
+        return {
+          who: who.charAt(0) + who.slice(1).toLowerCase(),
+          totalLabel: total ? total + ' ITEMS' + (pl && pl.derived ? ' · FROM TRACKER' : '') : '',
+          empty: items.length === 0,
+          items: items.map(it => ({ count: it.count, name: it.name })),
+        };
+      });
+      base.hasRollups = base.packRollups.length > 0;
+      base.outfitDays = T.packing.outfitDays.filter(od => od.slots.length).map(od => ({
+        date: od.date,
+        dayTitle: dayByShort[String(od.date).replace(/\/\d{4}$/, '')] || '',
+        slots: od.slots.map(s => ({
+          name: s.name,
+          people: s.people.filter(p => pf === 'ALL' || String(p.who).toUpperCase() === pf).map(p => ({ who: p.who, text: p.text || '—' })),
+        })).filter(s => s.people.length),
+      })).filter(od => od.slots.length);
+      const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [''])[1] || '';
+      const showTracker = pf === 'ALL' || trackerWho.toUpperCase() === pf;
+      base.trackerDays = (showTracker ? T.packing.trackerDays : []).map(td => ({
+        date: td.date,
+        groups: (td.groups || []).filter(g => (g.items || []).some(i => i.style || i.brand || i.label)).map(g => ({
+          activity: g.activity || '—',
+          items: g.items.filter(i => i.style || i.brand || i.label).map(i => ({
+            label: i.label || [i.style, [i.brand, i.color].filter(Boolean).join(', ')].filter(Boolean).join(' — '),
+            rewear: !!i.rewear,
+          })),
+        })),
+      })).filter(td => td.groups.length);
+      base.hasTracker = base.trackerDays.length > 0;
+      base.trackerTitle = T.packing.trackerTitle;
+      base.noPacking = base.outfitDays.length === 0 && !base.hasTracker;
+    }
+
+    if (v === 'lists') {
+      base.isLists = true; base.isOverview = false;
+      base.supplyGroups = T.supplies;
+      base.noLists = T.supplies.length === 0;
+    }
+
+    if (v === 'checklist') {
+      base.isChecklist = true; base.isOverview = false;
+      const tbd = (T.ideas || []).find(g => g.name === 'Still open / TBD');
+      const items = tbd ? tbd.items : [];
+      base.checklistTotal = items.length;
+      base.checklistItems = items.map((it, i) => {
+        const key = 'tbd_' + i + '_' + it.name;
+        const done = !!this.state.checked[key];
+        return {
+          key, name: it.name, note: it.note || '',
+          done,
+          boxChar: done ? '✓' : '',
+          rowStyle: done ? 'opacity:0.5' : 'opacity:1',
+          strike: done ? 'line-through' : 'none',
+          toggle: () => this.toggleChecklistItem(key),
+        };
+      });
+      base.checklistDone = base.checklistItems.filter(it => it.done).length;
+      base.noChecklist = items.length === 0;
+    }
+
+    if (v === 'ideas') {
+      base.isIdeas = true; base.isOverview = false;
+      base.ideaGroups = T.ideas;
+      base.noIdeas = T.ideas.length === 0 && !T.alternatives;
+      if (T.alternatives && T.alternatives.text) {
+        base.hasAlt = true;
+        base.altTitle = T.alternatives.title || 'Alternatives considered';
+        base.altText = T.alternatives.text;
+      }
+    }
+
+    return base;
+  }
+}
+</script>
+<script id="trip-data" type="application/json">{"meta": {"title": "Paris & Annecy — Winter 2026", "dates": "December 16–28, 2026 (in progress)", "route": [{"name": "Miami", "sub": "MIA — departure"}, {"name": "Dublin", "sub": "DUB — 1h35m connection"}, {"name": "Paris", "sub": "4 nights — Hyatt Regency Étoile"}, {"name": "Annecy", "sub": "6 nights — La Madeleine apartment, direct TGV"}, {"name": "Paris CDG", "sub": "1 night — Hyatt House"}, {"name": "Miami", "sub": "Dec 28 — home"}]}, "days": [{"date": "Wednesday, December 16, 2026", "title": "Depart Miami", "planned": false, "blocks": [{"start": "4:00 PM", "end": "5:15 PM", "title": "MIA — check bags & security", "detail": "• Aer Lingus check-in, Terminal E\n• Bags tag straight through to Paris — this is the only check-in of the outbound\n• Three hours before departure is right for a holiday-week transatlantic", "typeName": "Logistics", "emoji": "🧳"}, {"start": "5:30 PM", "end": "6:20 PM", "title": "Early dinner at MIA", "detail": "• Eat properly now — the on-board dinner service does not come round until about 8:00–8:45 PM\n• Concourse E has a food court; sit-down options are slower and pricier\n• Fill water bottles after security", "typeName": "Dining", "emoji": "🍔", "est": 58, "notes": "Airport food court for four, roughly $55–65."}, {"start": "6:20 PM", "end": "7:05 PM", "title": "Gate & boarding", "detail": "• Toilets and pyjamas for the kids before boarding\n• Anything they need overnight comes out of the bag now", "typeName": "Logistics", "emoji": "🚪"}, {"start": "7:05 PM", "end": "8:20 AM", "title": "Aer Lingus 140 · MIA → DUB (overnight)", "detail": "• 8h15m, Airbus A330-300, lands Dublin Terminal 2 at 8:20 AM\n• FOOD IS INCLUDED: hot dinner with tea/coffee, and since Feb 2025 free wine or beer with the meal\n• Dinner arrives about 8:00–8:45 PM — 90 minutes after take-off. That is why you eat at MIA first\n• Pre-landing service about 6:50–7:20 AM Dublin time: orange juice, and possibly a hot breakfast sandwich (Aer Lingus lists that sandwich for Chicago/Orlando/SF/LA — NOT Miami, so assume juice only and pack breakfast snacks)\n• CHILD MEALS: free, but must be booked BY PHONE — Aer Lingus says they cannot be booked online. Do it at least 48h ahead\n• No nut-free meals are offered, deliberately", "typeName": "Flight", "emoji": "🌙", "route": "MIA → DUB → CDG (1 stop)", "flightNo": "Aer Lingus 140 + Aer Lingus 524", "cabin": "Economy", "seats": "Not yet assigned", "program": "Aer Lingus award — currency to confirm", "points": 110000, "est": 116.4, "notes": "27,500 points + $29.10 per person. Four passengers = 110,000 points + $116.40. Fare class P, exactly 4 seats showing. Total elapsed MIA→CDG is 11h40m.", "flag": "Only 4 award seats — no margin. Confirm the points currency before assuming the balance covers it."}]}, {"date": "Thursday, December 17, 2026", "title": "Arrive Paris — Hyatt Regency Étoile", "planned": false, "blocks": [{"start": "8:20 AM", "end": "9:55 AM", "title": "Dublin connection — 1h35m", "detail": "• Both flights are Aer Lingus, both Terminal 2\n• Follow 'Flight Connections' to passport control\n• Bags move automatically on the single ticket; no second security screening\n• Buy coffee and something for the kids here — nothing is available on arrival at CDG before immigration", "typeName": "Logistics", "emoji": "⏱️", "flag": "Under the 1h45m–2h Aer Lingus recommends for US arrivals continuing into Europe. A late EI140 threatens the Paris leg."}, {"start": "9:55 AM", "end": "12:45 PM", "title": "Aer Lingus 524 · DUB → CDG", "detail": "• 1h50m, Airbus A320, arrives Paris CDG Terminal 1\n• BUY-ON-BOARD ONLY — nothing is free on Aer Lingus short-haul, not even water\n• Bia menu: sandwiches/wraps €6, hot Irish breakfast €11, porridge €3.50, muffin €3, tea/coffee €3, soft drinks €3. No children's menu\n• Four people buying onboard is about €36, and on a 1h50m sector the trolley may not reach every row\n• DO THIS INSTEAD: buy food airside at Dublin T2 during the connection — Phoenix Lane Express, Dubh & Dubh, Cloud Picker and Starbucks all open from 04:00\n• Buy drinks AFTER security", "typeName": "Flight", "emoji": "✈️"}, {"start": "12:45 PM", "end": "2:00 PM", "title": "CDG Terminal 1 — passport control & bags", "detail": "• Ireland is outside Schengen, so this is a full external-border arrival\n• EU Entry/Exit System: passport scan, photo and fingerprints for the adults\n• Children under 12 are exempt from fingerprinting — photo and scan only\n• Baggage claim is Level 5\n• Keep snacks in hand luggage: the queue is where the kids will crack, not after", "typeName": "Logistics", "emoji": "🛂", "flag": "T1 queues of 60–90 minutes have been reported at peak since EES rolled out, and 13:00–18:00 is a peak band. Budget up to 2 hours wheels-down to arrivals hall."}, {"start": "2:00 PM", "end": "2:50 PM", "title": "Lunch at CDG — McDonald's, public area", "detail": "• Landside McDonald's, Terminal 1 public zone (CDGVAL level) — follow signs down from arrivals\n• Open 06:00–22:00, 450 m², table service, ordering kiosks and a children's play area\n• The only hot food at T1 with real seating and somewhere for the kids to burn off the flight\n• Cheaper alternative if everyone is flagging: Marks & Spencer Food on the arrivals level (Level 5, 06:30–20:30) — sandwiches and fruit, grab-and-go, no detour", "typeName": "Dining", "emoji": "🍟", "est": 52, "notes": "About €40–45 for four. A Big Mac menu at CDG runs about €12.90 against €8.90 in town — airport markup is roughly 45%. M&S picnic instead would be about €30–35."}, {"start": "2:50 PM", "end": "3:10 PM", "title": "Back up to arrivals — taxi rank", "detail": "• Official rank is Level 5 (arrivals), Exit 24, past the car-rental desks\n• Use the marked rank only — ignore anyone offering a ride in the hall\n• Uber/VTC pickup is a different place (Departures, Exit 16)", "typeName": "Luggage", "emoji": "🧳"}, {"start": "3:10 PM", "end": "4:10 PM", "title": "Taxi CDG → Hyatt Regency Paris Étoile", "detail": "• Regulated flat rate: €56 Right Bank (Porte Maillot is the 17th)\n• Covers up to 4 passengers, luggage included, no surcharges\n• 30 km, 45–60 minutes\n• Ask for a van (monospace) at the rank so all four fit in one car", "typeName": "Transportation", "emoji": "🚕", "est": 65, "notes": "€56 flat rate. Beats RER B (€14/adult, €7/child = €42) once you add two changes and stairs with suitcases. Roissybus was permanently discontinued 28 Feb 2026.", "flag": "RER B is running reduced frequency through 2026 engineering works — another reason to take the taxi."}, {"start": "4:10 PM", "end": "5:00 PM", "title": "Check in — Hyatt Regency Paris Étoile, 4 nights, 2 rooms", "detail": "• 3 Place du Général Kœnig, 75017 Paris\n• Métro 1, RER C and RER E all run directly underneath\n• Ask about Regency Club access for BOTH rooms — breakfast is the whole budget plan\n• Request high floor, south-facing, connecting rooms", "typeName": "Hotel", "emoji": "🏨", "nights": "4 nights (Thu Dec 17 – Mon Dec 21)", "roomType": "2 rooms — high floor, Eiffel Tower view requested", "address": "3 Place du Général Kœnig, 75017 Paris", "program": "World of Hyatt", "points": 120000, "est": 78, "notes": "15,000 points per room per night × 2 rooms × 4 nights = 120,000. Category 4: 12,000 off-peak / 15,000 standard / 18,000 peak. The $78 is PARIS TOURIST TAX — €8.45 per adult per night at 4-star, 2 adults × 4 nights ≈ €68, payable at checkout even on an award booking. Under-18s are exempt.", "flag": "Confirm these dates don't price at Category 4 peak (18,000/night = 144,000 total), and that Regency Club breakfast covers the second room. Breakfast in the Mayo restaurant is €25 per person — €100 a morning if the lounge doesn't cover you."}, {"start": "5:00 PM", "end": "6:30 PM", "title": "Unpack & reset", "detail": "• Everyone has been travelling about 22 hours\n• Showers, unpack, no agenda\n• Do not let the kids sleep now — push through to a normal bedtime", "typeName": "Free Time", "emoji": "🛁"}, {"start": "6:30 PM", "end": "7:15 PM", "title": "Short walk — Palais des Congrès & Christmas lights", "detail": "• Straight out the hotel door, flat and lit\n• Twenty minutes of fresh air is what resets a body clock\n• Dinner is booked at Da Aldo, 8 minutes the other way — no shopping needed tonight", "typeName": "Walk", "emoji": "✨"}, {"start": "7:15 PM", "end": "8:30 PM", "title": "Dinner — Da Aldo", "detail": "• 8 rue Saint-Ferdinand, 75017 · 8–10 min walk via avenue de la Grande Armée\n• Italian. Pizzas €13–18 (Margherita €13, Parma €15), pasta €12.50–20\n• No children's menu, but a pizza splits easily between the two kids\n• Dinner from 19:00. Closed Sunday. Reserve: 01 45 72 15 04", "typeName": "Dining", "emoji": "🍕", "est": 78, "notes": "About €60–75 for four. Le Congrès Maillot next door is the obvious walk-out option but is a seafood brasserie — verified at €95–115 for four.", "flag": "Léon Porte Maillot, the usual family fallback nearby, appears to be permanently closed — do not plan on it."}, {"start": "8:30 PM", "end": "9:30 PM", "title": "Early night", "detail": "• Six hours ahead of Miami — the first night is the one that fixes the jet lag\n• Lights out for the kids by 8:45", "typeName": "Logistics", "emoji": "🛏️"}]}, {"date": "Friday, December 18, 2026", "title": "Tuileries Christmas market & the Champs-Élysées lights", "planned": false, "blocks": [{"start": "8:00 AM", "end": "8:45 AM", "title": "Breakfast — Regency Club, 34th floor", "detail": "• Included with the stay — this is the single biggest saving of the Paris leg\n• Buffet breakfast with Eiffel Tower views\n• Eat properly; lunch is not until about 12:45", "typeName": "Dining", "emoji": "🥐", "notes": "€0 if Regency Club access covers the family. The paid alternative is €25 per person in Mayo — €100 a morning."}, {"start": "9:15 AM", "end": "10:15 AM", "title": "Bois de Boulogne — morning walk", "detail": "• Directly across from the hotel, no transport needed\n• Flat paths, lakes, ducks; free\n• Deliberately gentle — first full day after a transatlantic", "typeName": "Walk", "emoji": "🌳"}, {"start": "10:30 AM", "end": "10:50 AM", "title": "Métro 1 · Porte Maillot → Concorde", "detail": "• Line 1 from beneath the hotel, direction Château de Vincennes\n• 6 stops, about 11 minutes, NO changes\n• Line 1 is automated with platform screen doors — the easiest line in Paris with small children\n• Buy Navigo Easy cards at the Porte Maillot window this morning (see the Ideas tab)", "typeName": "Transportation", "emoji": "🚇", "est": 34, "notes": "Family fare is €7.70 a leg (2 adults × €2.55 + 2 children × €1.30). Three legs today = €23.10, plus the four Navigo Easy cards at €2 each, bought once."}, {"start": "11:00 AM", "end": "12:45 PM", "title": "Tuileries Christmas Market — La Magie de Noël", "detail": "• Jardin des Tuileries, north side, 1st arr. — exit Concorde and it is right there\n• FREE entry. About 100 chalets, carousel, toddler train, bumper cars, fun houses\n• Open from 11:00\n• Getting back: Métro 1 from Concorde or Tuileries, direct to Porte Maillot", "typeName": "Excursion", "emoji": "🎄", "flag": "2026–27 dates are not yet published. The 2025–26 edition ran 15 Nov – 4 Jan, so your dates almost certainly fall inside — re-check in November. Guaranteed fallback: La Défense market, confirmed 12 Nov – 31 Dec 2026, four stops on Métro 1."}, {"start": "12:45 PM", "end": "1:45 PM", "title": "Lunch — market chalets, Tuileries", "detail": "• Eat at the market: crêpes, hot dogs, tartiflette, churros, hot chocolate\n• Warm, quick, no reservation, and the kids choose their own\n• Cheaper still: buy baguette sandwiches at a bakery near the hotel before leaving and eat them in the gardens", "typeName": "Dining", "emoji": "🥞", "est": 41, "notes": "Market food for four, roughly €30–38. Crêpe €5–7, vin chaud €5–6, hot dog €7–9, churros €5 — estimates, no market publishes a tariff."}, {"start": "1:45 PM", "end": "3:30 PM", "title": "Tuileries rides & carousel", "detail": "• Pick TWO things, not all of them — the rides add up fast\n• Carousel and small rides about €3–5 per child per go\n• Ice rink is €10 adult / €6 child = €32 for four if you want a bigger one\n• Skip the Ferris wheel — €15 a head with no child rate", "typeName": "Excursion", "emoji": "🎠", "est": 23, "notes": "Budget €20 for a few goes on the carousel and rides. Ride prices are estimates — nothing is published."}, {"start": "3:30 PM", "end": "4:30 PM", "title": "Walk — Tuileries → Concorde → Champs-Élysées", "detail": "• Out the west end of the gardens, across Place de la Concorde\n• Then up the Champs-Élysées as far as the kids want — it is 1.9 km end to end, you do not need to walk it all\n• Dark by about 5:00 PM", "typeName": "Walk", "emoji": "🚶"}, {"start": "5:00 PM", "end": "5:45 PM", "title": "Champs-Élysées Christmas illuminations", "detail": "• Lights switch on at 17:00 and run to midnight (1:00 AM Fri and Sat)\n• Free. The trees down both sides of the avenue are the whole point\n• Then walk to Franklin D. Roosevelt métro for dinner", "typeName": "Excursion", "emoji": "✨"}, {"start": "6:00 PM", "end": "6:25 PM", "title": "Métro to dinner", "detail": "• Walk to Franklin D. Roosevelt station, on the Champs-Élysées itself\n• Take MÉTRO 9 direction Mairie de Montreuil → Grands Boulevards. Direct, no change, about 12 minutes\n• Line 9 runs through Franklin D. Roosevelt, so you board there rather than doubling back", "typeName": "Transportation", "emoji": "🚇"}, {"start": "6:30 PM", "end": "8:00 PM", "title": "Dinner — Bouillon Chartier, Grands Boulevards", "detail": "• 7 rue du Faubourg Montmartre, 75009 · Métro Grands Boulevards\n• Historic 1896 dining hall, open daily 11:30–00:00, NO reservations — go early to beat the queue\n• Mains from €7: roast chicken €10.50, confit de canard €12.50, steak with pepper sauce €13.20\n• Starters from €1, desserts from €2, green beans €2.60\n• No formal children's menu, but roast chicken and plain sides work perfectly\n• This is the cheapest genuinely memorable meal in Paris", "typeName": "Dining", "emoji": "🍽️", "est": 87, "menuUrl": "https://www.bouillon-chartier.com/en/bouillon-chartier-grands-boulevards-en/", "notes": "About €70–80 for four including drinks. A comparable meal in a Rue Cler bistro would be €130–140."}, {"start": "8:15 PM", "end": "8:45 PM", "title": "Métro back to the hotel", "detail": "• Métro 9 → Franklin D. Roosevelt, change to Métro 1 → Porte Maillot\n• About 25 minutes", "typeName": "Transportation", "emoji": "🚇"}]}, {"date": "Saturday, December 19, 2026", "title": "Eiffel Tower, Trocadéro & a Seine cruise", "planned": false, "blocks": [{"start": "8:00 AM", "end": "8:45 AM", "title": "Breakfast — Regency Club", "detail": "• Included\n• Today is the biggest walking day — eat well\n• Grab fruit for pockets on the way out", "typeName": "Dining", "emoji": "🥐"}, {"start": "9:45 AM", "end": "10:15 AM", "title": "RER C · Neuilly–Porte Maillot → Champ de Mars–Tour Eiffel", "detail": "• RER C runs directly beneath the hotel — this is the hidden advantage of Porte Maillot\n• DIRECT, 4 stops, 11–12 minutes, no changes and no stair interchange\n• Trains about every 15 minutes\n• Same €2.55 / €1.30 fare as one métro stop", "typeName": "Transportation", "emoji": "🚆", "est": 25, "notes": "Three legs today at €7.70 a leg — out, across to dinner, and home."}, {"start": "10:15 AM", "end": "11:30 AM", "title": "Champ de Mars & the Eiffel Tower from below", "detail": "• The tower straight up from the lawns — free, and the view children actually remember\n• Carousel at the base\n• NOT going up: €59 for four to the 2nd floor, cold, queued, and dark by 16:00. Trocadéro next is the better picture and costs nothing", "typeName": "Excursion", "emoji": "🗼"}, {"start": "11:30 AM", "end": "12:45 PM", "title": "Pont d'Iéna → Trocadéro", "detail": "• Cross the bridge and climb to Place du Trocadéro — the classic Eiffel photograph\n• Quai Branly Christmas market sits along the river on the way\n• Flat, about 15 minutes at child pace", "typeName": "Walk", "emoji": "📸"}, {"start": "12:45 PM", "end": "1:50 PM", "title": "Lunch — Quai Branly Christmas market", "detail": "• Market chalets along the river: crêpes, sausages, tartiflette, hot chocolate\n• Warm and quick, and it avoids the 7th arrondissement restaurant trap\n• DO NOT eat sit-down near the tower: the cheapest Rue Cler plat du jour is €16–17 a head, so €65+ before drinks", "typeName": "Dining", "emoji": "🥞", "est": 46, "notes": "Roughly €35–42 for four. Market dates for 2026 unconfirmed — if it is not running, the bakery-picnic fallback is to buy near the hotel before boarding the RER.", "flag": "Quai Branly market 2026 dates unpublished. Carry a bakery lunch as backup."}, {"start": "2:15 PM", "end": "3:15 PM", "title": "Walk Trocadéro → Pont de l'Alma", "detail": "• Down the hill along avenue du Président Wilson, about 15 minutes\n• Time in hand before the boat — there is a warm café at the embarkation point", "typeName": "Walk", "emoji": "🚶"}, {"start": "3:30 PM", "end": "4:30 PM", "title": "Seine cruise — Bateaux Mouches", "detail": "• Departs Port de la Conférence, Pont de l'Alma, 8th arr.\n• 1 hour, heated glass-roofed boat, seated — the warmest hour of the day\n• BOOK ONLINE: €17 adult / €8 child (under 13) = €50 for four. At the pier it is €20/€10 = €60\n• Under 4 free\n• Timed so you leave in daylight and come back as the lights come on", "typeName": "Excursion", "emoji": "⛴️", "est": 58, "menuUrl": "https://www.bateaux-mouches.fr/en/reservation/tickets", "notes": "€50 booked online. Vedettes du Pont Neuf is €44 but departs from Île de la Cité, which does not fit this day."}, {"start": "4:30 PM", "end": "5:15 PM", "title": "Warm up — hot chocolate", "detail": "• Café near the quay before the métro\n• Everyone will be cold off the water", "typeName": "Dining", "emoji": "☕", "est": 20}, {"start": "5:20 PM", "end": "6:00 PM", "title": "Métro straight to dinner", "detail": "• Do NOT go back to the hotel first — dinner is in the 10th and the hotel is the wrong direction\n• Métro 9 from Alma–Marceau → Strasbourg–Saint-Denis. DIRECT, no change, about 20 minutes\n• Bouillon Julien is 100 m from that exit", "typeName": "Transportation", "emoji": "🚇"}, {"start": "6:15 PM", "end": "7:45 PM", "title": "Dinner — Bouillon Julien", "detail": "• 16 rue du Faubourg Saint-Denis, 75010 · Métro Strasbourg–Saint-Denis, 100 m\n• Straight from the boat on Métro 9 — you do not return to the hotel in between\n• Spectacular 1906 Art Nouveau room — the kids will remember it\n• Starters €3.50–9.90, mains €10.90–14.50, desserts €3.50–6.90, service included\n• TAKES RESERVATIONS, unlike Chartier — book it: +33 1 47 70 12 06\n• Open daily 11:45–00:00", "typeName": "Dining", "emoji": "🍽️", "est": 87, "menuUrl": "https://www.bouillon-julien.com/menu", "notes": "About €70–80 for four. Book the table for 18:15."}, {"start": "8:15 PM", "end": "8:55 PM", "title": "Métro back to the hotel", "detail": "• Strasbourg–Saint-Denis is 2 minutes from the door\n• Métro 9, direction Pont de Sèvres → Franklin D. Roosevelt (7 stops)\n• Change to Métro 1, direction La Défense → Porte Maillot (4 stops)\n• About 30 minutes; last trains run well past midnight", "typeName": "Transportation", "emoji": "🚇"}]}, {"date": "Sunday, December 20, 2026", "title": "Montmartre & Sacré-Cœur", "planned": false, "blocks": [{"start": "8:00 AM", "end": "8:45 AM", "title": "Breakfast — Regency Club", "detail": "• Included\n• Last Paris breakfast before the train day", "typeName": "Dining", "emoji": "🥐"}, {"start": "9:45 AM", "end": "10:15 AM", "title": "Métro · Porte Maillot → Anvers", "detail": "• Métro 1 → Charles de Gaulle–Étoile (1 stop, 2 min)\n• Change to Métro 2, direction Nation → Anvers (8 stops, ~14 min)\n• About 22 minutes total, one change\n• Exit Anvers and walk up rue de Steinkerque towards the basilica", "typeName": "Transportation", "emoji": "🚇", "est": 17, "notes": "Two legs today at €7.70 — out and back. The funicular is ticketed separately."}, {"start": "10:20 AM", "end": "10:40 AM", "title": "Montmartre funicular", "detail": "• Saves about 200 steps with a 5-year-old — worth every cent\n• Takes a standard Métro ticket: €2.55 adult, €1.30 child = €7.70 for four, one way\n• Note: the ticket does NOT let you transfer to another mode afterwards", "typeName": "Transportation", "emoji": "🚡", "est": 9}, {"start": "10:40 AM", "end": "12:15 PM", "title": "Sacré-Cœur & the terrace", "detail": "• Entry to the basilica is completely FREE, open 06:30–22:30 daily\n• The terrace in front is one of the great free views in Paris — the whole city laid out\n• Carousel at the foot of the hill\n• Skipping the dome climb: €26 for four and 280 steps with no lift, not realistic with a 5-year-old", "typeName": "Excursion", "emoji": "⛪"}, {"start": "12:45 PM", "end": "1:50 PM", "title": "Lunch — Bouillon Pigalle", "detail": "• 22 boulevard de Clichy, 75018 · about 10 minutes downhill from Sacré-Cœur\n• Open 7 days, 12:00–00:00 — one of the few reliable Sunday options\n• Œuf mayonnaise €2.50, onion soup €3.90, sausage & mash €9.60, bœuf bourguignon €12.20, steak-frites €12.60, duck confit €12.80\n• Fries €3.00, rice pudding €2.80, crème brûlée €3.80, soft drinks €1.10–2.60\n• No kids' menu, but sausage-and-mash at €9.60 is the children's dish\n• No reservations — arrive at 12:00 to avoid the queue", "typeName": "Dining", "emoji": "🍽️", "est": 76, "menuUrl": "https://bouillonlesite.com/en/", "notes": "About €60–68 for four. Menu prices from the official card; a 2026 guide confirms mains still €9.80–12.20, so add ~10% margin."}, {"start": "2:00 PM", "end": "3:45 PM", "title": "Place du Tertre & the Montmartre back streets", "detail": "• Street artists on the square, then the quieter lanes behind — rue de l'Abreuvoir, the vineyard, the Wall of Love\n• Abbesses Christmas market at Place des Abbesses if running\n• All free; this is a wander, not a schedule", "typeName": "Walk", "emoji": "🎨"}, {"start": "3:45 PM", "end": "4:15 PM", "title": "Crêpe stop", "detail": "• Street crêpe stands all over Montmartre — €4–6 each\n• Bridges the gap to a light supper", "typeName": "Dining", "emoji": "🥞", "est": 23}, {"start": "4:30 PM", "end": "5:10 PM", "title": "Métro back to the hotel", "detail": "• Walk down to Anvers or Pigalle\n• Métro 2 → Charles de Gaulle–Étoile, change to Métro 1 → Porte Maillot\n• About 25 minutes", "typeName": "Transportation", "emoji": "🚇"}, {"start": "6:30 PM", "end": "7:45 PM", "title": "Dinner — Il Grano", "detail": "• 212 bis boulevard Pereire, 75017 · 10–15 min walk from the hotel\n• OPEN SUNDAY 11:30–22:30 — confirmed, which rules out most of the 17th tonight\n• Pinsa romana and pizza €13.50–19.50, pasta €18–23, desserts €7.50–11\n• Light and fast, which is what you want before a travel day. Reserve: 01 58 57 99 46", "typeName": "Dining", "emoji": "🍕", "est": 90, "notes": "About €70–85 for four.", "flag": "Closed Sunday nearby, so do not default to them: Da Aldo, Le Paris 17, Crêperie L'Étoile d'Or, Crêperie du Palais."}, {"start": "8:00 PM", "end": "8:30 PM", "title": "Repack for Annecy", "detail": "• Winter gear and snow clothes to the top of the bags\n• No passports needed tomorrow — the whole week stays in France", "typeName": "Logistics", "emoji": "🧳"}, {"start": "8:45 PM", "end": "9:30 PM", "title": "Lights out", "detail": "• Tomorrow is one direct train — taxi at 8:30, in Annecy by 13:30\n• Working back from a 7:15 breakfast: bedtime now", "typeName": "Logistics", "emoji": "🛏️"}]}, {"date": "Monday, December 21, 2026", "title": "Paris → Annecy — one direct train", "planned": false, "blocks": [{"start": "7:15 AM", "end": "8:00 AM", "title": "Breakfast — Regency Club", "detail": "• Included. Eat a real breakfast — lunch is not until about 13:45 in Annecy\n• Fill water bottles\n• Take a couple of pastries for the train", "typeName": "Dining", "emoji": "🥐"}, {"start": "8:00 AM", "end": "8:30 AM", "title": "Checkout", "detail": "• Bags down, checkout, hold nothing back\n• Confirm the taxi at the door", "typeName": "Logistics", "emoji": "🧳"}, {"start": "8:30 AM", "end": "9:05 AM", "title": "Taxi · hotel → Gare de Lyon", "detail": "• Métro 1 goes there direct in ~25 minutes, but with four people and winter luggage in Monday rush hour the taxi is the right call\n• About €25–30, metered — this is an intra-Paris trip, not an airport forfait\n• Missing this train costs the day — do not economise here", "typeName": "Transportation", "emoji": "🚕", "est": 35}, {"start": "9:05 AM", "end": "9:35 AM", "title": "Gare de Lyon — snacks for the train", "detail": "• TGV INOUI to Annecy: check the departure board for the hall — Halls 1 and 2 are side by side\n• Monop'Daily (Hall 2, level 0) or Paul for pastries, fruit and drinks — this is the mid-morning snack, not lunch\n• Platform posts about 20 minutes before departure", "typeName": "Dining", "emoji": "🥐", "est": 25}, {"start": "9:46 AM", "end": "1:29 PM", "title": "TGV INOUI · Paris Gare de Lyon → Annecy", "detail": "• DIRECT, 3h43, no changes — published timetable for Monday 21 December (also 06:45→10:38 and 12:46→16:34)\n• Domestic TGV, so the Carte Avantage price cap applies: adults never pay more than €89\n• Bar car for hot drinks; reserved seats — book four together\n• Annecy station exit → the apartment is a four-minute walk", "typeName": "Train", "emoji": "🚄", "est": 215, "route": "Paris → Annecy", "flightNo": "TGV INOUI (direct)", "cabin": "2nd class", "program": "Cash — SNCF", "notes": "Budgeted at $215 for four with the Carte Avantage. Floor is about $150 at opening-day advance fares; ceiling about $270 at the cap. Sales for these dates open on 30 September — book that morning.", "flag": "No border, no bus, no Geneva. Compare the Chamonix version of this day: Lyria to Geneva, a walk to the coach, 1h26 up the valley, and a 15:50 arrival. This one is in the apartment by 13:45."}, {"start": "1:29 PM", "end": "1:45 PM", "title": "Walk to the apartment — La Madeleine", "detail": "• 7 rue de l'Annexion — 1,200 ft from the station, four minutes with bags, flat\n• Drop bags even if the apartment is not ready — confirm the check-in time with the host when you book", "typeName": "Walk", "emoji": "🚶"}, {"start": "1:45 PM", "end": "2:15 PM", "title": "Check in — La Madeleine apartment, 6 nights", "detail": "• 7 rue de l'Annexion, 74000 Annecy — between the station (4 min) and the old town (Palais de l'Isle 5 min)\n• Whole apartment, 431 ft²: 1 bedroom with a double, sofa bed in the living room, FULL KITCHEN with dishwasher, washing machine, balcony\n• Elevator in the building; Booking 7.9/10 from 162 reviews\n• The two day-trip buses (Y62 to Le Grand-Bornand, BlaBlaCar to Chamonix) and the Semnoz bus all leave from beside the station — four minutes away", "typeName": "Hotel", "emoji": "🏨", "nights": "6 nights (Mon Dec 21 – Sun Dec 27)", "roomType": "One-bedroom apartment, 431 ft², full kitchen", "program": "Cash — Booking.com, FREE CANCELLATION rate", "est": 990, "notes": "Booking quote $859 for six nights on the free-cancellation rate (cancel until 16 December), EXCLUDING 10% VAT and a 5% 'city tax' line — budgeted at $990 all in. The non-refundable rate is $773. Real Annecy taxe de séjour is about €1–2 per adult per night; the 5% looks like a platform fee.", "flag": "Against the Cham sud apartment at $1,370, this saves about $380. Cheaper still: Séjours & Affaires Le Pont Neuf, an aparthotel in Cran-Gevrier at about $700 all in — but 15 minutes from the station and 20 from the old town, which you would walk twice a day. See the Ideas tab."}, {"start": "2:15 PM", "end": "3:15 PM", "title": "Lunch — Les Burgers de Papa", "detail": "• 11 rue Président Favre — two minutes from the apartment, on the way into town\n• Fast, warm, no booking: burger menus from €9.90, the 'Bons Plans de Tonton' combo €14.50\n• Deliberately simple after a travel morning — the proper Annecy meals start tonight", "typeName": "Dining", "emoji": "🍔", "est": 52, "notes": "About €40–45 for four. No published children's menu, but a plain burger and fries splits easily."}, {"start": "3:15 PM", "end": "4:45 PM", "title": "Old town on foot — canals, Palais de l'Isle, Pont des Amours", "detail": "• Rue Sainte-Claire under the arcades, the Thiou canal, the Palais de l'Isle from the bridge — the postcard\n• Out to the Jardins de l'Europe and across the Pont des Amours to Le Pâquier: swans, ducks, the lake with the mountains behind\n• Dark by about 16:50 — this is your daylight look; the market is better after dark anyway\n• All free, all flat, all within ten minutes of the apartment", "typeName": "Walk", "emoji": "🚶"}, {"start": "4:45 PM", "end": "5:30 PM", "title": "Carrefour City shop — the week's breakfasts", "detail": "• 14 avenue de Chambéry — three minutes from the apartment, by the station. Mon–Sat 07:00–20:50, Sunday 09:00–12:50\n• Buy: bread, croissants, butter, jam, cereal, milk, coffee, juice, fruit, yoghurts, cheese, ham, crisps, chocolate, water\n• Six breakfasts in a real kitchen for about €100, against €50+ a morning in a café\n• Monoprix (65 rue Carnot) is the bigger shop if you need it — closed Sundays", "typeName": "Dining", "emoji": "🛒", "est": 110, "notes": "One adult can do this alone while the other gets the kids settled — it is three minutes away."}, {"start": "5:30 PM", "end": "6:45 PM", "title": "Noël des Alpes — the market after dark", "detail": "• 135+ artisan chalets from Quai de Vicenza through Place Saint-Maurice to the Jardins de l'Europe, plus Santa at Place de l'Ancienne Grenette\n• FREE entry. Illuminations on the old town, vin chaud for the adults, chocolat chaud for the kids\n• Natural outdoor ICE RINK (about 450 m²) in the Jardins de l'Europe — you skate here on the 23rd\n• 2025–26 edition ran 29 Nov – 4 Jan, 11:00–21:00 (21:30 Fri/Sat and holidays)", "typeName": "Excursion", "emoji": "🎄", "flag": "2026–27 dates are not yet published — the city posts them in October/November. Every recent edition has covered your dates."}, {"start": "7:00 PM", "end": "8:30 PM", "title": "Dinner — Brasserie des Européens", "detail": "• Esplanade de l'Hôtel de Ville — five minutes from the apartment, beside the Pâquier\n• Open every day for lunch and dinner, which is why it is Monday's pick: several old-town kitchens close Mon–Tue\n• Classic brasserie — steak-frites, fish, salads, a dessert trolley the kids will remember\n• Reserve: 04 50 45 00 81", "typeName": "Dining", "emoji": "🍽️", "est": 85, "notes": "About €70–80 for four. No published children's menu — ask; brasseries of this kind almost always do a plat enfant around €10–12."}]}, {"date": "Tuesday, December 22, 2026", "title": "Le Semnoz — sledging above the lake", "planned": false, "blocks": [{"start": "8:00 AM", "end": "8:45 AM", "title": "Breakfast in the apartment", "detail": "• From last night's Carrefour shop, in a real kitchen\n• Adults: coffee is enough if you prefer\n• Snow gear on before you leave — there is nowhere warm to change at the bus stop", "typeName": "Dining", "emoji": "🥐"}, {"start": "9:00 AM", "end": "9:15 AM", "title": "Walk to the Semnoz bus — Annecy Gare", "detail": "• The S2 leaves from the stops beside the station, four minutes from the door\n• Ten minutes of slack is enough — this is a city bus, not a coach\n• Sledges: hire at the top (see below), do not carry anything up", "typeName": "Walk", "emoji": "🚶"}, {"start": "9:30 AM", "end": "10:30 AM", "title": "Bus S2 · Annecy Gare → Semnoz Alpin", "detail": "• Grand Annecy 'Mobil'hiver' winter line — about 60 minutes up the mountain road, calling Pont Neuf, Église des Bressis and Marché on the way\n• Runs DAILY through the school holidays (20 Dec – 4 Jan pattern), weekends only otherwise\n• Standard SIBRA city fare, about €2 a ride (€2.50 if bought on board) — the cheapest snow of the whole trip\n• Return buses from Semnoz Alpin: 14:25, 15:45, 16:45, 17:45, 18:15", "typeName": "Transportation", "emoji": "🚌", "est": 10, "notes": "2025–26 timetable: Annecy Gare departures 07:30, 08:30, 09:30, 10:30, 12:00, 13:15. Child single fare not published — budget €2 each. Taxi is the fallback: about 25 minutes, roughly €35–55 each way, metered.", "flag": "The 2026–27 sheet publishes in November. A 'reduced' service on 24 December is confirmed for 2025; assume the same and check the December sheet before you go."}, {"start": "10:30 AM", "end": "12:45 PM", "title": "Semnoz — the sledging slopes", "detail": "• 1,700 m at the top, open ground above the tree line, the whole lake and the Aravis laid out below\n• FREE toboggan piste with safety nets and TWO FREE CONVEYOR LIFTS (tapis) — no walking back up, which is the difference between an hour and an afternoon with a 5-year-old\n• Sledge hire at the Nordic Forest chalet: €5 for a half-day (09:00–13:00), €8 all day. No booking\n• SNOW TUBING: a 60 m track beside the sledging area, from age 3, sold on a points card (1 point = 2 runs, cards from about €4)\n• Open 09:00–17:00 when the station is open", "typeName": "Excursion", "emoji": "🛷", "est": 55, "notes": "Three sledges at €5 plus a tubing card — about €45. This whole day costs less than one lift pass in Chamonix.", "flag": "SNOW: Semnoz has closed entirely in low-snow Decembers. Check semnoz.fr's live status ('Ouverte / Fermée') the night before. If it is shut, swap in the Le Grand-Bornand day (higher, better cover) and do Annecy on the 24th instead."}, {"start": "12:45 PM", "end": "1:45 PM", "title": "Lunch — Le 1407, Semnoz Alpin", "detail": "• The snack-restaurant at the top station (the old 'Chez JP'), at the foot of the Bauges-side slopes\n• Daily-changing Savoyard plates, croque-monsieur, chips, hot chocolate — warm room, big windows\n• Alternative with a published children's menu: Le Châtillon, lower on the Viuz side — menu enfant €10, tartiflette €18.50", "typeName": "Dining", "emoji": "🍽️", "est": 55, "notes": "About €45–50 for four. No prices published for Le 1407 — mountain-snack pricing, expect €12–16 a plate."}, {"start": "1:45 PM", "end": "3:30 PM", "title": "Second run — snow play until the bus", "detail": "• Back on the sledges, or just snowmen and snowball fights on the open ground\n• Stop at 15:30 sharp: the 15:45 bus is the one that gets you home for dinner without a rush\n• Hot chocolate at Le 1407 while you wait if anyone is cold", "typeName": "Excursion", "emoji": "⛄"}, {"start": "3:45 PM", "end": "4:45 PM", "title": "Bus S2 · Semnoz Alpin → Annecy Gare", "detail": "• Down the mountain, about an hour\n• Everyone will sleep\n• Four minutes home from the station", "typeName": "Transportation", "emoji": "🚌", "est": 10}, {"start": "4:50 PM", "end": "6:30 PM", "title": "Back at the apartment — dry everything out", "detail": "• Wet gear over the radiators, boots opened out, socks straight into the washing machine — the apartment has one\n• Hot showers and a quiet hour before dinner", "typeName": "Free Time", "emoji": "🛁"}, {"start": "6:45 PM", "end": "8:15 PM", "title": "Dinner — Le Fréti", "detail": "• 12 rue Sainte-Claire, in the arcades of the old town — six minutes on foot\n• THE Savoyard place: fondue and raclette for the adults after a day in the snow\n• Plat du jour €11–15; full fondue menus €25 and up per adult; MENU ENFANT €12.50\n• Reserve: 04 50 51 29 52 — it fills every winter evening", "typeName": "Dining", "emoji": "🧀", "est": 95, "notes": "About €80 for four with one shared fondue and two children's menus. This is one of the two 'nice' dinners of the Annecy week.", "flag": "Weekly closure day not published — confirm when you book, and ask about 24 December while you are on the phone."}]}, {"date": "Wednesday, December 23, 2026", "title": "Annecy — château, lake & the market rink", "planned": false, "blocks": [{"start": "8:30 AM", "end": "9:15 AM", "title": "Breakfast in the apartment", "detail": "• No bus today, no early start — the recovery day between two snow days\n• Everything today is within ten minutes on foot", "typeName": "Dining", "emoji": "🥐"}, {"start": "10:00 AM", "end": "11:45 AM", "title": "Château d'Annecy", "detail": "• Up the hill from the old town — ten minutes, steepish, the view over the roofs is the reward\n• Winter hours 10:00–12:30 and 14:00–17:30. CLOSED TUESDAYS and 24–25 December — which is why it is today\n• €6.50 adult, UNDER-12s FREE — €13 for the family\n• Lake archaeology, medieval rooms, the ramparts: an hour to ninety minutes with a 5- and 7-year-old, not more\n• The tourist office runs a family trail, 'Le château à petits pas' — ask at the desk", "typeName": "Excursion", "emoji": "🏰", "est": 15}, {"start": "12:00 PM", "end": "1:15 PM", "title": "Lunch — La Bolée crêperie", "detail": "• 41 rue Carnot, old town, since 1979 — four minutes down from the château\n• Savoury galettes for lunch, sweet crêpes after; the kind of menu a 5-year-old can order from\n• Open Tue–Sat 11:45–22:30. Closed Sunday and Monday", "typeName": "Dining", "emoji": "🥞", "est": 55, "notes": "About €45–50 for four. Prices not published online — crêperie pricing, galettes €9–14."}, {"start": "1:30 PM", "end": "3:00 PM", "title": "Le Pâquier & the lakefront", "detail": "• Across the Pont des Amours to the big lakeside meadow — swans, ducks, room to run\n• Bring seed, not bread\n• Flat, pushchair-friendly, mountains across the water. Free\n• Cold: this is the coldest part of the day by the water. Gloves, and keep moving", "typeName": "Walk", "emoji": "🦢"}, {"start": "3:00 PM", "end": "4:15 PM", "title": "Ice skating — the market rink, Jardins de l'Europe", "detail": "• The Noël des Alpes natural outdoor rink, about 450 m², right in the gardens — no bus, no changing rooms in a sports hall\n• Small enough that the 5-year-old can hold the rail the whole way round\n• Skate hire on site", "typeName": "Excursion", "emoji": "⛸️", "est": 30, "notes": "Price not published — market rinks of this size run €5–8 with skates. Budgeted at €25 for four.", "flag": "Indoor alternative: Patinoire Jean Régis, 90 chemin des Fins, 04 50 57 56 02 — Olympic-size, a 'Jardin de Glace' beginners' zone, UNDER-5s FREE, about €8.40 adult with skates. Regular Wednesday session 14:00–17:00; holiday hours not yet published. It is 2 km north — a short bus or a €10 taxi."}, {"start": "4:30 PM", "end": "5:00 PM", "title": "Goûter — crêpes & chocolat chaud", "detail": "• A market chalet or any café on Place Saint-Maurice\n• A real snack, not just a drink: lunch was at noon and dinner is at seven\n• Timed so the market lights come on while you are sitting down", "typeName": "Dining", "emoji": "🥞", "est": 28}, {"start": "5:00 PM", "end": "6:30 PM", "title": "Noël des Alpes — chalets and Santa", "detail": "• Dusk at 16:50 — the market at its best\n• Santa's chalet at Place de l'Ancienne Grenette; the artisan chalets along Quai de Vicenza and rue du Collège-Chappuisien\n• This is the evening to buy the small things — tomorrow is Christmas Eve and the chalets close early (about 19:00)", "typeName": "Excursion", "emoji": "🎅"}, {"start": "7:00 PM", "end": "8:30 PM", "title": "Dinner — Le Napoli", "detail": "• 8 rue du Pâquier — three minutes from the apartment\n• Pizza and pasta, about twenty pizzas, lasagne, veal; states an 'adapted children's menu'\n• Open daily except Sunday in winter\n• Reserve: 04 50 51 76 06", "typeName": "Dining", "emoji": "🍕", "est": 70, "notes": "About €55–60 for four. Children's menu price not published — ask when booking."}]}, {"date": "Thursday, December 24, 2026", "title": "Le Grand-Bornand — village sledging & tubing, then Christmas Eve", "planned": false, "blocks": [{"start": "7:30 AM", "end": "8:10 AM", "title": "Breakfast in the apartment", "detail": "• The one early start of the week — it buys a whole day in a real alpine village\n• Pack snacks and water; the café stops are further apart than in Annecy\n• Snow gear on, spare gloves and socks in the bag", "typeName": "Dining", "emoji": "🥐"}, {"start": "8:15 AM", "end": "8:25 AM", "title": "Walk to the gare routière", "detail": "• The coach station is 50 m to the right as you leave the railway station — four minutes from the apartment\n• Ticket office is 10 m from the station exit; or buy on the bus (CASH, exact change), or online at Altibus", "typeName": "Walk", "emoji": "🚶"}, {"start": "8:35 AM", "end": "9:45 AM", "title": "Bus Y62 · Annecy → Le Grand-Bornand village", "detail": "• ARVI Mobilité lines Y62/Y63, about 1h10 via Thônes and Saint-Jean-de-Sixt\n• School-holiday weekday departures cluster at 08:00, 08:25, 08:55, 09:25 — take the one closest to 08:30 on the December sheet\n• €8.60 single / €16 return per adult; children's fare not published — budget €50 for four\n• Get off at Le Grand-Bornand VILLAGE (not Chinaillon): the sledging areas and the Rosay gondola are here", "typeName": "Transportation", "emoji": "🚌", "est": 60, "notes": "Same bus goes on to La Clusaz if you would rather swap villages. Le Grand-Bornand is the more family-built of the two — the 'Famille Plus' label, and sledging IN the village.", "flag": "Christmas Eve runs on a holiday timetable — confirm the return departures on the December sheet before you set out. Aim to be on a bus by 15:30."}, {"start": "9:50 AM", "end": "11:15 AM", "title": "La Grenouille — village sledging", "detail": "• 'La Grenouille au Borne': a sunny, gently sloping sledging area in the heart of the village, built for the little ones. FREE, open daily in season, helmets advised\n• No lift, no ticket, no queue — the 5-year-old's slope\n• Second free area, L'Abeille at Venay, if this one is busy\n• Sledge hire from the village sports shops — about €5–10 for the day", "typeName": "Excursion", "emoji": "🛷", "est": 20}, {"start": "11:15 AM", "end": "1:00 PM", "title": "Rosay gondola → snow tubing & La Marmotte", "detail": "• PEDESTRIAN ticket on the Rosay gondola: €7.70 return per person aged 5–74, UNDER-5s FREE — €23.10 for the four of you\n• At the top: the SNOW-TUBING TRACK (from age 3; two tube sizes, split at 120 cm) and 'La Marmotte', a 2,600 m² sledging area inside the beginners' zone\n• Deep, reliable snow at 1,300 m+ — this is the day that guarantees the kids see proper winter whatever Annecy looks like\n• Views back down the Aravis", "typeName": "Excursion", "emoji": "🎿", "est": 60, "notes": "Gondola €23.10 plus tubing. Tubing price per session is NOT published — budget €30 for the kids and confirm at the ticket office.", "flag": "Confirm the tubing track is open on 24 December — it is listed as seasonal but not date-by-date."}, {"start": "1:00 PM", "end": "2:15 PM", "title": "Lunch — Pizzeria Casanova, Le Grand-Bornand", "detail": "• In the village, a few minutes from the gondola base\n• MENU ENFANT €10 (tartiflette + lollipop + ice cream), burgers €12, pâtes bornandine €13, pizzas to €15\n• Warm, fast, no fuss — exactly right after three hours in the snow", "typeName": "Dining", "emoji": "🍕", "est": 60, "notes": "About €50 for four."}, {"start": "2:15 PM", "end": "3:15 PM", "title": "The village — church square, Christmas lights, a last slide", "detail": "• Le Grand-Bornand is a working Savoyard village, not a purpose-built resort: the baroque church, wooden chalets, reblochon shops\n• Christmas Eve afternoon is quiet and pretty. One last run at La Grenouille if there is energy\n• Bus stop is in the village centre — be there ten minutes early", "typeName": "Free Time", "emoji": "⛪"}, {"start": "3:30 PM", "end": "4:40 PM", "title": "Bus Y62 · Le Grand-Bornand → Annecy", "detail": "• Return leg of the same ticket\n• Back at the gare routière about 16:40, four minutes from the apartment", "typeName": "Transportation", "emoji": "🚌"}, {"start": "4:45 PM", "end": "5:10 PM", "title": "Market stop — crêpes on the way home", "detail": "• Five minutes from the coach station into the market; the chalets close early on the 24th (about 19:00)\n• Bridges the gap to a 19:15 festive dinner — nobody should arrive at a five-course menu starving", "typeName": "Dining", "emoji": "🥞", "est": 25}, {"start": "5:10 PM", "end": "6:45 PM", "title": "Back at the apartment — dry out, dress up", "detail": "• Wet gear on the radiators, everyone through the shower, then into something decent for Christmas Eve\n• Presents organised for the morning", "typeName": "Free Time", "emoji": "🛁"}, {"start": "7:15 PM", "end": "9:15 PM", "title": "Christmas Eve dinner", "detail": "• One of the two proper meals of the trip — worth the money\n• Annecy restaurants run FIXED festive menus on the 24th and they sell out. Book in November, when annecy-ville.fr publishes the year's list\n• Confirmed to open 24 Dec in recent years, with prices: Ô Bon Bec (€110 adult, €45 child 5–11 — the one with a real children's price), Le Clocher in Annecy-le-Vieux (€68, five courses), Brasserie Bocuse Irma on the lake (€82/€86)\n• Cheaper route: Le Fréti or Le Ramoneur Savoyard if either serves a normal card on the 24th — ask when you book Tuesday's table", "typeName": "Dining", "emoji": "🎄", "est": 250, "notes": "Budgeted at €215 for four — two adult festive menus at about €80 plus two children at about €25–45. Ô Bon Bec at €310 is the ceiling.", "flag": "A five-course menu starting at 19:30 ends after 21:30. Book the EARLIEST sitting offered, and ask whether the children's menu can be served fast."}]}, {"date": "Friday, December 25, 2026", "title": "Christmas Day — presents, snow, the lake", "planned": false, "blocks": [{"start": "8:30 AM", "end": "9:30 AM", "title": "Breakfast & presents in the apartment", "detail": "• No fixed start\n• Assume every shop is shut — you shopped on the 21st and topped up on the 23rd\n• The one thing that reliably runs on Christmas Day is the mountain: lifts, snow and the Semnoz bus (public-holiday timetable)", "typeName": "Dining", "emoji": "🎁"}, {"start": "10:10 AM", "end": "10:25 AM", "title": "Walk to the Semnoz bus", "detail": "• Four minutes to the stops beside the station\n• Check the holiday timetable the night before — the 10:30 is the target", "typeName": "Walk", "emoji": "🚶"}, {"start": "10:30 AM", "end": "11:30 AM", "title": "Bus S2 · Annecy Gare → Semnoz Alpin", "detail": "• The Mobil'hiver line runs on public holidays — Christmas Day included on the published pattern\n• About €2 a head; an hour up", "typeName": "Transportation", "emoji": "🚌", "est": 10, "flag": "The 2025 sheet confirms a REDUCED service on 24 December; 25 December is not called out separately. If the December 2026 sheet shows no 10:30, take the 09:30, or a taxi (about €35–55, 25 minutes)."}, {"start": "11:30 AM", "end": "1:00 PM", "title": "Christmas morning on the sledges", "detail": "• Same free netted piste and conveyor lifts as the 22nd — sledge hire €5 half-day\n• Christmas Day is the quietest day of the week up here\n• Snow at 1,700 m in the sun with the lake below is the memory of this trip", "typeName": "Excursion", "emoji": "🛷", "est": 20}, {"start": "1:00 PM", "end": "2:15 PM", "title": "Christmas lunch — Le 1407 or Le Châtillon", "detail": "• Le 1407 at the top station, or Le Châtillon (menu enfant €10, tartiflette €18.50, fondue €27.50) — call both in mid-December to see which is serving on the 25th\n• A hot Savoyard lunch on the mountain IS the Christmas meal today; the evening is kept light", "typeName": "Dining", "emoji": "🧀", "est": 90, "notes": "About €75–80 for four.", "flag": "If neither mountain restaurant opens on the 25th, carry the lunch up from the 23rd's shop and move the Christmas meal to the evening (see the dinner block)."}, {"start": "2:25 PM", "end": "3:25 PM", "title": "Bus S2 · Semnoz Alpin → Annecy Gare", "detail": "• The 14:25, home by 15:30 with daylight left for the lake", "typeName": "Transportation", "emoji": "🚌", "est": 10}, {"start": "3:45 PM", "end": "4:45 PM", "title": "Pont des Amours at dusk", "detail": "• Out to the bridge and along the Jardins de l'Europe as the light goes — the market lights come on about 16:50\n• Free, ten minutes from the door", "typeName": "Walk", "emoji": "🌅"}, {"start": "5:00 PM", "end": "6:30 PM", "title": "Back at the apartment — Christmas afternoon", "detail": "• Presents, warmth, nothing planned\n• Kitchen means hot chocolate on tap", "typeName": "Free Time", "emoji": "🎄"}, {"start": "7:00 PM", "end": "8:30 PM", "title": "Christmas dinner — Le Ramoneur Savoyard", "detail": "• 7 rue Grenette, old town — six minutes on foot\n• Savoyard set menus €21–33.50 per adult; MENU ENFANT 'P'tits Malins' €12.90\n• Reserve: 04 50 51 29 03 — and ask specifically whether they open on the evening of the 25th; some of their set menus are excluded on public holidays", "typeName": "Dining", "emoji": "🍽️", "est": 110, "notes": "About €90 for four. Fallback if closed: Brasserie des Européens (open every day per its site, 04 50 45 00 81) or Brasserie Saint Maurice (continuous service, 04 50 51 24 49).", "flag": "FAR fewer kitchens open on the 25th than the 24th. Book this in November alongside Christmas Eve."}]}, {"date": "Saturday, December 26, 2026", "title": "Chamonix — the Mer de Glace day", "planned": false, "blocks": [{"start": "7:15 AM", "end": "7:50 AM", "title": "Breakfast in the apartment", "detail": "• Early: the bus is at 08:30 and Montenvers' first train is at 10:00\n• Pack snacks for the bus and the glacier — Chamonix lunch is not until 13:30", "typeName": "Dining", "emoji": "🥐"}, {"start": "8:05 AM", "end": "8:15 AM", "title": "Walk to the gare routière", "detail": "• Four minutes. BlaBlaCar Bus leaves from the coach station beside the railway station", "typeName": "Walk", "emoji": "🚶"}, {"start": "8:30 AM", "end": "10:00 AM", "title": "BlaBlaCar Bus · Annecy → Chamonix Sud", "detail": "• About 1h30 on the motorway and up the valley to Chamonix Sud (Avenue de Courmayeur)\n• Roughly hourly; advance fares €8–15 a head, dynamic — book early for a Saturday in Christmas week\n• Non-promo tickets EXCHANGE FREE up to 30 minutes before departure\n• Passports not needed — this never leaves France", "typeName": "Transportation", "emoji": "🚌", "est": 100, "notes": "Return included in the estimate: about €12 × 4 × 2 = €96.", "flag": "Book the OUTBOUND for ~08:30 and the RETURN for ~16:45–17:00 the moment December sales open (BlaBlaCar loads dates 2–3 months ahead). Last evening departures are around 17:50."}, {"start": "10:00 AM", "end": "10:15 AM", "title": "Walk to the Montenvers station", "detail": "• About 1 km from Chamonix Sud, 13 minutes — the cogwheel station sits beside the main SNCF station\n• Buy at the ticket office: the family pass and the under-5 exemption get applied there\n• Allow a queue — 26 December is a peak morning", "typeName": "Walk", "emoji": "🚶"}, {"start": "10:30 AM", "end": "10:50 AM", "title": "Montenvers Railway — the red train", "detail": "• Twenty minutes of cogwheel railway through snow-covered pine to 1,913 m, opening onto the Mer de Glace\n• 'Voyage Mer de Glace' family pass €148.30 covers train, gondola, ice cave and the Glaciorium for all four\n• Individually: adult €49.70, child 5–14 €42.20. Under 5 free with proof of age\n• Winter: first train 10:00, last descent 16:30, runs daily", "typeName": "Excursion", "emoji": "🚂", "est": 172, "notes": "The single best thing in either version of this trip, and the reason this day exists.", "flag": "Confirm what the €148.30 family pack covers (2+2) when you book, and that the ice cave has opened — it is carved fresh each autumn."}, {"start": "10:50 AM", "end": "12:45 PM", "title": "Gondola down & the Grotte de Glace", "detail": "• Gondola from 1,913 m to 1,760 m, then a staircase to the cave carved into the glacier\n• About 170 steps down and the same back up, on open metal treads that can ice up. Hold hands; expect to carry the 5-year-old part of the way back\n• No pushchairs, no lift alternative", "typeName": "Excursion", "emoji": "🧊"}, {"start": "12:45 PM", "end": "1:10 PM", "title": "Train back down", "detail": "• Twenty minutes. Last descent 16:30 — no pressure this early", "typeName": "Transportation", "emoji": "🚂"}, {"start": "1:25 PM", "end": "2:25 PM", "title": "Lunch — Poco Loco, Chamonix", "detail": "• 47 rue du Docteur Paccard, ten minutes from the station through the pedestrian centre\n• Burgers, fries, hot sandwiches, crêpes — takeaway counter, no bookings, fast; burgers about €9–14\n• Open daily 10:00–22:00", "typeName": "Dining", "emoji": "🍔", "est": 58}, {"start": "2:25 PM", "end": "4:15 PM", "title": "Chamonix on foot — Mont Blanc, the Arve, the lights", "detail": "• The pedestrian centre, Maison de la Montagne, the bridges over the Arve with the Aiguilles above — the Mont Blanc view you are giving up by staying in Annecy, for one afternoon\n• Christmas lights and shop windows; hot chocolate at Elevation 1904 opposite the station\n• Walk back towards Chamonix Sud by 16:15", "typeName": "Walk", "emoji": "🏔️", "est": 17}, {"start": "4:45 PM", "end": "6:15 PM", "title": "BlaBlaCar Bus · Chamonix Sud → Annecy", "detail": "• Back down the valley, about 1h30\n• Home by 18:30 — a long day, and tomorrow's train is not until 12:29, so it is survivable", "typeName": "Transportation", "emoji": "🚌"}, {"start": "6:45 PM", "end": "8:00 PM", "title": "Dinner — Brasserie Saint Maurice", "detail": "• 9 rue du Collège Chapuisien, old town — five minutes\n• Continuous service, open late daily: no kitchen cut-off to race for after a bus\n• Simple brasserie plates; reserve 04 50 51 24 49", "typeName": "Dining", "emoji": "🍽️", "est": 75, "notes": "About €60–65 for four.", "flag": "Currently trading as 'Petit St Maurice' after a fire at the main site — confirm it is open before relying on it. Fallback: Les Burgers de Papa, two minutes from the apartment."}, {"start": "8:15 PM", "end": "9:15 PM", "title": "Pack", "detail": "• Pack tonight, properly. Tomorrow is a four-minute walk and one direct train\n• Wet gear into plastic bags\n• Breakfast is in the kitchen; the travelling lunch comes from the bakery in the morning (open Sunday)", "typeName": "Logistics", "emoji": "🧳"}]}, {"date": "Sunday, December 27, 2026", "title": "Annecy → Paris CDG — one train, no changes", "planned": false, "blocks": [{"start": "8:30 AM", "end": "9:10 AM", "title": "Breakfast in the apartment", "detail": "• Use up whatever is left\n• Lunch is on the train at about 12:45 — buy it at the bakery first", "typeName": "Dining", "emoji": "🥐"}, {"start": "9:15 AM", "end": "9:50 AM", "title": "Buy the travelling lunch — Pain et Copains", "detail": "• 42 rue Vaugelas — five minutes, and OPEN SUNDAY 07:00–13:00 (closed Monday)\n• Sandwiches and wraps about €6–7, pastries, drinks — enough for lunch on the train and something for the taxi\n• Do it now, before you pack, so nobody carries suitcases to a bakery", "typeName": "Dining", "emoji": "🥖", "est": 35, "notes": "About €30 for four."}, {"start": "9:50 AM", "end": "10:45 AM", "title": "Finish packing", "detail": "• No passports needed today — this routing never leaves France\n• CONFIRM THE CHECKOUT TIME WITH THE HOST when you book; private rentals are commonly 10:00–11:00, and this morning works either way\n• Strip beds or start the dishwasher only if the listing asks for it", "typeName": "Logistics", "emoji": "🧳"}, {"start": "10:45 AM", "end": "11:00 AM", "title": "Checkout", "detail": "• Hand back the keys as the host instructs\n• If checkout is 10:00, do this block first and the bakery run with the bags left at the station — Annecy station has luggage lockers (confirm)", "typeName": "Logistics", "emoji": "🔑"}, {"start": "11:00 AM", "end": "11:45 AM", "title": "Last look at the lake — bags with you", "detail": "• Forty-five minutes of slack, deliberately: the Pâquier is ten minutes away and flat with luggage, or sit in a café by the station\n• Be at the station by 11:50", "typeName": "Free Time", "emoji": "🦢"}, {"start": "11:50 AM", "end": "12:25 PM", "title": "Annecy station — board", "detail": "• Four minutes from the apartment; platform posts about 20 minutes ahead\n• Reserved seats — book four together, luggage-rack end if the seat map allows\n• Everything anyone needs for four hours comes out of the bags now", "typeName": "Logistics", "emoji": "🎫"}, {"start": "12:29 PM", "end": "4:15 PM", "title": "TGV INOUI 6972 · Annecy → Paris Gare de Lyon", "detail": "• 3h46, DIRECT — zero changes, one seat the whole way\n• Runs on Sunday 27 December: confirmed on the published timetable. Fallbacks the same day: 15:29→19:14 and 17:29→21:16\n• Eat the bakery lunch about 12:45; Le Bistro bar car in coach 4 or 14 for hot drinks\n• Domestic TGV, so the Carte Avantage PRICE CAP applies — an adult never pays more than €89, children −60%", "typeName": "Train", "emoji": "🚄", "est": 215, "route": "Annecy → Paris → CDG", "flightNo": "TGV INOUI 6972 (direct)", "cabin": "2nd class", "program": "Cash — SNCF", "notes": "Budgeted at $215 for four. Floor about $150 at advance fares; ceiling about $270 at the cap. Book the moment sales open on 30 September — on an EXCHANGEABLE fare, so a better option appearing in November costs nothing to switch to.", "flag": "Compare the Chamonix version of this day: a bus down the valley, then either a border crossing at Geneva or a slow branch line to Le Fayet, arriving Paris 17:42–18:16. This one walks to the station and is in Paris at 16:15."}, {"start": "12:45 PM", "end": "1:15 PM", "title": "Lunch on board — the bakery bag", "detail": "• The Pain et Copains sandwiches, eaten at your seats as the train leaves the mountains\n• Le Bistro bar car (coach 4 or 14) for hot drinks", "typeName": "Dining", "emoji": "🥪"}, {"start": "2:45 PM", "end": "3:05 PM", "title": "Bar-car break", "detail": "• Halfway. One adult and one child go up — it breaks the sit\n• Hot chocolate about €4.50, croissant €2.70", "typeName": "Dining", "emoji": "☕", "est": 20}, {"start": "4:15 PM", "end": "4:30 PM", "title": "Gare de Lyon — out to the car", "detail": "• PRE-BOOKED car meets you on the concourse with your name on a sign (G7 app, or any Paris transfer firm) — a Sunday TGV full of returning skiers can mean a 20–30 minute rank queue\n• If you queue instead: the official rank is outside the Hall 1 / Grandes Lignes exit, signposted TAXIS — marked rank only\n• Loo stop before you get in", "typeName": "Luggage", "emoji": "🧳"}, {"start": "4:30 PM", "end": "5:25 PM", "title": "Taxi · Gare de Lyon → Hyatt House", "detail": "• ONE CAR, STATION DOOR TO HOTEL DOOR. No changes, no shuttle, bags in the boot\n• Ask for a van (monospace) so four people and the winter bags fit in one car\n• Say the hotel by name: Hyatt House Paris Charles de Gaulle, rue de la Belle Étoile, Roissy-en-France\n• About 28 km, 40–55 minutes on a Sunday afternoon. Roughly €60–75 on the meter; €10–15 more pre-booked", "typeName": "Transportation", "emoji": "🚕", "est": 82, "notes": "The regulated €56 flat fare covers Paris ⇄ the AIRPORT only; the hotel sits five minutes past it, so this runs on the meter. Budgeted at €75 pre-booked.", "flag": "Cheaper: RER D → Gare du Nord, RER B → CDG, then the hotel shuttle — €42 in fares plus €8 in Navigo Easy cards, about 60 minutes. Worth €16 only if everyone is fresh."}, {"start": "5:30 PM", "end": "5:55 PM", "title": "Check in — Hyatt House Paris Charles de Gaulle", "detail": "• Kitchenette-equipped suites, free airport shuttle, about fifteen minutes from the terminals\n• CONFIRM the first shuttle departure tomorrow — you need to be at CDG by about 06:40\n• Buy tomorrow's early breakfast at the hotel H Market (open 24/7) TONIGHT, before bed", "typeName": "Hotel", "emoji": "🏨", "nights": "1 night (Sun Dec 27 – Mon Dec 28)", "roomType": "To confirm — see flag", "program": "World of Hyatt", "points": 15000, "est": 12, "notes": "15,000 points for the night as given. The $12 is Roissy-en-France tourist tax for two adults, payable at checkout.", "flag": "Confirm whether 15,000 covers one room or two. The Paris stay uses two rooms; if this night needs two as well, it is 30,000. Alternative that removes the shuttle entirely: the Sheraton INSIDE Terminal 2, about €195 a room — see the Ideas tab."}, {"start": "6:00 PM", "end": "7:15 PM", "title": "Dinner — ZOOM, in the hotel", "detail": "• Eat in the hotel: ZOOM serves dinner 18:00–22:00, children's menu €15\n• Arriving at 17:30 instead of 19:30 is the whole point of the Annecy routing — dinner at six, kids down by eight, a real night's sleep before a 05:30 start", "typeName": "Dining", "emoji": "🍽️", "est": 84, "notes": "About €70–80 for four. If ZOOM is full or closed: Hippopotamus, 309 rue de la Belle Étoile, 5 minutes on foot, open Sunday to 23:00, children's menu €7.50 — reserve on 01 48 63 18 97.", "flag": "Brasserie Le Village in Roissy village is CLOSED at weekends — not an option on a Sunday."}]}, {"date": "Monday, December 28, 2026", "title": "Paris → Atlanta → Miami", "planned": false, "blocks": [{"start": "5:30 AM", "end": "6:10 AM", "title": "Wake & quick breakfast", "detail": "• Whatever you bought last night, eaten in the room — the hotel breakfast service may not have started\n• A proper breakfast is served on board about an hour after take-off", "typeName": "Dining", "emoji": "☕", "est": 17}, {"start": "6:15 AM", "end": "6:40 AM", "title": "Shuttle to CDG Terminal 2E", "detail": "• Free hotel shuttle, about fifteen minutes\n• Confirm the first run at check-in the night before — if it starts later than 06:15, book a taxi instead", "typeName": "Transportation", "emoji": "🚐", "flag": "Verify the shuttle's first departure. An airport shuttle that starts at 07:00 does not work for a 9:10 flight."}, {"start": "6:40 AM", "end": "9:10 AM", "title": "CDG — check in, security, passport control", "detail": "• Delta departs Terminal 2E\n• Schengen EXIT control plus US-bound security screening — allow the full window\n• Two and a half hours is right for a transatlantic with four people and checked bags", "typeName": "Logistics", "emoji": "🛂"}, {"start": "9:10 AM", "end": "1:23 PM", "title": "Delta 83 · CDG → Atlanta", "detail": "• About 10h15 in the air (Paris is UTC+1, Atlanta UTC−5)\n• BEST-FED FLIGHT OF THE TRIP. Complimentary meals and complimentary beer/wine/spirits for over-21s — Delta does this on international flights over 6h30\n• First service is LUNCH, not breakfast: appetizer, hot entrée, dessert, about an hour after take-off (~10:00–10:15 Paris time)\n• Second lighter hot service about 1h–1h30 before landing\n• CHILD MEALS: order in My Trips or the Fly Delta app, at least 24h ahead. The lunch version is cheese tortellini with marinara, carrots and broccoli with ranch, fruit, graham cookies — and it is SERVED FIRST, before the main cabin\n• Do not over-eat at CDG; lunch comes early", "typeName": "Flight", "emoji": "✈️", "route": "CDG → ATL → MIA (1 stop)", "flightNo": "Delta 83 + Delta 1328", "cabin": "Economy", "seats": "Not yet assigned", "program": "Delta SkyMiles", "points": 240000, "est": 543, "notes": "60,000 SkyMiles + €117 per person. Four passengers = 240,000 SkyMiles + €468 (about $543). Fare class NL, 9 seats showing. Total elapsed CDG→MIA is 16h05.", "flag": "More than double the outbound award — 240,000 SkyMiles against 110,000 on Aer Lingus. The same Delta metal may be bookable through Virgin Atlantic or Air France/KLM Flying Blue for materially fewer points. Price both before spending 240K."}, {"start": "1:23 PM", "end": "5:10 PM", "title": "Atlanta — 3h47 layover", "detail": "• US immigration and customs happen HERE, not Miami — first port of entry\n• Recheck bags after customs, then back through security to the domestic concourse\n• The long layover is doing real work: it absorbs the immigration queue without risking the Miami leg\n• Proper sit-down meal here — it is the last one of the trip and everyone will need it", "typeName": "Logistics", "emoji": "🛂"}, {"start": "2:45 PM", "end": "3:45 PM", "title": "Late lunch at ATL", "detail": "• EAT PROPERLY HERE — this is the one meal today that is not on a plane, and the Miami leg has only a packaged snack with nothing for sale\n• After customs and re-clearing security, on the domestic concourse\n• Two tired children at the end of a transatlantic day with a bag of pretzels is the one avoidable failure point in this itinerary\n• Plenty of choice on Concourse B/T; buy extra to carry on", "typeName": "Dining", "emoji": "🍔", "est": 70}, {"start": "5:10 PM", "end": "7:15 PM", "title": "Delta 1328 · Atlanta → Miami", "detail": "• Home, arriving 7:15 PM\n• SNACK ONLY, and nothing can be bought: Delta's buy-on-board menu only runs on flights over 900 miles, and ATL–MIA is about 595\n• You do get a free snack choice and a Starbucks coffee or soft drink — that is all\n• This is why the Atlanta meal matters: the flight leaves at dinnertime and lands at 7:15 PM", "typeName": "Flight", "emoji": "🛬"}]}], "packing": {"trackerTitle": "Item tracker", "outfitDays": [], "trackerDays": [], "packLists": []}, "supplies": [], "alternatives": null, "ideas": [{"title": "🗺️ WHY ANNECY — what this version changes, and what it costs you", "detail": "This is the same trip with the six mountain nights moved from Chamonix to Annecy. Paris (17–21), the CDG night (27) and every flight are unchanged.\n\nWHAT YOU GAIN\n• ONE DIRECT TRAIN each way. Paris → Annecy 09:46→13:29 on the 21st; Annecy → Paris 12:29→16:15 on the 27th. No Geneva, no border, no coach, no Le Fayet branch line. Both are domestic TGV INOUI, so the Carte Avantage €89 cap applies both ways.\n• The 27th ends at the airport hotel at 17:30 instead of 19:30 — dinner at six, kids down by eight, before a 05:30 wake-up.\n• Christmas in a proper town: the Noël des Alpes market, an outdoor rink in the gardens, a château, the lake — all on foot from the door.\n• Lodging about $380 cheaper than Cham sud, in a bigger apartment with a full kitchen and a washing machine.\n• The snow is cheaper: Semnoz is a €2 city bus with FREE sledging and FREE conveyor lifts.\n\nWHAT YOU GIVE UP\n• Waking up in the mountains. Annecy sits at 450 m; snow in town at Christmas is rare. The snow is a bus ride away — about an hour each time.\n• Planpraz, Argentière, the Mont-Blanc Express, lunch in Italy through the tunnel. The Mer de Glace survives as a day trip on the 26th.\n• Mont Blanc from the window. You see it once, on the Chamonix day.\n\nTHE BUS HONESTY: every snow outing from Annecy is 60–70 minutes by bus — Semnoz 60, Le Grand-Bornand 70, Chamonix 90. The plan alternates snow days with town days so it is never two long buses in a row, and a taxi to Semnoz (about 25 minutes, €35–55) is the escape hatch."}, {"title": "🏨 LODGING — La Madeleine, and the two alternatives", "detail": "CHOSEN — LA MADELEINE, 7 rue de l'Annexion. One-bedroom apartment, 431 ft², full kitchen with dishwasher, washing machine, balcony, elevator. Four minutes from the station, five from the old town. Booking 7.9/10 (162 reviews). Free-cancellation rate $859 for six nights before 10% VAT and a 5% 'city tax' line — budgeted $990 all in. Non-refundable $773. Cancel free until 16 December.\n\nCHEAPER — SÉJOURS & AFFAIRES ANNECY LE PONT NEUF, 8 rue du Rond Point, Cran-Gevrier. Chain aparthotel, 377 ft² apartment with kitchen and balcony, Booking 7.5 (1,388 reviews). $624 refundable before VAT and €1/person/night tax — about $700 all in, so $290 less than La Madeleine. The catch: 15 minutes' walk to the station and 20 to the old town, both of which you would do twice a day in December. One real advantage: the Semnoz bus stops at 'Pont Neuf', on its doorstep.\n\nBRAND SAFETY — APARTHOTEL ADAGIO ANNECY CENTRE, beside the station. Studio for four with kitchenette, Booking 8.3 (2,776 reviews), pay at the property, free cancellation. About $219 a night — $1,314 for the week, so no saving over Chamonix.\n\nNOT CHOSEN: Au Faubourg (old town, 8.4, $961) is a 248 ft² studio — too small for four for six nights. The 9.5-rated 'Appartement de charme au cœur de la vieille ville' is $1,187.\n\nEvery Annecy apartment on Booking that sleeps four is one bedroom plus a sofa bed — same as Cham sud. Two-bedroom places start about $1,180."}, {"title": "🚄 TRAINS — book on 30 September, exchangeable fares", "detail": "SNCF opens sales for 13 Dec 2026 – 6 Jan 2027 on Wednesday 30 September 2026, about 05:45. Both legs are domestic TGV INOUI — buy ONE Carte Avantage Adulte (€49) first: −30% for the holder and one companion adult, −60% for both children 4–11, and a hard cap of €89 per adult on any domestic TGV.\n\nOUT — Monday 21 December, Paris Gare de Lyon → Annecy, direct. Published: 06:45→10:38, 09:46→13:29 (the plan), 12:46→16:34, 17:46, 18:46.\n\nBACK — Sunday 27 December, TGV INOUI 6972, Annecy → Paris Gare de Lyon 12:29→16:15, direct. Also that day: 08:18→12:15, 15:29→19:14, 17:29→21:16.\n\nBuy EXCHANGEABLE fares on both. Regional timetables and seasonal extras firm up in November; an exchangeable ticket means a better option costs nothing to move to.\n\nBudgeted $215 each way for four — floor about $150 at opening-day fares, ceiling about $270 at the cap."}, {"title": "🛷 THE SNOW — where, how much, and the one risk", "detail": "LE SEMNOZ (22nd, 25th) — 1,700 m, directly above the lake. FREE toboggan piste with nets and TWO FREE CONVEYOR LIFTS; sledge hire €5 half-day / €8 day at the Nordic Forest chalet; 60 m snow-tubing track from age 3 on a points card (from about €4). Restaurant at the top: Le 1407. Bus S1/S2 from Annecy Gare, about 60 minutes, standard €2 SIBRA fare, DAILY 20 Dec–4 Jan; departures 07:30, 08:30, 09:30, 10:30, 12:00, 13:15; returns 10:40, 11:45, 14:25, 15:45, 16:45, 17:45, 18:15 (2025–26 sheet). REDUCED service on 24 December confirmed for 2025. THE RISK: Semnoz has closed entirely in low-snow Decembers — check semnoz.fr the night before, and swap the Grand-Bornand day forward if it is shut.\n\nLE GRAND-BORNAND (24th) — 1,000 m village, 1,300 m+ at Chinaillon and the top of Rosay. Two FREE sledging areas in the village (La Grenouille at Borne, L'Abeille at Venay) — the 5-year-old needs no lift. Rosay gondola pedestrian ticket €7.70 return per person aged 5+, under-5 free; snow-tubing track at the top (from age 3, price not published); 'La Marmotte' 2,600 m² sledging area at the summit. Bus Y62/Y63 from the gare routière, 1h10, €8.60 single / €16 return adult, child fare not published. Lunch: Pizzeria Casanova, menu enfant €10.\n\nLA CLUSAZ (swap-in) — same bus, one hour. Three free sledging slopes; outdoor rink €6.50 adult / €5 child 5–16, skates €4–5; Pizza Minut has a children's pizza.\n\nCHAMONIX (26th) — BlaBlaCar Bus from the gare routière, about 1h30, €8–15 a head, exchangeable; Montenvers family pass €148.30; first train 10:00, last descent 16:30.\n\nSNOW REALITY: at village level (Annecy 450 m, Grand-Bornand 1,000 m) Christmas snow is a coin flip. Everything in this plan happens at 1,300–1,900 m, where it is not."}, {"title": "🍽️ RESTAURANTS — the short list, with children's prices", "detail": "OLD TOWN, ALL WITHIN SIX MINUTES OF THE APARTMENT\n• Le Fréti, 12 rue Sainte-Claire — Savoyard; plat du jour €11–15, menu enfant €12.50. 04 50 51 29 52.\n• Le Ramoneur Savoyard, 7 rue Grenette — set menus €21–33.50, menu enfant 'P'tits Malins' €12.90. 04 50 51 29 03.\n• Le Napoli, 8 rue du Pâquier — pizza/pasta, children's menu (price unpublished). Closed Sunday. 04 50 51 76 06.\n• La Bolée, 41 rue Carnot — crêperie since 1979. Tue–Sat 11:45–22:30, closed Sun–Mon.\n• Brasserie des Européens, Esplanade de l'Hôtel de Ville — open EVERY day. 04 50 45 00 81.\n• Brasserie Saint Maurice, 9 rue du Collège Chapuisien — continuous service to 01:00. Trading as 'Petit St Maurice' after a fire; confirm. 04 50 51 24 49.\n• Les Burgers de Papa, 11 rue Président Favre — menus from €9.90, two minutes from the door.\n• Pain et Copains, 42 rue Vaugelas — bakery, sandwiches €6–7, OPEN SUNDAY 07:00–13:00, closed Monday.\n\nCHRISTMAS EVE / DAY (from the annecy-ville.fr lists for 2024 and 2025 — re-check the November 2026 list)\n• Ô Bon Bec — 24 Dec, €110 adult / €45 child 5–11 / under-5 free. The only one with a published child price.\n• Le Clocher, Annecy-le-Vieux — 24 Dec, €68, five courses, whole table on the same menu.\n• Brasserie Bocuse Irma, lakeside — 24 Dec evening AND 25 Dec lunch, €82/€86.\n• The Craic — 24 Dec, €85.\n• Everything books out. Reserve in November.\n\nSUPERMARKETS\n• Carrefour City, 14 av de Chambéry — Mon–Sat 07:00–20:50, SUNDAY 09:00–12:50. Three minutes from the door.\n• Monoprix, 65 rue Carnot — Mon–Sat 08:30–20:45, closed Sunday.\n\nNONE of these have published 24–26 December hours for 2026. Call each one you are counting on in early December."}, {"title": "💰 BUDGET — what Annecy does to the number", "detail": "Same Paris, same flights, same CDG night. The Annecy week replaces the Chamonix week roughly like this:\n\nCHEAPER\n• Lodging: La Madeleine $990 vs Cham sud $1,370 — about −$380.\n• Snow: two Semnoz days on a €2 bus with free sledging and free lifts, against Planpraz (€77.60) and Les Planards (€47.50). About −$120.\n• Transport out: one domestic TGV ($215) instead of Lyria + Geneva coach ($267). About −$50.\n• Courmayeur is gone (−$266 in bus, park and Italian lunch), replaced by Le Grand-Bornand at about $145 — net about −$120.\n\nDEARER OR THE SAME\n• The Chamonix day trip adds the BlaBlaCar return (about $100) to a Montenvers day you were doing anyway.\n• Christmas Eve is budgeted the same ($250). Christmas Day is CHEAPER ($110 vs $186) because the festive meal is lunch on the mountain.\n\nThe build's own total is printed in the Money tab. Expect it to land roughly $600–700 under the Chamonix version, and within reach of the $5,000 cap for the first time — the Séjours & Affaires apartment (−$290) would get it there."}, {"title": "⚠ TRIP-BREAKER — Leavenworth collision", "detail": "This trip is Dec 16–28, 2026. Leavenworth Winter 2026 is Dec 19–27, 2026 with MIA→SEA booked on Dec 19 (Alaska AS305, conf UUKHNQ) and a Hampton Inn on 308K Hilton points. They overlap by eight days and both depart from Miami. These cannot both happen. Nothing here should be booked until one of them moves."}, {"title": "🛏️ THE LAST NIGHT — Hyatt House vs the Sheraton inside Terminal 2", "detail": "The plan keeps the Hyatt House (15,000 points, free shuttle, 05:30 wake-up for a 06:15 shuttle). With the Annecy routing you are there by 17:30, so the early night is comfortable and the points stay the better deal.\n\nIf you would rather remove the shuttle altogether: the Sheraton Paris Airport is BUILT INTO TERMINAL 2 with indoor access to the Delta check-in — walk downstairs at 06:30. About €195 a room, and the hotel will not take four in one room, so two rooms: roughly $425 cash for the night. The regulated €56 taxi flat fare from Gare de Lyon applies to it, since it is at the airport itself."}, {"title": "✅ STILL UNVERIFIED — close these before booking anything", "detail": "• Noël des Alpes 2026–27 dates (published October/November; every recent edition covered these days).\n• The December 2026 Semnoz bus sheet, especially 24 and 25 December.\n• Semnoz tubing price per session; Grand-Bornand tubing price per session.\n• Child fare on the Y62 bus.\n• Patinoire Jean Régis holiday hours; the market rink's price.\n• 24–26 December opening for every restaurant listed — none publish it this far out.\n• La Madeleine check-in and checkout times, and whether Annecy station has working luggage lockers.\n• Whether the Montenvers €148.30 family pack covers 2 adults + 2 children, and the ice cave's opening date.\n• BlaBlaCar Annecy ⇄ Chamonix departures for Saturday 26 December (loads 2–3 months out)."}, {"title": "📞 Calls to make in November", "detail": "Le Fréti 04 50 51 29 52 — Tuesday table, and whether they open on the 24th.\nLe Ramoneur Savoyard 04 50 51 29 03 — Christmas Day evening.\nChristmas Eve: pick from the annecy-ville.fr list the week it publishes; Ô Bon Bec first if you want a children's price.\nPatinoire Jean Régis 04 50 57 56 02 — holiday session hours.\nGrand Annecy buses 04 50 10 04 04 — the December Semnoz sheet and child fares.\nLe Grand-Bornand tourist office +33 4 50 02 78 00 — tubing price and 24 December opening.\nMontenvers — the ice cave's opening date and the family-pack composition.\nLa Madeleine host (via Booking) — check-in/checkout times, cot, and whether the sofa bed is a real double.\nHyatt Regency Étoile — Regency Club access for the second room.\nHyatt House CDG — room count and first shuttle departure."}]}</script>
+</body>
+</html>
