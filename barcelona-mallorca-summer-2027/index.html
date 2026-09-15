@@ -253,7 +253,7 @@ Edits happen in chat with Claude.</div>
                     </div>
                   </sc-if>
                   <sc-if value="{{ b.hasMenu }}" hint-placeholder-val="{{ false }}">
-                    <a href="{{ b.menuUrl }}" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:6px 11px">View live menu →</a>
+                    <a href="{{ b.menuUrl }}" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:6px 11px">{{ b.menuLabel }}</a>
                   </sc-if>
                 </div>
               </div>
@@ -1028,7 +1028,7 @@ class Component extends DCLogic {
           hasISK: !!(b.ccy === 'ISK' && b.estISK != null),
           iskLabel: b.estISK != null ? Math.round(b.estISK).toLocaleString('en-US') + ' ISK' : '',
           iskUsd: b.estISK != null ? '≈ ' + this.fm(b.estISK * this.state.fx, true) + (this.state.fxLive ? '' : ' (approx)') : '',
-          hasMenu: !!b.menuUrl, menuUrl: b.menuUrl || '',
+          hasMenu: !!b.menuUrl, menuUrl: b.menuUrl || '', menuLabel: (b.menuLabel || 'View live menu') + ' \u2192',
         };
         row.isNow = d.n === this.todayDayN && b.sM != null && b.eM != null && (() => {
           const now = new Date();
