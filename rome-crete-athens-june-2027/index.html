@@ -672,67 +672,10 @@ function WIKI(name) { return 'https://commons.wikimedia.org/wiki/Special:FilePat
 // candidate for the Sun Voyager sculpture turned out to be a mislabeled Danish Bronze Age
 // artifact and was caught and replaced this way). No stock or generic stand-in photos.
 // Day 1 is an overnight flight with no stop-level photos to show, so it's left empty.
-const PRESENT_GALLERY = {
-  1: [],
-  2: [
-    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Pike%20Place%20Market%20Seattle.jpg', caption: 'Pike Place Market' },
-    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Pike%20Place%20Magic%20Shop%20Pike%20Place%20Market%20Seattle%20Washington.JPG', caption: 'Pike Place Market — shops along the arcade' },
-    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Pier%2057%20and%20Seattle%20Great%20Wheel.jpg', caption: 'Seattle Great Wheel, Pier 57' },
-    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Seattle%20Great%20Wheel%2C%20Seattle%2C%20Washington%2C%20Estados%20Unidos%2C%202017-09-02%2C%20DD%2016.jpg', caption: 'Seattle Great Wheel, waterfront view' },
-    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Neukom-Vivarium-2919.jpg', caption: 'Neukom Vivarium, Olympic Sculpture Park' },
-  ],
-  3: [
-    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Leavenworth%2C%20WA%20%E2%80%94%20Victorian%20Simplicity.jpg', caption: 'Downtown Leavenworth — Bavarian-style storefronts' },
-    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Leavenworth%2C%20WA%20-%20Hotel%20Edelweiss.jpg', caption: 'Downtown Leavenworth — Hotel Edelweiss' },
-    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Leavenworth%2C%20WA%20-%20beer%20garden%2002.jpg', caption: 'Downtown Leavenworth — beer garden' },
-  ],
-  4: [],
-  5: [
-    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Leavenworth%2C%20WA%20-%20Gustav\'s.jpg', caption: 'Gustav\'s, Leavenworth — lunch stop' },
-  ],
-  6: [
-    { url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Wenatchee%20River%20at%20Blackbird%20Island%20Leavenworth%20Washington%203.jpg', caption: 'Wenatchee River at Blackbird Island' },
-  ],
-  7: [],
-  8: [],
-  9: [],
-};
-
-const PRESENT_VIDEOS = {
-  1: [],
-  2: [],
-  3: [],
-  4: [],
-  5: [],
-  6: [],
-  7: [],
-  8: [],
-  9: [],
-};
-
-const PRESENT_MAP = {
-  1: { lat: 47.4502, lng: -122.3088, zoom: 12 },
-  2: { lat: 47.6089, lng: -122.3411, zoom: 14 },
-  3: { lat: 47.5962, lng: -120.6615, zoom: 13 },
-  4: { lat: 47.5924, lng: -120.6156, zoom: 12 },
-  5: { lat: 47.612, lng: -120.6402, zoom: 12 },
-  6: { lat: 47.5962, lng: -120.6615, zoom: 14 },
-  7: { lat: 47.8125, lng: -120.7148, zoom: 12 },
-  8: { lat: 47.436, lng: -122.296, zoom: 12 },
-  9: { lat: 47.4502, lng: -122.3088, zoom: 12 },
-};
-
-const PRESENT_DIRECTIONS = {
-  1: '',
-  2: 'https://www.google.com/maps/dir/Grand+Hyatt+Seattle/Pike+Place+Market,+Seattle/Seattle+Great+Wheel/Olympic+Sculpture+Park,+Seattle/Din+Tai+Fung,+Pacific+Place,+Seattle/Grand+Hyatt+Seattle',
-  3: 'https://www.google.com/maps/dir/Grand+Hyatt+Seattle/Hampton+Inn+Leavenworth/Colchuck%27s,+801+Front+St,+Leavenworth/Visconti%27s,+636+Front+St,+Leavenworth',
-  4: 'https://www.google.com/maps/dir/Hampton+Inn+Leavenworth/Leavenworth+Reindeer+Farm/Red-Tail+Canyon+Farm,+Leavenworth/München+Haus,+Leavenworth/Baren+Haus,+901+Front+St,+Leavenworth/Hampton+Inn+Leavenworth',
-  5: 'https://www.google.com/maps/dir/Hampton+Inn+Leavenworth/Leavenworth+Snowmobile+Tours,+Leavenworth/Gustav%27s,+Leavenworth/Leavenworth+Ski+Hill/Ludwig%27s,+921+Front+St,+Leavenworth/Hampton+Inn+Leavenworth',
-  6: 'https://www.google.com/maps/dir/Hampton+Inn+Leavenworth/Blackbird+Island,+Leavenworth/Yodelin+Broth+Co,+Leavenworth/South,+913+Front+St,+Leavenworth/Hampton+Inn+Leavenworth',
-  7: 'https://www.google.com/maps/dir/Hampton+Inn+Leavenworth/Lake+Wenatchee+State+Park/Yodelin+Broth+Co,+Leavenworth/Icicle+Village+Resort,+Leavenworth/Hampton+Inn+Leavenworth',
-  8: 'https://www.google.com/maps/dir/Hampton+Inn+Leavenworth/München+Haus,+Leavenworth/Courtyard+by+Marriott+Seattle+SeaTac+Airport',
-  9: 'https://www.google.com/maps/dir/Courtyard+by+Marriott+Seattle+SeaTac+Airport/Seattle-Tacoma+International+Airport',
-};
+const PRESENT_GALLERY = {};
+const PRESENT_VIDEOS = {};
+const PRESENT_MAP = {};
+const PRESENT_DIRECTIONS = {};
 
 class Component extends DCLogic {
   state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, bkFilter: 'All', packFilter: 'ALL', ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {}, mobileNavOpen: false };
@@ -1332,1388 +1275,1413 @@ class Component extends DCLogic {
 </script>
 <script id="trip-data" type="application/json">{
   "meta": {
-    "title": "Leavenworth Winter 2026",
-    "dates": "Dec 19-27, 2026 (Miami \u2192 Seattle \u2192 Leavenworth \u2192 Seattle \u2192 Miami)",
+    "title": "Rome, Crete & Athens June 2027",
+    "dates": "June 7-20+, 2027 (Miami -> Rome -> Crete -> Athens -> Miami, return flight and exact Athens length still TBD)",
     "route": [
       {
         "name": "Miami",
         "sub": "home (MIA)"
       },
       {
-        "name": "Seattle",
-        "sub": "2 nights \u00b7 Grand Hyatt Seattle"
+        "name": "Rome",
+        "sub": "3 nights · Hyatt Regency Rome Central"
       },
       {
-        "name": "Leavenworth",
-        "sub": "5 nights \u00b7 Hampton Inn Leavenworth"
+        "name": "Elounda, Crete",
+        "sub": "7 nights · Domes of Elounda (BOOKED)"
       },
       {
-        "name": "Seattle (SeaTac)",
-        "sub": "1 night \u00b7 Courtyard by Marriott Seattle SeaTac Airport"
+        "name": "Athens",
+        "sub": "a few nights · Grand Hyatt Athens"
+      },
+      {
+        "name": "Miami",
+        "sub": "home (MIA) - return flight TBD"
       }
     ]
   },
   "days": [
     {
-      "date": "Saturday, December 19, 2026",
-      "title": "Miami \u2192 Seattle",
+      "date": "Monday, June 7, 2027",
+      "title": "Miami -> Rome (overnight flight)",
       "planned": true,
       "blocks": [
-        {
-          "start": "8:00 AM",
-          "end": "11:42 AM",
-          "title": "Alaska Airlines AS 305 - Nonstop - 6h42m",
-          "detail": "MIA -> SEA, Economy, 4 passengers. CONFIRMED -- confirmation code UUKHNQ. Seats: Roque Corona 19A, Jennifer Borges 19B, Roque Luis Corona 19C, Chloe Corona 19D (whole family together in one row).",
-          "typeName": "Flight",
-          "emoji": "\u2708\ufe0f",
-          "program": "Alaska Atmos Rewards",
-          "points": "70000",
-          "notes": "Booked and confirmed (confirmation UUKHNQ). Per Alaska's actual payment summary: 70,000 Atmos Rewards points total (17,500/passenger) + $22.40 cash total ($5.60/passenger in taxes/fees), charged to the Visa ending 6730 and deducted from Atmos Rewards account ending 8720. This corrects the earlier cart estimate of 50,000 miles + $24 cash -- the actual charge came in 20,000 points higher than that estimate. Note: Alaska's loyalty program is now called Atmos Rewards (rebranded from Mileage Plan).",
-          "conf": "UUKHNQ",
-          "paid": 22.4,
-          "route": "MIA \u2192 SEA",
-          "flightNo": "Alaska 305",
-          "cabin": "Economy (Main)",
-          "seats": "Roque 19A \u00b7 Jenny 19B \u00b7 Roque Luis 19C \u00b7 Chloe 19D",
-          "flag": ""
-        },
-        {
-          "start": "11:42 AM",
-          "end": "11:55 AM",
-          "title": "Deplane & walk to terminal",
-          "detail": "A family of four boarding a full flight rarely deplanes first \u2014 budgeting the full walk from gate to the terminal food area, not just doorway-to-jetbridge time.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "11:55 AM",
-          "end": "12:30 PM",
-          "title": "Lunch \u2014 Lil Woody's, SEA Airport (N Gates)",
-          "detail": "Order-at-counter burgers & shakes near Gate N8 in the North Satellite -- Alaska's home concourse at SEA, and where AS305 has recently been arriving (e.g. Gate N6). Eating airside before baggage claim so there's no separate lunch stop after reaching the car. Quick-casual format fits the ~35-minute window; walk from a nearby N-gate is a few minutes at most.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 40.94,
-          "notes": "Estimate: 2 signature burgers ($11 each, e.g. Big Woody) + 2 kids meals ($6 each, e.g. plain Lil Woody or chicken strips & fries) = $34.00 subtotal, + SeaTac 10.4% tax ($3.54) + 10% tip on subtotal ($3.40) = $40.94 total. Drinks/shakes/fries not included. Priced from Lil Woody's published menu (their neighborhood locations) -- the SEA airport location's own posted pricing wasn't itemized online, and airport quick-service concessions commonly run somewhat higher, so treat this as a floor rather than exact.",
-          "menuUrl": "https://www.lilwoodys.com/_files/ugd/2ab10d_b3ebf4dede1546c781ba75fa25f2a365.pdf"
-        },
-        {
-          "start": "12:30 PM",
-          "end": "12:45 PM",
-          "title": "Walk to baggage claim",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "12:45 PM",
-          "end": "1:00 PM",
-          "title": "Baggage claim",
-          "detail": "Domestic arrival, no customs. Shorter wait than a typical heavy-travel-day estimate since the ~35 min terminal meal already gave bags time to reach the carousel.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "1:00 PM",
-          "end": "1:10 PM",
-          "title": "Walk to the shuttle curb (baggage claim exit)",
-          "detail": "Turo pickup for this host isn't at the official rental car facility \u2014 coordinate the exact meeting spot in-app, but plan on the common airport shuttle to a nearby off-airport lot.",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "1:10 PM",
-          "end": "1:25 PM",
-          "title": "Wait for / ride shuttle to Turo pickup location",
-          "detail": "Same shuttle system used for off-airport rental lots \u2014 buses run every ~5-15 min, ride itself is ~5-8 min.",
-          "typeName": "Transportation",
-          "emoji": "\ud83d\ude8c"
-        },
-        {
-          "start": "1:25 PM",
-          "end": "1:55 PM",
-          "title": "Turo pickup \u2014 2024 Nissan Rogue",
-          "detail": "Meet the host (Indrawati \u2014 5.0\u2605, All-Star Host, 287 trips), walk-around inspection, paperwork, load luggage, install the 2 child seats. Budgeting longer than a counter-rental pickup since it's an in-person host meet, not a kiosk.",
-          "typeName": "Rental Car",
-          "emoji": "\ud83d\ude97",
-          "notes": "$561.31 total, confirmed (Reservation 59466401): 8 days @ $61.25/day less 15% week-long discount, + 2 child safety seats ($10/day each, included/confirmed), + $10 trip fee + $54.81 tax. 1,200 mi included (150 mi/day); $0.35/mi over. No payment due today \u2014 auto-charges to VISA ...9612 on Dec 12, 2026. Vehicle confirmed AWD with snow tires (host-listed feature). Snow chains are NOT included in this booking \u2014 available as a $35/trip add-on through the host, or bring/rent your own; worth deciding before the Dec 21 pass drive given how snowy this week runs historically.",
-          "paid": 561.31,
-          "conf": "59466401",
-          "flag": "Return is Dec 26 by 4:00 PM at SEA \u2014 the itinerary previously assumed a Dec 27 morning drop-off; Day 7/8 have been restructured to match."
-        },
-        {
-          "start": "1:55 PM",
-          "end": "2:25 PM",
-          "title": "Drive to Grand Hyatt Seattle",
-          "detail": "~13-14 mi from the airport into downtown; budgeting a full 30 min for a Saturday afternoon with some traffic.",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "2:25 PM",
-          "end": "2:40 PM",
-          "title": "Arrive at hotel \u2014 bags held at bell desk",
-          "detail": "Grand Hyatt Seattle's confirmed check-in time is 4:00 PM (confirmation #59319732) -- early check-in is not guaranteed. Bell desk holds the luggage while the room finishes prep.",
-          "typeName": "Hotel",
-          "emoji": "\ud83c\udfe8"
-        },
-        {
-          "start": "2:40 PM",
-          "end": "4:00 PM",
-          "title": "Free time near the hotel (lobby/lounge)",
-          "detail": "Waiting out the gap to the confirmed 4 PM check-in -- lobby, Hyatt Globalist club access if available, or a short walk nearby. Not a preview of Pike Place, which is Day 2's anchor.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        },
-        {
-          "start": "4:00 PM",
-          "end": "4:15 PM",
-          "title": "Check in \u2014 Grand Hyatt Seattle",
-          "detail": "2 nights (Sat-Sun). Room 2 Double Beds, confirmation #59319732. World of Hyatt Globalist doesn't guarantee early check-in as a stated benefit, so 4 PM is the reliable time -- worth requesting room-ready notification via the Hyatt app on arrival day in case it's ready sooner.",
-          "typeName": "Hotel",
-          "emoji": "\ud83c\udfe8",
-          "points": "30000",
-          "program": "Hyatt",
-          "notes": "15,000 pts/night x 2 nights = 30,000 total (confirmed, matches the reservation exactly). The $58 paid amount here is the $29/night destination fee, NOT covered by points -- billed separately to the card on file. Self-parking is $37/night in the adjacent garage (valet is $68/night with in/out privileges) -- budget ~$74 more for 2 nights of self-parking, confirm in/out access is included. Globalist perk includes complimentary breakfast both mornings (confirmed) -- used on Day 2 and Day 3 instead of paying for breakfast out.",
-          "conf": "59319732",
-          "paid": 58.0,
-          "address": "721 Pine St, Seattle, WA",
-          "nights": "2 nights (Sat\u2013Sun)",
-          "roomType": "2 Double Beds",
-          "cancelBy": "Free cancel: contact hotel (no explicit deadline published)",
-          "flag": "Check-in guaranteed 4:00 PM only \u2014 not earlier. $58 destination fee billed separately, not covered by points."
-        },
-        {
-          "start": "4:15 PM",
-          "end": "5:00 PM",
-          "title": "Freshen up & rest at the hotel",
-          "detail": "Only 45 minutes of in-room decompression before heading to dinner -- a real compression from what a 2:25 PM check-in would have allowed, since the confirmed check-in is 4 PM. If the family would rather have more rest time, Cactus dinner could shift to 6-7 PM instead (tradeoff: later bedtime after an already-long travel day with a 3-hour timezone shift).",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        },
         {
           "start": "5:00 PM",
-          "end": "5:15 PM",
-          "title": "Drive to Cactus, South Lake Union",
-          "detail": "~1 mi \u2014 now driving since the car is already in hand.",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "5:15 PM",
-          "end": "6:15 PM",
-          "title": "Dinner \u2014 Cactus, South Lake Union",
-          "detail": "Southwestern/Tex-Mex, confirmed kids menu, open until 10 PM.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 72.46,
-          "notes": "Green Enchilada $18.50 + Chimayo Enchilada $19 (adults) + Kid Taco $9 + Kid Quesadilla $9 (kids). Entrees only, no apps/drinks/dessert. Subtotal $55.50 + Seattle 10.55% tax ($5.86) + 20% tip on subtotal ($11.10) = $72.46 total.",
-          "menuUrl": "https://www.cactusrestaurants.com/menus"
-        },
-        {
-          "start": "6:15 PM",
-          "end": "6:30 PM",
-          "title": "Drive back to Grand Hyatt Seattle, park",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "6:30 PM",
-          "end": "7:30 PM",
-          "title": "Wind down & bedtime routine at the hotel",
-          "detail": "Early night given the 3-hour body-clock jump and a full Seattle day tomorrow.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        }
-      ]
-    },
-    {
-      "date": "Sunday, December 20, 2026",
-      "title": "Seattle \u2014 Pike Place & Bainbridge Island ferry day",
-      "planned": true,
-      "blocks": [
-        {
-          "start": "7:30 AM",
-          "end": "8:15 AM",
-          "title": "Breakfast \u2014 Grand Hyatt Seattle (included)",
-          "detail": "Globalist complimentary breakfast.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54"
-        },
-        {
-          "start": "8:15 AM",
-          "end": "8:30 AM",
-          "title": "Walk to Pike Place Market",
-          "detail": "~0.7 mi from the Grand Hyatt.",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "8:30 AM",
-          "end": "11:00 AM",
-          "title": "Pike Place Market",
-          "detail": "Gum Wall, Post Alley, the fish-throwing at Pike Place Fish, Rachel the piggy bank, browsing the craft stalls, a pastry stop at Le Panier \u2014 the morning's anchor activity.",
-          "typeName": "Sightseeing",
-          "emoji": "\ud83d\udcf8"
-        },
-        {
-          "start": "11:00 AM",
-          "end": "11:15 AM",
-          "title": "Walk to Colman Dock (Pier 52)",
-          "detail": "Downhill from the market along the waterfront, ~0.7 mi.",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "11:15 AM",
-          "end": "11:35 AM",
-          "title": "Ticket line & wait for boarding \u2014 Colman Dock",
-          "detail": "Walk-on tickets purchased at the terminal; buffer before boarding since Washington State Ferries' winter Seattle\u2013Bainbridge schedule for this date isn't published yet as of mid-2026 \u2014 worth reconfirming the exact sailing time closer to the trip.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "11:35 AM",
-          "end": "12:10 PM",
-          "title": "Ferry \u2014 Seattle to Bainbridge Island",
-          "detail": "Washington State Ferries, ~35-minute crossing across Elliott Bay and Puget Sound.",
-          "typeName": "Transportation",
-          "emoji": "\ud83d\ude8c",
-          "est": 23.38,
-          "notes": "Walk-on fare is charged westbound only; the return leg is free. $11.35/adult x2 + free for both kids (under 19) + 3% card-payment surcharge (effective March 2026) = $23.38 round trip for the family."
-        },
-        {
-          "start": "12:10 PM",
-          "end": "12:20 PM",
-          "title": "Walk to Harbour Public House",
-          "detail": "Along the Eagle Harbor waterfront from the ferry terminal.",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "12:20 PM",
-          "end": "1:30 PM",
-          "title": "Lunch \u2014 Harbour Public House, 231 Parfitt Way SW",
-          "detail": "Bainbridge's neighbourhood pub, waterfront deck overlooking Eagle Harbor, real menu variety.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 82.14,
-          "notes": "Alaskan Cod Fish & Chips $19 + Pub Smash Burger with Cheese $16 (adults) + 2x Macaroni & Cheese Bowl $13 (kids \u2014 no separate kids menu, these are the best kid-appropriate items). Entrees only. Subtotal $61.00 + mandatory pre-tax 5% kitchen service charge ($3.05) + Bainbridge Island 9.2% sales tax on subtotal+service charge ($5.89) + 20% discretionary tip on subtotal only, per the menu's own guidance not to tip on the service charge or tax ($12.20) = $82.14 total.",
-          "menuUrl": "https://harbourpub.com/Menu.pdf"
-        },
-        {
-          "start": "1:30 PM",
-          "end": "3:00 PM",
-          "title": "Winslow Waterfront Park, downtown Winslow & Mora Iced Creamery",
-          "detail": "Playground and lawn at Waterfront Park, browsing the small shops along Winslow Way, treat stop at Mora Iced Creamery \u2014 all an easy flat walk from the pub, no car needed.",
-          "typeName": "Sightseeing",
-          "emoji": "\ud83d\udcf8"
-        },
-        {
-          "start": "3:00 PM",
-          "end": "3:10 PM",
-          "title": "Walk back to the ferry terminal",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "3:10 PM",
-          "end": "3:25 PM",
-          "title": "Wait for boarding \u2014 Bainbridge terminal",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "3:25 PM",
-          "end": "4:00 PM",
-          "title": "Ferry \u2014 Bainbridge Island to Seattle",
-          "detail": "Return crossing, no fare (eastbound leg is free).",
-          "typeName": "Transportation",
-          "emoji": "\ud83d\ude8c"
-        },
-        {
-          "start": "4:00 PM",
-          "end": "4:15 PM",
-          "title": "Walk/rideshare back toward the hotel",
-          "typeName": "Transportation",
-          "emoji": "\ud83d\ude8c",
-          "est": 10
-        },
-        {
-          "start": "4:15 PM",
-          "end": "6:15 PM",
-          "title": "Relax at the hotel",
-          "detail": "A real, unhurried block after a full day of walking and two ferry crossings \u2014 no more sightseeing stacked on today.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        },
-        {
-          "start": "6:15 PM",
-          "end": "6:27 PM",
-          "title": "Walk to Elephant & Castle",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6",
-          "detail": "1415 5th Ave \u2014 a few blocks from the Grand Hyatt."
-        },
-        {
-          "start": "6:30 PM",
-          "end": "7:35 PM",
-          "title": "Dinner \u2014 Elephant & Castle, 1415 5th Ave",
-          "detail": "British pub beneath the Motif Hotel, a few blocks from the Grand Hyatt \u2014 real menu variety (fish & chips, burgers, pies) and a dedicated printed Kids menu with kids drink included. Open until midnight on Sundays, comfortable buffer after a 6:30 seating.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 73.44,
-          "notes": "Fish & Chips $18.75 + The Standard burger $17.50 (adults) + Kids Cheeseburger $10 + Kids Fish & Fries $10 (kids, from the confirmed printed Kids menu, drink included). Entrees only. Subtotal $56.25 + Seattle 10.55% tax ($5.94) + 20% tip on subtotal ($11.25) = $73.44 total.",
-          "menuUrl": "https://www.elephantcastle.com/en/menus/food/store-8175/wa/seattle/1415-fifth-avenue.html"
-        },
-        {
-          "start": "7:35 PM",
-          "end": "7:47 PM",
-          "title": "Walk back to Grand Hyatt Seattle",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        }
-      ]
-    },
-    {
-      "date": "Monday, December 21, 2026",
-      "title": "Seattle \u2192 Leavenworth",
-      "planned": true,
-      "blocks": [
-        {
-          "start": "7:30 AM",
-          "end": "8:15 AM",
-          "title": "Breakfast \u2014 Grand Hyatt Seattle (included)",
-          "detail": "Globalist complimentary breakfast, before checkout.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54"
-        },
-        {
-          "start": "8:15 AM",
-          "end": "9:15 AM",
-          "title": "Pack up & check out \u2014 Grand Hyatt Seattle",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f",
-          "detail": "A relaxed, unhurried morning \u2014 no need to leave before 9:30."
-        },
-        {
-          "start": "9:15 AM",
-          "end": "9:30 AM",
-          "title": "Load the car from the hotel garage",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "9:30 AM",
-          "end": "11:00 AM",
-          "title": "Drive \u2014 Seattle to Sultan/Monroe area",
-          "detail": "Via US-2, ~1h20-1.5h.",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "11:00 AM",
-          "end": "11:15 AM",
-          "title": "Rest stop",
-          "detail": "Bathroom break, grab a snack for the road.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f",
-          "est": 10
-        },
-        {
-          "start": "11:15 AM",
-          "end": "12:30 PM",
-          "title": "Drive \u2014 over Stevens Pass to Leavenworth",
-          "detail": "~1h15m at a mountain-driving pace. Traction tires required by WSDOT policy in winter conditions \u2014 confirm the Rogue is equipped with the Turo host before the trip. Check WSDOT's live pass page morning-of for chain-up advisories or closures.",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "12:30 PM",
-          "end": "12:40 PM",
-          "title": "Arrive Hampton Inn Leavenworth \u2014 hold luggage at the desk",
-          "detail": "Confirmed check-in is 3:00 PM (confirmation #97935855, 301 Ward Strasse, (509) 470-9798) -- early check-in isn't guaranteed, so bags get held at the desk rather than counting on room access.",
-          "typeName": "Hotel",
-          "emoji": "\ud83c\udfe8"
-        },
-        {
-          "start": "12:40 PM",
-          "end": "12:50 PM",
-          "title": "Walk to Colchuck's (formerly Bavarian Bistro & Bar)",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "12:50 PM",
-          "end": "1:50 PM",
-          "title": "Lunch \u2014 Colchuck's",
-          "detail": "German pub upstairs at 801 Front St, recently rebranded from \"Bavarian Bistro & Bar\" to Colchuck's (same menu/ownership) \u2014 Bavarian sampler, Jaeger schnitzel, and a confirmed kids menu, swapped in for Lost Pig Cafe which had nothing kid-appropriate.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 74.59,
-          "notes": "Menu prices not fully itemized online (price range posted as $10-$20). Estimated 2x Jaeger Schnitzel ~$19 (adults) + 2x kids item ~$10 (kids menu confirmed to exist, exact pricing unconfirmed) = $58.00 subtotal. Flagged as approximate -- call (509) 548-5074 to confirm exact prices. Subtotal $58.00 + Leavenworth 8.6% tax ($4.99) + 20% tip on subtotal ($11.60) = $74.59 total."
-        },
-        {
-          "start": "1:50 PM",
-          "end": "2:00 PM",
-          "title": "Walk back to the hotel",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "2:00 PM",
-          "end": "3:00 PM",
-          "title": "Free time / wait for the room",
-          "detail": "The guaranteed check-in time is 3 PM -- this covers the wait honestly rather than assuming the room is ready right after lunch. Downtown is right there if the family wants to keep browsing instead of sitting in the lobby.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        },
-        {
-          "start": "3:00 PM",
-          "end": "3:15 PM",
-          "title": "Check in \u2014 Hampton Inn Leavenworth",
-          "detail": "5 nights (Mon-Sat), confirmation #97935855. Room: 1 King bed, Hearing Accessible, Non-Smoking, Standard Room -- a single king, not two beds. Worth calling (509) 470-9798 ahead to confirm a rollaway/sofa arrangement for a family of 4, since \"Hampton Inn & Suites\" doesn't guarantee this specific room has a pull-out sofa.",
-          "typeName": "Hotel",
-          "emoji": "\ud83c\udfe8",
-          "points": "308000",
-          "program": "Hilton Honors",
-          "notes": "308,000 Hilton Honors points for the full 5-night stay (confirmed, matches the reservation exactly). No cash portion charged -- fully covered by points. Free cancellation until 11:59 PM hotel time on Dec 20, 2026 if plans change. Free hot breakfast included daily, self-parking complimentary.",
-          "conf": "97935855",
-          "address": "301 Ward Strasse, Leavenworth, WA \u00b7 (509) 470-9798",
-          "nights": "5 nights (Mon\u2013Sat)",
-          "roomType": "1 King, Hearing Accessible, Non-Smoking",
-          "cancelBy": "Free cancel until 11:59 PM Dec 20, 2026",
-          "flag": "Single king bed booked for a family of 4 \u2014 call ahead to confirm a rollaway/sofa."
-        },
-        {
-          "start": "3:15 PM",
-          "end": "3:45 PM",
-          "title": "Unpack essentials, settle in",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        },
-        {
-          "start": "3:45 PM",
-          "end": "4:00 PM",
-          "title": "Walk to downtown Leavenworth",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "4:00 PM",
-          "end": "5:15 PM",
-          "title": "Evening village stroll",
-          "detail": "First look at Leavenworth's Bavarian-style downtown lit up for the holidays \u2014 chocolate shops, ornament shops, window browsing. Light introduction, not an anchor activity.",
-          "typeName": "Sightseeing",
-          "emoji": "\ud83d\udcf8"
-        },
-        {
-          "start": "5:15 PM",
-          "end": "5:25 PM",
-          "title": "Walk to Visconti's",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "5:25 PM",
-          "end": "6:25 PM",
-          "title": "Dinner \u2014 Visconti's, 636 Front St",
-          "detail": "Italian ristorante on Front St -- swapped in for South, since South is being moved to Christmas Eve dinner instead (avoids stacking Mexican/Tex-Mex two days after Cactus in Seattle). Confirmed kids menu (listed as a 'known for' feature). Book an early table -- reviews note it skews date-night later in the evening.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 91.31,
-          "notes": "Lasagna Al Forno $22 + Spaghetti & Meatballs $25 (adults, confirmed current prices) + 2x kids pasta ~$12 (kids menu confirmed to exist, exact item pricing not published -- estimated). Entrees only. Subtotal $71.00 + Leavenworth 8.6% tax ($6.11) + 20% tip on subtotal ($14.20) = $91.31 total.",
-          "menuUrl": "https://www.viscontis.com/leav-vis-dinner-menu"
-        },
-        {
-          "start": "6:25 PM",
-          "end": "6:35 PM",
-          "title": "Walk back to the hotel",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "6:35 PM",
-          "end": "8:15 PM",
-          "title": "Free evening / bedtime routine",
-          "detail": "First night in Leavenworth \u2014 kids can wind down while the adults look over tomorrow's reindeer/sleigh morning.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        }
-      ]
-    },
-    {
-      "date": "Tuesday, December 22, 2026",
-      "title": "Leavenworth \u2014 Reindeer Farm & sleigh ride",
-      "planned": true,
-      "blocks": [
-        {
-          "start": "8:30 AM",
-          "end": "9:15 AM",
-          "title": "Breakfast \u2014 Hampton Inn Leavenworth (included)",
-          "detail": "Free hot breakfast, included in the room rate.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54"
-        },
-        {
-          "start": "9:15 AM",
-          "end": "9:35 AM",
-          "title": "Drive to Leavenworth Reindeer Farm",
-          "detail": "10395 Chumstick Hwy, ~1 mile from downtown.",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "9:35 AM",
-          "end": "10:00 AM",
-          "title": "Check in for the reindeer tour",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "10:00 AM",
-          "end": "11:00 AM",
-          "title": "Leavenworth Reindeer Farm tour",
-          "detail": "Presentation plus in-enclosure feeding/petting, optional Santa photo. Both kids are almost certainly under the farm's 55\" height cutoff, which routes them to \"Cupid's Corner\" \u2014 a separate, calmer area with a smaller herd rather than the full-herd enclosure shown in the marketing photos. Still real feeding/petting/photos, just a more contained version of the experience. Planned for the farm's 10 AM tour slot.",
-          "typeName": "Excursion",
-          "emoji": "\ud83d\udc5e",
-          "notes": "Not yet booked/paid: $296.80 total for the family (age 3+, dynamic December \"Celebrate the Season\" pricing) \u2014 confirmed quoted price, supersedes the earlier $65/person average estimate, but the reservation itself still needs to be made and paid for.",
-          "est": 296.8
-        },
-        {
-          "start": "11:00 AM",
-          "end": "11:10 AM",
-          "title": "Goodbyes & walk back to the car",
-          "detail": "Real wrap-up time -- say goodbye to the reindeer handlers, walk back across the farm to the parking area, load up. Not built into the drive block.",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "11:10 AM",
-          "end": "11:30 AM",
-          "title": "Drive to Red-Tail Canyon Farm",
-          "detail": "2.5 mi from downtown \u2014 routing between the two farms, not through downtown.",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "11:30 AM",
-          "end": "12:00 PM",
-          "title": "Arrival, warm up by the teepee fire",
-          "detail": "Red-Tail's sleigh rides only depart on the hour (11 AM-3 PM) -- this shorter gap is still a comfortable wait for the 12 PM slot: check in, use the restroom, browse the farm's small gift area.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "12:00 PM",
-          "end": "12:30 PM",
-          "title": "Sleigh ride \u2014 Red-Tail Canyon Farm",
-          "detail": "30-minute forward-facing horse-drawn sleigh ride with wool blankets, group capped at 14. Chosen over Eagle Creek Ranch for real per-child pricing and a kid-calibrated sleigh design.",
-          "typeName": "Excursion",
-          "emoji": "\ud83d\udc5e",
-          "est": 60,
-          "notes": "$20/adult x2 + $10/child (12 and under) x2 = $60, tax included. Reservations phone-only: (800) 678-4512 \u2014 book as soon as dates are locked, no online booking and no posted lead-time guidance from a small operator during holiday week.",
-          "flag": "Reservations are phone-only, (800) 678-4512 \u2014 request the 12:00 PM departure specifically (shifted from the originally planned 11 AM slot to follow the reindeer tour's real 10 AM start)."
-        },
-        {
-          "start": "12:30 PM",
-          "end": "12:50 PM",
-          "title": "Hot cocoa at the warming teepee",
-          "detail": "Included with the ride.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        },
-        {
-          "start": "12:50 PM",
-          "end": "1:10 PM",
-          "title": "Drive back to the hotel",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "1:10 PM",
-          "end": "1:25 PM",
-          "title": "Walk to M\u00fcnchen Haus",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6",
-          "detail": "Hotel to downtown, then to the restaurant."
-        },
-        {
-          "start": "1:25 PM",
-          "end": "2:15 PM",
-          "title": "Lunch \u2014 M\u00fcnchen Haus",
-          "detail": "Counter-service Bavarian grill with beer-garden seating \u2014 fast, casual, all-ages.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 41.98,
-          "notes": "Big Bob Bratwurst $10.65 + Dirtyface Beer Wurst $11.25 (adults) + 2x Organic Beef Dog (kid-sized) $6.75 (kids). Entrees only. Subtotal $35.40 + Leavenworth 8.6% tax ($3.04) + 10% tip on subtotal ($3.54) = $41.98 total.",
-          "menuUrl": "https://www.munchenhaus.com/assets/pdf/Menu.pdf"
-        },
-        {
-          "start": "2:15 PM",
-          "end": "3:35 PM",
-          "title": "Village afternoon \u2014 chocolate & ornament shops, Gingerbread Factory",
-          "detail": "A single unhurried stretch of village time \u2014 no second activity stacked on top of an already full morning.",
-          "typeName": "Shopping",
-          "emoji": "\ud83d\udecd\ufe0f"
-        },
-        {
-          "start": "3:35 PM",
-          "end": "3:50 PM",
-          "title": "Walk back to the hotel",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "3:50 PM",
-          "end": "5:30 PM",
-          "title": "Free time / rest at the hotel",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        },
-        {
-          "start": "5:30 PM",
           "end": "5:45 PM",
-          "title": "Drive to Baren Haus",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
+          "title": "Dinner at home before leaving",
+          "detail": "Eat a real meal at home so nobody is relying on airport food before the overnight flight.",
+          "typeName": "Dining",
+          "emoji": "🍔"
         },
         {
-          "start": "5:45 PM",
+          "start": "5:50 PM",
+          "end": "6:15 PM",
+          "title": "Drive from home to MIA",
+          "detail": "~30-40 min, budgeting extra for end-of-day traffic and drop-off with a family of 4 and bags.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "6:15 PM",
+          "end": "6:40 PM",
+          "title": "Check in & bag drop - American counter (2 checked bags)",
+          "detail": "International check-in for a family of 4 with 2 checked bags. Have passports ready. This puts you at the gate ~1 hr before boarding - tighter than a 3-hr-early arrival, so leave on time and use TSA PreCheck.",
+          "typeName": "Luggage",
+          "emoji": "🧳",
+          "est": 0.0,
+          "notes": "American transatlantic Main Cabin baggage: the 1st checked bag is FREE per passenger. Checking 2 bags across 4 travelers means both are 'first bags' for two different people = $0. (If both bags were put under one passenger, the 2nd would be $200. And even a 3rd/4th bag would still be free as each person's first bag - so there's no reason to pay a bag fee here.) Basic Economy is the exception, but this is a standard Main Cabin partner award, so the free-first-bag allowance applies."
+        },
+        {
+          "start": "6:40 PM",
           "end": "7:00 PM",
-          "title": "Dinner \u2014 Baren Haus",
-          "detail": "German restaurant at 901 Front St, swapped in for Kristall's (rejected -- 'doesn't look good'). Confirmed real entree pricing and a dedicated kids menu; family-friendly per reviews. 385 photos/471 reviews on Yelp.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 73.17,
-          "notes": "Jagerschnitzel $16.95 + Sauerbraten $19.95 (adults, confirmed current prices) + 2x kids item (chicken strips) ~$10 (kids menu confirmed to exist, exact pricing not published -- estimated). Entrees only. Subtotal $56.90 + Leavenworth 8.6% tax ($4.89) + 20% tip on subtotal ($11.38) = $73.17 total.",
-          "menuUrl": "https://www.barenhaus.com/main-menu"
+          "title": "Security screening",
+          "detail": "TSA at MIA - allow a generous buffer for an international evening departure with two kids. TSA PreCheck (KTNs are on the reservation) will speed this up if the lanes are open.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
         },
         {
           "start": "7:00 PM",
           "end": "7:15 PM",
-          "title": "Drive back to the hotel",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
+          "title": "Walk to gate, settle in",
+          "detail": "Last bathroom stop, get the kids situated before boarding. Dinner already handled at home.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
         },
         {
           "start": "7:15 PM",
-          "end": "8:30 PM",
-          "title": "Evening wind-down & bedtime routine",
-          "detail": "A full morning of two farm activities plus a village afternoon \u2014 a genuinely early, easy evening.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0",
-          "flag": "With the day shifted an hour later for the 10 AM reindeer tour, bedtime now lands at the bare 10-hour sleep minimum for a 7:30 AM Dec 23 breakfast (asleep ~8:30 PM, wake by 6:30 AM) \u2014 no extra cushion left. Worth trimming Baren Haus or the village-afternoon browsing time if the kids typically need more than the floor."
-        }
-      ]
-    },
-    {
-      "date": "Wednesday, December 23, 2026",
-      "title": "Leavenworth \u2014 snowmobiling & tubing",
-      "planned": true,
-      "blocks": [
-        {
-          "start": "7:30 AM",
-          "end": "8:15 AM",
-          "title": "Breakfast \u2014 Hampton Inn Leavenworth (included)",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54"
-        },
-        {
-          "start": "8:15 AM",
-          "end": "8:40 AM",
-          "title": "Drive to Leavenworth Snowmobile Tours",
-          "detail": "Mountain Springs Lodge, ~14 mi north of downtown near Lake Wenatchee.",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "8:40 AM",
-          "end": "9:15 AM",
-          "title": "Suit up & safety briefing",
-          "detail": "Guides provide snowmobile suits, boots, gloves, and DOT-approved helmets. Budgeting real time for a first-time family to gear up and get the safety talk before riding.",
+          "end": "8:00 PM",
+          "title": "Boarding - AA52",
+          "detail": "International boarding typically starts ~45 min before departure.",
           "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
+          "emoji": "⏱️"
         },
         {
-          "start": "9:15 AM",
-          "end": "10:15 AM",
-          "title": "Guided snowmobile tour",
-          "detail": "1-hour guided ride toward the overlook of Lake Wenatchee and the Entiat Mountain Range. Both kids (5+) ride as passengers on a 2-person sled with an adult driving \u2014 neither can drive solo, since Washington operators require snowmobile drivers to be 16+.",
-          "typeName": "Excursion",
-          "emoji": "\ud83d\udc5e",
-          "est": 298,
-          "notes": "2-person sled $149 x 2 sleds (one per adult+kid pair) = $298. 1-hour tour is rated for ages 5+. Book in advance for holiday week \u2014 this operator, like the sleigh ride and Reindeer Farm, isn't set up for same-day walk-ins during peak season."
-        },
-        {
-          "start": "10:15 AM",
-          "end": "10:30 AM",
-          "title": "Return gear, wrap up",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "10:30 AM",
-          "end": "10:50 AM",
-          "title": "Drive to Gustav's",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97",
-          "detail": "Direct from Mountain Springs Lodge back toward town \u2014 Gustav's sits on the Hwy 2 route in, no need to detour through downtown or the hotel first."
-        },
-        {
-          "start": "10:50 AM",
-          "end": "11:40 AM",
-          "title": "Lunch \u2014 Gustav's",
-          "detail": "Order-counter burger/sausage pub, real menu variety, right on the Hwy 2 route back from the snowmobile/farm side of town. Kids combo items verified live on Gustav's actual ordering system (not shown on their static website menu, but real and orderable).",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 65.23,
-          "notes": "Gustav Burger $20 + Bratwurst $15 (adults) + Kids Cheeseburger Combo $10 + Kids Chicken Strips Combo $10 (kids -- verified live via Gustav's Toast ordering system at order.gustavsleavenworth.com; these combos don't appear on the static gustavsleavenworth.com menu page, likely a site oversight, but are real and orderable). Entrees only. Subtotal $55.00 + Leavenworth 8.6% tax ($4.73) + 10% tip on subtotal ($5.50) = $65.23 total.",
-          "menuUrl": "https://gustavsleavenworth.com/leavenworth-gustav-s-food-menu"
-        },
-        {
-          "start": "11:40 AM",
-          "end": "11:50 AM",
-          "title": "Drive back to the hotel",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "11:50 AM",
-          "end": "2:30 PM",
-          "title": "Free afternoon / rest at the hotel",
-          "detail": "One continuous window between a big active morning and an evening tubing session \u2014 real recovery time, not fragmented into two short stops with driving in between.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        },
-        {
-          "start": "2:30 PM",
-          "end": "2:45 PM",
-          "title": "Snack stop \u2014 pretzel & hot cocoa downtown",
-          "detail": "En route to the Ski Hill; bridges the gap to a later dinner after tubing.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 23.72,
-          "notes": "Subtotal $20.00 + Leavenworth 8.6% tax ($1.72) + 10% tip on subtotal ($2.00) = $23.72 total."
-        },
-        {
-          "start": "2:45 PM",
-          "end": "3:00 PM",
-          "title": "Drive to Leavenworth Ski Hill",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "3:00 PM",
-          "end": "3:30 PM",
-          "title": "Tickets & gear up",
-          "detail": "Lt. Michael Adams Tubing Park \u2014 walk-up, no reservations. Park opens 3:30 PM on Wednesdays, so this covers the wait.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "3:30 PM",
-          "end": "5:00 PM",
-          "title": "Tubing \u2014 Lt. Michael Adams Tubing Park",
-          "detail": "$39/person flat, buys 6 runs. All riders go solo (no lap-riding); kids 8 and under need adult supervision on the hill. Sunset is ~4:30 PM this time of year, so the back half of this session is under the hill's lights, not daylight \u2014 worth setting that expectation with the kids ahead of time.",
-          "typeName": "Excursion",
-          "emoji": "\ud83d\udc5e",
-          "est": 156,
-          "notes": "$39/person x4 = $156, all ages, same-day only."
-        },
-        {
-          "start": "5:00 PM",
-          "end": "5:20 PM",
-          "title": "Changeover \u2014 dry off & warm up",
-          "detail": "Dedicated block to get out of wet snow gear before heading to dinner, not squeezed into the drive.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "5:20 PM",
-          "end": "5:35 PM",
-          "title": "Drive to Ludwig's",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "5:35 PM",
-          "end": "5:45 PM",
-          "title": "Walk to Ludwig's (921 Front St)",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "5:45 PM",
-          "end": "7:00 PM",
-          "title": "Dinner \u2014 Ludwig's",
-          "detail": "Authentic German biergarten on Front St with live polka/accordion music -- swapped in for Andreas Keller (rejected -- 'looks gross'). Confirmed dedicated kids menu, 601 reviews/620 photos on Yelp, described as the closest to authentic German food in town.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 90.02,
-          "notes": "Menu prices not itemized online (per-person range reported $30-50). Estimated 2x schnitzel-tier entree ~$24 (adults) + 2x kids item ~$11 (kids menu confirmed to exist, exact pricing unconfirmed) = $70.00 subtotal. Flagged as approximate -- call (509) 548-6625 to confirm exact prices. Subtotal $70.00 + Leavenworth 8.6% tax ($6.02) + 20% tip on subtotal ($14.00) = $90.02 total.",
-          "menuUrl": "https://www.ludwigsgermanrestaurant.com/"
-        },
-        {
-          "start": "7:00 PM",
-          "end": "7:15 PM",
-          "title": "Drive back to the hotel",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "7:15 PM",
-          "end": "8:15 PM",
-          "title": "Bedtime routine / wind down",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        }
-      ]
-    },
-    {
-      "date": "Thursday, December 24, 2026",
-      "title": "Leavenworth \u2014 Christmas Eve",
-      "planned": true,
-      "blocks": [
-        {
-          "start": "7:30 AM",
-          "end": "8:15 AM",
-          "title": "Breakfast \u2014 Hampton Inn Leavenworth (included)",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54"
-        },
-        {
-          "start": "8:15 AM",
-          "end": "8:30 AM",
-          "title": "Walk to Blackbird Island trailhead",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "8:30 AM",
-          "end": "9:15 AM",
-          "title": "Blackbird Island / Waterfront Park walk",
-          "detail": "Flat, packed-snow loop along the Wenatchee River, playground at Waterfront Park. Short and kid-paced \u2014 Icicle Gorge was ruled out entirely, since Forest Service plowing stops several miles short of the actual trailhead in winter.",
-          "typeName": "Sightseeing",
-          "emoji": "\ud83d\udcf8"
-        },
-        {
-          "start": "9:15 AM",
-          "end": "9:30 AM",
-          "title": "Walk back toward downtown",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "9:30 AM",
-          "end": "10:45 AM",
-          "title": "Village morning \u2014 Der Sportsmann sled rental & shopping",
-          "detail": "Renting 2 sleds for tomorrow's Lake Wenatchee visit from Der Sportsmann (downtown outdoor shop), plus last Christmas Eve browsing before shops potentially cut hours.",
-          "typeName": "Shopping",
-          "emoji": "\ud83d\udecd\ufe0f",
-          "est": 60,
-          "notes": "~$60 for 2 sleds for the day, confirm exact rate in store. Picking up in town rather than relying on Lake Wenatchee State Park's own Camp Store, whose confirmed regular winter hours are Friday-Sunday 10 AM-5 PM only with no separately confirmed Christmas Day hours."
-        },
-        {
-          "start": "10:45 AM",
-          "end": "11:00 AM",
-          "title": "Walk to Yodelin Broth Co.",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "11:00 AM",
-          "end": "11:50 AM",
-          "title": "Lunch \u2014 Yodelin Broth Co. & Beer Garden",
-          "detail": "Broth/beer-garden concept on Front St (lower level), walk-ins only -- swapped in for Kristall's (rejected -- 'doesn't look good'). Confirmed open Christmas Eve via Yodelin's own posted holiday-hours event (12-8:30pm), with a real 'Cool Kids Meals' menu.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 74.72,
-          "notes": "The Cheeseburger $19 + PNW Wild Salmon Rice Bowl $29 (adults) + Tillamook Grilled Cheese $8 + Kids Noodle Soup $7 (kids). Entrees only. Subtotal $63.00 + Leavenworth 8.6% tax ($5.42) + 10% tip on subtotal ($6.30) = $74.72 total.",
-          "menuUrl": "https://order.toasttab.com/online/yodelin-broth-company-633-front-street-lower-level"
-        },
-        {
-          "start": "11:50 AM",
+          "start": "8:00 PM",
           "end": "12:05 PM",
-          "title": "Walk back to the hotel",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
+          "title": "American Airlines AA52 - Nonstop - 10h5m",
+          "detail": "MIA -> FCO, Economy (Main Cabin), 4 passengers. Partner award booked via Alaska Atmos Rewards on American metal (oneworld). Lands Tuesday, June 8 at 12:05 PM local Rome time.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "program": "Alaska Atmos Rewards",
+          "points": "140000",
+          "paid": 22.4,
+          "notes": "BOOKED - Alaska confirmation code HBUYUG. 35,000 Atmos Rewards points + $5.60 per passenger x 4 = 140,000 points + $22.40 total (charged to Visa ...6730). Passengers: Roque Corona, Jennifer Borges, Roque Luis Corona, Chloe Corona. Seats 31 A-D assigned. American Airlines confirmation code AKUHCI (use this on aa.com to manage seats/the partner-operated flight); Alaska/Atmos confirmation code HBUYUG. Meal service (complimentary, Main Cabin): dinner served ~9:00-9:30 PM shortly after takeoff, then a lights-out stretch, and a lighter breakfast ~10:00-10:30 AM Rome time (about an hour before the 12:05 PM landing). Kids ate dinner at home at 5 PM, so they may skip the onboard dinner - fine for getting them to sleep. The pre-landing breakfast is the useful one since you arrive at lunchtime.",
+          "route": "MIA → FCO",
+          "flightNo": "American 52",
+          "cabin": "Economy",
+          "seats": "31A, 31B, 31C, 31D",
+          "flag": "Overnight flight - lands 12:05 PM Rome time the next day. Kids will have been awake ~16+ hrs by landing; Day 1 in Rome is kept light on purpose.",
+          "conf": "HBUYUG (Alaska) / AKUHCI (American)"
+        }
+      ]
+    },
+    {
+      "date": "Tuesday, June 8, 2027",
+      "title": "Arrive Rome",
+      "planned": true,
+      "blocks": [
         {
           "start": "12:05 PM",
-          "end": "1:30 PM",
-          "title": "Free afternoon / rest at the hotel",
-          "detail": "Many Leavenworth businesses close early or entirely on Christmas Eve. Hampton Inn has an indoor pool if the kids want it \u2014 a real option here, not just sitting in the room.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
+          "end": "1:15 PM",
+          "title": "Land at FCO - passport, bags, customs",
+          "detail": "Passport control, baggage claim, and customs for a family of 4.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "1:15 PM",
+          "end": "1:25 PM",
+          "title": "Walk to Fiumicino Aeroporto train station",
+          "detail": "Signposted inside the terminal, ~5 min from baggage claim.",
+          "typeName": "Walk",
+          "emoji": "🚶"
         },
         {
           "start": "1:30 PM",
-          "end": "1:45 PM",
-          "title": "Walk to downtown village",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
+          "end": "2:02 PM",
+          "title": "Leonardo Express - FCO to Roma Termini",
+          "detail": "Non-stop, 32 min, Platform 1; departs every 15 min - just catch the next one.",
+          "typeName": "Transportation",
+          "emoji": "🚆",
+          "est": 30.0,
+          "notes": "• Fare €14/adult x 2 = €28 (station price)\n• Kids 4-12 ride free with a paying adult - both covered\n• ≈ $30 total; no need to pre-book a departure",
+          "route": "FCO → Roma Termini",
+          "flightNo": "Leonardo Express (Trenitalia)"
         },
         {
-          "start": "1:45 PM",
-          "end": "3:00 PM",
-          "title": "Christmas Eve lights & holiday stroll",
-          "detail": "Leavenworth's holiday lights stay up through the season regardless of the Lighting Festival's early-December weekends \u2014 likely quieter today than festival weekends. Extended browsing time plus hot cocoa along the way, since most shops that are still open today are worth lingering in before an early close.",
-          "typeName": "Sightseeing",
-          "emoji": "\ud83d\udcf8",
-          "est": 23.72,
-          "notes": "Hot cocoa for the family while strolling. Subtotal $20.00 + Leavenworth 8.6% tax ($1.72) + 10% tip ($2.00) = $23.72 total."
+          "start": "2:02 PM",
+          "end": "2:15 PM",
+          "title": "Walk to hotel from Roma Termini",
+          "detail": "~550m, ~7-10 min with luggage and kids.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "2:20 PM",
+          "end": "2:45 PM",
+          "title": "Hyatt Regency Rome Central - check in, drop bags",
+          "detail": "Regency Suite; request early check-in, otherwise store bags and head out.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "World of Hyatt",
+          "points": "60000",
+          "notes": "• 20,000 pts/night x 3 = 60,000 pts\n• Suite Upgrade Award applied → Regency Suite\n• Breakfast included daily (up to 4 guests)",
+          "nights": "3 nights (Tue-Fri)",
+          "roomType": "Regency Suite - separate lounge area, terrace",
+          "address": "Via Filippo Turati, 171, 00185 Rome, Italy",
+          "cancelBy": "Not yet booked"
         },
         {
           "start": "3:00 PM",
-          "end": "3:15 PM",
-          "title": "Walk back to the hotel",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "3:15 PM",
-          "end": "4:35 PM",
-          "title": "Free time / rest before dinner",
-          "detail": "South (the new Christmas Eve dinner pick) is downtown and walkable, so no resort drive needed -- this is just breathing room before the holiday dinner.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        },
-        {
-          "start": "4:35 PM",
-          "end": "4:45 PM",
-          "title": "Walk to South",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
+          "end": "4:30 PM",
+          "title": "Late lunch / early dinner - La Famiglia, Esquilino",
+          "detail": "Traditional Roman comfort food, ~10 min walk - an easy first meal after the overnight flight.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 62.0,
+          "menuUrl": "https://www.ristorantelafamiglia.it/en/menu/",
+          "notes": "• Mains ~€15 each\n• 2 adult mains + 2 kids sharing simple pasta\n• Entrees only, no drinks/dessert: ~€55-60 / $62\n• Rating ~4.0-4.2 (your lowest-rated Rome pick)"
         },
         {
           "start": "4:45 PM",
           "end": "6:00 PM",
-          "title": "Dinner \u2014 South, 913 Front St (Christmas Eve)",
-          "detail": "Mexican/Latin -- tacos, enchiladas, burritos. Moved here from Day 3 (Mon dinner) specifically so it's not stacked two days after Cactus (Tex-Mex, Seattle Day 1) -- and it happens to be one of the few Leavenworth restaurants with standard regular hours (11am-9pm) year-round, a safer Christmas Eve bet than most. Confirmed open regular hours; call (509) 888-4328 to reconfirm no holiday-hours change. Dedicated kids menu. Slightly longer seating for a Christmas Eve dinner.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 72.02,
-          "notes": "Mission Burrito $19 + Chicken Poblano Enchiladas $20 (adults) + Kid's Quesadilla $9 + Kid's Chicken Tacos $8 (kids). Entrees only. Subtotal $56.00 + Leavenworth 8.6% tax ($4.82) + 20% tip on subtotal ($11.20) = $72.02 total.",
-          "menuUrl": "https://southrestaurants.com/leavenworth/"
+          "title": "Piazza della Repubblica & Baths of Diocletian",
+          "detail": "~10 min walk; the fountain plus a quick free look inside Santa Maria degli Angeli, built into the ancient baths.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
         },
         {
           "start": "6:00 PM",
-          "end": "6:10 PM",
-          "title": "Walk back to the hotel",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
+          "end": "6:30 PM",
+          "title": "Gelato near Piazza della Repubblica",
+          "detail": "The one sweet stop of the day.",
+          "typeName": "Dining",
+          "emoji": "🍨",
+          "est": 20.0
         },
         {
-          "start": "6:10 PM",
-          "end": "7:30 PM",
-          "title": "Christmas Eve bedtime routine",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
+          "start": "6:30 PM",
+          "end": "7:00 PM",
+          "title": "Walk back to hotel, settle in",
+          "detail": "Early night - the kids will be wiped after the overnight flight.",
+          "typeName": "Walk",
+          "emoji": "🚶"
         }
       ]
     },
     {
-      "date": "Friday, December 25, 2026",
-      "title": "Leavenworth \u2014 Christmas Day at Lake Wenatchee State Park",
+      "date": "Wednesday, June 9, 2027",
+      "title": "Rome - Colosseum, Catacombs & Gladiator School",
       "planned": true,
       "blocks": [
         {
-          "start": "7:30 AM",
-          "end": "8:15 AM",
-          "title": "Breakfast \u2014 Hampton Inn Leavenworth (included)",
-          "detail": "Christmas morning \u2014 a slow, unhurried start before heading out.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54"
-        },
-        {
-          "start": "8:15 AM",
+          "start": "8:00 AM",
           "end": "8:45 AM",
-          "title": "Drive to Lake Wenatchee State Park",
-          "detail": "~20.7 mi / ~30 min via Hwy 2 \u2192 SR 207. Road is plowed and open in winter (8 AM-dusk).",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "8:45 AM",
-          "end": "9:00 AM",
-          "title": "Arrival, display Sno-Park permit",
-          "detail": "A Sno-Park Permit is required here, not the Discover Pass \u2014 it was purchased online in advance, since in-person vendors are almost certainly closed on Christmas Day itself. Sleds are already in the car from Der Sportsmann.",
-          "typeName": "Parking",
-          "emoji": "\ud83c\udd7f\ufe0f",
-          "est": 25,
-          "notes": "One-day Sno-Park permit, $25, bought online ahead of time via WA State Parks."
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
         },
         {
           "start": "9:00 AM",
-          "end": "9:15 AM",
-          "title": "Walk to the sled hill, unload sleds",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
+          "end": "9:20 AM",
+          "title": "Taxi to the Colosseum",
+          "detail": "~3 km, ~15 min.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 12.0,
+          "notes": "• Rome taxi: €3 base + ~€1.3/km, €9 min → ~€10-12"
         },
         {
-          "start": "9:15 AM",
+          "start": "9:30 AM",
           "end": "11:15 AM",
-          "title": "Sledding \u2014 groomed 150-ft sled hill",
-          "detail": "A real 2-hour session, not a quick stop \u2014 repeat runs, breaks to warm hands by the heated warming hut. Dropped snowshoeing from the plan; sledding is the morning's actual anchor now.",
-          "typeName": "Excursion",
-          "emoji": "\ud83d\udc5e"
+          "title": "Colosseum (interior) - for the kids",
+          "detail": "Just the Colosseum - skipping Forum/Palatine (you've done them twice). Book the earliest timed slot.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 62.0,
+          "menuUrl": "https://www.thecolosseum.org/tickets/",
+          "notes": "• Tickets ~€18-24/adult; kids under 18 free\n• ~€55-60 / $62 for the two of you\n• Book ~30 days ahead\n• Ticket includes Forum/Palatine (you just won't use it)"
         },
         {
           "start": "11:15 AM",
-          "end": "11:25 AM",
-          "title": "Pack up sleds & catch breath",
-          "detail": "Real wrap-up time after 2 hours of active sledding -- gather sleds, warm hands, regroup before the next stop. Not built into the walk block.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "11:25 AM",
-          "end": "11:55 AM",
-          "title": "Lake Wenatchee shoreline walk & viewpoint",
-          "detail": "Short, flat walk along the lakeshore \u2014 no gear needed, just a look at the lake and the Cascades behind it before heading back.",
-          "typeName": "Sightseeing",
-          "emoji": "\ud83d\udcf8"
-        },
-        {
-          "start": "11:55 AM",
-          "end": "12:15 PM",
-          "title": "Changeover \u2014 warm up & dry off",
-          "detail": "Heated bathrooms/warming hut on-site \u2014 dedicated block before the drive back, not squeezed into it.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "12:15 PM",
-          "end": "12:45 PM",
-          "title": "Drive back to Leavenworth",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "12:45 PM",
-          "end": "12:55 PM",
-          "title": "Walk to Yodelin Broth Co.",
+          "end": "11:35 AM",
+          "title": "Walk to Monti for lunch",
+          "detail": "~15-20 min stroll from the Colosseum.",
           "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
+          "emoji": "🚶"
         },
         {
-          "start": "12:55 PM",
-          "end": "1:45 PM",
-          "title": "Lunch \u2014 Yodelin Broth Co. & Beer Garden",
-          "detail": "Second Yodelin visit of the trip, deliberately -- it's the only Leavenworth restaurant with directly-confirmed holiday hours on BOTH Christmas Eve and Christmas Day (posted event hours, not just an assumption), and unlike the previous Kristall's repeats, it's a well-reviewed spot (731 Yelp reviews) with a real, varied kids menu. Different order than the Christmas Eve visit to keep it from feeling identical.",
+          "start": "11:45 AM",
+          "end": "12:50 PM",
+          "title": "Lunch - Ai Tre Scalini, Monti",
+          "detail": "Classic Roman trattoria/wine bar (~4.4); early lunch to open up the afternoon.",
           "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 59.3,
-          "notes": "The Cheeseburger $19 + Enchantments Salad $18 (adults) + Mini Rice Bowl $5 + Tillamook Grilled Cheese $8 (kids). Entrees only. Subtotal $50.00 + Leavenworth 8.6% tax ($4.30) + 10% tip on subtotal ($5.00) = $59.30 total.",
-          "menuUrl": "https://order.toasttab.com/online/yodelin-broth-company-633-front-street-lower-level"
+          "emoji": "🍔",
+          "est": 44.0,
+          "menuUrl": "https://restaurantguru.com/Ai-Tre-Scalini-Rome/menu",
+          "notes": "• Menu: lasagna €10, eggplant parm €12, carpaccio €14\n• 2 adult primi + kids simple pasta, no wine\n• Entrees only: ~€40 / $44"
         },
         {
-          "start": "1:45 PM",
-          "end": "1:55 PM",
-          "title": "Walk back to the hotel",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
+          "start": "12:50 PM",
+          "end": "1:20 PM",
+          "title": "Taxi to the Appian Way (Catacombs of San Sebastiano)",
+          "detail": "~5-6 km south, ~25-30 min.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 18.0,
+          "notes": "• Rome taxi: €3 base + ~€1.3/km → ~€16-20"
         },
         {
-          "start": "1:55 PM",
-          "end": "4:00 PM",
-          "title": "Free afternoon / rest at the hotel",
-          "detail": "Almost everything in Leavenworth is closed on Christmas Day itself \u2014 a genuinely unstructured stretch, not padding. Hampton Inn's pool is an option, along with opening any small travel gifts.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        },
-        {
-          "start": "4:00 PM",
-          "end": "4:15 PM",
-          "title": "Drive to Icicle Village Resort",
-          "detail": "505 Hwy 2.",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "4:15 PM",
-          "end": "4:30 PM",
-          "title": "Arrival, check reservation",
+          "start": "1:20 PM",
+          "end": "1:40 PM",
+          "title": "Arrive & join the next guided tour",
+          "detail": "20-min cushion for tickets, bathroom, and the next English tour (run ~every 30 min).",
           "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
+          "emoji": "⏱️"
         },
         {
-          "start": "4:30 PM",
-          "end": "6:00 PM",
-          "title": "\"Christmas Dinner in the Hills\" \u2014 JJ Hills Fresh Grill, Icicle Village Resort",
-          "detail": "Official resort Christmas Day dinner event, 3-7:30 PM window, with a dedicated children's menu \u2014 the most solid verified Christmas Day dinner option in town.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 151.75,
-          "notes": "Event pricing listed as $9-45/person for 2025/26 without an itemized adult/kids split. Last fully itemized year (2022) was $35 adult / $14 kids 6-10 \u2014 used 2 adults @ ~$45 + 2 kids @ ~$14 = ~$118 as an estimate. Reservations required \u2014 call (509) 548-5807 to confirm current per-person pricing. Subtotal $118.00 + Leavenworth 8.6% tax ($10.15) + 20% tip on subtotal ($23.60) = $151.75 total.",
-          "menuUrl": "https://www.iciclevillage.com/leavenworth-restaurants-jj-hills/menu/"
-        },
-        {
-          "start": "6:00 PM",
-          "end": "6:15 PM",
-          "title": "Drive back to the hotel",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "6:15 PM",
-          "end": "7:15 PM",
-          "title": "Bedtime routine",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        }
-      ]
-    },
-    {
-      "date": "Saturday, December 26, 2026",
-      "title": "Leavenworth \u2192 Seattle (SeaTac)",
-      "planned": true,
-      "blocks": [
-        {
-          "start": "7:30 AM",
-          "end": "8:15 AM",
-          "title": "Breakfast \u2014 Hampton Inn Leavenworth (included)",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54"
-        },
-        {
-          "start": "8:15 AM",
-          "end": "9:00 AM",
-          "title": "Pack up & check out \u2014 Hampton Inn Leavenworth",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "9:00 AM",
-          "end": "9:15 AM",
-          "title": "Walk to downtown Leavenworth",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "9:15 AM",
-          "end": "10:25 AM",
-          "title": "Final Leavenworth village stroll",
-          "detail": "Last gift-shop browsing and Gingerbread Factory stop before leaving town.",
-          "typeName": "Shopping",
-          "emoji": "\ud83d\udecd\ufe0f"
-        },
-        {
-          "start": "10:25 AM",
-          "end": "10:40 AM",
-          "title": "Walk to M\u00fcnchen Haus",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "10:40 AM",
-          "end": "11:25 AM",
-          "title": "Lunch \u2014 M\u00fcnchen Haus",
-          "detail": "Second visit, deliberately \u2014 order-counter service means no wait right before a mountain-pass drive, which matters more today than menu variety.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 41.22,
-          "notes": "Helga's Giant Kelbassi $10.75 + Hans' Jalape\u00f1o & Cheddar $10.50 (adults) + 2x Organic Beef Dog $6.75 (kids). Entrees only. Subtotal $34.75 + Leavenworth 8.6% tax ($2.99) + 10% tip on subtotal ($3.48) = $41.22 total.",
-          "menuUrl": "https://www.munchenhaus.com/assets/pdf/Menu.pdf"
-        },
-        {
-          "start": "11:25 AM",
-          "end": "11:40 AM",
-          "title": "Walk back to the hotel, load the car",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6",
-          "detail": "Back to the hotel lot where the Rogue's been parked since Monday."
-        },
-        {
-          "start": "11:40 AM",
-          "end": "1:10 PM",
-          "title": "Drive \u2014 Leavenworth to Monroe/Sultan area",
-          "detail": "Via US-2 over Stevens Pass, ~1.5h.",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
-        },
-        {
-          "start": "1:10 PM",
-          "end": "1:25 PM",
-          "title": "Rest stop",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f",
-          "est": 10
-        },
-        {
-          "start": "1:25 PM",
+          "start": "1:40 PM",
           "end": "2:25 PM",
-          "title": "Drive \u2014 continue toward SeaTac",
-          "detail": "~1h.",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
+          "title": "Catacombs of San Sebastiano",
+          "detail": "Ancient underground burial tunnels, guided ~45 min; using San Sebastiano since San Callisto closes Wednesdays.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 42.0,
+          "menuUrl": "https://www.catacombe.org/en/",
+          "notes": "• €15/adult, ages 7-16 €12, under 7 free → ~€40-42\n• Guided only; open daily 10-5 (last entry 4:30)",
+          "flag": "Cool, damp, stairs and uneven passages underground - not stroller-friendly."
         },
         {
           "start": "2:25 PM",
-          "end": "2:40 PM",
-          "title": "Drive to the Turo drop-off location",
-          "detail": "Same SEA-area meeting point used for pickup on Dec 19 (confirm exact address with Indrawati via the Turo app closer to the date).",
-          "typeName": "Drive",
-          "emoji": "\ud83d\ude97"
+          "end": "2:45 PM",
+          "title": "Walk the ancient Appian Way to the Gladiator School",
+          "detail": "~1.5 km along the original Roman road; grab a quick taxi (~5 min) if the sun's too much.",
+          "typeName": "Walk",
+          "emoji": "🚶"
         },
         {
-          "start": "2:40 PM",
+          "start": "2:45 PM",
           "end": "3:00 PM",
-          "title": "Drop off the Turo \u2014 2024 Nissan Rogue",
-          "detail": "Unload luggage and the 2 child seats, walk-around with the host, close out the trip in the app. Deadline is 4:00 PM \u2014 this builds in a full hour of buffer for Saturday-before-Christmas traffic near SeaTac.",
-          "typeName": "Rental Car",
-          "emoji": "\ud83d\ude97",
-          "flag": "Hard deadline: 4:00 PM. Don't let village/lunch stops upstream run long today."
+          "title": "Check in & gear up",
+          "detail": "15-min buffer before the 3:00 start - check in, bathroom, tunics on.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
         },
         {
           "start": "3:00 PM",
-          "end": "3:15 PM",
-          "title": "Wait for / ride shuttle to Courtyard by Marriott Seattle SeaTac Airport",
-          "detail": "Same rental-car shuttle system, in reverse \u2014 or a short rideshare if the shuttle timing doesn't line up. Confirm at check-in whether the hotel also runs its own airport-area shuttle.",
-          "typeName": "Transportation",
-          "emoji": "\ud83d\ude8c"
-        },
-        {
-          "start": "3:15 PM",
-          "end": "3:30 PM",
-          "title": "Check in \u2014 Courtyard by Marriott Seattle SeaTac Airport",
-          "detail": "No car to park this time \u2014 just check-in.",
-          "typeName": "Hotel",
-          "emoji": "\ud83c\udfe8",
-          "nights": "1 night (Sat)",
-          "conf": "9LF3MBNPLF",
-          "roomType": "2 Queen Beds",
-          "address": "19031 International Blvd, Seattle, WA",
-          "cancelBy": "Free cancel until 5:59 PM Dec 24, 2026",
-          "program": "Marriott Bonvoy",
-          "points": "24000",
-          "notes": "24,000 Bonvoy points for the night (confirmed, matches the reservation exactly). No cash portion charged -- fully covered by points. Free cancellation until 5:59 PM hotel time on Dec 24, 2026 if plans change. Confirm self-parking cost isn't an issue -- there's no car to park tonight, the Turo was already returned this afternoon."
-        },
-        {
-          "start": "3:30 PM",
-          "end": "4:15 PM",
-          "title": "Rest & settle in at the hotel",
-          "detail": "Shorter window than usual today since the afternoon went to the Turo return \u2014 still enough time to decompress before dinner.",
-          "typeName": "Free Time",
-          "emoji": "\u23f0"
-        },
-        {
-          "start": "4:15 PM",
           "end": "5:00 PM",
-          "title": "Dinner \u2014 The Bistro, Courtyard by Marriott (on-site)",
-          "detail": "Early dinner tonight, on-site \u2014 tomorrow's 5 AM car drop-off means an early bedtime, so dinner moves up rather than the usual 5-6 PM window. Staying off the flatbread items given the family's pizza aversion.",
-          "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 72.24
+          "title": "Gladiator School - training session",
+          "detail": "Gruppo Storico Romano - the 2 kids train (tunic, sword, drills, tournament, certificate) while you two watch.",
+          "typeName": "Excursion",
+          "emoji": "⚔️",
+          "est": 260.0,
+          "notes": "• €130/person ages 6+; both kids = €260 / $285\n• Parents watch for free\n• Book the 3:00 PM slot; no ID check (readiness matters, best ~8+)",
+          "flag": "Hard wooden swords are used - closed shoes and clothes that can get dusty."
         },
         {
           "start": "5:00 PM",
           "end": "5:15 PM",
-          "title": "Back to the room",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
+          "title": "Wrap up & meet your ride",
+          "detail": "Photos and certificates; arrange the return in advance (next block).",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
         },
         {
           "start": "5:15 PM",
-          "end": "6:15 PM",
-          "title": "Bedtime routine / wind down",
-          "detail": "Early night \u2014 tomorrow's a 4:45 AM wake-up for the flight home.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
+          "end": "5:50 PM",
+          "title": "Pre-arranged driver / taxi back to hotel",
+          "detail": "~7 km back to the Termini area, ~25-30 min.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 24.0,
+          "notes": "• Appian Way isn't taxi-cruising - pre-book a driver for 5:00 PM\n• Backups: FreeNow app, or have reception call one (060609)\n• Taxi meter ~€22-26"
+        },
+        {
+          "start": "5:50 PM",
+          "end": "7:00 PM",
+          "title": "Rest / freshen up at hotel",
+          "detail": "Downtime before dinner after a big active day.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:15 PM",
+          "end": "8:45 PM",
+          "title": "Dinner - Trattoria Vecchia Roma, Esquilino",
+          "detail": "Historic (1916) Roman trattoria ~10 min away (~4.4), famous for amatriciana flambeed from a cheese wheel.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 55.0,
+          "menuUrl": "https://restaurantguru.com/Vecchia-Roma-Rome-5",
+          "notes": "• A la carte mains ~€12-16\n• 2 adult mains + kids simple pasta, minimal wine\n• Entrees only: ~€50 / $55\n• Reserve ahead - long queues"
         }
       ]
     },
     {
-      "date": "Sunday, December 27, 2026",
-      "title": "Seattle \u2192 Miami",
+      "date": "Thursday, June 10, 2027",
+      "title": "Rome - Vatican & Historic Center",
       "planned": true,
       "blocks": [
         {
-          "start": "4:45 AM",
-          "end": "5:25 AM",
-          "title": "Wake, get ready",
-          "detail": "45 minutes later than originally planned \u2014 no Turo drop-off to do this morning, that happened yesterday afternoon.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "5:25 AM",
-          "end": "5:30 AM",
-          "title": "Check out \u2014 Courtyard by Marriott Seattle SeaTac Airport",
-          "typeName": "Hotel",
-          "emoji": "\ud83c\udfe8"
-        },
-        {
-          "start": "5:30 AM",
-          "end": "5:40 AM",
-          "title": "Ride hotel shuttle to SEA terminal",
-          "detail": "Confirm the shuttle's early-morning schedule at check-in on Dec 26 \u2014 fall back to a quick rideshare if it doesn't run this early.",
-          "typeName": "Transportation",
-          "emoji": "\ud83d\ude8c"
-        },
-        {
-          "start": "5:40 AM",
-          "end": "5:50 AM",
-          "title": "Walk to check-in counter",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "5:50 AM",
-          "end": "6:35 AM",
-          "title": "Check bags, TSA security",
-          "detail": "Domestic, family of 4 \u2014 budgeting a full 45 minutes, though lines are typically short this early.",
-          "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
-        },
-        {
-          "start": "6:35 AM",
-          "end": "6:45 AM",
-          "title": "Walk to the gate area",
-          "typeName": "Walk",
-          "emoji": "\ud83d\udeb6"
-        },
-        {
-          "start": "6:45 AM",
-          "end": "7:35 AM",
-          "title": "Breakfast \u2014 SEA terminal (near gate)",
-          "detail": "A real sit-down breakfast, not just standing around \u2014 the 5 AM drop-off leaves genuine time for this before boarding.",
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel (early)",
           "typeName": "Dining",
-          "emoji": "\ud83c\udf54",
-          "est": 48.16,
-          "notes": "Subtotal $40.00 + SeaTac 10.4% tax ($4.16) + 10% tip on subtotal ($4.00) = $48.16 total."
+          "emoji": "🍔"
         },
         {
-          "start": "7:35 AM",
-          "end": "7:55 AM",
-          "title": "Wait at the gate",
+          "start": "8:15 AM",
+          "end": "8:40 AM",
+          "title": "Taxi to the Vatican",
+          "detail": "~5.5 km, ~20-25 min; early to beat the security line.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 16.0,
+          "notes": "• Rome taxi: €3 base + ~€1.3/km → ~€14-18"
+        },
+        {
+          "start": "8:45 AM",
+          "end": "11:00 AM",
+          "title": "St. Peter's Square & Basilica",
+          "detail": "The square, then the basilica interior (Michelangelo's Pieta, Bernini's baldachin); entry is free - the line is security.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 40.0,
+          "menuUrl": "https://www.basilicasanpietro.va/en",
+          "notes": "• Basilica: FREE, no ticket\n• Optional dome climb (on-site only): €8 stairs / €10 lift+stairs, then ~320 steps → ~€30-40 family\n• Paid skip-the-line timed reservation available online",
+          "flag": "Strict dress code at security, no exceptions: shoulders AND knees covered, kids included."
+        },
+        {
+          "start": "11:00 AM",
+          "end": "11:25 AM",
+          "title": "Taxi across the river to the Pantheon area",
+          "detail": "~3 km, ~10-15 min.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 12.0,
+          "notes": "• Rome taxi ~€10-13"
+        },
+        {
+          "start": "11:45 AM",
+          "end": "1:15 PM",
+          "title": "Lunch - Cul de Sac, near Piazza Navona",
+          "detail": "Historic casual wine bar off Piazza Navona; high chairs, family-friendly - book ahead.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 66.0,
+          "menuUrl": "https://www.enotecaculdesacroma.it/servizi.html",
+          "notes": "• Wine-bar mains ~€18-20\n• 2 adult mains + kids simple pasta, one glass of wine\n• Entrees only: ~€60 / $66"
+        },
+        {
+          "start": "1:20 PM",
+          "end": "2:00 PM",
+          "title": "Piazza Navona",
+          "detail": "Baroque fountains and street artists; open space for the kids to move.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "2:10 PM",
+          "end": "2:50 PM",
+          "title": "Pantheon",
+          "detail": "~5 min walk; the intact ancient dome and oculus. Timed ticket required.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 12.0,
+          "menuUrl": "https://www.pantheonroma.com/en/",
+          "notes": "• ~€5/adult x 2 = ~€10; kids under 18 free\n• Reserve a timed slot online ahead"
+        },
+        {
+          "start": "2:50 PM",
+          "end": "3:10 PM",
+          "title": "Walk to the Trevi Fountain",
+          "detail": "~20 min through the old streets.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "3:10 PM",
+          "end": "3:45 PM",
+          "title": "Trevi Fountain",
+          "detail": "Coin toss and people-watching; very crowded - keep the kids close.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "4:00 PM",
+          "end": "4:20 PM",
+          "title": "Taxi back to hotel",
+          "detail": "~3 km, ~15 min.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 12.0,
+          "notes": "• Rome taxi ~€10-13"
+        },
+        {
+          "start": "4:20 PM",
+          "end": "6:00 PM",
+          "title": "Rest at hotel - free time, start packing",
+          "detail": "Light afternoon before the early travel day to Crete.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Rifugio Romano, Esquilino",
+          "detail": "Casual neighborhood trattoria/pizzeria near the hotel (~4.5); easy last night.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 52.0,
+          "menuUrl": "https://restaurantguru.com/Rifugio-Romano-Rome/menu",
+          "notes": "• Menu: pizza ~€13, amatriciana €13, saltimbocca €15\n• 2 adult mains (cheaper pizzas) + kids simple pizza/pasta\n• Entrees only: ~€48-50 / $52"
+        }
+      ]
+    },
+    {
+      "date": "Friday, June 11, 2027",
+      "title": "Fly to Crete (Elounda)",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:45 AM",
+          "end": "8:35 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:35 AM",
+          "end": "8:55 AM",
+          "title": "Check out of Hyatt Regency Rome Central",
+          "detail": "Settle any incidentals and gather the bags.",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "8:55 AM",
+          "end": "9:10 AM",
+          "title": "Walk to Roma Termini",
+          "detail": "~550m, ~7-10 min with luggage.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:47 AM",
+          "title": "Leonardo Express - Roma Termini to FCO",
+          "detail": "Non-stop, 32 min; departs ~every 15 min.",
+          "typeName": "Transportation",
+          "emoji": "🚆",
+          "est": 30.0,
+          "notes": "• Fare €14/adult x 2 = €28; kids 4-12 free\n• ≈ $30 total",
+          "route": "Roma Termini → FCO",
+          "flightNo": "Leonardo Express (Trenitalia)"
+        },
+        {
+          "start": "9:47 AM",
+          "end": "10:00 AM",
+          "title": "Walk to check-in at FCO",
+          "detail": "The train station connects directly to the terminal.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "10:00 AM",
+          "end": "10:35 AM",
+          "title": "Check in & bag drop (2 checked bags)",
+          "detail": "Rome→Crete is intra-EU (Schengen) - no passport control, but allow time with 2 checked bags.",
+          "typeName": "Luggage",
+          "emoji": "🧳"
+        },
+        {
+          "start": "10:35 AM",
+          "end": "11:05 AM",
+          "title": "Security screening",
           "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f",
-          "detail": "Trimmed to a 20-min buffer (from 30) to absorb the later start -- boarding/departure times are fixed by the airline."
+          "emoji": "⏱️"
         },
         {
-          "start": "7:55 AM",
-          "end": "8:25 AM",
-          "title": "Boarding",
+          "start": "11:05 AM",
+          "end": "11:15 AM",
+          "title": "Walk to gate, settle in",
           "typeName": "Logistics",
-          "emoji": "\u23f1\ufe0f"
+          "emoji": "⏱️"
         },
         {
-          "start": "8:25 AM",
-          "end": "5:27 PM",
-          "title": "Delta Air Lines DL 506 - Nonstop - 6h2m",
-          "detail": "SEA -> MIA, 4 passengers. CONFIRMED -- confirmation G4VYUR, Delta Main cabin. SEATING ISSUE: current seat map has Roque Corona, Jennifer Borges, and Roque Luis Corona together in row 27 (A/B/C), but Chloe Corona is alone across the aisle at 27D, next to an unrelated passenger in 27F with only the middle seat 27E (currently open) between them. Worth grabbing 27E now so a family member sits next to her for the 6-hour flight, or calling Delta to rearrange.",
+          "start": "11:15 AM",
+          "end": "11:55 AM",
+          "title": "Boarding - FCO → HER",
+          "detail": "European boarding starts ~40 min before departure.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "11:55 AM",
+          "end": "3:30 PM",
+          "title": "Wizz Air Malta / Neos - FCO → HER - Nonstop - ~2h20m",
+          "detail": "Rome (Fiumicino) → Heraklion, Economy, 4 passengers. Seasonal summer route; ~11:55 AM departure.",
           "typeName": "Flight",
-          "emoji": "\u2708\ufe0f",
-          "program": "Delta SkyMiles",
-          "points": "157200",
-          "notes": "Booked and confirmed (confirmation G4VYUR, ticket numbers 0062447589301-304). Actual charge: 157,200 SkyMiles (39,300/passenger) + $22.40 cash ($5.60/passenger security fee), paid on the Visa ending 6730. This corrects the earlier cart estimate of 164,800 miles -- the actual charge came in 7,600 points lower than that estimate.",
-          "conf": "G4VYUR",
-          "paid": 22.4,
-          "route": "SEA \u2192 MIA",
-          "flightNo": "Delta 506",
-          "cabin": "Delta Main",
-          "seats": "Roque 27A \u00b7 Jenny 27B \u00b7 Roque Luis 27C \u00b7 Chloe 27D (alone across the aisle)",
-          "flag": "Chloe is seated alone at 27D, next to a stranger in 27F. Grab open seat 27E, or call Delta to rearrange."
+          "emoji": "✈️",
+          "est": 720.0,
+          "route": "FCO → HER",
+          "flightNo": "Neos / Wizz Air Malta (representative)",
+          "cabin": "Economy",
+          "notes": "• Chosen: ~11:55 AM departure → ~3:30 PM HER (HER is +1 hr vs Rome)\n• Midday slot is Wizz Air Malta; Neos also flies midday\n• Seasonal route - June operators: Neos + Wizz Air Malta (ITA only from July)\n• 2027 fares not loaded - ~$180/pax placeholder → ~$720 family",
+          "flag": "Not bookable yet (2027 loads ~Nov 2026-early 2027). Heads-up: in 2026 the 11:55 Wizz flight ran Mon/Wed/Thu/Sat - NOT Fridays - so confirm a Friday 6/11 midday nonstop once the schedule loads (Neos may cover Friday). Fallback: 1-stop via Athens."
+        },
+        {
+          "start": "3:30 PM",
+          "end": "3:40 PM",
+          "title": "Deplane & walk to baggage claim",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "3:40 PM",
+          "end": "4:20 PM",
+          "title": "Collect bags at the carousel",
+          "detail": "~30-40 min - HER gets busy in summer and you have 2 checked bags.",
+          "typeName": "Luggage",
+          "emoji": "🧳"
+        },
+        {
+          "start": "4:20 PM",
+          "end": "4:45 PM",
+          "title": "Budget rental desk (in terminal) - paperwork & booster seats",
+          "detail": "Present license, passport, and a credit card in Roque's name for the deposit; add the 2 booster seats here.",
+          "typeName": "Rental Car",
+          "emoji": "🚗",
+          "est": 456.09,
+          "conf": "Budget 00341393US3 / Priceline 118-226-896-27",
+          "notes": "• Budget, HER - conf 00341393US3 (Priceline 118-226-896-27)\n• $456.09 total, due at pickup (nothing prepaid)\n• Automatic, unlimited mileage, additional driver, free cancellation\n• +2 booster seats charged at the counter (~€90-120 / $100-130 est)",
+          "flag": "Reservation lists a 2:00 PM pickup but you land ~3:15 and won't reach the desk until ~4 PM. Budget usually holds the car, but call ahead or modify the reservation to a later pickup so it isn't released as a no-show."
+        },
+        {
+          "start": "4:45 PM",
+          "end": "5:00 PM",
+          "title": "Shuttle bus to the car park",
+          "detail": "Budget's desk is in the terminal; a short bus ride reaches the car lot.",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "5:00 PM",
+          "end": "5:25 PM",
+          "title": "Collect & inspect the car, fit booster seats",
+          "detail": "Photograph any existing damage, confirm fuel level (full-to-full), install the 2 booster seats.",
+          "typeName": "Rental Car",
+          "emoji": "🚗"
+        },
+        {
+          "start": "5:25 PM",
+          "end": "6:30 PM",
+          "title": "Drive HER → Elounda",
+          "detail": "~68 km on the A90 coastal motorway (toll-free) via Hersonissos, ~1h-1h10.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "6:30 PM",
+          "end": "6:50 PM",
+          "title": "Domes of Elounda, Autograph Collection - check in",
+          "detail": "Family, 1 Bedroom Suite - 1 King bed + sofa bed, garden view, balcony, outdoor whirlpool. Separate bedroom and living area. Booked and confirmed.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "Marriott Bonvoy",
+          "points": "648000",
+          "conf": "76388550",
+          "notes": "• BOOKED - conf 76388550\n• 648,000 Marriott Bonvoy pts, 7 nights (Jun 11-18), 2 adults + 2 kids\n• Guest: Roque Corona; Room 1 non-commissionable rate\n• Free kids club ages 4-12 (both qualify)",
+          "nights": "7 nights (Fri Jun 11 - Fri Jun 18, 2027)",
+          "roomType": "Family, 1 Bedroom Suite (1 King + sofa bed, garden view, balcony, whirlpool)",
+          "address": "Tsifliki, Elounda, Crete, Greece 72053",
+          "cancelBy": "Free cancellation before 11:59 PM local hotel time, May 28, 2027 (14 days before arrival)"
+        },
+        {
+          "start": "6:50 PM",
+          "end": "7:50 PM",
+          "title": "Settle in / freshen up",
+          "detail": "Light first evening after a full travel day - unpack a little, get the kids sorted.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "8:00 PM",
+          "end": "9:15 PM",
+          "title": "Dinner - Thólos (resort buffet)",
+          "detail": "The resort's main sea-view buffet restaurant (Greek & Mediterranean), with a kids' buffet and rotating themed nights - zero transit on night one.",
+          "typeName": "Dining",
+          "emoji": "🍽️",
+          "est": 120.0,
+          "menuUrl": "https://www.marriott.com/en-us/dining/restaurant-bar/herak-domes-of-elounda-autograph-collection/5722236-tholos-restaurant-dinner.mi",
+          "notes": "• Half-board buffet venue (breakfast + international buffet dinner); themed nights, kids buffet, veg options\n• Your 648k-point rate is likely ROOM-ONLY - dinner would be a paid buffet unless you add Half Board\n• Kids-eat-free promo is for DIRECT phone/email bookings, 2026 - unconfirmed for a 2027 points stay; verify with Domes\n• No published a la carte buffet price. Proxy: Full-Board supplement €40/adult, €20/child per night\n• Inferred family buffet dinner ~€90-130 / ~$120 (estimate) - could drop a lot if under-12s eat free"
+        }
+      ]
+    },
+    {
+      "date": "Saturday, June 12, 2027",
+      "title": "Spinalonga Island",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "6:30 AM",
+          "end": "7:15 AM",
+          "title": "Breakfast at hotel - early start",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "7:30 AM",
+          "end": "7:45 AM",
+          "title": "Drive to Plaka village boat dock",
+          "detail": "~5km from Elounda.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "8:00 AM",
+          "end": "8:30 AM",
+          "title": "Boat to Spinalonga",
+          "detail": "First boat of the day, deliberately - the island gets crowded and hot by late morning.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 48.0,
+          "notes": "~€10-12/person round-trip x4 -> ~€44-48/$48."
+        },
+        {
+          "start": "8:30 AM",
+          "end": "10:30 AM",
+          "title": "Spinalonga Island",
+          "detail": "The Venetian fortress and former leper colony - walkable ruins and streets, not an indoor museum.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 100.0,
+          "notes": "€20/adult entrance, kids likely free/reduced (verify at booking) -> budgeting ~€90-100/$100 for the family total (boat + entry)."
+        },
+        {
+          "start": "10:30 AM",
+          "end": "11:00 AM",
+          "title": "Boat back to Plaka village",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "11:15 AM",
+          "end": "12:30 PM",
+          "title": "Lunch - Taverna Spinalonga, Plaka village",
+          "detail": "Seaside, fresh fish, right by the boat dock.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 105.0
+        },
+        {
+          "start": "1:00 PM",
+          "end": "1:15 PM",
+          "title": "Drive back to the resort",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "1:15 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Vilebrequin La Plage (resort)",
+          "detail": "Seaside Mediterranean/seafood, on-site.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 145.0
+        }
+      ]
+    },
+    {
+      "date": "Sunday, June 13, 2027",
+      "title": "Beach day / resort",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Resort beach & pool - free morning",
+          "detail": "No anchor today - kids club available (free, ages 4-12) if the kids want a program morning.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch - Antonino's (resort)",
+          "detail": "On-site Italian, wood-fired pizza/pasta.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Ostria, Elounda",
+          "detail": "Seafood, 1.4km from the resort.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 130.0
+        }
+      ]
+    },
+    {
+      "date": "Monday, June 14, 2027",
+      "title": "Agios Nikolaos",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:35 AM",
+          "title": "Drive to Agios Nikolaos",
+          "detail": "~15-20 min.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:35 AM",
+          "end": "11:30 AM",
+          "title": "Agios Nikolaos - Lake Voulismeni & harbor",
+          "detail": "Small saltwater lake connected to the harbor by a canal, lively waterfront promenade.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "11:45 AM",
+          "end": "1:00 PM",
+          "title": "Lunch - Karnagio (Pita tou Riga)",
+          "detail": "Right on Lake Voulismeni, grill-focused - arrive early, it's busy.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 105.0
+        },
+        {
+          "start": "1:15 PM",
+          "end": "1:35 PM",
+          "title": "Drive back to the resort",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "1:35 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Kanali, Elounda",
+          "detail": "Seafood, 3.5km from the resort.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 130.0
+        }
+      ]
+    },
+    {
+      "date": "Tuesday, June 15, 2027",
+      "title": "Elounda Boat Trip & Snorkeling",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:30 AM",
+          "title": "Drive to Elounda Boat Rentals",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Boat trip & snorkeling, Mirabello Bay",
+          "detail": "Elounda Boat Rentals & Watersports - family-run since 1984, no-license boat rentals, kayaking/SUP/snorkeling in the bay's sea caves.",
+          "typeName": "Excursion",
+          "emoji": "👞",
+          "est": 180.0,
+          "notes": "Half-day no-license boat rental estimate ~€150-180/$160-190 for the family - get a live quote closer to booking."
+        },
+        {
+          "start": "1:15 PM",
+          "end": "2:30 PM",
+          "title": "Lunch near the marina",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Blue Door (Mple Porta), Agios Nikolaos",
+          "detail": "Waterfront seafood, grilled octopus.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 125.0
+        }
+      ]
+    },
+    {
+      "date": "Wednesday, June 16, 2027",
+      "title": "Milatos Cave & Lassithi Plateau",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:45 AM",
+          "end": "9:30 AM",
+          "title": "Drive to Milatos Cave",
+          "detail": "~45 min.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "9:45 AM",
+          "title": "Walk to the cave entrance",
+          "detail": "~10-15 min walk, closed shoes needed.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:45 AM",
+          "end": "10:45 AM",
+          "title": "Milatos Cave",
+          "detail": "Free entry, family-friendly, low ceilings inside (bring a phone flashlight) - real historical site, not a museum.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "11:15 AM",
+          "end": "12:15 PM",
+          "title": "Drive to the Lassithi Plateau",
+          "detail": "~45min-1hr from the Milatos/Agios Nikolaos area.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "12:15 PM",
+          "end": "1:30 PM",
+          "title": "Lassithi Plateau - windmills & village",
+          "detail": "Famous (mostly decommissioned) stone windmills across the high plateau.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "1:30 PM",
+          "end": "2:45 PM",
+          "title": "Lunch - village taverna, Lassithi Plateau",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 95.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "4:00 PM",
+          "title": "Drive back to Elounda",
+          "detail": "~1h-1h15m.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "4:00 PM",
+          "end": "6:00 PM",
+          "title": "Rest / pool - free time",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Makris Fine Dining (resort)",
+          "detail": "Michelin-affiliated chef Petros Dimas - the special night of the Crete stay.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 220.0,
+          "notes": "Fine-dining pricing - reserve ahead."
+        }
+      ]
+    },
+    {
+      "date": "Thursday, June 17, 2027",
+      "title": "Beach day / resort - last day in Crete",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Resort beach & pool - free morning",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch - Taverna Maria's, Plaka village",
+          "detail": "Traditional Cretan dishes, one more trip to the pretty little harbor before leaving.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "5:30 PM",
+          "title": "Pool / beach - free afternoon, pack",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Taverna Giorgos-Giovanni, Plaka village",
+          "detail": "On the rocks overlooking Spinalonga - a fitting send-off view for the last Crete night.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 125.0
+        }
+      ]
+    },
+    {
+      "date": "Friday, June 18, 2027",
+      "title": "Crete -> Athens",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:00 AM",
+          "end": "7:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "7:45 AM",
+          "end": "8:05 AM",
+          "title": "Check out of Domes of Elounda, load the car",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "8:05 AM",
+          "end": "9:05 AM",
+          "title": "Drive Elounda -> Heraklion Airport",
+          "detail": "~65 km, allow a full hour plus a little cushion for morning traffic near Heraklion.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:05 AM",
+          "end": "9:25 AM",
+          "title": "Return rental car - Budget, HER",
+          "detail": "Drop-off booked for 9:00 AM. Fuel up near the airport first (full-to-full). Keep the contract/photos of the car.",
+          "typeName": "Rental Car",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:25 AM",
+          "end": "10:30 AM",
+          "title": "Coffee & wait at the airport",
+          "detail": "The 9:00 AM car drop leaves a generous cushion before the 12:15 PM flight - deliberate, so a slow Elounda-HER drive or the car return never puts the flight at risk. Relax, coffee, let the kids move around.",
+          "typeName": "Free Time",
+          "emoji": "⏰",
+          "est": 25.0
+        },
+        {
+          "start": "10:30 AM",
+          "end": "11:00 AM",
+          "title": "Check in & bag drop - domestic (2 checked bags)",
+          "detail": "Domestic Greek flight - lighter process than the international check-in, but still allow time with 2 checked bags.",
+          "typeName": "Luggage",
+          "emoji": "🧳"
+        },
+        {
+          "start": "11:00 AM",
+          "end": "11:30 AM",
+          "title": "Security screening",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "11:30 AM",
+          "end": "11:45 AM",
+          "title": "Walk to gate, settle in",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "11:45 AM",
+          "end": "12:15 PM",
+          "title": "Boarding - HER -> ATH",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "12:15 PM",
+          "end": "1:05 PM",
+          "title": "Aegean Airlines - HER -> ATH - Nonstop - ~50m",
+          "detail": "Heraklion -> Athens, Economy, 4 passengers. Short domestic hop.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "est": 253.0,
+          "route": "HER → ATH",
+          "flightNo": "Aegean/Sky Express (representative)",
+          "cabin": "Economy",
+          "notes": "Departs ~12:15 PM, arrives Athens ~1:05 PM. $253 total for the family (cash fare, per your search). Aegean and Sky Express both fly this route frequently; 2027 schedules aren't loaded yet, so this is a representative flight at your quoted time and price.",
+          "flag": "Not yet bookable - 2027 schedule not published. Times and price are yours from a current search."
+        },
+        {
+          "start": "1:05 PM",
+          "end": "1:40 PM",
+          "title": "Arrive ATH - deplane, collect bags",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "1:40 PM",
+          "end": "2:25 PM",
+          "title": "Taxi to Grand Hyatt Athens",
+          "detail": "~35-44 km, ~35-45 min. Athens airport has a fixed taxi rate to the city center (~€40 day / €55 night); a pre-booked private van is a comfortable alternative with luggage and 2 kids.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 55.0,
+          "notes": "Fixed airport taxi ~€40-55, or a pre-booked private transfer at a similar rate."
+        },
+        {
+          "start": "2:25 PM",
+          "end": "2:50 PM",
+          "title": "Grand Hyatt Athens - check in, drop bags",
+          "detail": "115 Syngrou Avenue. Grand Suite via Suite Night Award; if the room isn't ready, leave bags and head out.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "World of Hyatt",
+          "points": "20000/night (+ Suite Night Award for Grand Suite)",
+          "roomType": "Grand Suite (via Suite Night Award upgrade)",
+          "address": "115 Syngrou Avenue, 117 45 Athens, Greece",
+          "notes": "20,000 points/night + a Suite Night Award to upgrade all 4 of you to the Grand Suite. Breakfast included daily. Rooftop pool with Acropolis views. Number of Athens nights still TBD - adjust once the return flight is set.",
+          "cancelBy": "Not yet booked - pending total nights decision"
+        },
+        {
+          "start": "2:50 PM",
+          "end": "4:30 PM",
+          "title": "Rest / freshen up at the hotel",
+          "detail": "Easy landing after the travel morning and in the June afternoon heat - regroup before an evening out.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "4:30 PM",
+          "end": "4:45 PM",
+          "title": "Taxi to Plaka",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        },
+        {
+          "start": "4:45 PM",
+          "end": "6:45 PM",
+          "title": "Explore Plaka, Anafiotika & Monastiraki",
+          "detail": "Athens's old town below the Acropolis - pedestrian lanes, the tiny whitewashed Anafiotika quarter that feels like a Cycladic island village, and the lively Monastiraki area. An easy, low-key first evening on foot.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Tzitzikas kai Mermigas or a Plaka taverna",
+          "detail": "Casual, popular Greek mezze spot - fresh chips the kids will love and traditional plates for the adults. Plenty of relaxed family tavernas nearby if you'd rather just wander into one.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 90.0,
+          "notes": "Mezze/taverna pricing: 2 adult mains + shared plates, kids on simple items (chips, chicken, souvlaki) or sharing, minimal wine. ~€75-85/$80-90."
+        },
+        {
+          "start": "8:45 PM",
+          "end": "9:00 PM",
+          "title": "Taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        }
+      ]
+    },
+    {
+      "date": "Saturday, June 19, 2027",
+      "title": "Athens - Acropolis",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:00 AM",
+          "end": "7:45 AM",
+          "title": "Breakfast at hotel (early)",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "7:45 AM",
+          "end": "8:00 AM",
+          "title": "Taxi to the Acropolis",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        },
+        {
+          "start": "8:00 AM",
+          "end": "10:00 AM",
+          "title": "Acropolis & Parthenon - 8 AM timed entry",
+          "detail": "The one essential Athens site. Book the 8:00 AM slot in advance - in June the marble becomes a heat sink and gets brutally hot and crowded by late morning, so early is the whole game. It's an open-air archaeological site, not a museum. Allow ~90 min-2 hrs on the rock.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 60.0,
+          "notes": "~€30/adult in peak season; kids under 18 free (under-6 always free). Budget ~€60/$65 for 2 adults. Book the 8 AM timed slot ~1 week ahead - morning slots sell out first in June.",
+          "menuUrl": "https://theacropolismuseum.gr/en",
+          "flag": "Hats, water, and real shoes - the marble is slippery and there's almost no shade up top."
+        },
+        {
+          "start": "10:00 AM",
+          "end": "10:20 AM",
+          "title": "Walk down into Plaka",
+          "detail": "Descend the pedestrian paths from the Acropolis straight into the old town.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "10:20 AM",
+          "end": "11:30 AM",
+          "title": "Explore Plaka & Anafiotika by daylight",
+          "detail": "Wander the lanes, small shops, the island-like Anafiotika streets - shady and easy after the climb.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "11:45 AM",
+          "end": "1:15 PM",
+          "title": "Lunch - To Kafeneio, Plaka",
+          "detail": "Authentic, relaxed Greek taverna at the foot of the Acropolis - familiar plates for the kids, classic Greek cooking for the adults.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 90.0,
+          "notes": "Taverna pricing: 2 adult mains + kids on simple dishes/sharing, minimal wine. ~€75-85/$80-90."
+        },
+        {
+          "start": "1:15 PM",
+          "end": "1:35 PM",
+          "title": "Taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        },
+        {
+          "start": "1:35 PM",
+          "end": "4:45 PM",
+          "title": "Midday heat break - Grand Hyatt rooftop pool",
+          "detail": "Deliberate downtime through the hottest part of a June afternoon. The rooftop pool has Acropolis views - the kids get pool time, everyone resets before the evening.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "4:45 PM",
+          "end": "5:00 PM",
+          "title": "Taxi to the Panathenaic Stadium",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        },
+        {
+          "start": "5:00 PM",
+          "end": "6:15 PM",
+          "title": "Panathenaic Stadium (Kallimarmaro)",
+          "detail": "The all-marble stadium that hosted the first modern Olympics in 1896. Kids get full access to the track and can run a lap, climb the stands, and walk the athletes' tunnel - active and fun, not a static museum stop. Late-afternoon timing avoids the worst heat on the marble.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 25.0,
+          "notes": "€10/adult, kids reduced/under-6 free -> ~€22-25 for the family. Open till 7 PM (last entry 6:30). Tickets sold on site only. Includes an audio guide.",
+          "flag": "Marble stands get hot and the steps are steep - good shoes, watch the kids on the stairs."
+        },
+        {
+          "start": "6:15 PM",
+          "end": "7:00 PM",
+          "title": "Stroll the National Garden & Zappeion",
+          "detail": "Shady public garden right by the stadium - ponds, big trees, a easy green wind-down at golden hour. Walkable from the stadium.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "7:15 PM",
+          "end": "7:30 PM",
+          "title": "Taxi to dinner",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Kuzina (Acropolis view), Thissio",
+          "detail": "Modern Greek on Adrianou Street under the Temple of Hephaestus, with an Acropolis view from the rooftop - a memorable Athens dinner that's still relaxed. Book well ahead; it fills up. ~7 PM catches the sunset light.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 140.0,
+          "notes": "Nicer sit-down with a view - a small step up from the tavernas. 2 adult mains + kids on simpler plates, one glass of wine. ~€120-135/$130-145. Reserve in advance.",
+          "menuUrl": "https://www.kuzina.gr/"
+        },
+        {
+          "start": "9:15 PM",
+          "end": "9:30 PM",
+          "title": "Taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        }
+      ]
+    },
+    {
+      "date": "Sunday, June 20, 2027",
+      "title": "Athens Riviera - Lake Vouliagmeni",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:30 AM",
+          "title": "Taxi to Lake Vouliagmeni",
+          "detail": "~24 km south down the coast, ~25-30 min from Syngrou Avenue.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 35.0
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Lake Vouliagmeni - swim in the thermal lake",
+          "detail": "A natural brackish lake fed by underground thermal springs and the sea, ringed by cliffs - warm (~24-29C), calm, and unusually kid-friendly, with sunbeds, showers, and a cafe. The little Garra rufa fish give a natural 'fish spa' nibble that kids find hilarious. A real nature spot, not a built attraction - a great change of pace from the ancient sites.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️",
+          "est": 65.0,
+          "notes": "Entry ~€19/adult (weekend), ~€17/child 6-12, under-6 free -> ~€65-70 for the family + sunbeds. Arrive by opening to beat the Sunday crowd.",
+          "flag": "Sunscreen/lotion is NOT allowed in the lake - use a rash guard/UV shirt and hats instead, or apply after swimming."
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch by the water",
+          "detail": "The lake's own restaurant has a kids' menu, or head 5 min to a seaside taverna in Vouliagmeni.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 95.0,
+          "notes": "Seaside pricing a touch higher: 2 adult mains + kids simple plates, minimal wine. ~€85-90/$90-95."
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:45 PM",
+          "title": "Taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 35.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "5:30 PM",
+          "title": "Afternoon rest / rooftop pool",
+          "detail": "Relaxed last-built afternoon - pool and downtime. (Return flight home still open, so this is the current end of the planned days.)",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "5:45 PM",
+          "end": "6:00 PM",
+          "title": "Taxi to the Lycabettus funicular",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 15.0
+        },
+        {
+          "start": "6:00 PM",
+          "end": "7:15 PM",
+          "title": "Lycabettus Hill at sunset",
+          "detail": "Athens's highest point - a short funicular ride up to a 360 view over the whole city, the Acropolis, and out to the sea. Best at golden hour. Easy for the kids (you ride up, not hike).",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 30.0,
+          "notes": "Funicular ~€10 round trip/adult, reduced for kids -> ~€30 for the family."
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Kolonaki neighborhood",
+          "detail": "Come down into stylish, walkable Kolonaki at the foot of Lycabettus for a final Athens dinner - lots of relaxed tavernas and casual spots around the square.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0,
+          "notes": "2 adult mains + kids simple plates, one glass of wine. ~€90-95/$95-105."
+        },
+        {
+          "start": "9:15 PM",
+          "end": "9:30 PM",
+          "title": "Taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 15.0
         }
       ]
     }
@@ -2729,81 +2697,52 @@ class Component extends DCLogic {
       "name": "Still open / TBD",
       "items": [
         {
-          "name": "Sleigh ride reservation",
-          "note": "Red-Tail Canyon Farm, phone-only booking, (800) 678-4512 \u2014 book as soon as dates are locked"
+          "name": "Book FCO-HER nonstop once 2027 summer schedule loads (~Nov 2026-early 2027)",
+          "note": "June operators: Neos + Wizz Air Malta (ITA starts July only). ~2-3x/week, ~midday. Confirm a Fri Jun 11 nonstop exists; fallback 1-stop via Athens."
         },
         {
-          "name": "JJ Hills Christmas Dinner pricing",
-          "note": "call (509) 548-5807 to confirm current per-person pricing, reservations required"
+          "name": "Decide total nights in Athens",
+          "note": "Hotel is now set (Grand Hyatt Athens, 20K pts/night + Suite Night Award for the Grand Suite) - just need to lock the number of nights, which also depends on the return flight."
         },
         {
-          "name": "Sno-Park permit",
-          "note": "must be purchased ONLINE in advance \u2014 in-person vendors will likely be closed Christmas Day"
+          "name": "Book HER-ATH flight once 2027 schedule publishes",
+          "note": "Aegean/Sky Express, ~12:15 PM departure / ~1:05 PM arrival, ~$253 total (your quoted fare). Not bookable yet."
         },
         {
-          "name": "Turo pickup/drop-off exact location",
-          "note": "Reservation 59466401 lists pickup/return generically as 'SEA Seattle-Tacoma Intl Airport' -- host Indrawati will send the exact meeting address via the Turo app closer to the date, for both the Dec 19 pickup AND the Dec 26 return (now 4:00 PM, not Dec 27)."
+          "name": "Book Athens -> Miami return flight",
+          "note": "Explicitly left out per your request - still searching."
         },
         {
-          "name": "Colchuck's (formerly Bavarian Bistro & Bar) pricing",
-          "note": "recently rebranded from Bavarian Bistro & Bar, same menu/ownership -- exact entree and kids-item prices not published online, call (509) 548-5074 to confirm before booking"
+          "name": "Book Spinalonga boat + entry, Ancient sites, and Crete restaurant reservations",
+          "note": "All bookable closer to the date."
         },
         {
-          "name": "Visconti's kids menu pricing",
-          "note": "confirmed to have a kids menu (Sirved listing) but exact kids item prices not published -- call (509) 548-1213 to confirm"
+          "name": "Confirm Budget booster-seat rate at the counter",
+          "note": "2 booster seats requested on the reservation but not in the $456.09 - budget ~€90-120/$100-130 for the week as an estimate."
         },
         {
-          "name": "Baren Haus kids menu pricing",
-          "note": "kids menu confirmed (chicken strips, pizza sandwiches) but exact prices not published -- call ahead to confirm"
+          "name": "Book Acropolis 8 AM timed-entry tickets (~1 week ahead)",
+          "note": "Morning slots sell out first in June; ~€30/adult, kids free."
         },
         {
-          "name": "Ludwig's pricing",
-          "note": "menu prices not itemized online (per-person range reported $30-50) -- call (509) 548-6625 to confirm before booking"
+          "name": "Reserve Kuzina (Acropolis-view dinner) in advance",
+          "note": "Fills up almost every night."
         },
         {
-          "name": "South Christmas Eve hours",
-          "note": "posted regular hours are 11am-9pm year-round with no reduced-hours pattern found, but no Christmas-Eve-specific posting like Yodelin's either -- call (509) 888-4328 to reconfirm closer to the trip"
+          "name": "St. Peter's: dress code + early arrival",
+          "note": "Shoulders and knees covered for everyone (enforced at security, no exceptions). Get there before ~9 AM to beat the security line. Dome climb is optional and paid on site only."
         },
         {
-          "name": "Yodelin Christmas Eve/Day holiday hours (2026)",
-          "note": "confirmed open both days via Yodelin's own posted holiday-hours events, but those postings were from the 2025 season -- reconfirm the 2026 holiday hours repeat closer to December"
+          "name": "Book Gladiator School - 3 PM session, Jun 9",
+          "note": "Gruppo Storico Romano, Via Appia Antica 18. €130/pp age 6+. Both kids training = ~€260; parents watch free. Reserve the 3 PM slot ahead."
         },
         {
-          "name": "Turo snow chains",
-          "note": "Not included in reservation 59466401 (AWD + snow tires only). Available as a $35/trip add-on through the host, or bring/rent your own. Dec 21 falls in Stevens Pass's historically snowiest week -- worth deciding before the trip rather than at the pass."
+          "name": "Book Catacombs of San Sebastiano (Jun 9)",
+          "note": "Guided-only, book ahead in summer. San Callisto is closed Wednesdays, so we're using San Sebastiano (open daily 10-5)."
         },
         {
-          "name": "Courtyard SeaTac early-morning shuttle",
-          "note": "Confirm the hotel's ~5:30 AM airport shuttle schedule at check-in on Dec 26 -- there's no car for the Dec 27 airport run anymore since the Turo is returned the afternoon before. Have a rideshare fallback in mind if the shuttle doesn't run that early."
-        },
-        {
-          "name": "Bainbridge Island ferry sailing times (Dec 20, 2026)",
-          "note": "Washington State Ferries' Winter 2026-27 Seattle\u2013Bainbridge schedule isn't published yet as of July 2026 (WSF typically posts seasonal schedules only a few months ahead). Planned around the route's typical daytime frequency (~every 40-50 min). Reconfirm exact departure times on wsdot.com/ferries once the winter schedule posts, likely this fall."
-        },
-        {
-          "name": "Reindeer Farm reservation",
-          "note": "Quoted at $296.80 for the family (10 AM tour slot) but not yet booked/paid \u2014 timed-entry, online only, no walk-ins. The farm's own site warns holiday tours sell out months in advance; book by Sept/Oct 2026."
-        }
-      ]
-    },
-    {
-      "name": "Also considered",
-      "items": [
-        {
-          "name": "Cashmere / Aplets & Cotlets",
-          "note": "10 min from Leavenworth \u2014 optional half-day add-on, not included given the trip is already at 9 days"
-        },
-        {
-          "name": "Stevens Pass ski resort",
-          "note": "skipped \u2014 matches the no-ski-lessons pattern from prior trips unless someone already skis"
-        },
-        {
-          "name": "Lake Chelan",
-          "note": "recommended against \u2014 quiet/off-season in December, not worth the ~1hr detour"
-        },
-        {
-          "name": "Downtown Leavenworth outdoor ice rink",
-          "note": "unreliable \u2014 the marketed rink appears to still be a proposed, not-yet-built project as of Sept 2025 city council records; not built into the plan"
+          "name": "Confirm with Domes: do kids eat free (and where) on our points stay?",
+          "note": "The \"Kids Stay, Eat & Play Free\" (under-12) offer is published for DIRECT phone/email bookings and marked valid 2026 - our booking is a Marriott points award for 2027, so it likely does NOT auto-apply. Email reservations (info@domesofelounda.com / +30 231 0810624) to confirm whether under-12s eat free, at which restaurants (buffet vs a la carte), and your board basis."
         }
       ]
     }

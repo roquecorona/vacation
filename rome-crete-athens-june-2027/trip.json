@@ -1,0 +1,1476 @@
+{
+  "meta": {
+    "title": "Rome, Crete & Athens June 2027",
+    "dates": "June 7-20+, 2027 (Miami -> Rome -> Crete -> Athens -> Miami, return flight and exact Athens length still TBD)",
+    "route": [
+      {
+        "name": "Miami",
+        "sub": "home (MIA)"
+      },
+      {
+        "name": "Rome",
+        "sub": "3 nights · Hyatt Regency Rome Central"
+      },
+      {
+        "name": "Elounda, Crete",
+        "sub": "7 nights · Domes of Elounda (BOOKED)"
+      },
+      {
+        "name": "Athens",
+        "sub": "a few nights · Grand Hyatt Athens"
+      },
+      {
+        "name": "Miami",
+        "sub": "home (MIA) - return flight TBD"
+      }
+    ]
+  },
+  "days": [
+    {
+      "date": "Monday, June 7, 2027",
+      "title": "Miami -> Rome (overnight flight)",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "5:00 PM",
+          "end": "5:45 PM",
+          "title": "Dinner at home before leaving",
+          "detail": "Eat a real meal at home so nobody is relying on airport food before the overnight flight.",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "5:50 PM",
+          "end": "6:15 PM",
+          "title": "Drive from home to MIA",
+          "detail": "~30-40 min, budgeting extra for end-of-day traffic and drop-off with a family of 4 and bags.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "6:15 PM",
+          "end": "6:40 PM",
+          "title": "Check in & bag drop - American counter (2 checked bags)",
+          "detail": "International check-in for a family of 4 with 2 checked bags. Have passports ready. This puts you at the gate ~1 hr before boarding - tighter than a 3-hr-early arrival, so leave on time and use TSA PreCheck.",
+          "typeName": "Luggage",
+          "emoji": "🧳",
+          "est": 0.0,
+          "notes": "American transatlantic Main Cabin baggage: the 1st checked bag is FREE per passenger. Checking 2 bags across 4 travelers means both are 'first bags' for two different people = $0. (If both bags were put under one passenger, the 2nd would be $200. And even a 3rd/4th bag would still be free as each person's first bag - so there's no reason to pay a bag fee here.) Basic Economy is the exception, but this is a standard Main Cabin partner award, so the free-first-bag allowance applies."
+        },
+        {
+          "start": "6:40 PM",
+          "end": "7:00 PM",
+          "title": "Security screening",
+          "detail": "TSA at MIA - allow a generous buffer for an international evening departure with two kids. TSA PreCheck (KTNs are on the reservation) will speed this up if the lanes are open.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "7:15 PM",
+          "title": "Walk to gate, settle in",
+          "detail": "Last bathroom stop, get the kids situated before boarding. Dinner already handled at home.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "7:15 PM",
+          "end": "8:00 PM",
+          "title": "Boarding - AA52",
+          "detail": "International boarding typically starts ~45 min before departure.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "8:00 PM",
+          "end": "12:05 PM",
+          "title": "American Airlines AA52 - Nonstop - 10h5m",
+          "detail": "MIA -> FCO, Economy (Main Cabin), 4 passengers. Partner award booked via Alaska Atmos Rewards on American metal (oneworld). Lands Tuesday, June 8 at 12:05 PM local Rome time.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "program": "Alaska Atmos Rewards",
+          "points": "140000",
+          "paid": 22.4,
+          "notes": "BOOKED - Alaska confirmation code HBUYUG. 35,000 Atmos Rewards points + $5.60 per passenger x 4 = 140,000 points + $22.40 total (charged to Visa ...6730). Passengers: Roque Corona, Jennifer Borges, Roque Luis Corona, Chloe Corona. Seats 31 A-D assigned. American Airlines confirmation code AKUHCI (use this on aa.com to manage seats/the partner-operated flight); Alaska/Atmos confirmation code HBUYUG. Meal service (complimentary, Main Cabin): dinner served ~9:00-9:30 PM shortly after takeoff, then a lights-out stretch, and a lighter breakfast ~10:00-10:30 AM Rome time (about an hour before the 12:05 PM landing). Kids ate dinner at home at 5 PM, so they may skip the onboard dinner - fine for getting them to sleep. The pre-landing breakfast is the useful one since you arrive at lunchtime.",
+          "route": "MIA → FCO",
+          "flightNo": "American 52",
+          "cabin": "Economy",
+          "seats": "31A, 31B, 31C, 31D",
+          "flag": "Overnight flight - lands 12:05 PM Rome time the next day. Kids will have been awake ~16+ hrs by landing; Day 1 in Rome is kept light on purpose.",
+          "conf": "HBUYUG (Alaska) / AKUHCI (American)"
+        }
+      ]
+    },
+    {
+      "date": "Tuesday, June 8, 2027",
+      "title": "Arrive Rome",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "12:05 PM",
+          "end": "1:15 PM",
+          "title": "Land at FCO - passport, bags, customs",
+          "detail": "Passport control, baggage claim, and customs for a family of 4.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "1:15 PM",
+          "end": "1:25 PM",
+          "title": "Walk to Fiumicino Aeroporto train station",
+          "detail": "Signposted inside the terminal, ~5 min from baggage claim.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "1:30 PM",
+          "end": "2:02 PM",
+          "title": "Leonardo Express - FCO to Roma Termini",
+          "detail": "Non-stop, 32 min, Platform 1; departs every 15 min - just catch the next one.",
+          "typeName": "Transportation",
+          "emoji": "🚆",
+          "est": 30.0,
+          "notes": "• Fare €14/adult x 2 = €28 (station price)\n• Kids 4-12 ride free with a paying adult - both covered\n• ≈ $30 total; no need to pre-book a departure",
+          "route": "FCO → Roma Termini",
+          "flightNo": "Leonardo Express (Trenitalia)"
+        },
+        {
+          "start": "2:02 PM",
+          "end": "2:15 PM",
+          "title": "Walk to hotel from Roma Termini",
+          "detail": "~550m, ~7-10 min with luggage and kids.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "2:20 PM",
+          "end": "2:45 PM",
+          "title": "Hyatt Regency Rome Central - check in, drop bags",
+          "detail": "Regency Suite; request early check-in, otherwise store bags and head out.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "World of Hyatt",
+          "points": "60000",
+          "notes": "• 20,000 pts/night x 3 = 60,000 pts\n• Suite Upgrade Award applied → Regency Suite\n• Breakfast included daily (up to 4 guests)",
+          "nights": "3 nights (Tue-Fri)",
+          "roomType": "Regency Suite - separate lounge area, terrace",
+          "address": "Via Filippo Turati, 171, 00185 Rome, Italy",
+          "cancelBy": "Not yet booked"
+        },
+        {
+          "start": "3:00 PM",
+          "end": "4:30 PM",
+          "title": "Late lunch / early dinner - La Famiglia, Esquilino",
+          "detail": "Traditional Roman comfort food, ~10 min walk - an easy first meal after the overnight flight.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 62.0,
+          "menuUrl": "https://www.ristorantelafamiglia.it/en/menu/",
+          "notes": "• Mains ~€15 each\n• 2 adult mains + 2 kids sharing simple pasta\n• Entrees only, no drinks/dessert: ~€55-60 / $62\n• Rating ~4.0-4.2 (your lowest-rated Rome pick)"
+        },
+        {
+          "start": "4:45 PM",
+          "end": "6:00 PM",
+          "title": "Piazza della Repubblica & Baths of Diocletian",
+          "detail": "~10 min walk; the fountain plus a quick free look inside Santa Maria degli Angeli, built into the ancient baths.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "6:00 PM",
+          "end": "6:30 PM",
+          "title": "Gelato near Piazza della Repubblica",
+          "detail": "The one sweet stop of the day.",
+          "typeName": "Dining",
+          "emoji": "🍨",
+          "est": 20.0
+        },
+        {
+          "start": "6:30 PM",
+          "end": "7:00 PM",
+          "title": "Walk back to hotel, settle in",
+          "detail": "Early night - the kids will be wiped after the overnight flight.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "date": "Wednesday, June 9, 2027",
+      "title": "Rome - Colosseum, Catacombs & Gladiator School",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:20 AM",
+          "title": "Taxi to the Colosseum",
+          "detail": "~3 km, ~15 min.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 12.0,
+          "notes": "• Rome taxi: €3 base + ~€1.3/km, €9 min → ~€10-12"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "11:15 AM",
+          "title": "Colosseum (interior) - for the kids",
+          "detail": "Just the Colosseum - skipping Forum/Palatine (you've done them twice). Book the earliest timed slot.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 62.0,
+          "menuUrl": "https://www.thecolosseum.org/tickets/",
+          "notes": "• Tickets ~€18-24/adult; kids under 18 free\n• ~€55-60 / $62 for the two of you\n• Book ~30 days ahead\n• Ticket includes Forum/Palatine (you just won't use it)"
+        },
+        {
+          "start": "11:15 AM",
+          "end": "11:35 AM",
+          "title": "Walk to Monti for lunch",
+          "detail": "~15-20 min stroll from the Colosseum.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "11:45 AM",
+          "end": "12:50 PM",
+          "title": "Lunch - Ai Tre Scalini, Monti",
+          "detail": "Classic Roman trattoria/wine bar (~4.4); early lunch to open up the afternoon.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 44.0,
+          "menuUrl": "https://restaurantguru.com/Ai-Tre-Scalini-Rome/menu",
+          "notes": "• Menu: lasagna €10, eggplant parm €12, carpaccio €14\n• 2 adult primi + kids simple pasta, no wine\n• Entrees only: ~€40 / $44"
+        },
+        {
+          "start": "12:50 PM",
+          "end": "1:20 PM",
+          "title": "Taxi to the Appian Way (Catacombs of San Sebastiano)",
+          "detail": "~5-6 km south, ~25-30 min.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 18.0,
+          "notes": "• Rome taxi: €3 base + ~€1.3/km → ~€16-20"
+        },
+        {
+          "start": "1:20 PM",
+          "end": "1:40 PM",
+          "title": "Arrive & join the next guided tour",
+          "detail": "20-min cushion for tickets, bathroom, and the next English tour (run ~every 30 min).",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "1:40 PM",
+          "end": "2:25 PM",
+          "title": "Catacombs of San Sebastiano",
+          "detail": "Ancient underground burial tunnels, guided ~45 min; using San Sebastiano since San Callisto closes Wednesdays.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 42.0,
+          "menuUrl": "https://www.catacombe.org/en/",
+          "notes": "• €15/adult, ages 7-16 €12, under 7 free → ~€40-42\n• Guided only; open daily 10-5 (last entry 4:30)",
+          "flag": "Cool, damp, stairs and uneven passages underground - not stroller-friendly."
+        },
+        {
+          "start": "2:25 PM",
+          "end": "2:45 PM",
+          "title": "Walk the ancient Appian Way to the Gladiator School",
+          "detail": "~1.5 km along the original Roman road; grab a quick taxi (~5 min) if the sun's too much.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "2:45 PM",
+          "end": "3:00 PM",
+          "title": "Check in & gear up",
+          "detail": "15-min buffer before the 3:00 start - check in, bathroom, tunics on.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "3:00 PM",
+          "end": "5:00 PM",
+          "title": "Gladiator School - training session",
+          "detail": "Gruppo Storico Romano - the 2 kids train (tunic, sword, drills, tournament, certificate) while you two watch.",
+          "typeName": "Excursion",
+          "emoji": "⚔️",
+          "est": 260.0,
+          "notes": "• €130/person ages 6+; both kids = €260 / $285\n• Parents watch for free\n• Book the 3:00 PM slot; no ID check (readiness matters, best ~8+)",
+          "flag": "Hard wooden swords are used - closed shoes and clothes that can get dusty."
+        },
+        {
+          "start": "5:00 PM",
+          "end": "5:15 PM",
+          "title": "Wrap up & meet your ride",
+          "detail": "Photos and certificates; arrange the return in advance (next block).",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "5:15 PM",
+          "end": "5:50 PM",
+          "title": "Pre-arranged driver / taxi back to hotel",
+          "detail": "~7 km back to the Termini area, ~25-30 min.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 24.0,
+          "notes": "• Appian Way isn't taxi-cruising - pre-book a driver for 5:00 PM\n• Backups: FreeNow app, or have reception call one (060609)\n• Taxi meter ~€22-26"
+        },
+        {
+          "start": "5:50 PM",
+          "end": "7:00 PM",
+          "title": "Rest / freshen up at hotel",
+          "detail": "Downtime before dinner after a big active day.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:15 PM",
+          "end": "8:45 PM",
+          "title": "Dinner - Trattoria Vecchia Roma, Esquilino",
+          "detail": "Historic (1916) Roman trattoria ~10 min away (~4.4), famous for amatriciana flambeed from a cheese wheel.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 55.0,
+          "menuUrl": "https://restaurantguru.com/Vecchia-Roma-Rome-5",
+          "notes": "• A la carte mains ~€12-16\n• 2 adult mains + kids simple pasta, minimal wine\n• Entrees only: ~€50 / $55\n• Reserve ahead - long queues"
+        }
+      ]
+    },
+    {
+      "date": "Thursday, June 10, 2027",
+      "title": "Rome - Vatican & Historic Center",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel (early)",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:15 AM",
+          "end": "8:40 AM",
+          "title": "Taxi to the Vatican",
+          "detail": "~5.5 km, ~20-25 min; early to beat the security line.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 16.0,
+          "notes": "• Rome taxi: €3 base + ~€1.3/km → ~€14-18"
+        },
+        {
+          "start": "8:45 AM",
+          "end": "11:00 AM",
+          "title": "St. Peter's Square & Basilica",
+          "detail": "The square, then the basilica interior (Michelangelo's Pieta, Bernini's baldachin); entry is free - the line is security.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 40.0,
+          "menuUrl": "https://www.basilicasanpietro.va/en",
+          "notes": "• Basilica: FREE, no ticket\n• Optional dome climb (on-site only): €8 stairs / €10 lift+stairs, then ~320 steps → ~€30-40 family\n• Paid skip-the-line timed reservation available online",
+          "flag": "Strict dress code at security, no exceptions: shoulders AND knees covered, kids included."
+        },
+        {
+          "start": "11:00 AM",
+          "end": "11:25 AM",
+          "title": "Taxi across the river to the Pantheon area",
+          "detail": "~3 km, ~10-15 min.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 12.0,
+          "notes": "• Rome taxi ~€10-13"
+        },
+        {
+          "start": "11:45 AM",
+          "end": "1:15 PM",
+          "title": "Lunch - Cul de Sac, near Piazza Navona",
+          "detail": "Historic casual wine bar off Piazza Navona; high chairs, family-friendly - book ahead.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 66.0,
+          "menuUrl": "https://www.enotecaculdesacroma.it/servizi.html",
+          "notes": "• Wine-bar mains ~€18-20\n• 2 adult mains + kids simple pasta, one glass of wine\n• Entrees only: ~€60 / $66"
+        },
+        {
+          "start": "1:20 PM",
+          "end": "2:00 PM",
+          "title": "Piazza Navona",
+          "detail": "Baroque fountains and street artists; open space for the kids to move.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "2:10 PM",
+          "end": "2:50 PM",
+          "title": "Pantheon",
+          "detail": "~5 min walk; the intact ancient dome and oculus. Timed ticket required.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 12.0,
+          "menuUrl": "https://www.pantheonroma.com/en/",
+          "notes": "• ~€5/adult x 2 = ~€10; kids under 18 free\n• Reserve a timed slot online ahead"
+        },
+        {
+          "start": "2:50 PM",
+          "end": "3:10 PM",
+          "title": "Walk to the Trevi Fountain",
+          "detail": "~20 min through the old streets.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "3:10 PM",
+          "end": "3:45 PM",
+          "title": "Trevi Fountain",
+          "detail": "Coin toss and people-watching; very crowded - keep the kids close.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "4:00 PM",
+          "end": "4:20 PM",
+          "title": "Taxi back to hotel",
+          "detail": "~3 km, ~15 min.",
+          "typeName": "Transportation",
+          "emoji": "🚕",
+          "est": 12.0,
+          "notes": "• Rome taxi ~€10-13"
+        },
+        {
+          "start": "4:20 PM",
+          "end": "6:00 PM",
+          "title": "Rest at hotel - free time, start packing",
+          "detail": "Light afternoon before the early travel day to Crete.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Rifugio Romano, Esquilino",
+          "detail": "Casual neighborhood trattoria/pizzeria near the hotel (~4.5); easy last night.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 52.0,
+          "menuUrl": "https://restaurantguru.com/Rifugio-Romano-Rome/menu",
+          "notes": "• Menu: pizza ~€13, amatriciana €13, saltimbocca €15\n• 2 adult mains (cheaper pizzas) + kids simple pizza/pasta\n• Entrees only: ~€48-50 / $52"
+        }
+      ]
+    },
+    {
+      "date": "Friday, June 11, 2027",
+      "title": "Fly to Crete (Elounda)",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:45 AM",
+          "end": "8:35 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:35 AM",
+          "end": "8:55 AM",
+          "title": "Check out of Hyatt Regency Rome Central",
+          "detail": "Settle any incidentals and gather the bags.",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "8:55 AM",
+          "end": "9:10 AM",
+          "title": "Walk to Roma Termini",
+          "detail": "~550m, ~7-10 min with luggage.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:47 AM",
+          "title": "Leonardo Express - Roma Termini to FCO",
+          "detail": "Non-stop, 32 min; departs ~every 15 min.",
+          "typeName": "Transportation",
+          "emoji": "🚆",
+          "est": 30.0,
+          "notes": "• Fare €14/adult x 2 = €28; kids 4-12 free\n• ≈ $30 total",
+          "route": "Roma Termini → FCO",
+          "flightNo": "Leonardo Express (Trenitalia)"
+        },
+        {
+          "start": "9:47 AM",
+          "end": "10:00 AM",
+          "title": "Walk to check-in at FCO",
+          "detail": "The train station connects directly to the terminal.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "10:00 AM",
+          "end": "10:35 AM",
+          "title": "Check in & bag drop (2 checked bags)",
+          "detail": "Rome→Crete is intra-EU (Schengen) - no passport control, but allow time with 2 checked bags.",
+          "typeName": "Luggage",
+          "emoji": "🧳"
+        },
+        {
+          "start": "10:35 AM",
+          "end": "11:05 AM",
+          "title": "Security screening",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "11:05 AM",
+          "end": "11:15 AM",
+          "title": "Walk to gate, settle in",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "11:15 AM",
+          "end": "11:55 AM",
+          "title": "Boarding - FCO → HER",
+          "detail": "European boarding starts ~40 min before departure.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "11:55 AM",
+          "end": "3:30 PM",
+          "title": "Wizz Air Malta / Neos - FCO → HER - Nonstop - ~2h20m",
+          "detail": "Rome (Fiumicino) → Heraklion, Economy, 4 passengers. Seasonal summer route; ~11:55 AM departure.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "est": 720.0,
+          "route": "FCO → HER",
+          "flightNo": "Neos / Wizz Air Malta (representative)",
+          "cabin": "Economy",
+          "notes": "• Chosen: ~11:55 AM departure → ~3:30 PM HER (HER is +1 hr vs Rome)\n• Midday slot is Wizz Air Malta; Neos also flies midday\n• Seasonal route - June operators: Neos + Wizz Air Malta (ITA only from July)\n• 2027 fares not loaded - ~$180/pax placeholder → ~$720 family",
+          "flag": "Not bookable yet (2027 loads ~Nov 2026-early 2027). Heads-up: in 2026 the 11:55 Wizz flight ran Mon/Wed/Thu/Sat - NOT Fridays - so confirm a Friday 6/11 midday nonstop once the schedule loads (Neos may cover Friday). Fallback: 1-stop via Athens."
+        },
+        {
+          "start": "3:30 PM",
+          "end": "3:40 PM",
+          "title": "Deplane & walk to baggage claim",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "3:40 PM",
+          "end": "4:20 PM",
+          "title": "Collect bags at the carousel",
+          "detail": "~30-40 min - HER gets busy in summer and you have 2 checked bags.",
+          "typeName": "Luggage",
+          "emoji": "🧳"
+        },
+        {
+          "start": "4:20 PM",
+          "end": "4:45 PM",
+          "title": "Budget rental desk (in terminal) - paperwork & booster seats",
+          "detail": "Present license, passport, and a credit card in Roque's name for the deposit; add the 2 booster seats here.",
+          "typeName": "Rental Car",
+          "emoji": "🚗",
+          "est": 456.09,
+          "conf": "Budget 00341393US3 / Priceline 118-226-896-27",
+          "notes": "• Budget, HER - conf 00341393US3 (Priceline 118-226-896-27)\n• $456.09 total, due at pickup (nothing prepaid)\n• Automatic, unlimited mileage, additional driver, free cancellation\n• +2 booster seats charged at the counter (~€90-120 / $100-130 est)",
+          "flag": "Reservation lists a 2:00 PM pickup but you land ~3:15 and won't reach the desk until ~4 PM. Budget usually holds the car, but call ahead or modify the reservation to a later pickup so it isn't released as a no-show."
+        },
+        {
+          "start": "4:45 PM",
+          "end": "5:00 PM",
+          "title": "Shuttle bus to the car park",
+          "detail": "Budget's desk is in the terminal; a short bus ride reaches the car lot.",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "5:00 PM",
+          "end": "5:25 PM",
+          "title": "Collect & inspect the car, fit booster seats",
+          "detail": "Photograph any existing damage, confirm fuel level (full-to-full), install the 2 booster seats.",
+          "typeName": "Rental Car",
+          "emoji": "🚗"
+        },
+        {
+          "start": "5:25 PM",
+          "end": "6:30 PM",
+          "title": "Drive HER → Elounda",
+          "detail": "~68 km on the A90 coastal motorway (toll-free) via Hersonissos, ~1h-1h10.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "6:30 PM",
+          "end": "6:50 PM",
+          "title": "Domes of Elounda, Autograph Collection - check in",
+          "detail": "Family, 1 Bedroom Suite - 1 King bed + sofa bed, garden view, balcony, outdoor whirlpool. Separate bedroom and living area. Booked and confirmed.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "Marriott Bonvoy",
+          "points": "648000",
+          "conf": "76388550",
+          "notes": "• BOOKED - conf 76388550\n• 648,000 Marriott Bonvoy pts, 7 nights (Jun 11-18), 2 adults + 2 kids\n• Guest: Roque Corona; Room 1 non-commissionable rate\n• Free kids club ages 4-12 (both qualify)",
+          "nights": "7 nights (Fri Jun 11 - Fri Jun 18, 2027)",
+          "roomType": "Family, 1 Bedroom Suite (1 King + sofa bed, garden view, balcony, whirlpool)",
+          "address": "Tsifliki, Elounda, Crete, Greece 72053",
+          "cancelBy": "Free cancellation before 11:59 PM local hotel time, May 28, 2027 (14 days before arrival)"
+        },
+        {
+          "start": "6:50 PM",
+          "end": "7:50 PM",
+          "title": "Settle in / freshen up",
+          "detail": "Light first evening after a full travel day - unpack a little, get the kids sorted.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "8:00 PM",
+          "end": "9:15 PM",
+          "title": "Dinner - Thólos (resort buffet)",
+          "detail": "The resort's main sea-view buffet restaurant (Greek & Mediterranean), with a kids' buffet and rotating themed nights - zero transit on night one.",
+          "typeName": "Dining",
+          "emoji": "🍽️",
+          "est": 120.0,
+          "menuUrl": "https://www.marriott.com/en-us/dining/restaurant-bar/herak-domes-of-elounda-autograph-collection/5722236-tholos-restaurant-dinner.mi",
+          "notes": "• Half-board buffet venue (breakfast + international buffet dinner); themed nights, kids buffet, veg options\n• Your 648k-point rate is likely ROOM-ONLY - dinner would be a paid buffet unless you add Half Board\n• Kids-eat-free promo is for DIRECT phone/email bookings, 2026 - unconfirmed for a 2027 points stay; verify with Domes\n• No published a la carte buffet price. Proxy: Full-Board supplement €40/adult, €20/child per night\n• Inferred family buffet dinner ~€90-130 / ~$120 (estimate) - could drop a lot if under-12s eat free"
+        }
+      ]
+    },
+    {
+      "date": "Saturday, June 12, 2027",
+      "title": "Spinalonga Island",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "6:30 AM",
+          "end": "7:15 AM",
+          "title": "Breakfast at hotel - early start",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "7:30 AM",
+          "end": "7:45 AM",
+          "title": "Drive to Plaka village boat dock",
+          "detail": "~5km from Elounda.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "8:00 AM",
+          "end": "8:30 AM",
+          "title": "Boat to Spinalonga",
+          "detail": "First boat of the day, deliberately - the island gets crowded and hot by late morning.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 48.0,
+          "notes": "~€10-12/person round-trip x4 -> ~€44-48/$48."
+        },
+        {
+          "start": "8:30 AM",
+          "end": "10:30 AM",
+          "title": "Spinalonga Island",
+          "detail": "The Venetian fortress and former leper colony - walkable ruins and streets, not an indoor museum.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 100.0,
+          "notes": "€20/adult entrance, kids likely free/reduced (verify at booking) -> budgeting ~€90-100/$100 for the family total (boat + entry)."
+        },
+        {
+          "start": "10:30 AM",
+          "end": "11:00 AM",
+          "title": "Boat back to Plaka village",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "11:15 AM",
+          "end": "12:30 PM",
+          "title": "Lunch - Taverna Spinalonga, Plaka village",
+          "detail": "Seaside, fresh fish, right by the boat dock.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 105.0
+        },
+        {
+          "start": "1:00 PM",
+          "end": "1:15 PM",
+          "title": "Drive back to the resort",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "1:15 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Vilebrequin La Plage (resort)",
+          "detail": "Seaside Mediterranean/seafood, on-site.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 145.0
+        }
+      ]
+    },
+    {
+      "date": "Sunday, June 13, 2027",
+      "title": "Beach day / resort",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Resort beach & pool - free morning",
+          "detail": "No anchor today - kids club available (free, ages 4-12) if the kids want a program morning.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch - Antonino's (resort)",
+          "detail": "On-site Italian, wood-fired pizza/pasta.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Ostria, Elounda",
+          "detail": "Seafood, 1.4km from the resort.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 130.0
+        }
+      ]
+    },
+    {
+      "date": "Monday, June 14, 2027",
+      "title": "Agios Nikolaos",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:35 AM",
+          "title": "Drive to Agios Nikolaos",
+          "detail": "~15-20 min.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:35 AM",
+          "end": "11:30 AM",
+          "title": "Agios Nikolaos - Lake Voulismeni & harbor",
+          "detail": "Small saltwater lake connected to the harbor by a canal, lively waterfront promenade.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "11:45 AM",
+          "end": "1:00 PM",
+          "title": "Lunch - Karnagio (Pita tou Riga)",
+          "detail": "Right on Lake Voulismeni, grill-focused - arrive early, it's busy.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 105.0
+        },
+        {
+          "start": "1:15 PM",
+          "end": "1:35 PM",
+          "title": "Drive back to the resort",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "1:35 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Kanali, Elounda",
+          "detail": "Seafood, 3.5km from the resort.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 130.0
+        }
+      ]
+    },
+    {
+      "date": "Tuesday, June 15, 2027",
+      "title": "Elounda Boat Trip & Snorkeling",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:30 AM",
+          "title": "Drive to Elounda Boat Rentals",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Boat trip & snorkeling, Mirabello Bay",
+          "detail": "Elounda Boat Rentals & Watersports - family-run since 1984, no-license boat rentals, kayaking/SUP/snorkeling in the bay's sea caves.",
+          "typeName": "Excursion",
+          "emoji": "👞",
+          "est": 180.0,
+          "notes": "Half-day no-license boat rental estimate ~€150-180/$160-190 for the family - get a live quote closer to booking."
+        },
+        {
+          "start": "1:15 PM",
+          "end": "2:30 PM",
+          "title": "Lunch near the marina",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Blue Door (Mple Porta), Agios Nikolaos",
+          "detail": "Waterfront seafood, grilled octopus.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 125.0
+        }
+      ]
+    },
+    {
+      "date": "Wednesday, June 16, 2027",
+      "title": "Milatos Cave & Lassithi Plateau",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:45 AM",
+          "end": "9:30 AM",
+          "title": "Drive to Milatos Cave",
+          "detail": "~45 min.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "9:45 AM",
+          "title": "Walk to the cave entrance",
+          "detail": "~10-15 min walk, closed shoes needed.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:45 AM",
+          "end": "10:45 AM",
+          "title": "Milatos Cave",
+          "detail": "Free entry, family-friendly, low ceilings inside (bring a phone flashlight) - real historical site, not a museum.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "11:15 AM",
+          "end": "12:15 PM",
+          "title": "Drive to the Lassithi Plateau",
+          "detail": "~45min-1hr from the Milatos/Agios Nikolaos area.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "12:15 PM",
+          "end": "1:30 PM",
+          "title": "Lassithi Plateau - windmills & village",
+          "detail": "Famous (mostly decommissioned) stone windmills across the high plateau.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "1:30 PM",
+          "end": "2:45 PM",
+          "title": "Lunch - village taverna, Lassithi Plateau",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 95.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "4:00 PM",
+          "title": "Drive back to Elounda",
+          "detail": "~1h-1h15m.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "4:00 PM",
+          "end": "6:00 PM",
+          "title": "Rest / pool - free time",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Makris Fine Dining (resort)",
+          "detail": "Michelin-affiliated chef Petros Dimas - the special night of the Crete stay.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 220.0,
+          "notes": "Fine-dining pricing - reserve ahead."
+        }
+      ]
+    },
+    {
+      "date": "Thursday, June 17, 2027",
+      "title": "Beach day / resort - last day in Crete",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Resort beach & pool - free morning",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch - Taverna Maria's, Plaka village",
+          "detail": "Traditional Cretan dishes, one more trip to the pretty little harbor before leaving.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "5:30 PM",
+          "title": "Pool / beach - free afternoon, pack",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Taverna Giorgos-Giovanni, Plaka village",
+          "detail": "On the rocks overlooking Spinalonga - a fitting send-off view for the last Crete night.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 125.0
+        }
+      ]
+    },
+    {
+      "date": "Friday, June 18, 2027",
+      "title": "Crete -> Athens",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:00 AM",
+          "end": "7:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "7:45 AM",
+          "end": "8:05 AM",
+          "title": "Check out of Domes of Elounda, load the car",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "8:05 AM",
+          "end": "9:05 AM",
+          "title": "Drive Elounda -> Heraklion Airport",
+          "detail": "~65 km, allow a full hour plus a little cushion for morning traffic near Heraklion.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:05 AM",
+          "end": "9:25 AM",
+          "title": "Return rental car - Budget, HER",
+          "detail": "Drop-off booked for 9:00 AM. Fuel up near the airport first (full-to-full). Keep the contract/photos of the car.",
+          "typeName": "Rental Car",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:25 AM",
+          "end": "10:30 AM",
+          "title": "Coffee & wait at the airport",
+          "detail": "The 9:00 AM car drop leaves a generous cushion before the 12:15 PM flight - deliberate, so a slow Elounda-HER drive or the car return never puts the flight at risk. Relax, coffee, let the kids move around.",
+          "typeName": "Free Time",
+          "emoji": "⏰",
+          "est": 25.0
+        },
+        {
+          "start": "10:30 AM",
+          "end": "11:00 AM",
+          "title": "Check in & bag drop - domestic (2 checked bags)",
+          "detail": "Domestic Greek flight - lighter process than the international check-in, but still allow time with 2 checked bags.",
+          "typeName": "Luggage",
+          "emoji": "🧳"
+        },
+        {
+          "start": "11:00 AM",
+          "end": "11:30 AM",
+          "title": "Security screening",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "11:30 AM",
+          "end": "11:45 AM",
+          "title": "Walk to gate, settle in",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "11:45 AM",
+          "end": "12:15 PM",
+          "title": "Boarding - HER -> ATH",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "12:15 PM",
+          "end": "1:05 PM",
+          "title": "Aegean Airlines - HER -> ATH - Nonstop - ~50m",
+          "detail": "Heraklion -> Athens, Economy, 4 passengers. Short domestic hop.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "est": 253.0,
+          "route": "HER → ATH",
+          "flightNo": "Aegean/Sky Express (representative)",
+          "cabin": "Economy",
+          "notes": "Departs ~12:15 PM, arrives Athens ~1:05 PM. $253 total for the family (cash fare, per your search). Aegean and Sky Express both fly this route frequently; 2027 schedules aren't loaded yet, so this is a representative flight at your quoted time and price.",
+          "flag": "Not yet bookable - 2027 schedule not published. Times and price are yours from a current search."
+        },
+        {
+          "start": "1:05 PM",
+          "end": "1:40 PM",
+          "title": "Arrive ATH - deplane, collect bags",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "1:40 PM",
+          "end": "2:25 PM",
+          "title": "Taxi to Grand Hyatt Athens",
+          "detail": "~35-44 km, ~35-45 min. Athens airport has a fixed taxi rate to the city center (~€40 day / €55 night); a pre-booked private van is a comfortable alternative with luggage and 2 kids.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 55.0,
+          "notes": "Fixed airport taxi ~€40-55, or a pre-booked private transfer at a similar rate."
+        },
+        {
+          "start": "2:25 PM",
+          "end": "2:50 PM",
+          "title": "Grand Hyatt Athens - check in, drop bags",
+          "detail": "115 Syngrou Avenue. Grand Suite via Suite Night Award; if the room isn't ready, leave bags and head out.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "World of Hyatt",
+          "points": "20000/night (+ Suite Night Award for Grand Suite)",
+          "roomType": "Grand Suite (via Suite Night Award upgrade)",
+          "address": "115 Syngrou Avenue, 117 45 Athens, Greece",
+          "notes": "20,000 points/night + a Suite Night Award to upgrade all 4 of you to the Grand Suite. Breakfast included daily. Rooftop pool with Acropolis views. Number of Athens nights still TBD - adjust once the return flight is set.",
+          "cancelBy": "Not yet booked - pending total nights decision"
+        },
+        {
+          "start": "2:50 PM",
+          "end": "4:30 PM",
+          "title": "Rest / freshen up at the hotel",
+          "detail": "Easy landing after the travel morning and in the June afternoon heat - regroup before an evening out.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "4:30 PM",
+          "end": "4:45 PM",
+          "title": "Taxi to Plaka",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        },
+        {
+          "start": "4:45 PM",
+          "end": "6:45 PM",
+          "title": "Explore Plaka, Anafiotika & Monastiraki",
+          "detail": "Athens's old town below the Acropolis - pedestrian lanes, the tiny whitewashed Anafiotika quarter that feels like a Cycladic island village, and the lively Monastiraki area. An easy, low-key first evening on foot.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Tzitzikas kai Mermigas or a Plaka taverna",
+          "detail": "Casual, popular Greek mezze spot - fresh chips the kids will love and traditional plates for the adults. Plenty of relaxed family tavernas nearby if you'd rather just wander into one.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 90.0,
+          "notes": "Mezze/taverna pricing: 2 adult mains + shared plates, kids on simple items (chips, chicken, souvlaki) or sharing, minimal wine. ~€75-85/$80-90."
+        },
+        {
+          "start": "8:45 PM",
+          "end": "9:00 PM",
+          "title": "Taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        }
+      ]
+    },
+    {
+      "date": "Saturday, June 19, 2027",
+      "title": "Athens - Acropolis",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:00 AM",
+          "end": "7:45 AM",
+          "title": "Breakfast at hotel (early)",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "7:45 AM",
+          "end": "8:00 AM",
+          "title": "Taxi to the Acropolis",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        },
+        {
+          "start": "8:00 AM",
+          "end": "10:00 AM",
+          "title": "Acropolis & Parthenon - 8 AM timed entry",
+          "detail": "The one essential Athens site. Book the 8:00 AM slot in advance - in June the marble becomes a heat sink and gets brutally hot and crowded by late morning, so early is the whole game. It's an open-air archaeological site, not a museum. Allow ~90 min-2 hrs on the rock.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 60.0,
+          "notes": "~€30/adult in peak season; kids under 18 free (under-6 always free). Budget ~€60/$65 for 2 adults. Book the 8 AM timed slot ~1 week ahead - morning slots sell out first in June.",
+          "menuUrl": "https://theacropolismuseum.gr/en",
+          "flag": "Hats, water, and real shoes - the marble is slippery and there's almost no shade up top."
+        },
+        {
+          "start": "10:00 AM",
+          "end": "10:20 AM",
+          "title": "Walk down into Plaka",
+          "detail": "Descend the pedestrian paths from the Acropolis straight into the old town.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "10:20 AM",
+          "end": "11:30 AM",
+          "title": "Explore Plaka & Anafiotika by daylight",
+          "detail": "Wander the lanes, small shops, the island-like Anafiotika streets - shady and easy after the climb.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "11:45 AM",
+          "end": "1:15 PM",
+          "title": "Lunch - To Kafeneio, Plaka",
+          "detail": "Authentic, relaxed Greek taverna at the foot of the Acropolis - familiar plates for the kids, classic Greek cooking for the adults.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 90.0,
+          "notes": "Taverna pricing: 2 adult mains + kids on simple dishes/sharing, minimal wine. ~€75-85/$80-90."
+        },
+        {
+          "start": "1:15 PM",
+          "end": "1:35 PM",
+          "title": "Taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        },
+        {
+          "start": "1:35 PM",
+          "end": "4:45 PM",
+          "title": "Midday heat break - Grand Hyatt rooftop pool",
+          "detail": "Deliberate downtime through the hottest part of a June afternoon. The rooftop pool has Acropolis views - the kids get pool time, everyone resets before the evening.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "4:45 PM",
+          "end": "5:00 PM",
+          "title": "Taxi to the Panathenaic Stadium",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        },
+        {
+          "start": "5:00 PM",
+          "end": "6:15 PM",
+          "title": "Panathenaic Stadium (Kallimarmaro)",
+          "detail": "The all-marble stadium that hosted the first modern Olympics in 1896. Kids get full access to the track and can run a lap, climb the stands, and walk the athletes' tunnel - active and fun, not a static museum stop. Late-afternoon timing avoids the worst heat on the marble.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 25.0,
+          "notes": "€10/adult, kids reduced/under-6 free -> ~€22-25 for the family. Open till 7 PM (last entry 6:30). Tickets sold on site only. Includes an audio guide.",
+          "flag": "Marble stands get hot and the steps are steep - good shoes, watch the kids on the stairs."
+        },
+        {
+          "start": "6:15 PM",
+          "end": "7:00 PM",
+          "title": "Stroll the National Garden & Zappeion",
+          "detail": "Shady public garden right by the stadium - ponds, big trees, a easy green wind-down at golden hour. Walkable from the stadium.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "7:15 PM",
+          "end": "7:30 PM",
+          "title": "Taxi to dinner",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Kuzina (Acropolis view), Thissio",
+          "detail": "Modern Greek on Adrianou Street under the Temple of Hephaestus, with an Acropolis view from the rooftop - a memorable Athens dinner that's still relaxed. Book well ahead; it fills up. ~7 PM catches the sunset light.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 140.0,
+          "notes": "Nicer sit-down with a view - a small step up from the tavernas. 2 adult mains + kids on simpler plates, one glass of wine. ~€120-135/$130-145. Reserve in advance.",
+          "menuUrl": "https://www.kuzina.gr/"
+        },
+        {
+          "start": "9:15 PM",
+          "end": "9:30 PM",
+          "title": "Taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 12.0
+        }
+      ]
+    },
+    {
+      "date": "Sunday, June 20, 2027",
+      "title": "Athens Riviera - Lake Vouliagmeni",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:30 AM",
+          "title": "Taxi to Lake Vouliagmeni",
+          "detail": "~24 km south down the coast, ~25-30 min from Syngrou Avenue.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 35.0
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Lake Vouliagmeni - swim in the thermal lake",
+          "detail": "A natural brackish lake fed by underground thermal springs and the sea, ringed by cliffs - warm (~24-29C), calm, and unusually kid-friendly, with sunbeds, showers, and a cafe. The little Garra rufa fish give a natural 'fish spa' nibble that kids find hilarious. A real nature spot, not a built attraction - a great change of pace from the ancient sites.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️",
+          "est": 65.0,
+          "notes": "Entry ~€19/adult (weekend), ~€17/child 6-12, under-6 free -> ~€65-70 for the family + sunbeds. Arrive by opening to beat the Sunday crowd.",
+          "flag": "Sunscreen/lotion is NOT allowed in the lake - use a rash guard/UV shirt and hats instead, or apply after swimming."
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch by the water",
+          "detail": "The lake's own restaurant has a kids' menu, or head 5 min to a seaside taverna in Vouliagmeni.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 95.0,
+          "notes": "Seaside pricing a touch higher: 2 adult mains + kids simple plates, minimal wine. ~€85-90/$90-95."
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:45 PM",
+          "title": "Taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 35.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "5:30 PM",
+          "title": "Afternoon rest / rooftop pool",
+          "detail": "Relaxed last-built afternoon - pool and downtime. (Return flight home still open, so this is the current end of the planned days.)",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "5:45 PM",
+          "end": "6:00 PM",
+          "title": "Taxi to the Lycabettus funicular",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 15.0
+        },
+        {
+          "start": "6:00 PM",
+          "end": "7:15 PM",
+          "title": "Lycabettus Hill at sunset",
+          "detail": "Athens's highest point - a short funicular ride up to a 360 view over the whole city, the Acropolis, and out to the sea. Best at golden hour. Easy for the kids (you ride up, not hike).",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 30.0,
+          "notes": "Funicular ~€10 round trip/adult, reduced for kids -> ~€30 for the family."
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Kolonaki neighborhood",
+          "detail": "Come down into stylish, walkable Kolonaki at the foot of Lycabettus for a final Athens dinner - lots of relaxed tavernas and casual spots around the square.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0,
+          "notes": "2 adult mains + kids simple plates, one glass of wine. ~€90-95/$95-105."
+        },
+        {
+          "start": "9:15 PM",
+          "end": "9:30 PM",
+          "title": "Taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 15.0
+        }
+      ]
+    }
+  ],
+  "packing": {
+    "trackerTitle": "Item tracker",
+    "outfitDays": [],
+    "trackerDays": []
+  },
+  "supplies": [],
+  "ideas": [
+    {
+      "name": "Still open / TBD",
+      "items": [
+        {
+          "name": "Book FCO-HER nonstop once 2027 summer schedule loads (~Nov 2026-early 2027)",
+          "note": "June operators: Neos + Wizz Air Malta (ITA starts July only). ~2-3x/week, ~midday. Confirm a Fri Jun 11 nonstop exists; fallback 1-stop via Athens."
+        },
+        {
+          "name": "Decide total nights in Athens",
+          "note": "Hotel is now set (Grand Hyatt Athens, 20K pts/night + Suite Night Award for the Grand Suite) - just need to lock the number of nights, which also depends on the return flight."
+        },
+        {
+          "name": "Book HER-ATH flight once 2027 schedule publishes",
+          "note": "Aegean/Sky Express, ~12:15 PM departure / ~1:05 PM arrival, ~$253 total (your quoted fare). Not bookable yet."
+        },
+        {
+          "name": "Book Athens -> Miami return flight",
+          "note": "Explicitly left out per your request - still searching."
+        },
+        {
+          "name": "Book Spinalonga boat + entry, Ancient sites, and Crete restaurant reservations",
+          "note": "All bookable closer to the date."
+        },
+        {
+          "name": "Confirm Budget booster-seat rate at the counter",
+          "note": "2 booster seats requested on the reservation but not in the $456.09 - budget ~€90-120/$100-130 for the week as an estimate."
+        },
+        {
+          "name": "Book Acropolis 8 AM timed-entry tickets (~1 week ahead)",
+          "note": "Morning slots sell out first in June; ~€30/adult, kids free."
+        },
+        {
+          "name": "Reserve Kuzina (Acropolis-view dinner) in advance",
+          "note": "Fills up almost every night."
+        },
+        {
+          "name": "St. Peter's: dress code + early arrival",
+          "note": "Shoulders and knees covered for everyone (enforced at security, no exceptions). Get there before ~9 AM to beat the security line. Dome climb is optional and paid on site only."
+        },
+        {
+          "name": "Book Gladiator School - 3 PM session, Jun 9",
+          "note": "Gruppo Storico Romano, Via Appia Antica 18. €130/pp age 6+. Both kids training = ~€260; parents watch free. Reserve the 3 PM slot ahead."
+        },
+        {
+          "name": "Book Catacombs of San Sebastiano (Jun 9)",
+          "note": "Guided-only, book ahead in summer. San Callisto is closed Wednesdays, so we're using San Sebastiano (open daily 10-5)."
+        },
+        {
+          "name": "Confirm with Domes: do kids eat free (and where) on our points stay?",
+          "note": "The \"Kids Stay, Eat & Play Free\" (under-12) offer is published for DIRECT phone/email bookings and marked valid 2026 - our booking is a Marriott points award for 2027, so it likely does NOT auto-apply. Email reservations (info@domesofelounda.com / +30 231 0810624) to confirm whether under-12s eat free, at which restaurants (buffet vs a la carte), and your board basis."
+        }
+      ]
+    }
+  ],
+  "alternatives": null
+}

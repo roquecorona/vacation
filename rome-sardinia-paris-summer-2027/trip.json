@@ -1,0 +1,1193 @@
+{
+  "meta": {
+    "title": "Rome, Sardinia & Paris Summer 2027",
+    "dates": "July 17 - August 1, 2027 (Miami -> Rome -> Sardinia -> Paris -> Miami, return flight TBD)",
+    "route": [
+      {
+        "name": "Miami",
+        "sub": "home (MIA)"
+      },
+      {
+        "name": "Rome",
+        "sub": "3 nights · Hilton Garden Inn Rome Colosseum"
+      },
+      {
+        "name": "San Teodoro, Sardinia",
+        "sub": "7 nights · Terradimare Resort & Spa"
+      },
+      {
+        "name": "Paris",
+        "sub": "4 nights · Paris Marriott Rive Gauche"
+      },
+      {
+        "name": "Miami",
+        "sub": "home (MIA) - return flight TBD"
+      }
+    ]
+  },
+  "days": [
+    {
+      "date": "Saturday, July 17, 2027",
+      "title": "Miami -> Rome (overnight flight)",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "6:30 PM",
+          "end": "7:45 PM",
+          "title": "Drop off rental/curbside check-in at MIA",
+          "detail": "Arrive 3+ hrs before an international flight with a family of 4 and bags for a 2-week trip.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "8:00 PM",
+          "end": "12:05 PM",
+          "title": "American Airlines AA52 - Nonstop - 10h5m",
+          "detail": "MIA -> FCO, Economy, 4 passengers. Booked via Alaska Atmos Rewards (partner award on American, oneworld). Lands Sunday, July 18 local time Rome.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "program": "Alaska Atmos Rewards",
+          "points": "140000",
+          "paid": 102.4,
+          "notes": "35,000 Atmos Rewards points + $25.60 per passenger x 4 travelers = 140,000 points + $102.40 total, per the fare shown when searched. Confirm exact per-passenger breakdown at booking.",
+          "route": "MIA → FCO",
+          "flightNo": "American 52",
+          "cabin": "Economy",
+          "seats": "Not yet assigned",
+          "flag": "Overnight flight - lands 12:05 PM Rome time the next day (Sunday July 18). Kids will have been awake ~16+ hrs by landing; keep Day 2 light."
+        }
+      ]
+    },
+    {
+      "date": "Sunday, July 18, 2027",
+      "title": "Arrive Rome",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "12:05 PM",
+          "end": "1:15 PM",
+          "title": "Land at FCO - immigration, bags, customs",
+          "detail": "Budget a full hour-plus for a family of four after an overnight transatlantic flight.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "1:15 PM",
+          "end": "2:15 PM",
+          "title": "Transfer to hotel",
+          "detail": "FCO -> Esquilino district, ~45min-1hr depending on traffic (taxi or private transfer; Leonardo Express train + metro is the budget option but is a lot with luggage and jet-lagged kids).",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 60.0,
+          "notes": "Estimate for a private taxi/transfer, ~€55-60 flat rate FCO to central Rome."
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:15 PM",
+          "title": "Hilton Garden Inn Rome Colosseum - check in",
+          "detail": "2 rooms.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "Hilton Honors",
+          "points": "420000",
+          "notes": "70,000 Hilton Honors points/night/room x 2 rooms x 3 nights = 420,000 points total. Standard check-in is typically 3:00 PM - early arrival may mean a wait or luggage storage while rooms are readied.",
+          "nights": "3 nights (Sun-Wed)",
+          "roomType": "2 Rooms (confirm bed config - Standard King or Queen/Queen)",
+          "address": "Via Emanuele Filiberto 173, 00185 Roma, Italy",
+          "cancelBy": "Not yet booked - confirm cancellation policy at booking",
+          "flag": "Newly opened property (debuted 2026) - worth a quick recent-review check closer to the date for any post-opening operational issues."
+        },
+        {
+          "start": "2:15 PM",
+          "end": "5:00 PM",
+          "title": "Rest / pool time at the hotel",
+          "detail": "Deliberately no anchor activity today given the overnight flight - jet lag buffer.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Café Café",
+          "detail": "Via Ostilia 23, 00184, ~5 min walk from hotel area toward the Colosseum ring. Casual café-style menu (pasta, sandwiches, salads, smoothies) - easy, low-key first dinner for a jet-lagged family.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 70.0,
+          "notes": "Estimate for a family of 4 at a casual café - 2 mains + 2 kids plates + drinks."
+        }
+      ]
+    },
+    {
+      "date": "Monday, July 19, 2027",
+      "title": "Colosseum & Roman Forum",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:35 AM",
+          "end": "8:55 AM",
+          "title": "Walk to Colosseum",
+          "detail": "~20 min walk from the Hilton Garden Inn (hotel quotes 20 min; some guest reviews say closer to 15). Departing 8:35 for a 9:00 entry slot.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "8:55 AM",
+          "end": "9:00 AM",
+          "title": "Security line buffer",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "10:30 AM",
+          "title": "Colosseum",
+          "detail": "First-entry slot to beat heat and crowds - the consistent recommendation for July, and specifically the best window for kids 6-9.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 72.0,
+          "notes": "€18/adult, under-18s free but still require a reserved (no-cost) ticket. Combined Colosseum+Forum+Palatine ticket is standard - one 24-hr ticket covers all three, no separate purchase needed. Official site: ticketing.colosseo.it. IMPORTANT: tickets release on a rolling 30-day window before the visit date - this can't be booked now, needs a calendar reminder for ~mid-June 2027, and July slots sell out weeks ahead.",
+          "flag": "Book the instant the 30-day window opens (~mid-June 2027) - July is peak season and official allocation sells out."
+        },
+        {
+          "start": "10:30 AM",
+          "end": "12:00 PM",
+          "title": "Roman Forum & Palatine Hill",
+          "detail": "Included on the same Colosseum ticket. Walk through the Forum ruins at a kid's pace - this is the one ancient-history block for the whole Rome stay, kept to a single morning rather than spread across multiple days.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "12:00 PM",
+          "end": "12:15 PM",
+          "title": "Walk to lunch",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "12:15 PM",
+          "end": "1:30 PM",
+          "title": "Lunch - Trattoria Vecchia Roma",
+          "detail": "Via Ferruccio 12B, 00185 (Esquilino, near hotel). Carbonara, amatriciana, carciofi alla giudia, pizza - real menu variety, outdoor seating, family-friendly per reviews. Open Mon-Sat 12:30-3/7-11pm (closed Sundays, so today - Monday - works).",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 75.0
+        },
+        {
+          "start": "1:30 PM",
+          "end": "6:30 PM",
+          "title": "Rest / pool time at the hotel",
+          "detail": "Real buffer after a big morning on foot in July heat - no second anchor activity today.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Naumachia",
+          "detail": "Via Celimontana 7, 00184, steps from the Colosseum/San Clemente. Mixed Roman + Tuscan menu - pasta, seafood, meat, some pizza. Open daily 11am-midnight.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 95.0,
+          "menuUrl": "https://www.naumachiaroma.com/en-gb/the-restaurant"
+        }
+      ]
+    },
+    {
+      "date": "Tuesday, July 20, 2027",
+      "title": "Historic Center - Pantheon, Trevi, Piazza Navona",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:45 AM",
+          "end": "9:00 AM",
+          "title": "Walk to Manzoni metro station",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:20 AM",
+          "title": "Metro Line A - Manzoni to Barberini",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 6.0
+        },
+        {
+          "start": "9:20 AM",
+          "end": "9:30 AM",
+          "title": "Walk from Barberini to Trevi Fountain",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "10:00 AM",
+          "title": "Trevi Fountain",
+          "detail": "Free to view from the piazza; as of Feb 2026 there's a new €2/person fee for the close-up basin-level viewing area (9am-10pm daily). Best light and smallest crowds are the morning window we're hitting.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 8.0,
+          "flag": "The €2 close-up fee is a very recent (Feb 2026) policy - reconfirm it's still in effect/same price closer to 2027."
+        },
+        {
+          "start": "10:00 AM",
+          "end": "10:10 AM",
+          "title": "Walk to Pantheon",
+          "detail": "~600m, 7-10 min.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "10:10 AM",
+          "end": "10:40 AM",
+          "title": "Pantheon",
+          "detail": "Free entry, under-18s free regardless. Open 9am-7pm. A compact, low-fatigue-risk stop for kids.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "10:40 AM",
+          "end": "10:50 AM",
+          "title": "Walk to Piazza Navona",
+          "detail": "~400-500m via Via Giustiniani -> Corso del Rinascimento.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "10:50 AM",
+          "end": "11:35 AM",
+          "title": "Piazza Navona",
+          "detail": "Bernini's Fountain of the Four Rivers, street performers, open space for kids to move after a morning of walking. Free, open-air.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "11:35 AM",
+          "end": "11:45 AM",
+          "title": "Gelato - Frigidarium",
+          "detail": "Via del Governo Vecchio 112, 1-2 min from Navona. Artisan gelato since 1988; signature 'Frigidarium' flavor (cream/chocolate/Pan di Stelle).",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 20.0
+        },
+        {
+          "start": "12:00 PM",
+          "end": "1:15 PM",
+          "title": "Lunch - Il Barroccio",
+          "detail": "Via dei Pastini 13/14, 00186, near the Pantheon. Cacio e pepe, carbonara, rigatoni pancetta e pecorino, bruschetta, tiramisù - casual and affordable. Open daily 11:30am-11pm.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        },
+        {
+          "start": "1:15 PM",
+          "end": "6:30 PM",
+          "title": "Rest / pool time at the hotel",
+          "detail": "Metro back to Manzoni, then downtime - real buffer before the flight to Sardinia tomorrow. Start packing.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Emma Pizzeria",
+          "detail": "Via del Monte della Farina 28, 00186, near Navona. Despite the name, a genuinely varied menu beyond pizza - stuffed zucchini, carbonara, artichoke salad, cured meats/cheeses. Open daily 12:30-3pm & 7-11:30pm. Reservations recommended.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 105.0,
+          "menuUrl": "https://www.emmapizzeria.com/en/"
+        }
+      ]
+    },
+    {
+      "date": "Wednesday, July 21, 2027",
+      "title": "Fly to Sardinia (San Teodoro)",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel, finish packing",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:00 AM",
+          "title": "Hilton Garden Inn Rome Colosseum - check out",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:45 AM",
+          "title": "Transfer to FCO",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 60.0
+        },
+        {
+          "start": "11:20 AM",
+          "end": "12:25 PM",
+          "title": "AeroItalia (rep.) - Nonstop - 1h05m",
+          "detail": "FCO -> OLB, Economy, 4 passengers.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "route": "FCO → OLB",
+          "flightNo": "TBD - representative flight only",
+          "cabin": "Economy",
+          "notes": "2027 summer schedule not yet published. FCO-OLB currently runs ~8 nonstop flights/day (7:50am-10:20pm) on AeroItalia and Volotea, ~1hr flight time. Picked a representative late-morning slot; re-confirm and book once 2027 schedules are released.",
+          "flag": "Not yet bookable - placeholder flight/time."
+        },
+        {
+          "start": "1:00 PM",
+          "end": "1:45 PM",
+          "title": "Pick up rental car - Olbia Airport",
+          "detail": "Olbia airport has Avis, Hertz, Sixt plus local/budget operators (Green Motion, Surprice, Centauro). July rates run roughly $38-59/day depending on operator and how early booked.",
+          "typeName": "Rental Car",
+          "emoji": "🚗",
+          "est": 340.0,
+          "notes": "Estimate: ~$48/day average x 7 days (Jul 21-28) = ~$340. Needed for the week: La Maddalena departs from Palau (1h6m away), Ispinigoli cave is in Dorgali (1h20-1.5h), and Porto Cervo is 1h6m - the resort shuttle only covers La Cinta beach. Book well ahead; July is peak season and cars sell out.",
+          "flag": "Skip the resort's paid airport-transfer option (€80/vehicle) - picking up the rental at the airport covers that leg for free since the car is needed for the whole week anyway."
+        },
+        {
+          "start": "1:45 PM",
+          "end": "2:15 PM",
+          "title": "Drive to San Teodoro",
+          "detail": "~27 km / ~25-27 min from Olbia airport.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:15 PM",
+          "title": "Terradimare Resort & Spa - check in",
+          "detail": "Family room, near La Cinta beach and dunes.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "est": 2450.0,
+          "notes": "Estimated at $350/night x 7 nights = $2,450. This is a midpoint estimate for July peak season - the hotel's blended-year average is ~$150/night, so treat $300-400/night as unconfirmed until checked directly against the live July 2027 rate.",
+          "nights": "7 nights (Wed-Wed)",
+          "roomType": "Family Room (confirm exact 2A+2K configuration)",
+          "address": "Via Naviglio, 08020 San Teodoro (SS), Italy",
+          "cancelBy": "Not yet booked",
+          "flag": "Price is an estimate, not a quote - confirm live rate before booking."
+        },
+        {
+          "start": "2:15 PM",
+          "end": "6:00 PM",
+          "title": "Settle in / La Cinta beach",
+          "detail": "Light first afternoon - beach steps from the resort, no structured plans.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Griglieria da Simona",
+          "detail": "Grilled meats and porceddu (Sardinian roast suckling pig) to order - casual, easy first-night choice.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0,
+          "menuUrl": "https://www.griglieriasanteodoro.com/"
+        }
+      ]
+    },
+    {
+      "date": "Thursday, July 22, 2027",
+      "title": "La Cinta Beach & dunes",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "La Cinta beach & dunes",
+          "detail": "La Cinta's dune-and-lagoon system, right by the resort. No structured plans - real beach/nature morning.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch - Beach Club La Cinta",
+          "detail": "Right on La Cinta beach. Carbonara, seafood pasta, tuna tataki, casual beachfront service.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 90.0,
+          "menuUrl": "https://www.beachclublacinta.com/en/home-en/"
+        },
+        {
+          "start": "2:15 PM",
+          "end": "5:30 PM",
+          "title": "Pool / beach - free time",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Karjasa Restaurant Private Garden",
+          "detail": "Family-run, raw seafood, catch-of-the-day blackboard, fregola/risotto/octopus, garden setting. Open daily 6pm-midnight.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 140.0,
+          "menuUrl": "https://karjasarestaurant.it/menu/"
+        }
+      ]
+    },
+    {
+      "date": "Friday, July 23, 2027",
+      "title": "La Maddalena Archipelago boat trip",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:00 AM",
+          "end": "7:45 AM",
+          "title": "Breakfast at hotel - early start",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:15 AM",
+          "end": "9:20 AM",
+          "title": "Drive to Palau",
+          "detail": "~68 km / ~1h6m via Olbia/Arzachena.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "5:00 PM",
+          "title": "La Maddalena Archipelago - full-day boat trip",
+          "detail": "Delfino Tours, 'Archipelago Excursion - 4 Stops', departs Palau. Stops: Spargi, Santa Maria, La Maddalena town, and a slow pass of Budelli's Pink Beach (landing prohibited to protect the ecosystem) with swimming at the Natural Pools/Porto della Madonna area nearby.",
+          "typeName": "Excursion",
+          "emoji": "👞",
+          "est": 230.0,
+          "notes": "2026 high-season pricing (Jul 6-Aug 3, covers our dates): Adult €65, Child 4-10 €50 -> ~€65+€65+€50+€50 = €230 for the family (~$248). Food/drinks not included - bring a packed lunch or buy on board/at a stop. Contact +39 334 852 0671, gitearcipelago.it/en/excursions-la-maddalena-prices",
+          "flag": "Confirm exact 2027 departure/return times directly with Delfino Tours closer to booking - generic tour length is '7+ hours,' typically ~9:30am-5pm, but no published exact daily schedule for 2027 yet."
+        },
+        {
+          "start": "5:10 PM",
+          "end": "6:15 PM",
+          "title": "Drive back to San Teodoro",
+          "detail": "~1h6m.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "6:15 PM",
+          "end": "7:00 PM",
+          "title": "Change / rinse off at the hotel",
+          "detail": "Dedicated changeover block after a full day on and in the water.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - L'Ea Cana",
+          "detail": "Via Nazionale 18. Sardinian land & sea - Gallurese soup(skip for kids), culurgiones, roasted porceddu, shrimp with figs & bottarga, seadas.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 160.0,
+          "menuUrl": "https://leacana.com/menu/menu_ristorante/"
+        }
+      ]
+    },
+    {
+      "date": "Saturday, July 24, 2027",
+      "title": "Ispinigoli Cave (Dorgali)",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "10:30 AM",
+          "title": "Drive to Dorgali",
+          "detail": "~84-95 km / ~1h20-1h30 via Olbia, SS125. (Neptune's Grotto near Alghero was ruled out - it's ~2h45-3h each way from San Teodoro, not realistic with kids. Ispinigoli is the same 'real cave, real nature' experience at a fraction of the drive.)",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "10:45 AM",
+          "end": "12:00 PM",
+          "title": "Grotta di Ispinigoli",
+          "detail": "A show cave with a 38m stalagmite column - one of Europe's tallest - and the 'Abisso delle Vergini' sinkhole. Guided tours run hourly 10am-5:45pm (last tour).",
+          "typeName": "Excursion",
+          "emoji": "👞",
+          "est": 24.0,
+          "notes": "€8/adult, €4/child (4-10). ~$26 for the family. Managed by the Ghivine cooperative.",
+          "flag": "Aggregator sites showed conflicting weekday-closure info - verify current hours directly at grottaispinigoli.com before finalizing the day's timing."
+        },
+        {
+          "start": "12:15 PM",
+          "end": "1:45 PM",
+          "title": "Lunch - Ristorante Ispinigoli",
+          "detail": "At Hotel Ispinigoli, right next to the cave. Michelin-listed, panoramic terrace over the Gulf of Orosei. Degustation menus €48 (meat) / €55 (fish); à la carte also available.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 140.0,
+          "menuUrl": "https://hotelispinigoli.it/en/restaurant/"
+        },
+        {
+          "start": "2:00 PM",
+          "end": "3:30 PM",
+          "title": "Drive back to San Teodoro",
+          "detail": "~1h20-1h30.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "3:30 PM",
+          "end": "6:30 PM",
+          "title": "Pool / beach - free time",
+          "detail": "Recovery time after a driving-heavy day - no second anchor.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Ristorante Pizzeria Simbiosi",
+          "detail": "Via del Tirreno 26. Despite the name, the menu centers on land/sea dishes (tagliolini with cuttlefish ink is the standout) with pizza as one option, not the whole menu.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0,
+          "menuUrl": "https://ristorantesimbiosisanteodoro.com/menu/"
+        }
+      ]
+    },
+    {
+      "date": "Sunday, July 25, 2027",
+      "title": "Beach day / resort",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "La Cinta beach",
+          "detail": "Free morning - no anchor.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch - Beach Club La Cinta",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 90.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "5:30 PM",
+          "title": "Pool / beach - free time",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Ambàra Sardinian Lounge",
+          "detail": "Monte Petrosu. Mediterranean/international, tapas-style tasting, vegetarian/vegan options.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 160.0,
+          "menuUrl": "https://ambaralounge.it/en/menu-cena/"
+        }
+      ]
+    },
+    {
+      "date": "Monday, July 26, 2027",
+      "title": "Beach day / resort",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "La Cinta beach",
+          "detail": "Free morning - no anchor.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch - Beach Club La Cinta",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 90.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "5:30 PM",
+          "title": "Pool / beach - free time",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Lu Brutoni Ristorante e Vineria",
+          "detail": "Center of San Teodoro. Local sea & land ingredients, à la carte or 7-course tasting option. Open 7-11:45pm.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 150.0,
+          "menuUrl": "https://lubrutoni.com/en/lu-brutoni-restaurant-san-teodoro/"
+        }
+      ]
+    },
+    {
+      "date": "Tuesday, July 27, 2027",
+      "title": "Costa Smeralda / Porto Cervo",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "La Cinta beach - last full beach morning",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch - Beach Club La Cinta",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 90.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "4:30 PM",
+          "title": "Pool time / pack for Paris",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "5:30 PM",
+          "end": "6:40 PM",
+          "title": "Drive to Porto Cervo",
+          "detail": "~57 km / ~1h6m.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "6:40 PM",
+          "end": "8:00 PM",
+          "title": "Porto Cervo marina - evening stroll",
+          "detail": "Compact luxury marina town, yacht-watching, boutiques - light evening activity rather than a full day trip given the drive.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "8:00 PM",
+          "end": "9:30 PM",
+          "title": "Dinner - Belvedere, Porto Cervo",
+          "detail": "Daily fish display case, informal dining room, genuinely family-welcoming despite the glossy setting.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 180.0,
+          "notes": "Book well in advance once dates are locked - Porto Cervo restaurants fill up fast in July.",
+          "menuUrl": "https://www.portocervoreservation.it/best-restaurants-porto-cervo/"
+        },
+        {
+          "start": "9:30 PM",
+          "end": "10:40 PM",
+          "title": "Drive back to San Teodoro",
+          "detail": "~1h6m.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        }
+      ]
+    },
+    {
+      "date": "Wednesday, July 28, 2027",
+      "title": "Fly to Paris",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel, finish packing",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "10:00 AM",
+          "end": "10:00 AM",
+          "title": "Terradimare Resort & Spa - check out",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "10:00 AM",
+          "end": "12:30 PM",
+          "title": "Last La Cinta beach morning",
+          "detail": "Light morning before the airport - swimsuits until the last possible moment.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "12:30 PM",
+          "end": "1:30 PM",
+          "title": "Lunch - Beach Club La Cinta",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 90.0
+        },
+        {
+          "start": "1:30 PM",
+          "end": "2:00 PM",
+          "title": "Drive to Olbia Airport, return rental car",
+          "detail": "~25-27 min.",
+          "typeName": "Rental Car",
+          "emoji": "🚗"
+        },
+        {
+          "start": "3:30 PM",
+          "end": "5:35 PM",
+          "title": "Volotea (rep.) - Direct - 2h05m",
+          "detail": "OLB -> Paris Orly (ORY), Economy, 4 passengers.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "route": "OLB → ORY",
+          "flightNo": "TBD - representative flight only",
+          "cabin": "Economy",
+          "notes": "Summer-seasonal direct route (Volotea/Transavia France/easyJet), ~2h05m. Picked a representative afternoon slot; confirm the route is still operating and book an actual flight once summer 2027 schedules are released.",
+          "flag": "Not yet bookable - placeholder flight/time."
+        },
+        {
+          "start": "6:15 PM",
+          "end": "7:00 PM",
+          "title": "Transfer to hotel",
+          "detail": "Orly to the 14th arrondissement (Left Bank), ~30-40 min by taxi/RER.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 65.0
+        },
+        {
+          "start": "7:00 PM",
+          "end": "7:00 PM",
+          "title": "Paris Marriott Rive Gauche - check in",
+          "detail": "Family Suite.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "est": 1600.0,
+          "notes": "Estimated at $400/night x 4 nights = $1,600. Marriott's own listing shows cash rates 'from $181' but that's a low-end/off-peak rate class, not a July peak Family Suite figure - treat as a placeholder pending a live quote.",
+          "nights": "4 nights (Wed-Sat)",
+          "roomType": "Family Suite (1BR, premium bedding, minibar)",
+          "address": "17 Boulevard Saint-Jacques, 75014 Paris, France",
+          "cancelBy": "Not yet booked",
+          "flag": "Price is an estimate, not a quote - confirm live July 2027 rate before booking."
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Brasserie, Paris Marriott Rive Gauche",
+          "detail": "On-site brasserie, French classics + international staples - zero transit needed after a full travel day.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0,
+          "menuUrl": "https://www.marriott.com/en-us/dining/restaurant-bar/parst-paris-marriott-rive-gauche-hotel-and-conference-center/7163509-brasserie-paris-marriott-rive-gauche.mi"
+        }
+      ]
+    },
+    {
+      "date": "Thursday, July 29, 2027",
+      "title": "Eiffel Tower & Seine River Cruise",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:03 AM",
+          "title": "Walk to Saint-Jacques metro station",
+          "detail": "~200m from hotel.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:03 AM",
+          "end": "9:15 AM",
+          "title": "Metro Line 6 - Saint-Jacques to Bir-Hakeim",
+          "detail": "Direct, no transfer, ~12 min, trains every 5 min.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 8.0
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:30 AM",
+          "title": "Walk to Eiffel Tower entrance",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "11:45 AM",
+          "title": "Eiffel Tower - 2nd floor by elevator",
+          "detail": "2nd floor (not summit) is the better call for kids 6-9 - full panoramic views, much shorter lines, no wind/altitude exposure, roughly half the price. Timed e-ticket required.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 65.0,
+          "notes": "2026 pricing (verify 2027 figures): 2nd floor by elevator, child under 12 ~€7.40, adult full price - budgeting ~€60/$65 for the family. E-tickets open exactly 60 days ahead at ticket.toureiffel.paris - flag for booking around late May 2027, July sells out same-day.",
+          "flag": "Book at the 60-day mark (~May 30, 2027) - this is a hard booking-window constraint, not optional lead time."
+        },
+        {
+          "start": "11:45 AM",
+          "end": "11:55 AM",
+          "title": "Walk to Port de la Bourdonnais",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "12:00 PM",
+          "end": "1:00 PM",
+          "title": "Seine River Cruise - Bateaux Parisiens",
+          "detail": "Departs Port de la Bourdonnais, right at the foot of the tower. ~1hr, individual audio guide, departures every 30 min.",
+          "typeName": "Excursion",
+          "emoji": "👞",
+          "est": 47.0,
+          "notes": "From €16/adult, €7.50/child (4-11) online -> ~€47/$51 for the family.",
+          "menuUrl": ""
+        },
+        {
+          "start": "1:15 PM",
+          "end": "2:30 PM",
+          "title": "Lunch - Le Casse-Noix",
+          "detail": "56 rue de la Fédération, 75015, near the Tower. French bistro, seasonal menu. Open Mon-Fri only (today, Thursday, works) 12-2:30pm/7-10:30pm.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 176.0,
+          "menuUrl": "https://le-cassenoix.fr/en"
+        },
+        {
+          "start": "2:45 PM",
+          "end": "3:15 PM",
+          "title": "Metro back to hotel area",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 8.0
+        },
+        {
+          "start": "3:15 PM",
+          "end": "6:30 PM",
+          "title": "Rest / pool time at the hotel",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - I Grappoli",
+          "detail": "22 Place Denfert-Rochereau, 75014, ~7 min walk from hotel. Italian trattoria - pizza and pasta, real menu variety. Open daily noon-midnight.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 95.0,
+          "menuUrl": "https://igrappoli.fr/en"
+        }
+      ]
+    },
+    {
+      "date": "Friday, July 30, 2027",
+      "title": "Montmartre",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:07 AM",
+          "title": "Walk to Denfert-Rochereau metro station",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:07 AM",
+          "end": "9:30 AM",
+          "title": "Metro Line 4 - Denfert-Rochereau to Château Rouge",
+          "detail": "~23 min, no transfer - the best route to Montmartre from this hotel.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 8.0
+        },
+        {
+          "start": "9:30 AM",
+          "end": "9:45 AM",
+          "title": "Walk to the funicular",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:45 AM",
+          "end": "9:50 AM",
+          "title": "Funicular up to Sacré-Cœur",
+          "detail": "Accepts a standard metro ticket, ~90 seconds, runs 6am-12:45am - much easier than the steep stairs with kids.",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "9:50 AM",
+          "end": "10:30 AM",
+          "title": "Sacré-Cœur exterior & parvis",
+          "detail": "Exterior/viewpoint only, consistent with skipping museum/interior visits. Arriving before 10am to beat the crowd build that starts around 11.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "10:30 AM",
+          "end": "11:15 AM",
+          "title": "Place du Tertre - artists' square",
+          "detail": "Best before 10-11am, before it's shoulder-to-shoulder.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "11:15 AM",
+          "end": "12:15 PM",
+          "title": "Wander down via rue Lepic",
+          "detail": "More charming than retracing the funicular, and doubles as the day's buffer/walk.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "12:30 PM",
+          "end": "1:45 PM",
+          "title": "Lunch - Chez Plumeau",
+          "detail": "4 Place du Calvaire, 75018, steps from Place du Tertre but sheltered from the main tourist flow. ~€15/dish avg, terrace with city views. No reservations - arriving right at open to avoid a wait.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 75.0,
+          "flag": "No-reservation policy - plan to arrive close to opening."
+        },
+        {
+          "start": "2:00 PM",
+          "end": "5:30 PM",
+          "title": "Rest / pool time at the hotel",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Le Relais Gascon",
+          "detail": "6 rue des Abbesses, 75018 (Montmartre). Southwest French classics (cassoulet, duck), giant salads - family-friendly, open daily noon-midnight.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 125.0,
+          "menuUrl": "https://lerelaisgascon.fr"
+        }
+      ]
+    },
+    {
+      "date": "Saturday, July 31, 2027",
+      "title": "Luxembourg Gardens & Latin Quarter",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:35 AM",
+          "title": "Walk to Luxembourg Gardens",
+          "detail": "Budget ~20 min from the hotel/Saint-Jacques area (sources ranged 10-25 min - confirm exact door-to-door time closer to the trip). RER B from Denfert-Rochereau to Luxembourg (2 stops) is the fallback if anyone's tired.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:35 AM",
+          "end": "10:15 AM",
+          "title": "Ludo Jardin playground",
+          "detail": "Gated children's play area inside the gardens - burning energy early before the wander.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "10:15 AM",
+          "end": "11:30 AM",
+          "title": "Luxembourg Gardens",
+          "detail": "Pond with rentable toy sailboats, seasonal pony rides, carousel, main gardens wander.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 15.0,
+          "notes": "Toy sailboat rental is a few euros - small optional spend."
+        },
+        {
+          "start": "11:30 AM",
+          "end": "12:30 PM",
+          "title": "Latin Quarter wander",
+          "detail": "Exit north toward Rue Mouffetard, Panthéon exterior, Sorbonne area - kept as low-key strolling, not stacked sightseeing.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "12:30 PM",
+          "end": "2:00 PM",
+          "title": "Lunch - Le Choupinet",
+          "detail": "58 Blvd Saint-Michel, 75006, directly across from the gardens. Brasserie - croque-monsieur, tartare, escargot, full menu variety. Open 8am-2am daily.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0,
+          "menuUrl": "https://lechoupinet.com"
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:45 PM",
+          "title": "Walk/RER back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "2:45 PM",
+          "end": "6:00 PM",
+          "title": "Rest / pool time at the hotel, pack",
+          "detail": "Last full day - real buffer before travel logistics resume tomorrow.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Brasserie, Paris Marriott Rive Gauche",
+          "detail": "On-site again deliberately for the last night - easy and close given tomorrow's return-flight logistics are still TBD.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0
+        },
+        {
+          "start": "11:00 AM",
+          "end": "11:00 AM",
+          "title": "Paris Marriott Rive Gauche - check out (next morning)",
+          "detail": "Checkout is actually the morning of Aug 1 - listed here as a reminder for packing/logistics on the last evening.",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        }
+      ]
+    },
+    {
+      "date": "Sunday, August 1, 2027",
+      "title": "Return flight home (TBD)",
+      "planned": false,
+      "blocks": [
+        {
+          "title": "Paris -> Miami return flight - not yet booked",
+          "detail": "Left open per request. Nonstop options exist: Air France or Delta from CDG (~9hrs), or French bee from Orly (~9hrs, 3x/week).",
+          "typeName": "Flight",
+          "emoji": "✈️"
+        }
+      ]
+    }
+  ],
+  "packing": {
+    "trackerTitle": "Roque's item tracker",
+    "outfitDays": [],
+    "trackerDays": [],
+    "packLists": []
+  },
+  "supplies": [],
+  "ideas": [
+    {
+      "name": "Still open / TBD",
+      "items": [
+        {
+          "name": "Confirm Terradimare Resort & Spa July 2027 family-room rate",
+          "note": "Blended-year average rate is ~$150/night off-peak; the $300-400/night figure used here is an estimate for July peak season, not a live quote. Confirm directly with the hotel or a booking site before treating it as fixed."
+        },
+        {
+          "name": "Confirm FCO -> OLB flight number/time for July 21, 2027",
+          "note": "2027 schedules aren't published yet. Used a representative flight based on the current pattern (AeroItalia/Volotea, ~8 nonstop flights/day, ~1hr). Re-check once the airline releases summer 2027 schedules."
+        },
+        {
+          "name": "Confirm OLB -> Paris Orly flight number/time for July 28, 2027",
+          "note": "This is a summer-seasonal direct route (Volotea/Transavia/easyJet, ~2h05m). Confirm the route is still operating for summer 2027 and lock in an actual flight."
+        },
+        {
+          "name": "Book Paris -> Miami return flight",
+          "note": "Left empty per request. Nonstop options exist on Air France and Delta (~9hrs) from CDG, or French bee from Orly."
+        },
+        {
+          "name": "Confirm Hilton Garden Inn Rome Colosseum is fully operational",
+          "note": "Newly opened property (2026 debut). Worth a quick check for post-opening issues closer to the trip."
+        },
+        {
+          "name": "Book Colosseum + Forum tickets",
+          "note": "Releases on a rolling 30-day window before the visit date - book around mid-June 2027 (not before), and do it the day the window opens since July sells out fast."
+        },
+        {
+          "name": "Book Eiffel Tower tickets",
+          "note": "Releases 60 days ahead - book around May 30, 2027, same-day if possible."
+        },
+        {
+          "name": "Verify RER C status for any future Versailles day",
+          "note": "RER C had a confirmed summer 2026 closure between Paris and Versailles for works; not currently built into this itinerary, but if added later, re-check 2027 status and default to Transilien Line N from Gare Montparnasse instead."
+        }
+      ]
+    }
+  ],
+  "alternatives": null
+}

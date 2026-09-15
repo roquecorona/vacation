@@ -514,98 +514,99 @@
       "planned": true,
       "blocks": [
         {
-          "start": "7:30 AM",
-          "end": "8:15 AM",
+          "start": "8:30 AM",
+          "end": "9:15 AM",
           "title": "Breakfast \u2014 Hampton Inn Leavenworth (included)",
           "detail": "Free hot breakfast, included in the room rate.",
           "typeName": "Dining",
           "emoji": "\ud83c\udf54"
         },
         {
-          "start": "8:15 AM",
-          "end": "8:35 AM",
+          "start": "9:15 AM",
+          "end": "9:35 AM",
           "title": "Drive to Leavenworth Reindeer Farm",
           "detail": "10395 Chumstick Hwy, ~1 mile from downtown.",
           "typeName": "Drive",
           "emoji": "\ud83d\ude97"
         },
         {
-          "start": "8:35 AM",
-          "end": "9:00 AM",
+          "start": "9:35 AM",
+          "end": "10:00 AM",
           "title": "Check in for the reindeer tour",
           "typeName": "Logistics",
           "emoji": "\u23f1\ufe0f"
         },
         {
-          "start": "9:00 AM",
-          "end": "10:00 AM",
+          "start": "10:00 AM",
+          "end": "11:00 AM",
           "title": "Leavenworth Reindeer Farm tour",
-          "detail": "Presentation plus in-enclosure feeding/petting, optional Santa photo. Both kids are almost certainly under the farm's 55\" height cutoff, which routes them to \"Cupid's Corner\" \u2014 a separate, calmer area with a smaller herd rather than the full-herd enclosure shown in the marketing photos. Still real feeding/petting/photos, just a more contained version of the experience.",
+          "detail": "Presentation plus in-enclosure feeding/petting, optional Santa photo. Both kids are almost certainly under the farm's 55\" height cutoff, which routes them to \"Cupid's Corner\" \u2014 a separate, calmer area with a smaller herd rather than the full-herd enclosure shown in the marketing photos. Still real feeding/petting/photos, just a more contained version of the experience. Planned for the farm's 10 AM tour slot.",
           "typeName": "Excursion",
           "emoji": "\ud83d\udc5e",
-          "est": 260,
-          "notes": "\"Celebrate the Season\" December pricing: $60-75/person (age 3+, dynamic), used $65/person average x4 = $260. Timed-entry reservation required, online only, no walk-ins \u2014 the farm's own site warns holiday tours sell out months in advance; book by Sept/Oct 2026."
+          "notes": "Not yet booked/paid: $296.80 total for the family (age 3+, dynamic December \"Celebrate the Season\" pricing) \u2014 confirmed quoted price, supersedes the earlier $65/person average estimate, but the reservation itself still needs to be made and paid for.",
+          "est": 296.8
         },
         {
-          "start": "10:00 AM",
-          "end": "10:10 AM",
+          "start": "11:00 AM",
+          "end": "11:10 AM",
           "title": "Goodbyes & walk back to the car",
           "detail": "Real wrap-up time -- say goodbye to the reindeer handlers, walk back across the farm to the parking area, load up. Not built into the drive block.",
           "typeName": "Walk",
           "emoji": "\ud83d\udeb6"
         },
         {
-          "start": "10:10 AM",
-          "end": "10:30 AM",
+          "start": "11:10 AM",
+          "end": "11:30 AM",
           "title": "Drive to Red-Tail Canyon Farm",
           "detail": "2.5 mi from downtown \u2014 routing between the two farms, not through downtown.",
           "typeName": "Drive",
           "emoji": "\ud83d\ude97"
         },
         {
-          "start": "10:30 AM",
-          "end": "11:00 AM",
+          "start": "11:30 AM",
+          "end": "12:00 PM",
           "title": "Arrival, warm up by the teepee fire",
-          "detail": "Red-Tail's sleigh rides only depart on the hour (11 AM-3 PM) -- this shorter gap is still a comfortable wait for the 11 AM slot: check in, use the restroom, browse the farm's small gift area.",
+          "detail": "Red-Tail's sleigh rides only depart on the hour (11 AM-3 PM) -- this shorter gap is still a comfortable wait for the 12 PM slot: check in, use the restroom, browse the farm's small gift area.",
           "typeName": "Logistics",
           "emoji": "\u23f1\ufe0f"
         },
         {
-          "start": "11:00 AM",
-          "end": "11:30 AM",
+          "start": "12:00 PM",
+          "end": "12:30 PM",
           "title": "Sleigh ride \u2014 Red-Tail Canyon Farm",
           "detail": "30-minute forward-facing horse-drawn sleigh ride with wool blankets, group capped at 14. Chosen over Eagle Creek Ranch for real per-child pricing and a kid-calibrated sleigh design.",
           "typeName": "Excursion",
           "emoji": "\ud83d\udc5e",
           "est": 60,
-          "notes": "$20/adult x2 + $10/child (12 and under) x2 = $60, tax included. Reservations phone-only: (800) 678-4512 \u2014 book as soon as dates are locked, no online booking and no posted lead-time guidance from a small operator during holiday week."
+          "notes": "$20/adult x2 + $10/child (12 and under) x2 = $60, tax included. Reservations phone-only: (800) 678-4512 \u2014 book as soon as dates are locked, no online booking and no posted lead-time guidance from a small operator during holiday week.",
+          "flag": "Reservations are phone-only, (800) 678-4512 \u2014 request the 12:00 PM departure specifically (shifted from the originally planned 11 AM slot to follow the reindeer tour's real 10 AM start)."
         },
         {
-          "start": "11:30 AM",
-          "end": "11:50 AM",
+          "start": "12:30 PM",
+          "end": "12:50 PM",
           "title": "Hot cocoa at the warming teepee",
           "detail": "Included with the ride.",
           "typeName": "Free Time",
           "emoji": "\u23f0"
         },
         {
-          "start": "11:50 AM",
-          "end": "12:10 PM",
+          "start": "12:50 PM",
+          "end": "1:10 PM",
           "title": "Drive back to the hotel",
           "typeName": "Drive",
           "emoji": "\ud83d\ude97"
         },
         {
-          "start": "12:10 PM",
-          "end": "12:25 PM",
+          "start": "1:10 PM",
+          "end": "1:25 PM",
           "title": "Walk to M\u00fcnchen Haus",
           "typeName": "Walk",
           "emoji": "\ud83d\udeb6",
           "detail": "Hotel to downtown, then to the restaurant."
         },
         {
-          "start": "12:25 PM",
-          "end": "1:15 PM",
+          "start": "1:25 PM",
+          "end": "2:15 PM",
           "title": "Lunch \u2014 M\u00fcnchen Haus",
           "detail": "Counter-service Bavarian grill with beer-garden seating \u2014 fast, casual, all-ages.",
           "typeName": "Dining",
@@ -615,37 +616,37 @@
           "menuUrl": "https://www.munchenhaus.com/assets/pdf/Menu.pdf"
         },
         {
-          "start": "1:15 PM",
-          "end": "2:35 PM",
+          "start": "2:15 PM",
+          "end": "3:35 PM",
           "title": "Village afternoon \u2014 chocolate & ornament shops, Gingerbread Factory",
           "detail": "A single unhurried stretch of village time \u2014 no second activity stacked on top of an already full morning.",
           "typeName": "Shopping",
           "emoji": "\ud83d\udecd\ufe0f"
         },
         {
-          "start": "2:35 PM",
-          "end": "2:50 PM",
+          "start": "3:35 PM",
+          "end": "3:50 PM",
           "title": "Walk back to the hotel",
           "typeName": "Walk",
           "emoji": "\ud83d\udeb6"
         },
         {
-          "start": "2:50 PM",
-          "end": "4:30 PM",
+          "start": "3:50 PM",
+          "end": "5:30 PM",
           "title": "Free time / rest at the hotel",
           "typeName": "Free Time",
           "emoji": "\u23f0"
         },
         {
-          "start": "4:30 PM",
-          "end": "4:45 PM",
+          "start": "5:30 PM",
+          "end": "5:45 PM",
           "title": "Drive to Baren Haus",
           "typeName": "Drive",
           "emoji": "\ud83d\ude97"
         },
         {
-          "start": "4:45 PM",
-          "end": "6:00 PM",
+          "start": "5:45 PM",
+          "end": "7:00 PM",
           "title": "Dinner \u2014 Baren Haus",
           "detail": "German restaurant at 901 Front St, swapped in for Kristall's (rejected -- 'doesn't look good'). Confirmed real entree pricing and a dedicated kids menu; family-friendly per reviews. 385 photos/471 reviews on Yelp.",
           "typeName": "Dining",
@@ -655,19 +656,20 @@
           "menuUrl": "https://www.barenhaus.com/main-menu"
         },
         {
-          "start": "6:00 PM",
-          "end": "6:15 PM",
+          "start": "7:00 PM",
+          "end": "7:15 PM",
           "title": "Drive back to the hotel",
           "typeName": "Drive",
           "emoji": "\ud83d\ude97"
         },
         {
-          "start": "6:15 PM",
-          "end": "7:30 PM",
+          "start": "7:15 PM",
+          "end": "8:30 PM",
           "title": "Evening wind-down & bedtime routine",
           "detail": "A full morning of two farm activities plus a village afternoon \u2014 a genuinely early, easy evening.",
           "typeName": "Free Time",
-          "emoji": "\u23f0"
+          "emoji": "\u23f0",
+          "flag": "With the day shifted an hour later for the 10 AM reindeer tour, bedtime now lands at the bare 10-hour sleep minimum for a 7:30 AM Dec 23 breakfast (asleep ~8:30 PM, wake by 6:30 AM) \u2014 no extra cushion left. Worth trimming Baren Haus or the village-afternoon browsing time if the kids typically need more than the floor."
         }
       ]
     },
@@ -1399,10 +1401,6 @@
           "note": "Red-Tail Canyon Farm, phone-only booking, (800) 678-4512 \u2014 book as soon as dates are locked"
         },
         {
-          "name": "Reindeer Farm reservation",
-          "note": "timed-entry, online only \u2014 book by Sept/Oct 2026, holiday tours sell out months out"
-        },
-        {
           "name": "JJ Hills Christmas Dinner pricing",
           "note": "call (509) 548-5807 to confirm current per-person pricing, reservations required"
         },
@@ -1449,6 +1447,10 @@
         {
           "name": "Bainbridge Island ferry sailing times (Dec 20, 2026)",
           "note": "Washington State Ferries' Winter 2026-27 Seattle\u2013Bainbridge schedule isn't published yet as of July 2026 (WSF typically posts seasonal schedules only a few months ahead). Planned around the route's typical daytime frequency (~every 40-50 min). Reconfirm exact departure times on wsdot.com/ferries once the winter schedule posts, likely this fall."
+        },
+        {
+          "name": "Reindeer Farm reservation",
+          "note": "Quoted at $296.80 for the family (10 AM tour slot) but not yet booked/paid \u2014 timed-entry, online only, no walk-ins. The farm's own site warns holiday tours sell out months in advance; book by Sept/Oct 2026."
         }
       ]
     },

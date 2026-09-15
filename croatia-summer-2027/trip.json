@@ -1,0 +1,1062 @@
+{
+  "meta": {
+    "title": "Croatia Summer 2027",
+    "dates": "July 17-30, 2027 (Miami -> Dubrovnik -> Hvar -> Split -> Miami)",
+    "route": [
+      {
+        "name": "Miami",
+        "sub": "home (MIA)"
+      },
+      {
+        "name": "Dubrovnik",
+        "sub": "5 nights · Sheraton Dubrovnik Riviera"
+      },
+      {
+        "name": "Hvar",
+        "sub": "3 nights · Amfora Hvar Grand Beach Resort"
+      },
+      {
+        "name": "Split",
+        "sub": "4 nights · Le Méridien Lav"
+      },
+      {
+        "name": "Miami",
+        "sub": "home (MIA)"
+      }
+    ]
+  },
+  "days": [
+    {
+      "date": "Saturday, July 17, 2027",
+      "title": "Miami -> Dubrovnik (via Newark, overnight)",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "6:30 AM",
+          "end": "9:00 AM",
+          "title": "Arrive MIA, check bags",
+          "detail": "Arrive 3+ hrs before departure for a 2-week international trip with a family of 4.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "11:45 AM",
+          "title": "United - MIA -> EWR - Nonstop - 2h45m",
+          "detail": "Domestic connection to Newark, United's hub for the transatlantic leg.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "route": "MIA → EWR",
+          "flightNo": "United (rep.) - domestic connection",
+          "cabin": "Economy",
+          "notes": "Representative flight/time - exact 2027 schedule not yet published."
+        },
+        {
+          "start": "11:45 AM",
+          "end": "5:30 PM",
+          "title": "Layover at EWR",
+          "detail": "Long layover built in deliberately - real buffer against the MIA-EWR leg running late and missing the one daily nonstop to Dubrovnik.",
+          "typeName": "Logistics",
+          "emoji": "⏱️",
+          "est": 60.0,
+          "notes": "Lunch/dinner in the terminal, budget ~$60 for the family."
+        },
+        {
+          "start": "6:00 PM",
+          "end": "9:00 AM",
+          "title": "United UA - EWR -> DBV - Nonstop - ~9h",
+          "detail": "United's seasonal summer nonstop Newark-Dubrovnik route. Overnight flight, lands 9:00 AM local time Sunday, July 18 (6-hour time change).",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "program": "United MileagePlus",
+          "points": "180000",
+          "notes": "Live seats.aero data for nearby May/June 2027 dates showed United EWR-DBV nonstop at ~40,000 miles/person in economy. Exact July 17 2027 space isn't loaded yet - United's booking window opens roughly 330-336 days out, which lands around late August 2026 for this date. Budgeting ~45,000 miles/person (180,000 total) to cover the MIA-EWR domestic connection plus the international leg - set a seats.aero alert for EWR-DBV in August 2026.",
+          "route": "EWR → DBV",
+          "flightNo": "United (seasonal summer route)",
+          "cabin": "Economy",
+          "seats": "Not yet assigned",
+          "flag": "Not yet bookable - exact fare/schedule confirms once United releases July 2027 space (~Aug 2026). This nonstop route only runs seasonally in summer - reconfirm it's still operating for 2027 before relying on it."
+        }
+      ]
+    },
+    {
+      "date": "Sunday, July 18, 2027",
+      "title": "Arrive Dubrovnik",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "9:00 AM",
+          "end": "10:00 AM",
+          "title": "Land at DBV - immigration, bags, customs",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "10:00 AM",
+          "end": "10:20 AM",
+          "title": "Transfer to hotel",
+          "detail": "Dubrovnik Airport -> Mlini/Srebreno, ~11-20 min depending on traffic.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 45.0,
+          "notes": "Estimate for a private taxi/transfer."
+        },
+        {
+          "start": "10:20 AM",
+          "end": "10:20 AM",
+          "title": "Sheraton Dubrovnik Riviera Hotel - check in",
+          "detail": "2 Rooms (Classic Suites).",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "Marriott Bonvoy",
+          "points": "270000",
+          "notes": "Marriott retired fixed award charts in 2022-23 - Bonvoy is now fully dynamic. Recent tracked point costs for this property run ~25,000-30,000 pts/night/room in peak season - budgeting the midpoint (~27,000) x 2 rooms x 5 nights = 270,000 points. Booking 2 rooms because every room/suite category here caps at 3 guests even with a rollaway (~€75/night extra) added - it's genuinely unclear from public listings whether a Classic Suite + rollaway can legally hold 2 adults + 2 kids.",
+          "nights": "5 nights (Sun-Fri)",
+          "roomType": "2 Classic Suites (48 sqm each) - confirm bed config",
+          "address": "Mlini, Srebreno, Dubrovnik-Neretva County, Croatia",
+          "cancelBy": "Not yet booked",
+          "flag": "Call the hotel or Marriott Reservations directly to confirm whether 1 suite + rollaway can hold 2A+2K instead of 2 rooms - would roughly halve the points cost if allowed. Also: this property has had August points blackouts in past years (phone-only booking) - check availability early."
+        },
+        {
+          "start": "10:20 AM",
+          "end": "6:00 PM",
+          "title": "Rest / pool time at the hotel",
+          "detail": "Deliberately no anchor activity today given the overnight flight - jet lag buffer.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Konoba Marinero, Mlini",
+          "detail": "Whole grilled fish, prawns, squid-ink risotto - easy, close first night. Mains from €19.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0,
+          "menuUrl": "https://marinero.hr/"
+        }
+      ]
+    },
+    {
+      "date": "Monday, July 19, 2027",
+      "title": "Old Town, City Walls & Cable Car",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:45 AM",
+          "end": "9:10 AM",
+          "title": "Drive/taxi to Dubrovnik Old Town (Pile Gate)",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 30.0
+        },
+        {
+          "start": "9:15 AM",
+          "end": "11:15 AM",
+          "title": "Dubrovnik City Walls walk",
+          "detail": "Full loop of the walls, first entry to beat heat/crowds. Ticket includes Lovrijenac Fortress + Western Outer Walls.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 110.0,
+          "notes": "€35-40/adult, €15/child (under 18), under-7 free. ~€110/$120 for the family. wallsofdubrovnik.com"
+        },
+        {
+          "start": "11:15 AM",
+          "end": "12:00 PM",
+          "title": "Old Town wander - Stradun, Onofrio's Fountain",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "12:15 PM",
+          "end": "1:30 PM",
+          "title": "Lunch - Marco Polo Restaurant",
+          "detail": "Courtyard on Lučarica, near the walls. Fuži with shrimp/truffle, Neretva blue crab.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0,
+          "menuUrl": "https://marcopolo-dubrovnik.com/reservations/"
+        },
+        {
+          "start": "1:45 PM",
+          "end": "2:15 PM",
+          "title": "Cable car up Srđ",
+          "detail": "~4 min ride each way, panoramic view over Old Town and the coast. Runs until midnight in summer.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 95.0,
+          "notes": "€27-30/adult return, €10-18/child return - budgeting ~€95/$103 for the family, confirm exact 2027 pricing. dubrovnikcablecar.com"
+        },
+        {
+          "start": "2:15 PM",
+          "end": "3:00 PM",
+          "title": "Time at the Srđ summit",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "3:15 PM",
+          "end": "6:30 PM",
+          "title": "Rest / pool time at the hotel",
+          "detail": "Real buffer after a big morning on foot in July heat.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Konoba Forno, Mlini",
+          "detail": "Family-run, sea-view terrace, generous portions, real kids' menu.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        }
+      ]
+    },
+    {
+      "date": "Tuesday, July 20, 2027",
+      "title": "Sea Kayak to Lokrum Island",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:45 AM",
+          "end": "9:10 AM",
+          "title": "Drive/taxi to Old Town harbor",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 30.0
+        },
+        {
+          "start": "9:30 AM",
+          "end": "12:00 PM",
+          "title": "Sea kayak tour to Lokrum Island",
+          "detail": "Dubrovnik Sea Kayaking (DSK) - one of the few operators officially authorized in Old Town waters. Paddle out to Lokrum, swim/snorkel stop, paddle back.",
+          "typeName": "Excursion",
+          "emoji": "👞",
+          "est": 160.0,
+          "notes": "€32-45/person for a 2-3hr tour -> ~€150-180/$160 for the family. Minimum paddling age is typically 7-8; a younger child can ride free between parents in a double kayak without paddling. dubrovnikseakayaking.com",
+          "flag": "Confirm exact age policy with the operator given the kids' ages at travel time."
+        },
+        {
+          "start": "12:00 PM",
+          "end": "12:30 PM",
+          "title": "Change / rinse off",
+          "detail": "Dedicated changeover block after a morning in the water.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "12:30 PM",
+          "end": "1:45 PM",
+          "title": "Lunch - Lokanda Peskarija, Old Harbor",
+          "detail": "Casual, right on the Old Harbor. Fried calamari, black cuttlefish risotto. No reservations - typical wait, worth it.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 90.0,
+          "menuUrl": "https://www.lokandapeskarija.com/"
+        },
+        {
+          "start": "2:00 PM",
+          "end": "2:25 PM",
+          "title": "Drive/taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 30.0
+        },
+        {
+          "start": "2:25 PM",
+          "end": "6:30 PM",
+          "title": "Pool / beach - free time",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Lorenco Dine and Wine, Srebreno",
+          "detail": "Fresh tuna/swordfish, grilled vegetables - wine-forward but casual.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0
+        }
+      ]
+    },
+    {
+      "date": "Wednesday, July 21, 2027",
+      "title": "Full-Day Sailing - Elaphiti Islands",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:00 AM",
+          "end": "7:45 AM",
+          "title": "Breakfast at hotel - early start",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:15 AM",
+          "end": "8:45 AM",
+          "title": "Drive/taxi to the departure marina",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 30.0
+        },
+        {
+          "start": "9:00 AM",
+          "end": "5:00 PM",
+          "title": "Full-day sailing - Koločep, Lopud, Šipan",
+          "detail": "Elaphiti Islands day sail - swim/snorkel stops at each island, lunch on board (fish/meat/veg choice).",
+          "typeName": "Excursion",
+          "emoji": "👞",
+          "est": 440.0,
+          "notes": "Shared-boat group tours run roughly $80-120/person -> ~$400-480 for the family; private charter runs ~€400 for up to 3 people (would need to confirm pricing for 4). Get a live quote once dates are locked, pricing varies a lot by operator.",
+          "flag": "Lunch is included in the tour price - no separate meal block needed today."
+        },
+        {
+          "start": "5:15 PM",
+          "end": "5:45 PM",
+          "title": "Drive/taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 30.0
+        },
+        {
+          "start": "5:45 PM",
+          "end": "6:30 PM",
+          "title": "Change / rinse off",
+          "detail": "Dedicated changeover block after a full day on and in the water.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Konoba King, Plat",
+          "detail": "Grilled seafood platter, peka-style lamb. Book ~2 days ahead.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 120.0
+        }
+      ]
+    },
+    {
+      "date": "Thursday, July 22, 2027",
+      "title": "Beach day / resort",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Hotel beach & pool - free morning",
+          "detail": "No anchor activity - real rest day.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch - Restaurant Srebreno",
+          "detail": "Directly across from the hotel - easy, no transit needed.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 85.0,
+          "flag": "No verifiable official site found - confirm current operating status by phone before relying on it."
+        },
+        {
+          "start": "2:15 PM",
+          "end": "5:00 PM",
+          "title": "Pool / beach - free time",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "5:30 PM",
+          "end": "6:00 PM",
+          "title": "Drive/taxi to Old Town",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 30.0
+        },
+        {
+          "start": "6:00 PM",
+          "end": "7:00 PM",
+          "title": "Old Town evening stroll - shops, gelato",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "est": 25.0
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:15 PM",
+          "title": "Dinner - Restaurant Dubrovnik",
+          "detail": "Inside an old fort, Michelin-recognized, sunset terrace. The one special/dressier night of the Dubrovnik stay - reserve ~a week ahead in July.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 200.0,
+          "menuUrl": "https://guide.michelin.com/us/en/dubrovnik-neretva/dubrovnik/restaurant/dubrovnik"
+        },
+        {
+          "start": "9:15 PM",
+          "end": "9:40 PM",
+          "title": "Drive/taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 30.0
+        }
+      ]
+    },
+    {
+      "date": "Friday, July 23, 2027",
+      "title": "Ferry to Hvar",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel, finish packing",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "11:00 AM",
+          "end": "11:00 AM",
+          "title": "Sheraton Dubrovnik Riviera Hotel - check out",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "11:00 AM",
+          "end": "1:30 PM",
+          "title": "Last morning at the hotel / lunch",
+          "detail": "Light morning before the ferry - pool time, then an early lunch near the hotel.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "1:30 PM",
+          "end": "1:45 PM",
+          "title": "Lunch - light bite near hotel",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 60.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:45 PM",
+          "title": "Drive/taxi to Gruž ferry port, Dubrovnik",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 35.0
+        },
+        {
+          "start": "3:30 PM",
+          "end": "6:50 PM",
+          "title": "Krilo catamaran - Dubrovnik (Gruž) -> Hvar",
+          "detail": "~3h20m. Foot-passenger only, daily Apr 1-Oct 31. Book well ahead - this line sells out in July/August.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 800.0,
+          "notes": "~€50/adult one-way x4 travelers = ~€200/$217 - noted the est reflects the family total. Exact 2027 sailing times not yet published; 2026 pattern used as the best current proxy.",
+          "flag": "This is the single daily through-sailing to Split via Hvar - if it sells out, TP Line runs a similar Dubrovnik-Korčula-Hvar-Split service as a backup."
+        },
+        {
+          "start": "7:00 PM",
+          "end": "7:15 PM",
+          "title": "Walk to hotel from the Hvar ferry landing",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "7:15 PM",
+          "end": "7:15 PM",
+          "title": "Amfora Hvar Grand Beach Resort - check in",
+          "detail": "Family Room (partitioned bedroom + sofa bed, sleeps 4 in one room).",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "est": 1200.0,
+          "notes": "No Marriott/Hyatt/Hilton presence on Hvar itself - this is a real cash-rate resort booking. Shoulder-season rates start ~$140/night; budgeting an estimated $400/night x 3 nights = $1,200 for July peak, unconfirmed - get a live quote closer to booking.",
+          "nights": "3 nights (Fri-Mon)",
+          "roomType": "Family Room (partitioned bedroom, sofa bed)",
+          "address": "Hvar Town, Hvar Island, Croatia",
+          "cancelBy": "Not yet booked",
+          "flag": "Price is an estimate, not a quote. Beachfront resort with cascading pool + waterslides, kids club, ~10 min walk to Old Town/harbor - the closer match to this family's usual resort-with-grounds preference vs. a cramped boutique hotel."
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Dalmatino, Hvar Town",
+          "detail": "Steak & fish house, pašticada, lamb under the bell - easy first night.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 130.0,
+          "menuUrl": "https://dalmatino-hvar.com/menu"
+        }
+      ]
+    },
+    {
+      "date": "Saturday, July 24, 2027",
+      "title": "Pakleni Islands",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:30 AM",
+          "title": "Walk to the water taxi dock",
+          "detail": "Near the Mlinar bakery on the Riva.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "9:45 AM",
+          "title": "Water taxi to Palmižana (Sveti Klement)",
+          "detail": "Runs every 20-30 min in summer. Drops you at a good family beach bay for the day - no island-to-island hopping on the taxi, just one destination.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 50.0,
+          "notes": "€8-15/person return -> ~€45-60/$50 for the family."
+        },
+        {
+          "start": "9:45 AM",
+          "end": "1:00 PM",
+          "title": "Beach morning at Palmižana",
+          "detail": "Calm, clear water, good for the kids.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch at Palmižana",
+          "detail": "Casual beachfront taverna on the bay - order fresh, no need to leave the beach.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "5:00 PM",
+          "title": "Beach afternoon at Palmižana",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "5:00 PM",
+          "end": "5:15 PM",
+          "title": "Water taxi back to Hvar Town",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "5:15 PM",
+          "end": "6:00 PM",
+          "title": "Change / rinse off at the hotel",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Konoba Menego",
+          "detail": "Stone-walled tavern in Groda, octopus salad, gnocchi with shrimp. Cash only.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0,
+          "menuUrl": "https://menego.hr/",
+          "flag": "Cash only - bring euros."
+        }
+      ]
+    },
+    {
+      "date": "Sunday, July 25, 2027",
+      "title": "Hvar Town & Fortica Fortress",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:30 AM",
+          "title": "Walk into Hvar Town",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "10:15 AM",
+          "title": "Fortica (Spanjola) Fortress",
+          "detail": "Short uphill walk from town, panoramic views over the harbor and Pakleni Islands - light, low-fatigue morning stop.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 25.0
+        },
+        {
+          "start": "10:15 AM",
+          "end": "11:00 AM",
+          "title": "Wander Hvar Town - main square, harbor",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "12:30 PM",
+          "end": "1:45 PM",
+          "title": "Lunch - Passarola",
+          "detail": "Rooftop terrace, handmade pasta, lobster with black macaroni.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 115.0,
+          "menuUrl": "https://restaurant-passarola.eu/menu"
+        },
+        {
+          "start": "2:00 PM",
+          "end": "5:30 PM",
+          "title": "Beach club - hotel beach",
+          "detail": "Free afternoon, pack for Split.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:45 PM",
+          "title": "Dinner - Giaxa",
+          "detail": "15th-century Gothic courtyard, tuna tartare, braised beef cheeks - the special night of the Hvar stay.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 170.0,
+          "menuUrl": "https://giaxa.com/menu"
+        }
+      ]
+    },
+    {
+      "date": "Monday, July 26, 2027",
+      "title": "Ferry to Split",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel, finish packing",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "10:00 AM",
+          "end": "10:00 AM",
+          "title": "Amfora Hvar Grand Beach Resort - check out",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "10:00 AM",
+          "end": "12:30 PM",
+          "title": "Last morning in Hvar Town",
+          "detail": "Free time, last beach/harbor walk before the ferry.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "12:30 PM",
+          "end": "12:45 PM",
+          "title": "Walk to the ferry dock",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Jadrolinija catamaran - Hvar -> Split",
+          "detail": "Direct Split-Hvar line (more frequent than the single daily Dubrovnik-Split through-service). ~1h15m, representative midday departure - exact 2027 schedule not yet published.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 200.0,
+          "notes": "~€25/adult one-way x4 -> ~€100-120/$110-130 for the family; est includes some buffer for fare variation."
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:45 PM",
+          "title": "Transfer to hotel",
+          "detail": "Split ferry terminal -> Podstrana, ~26-29 km, roughly 27-40 min depending on summer traffic.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 45.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "2:45 PM",
+          "title": "Le Méridien Lav, Split - check in",
+          "detail": "Family Suite (45 sqm, two connecting bedrooms, two bathrooms, separate living room - genuinely sleeps 4 in one unit).",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "Marriott Bonvoy",
+          "points": "240000",
+          "notes": "Historically tracked as Category 6 (~85,000-point certificate tier under Marriott's old fixed chart); Bonvoy is now fully dynamic, so no fixed number exists. Budgeting ~60,000 points/night x 4 nights = 240,000 points as a reasonable estimate for a Family Suite in July peak - unconfirmed. Cash alternative if points aren't available: estimate ~$500-600/night.",
+          "nights": "4 nights (Mon-Fri)",
+          "roomType": "Family Suite (45 sqm, 2BR, 2BA)",
+          "address": "Podstrana, Split, Croatia (Marina Lav)",
+          "cancelBy": "Not yet booked",
+          "flag": "Suites are frequently cash-only or points+cash rather than a straight points redemption at Marriott properties - confirm the Family Suite is actually bookable on points before counting on it."
+        },
+        {
+          "start": "2:45 PM",
+          "end": "6:00 PM",
+          "title": "Rest / pool time at the hotel",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Conlemani",
+          "detail": "Right on the hotel's marina - Italian/Mediterranean, highchairs available. Easiest possible first night, zero transit.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0
+        }
+      ]
+    },
+    {
+      "date": "Tuesday, July 27, 2027",
+      "title": "Diocletian's Palace & Split Old Town",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:30 AM",
+          "title": "Drive/taxi to Split Old Town",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 35.0
+        },
+        {
+          "start": "9:30 AM",
+          "end": "11:15 AM",
+          "title": "Diocletian's Palace",
+          "detail": "Free entry, open 24/7 (some interior sites like the bell tower charge separately - skipping the steep bell-tower climb as a poor fit for younger kids). Peristyle, substructure halls, main sights at a family pace.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "12:00 PM",
+          "end": "1:15 PM",
+          "title": "Lunch - Konoba Korta",
+          "detail": "Inside Diocletian's Palace itself. Peka, pašticada, brodetto.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0,
+          "menuUrl": "https://opentable.com/r/konoba-korta-split"
+        },
+        {
+          "start": "1:15 PM",
+          "end": "2:00 PM",
+          "title": "Riva waterfront promenade wander",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:45 PM",
+          "title": "Drive/taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 35.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "6:30 PM",
+          "title": "Pool / beach - free time",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Brasserie on 7, Split Riva",
+          "detail": "Broad kid-friendly menu - burgers, pasta, ribeye. Easiest 'something for everyone' night.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 115.0
+        },
+        {
+          "start": "8:30 PM",
+          "end": "9:00 PM",
+          "title": "Drive/taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 35.0
+        }
+      ]
+    },
+    {
+      "date": "Wednesday, July 28, 2027",
+      "title": "Krka National Park",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:00 AM",
+          "end": "7:45 AM",
+          "title": "Breakfast at hotel - early start",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:00 AM",
+          "end": "8:00 AM",
+          "title": "Organized day-tour pickup at hotel",
+          "detail": "Private/shared day tour with hotel pickup - handles Krka's parking and timed entry without a rental car, consistent with this family's preference for boat/organized transport over driving.",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "4:00 PM",
+          "title": "Krka National Park",
+          "detail": "Skradin -> Skradinski Buk boat transfer included in the entrance ticket. IMPORTANT: swimming is banned at Skradinski Buk itself (since Jan 2021) - the swim stop is at Roški Slap, Stinice, or Pisak instead (all open for swimming Jun 1-Sep 30). Optional Skradinski Buk-Visovac-Roški Slap boat add-on ~€15-20/person.",
+          "typeName": "Excursion",
+          "emoji": "👞",
+          "est": 175.0,
+          "notes": "2026 confirmed peak-season (Jun-Sep) pricing: €40/adult, €15/child (7-18), under-7 free -> ~€110/$120 for the family, plus the boat add-on (~€60-80/$65-85 for the family) if taken -> budgeting ~€160-190/$175 total. This is meaningfully higher than older published prices - confirm again closer to travel."
+        },
+        {
+          "start": "4:00 PM",
+          "end": "4:15 PM",
+          "title": "Lunch/snack near the park or on the return drive",
+          "detail": "Packed lunch or a quick stop in Skradin town.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 70.0
+        },
+        {
+          "start": "4:15 PM",
+          "end": "5:30 PM",
+          "title": "Drive back to Podstrana",
+          "detail": "~1h15m depending on traffic.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "5:30 PM",
+          "end": "6:30 PM",
+          "title": "Rest at the hotel",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:30 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Restoran Jure, Podstrana",
+          "detail": "Waterfront, family-run since 1995, whole grilled fish. Close to the hotel after a long day.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 115.0,
+          "menuUrl": "https://restoranjure.com/en/menu"
+        }
+      ]
+    },
+    {
+      "date": "Thursday, July 29, 2027",
+      "title": "Blue Lagoon Boat Trip & Trogir",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:45 AM",
+          "end": "9:15 AM",
+          "title": "Transfer to the boat departure point",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 35.0
+        },
+        {
+          "start": "9:30 AM",
+          "end": "2:00 PM",
+          "title": "Blue Lagoon boat trip + Trogir stop",
+          "detail": "Shared speedboat tour - swim/snorkel time at Krknjaši Bay (the 'Blue Lagoon,' between Veli Drvenik and two islets), then free time in Trogir's UNESCO old town.",
+          "typeName": "Excursion",
+          "emoji": "👞",
+          "est": 300.0,
+          "notes": "~$68-80/person for a ~4.5hr shared tour -> ~$280-320 for the family. Private charter (~€1,350 for up to 6) is an option if you'd rather not share the boat."
+        },
+        {
+          "start": "1:00 PM",
+          "end": "1:45 PM",
+          "title": "Lunch in Trogir old town",
+          "detail": "Included as a stop within the tour window - casual waterfront spot in Trogir.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:45 PM",
+          "title": "Transfer back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 35.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "6:00 PM",
+          "title": "Rest / pool time, pack",
+          "detail": "Last full day - real buffer before tomorrow's flight home.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:45 PM",
+          "title": "Dinner - Konoba Matejuska, Split Old Town",
+          "detail": "Tucked by the fishing harbor, black risotto - last-night dinner. Small space, book ahead.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 125.0,
+          "menuUrl": "https://konoba-matejuska.tablein.com"
+        },
+        {
+          "start": "8:45 PM",
+          "end": "9:15 PM",
+          "title": "Drive/taxi back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 35.0
+        }
+      ]
+    },
+    {
+      "date": "Friday, July 30, 2027",
+      "title": "Fly home (Split -> Miami)",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:00 AM",
+          "end": "7:45 AM",
+          "title": "Breakfast at hotel, finish packing",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:00 AM",
+          "title": "Le Méridien Lav, Split - check out",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:40 AM",
+          "title": "Transfer to Split Airport",
+          "detail": "~27-40 min depending on traffic.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 50.0
+        },
+        {
+          "start": "12:30 PM",
+          "end": "6:00 AM",
+          "title": "United - SPU -> EWR (1 stop) -> MIA",
+          "detail": "SPU -> EWR with one connection, then a domestic MIA leg. Lands early morning the next day, July 31 (or same night depending on exact routing/timezone).",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "program": "United MileagePlus",
+          "points": "200000",
+          "notes": "Live seats.aero data for nearby June 2027 dates showed SPU/DBV -> EWR on United at ~44,000 miles/person, 1 stop. Budgeting ~50,000 miles/person (200,000 total) to cover the SPU-EWR international leg plus the EWR-MIA domestic connection. Exact July 30 2027 space isn't loaded yet - same booking-window constraint as the outbound flight.",
+          "route": "SPU → EWR → MIA",
+          "flightNo": "United (rep.) - exact routing TBD",
+          "cabin": "Economy",
+          "flag": "Not yet bookable - placeholder timing. Set a seats.aero alert for SPU-EWR/DBV-EWR in August 2026 when United's July 2027 space should open."
+        }
+      ]
+    }
+  ],
+  "packing": {
+    "trackerTitle": "Item tracker",
+    "outfitDays": [],
+    "trackerDays": []
+  },
+  "supplies": [],
+  "ideas": [
+    {
+      "name": "Still open / TBD",
+      "items": [
+        {
+          "name": "Book United MileagePlus outbound and return flights",
+          "note": "Nonstop EWR-DBV and SPU/DBV-EWR space for July 2027 isn't loaded yet - set a seats.aero alert for August 2026 when the ~330-336 day booking window should open. Confirm the seasonal EWR-DBV nonstop is still operating for summer 2027."
+        },
+        {
+          "name": "Confirm Sheraton Dubrovnik Riviera room configuration",
+          "note": "Call the hotel/Marriott directly to find out whether 1 suite + rollaway can legally hold 2 adults + 2 kids, vs. the 2-room plan currently budgeted (270,000 points). Also check for any August points blackout pattern."
+        },
+        {
+          "name": "Confirm Le Méridien Lav Family Suite is bookable on points",
+          "note": "Suites are often cash-only or points+cash at Marriott properties - verify before counting on the 240,000-point estimate."
+        },
+        {
+          "name": "Get a live July 2027 rate for Amfora Hvar Grand Beach Resort Family Room",
+          "note": "Only shoulder-season floor pricing ($140/night) was found - the $400/night estimate used here needs a live quote."
+        },
+        {
+          "name": "Confirm 2027 Krilo/Jadrolinija ferry schedules once published",
+          "note": "2026 sailing pattern used as the best current proxy for both the Dubrovnik->Hvar and Hvar->Split legs."
+        },
+        {
+          "name": "Book Elaphiti Islands sailing and Blue Lagoon boat tour operators",
+          "note": "Wide pricing range across operators for both - get live quotes and lock in a specific operator once dates are confirmed."
+        },
+        {
+          "name": "Confirm sea kayak minimum age with Dubrovnik Sea Kayaking",
+          "note": "Typically 7-8 for a paddling seat - check against the kids' actual ages at travel time."
+        },
+        {
+          "name": "Book City Walls, cable car, and Krka tickets",
+          "note": "All bookable closer to the date - exact 2027 pricing for kids wasn't as reliably sourced as adult pricing on a couple of these."
+        }
+      ]
+    }
+  ],
+  "alternatives": null
+}

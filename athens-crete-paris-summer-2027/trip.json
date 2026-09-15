@@ -1,0 +1,1195 @@
+{
+  "meta": {
+    "title": "Athens, Crete & Paris Summer 2027",
+    "dates": "July 17 - August 1, 2027 (Miami -> Athens -> Crete -> Paris -> Miami)",
+    "route": [
+      {
+        "name": "Miami",
+        "sub": "home (MIA)"
+      },
+      {
+        "name": "Athens",
+        "sub": "3 nights · Grand Hyatt Athens"
+      },
+      {
+        "name": "Elounda, Crete",
+        "sub": "7 nights · Domes of Elounda"
+      },
+      {
+        "name": "Paris",
+        "sub": "4 nights · Paris Marriott Rive Gauche"
+      },
+      {
+        "name": "Miami",
+        "sub": "home (MIA)"
+      }
+    ]
+  },
+  "days": [
+    {
+      "date": "Saturday, July 17, 2027",
+      "title": "Miami -> Athens (via Philadelphia)",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "5:30 AM",
+          "end": "6:45 AM",
+          "title": "Arrive MIA, check bags",
+          "detail": "Arrive 3+ hrs before an international itinerary with a family of 4.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "8:30 AM",
+          "end": "11:28 AM",
+          "title": "American Airlines AA2764 - MIA -> PHL - Nonstop - 2h58m",
+          "detail": "MIA -> PHL, Economy, 4 passengers, Boeing 737-800.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "route": "MIA → PHL",
+          "flightNo": "American 2764",
+          "cabin": "Economy",
+          "notes": "Part of a single connecting itinerary booked via Alaska Atmos Rewards (partner award on American, oneworld)."
+        },
+        {
+          "start": "11:28 AM",
+          "end": "4:50 PM",
+          "title": "Layover at PHL",
+          "detail": "5h22m layover - long but real, built into the fare as shown.",
+          "typeName": "Logistics",
+          "emoji": "⏱️",
+          "est": 60.0,
+          "notes": "Lunch/dinner in the terminal, budget ~$60 for the family."
+        },
+        {
+          "start": "4:50 PM",
+          "end": "9:10 AM",
+          "title": "American Airlines AA758 - PHL -> ATH - Nonstop - 9h20m",
+          "detail": "PHL -> ATH, Economy, 4 passengers, Boeing 787-9. Overnight flight, lands 9:10 AM local time Sunday, July 18 Athens time.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "program": "Alaska Atmos Rewards",
+          "points": "140000",
+          "paid": 102.4,
+          "notes": "35,000 Atmos Rewards points + $25.60/passenger x 4 = 140,000 points + $102.40 total, per the fare shown when searched (confirmed real fare, per screenshot). Total itinerary: 17h40m including the PHL layover.",
+          "route": "PHL → ATH",
+          "flightNo": "American 758",
+          "cabin": "Economy",
+          "seats": "Not yet assigned"
+        }
+      ]
+    },
+    {
+      "date": "Sunday, July 18, 2027",
+      "title": "Arrive Athens",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "9:10 AM",
+          "end": "10:15 AM",
+          "title": "Land at ATH - immigration, bags, customs",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "10:15 AM",
+          "end": "10:55 AM",
+          "title": "Taxi to hotel",
+          "detail": "Flat-rate airport taxi to central Athens - €40 (5am-midnight), set by Athens Municipality regardless of traffic/route.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 44.0,
+          "notes": "€40 flat rate (~$44); if a driver claims no flat rate applies, that's a red flag - take a different taxi."
+        },
+        {
+          "start": "10:55 AM",
+          "end": "10:55 AM",
+          "title": "Grand Hyatt Athens - check in",
+          "detail": "Grand Suite (Acropolis views), via a complimentary Suite Night Award (World of Hyatt Globalist benefit, space-available upgrade - no extra points cost for the upgrade itself, not guaranteed until confirmed).",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "World of Hyatt",
+          "points": "60000",
+          "notes": "20,000 points/night x 3 nights = 60,000 points for the base room rate, upgraded to the Grand Suite via a Suite Night Award. Daily breakfast included for up to 4 guests (Globalist benefit) - no separate breakfast cost budgeted below.",
+          "nights": "3 nights (Sun-Wed)",
+          "roomType": "Grand Suite (Acropolis views) via Suite Night Award upgrade",
+          "address": "Syngrou Avenue, Athens, Greece",
+          "cancelBy": "Not yet booked",
+          "flag": "Suite Night Award upgrades are space-available, not guaranteed - confirm status before finalizing plans that assume the suite specifically. Hotel is ~25 min walk to the Acropolis/Plaka (not walkable-close like some central options) - budget taxi/tram time for daily trips into the old town."
+        },
+        {
+          "start": "10:55 AM",
+          "end": "6:00 PM",
+          "title": "Rest at the hotel",
+          "detail": "Deliberately no anchor activity today given the overnight flight - jet lag buffer.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Ergon House Athens",
+          "detail": "Greek deli/food-hall format near Syntagma/Plaka - olive tree display, deli counters, browsing format that's easy and low-key for a jet-lagged first night.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        }
+      ]
+    },
+    {
+      "date": "Monday, July 19, 2027",
+      "title": "Acropolis & Plaka",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "6:30 AM",
+          "end": "7:00 AM",
+          "title": "Breakfast at hotel - early start",
+          "detail": "Included daily via Globalist benefit.",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "7:15 AM",
+          "end": "7:35 AM",
+          "title": "Taxi to the Acropolis",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 20.0
+        },
+        {
+          "start": "8:00 AM",
+          "end": "9:15 AM",
+          "title": "The Acropolis",
+          "detail": "Earliest bookable slot (8-9am) to beat July heat and crowds - the 8-9am and 9-10am slots fill weeks ahead in summer. Realistic 60-90 min on-site with kids before heat becomes an issue.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 120.0,
+          "notes": "€30/adult, kids under 5 free (still need a zero-value timed ticket). Timed entry mandatory via the official hhticket.gr platform - budgeting ~€120/$130 for the family including some buffer.",
+          "flag": "Book on hhticket.gr as soon as the booking window opens - capacity caps at ~20,000/day and early slots sell out weeks ahead in July. Deliberately skipping the Acropolis Museum, consistent with this family's no-museums preference."
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:45 AM",
+          "title": "Walk down into Plaka",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:45 AM",
+          "end": "11:00 AM",
+          "title": "Plaka old town wander",
+          "detail": "Narrow lanes, small shops, Anafiotika's whitewashed island-style quarter.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "12:00 PM",
+          "end": "1:15 PM",
+          "title": "Lunch - To Kafeneio",
+          "detail": "Traditional taverna/mezedes at the foot of the Acropolis, Plaka.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        },
+        {
+          "start": "1:30 PM",
+          "end": "6:00 PM",
+          "title": "Rest at the hotel",
+          "detail": "Real buffer after a big morning on foot in July heat.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Kuzina",
+          "detail": "Modern Greek, Adrianou St., Plaka, views of the Temple of Hephaestus.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 115.0
+        }
+      ]
+    },
+    {
+      "date": "Tuesday, July 20, 2027",
+      "title": "Lycabettus Hill & National Garden",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:20 AM",
+          "title": "Taxi to the National Garden",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 18.0
+        },
+        {
+          "start": "9:20 AM",
+          "end": "10:30 AM",
+          "title": "National Garden",
+          "detail": "Free, shaded park next to Syntagma/Parliament - a real green-space morning rather than more pavement.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "12:00 PM",
+          "end": "1:15 PM",
+          "title": "Lunch near Kolonaki",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 105.0
+        },
+        {
+          "start": "1:30 PM",
+          "end": "6:00 PM",
+          "title": "Rest at the hotel",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "6:30 PM",
+          "end": "6:50 PM",
+          "title": "Taxi to the Lycabettus funicular base",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 18.0
+        },
+        {
+          "start": "7:00 PM",
+          "end": "7:05 PM",
+          "title": "Lycabettus Hill funicular",
+          "detail": "Runs every 10-30 min. Ride itself is in a tunnel - the view is at the top.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 52.0,
+          "notes": "€13 round-trip/person x4 -> ~€52/$56 for the family."
+        },
+        {
+          "start": "7:05 PM",
+          "end": "7:45 PM",
+          "title": "Lycabettus summit - panoramic sunset views",
+          "detail": "Best views of Athens and the Acropolis from above, timed for early evening to avoid midday heat.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "7:45 PM",
+          "end": "7:50 PM",
+          "title": "Funicular back down",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "8:15 PM",
+          "end": "9:45 PM",
+          "title": "Dinner - Lithos Taverna",
+          "detail": "Greek mezze, live folk music, courtyard seating - festive last-Athens-night dinner.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 125.0
+        }
+      ]
+    },
+    {
+      "date": "Wednesday, July 21, 2027",
+      "title": "Fly to Crete (Elounda)",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel, finish packing",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "9:30 AM",
+          "title": "Grand Hyatt Athens - check out",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "10:00 AM",
+          "title": "Taxi to ATH airport",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 44.0
+        },
+        {
+          "start": "12:00 PM",
+          "end": "12:55 PM",
+          "title": "Aegean Airlines - ATH -> HER - Nonstop - 55m",
+          "detail": "Athens -> Heraklion, Economy, 4 passengers. Aegean/Sky Express run ~13 flights/day combined on this route.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "est": 232.0,
+          "route": "ATH → HER",
+          "flightNo": "Aegean (rep.) - representative flight only",
+          "cabin": "Economy",
+          "notes": "~€55/person one-way x4 -> ~€220/$232. Indicative aggregator pricing, not a locked fare - confirm exact 2027 schedule closer to booking.",
+          "flag": "Not yet bookable - placeholder flight/time."
+        },
+        {
+          "start": "1:15 PM",
+          "end": "1:45 PM",
+          "title": "Pick up rental car - Heraklion Airport",
+          "detail": "Needed for the whole Crete stay - Spinalonga's departure point, Agios Nikolaos, and day trips are all a drive from Elounda.",
+          "typeName": "Rental Car",
+          "emoji": "🚗",
+          "est": 595.0,
+          "notes": "Estimate: ~$85/day (peak July SUV pricing) x 7 days = ~$595. Book well ahead for July availability and child seats."
+        },
+        {
+          "start": "1:45 PM",
+          "end": "2:45 PM",
+          "title": "Drive to Elounda",
+          "detail": "~40-45 miles via the Hersonissos corridor, ~45min-1h10m depending on traffic.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "2:45 PM",
+          "end": "2:45 PM",
+          "title": "Domes of Elounda, Autograph Collection - check in",
+          "detail": "Family Suite - 1 King bed + sofa bed, garden view, balcony, outdoor whirlpool, ~968 sq ft, separate bedroom/living room.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "Marriott Bonvoy",
+          "points": "613500",
+          "notes": "613,500 Marriott Bonvoy points total for 7 nights (~87,600/night average). Built like a traditional Cretan village around an agora; free kids club ages 4-12 (both kids qualify).",
+          "nights": "7 nights (Wed-Wed)",
+          "roomType": "Family Suite (1 King + sofa bed, garden view, balcony, whirlpool)",
+          "address": "Tsifliki, Elounda, Crete, Greece 72053",
+          "cancelBy": "Not yet booked"
+        },
+        {
+          "start": "3:00 PM",
+          "end": "6:30 PM",
+          "title": "Settle in / resort beach & pool",
+          "detail": "Light first afternoon.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Thólos (resort)",
+          "detail": "On-site Greek/Mediterranean, theme dinner nights - easy first night, zero transit.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 140.0
+        }
+      ]
+    },
+    {
+      "date": "Thursday, July 22, 2027",
+      "title": "Spinalonga Island",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "6:30 AM",
+          "end": "7:15 AM",
+          "title": "Breakfast at hotel - early start",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "7:30 AM",
+          "end": "7:45 AM",
+          "title": "Drive to Plaka village boat dock",
+          "detail": "~5km from Elounda.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "8:00 AM",
+          "end": "8:30 AM",
+          "title": "Boat to Spinalonga",
+          "detail": "First boat of the day, deliberately - the island gets crowded 11:30am-2:30pm with almost no shade, and bare stone can exceed 35°C in July.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 48.0,
+          "notes": "~€10-12/person round-trip x4 -> ~€44-48/$48."
+        },
+        {
+          "start": "8:30 AM",
+          "end": "10:30 AM",
+          "title": "Spinalonga Island",
+          "detail": "The Venetian fortress and former leper colony - walkable ruins and streets, not an indoor museum.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 100.0,
+          "notes": "€20/adult entrance, kids likely free/reduced (verify at booking) -> budgeting ~€90-100/$100 for the family total (boat + entry)."
+        },
+        {
+          "start": "10:30 AM",
+          "end": "11:00 AM",
+          "title": "Boat back to Plaka village",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "11:15 AM",
+          "end": "12:30 PM",
+          "title": "Lunch - Taverna Spinalonga, Plaka village",
+          "detail": "Seaside, fresh fish, right by the boat dock.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 105.0
+        },
+        {
+          "start": "1:00 PM",
+          "end": "1:15 PM",
+          "title": "Drive back to the resort",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "1:15 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Vilebrequin La Plage (resort)",
+          "detail": "Seaside Mediterranean/seafood, on-site.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 145.0
+        }
+      ]
+    },
+    {
+      "date": "Friday, July 23, 2027",
+      "title": "Beach day / resort",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Resort beach & pool - free morning",
+          "detail": "No anchor today - kids club available (free, ages 4-12) if the kids want a program morning.",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch - Antonino's (resort)",
+          "detail": "On-site Italian, wood-fired pizza/pasta.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Ostria, Elounda",
+          "detail": "Seafood, 1.4km from the resort.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 130.0
+        }
+      ]
+    },
+    {
+      "date": "Saturday, July 24, 2027",
+      "title": "Agios Nikolaos",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:35 AM",
+          "title": "Drive to Agios Nikolaos",
+          "detail": "~15-20 min.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:35 AM",
+          "end": "11:30 AM",
+          "title": "Agios Nikolaos - Lake Voulismeni & harbor",
+          "detail": "Small saltwater lake connected to the harbor by a canal, lively waterfront promenade.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "11:45 AM",
+          "end": "1:00 PM",
+          "title": "Lunch - Karnagio (Pita tou Riga)",
+          "detail": "Right on Lake Voulismeni, grill-focused - arrive early, it's busy.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 105.0
+        },
+        {
+          "start": "1:15 PM",
+          "end": "1:35 PM",
+          "title": "Drive back to the resort",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "1:35 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Kanali, Elounda",
+          "detail": "Seafood, 3.5km from the resort.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 130.0
+        }
+      ]
+    },
+    {
+      "date": "Sunday, July 25, 2027",
+      "title": "Elounda Boat Trip & Snorkeling",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:30 AM",
+          "title": "Drive to Elounda Boat Rentals",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Boat trip & snorkeling, Mirabello Bay",
+          "detail": "Elounda Boat Rentals & Watersports - family-run since 1984, no-license boat rentals, kayaking/SUP/snorkeling in the bay's sea caves.",
+          "typeName": "Excursion",
+          "emoji": "👞",
+          "est": 180.0,
+          "notes": "Half-day no-license boat rental estimate ~€150-180/$160-190 for the family - get a live quote closer to booking."
+        },
+        {
+          "start": "1:15 PM",
+          "end": "2:30 PM",
+          "title": "Lunch near the marina",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "6:00 PM",
+          "title": "Pool / beach - free afternoon",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Blue Door (Mple Porta), Agios Nikolaos",
+          "detail": "Waterfront seafood, grilled octopus.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 125.0
+        }
+      ]
+    },
+    {
+      "date": "Monday, July 26, 2027",
+      "title": "Milatos Cave & Lassithi Plateau",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "8:45 AM",
+          "end": "9:30 AM",
+          "title": "Drive to Milatos Cave",
+          "detail": "~45 min.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "9:45 AM",
+          "title": "Walk to the cave entrance",
+          "detail": "~10-15 min walk, closed shoes needed.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:45 AM",
+          "end": "10:45 AM",
+          "title": "Milatos Cave",
+          "detail": "Free entry, family-friendly, low ceilings inside (bring a phone flashlight) - real historical site (1823 massacre memorial), not a museum.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "11:15 AM",
+          "end": "12:15 PM",
+          "title": "Drive to the Lassithi Plateau",
+          "detail": "~45min-1hr from the Milatos/Agios Nikolaos area via Zenia/Mesa Potami.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "12:15 PM",
+          "end": "1:30 PM",
+          "title": "Lassithi Plateau - windmills & village",
+          "detail": "Famous (mostly decommissioned) stone windmills across the high plateau - a scenic single stop, kept modest rather than a full day given the drive.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "1:30 PM",
+          "end": "2:45 PM",
+          "title": "Lunch - village taverna, Lassithi Plateau",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 95.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "4:00 PM",
+          "title": "Drive back to Elounda",
+          "detail": "~1h-1h15m.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "4:00 PM",
+          "end": "6:00 PM",
+          "title": "Rest / pool - free time",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "9:00 PM",
+          "title": "Dinner - Makris Fine Dining (resort)",
+          "detail": "Michelin-affiliated chef Petros Dimas, FNL Best Restaurant Award 2022 - the special night of the Crete stay.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 220.0,
+          "notes": "Fine-dining pricing - reserve ahead."
+        }
+      ]
+    },
+    {
+      "date": "Tuesday, July 27, 2027",
+      "title": "Beach day / resort - last day in Crete",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "1:00 PM",
+          "title": "Resort beach & pool - free morning",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "2:15 PM",
+          "title": "Lunch - Taverna Maria's, Plaka village",
+          "detail": "Traditional Cretan dishes, one more trip to the pretty little harbor before leaving.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "5:30 PM",
+          "title": "Pool / beach - free afternoon, pack",
+          "typeName": "Beach/Pool",
+          "emoji": "🏖️"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Taverna Giorgos-Giovanni, Plaka village",
+          "detail": "On the rocks overlooking Spinalonga - a fitting send-off view for the last Crete night.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 125.0
+        }
+      ]
+    },
+    {
+      "date": "Wednesday, July 28, 2027",
+      "title": "Fly to Paris",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:30 AM",
+          "end": "8:15 AM",
+          "title": "Breakfast at hotel, finish packing",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "9:30 AM",
+          "title": "Domes of Elounda - check out",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "10:30 AM",
+          "title": "Drive to Heraklion Airport, return rental car",
+          "detail": "~45min-1h10m.",
+          "typeName": "Rental Car",
+          "emoji": "🚗"
+        },
+        {
+          "start": "1:00 PM",
+          "end": "4:35 PM",
+          "title": "Air France (rep.) - HER -> Paris (CDG) - Direct - 3h30m",
+          "detail": "Heraklion -> Paris CDG, Economy, 4 passengers. Air France runs this route seasonally (roughly April-October) - confirm it's operating for summer 2027.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "est": 520.0,
+          "route": "HER → CDG",
+          "flightNo": "Air France (rep.) - representative flight only",
+          "cabin": "Economy",
+          "notes": "Aggregator 'from' fares as low as $67-129/person one-way looked like teaser basic-economy pricing - budgeting a more realistic ~$130/person x4 = ~$520. Confirm against actual 2027 dates once schedules publish.",
+          "flag": "Not yet bookable - placeholder flight/time. Seasonal route - reconfirm it's operating before counting on it."
+        },
+        {
+          "start": "5:15 PM",
+          "end": "6:00 PM",
+          "title": "Transfer to hotel",
+          "detail": "CDG -> 14th arrondissement, ~45min-1hr by taxi/RER depending on traffic.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 75.0
+        },
+        {
+          "start": "6:00 PM",
+          "end": "6:00 PM",
+          "title": "Paris Marriott Rive Gauche - check in",
+          "detail": "Family Suite (1BR, premium bedding, minibar).",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "est": 1600.0,
+          "notes": "Estimated at $400/night x 4 nights = $1,600 - same estimate basis used on the Rome/Sardinia/Paris comparison trip. Treat as a placeholder pending a live July 2027 quote.",
+          "nights": "4 nights (Wed-Sat)",
+          "roomType": "Family Suite (1BR, premium bedding, minibar)",
+          "address": "17 Boulevard Saint-Jacques, 75014 Paris, France",
+          "cancelBy": "Not yet booked",
+          "flag": "Price is an estimate, not a quote."
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Brasserie, Paris Marriott Rive Gauche",
+          "detail": "On-site brasserie - easy first night after a full travel day.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0
+        }
+      ]
+    },
+    {
+      "date": "Thursday, July 29, 2027",
+      "title": "Eiffel Tower & Seine River Cruise",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:15 AM",
+          "title": "Metro Line 6 - Saint-Jacques to Bir-Hakeim",
+          "detail": "Direct, no transfer, ~12 min.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 8.0
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:30 AM",
+          "title": "Walk to Eiffel Tower entrance",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:30 AM",
+          "end": "11:45 AM",
+          "title": "Eiffel Tower - 2nd floor by elevator",
+          "detail": "2nd floor rather than summit - full views, shorter lines, no wind exposure, better for kids 6-9.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 65.0,
+          "notes": "~€60/$65 for the family (2026 pricing basis). E-tickets open exactly 60 days ahead at ticket.toureiffel.paris.",
+          "flag": "Book at the 60-day mark - July sells out same-day."
+        },
+        {
+          "start": "11:45 AM",
+          "end": "11:55 AM",
+          "title": "Walk to Port de la Bourdonnais",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "12:00 PM",
+          "end": "1:00 PM",
+          "title": "Seine River Cruise - Bateaux Parisiens",
+          "detail": "Departs at the foot of the tower, ~1hr, individual audio guide.",
+          "typeName": "Excursion",
+          "emoji": "👞",
+          "est": 47.0,
+          "notes": "~€47/$51 for the family."
+        },
+        {
+          "start": "1:15 PM",
+          "end": "2:30 PM",
+          "title": "Lunch - Le Casse-Noix",
+          "detail": "Near the Tower, French bistro. Open Mon-Fri only (Thursday works).",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 176.0
+        },
+        {
+          "start": "2:45 PM",
+          "end": "3:15 PM",
+          "title": "Metro back to hotel area",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 8.0
+        },
+        {
+          "start": "3:15 PM",
+          "end": "6:30 PM",
+          "title": "Rest at the hotel",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - I Grappoli",
+          "detail": "~7 min walk from hotel. Italian trattoria, real menu variety.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 95.0
+        }
+      ]
+    },
+    {
+      "date": "Friday, July 30, 2027",
+      "title": "Montmartre",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:30 AM",
+          "title": "Metro Line 4 - Denfert-Rochereau to Château Rouge",
+          "detail": "~23 min, no transfer.",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 8.0
+        },
+        {
+          "start": "9:30 AM",
+          "end": "9:50 AM",
+          "title": "Funicular up to Sacré-Cœur",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "9:50 AM",
+          "end": "10:30 AM",
+          "title": "Sacré-Cœur exterior & parvis",
+          "detail": "Exterior only, arriving before the 11am crowd build.",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "10:30 AM",
+          "end": "11:15 AM",
+          "title": "Place du Tertre - artists' square",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "11:15 AM",
+          "end": "12:15 PM",
+          "title": "Wander down via rue Lepic",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "12:30 PM",
+          "end": "1:45 PM",
+          "title": "Lunch - Chez Plumeau",
+          "detail": "Steps from Place du Tertre. No reservations - arrive close to opening.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 75.0,
+          "flag": "No-reservation policy."
+        },
+        {
+          "start": "2:00 PM",
+          "end": "5:30 PM",
+          "title": "Rest at the hotel",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Le Relais Gascon",
+          "detail": "Montmartre. Southwest French classics, family-friendly.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 125.0
+        }
+      ]
+    },
+    {
+      "date": "Saturday, July 31, 2027",
+      "title": "Luxembourg Gardens & Latin Quarter",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast at hotel",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:35 AM",
+          "title": "Walk to Luxembourg Gardens",
+          "detail": "~20 min from the hotel.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "9:35 AM",
+          "end": "10:15 AM",
+          "title": "Ludo Jardin playground",
+          "typeName": "Sightseeing",
+          "emoji": "📸"
+        },
+        {
+          "start": "10:15 AM",
+          "end": "11:30 AM",
+          "title": "Luxembourg Gardens",
+          "detail": "Pond with rentable toy sailboats, main gardens wander.",
+          "typeName": "Sightseeing",
+          "emoji": "📸",
+          "est": 15.0
+        },
+        {
+          "start": "11:30 AM",
+          "end": "12:30 PM",
+          "title": "Latin Quarter wander",
+          "detail": "Rue Mouffetard, Panthéon exterior, Sorbonne area.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "12:30 PM",
+          "end": "2:00 PM",
+          "title": "Lunch - Le Choupinet",
+          "detail": "Directly across from the gardens, brasserie with real menu variety.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 100.0
+        },
+        {
+          "start": "2:15 PM",
+          "end": "2:45 PM",
+          "title": "Walk back to hotel",
+          "typeName": "Transportation",
+          "emoji": "🚌"
+        },
+        {
+          "start": "2:45 PM",
+          "end": "6:00 PM",
+          "title": "Rest at the hotel, pack",
+          "detail": "Last full day.",
+          "typeName": "Free Time",
+          "emoji": "⏰"
+        },
+        {
+          "start": "7:00 PM",
+          "end": "8:30 PM",
+          "title": "Dinner - Brasserie, Paris Marriott Rive Gauche",
+          "detail": "On-site again deliberately for the last night, easy given tomorrow's early flight.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 110.0
+        },
+        {
+          "start": "11:00 AM",
+          "end": "11:00 AM",
+          "title": "Paris Marriott Rive Gauche - check out (next morning)",
+          "detail": "Checkout is actually the morning of Aug 1 - reminder for packing/logistics on the last evening.",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        }
+      ]
+    },
+    {
+      "date": "Sunday, August 1, 2027",
+      "title": "Fly home (Paris -> Miami)",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:00 AM",
+          "end": "7:45 AM",
+          "title": "Breakfast at hotel, finish packing",
+          "typeName": "Dining",
+          "emoji": "🍔"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:00 AM",
+          "title": "Paris Marriott Rive Gauche - check out",
+          "typeName": "Hotel",
+          "emoji": "🏨"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:45 AM",
+          "title": "Transfer to CDG",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "est": 75.0
+        },
+        {
+          "start": "12:30 PM",
+          "end": "4:15 PM",
+          "title": "Delta / Air France - CDG -> MIA - Nonstop - ~9h45m",
+          "detail": "Paris -> Miami, Economy, 4 passengers. Arrives Miami same day given the westbound time change.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "program": "Delta SkyMiles",
+          "points": "150000",
+          "notes": "Estimated at ~37,500 SkyMiles/passenger x4 = ~150,000 points, within Delta's typical dynamic transatlantic economy range - not live-quoted for this route/date, confirm at booking. French bee (budget, ~9hrs, 3x/week from Orly) is a cash-fare alternative if points space isn't available.",
+          "route": "CDG → MIA",
+          "flightNo": "Delta/Air France (rep.) - exact flight TBD",
+          "cabin": "Economy",
+          "flag": "Not yet bookable - placeholder flight/time and points estimate."
+        }
+      ]
+    }
+  ],
+  "packing": {
+    "trackerTitle": "Item tracker",
+    "outfitDays": [],
+    "trackerDays": []
+  },
+  "supplies": [],
+  "ideas": [
+    {
+      "name": "Still open / TBD",
+      "items": [
+        {
+          "name": "Confirm Grand Hyatt Athens Suite Night Award availability",
+          "note": "Space-available upgrade, not guaranteed - confirm before finalizing plans that assume the Grand Suite specifically."
+        },
+        {
+          "name": "Confirm Domes of Elounda room type/points against live award calendar",
+          "note": "613,500 points was given directly - worth a live marriott.com check closer to booking to confirm it still matches this exact room type for the chosen dates."
+        },
+        {
+          "name": "Book ATH-HER, HER-Paris, and CDG-MIA flights",
+          "note": "All three used representative times/estimated pricing - 2027 schedules aren't published yet for any of them."
+        },
+        {
+          "name": "Book Acropolis tickets the moment the window opens",
+          "note": "hhticket.gr, capacity-capped, early slots sell out weeks ahead in July."
+        },
+        {
+          "name": "Book Spinalonga boat + entry",
+          "note": "Confirm child pricing at booking - sources disagreed on whether kids are free or discounted."
+        },
+        {
+          "name": "Get a live July 2027 rate for Paris Marriott Rive Gauche",
+          "note": "Reused the same estimate basis as the Rome/Sardinia/Paris comparison trip - still just a placeholder."
+        },
+        {
+          "name": "Reconfirm HER-Paris seasonal route is operating for summer 2027",
+          "note": "Air France's Heraklion service runs roughly April-October only."
+        },
+        {
+          "name": "Book Eiffel Tower tickets at the 60-day mark",
+          "note": "~May 30, 2027."
+        }
+      ]
+    }
+  ],
+  "alternatives": null
+}
