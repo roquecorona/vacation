@@ -29,7 +29,7 @@ body{margin:0;background:#eef0ed;overflow-x:hidden}
 /* squeezed-down copy of the desktop sidebar sitting above the content. */
 @media (max-width: 780px) {
   :root {
-    --layout-cols-mobile: 1fr;
+    --layout-cols-mobile: minmax(0, 1fr);
     --layout-rows-mobile: auto 1fr;
     --layout-h-mobile: auto;
     --layout-minh-mobile: 100vh;
@@ -1096,7 +1096,7 @@ class Component extends DCLogic {
         }));
         base.hasPresentVideos = base.presentVideos.length > 0;
         const m = PRESENT_MAP[pdN] || PRESENT_MAP[1];
-        base.presentMapSrc = 'https://www.google.com/maps?q=' + m.lat + ',' + m.lng + '&z=' + m.zoom + '&output=embed';
+        base.presentMapSrc = m ? 'https://www.google.com/maps?q=' + m.lat + ',' + m.lng + '&z=' + m.zoom + '&output=embed' : 'https://www.google.com/maps?q=' + encodeURIComponent(d.title || 'Paris') + '&output=embed';
         base.presentMapsUrl = PRESENT_DIRECTIONS[pdN] || '';
         // High-level only: activities and meals, not transport/logistics/walk-between-stops.
         const skipTypes = ['Walk', 'Transportation', 'Logistics', 'Drive', 'Parking', 'Gasoline', 'Luggage', 'Free Time'];
