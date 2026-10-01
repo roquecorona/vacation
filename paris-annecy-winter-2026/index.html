@@ -783,8 +783,8 @@ class Component extends DCLogic {
           est: b.est != null ? b.est : null, paid: b.paid != null ? b.paid : null,
           program: b.program || null, points: b.points || null, conf: b.conf || null, confLinks: Array.isArray(b.confLinks) ? b.confLinks : null,
           pointsN: isNaN(ptsN) ? null : ptsN,
-          booked: (b.booked === true) || (b.booked !== false && !!b.conf),
-          toBook: b.toBook === true && !((b.booked === true) || (b.booked !== false && !!b.conf)),
+          booked: (b.booked === true) || (b.booked !== false && !!b.conf && !/not booked/i.test(String(b.conf))),
+          toBook: (b.toBook === true || /not booked/i.test(String(b.conf || ''))) && !((b.booked === true) || (b.booked !== false && !!b.conf && !/not booked/i.test(String(b.conf)))),
         };
       });
       return {
