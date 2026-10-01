@@ -191,6 +191,19 @@ Edits happen in chat with Claude.</div>
 
         <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="12">
           <div>
+            <sc-if value="{{ b.isPlanTabs }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:14px 0 12px;border-top:1px solid #e5e9e5">
+                <div style="font:700 10.5px 'Spline Sans Mono',monospace;letter-spacing:0.6px;color:#647579;margin-bottom:9px">{{ b.planHead }}</div>
+                <div style="display:flex;gap:8px;flex-wrap:wrap">
+                  <sc-for list="{{ b.planTabs }}" as="p" hint-placeholder-count="2">
+                    <button onClick="{{ p.go }}" style="cursor:pointer;background:{{ p.bg }};color:{{ p.fg }};border:1px solid {{ p.border }};border-radius:999px;font:600 12.5px 'Schibsted Grotesk',sans-serif;padding:8px 14px">{{ p.label }}</button>
+                  </sc-for>
+                </div>
+                <sc-if value="{{ b.hasPlanNote }}" hint-placeholder-val="{{ false }}">
+                  <div style="font:400 12px/1.5 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:8px">{{ b.planNote }}</div>
+                </sc-if>
+              </div>
+            </sc-if>
             <sc-if value="{{ b.isMove }}" hint-placeholder-val="{{ false }}">
               <div style="display:flex;align-items:baseline;gap:9px;padding:6px 0 6px 96px;font:500 11.5px 'Spline Sans Mono',monospace;color:#8b9a9d">
                 <span>{{ b.emoji }}</span><span>{{ b.moveLabel }}</span>
@@ -684,7 +697,7 @@ const PRESENT_MAP = {};
 const PRESENT_DIRECTIONS = {};
 
 class Component extends DCLogic {
-  state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, bkFilter: 'All', packFilter: 'ALL', ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {}, mobileNavOpen: false };
+  state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, dayPlan: {}, bkFilter: 'All', packFilter: 'ALL', ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {}, mobileNavOpen: false };
 
   componentDidMount() {
     this.loadTripData();
@@ -787,22 +800,27 @@ class Component extends DCLogic {
           toBook: (b.toBook === true || /not booked/i.test(String(b.conf || ''))) && !((b.booked === true) || (b.booked !== false && !!b.conf && !/not booked/i.test(String(b.conf)))),
         };
       });
+      const plans = Array.isArray(d.plans) && d.plans.length ? d.plans : null;
+      const defPlan = plans ? ((plans.find(p => p.default) || plans[0]).id) : null;
+      const inDef = b => !b.plan || b.plan === defPlan;
       return {
+        plans, defPlan, plansTitle: d.plansTitle || '',
         n: i + 1, date: d.date || '', title: d.title || '', planned: !!d.planned,
         dow: d.dow || (isNaN(dt) ? '' : DOW[dt.getDay()]),
         short: d.short || (isNaN(dt) ? '' : (dt.getMonth() + 1) + '/' + dt.getDate()),
         blocks,
-        paid: blocks.reduce((a, b) => a + (b.paid || 0), 0),
-        est: blocks.reduce((a, b) => a + (b.paid == null ? (b.est || 0) : 0), 0),
-        stops: blocks.filter(b => b.kind === 'stop').length,
+        paid: blocks.filter(inDef).reduce((a, b) => a + (b.paid || 0), 0),
+        est: blocks.filter(inDef).reduce((a, b) => a + (b.paid == null ? (b.est || 0) : 0), 0),
+        stops: blocks.filter(inDef).filter(b => b.kind === 'stop').length,
         bookings: blocks.filter(b => b.conf || b.program).length,
-        nBooked: blocks.filter(b => b.booked).length,
-        nBookable: blocks.filter(b => b.booked || b.toBook).length,
+        nBooked: blocks.filter(inDef).filter(b => b.booked).length,
+        nBookable: blocks.filter(inDef).filter(b => b.booked || b.toBook).length,
       };
     });
     const CAT_EMOJI = { Hotel: '\u{1F3E8}', Flight: '\u{2708}\u{FE0F}', Train: '\u{1F684}', Transportation: '\u{1F695}', Dining: '\u{1F37D}\u{FE0F}', Excursion: '\u{1F3BF}', Walk: '\u{1F6B6}', Logistics: '\u{1F9F3}', Luggage: '\u{1F9F3}', 'Free Time': '\u{1F6C1}' };
     const cats = {};
     for (const d of T.days) for (const b of d.blocks) {
+      if (b.plan && b.plan !== d.defPlan) continue;
       if (b.est == null && b.paid == null) continue;
       const k = (b.typeName || 'Other');
       cats[k] = cats[k] || { est: 0, paid: 0 };
@@ -1026,6 +1044,7 @@ class Component extends DCLogic {
         const row = {
           isMove: b.kind === 'move', isReceipt: b.kind === 'receipt',
           isNote: b.kind === 'note', isStop: b.kind === 'stop',
+          isPlanTabs: false, planTabs: [], planHead: '', planNote: '', hasPlanNote: false,
           emoji: b.emoji || '·', title: b.booked ? b.title.replace(/\s*—\s*BOOKED\b/i, '') : b.title,
           isBooked: !!b.booked, isToBook: !!b.toBook,
           bookStyle: b.booked ? 'box-shadow:inset 4px 0 0 #257a5a;' : '',
@@ -1061,6 +1080,28 @@ class Component extends DCLogic {
         }
         return row;
       });
+      if (d.plans) {
+        const sel = ((this.state.dayPlan || {})[d.n]) || d.defPlan;
+        const selP = d.plans.find(p => p.id === sel) || {};
+        const out = []; let tabsDone = false;
+        d.blocks.forEach((b, k) => {
+          if (b.plan && !tabsDone) {
+            tabsDone = true;
+            out.push({ isPlanTabs: true, isMove: false, isReceipt: false, isNote: false, isStop: false,
+              planHead: d.plansTitle || 'TWO PLANS — TAP TO SWITCH',
+              planNote: selP.note || '', hasPlanNote: !!selP.note,
+              planTabs: d.plans.map(p => ({
+                label: p.label + (p.id === d.defPlan ? ' ★' : ''),
+                bg: p.id === sel ? '#1b2629' : '#ffffff', fg: p.id === sel ? '#f4f5f3' : '#1b2629',
+                border: p.id === sel ? '#1b2629' : '#dfe4e1',
+                go: () => this.setState(s => ({ dayPlan: { ...(s.dayPlan || {}), [d.n]: p.id } })),
+              })) });
+          }
+          if (b.plan && b.plan !== sel) return;
+          out.push(base.blocks[k]);
+        });
+        base.blocks = out;
+      }
     }
 
     if (v === 'present') {
