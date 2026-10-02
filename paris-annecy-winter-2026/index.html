@@ -537,10 +537,12 @@ Edits happen in chat with Claude.</div>
           <div style="margin:0 0 22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px;align-items:start">
             <sc-for list="{{ packRollups }}" as="pr" hint-placeholder-count="3">
               <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px">
-                <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+                <div onClick="{{ pr.toggle }}" style="display:flex;align-items:baseline;gap:8px;cursor:pointer;user-select:none">
                   <span style="font:700 12.5px 'Schibsted Grotesk',sans-serif">{{ pr.who }}</span>
                   <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ pr.totalLabel }}</span>
+                  <span style="margin-left:auto;font:600 10px 'Spline Sans Mono',monospace;letter-spacing:.5px;color:var(--accent, #16695E);white-space:nowrap">{{ pr.chev }}</span>
                 </div>
+                <sc-if value="{{ pr.open }}" hint-placeholder-val="{{ true }}"><div style="height:8px"></div>
                 <sc-if value="{{ pr.empty }}" hint-placeholder-val="{{ false }}">
                   <div style="font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d;text-wrap:pretty">No pack list yet — ask Claude to count one from the outfit plan.</div>
                 </sc-if>
@@ -559,6 +561,7 @@ Edits happen in chat with Claude.</div>
                     </sc-for>
                   </div>
                 </sc-for>
+                </sc-if>
               </div>
             </sc-for>
           </div>
@@ -705,7 +708,7 @@ const PRESENT_MAP = {};
 const PRESENT_DIRECTIONS = {};
 
 class Component extends DCLogic {
-  state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, dayPlan: {}, bkFilter: 'All', packFilter: 'ALL', ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {}, mobileNavOpen: false };
+  state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, dayPlan: {}, bkFilter: 'All', packFilter: 'ALL', packClosed: (() => { try { return JSON.parse(localStorage.getItem('packClosed:' + location.pathname) || '{}') || {}; } catch (e) { return {}; } })(), ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {}, mobileNavOpen: false };
 
   componentDidMount() {
     this.loadTripData();
@@ -1265,6 +1268,9 @@ class Component extends DCLogic {
           who: who.charAt(0) + who.slice(1).toLowerCase(),
           totalLabel: total ? total + ' ITEMS' + (pl && pl.derived ? ' · FROM TRACKER' : '') : '',
           empty: items.length === 0,
+          open: !(this.state.packClosed || {})[who],
+          chev: (this.state.packClosed || {})[who] ? 'SHOW ▾' : 'HIDE ▴',
+          toggle: () => { const pc = { ...(this.state.packClosed || {}) }; if (pc[who]) delete pc[who]; else pc[who] = true; try { localStorage.setItem('packClosed:' + location.pathname, JSON.stringify(pc)); } catch (e) {} this.setState({ packClosed: pc }); },
           items: items.map(it => ({ count: it.count, name: it.name, hasLog: !!(it.log && it.log.length), log: (it.log || []).map(lg => ({ t: (lg.r ? '↺ ' : '') + lg.t, bg: lg.r ? '#fbf3e2' : '#eef3f1', fg: lg.r ? '#96690f' : 'var(--accent, #16695E)' })) })),
           groups: (() => { const gs = []; for (const it of items) { const nm = it.category || ''; let g = gs.find(x => x.key === nm); if (!g) { g = { key: nm, name: nm.toUpperCase(), hasName: !!nm, items: [] }; gs.push(g); } g.items.push({ count: it.count, name: it.name, toBuy: !!it.toBuy, hasLog: !!(it.log && it.log.length), log: (it.log || []).map(lg => ({ t: (lg.r ? '↺ ' : '') + lg.t, bg: lg.r ? '#fbf3e2' : '#eef3f1', fg: lg.r ? '#96690f' : 'var(--accent, #16695E)' })) }); } return gs; })(),
         };
