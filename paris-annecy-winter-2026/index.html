@@ -548,7 +548,7 @@ Edits happen in chat with Claude.</div>
                   <sc-for list="{{ pr.items }}" as="it" hint-placeholder-count="6">
                     <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
                       <span style="font:600 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:22px;text-align:right">{{ it.count }}×</span>
-                      <span style="font:400 12px/1.35 'Schibsted Grotesk',sans-serif;min-width:0;overflow-wrap:anywhere">{{ it.name }}</span>
+                      <div style="min-width:0"><div style="font:400 12px/1.35 'Schibsted Grotesk',sans-serif;overflow-wrap:anywhere">{{ it.name }}</div><sc-if value="{{ it.hasLog }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;gap:3px;margin:3px 0 4px"><sc-for list="{{ it.log }}" as="lg" hint-placeholder-count="3"><span style="font:600 9px 'Spline Sans Mono',monospace;border-radius:4px;padding:1px 5px;background:{{ lg.bg }};color:{{ lg.fg }};white-space:nowrap">{{ lg.t }}</span></sc-for></div></sc-if></div>
                     </div>
                   </sc-for>
                 </div>
@@ -561,13 +561,14 @@ Edits happen in chat with Claude.</div>
             <div style="padding:10px 16px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:12px">
               <span style="font:700 13px 'Schibsted Grotesk',sans-serif">{{ od.date }}</span>
               <span style="font:500 10.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ od.dayTitle }}</span>
+              <span style="margin-left:auto;font:600 10px 'Spline Sans Mono',monospace;letter-spacing:.5px;color:#96690f;white-space:nowrap">{{ od.rewearLabel }}</span>
             </div>
             <sc-for list="{{ od.slots }}" as="s" hint-placeholder-count="2">
               <div style="display:grid;grid-template-columns:var(--packslot-cols-mobile, 130px 1fr);border-bottom:1px solid #f0f2ef">
                 <div style="padding:10px 14px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:#647579">{{ s.name }}</div>
                 <div style="display:flex;align-items:stretch">
                   <sc-for list="{{ s.people }}" as="p" hint-placeholder-count="3">
-                    <div style="flex:1;min-width:0;padding:10px 12px;border-left:1px solid #f0f2ef;font:400 11px/1.5 'Schibsted Grotesk',sans-serif;white-space:pre-wrap"><span style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;display:block;margin-bottom:3px">{{ p.who }}</span>{{ p.text }}</div>
+                    <div style="flex:1;min-width:0;padding:10px 12px;border-left:1px solid #f0f2ef;font:400 11px/1.5 'Schibsted Grotesk',sans-serif;white-space:pre-wrap"><span style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;display:block;margin-bottom:3px">{{ p.who }}</span><sc-if value="{{ p.noItems }}" hint-placeholder-val="{{ false }}">{{ p.text }}</sc-if><sc-if value="{{ p.hasItems }}" hint-placeholder-val="{{ true }}"><sc-for list="{{ p.items }}" as="pi" hint-placeholder-count="6"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;padding:2px 6px;margin:0 -6px 1px;border-radius:6px;background:{{ pi.bg }};white-space:normal"><span style="min-width:0;overflow-wrap:anywhere;font:{{ pi.font }}">{{ pi.label }}</span><sc-if value="{{ pi.rewear }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:.6px;border-radius:999px;padding:2px 7px;white-space:nowrap;background:#fbf3e2;color:#96690f;border:1px solid #ecd9a8">{{ pi.wearLabel }}</span></sc-if><sc-if value="{{ pi.toBuy }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:.6px;border-radius:999px;padding:2px 7px;white-space:nowrap;background:#eaf1f8;color:#2c5d8f;border:1px solid #c9daea">TO BUY</span></sc-if></div></sc-for></sc-if></div>
                   </sc-for>
                 </div>
               </div>
@@ -851,7 +852,7 @@ class Component extends DCLogic {
     const P = T.packing || {};
     T.packing = {
       outfitDays: (P.outfitDays || []).map(od => ({
-        date: od.date, slots: (od.slots || []).map(s => ({
+        date: od.date, rewears: od.rewears || 0, slots: (od.slots || []).map(s => ({
           name: s.name,
           people: s.people || ['roque', 'chloe', 'jenny'].filter(k => k in s).map(k => ({ who: k.toUpperCase(), text: s[k] || '—' })),
         })),
@@ -1257,16 +1258,17 @@ class Component extends DCLogic {
           who: who.charAt(0) + who.slice(1).toLowerCase(),
           totalLabel: total ? total + ' ITEMS' + (pl && pl.derived ? ' · FROM TRACKER' : '') : '',
           empty: items.length === 0,
-          items: items.map(it => ({ count: it.count, name: it.name })),
+          items: items.map(it => ({ count: it.count, name: it.name, hasLog: !!(it.log && it.log.length), log: (it.log || []).map(lg => ({ t: (lg.r ? '↺ ' : '') + lg.t, bg: lg.r ? '#fbf3e2' : '#eef3f1', fg: lg.r ? '#96690f' : 'var(--accent, #16695E)' })) })),
         };
       });
       base.hasRollups = base.packRollups.length > 0;
       base.outfitDays = T.packing.outfitDays.filter(od => od.slots.length).map(od => ({
         date: od.date,
         dayTitle: dayByShort[String(od.date).replace(/\/\d{4}$/, '')] || '',
+        rewearLabel: od.rewears ? '↺ ' + od.rewears + (od.rewears === 1 ? ' REWEAR' : ' REWEARS') : '',
         slots: od.slots.map(s => ({
           name: s.name,
-          people: s.people.filter(p => pf === 'ALL' || String(p.who).toUpperCase() === pf).map(p => ({ who: p.who, text: p.text || '—' })),
+          people: s.people.filter(p => pf === 'ALL' || String(p.who).toUpperCase() === pf).map(p => { const its = Array.isArray(p.items) ? p.items : []; return { who: p.who, text: p.text || '—', hasItems: its.length > 0, noItems: its.length === 0, items: its.map(i => ({ label: i.label, rewear: !!i.rewear, wearLabel: i.wearLabel || '', toBuy: !!i.toBuy, bg: i.rewear ? '#fbf3e2' : 'transparent', font: i.rewear ? "600 11.5px/1.5 'Schibsted Grotesk',sans-serif" : "400 11.5px/1.5 'Schibsted Grotesk',sans-serif" })) }; }),
         })).filter(s => s.people.length),
       })).filter(od => od.slots.length);
       const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [''])[1] || '';
