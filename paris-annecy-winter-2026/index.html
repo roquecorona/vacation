@@ -544,14 +544,21 @@ Edits happen in chat with Claude.</div>
                 <sc-if value="{{ pr.empty }}" hint-placeholder-val="{{ false }}">
                   <div style="font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d;text-wrap:pretty">No pack list yet — ask Claude to count one from the outfit plan.</div>
                 </sc-if>
-                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:2px 14px">
-                  <sc-for list="{{ pr.items }}" as="it" hint-placeholder-count="6">
-                    <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
-                      <span style="font:600 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:22px;text-align:right">{{ it.count }}×</span>
-                      <div style="min-width:0"><div style="font:400 12px/1.35 'Schibsted Grotesk',sans-serif;overflow-wrap:anywhere">{{ it.name }}</div><sc-if value="{{ it.hasLog }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;gap:3px;margin:3px 0 4px"><sc-for list="{{ it.log }}" as="lg" hint-placeholder-count="3"><span style="font:600 9px 'Spline Sans Mono',monospace;border-radius:4px;padding:1px 5px;background:{{ lg.bg }};color:{{ lg.fg }};white-space:nowrap">{{ lg.t }}</span></sc-for></div></sc-if></div>
-                    </div>
-                  </sc-for>
-                </div>
+                <sc-for list="{{ pr.groups }}" as="gp" hint-placeholder-count="3">
+                  <div style="margin-top:12px">
+                    <sc-if value="{{ gp.hasName }}" hint-placeholder-val="{{ true }}"><div style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.2px;color:#8b9a9d;padding-bottom:5px;border-bottom:1px solid #e9ece8">{{ gp.name }}</div></sc-if>
+                    <sc-for list="{{ gp.items }}" as="it" hint-placeholder-count="3">
+                      <div style="display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid #f3f4f2">
+                        <span style="font:600 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);text-align:right">{{ it.count }}×</span>
+                        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;min-width:0">
+                          <span style="font:500 12.5px/1.35 'Schibsted Grotesk',sans-serif;min-width:0;overflow-wrap:anywhere">{{ it.name }}</span>
+                          <sc-if value="{{ it.toBuy }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:.6px;border-radius:999px;padding:2px 7px;white-space:nowrap;background:#eaf1f8;color:#2c5d8f;border:1px solid #c9daea">TO BUY</span></sc-if>
+                          <sc-if value="{{ it.hasLog }}" hint-placeholder-val="{{ false }}"><span style="display:inline-flex;flex-wrap:wrap;gap:3px"><sc-for list="{{ it.log }}" as="lg" hint-placeholder-count="3"><span style="font:600 9px 'Spline Sans Mono',monospace;border-radius:4px;padding:1px 5px;background:{{ lg.bg }};color:{{ lg.fg }};white-space:nowrap">{{ lg.t }}</span></sc-for></span></sc-if>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-for>
               </div>
             </sc-for>
           </div>
@@ -1259,6 +1266,7 @@ class Component extends DCLogic {
           totalLabel: total ? total + ' ITEMS' + (pl && pl.derived ? ' · FROM TRACKER' : '') : '',
           empty: items.length === 0,
           items: items.map(it => ({ count: it.count, name: it.name, hasLog: !!(it.log && it.log.length), log: (it.log || []).map(lg => ({ t: (lg.r ? '↺ ' : '') + lg.t, bg: lg.r ? '#fbf3e2' : '#eef3f1', fg: lg.r ? '#96690f' : 'var(--accent, #16695E)' })) })),
+          groups: (() => { const gs = []; for (const it of items) { const nm = it.category || ''; let g = gs.find(x => x.key === nm); if (!g) { g = { key: nm, name: nm.toUpperCase(), hasName: !!nm, items: [] }; gs.push(g); } g.items.push({ count: it.count, name: it.name, toBuy: !!it.toBuy, hasLog: !!(it.log && it.log.length), log: (it.log || []).map(lg => ({ t: (lg.r ? '↺ ' : '') + lg.t, bg: lg.r ? '#fbf3e2' : '#eef3f1', fg: lg.r ? '#96690f' : 'var(--accent, #16695E)' })) }); } return gs; })(),
         };
       });
       base.hasRollups = base.packRollups.length > 0;
