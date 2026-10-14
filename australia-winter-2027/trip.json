@@ -1,6 +1,6 @@
 {
  "meta": {
-  "title": "Australia V5 — Brisbane, Noosa, Hamilton Island & Sydney, December 2027",
+  "title": "Australia - Winter 2027",
   "dates": "Dec 15, 2027 – Jan 2, 2028 (FLL → Dallas → Brisbane · Australia Zoo · Noosa · Hamilton Island · Sydney for NYE · home Jan 2)",
   "route": [
    {
@@ -279,7 +279,7 @@
   },
   {
    "date": "Saturday, December 18, 2027",
-   "title": "Brisbane → Australia Zoo → Noosa",
+   "title": "Brisbane → Australia Zoo → Noosa — Hastings Street and a sunset dinner",
    "planned": false,
    "blocks": [
     {
@@ -336,56 +336,40 @@
     },
     {
      "start": "11:20 AM",
-     "end": "12:15 PM",
+     "end": "12:05 PM",
      "title": "Hand-feed the kangaroos (anchor)",
      "detail": "• Large walk-through enclosure: pat and hand-feed red and grey kangaroos and several kinds of wallaby.\n• Feeding runs all day.",
      "typeName": "Excursion",
      "emoji": "🦘"
     },
     {
-     "start": "12:15 PM",
-     "end": "12:55 PM",
+     "start": "12:05 PM",
+     "end": "12:35 PM",
      "title": "Lunch — Crikey! Café",
-     "detail": "• Burgers, pizza, hot chips, sandwiches, salads.\n• Watch for birds at the outdoor tables.",
+     "detail": "• Burgers, pizza, hot chips, sandwiches, salads — a quick 30 min.\n• Watch for birds at the outdoor tables.",
      "typeName": "Dining",
      "emoji": "🍔",
      "est": 42.9,
      "notes": "ESTIMATE — menu prices not published online:\n• 2 adult mains ~AUD 20 each\n• 2 kids' meals ~AUD 13 each\n• = AUD ~66 ≈ USD 43."
     },
     {
-     "start": "12:55 PM",
-     "end": "2:15 PM",
-     "title": "Wildlife Warriors Show — Crocoseum, 1:15 PM",
-     "detail": "• The zoo's signature show: birds, snakes and a saltwater crocodile strike at the water's edge.\n• Seating is first-come — be seated by 1:00.\n• Show length isn't published; ~1 hr allowed.",
-     "typeName": "Entertainment",
-     "emoji": "🐊"
-    },
-    {
-     "start": "2:15 PM",
-     "end": "2:45 PM",
-     "title": "Koala walk-through — pat a koala",
-     "detail": "• On the way back toward the exit.",
-     "typeName": "Sightseeing",
-     "emoji": "🐨"
-    },
-    {
-     "start": "2:45 PM",
-     "end": "3:05 PM",
+     "start": "12:35 PM",
+     "end": "12:55 PM",
      "title": "Walk back to the car",
      "typeName": "Walk",
      "emoji": "🚶"
     },
     {
-     "start": "3:05 PM",
-     "end": "4:00 PM",
+     "start": "12:55 PM",
+     "end": "1:50 PM",
      "title": "Drive Australia Zoo → IGA, Noosa Junction Plaza",
      "detail": "• Bruce Highway north → Eumundi–Noosa Rd → Noosa Junction.\n• ~69 km, ~53 min.",
      "typeName": "Drive",
      "emoji": "🚗"
     },
     {
-     "start": "4:00 PM",
-     "end": "4:45 PM",
+     "start": "1:50 PM",
+     "end": "2:35 PM",
      "title": "Groceries — IGA, Noosa Junction Plaza",
      "detail": "• Sunshine Beach Rd, Noosa Heads. Open 6 AM–8 PM daily.\n• Breakfast supplies for five mornings, snacks, and 6+ L of water for the beach day.\n• There are no shops between the ferry and Rainbow Beach.",
      "typeName": "Shopping",
@@ -394,18 +378,18 @@
      "notes": "ESTIMATE:\n• ~AUD 180 ≈ USD 117 for five breakfasts, a beach-day picnic, snacks and water."
     },
     {
-     "start": "4:45 PM",
-     "end": "4:55 PM",
+     "start": "2:35 PM",
+     "end": "2:45 PM",
      "title": "Drive to Ocean Breeze Resort, Hastings St",
      "detail": "• ~1.5 km down Noosa Drive to Hastings St.",
      "typeName": "Drive",
      "emoji": "🚗"
     },
     {
-     "start": "4:55 PM",
-     "end": "6:25 PM",
+     "start": "2:45 PM",
+     "end": "4:30 PM",
      "title": "Check in — Ocean Breeze Resort (5 nights); unload, showers, change",
-     "detail": "• 52 Hastings St, Noosa Heads: Main Beach ~3 min and Hastings St ~2 min on foot.\n• Two-bedroom apartment: 2 bathrooms, full kitchen, in-unit washer and dryer.\n• Front desk 8:30 AM–6:00 PM — check in before 6.\n• Parking: one space per unit, first come first served, height limit.\n• 90 min for parking, check-in, unloading and showers.",
+     "detail": "• 52 Hastings St, Noosa Heads: Main Beach ~3 min and Hastings St ~2 min on foot.\n• Two-bedroom apartment: 2 bathrooms, full kitchen, in-unit washer and dryer.\n• Check-in from 3:00 PM (front desk 8:30 AM–6:00 PM) — request early access for a 2:45 arrival.\n• Parking: one space per unit, first come first served, height limit.\n• Parking, check-in, unloading, showers and change; out the door at 4:30.",
      "typeName": "Hotel",
      "emoji": "🏨",
      "est": 1236.0,
@@ -416,33 +400,41 @@
      "flag": "Confirm the price is a two-bedroom for Dec 18–23, 2027; request a unit away from Hastings St; confirm the SUV clears the garage height and where the 4WD parks Dec 21–22."
     },
     {
-     "start": "6:25 PM",
-     "end": "6:40 PM",
+     "start": "4:30 PM",
+     "end": "5:45 PM",
+     "title": "Hastings Street and the Main Beach boardwalk",
+     "detail": "• The shops and cafés of Hastings St, then the boardwalk along Main Beach.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "5:45 PM",
+     "end": "6:00 PM",
      "title": "Walk up to the Noosa Reef Hotel",
      "detail": "• ~600 m up Noosa Drive from the Hastings St roundabout — uphill.",
      "typeName": "Walk",
      "emoji": "🚶"
     },
     {
-     "start": "6:40 PM",
-     "end": "7:40 PM",
+     "start": "6:00 PM",
+     "end": "7:15 PM",
      "title": "Dinner — Noosa Reef Hotel",
-     "detail": "• Casual pub on the hill above Hastings St: upstairs deck over Laguna Bay and the North Shore.\n• Sunset ~6:40 PM.\n• Large indoor kids' playroom with a glass front.\n• Book a deck table by phone (+61 7 5430 7500).",
+     "detail": "• Casual pub on the hill above Hastings St: upstairs deck over Laguna Bay and the North Shore.\n• Sunset 6:38 PM — the sky lights up over the bay and the North Shore; the sun itself goes down behind the hills to the west-southwest.\n• Large indoor kids' playroom with a glass front.\n• Book a deck table by phone (+61 7 5430 7500).",
      "typeName": "Dining",
      "emoji": "🍽️",
      "est": 58.5,
      "notes": "ESTIMATE — menu not published online:\n• 2 adult mains ~AUD 30 each\n• 2 kids' meals ~AUD 15 each\n• = AUD ~90 ≈ USD 59."
     },
     {
-     "start": "7:40 PM",
-     "end": "7:55 PM",
+     "start": "7:15 PM",
+     "end": "7:30 PM",
      "title": "Walk back to Ocean Breeze",
      "typeName": "Walk",
      "emoji": "🚶"
     },
     {
-     "start": "7:55 PM",
-     "end": "8:30 PM",
+     "start": "7:30 PM",
+     "end": "8:00 PM",
      "title": "Bed",
      "detail": "• Tomorrow's breakfast is 8:00 AM → back-at-hotel deadline 8:00 PM.",
      "typeName": "Hotel",
@@ -577,135 +569,117 @@
   },
   {
    "date": "Monday, December 20, 2027",
-   "title": "Coastal walk + Noosa Everglades cruise",
+   "title": "Noosa National Park — Granite Bay and Tea Tree Bay; Noosaville riverfront",
    "planned": false,
    "blocks": [
     {
-     "start": "6:30 AM",
-     "end": "7:00 AM",
-     "title": "Breakfast in the apartment",
+     "start": "8:15 AM",
+     "end": "9:00 AM",
+     "title": "Breakfast in the apartment; pack the picnic",
+     "detail": "• Picnic lunch from the IGA shop, 2 L+ of water each, hats, sunscreen, reef shoes for the rock pools.",
      "typeName": "Dining",
      "emoji": "🍳"
     },
     {
-     "start": "7:00 AM",
-     "end": "7:20 AM",
-     "title": "Walk to the Noosa National Park entrance",
-     "detail": "• Along the Hastings St boardwalk to the end of Park Rd, ~1 km.",
+     "start": "9:00 AM",
+     "end": "9:20 AM",
+     "title": "Boardwalk to the Noosa National Park day-use area",
+     "detail": "• ~1 km of seaside boardwalk from Hastings St, with some steps.",
      "typeName": "Walk",
      "emoji": "🚶"
     },
     {
-     "start": "7:20 AM",
+     "start": "9:20 AM",
+     "end": "9:35 AM",
+     "title": "Boiling Pot lookout",
+     "detail": "• 300 m in on the sealed track.",
+     "typeName": "Sightseeing",
+     "emoji": "📸"
+    },
+    {
+     "start": "9:35 AM",
      "end": "10:20 AM",
-     "title": "Coastal Walk to Hell's Gates and back (anchor)",
-     "detail": "Boiling Pot lookout (300 m) → Tea Tree Bay → Dolphin Point (1.2 km) → Granite Bay → Hell's Gates (2.7 km one way).\nSealed and easy to Dolphin Point; unsealed with steps and a few steep bits after. 5.4 km return, 3 hrs at a 6-year-old's pace with snack and lookout stops — turn around at Dolphin Point if the little one is done and nothing is lost.\nLook up between the entrance and Tea Tree Bay — wild koalas are regularly spotted here.\nFairy Pools (rock pools at Granite Bay): only by scrambling down rocks, only at low tide with small swell. Low tide is 7:05 AM this morning (BOM 2027 prediction) — judge the swell from the track, skip without regret if it's rolling.",
+     "title": "Coastal track past Tea Tree Bay and Dolphin Point to Granite Bay",
+     "detail": "• Tea Tree Bay 750 m, Dolphin Point 1.3 km, Granite Bay 1.7 km from the day-use area.\n• Sealed to Dolphin Point; unsealed with some steps after.\n• Koalas are regularly spotted in the trees along this stretch.",
      "typeName": "Walk",
-     "emoji": "🥾",
-     "notes": "• Free.\n• Beaches inside the park are unpatrolled — no swimming there; no swim stop today.\n• 2 L water, sunscreen; no shade on the Hell's Gates section."
+     "emoji": "🥾"
     },
     {
      "start": "10:20 AM",
-     "end": "10:40 AM",
-     "title": "Walk back to Ocean Breeze",
+     "end": "11:00 AM",
+     "title": "Granite Bay — boulders and rock pools",
+     "detail": "• Big black granite boulders, rock pools, a pebbly-sandy beach.\n• Go early: the beach disappears at high tide (1:20 PM today, BOM 2027 prediction).\n• Steep track down. Unpatrolled — no swimming.",
+     "typeName": "Beach/Pool",
+     "emoji": "🪨"
+    },
+    {
+     "start": "11:00 AM",
+     "end": "11:30 AM",
+     "title": "Walk back to Tea Tree Bay",
+     "detail": "• ~1 km.",
      "typeName": "Walk",
      "emoji": "🚶"
     },
     {
-     "start": "10:40 AM",
-     "end": "11:25 AM",
-     "title": "Showers and change",
-     "typeName": "Logistics",
-     "emoji": "🚿"
+     "start": "11:30 AM",
+     "end": "1:00 PM",
+     "title": "Tea Tree Bay — beach play, rock pools, picnic lunch (anchor)",
+     "detail": "• The prettiest bay in the park: sand, rock pools with crabs and small fish.\n• Picnic lunch around 12:15. Toilets and tap water here.\n• Unpatrolled — paddling at the edge only; Parks Queensland advises against swimming.\n• Keep food covered: brush turkeys and lace monitors.",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️"
     },
     {
-     "start": "11:25 AM",
-     "end": "11:40 AM",
-     "title": "Car out, load up",
-     "typeName": "Logistics",
-     "emoji": "⏱️"
+     "start": "1:00 PM",
+     "end": "1:40 PM",
+     "title": "Walk out and the boardwalk back to Hastings St",
+     "detail": "• 750 m to the day-use area, then ~1 km of boardwalk.",
+     "typeName": "Walk",
+     "emoji": "🚶"
     },
     {
-     "start": "11:40 AM",
-     "end": "12:20 PM",
-     "title": "Drive to Boreen Point",
-     "detail": "• Noosa Heads → Tewantin → Boreen Point on Lake Cootharaba, ~40 min.",
+     "start": "1:40 PM",
+     "end": "3:45 PM",
+     "title": "Ocean Breeze — showers and rest",
+     "typeName": "Free Time",
+     "emoji": "⏰"
+    },
+    {
+     "start": "3:45 PM",
+     "end": "4:05 PM",
+     "title": "Drive to Noosaville",
+     "detail": "• ~6 km along Noosa Parade / Gympie Terrace.\n• Park at the Yacht & Rowing Club precinct or Quota Park.",
      "typeName": "Drive",
      "emoji": "🚗"
     },
     {
-     "start": "12:20 PM",
-     "end": "1:15 PM",
-     "title": "Lunch — Apollonian Hotel, Boreen Point",
-     "detail": "• Historic Australian country pub, 19 Laguna St — verandah, garden and a big lawn for the kids.\n• Open daily from 9:30 AM. ~5 min from the cruise departure.",
+     "start": "4:05 PM",
+     "end": "5:30 PM",
+     "title": "Noosaville riverfront walk",
+     "detail": "• Flat 2 km strip of riverside paths and parks along Gympie Terrace: Chaplin Park, Lions Park with the Pirate Playground, Quota Park and the Big Pelican, Pelican Beach Park.\n• Small river beaches, boats coming and going, cafés along the path. Toilets and showers in several parks.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "5:30 PM",
+     "end": "6:50 PM",
+     "title": "Dinner — Noosa Yacht & Rowing Club",
+     "detail": "• The club's Riverside Bistro at Lions Park, on the water next to the Pirate Playground.\n• 5:30 PM sitting (vacate by 6:50) — bookings strongly advised.\n• No kids' menu; half serves for little ones.",
      "typeName": "Dining",
      "emoji": "🍽️",
-     "est": 58.5,
-     "notes": "ESTIMATE — menu published as images:\n• 2 adult mains ~AUD 30 each\n• 2 kids' meals ~AUD 15 each\n• = AUD ~90 ≈ USD 59."
+     "est": 54.47,
+     "notes": "PRICED FROM THE CLUB'S SUMMER 2023–24 MENU (expect higher by 2027):\n• Fish & chips AUD 28.90\n• Crispy-skin barramundi AUD 21.90\n• 2 kids' half-serve fish & chips AUD 16.50 each\n• = AUD 83.80 ≈ USD 54."
     },
     {
-     "start": "1:15 PM",
-     "end": "1:30 PM",
-     "title": "Drive to Habitat Noosa",
-     "detail": "• ~5 min, on the lake shore.",
-     "typeName": "Drive",
-     "emoji": "🚗"
-    },
-    {
-     "start": "1:30 PM",
-     "end": "2:00 PM",
-     "title": "Check in at Habitat Noosa, bathroom, boarding",
-     "typeName": "Logistics",
-     "emoji": "⏱️"
-    },
-    {
-     "start": "2:00 PM",
-     "end": "4:45 PM",
-     "title": "Noosa Everglades Serenity Cruise (anchor)",
-     "detail": "One of only two everglades systems on earth: across Lake Cootharaba and up the tea-coloured, glass-flat upper Noosa River, where the reflections are the show.\nSkipper commentary, wildlife (sea eagles, kingfishers, turtles), a drink included. ~2¾ hrs on a roofed boat — nothing to drive, nothing to rent.",
-     "typeName": "Excursion",
-     "emoji": "🛶",
-     "est": 211.9,
-     "notes": "• Adrenaline listing: AUD 89 adult, AUD 74 child (2–11) → AUD 326 ≈ USD 212.\n• Operator's own adult rate AUD 99 (Apr 2026–Mar 2027); child price on enquiry.\n• Runs daily ~2:00–4:45 PM; free cancellation to 48 hrs."
-    },
-    {
-     "start": "4:45 PM",
-     "end": "5:25 PM",
+     "start": "6:50 PM",
+     "end": "7:05 PM",
      "title": "Drive back to Ocean Breeze",
-     "detail": "• ~40 min.",
      "typeName": "Drive",
      "emoji": "🚗"
     },
     {
-     "start": "5:25 PM",
-     "end": "5:45 PM",
-     "title": "Park, freshen up, walk to the surf club",
-     "typeName": "Walk",
-     "emoji": "🚶"
-    },
-    {
-     "start": "5:45 PM",
-     "end": "6:45 PM",
-     "title": "Dinner — Noosa Heads Surf Club",
-     "detail": "Upstairs at the surf lifesaving club, 69 Hastings St, over the patrolled beach.\nFish & chips, steaks, pasta, salads, seafood, kids' menu, sunset table.\nWalk-ins only — 5:45 on a Monday beats the queue. ~300 m from Ocean Breeze.",
-     "typeName": "Dining",
-     "emoji": "🍽️",
-     "est": 53.3,
-     "menuUrl": "https://www.noosasurfclub.com.au/noosa-lunch-dinner-menu/",
-     "notes": "PRICED FROM A MENU LISTING (Aug 2025; the club's own menu is an image):\n• Fish & chips AUD 24–28 → 26\n• Chicken parmigiana AUD 28–32 → 30\n• 2 × kids (nuggets / mini fish & chips / pasta) AUD 12–14 → 13\n• = AUD ~82 ≈ USD 53."
-    },
-    {
-     "start": "6:45 PM",
-     "end": "6:55 PM",
-     "title": "Walk back to Ocean Breeze",
-     "typeName": "Walk",
-     "emoji": "🚶"
-    },
-    {
-     "start": "6:55 PM",
-     "end": "7:15 PM",
+     "start": "7:05 PM",
+     "end": "7:30 PM",
      "title": "Bed",
-     "detail": "• Tomorrow's breakfast is 7:15 AM → back-at-hotel deadline 7:15 PM.",
      "typeName": "Hotel",
      "emoji": "🛏️"
     }
@@ -2099,11 +2073,11 @@
     },
     {
      "name": "Australia Zoo — Sat Dec 18",
-     "note": "Buy the Family of 4 pass online (AUD 233.95 as of Oct 2026). Re-check show times the week before: Tigers LIVE! 11:00, Wildlife Warriors 1:15."
+     "note": "Buy the Family of 4 pass online (AUD 233.95 as of Oct 2026). Re-check the Tigers LIVE! time (11:00) the week before."
     },
     {
      "name": "Noosa bookings",
-     "note": "Noosa Reef Hotel deck table Dec 18 (6:40 PM). Dec 20–21 plans being reworked."
+     "note": "Noosa Reef Hotel deck table Dec 18 (6:00 PM); Noosa Yacht & Rowing Club Dec 20 (5:30 PM sitting). Dec 21 plan still open."
     },
     {
      "name": "Dinner — Dec 22, Noosa",

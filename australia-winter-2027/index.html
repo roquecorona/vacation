@@ -1,0 +1,3425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Spline+Sans+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{height:100%}
+body{margin:0;background:#eef0ed;overflow-x:hidden}
+
+/* --- Mobile layout (<=780px) --- */
+/* Inline styles are compiled into React style OBJECTS by this template's runtime */
+/* (see support.js), so plain attribute-selector overrides like div[style*="..."] */
+/* never match the rendered DOM -- they silently do nothing. Every responsive change */
+/* below instead flows through a CSS custom property referenced directly inside the */
+/* template's own inline style as var(--x-mobile, desktop-fallback). That works */
+/* regardless of how the runtime re-serializes the rest of the style object, because */
+/* var() substitution happens in the browser's CSS engine, not in the template. */
+/* Navigation on mobile is a real off-canvas drawer (the desktop sidebar itself */
+/* becomes a fixed, slide-in panel), triggered from a sticky top bar -- not a */
+/* squeezed-down copy of the desktop sidebar sitting above the content. */
+@media (max-width: 780px) {
+  :root {
+    --layout-cols-mobile: 1fr;
+    --layout-rows-mobile: auto 1fr;
+    --layout-h-mobile: auto;
+    --layout-minh-mobile: 100vh;
+    --layout-of-mobile: visible;
+    --topbar-display-mobile: flex;
+    --aside-pos-mobile: fixed;
+    --aside-top-mobile: 0;
+    --aside-bottom-mobile: 0;
+    --aside-w-mobile: 84vw;
+    --aside-maxw-mobile: 320px;
+    --aside-z-mobile: 1000;
+    --aside-shadow-mobile: 0 0 32px rgba(10,16,18,0.35);
+    --aside-closed-tx-mobile: translateX(-100%);
+    --asideclose-display-mobile: flex;
+    --scrim-display-mobile: block;
+    --navrow-pad-mobile: 11px 12px;
+    --navbtn-pad-mobile: 10px 14px;
+    --main-ovy-mobile: visible;
+    --sec-pad-mobile: 18px 16px 40px;
+    --sec-maxw-mobile: 100%;
+    --h1-34-mobile: 25px;
+    --h1-27-mobile: 21px;
+    --dayrow-cols-mobile: 60px 22px 1fr;
+    --dayrow-gap-mobile: 6px;
+    --present-cols-mobile: 1fr;
+    --present-br-mobile: none;
+    --money-cols-mobile: 1fr 76px 88px;
+    --money-gap-mobile: 8px;
+    --points-cols-mobile: 1fr 80px 92px;
+    --points-gap-mobile: 8px;
+    --tbl-est-display-mobile: none;
+    --ovrow-cols-mobile: 44px 1fr auto;
+    --ovrow-summary-display-mobile: none;
+    --bkcards-cols-mobile: 1fr;
+    --packslot-cols-mobile: 92px 1fr;
+  }
+}
+</style>
+</helmet>
+<div style="--accent: {{ accent }}; display:grid;grid-template-columns:var(--layout-cols-mobile, 236px 1fr);grid-template-rows:var(--layout-rows-mobile, none);height:var(--layout-h-mobile, 100%);min-height:var(--layout-minh-mobile, 760px);overflow:var(--layout-of-mobile, hidden);background:#f4f5f3;color:#1b2629;font-family:'Schibsted Grotesk',sans-serif">
+
+  <div data-screen-label="Mobile top bar" style="display:var(--topbar-display-mobile, none);align-items:center;gap:10px;padding:10px 14px;background:#eceeea;border-bottom:1px solid #dfe4e1;position:sticky;top:0;z-index:500">
+    <button onClick="{{ toggleMobileNav }}" aria-label="Open menu" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;width:40px;height:40px;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">&#9776;</button>
+    <div style="min-width:0;flex:1">
+      <div style="font:800 15px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ title }}</div>
+      <div style="font:500 10.5px 'Spline Sans Mono',monospace;color:#647579;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ topbarSubLabel }}</div>
+    </div>
+    <sc-if value="{{ hasToday }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ todayGo }}" aria-label="Jump to today" style="cursor:pointer;background:var(--accent, #16695E);color:#ffffff;border:none;border-radius:8px;width:40px;height:40px;font-size:15px;display:flex;align-items:center;justify-content:center;flex:none">&#128205;</button>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ mobileNavOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ toggleMobileNav }}" style="display:var(--scrim-display-mobile, none);position:fixed;inset:0;background:rgba(10,16,18,0.45);z-index:900"></div>
+  </sc-if>
+
+  <aside data-screen-label="Sidebar" style="background:#eceeea;border-right:1px solid #dfe4e1;display:flex;flex-direction:column;min-height:0;position:var(--aside-pos-mobile, static);top:var(--aside-top-mobile, auto);bottom:var(--aside-bottom-mobile, auto);left:0;width:var(--aside-w-mobile, auto);max-width:var(--aside-maxw-mobile, none);z-index:var(--aside-z-mobile, auto);box-shadow:var(--aside-shadow-mobile, none);transform:{{ asideTransform }};transition:transform 0.28s cubic-bezier(0.4,0,0.2,1)">
+    <div style="display:flex;align-items:flex-start;gap:10px;padding:20px 18px 14px">
+      <div onClick="{{ goOverview }}" style="cursor:pointer;flex:1;min-width:0">
+        <div style="font:800 19px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ title }}</div>
+        <div style="font:500 11px 'Spline Sans Mono',monospace;color:#647579;margin-top:4px">{{ dates }}</div>
+      </div>
+      <button onClick="{{ toggleMobileNav }}" aria-label="Close menu" style="display:var(--asideclose-display-mobile, none);cursor:pointer;background:none;border:1px solid #dfe4e1;border-radius:8px;width:32px;height:32px;flex:none;align-items:center;justify-content:center;font-size:14px;color:#647579">&#10005;</button>
+    </div>
+    <sc-if value="{{ hasToday }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ todayGo }}" style="cursor:pointer;margin:0 18px 14px;padding:8px 12px;border-radius:8px;background:var(--accent, #16695E);color:#ffffff;font:700 12px 'Schibsted Grotesk',sans-serif;text-align:center" style-hover="opacity:0.9">📍 Jump to today</div>
+    </sc-if>
+    <div style="flex:1;overflow-y:auto;padding-bottom:12px">
+      <div onClick="{{ goOverview }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 8px 10px);border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ ovBg }};color:{{ ovFg }}" style-hover="background:#e1e5e0">Trip</div>
+      <div style="margin:12px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">DAYS</div>
+      <sc-for list="{{ navDays }}" as="d" hint-placeholder-count="8">
+        <div onClick="{{ d.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 5px 10px);border-radius:8px;display:grid;grid-template-columns:30px 1fr auto auto;gap:7px;align-items:baseline;background:{{ d.bg }};color:{{ d.fg }}" style-hover="background:#e1e5e0">
+          <span style="font:600 11px 'Spline Sans Mono',monospace;opacity:0.75">{{ d.short }}</span>
+          <span style="font:500 12.5px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ d.title }}</span>
+          <sc-if value="{{ d.isToday }}" hint-placeholder-val="{{ false }}"><span style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E)">TODAY</span></sc-if>
+          <sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:9px;opacity:0.85">✅</span></sc-if>
+        </div>
+      </sc-for>
+      <sc-if value="{{ noDays }}" hint-placeholder-val="{{ false }}">
+        <div style="margin:0 18px;font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d">None yet</div>
+      </sc-if>
+      <div style="margin:14px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">LENSES</div>
+      <sc-for list="{{ lenses }}" as="l" hint-placeholder-count="6">
+        <div onClick="{{ l.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 7px 10px);border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ l.bg }};color:{{ l.fg }}" style-hover="background:#e1e5e0">{{ l.label }}</div>
+      </sc-for>
+    </div>
+    <div style="padding:12px 18px;border-top:1px solid #dfe4e1;font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d;line-height:1.6">Viewer only.
+Edits happen in chat with Claude.</div>
+  </aside>
+
+  <main style="overflow-y:var(--main-ovy-mobile, auto);min-width:0">
+
+    <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
+      <section data-screen-label="Trip overview" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 900px)">
+        <h1 style="margin:0;font:800 34px/1.05 'Schibsted Grotesk',sans-serif;letter-spacing:-0.8px;font-size:var(--h1-34-mobile, 34px)">{{ title }}</h1>
+        <div style="font:500 13px 'Spline Sans Mono',monospace;color:#647579;margin-top:8px">{{ subLine }}</div>
+
+        <sc-if value="{{ hasRoute }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:26px;background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;overflow-x:auto">
+            <sc-for list="{{ route }}" as="stop" hint-placeholder-count="6">
+              <div style="display:flex;align-items:flex-start;flex:none">
+                <div>
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <span style="width:10px;height:10px;border-radius:50%;background:var(--accent, #16695E);flex:none"></span>
+                    <span style="font:700 14px 'Schibsted Grotesk',sans-serif;white-space:nowrap">{{ stop.name }}</span>
+                  </div>
+                  <div style="font:500 10.5px 'Spline Sans Mono',monospace;color:#647579;margin:4px 0 0 18px;white-space:nowrap">{{ stop.sub }}</div>
+                </div>
+                <sc-if value="{{ stop.conn }}" hint-placeholder-val="{{ true }}">
+                  <div style="width:42px;border-top:2px dotted #b7c2bf;margin:6px 12px 0"></div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ noDays }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:28px;background:#ffffff;border:1px dashed #b7c2bf;border-radius:14px;padding:28px;max-width:520px">
+            <div style="font:700 15px 'Schibsted Grotesk',sans-serif">Nothing on the timeline yet</div>
+            <div style="font:400 13px/1.6 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:6px;text-wrap:pretty">Tell Claude where you're going and when. It will add skeleton days here, then you fill them in together — one conversation at a time.</div>
+          </div>
+        </sc-if>
+
+        <div style="margin-top:28px;display:grid;gap:6px">
+          <sc-for list="{{ obDays }}" as="d" hint-placeholder-count="10">
+            <div onClick="{{ d.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:11px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+              <span style="font:600 12px 'Spline Sans Mono',monospace;color:#647579">{{ d.dow }} {{ d.short }}</span>
+              <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ d.title }}<sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;margin-left:8px">✅</span></sc-if></span>
+              <span style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;display:var(--ovrow-summary-display-mobile, inline)">{{ d.summary }}</span>
+              <span style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;min-width:56px;text-align:right">{{ d.money }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isDay }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Day view" style="padding:var(--sec-pad-mobile, 30px 44px 56px);max-width:var(--sec-maxw-mobile, 820px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font:500 12px 'Spline Sans Mono',monospace;color:#647579">{{ dayDate }}</span>
+          <sc-if value="{{ dayPlanned }}" hint-placeholder-val="{{ false }}"><span style="font:600 10px 'Spline Sans Mono',monospace;color:#257a5a">✅ PLANNED</span></sc-if>
+          <span style="flex:1"></span>
+          <button onClick="{{ dayPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ dayNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">→</button>
+        </div>
+        <h1 style="margin:10px 0 4px;font:800 27px/1.1 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;text-wrap:balance;font-size:var(--h1-27-mobile, 27px)">{{ dayTitle }}</h1>
+        <div style="font:500 12px 'Spline Sans Mono',monospace;color:#647579;margin-bottom:10px">{{ dayMeta }}</div>
+        <sc-if value="{{ hasDayCostChips }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap">
+            <sc-for list="{{ dayCostChips }}" as="cc" hint-placeholder-count="2">
+              <span style="font:600 10.5px 'Spline Sans Mono',monospace;letter-spacing:0.3px;background:{{ cc.bg }};color:{{ cc.fg }};border-radius:999px;padding:5px 11px">{{ cc.label }}</span>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ dayEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d;border-top:1px solid #e5e9e5;padding-top:16px">Nothing scheduled yet — plan this day in chat.</div>
+        </sc-if>
+
+        <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="12">
+          <div>
+            <sc-if value="{{ b.isMove }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:baseline;gap:9px;padding:6px 0 6px 96px;font:500 11.5px 'Spline Sans Mono',monospace;color:#8b9a9d">
+                <span>{{ b.emoji }}</span><span>{{ b.moveLabel }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isReceipt }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:baseline;gap:8px;padding:4px 0 4px 96px">
+                <span style="font:400 12px 'Schibsted Grotesk',sans-serif;color:#647579">{{ b.title }}</span>
+                <span style="flex:1;border-bottom:1px dotted #d3dad6;transform:translateY(-3px)"></span>
+                <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:{{ b.moneyColor }}">{{ b.money }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isNote }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:4px 0 4px 96px;font:400 12px 'Schibsted Grotesk',sans-serif;font-style:italic;color:#8b9a9d">{{ b.title }}</div>
+            </sc-if>
+            <sc-if value="{{ b.isStop }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid;grid-template-columns:var(--dayrow-cols-mobile, 88px 30px 1fr);gap:var(--dayrow-gap-mobile, 8px);padding:10px 10px;margin:0 -10px;border-top:1px solid #e5e9e5;{{ b.nowStyle }}">
+                <div style="padding-top:1px">
+                  <sc-if value="{{ b.isNow }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E);margin-bottom:2px">● NOW</div>
+                  </sc-if>
+                  <div style="font:600 12px 'Spline Sans Mono',monospace;white-space:nowrap">{{ b.timeStart }}</div>
+                  <sc-if value="{{ b.hasTimeEnd }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:600 12px 'Spline Sans Mono',monospace;white-space:nowrap;color:#9aa8aa">{{ b.timeEnd }}</div>
+                  </sc-if>
+                  <div style="font:500 10px 'Spline Sans Mono',monospace;color:#9aa8aa;margin-top:2px">{{ b.durLabel }}</div>
+                </div>
+                <div style="font-size:15px;line-height:1.4;text-align:center">{{ b.emoji }}</div>
+                <div style="min-width:0">
+                  <div style="display:flex;align-items:baseline;gap:10px">
+                    <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ b.title }}</span>
+                    <span style="flex:1"></span>
+                    <sc-if value="{{ b.hasCostTag }}" hint-placeholder-val="{{ false }}">
+                      <span style="flex:none;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:0.3px;background:{{ b.costTagBg }};color:{{ b.costTagFg }};border-radius:999px;padding:2px 8px">{{ b.costTagLabel }}</span>
+                    </sc-if>
+                    <span style="flex:none;font:600 12px 'Spline Sans Mono',monospace;color:{{ b.moneyColor }}">{{ b.money }}</span>
+                  </div>
+                  <sc-if value="{{ b.hasISK }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;margin-top:2px">{{ b.iskLabel }} · {{ b.iskUsd }}</div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasMeta }}" hint-placeholder-val="{{ false }}">
+                    <div onClick="{{ b.toggle }}" style="cursor:{{ b.metaCursor }};font:400 12px/1.55 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:4px;white-space:pre-wrap;max-width:560px;text-wrap:pretty">{{ b.meta }}</div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasBooking }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:inline-flex;align-items:baseline;gap:12px;margin-top:8px;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;padding:7px 12px;flex-wrap:wrap">
+                      <sc-if value="{{ b.hasConf }}" hint-placeholder-val="{{ true }}">
+                        <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">CONF</span>
+                        <sc-if value="{{ b.confPlain }}" hint-placeholder-val="{{ true }}">
+                          <span style="font:600 12.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;white-space:pre-wrap">{{ b.conf }}</span>
+                        </sc-if>
+                        <sc-if value="{{ b.hasConfLinks }}" hint-placeholder-val="{{ false }}">
+                          <sc-for list="{{ b.confLinks }}" as="l" hint-placeholder-count="1">
+                            <a href="{{ l.url }}" target="_blank" rel="noopener" style="font:600 12.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E);text-decoration:none;border-bottom:1px dotted var(--accent, #16695E)">{{ l.label }}</a>
+                          </sc-for>
+                        </sc-if>
+                      </sc-if>
+                      <sc-if value="{{ b.hasPts }}" hint-placeholder-val="{{ false }}">
+                        <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ b.ptsLabel }}</span>
+                      </sc-if>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasMenu }}" hint-placeholder-val="{{ false }}">
+                    <a href="{{ b.menuUrl }}" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:6px 11px">{{ b.menuLabel }}</a>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPresent }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Present view" style="padding:var(--sec-pad-mobile, 30px 44px 56px);max-width:var(--sec-maxw-mobile, 980px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <h1 style="margin:0;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Present the trip</h1>
+          <span style="flex:1"></span>
+          <button onClick="{{ presentPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ presentNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">→</button>
+        </div>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:18px">A visual, day-by-day walkthrough — real photos and a real map per day. Needs an internet connection for the map tiles and photos.</div>
+
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ presentDayChips }}" as="c" hint-placeholder-count="8">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ presentEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing planned yet — build out a day first, then come back here to present it.</div>
+        </sc-if>
+
+        <sc-if value="{{ presentHasDay }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:16px;overflow:hidden">
+            <div style="padding:22px 26px 4px">
+              <div style="font:500 11.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ presentDate }}</div>
+              <div style="font:800 24px/1.15 'Schibsted Grotesk',sans-serif;color:#1b2629;text-wrap:balance;margin-top:2px">{{ presentTitle }}</div>
+            </div>
+
+            <sc-if value="{{ hasPresentPhotos }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:12px;overflow-x:auto;padding:18px 26px 6px">
+                <sc-for list="{{ presentPhotos }}" as="ph" hint-placeholder-count="3">
+                  <div style="flex:none" onClick="{{ ph.open }}">
+                    <img src="{{ ph.url }}" style="width:100%;height:190px;object-fit:cover;border-radius:12px;display:block;background:#c8d0cb;cursor:zoom-in" style-hover="opacity:0.9" />
+                    <div style="font:400 11.5px/1.4 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:6px;text-wrap:pretty">{{ ph.caption }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <div style="display:grid;grid-template-columns:var(--present-cols-mobile, 1fr 360px);gap:0;margin-top:8px">
+              <div style="padding:18px 26px 24px;border-right:var(--present-br-mobile, 1px solid #eef0ed);border-top:1px solid #eef0ed">
+                <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:10px">HERE'S WHAT WE'RE DOING</div>
+                <sc-for list="{{ presentHighlights }}" as="h" hint-placeholder-count="8">
+                  <div style="display:flex;align-items:baseline;gap:10px;padding:7px 0;border-bottom:1px solid #f0f2ef">
+                    <span style="font-size:15px">{{ h.emoji }}</span>
+                    <span style="font:500 14px 'Schibsted Grotesk',sans-serif;min-width:0">{{ h.title }}</span>
+                  </div>
+                </sc-for>
+                <div style="margin-top:16px;font:600 12px 'Spline Sans Mono',monospace;color:#1b2629">{{ presentCost }}</div>
+              </div>
+              <div style="padding:18px 20px;border-top:1px solid #eef0ed">
+                <iframe src="{{ presentMapSrc }}" style="width:100%;height:240px;border:0;border-radius:12px;display:block" loading="lazy"></iframe>
+                <a href="{{ presentMapsUrl }}" target="_blank" rel="noopener" style="display:block;margin-top:10px;text-align:center;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:8px" style-hover="border-color:var(--accent, #16695E)">Open full day route in Google Maps →</a>
+              </div>
+            </div>
+
+            <sc-if value="{{ hasPresentVideos }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:20px 26px 26px;border-top:1px solid #eef0ed">
+                <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:12px">SEE IT IN ACTION — CLICK TO WATCH ON YOUTUBE</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+                  <sc-for list="{{ presentVideos }}" as="v" hint-placeholder-count="2">
+                    <a href="{{ v.watchUrl }}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+                      <div style="position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000">
+                        <img src="{{ v.thumb }}" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover" />
+                        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center">
+                          <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center">
+                            <div style="width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:16px solid #ffffff;margin-left:4px"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="font:500 12.5px 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:8px">{{ v.title }}</div>
+                    </a>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+              <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;background:rgba(10,16,18,0.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;cursor:zoom-out">
+                <img src="{{ lightboxUrl }}" style="max-width:100%;max-height:80vh;object-fit:contain;border-radius:8px" />
+                <div style="font:500 13px 'Schibsted Grotesk',sans-serif;color:#dfe9e6;margin-top:16px;text-align:center;max-width:600px">{{ lightboxCaption }}</div>
+                <div style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;margin-top:10px">Click anywhere to close</div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isMoney }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Money lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 720px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Money</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Every dollar lives on a timeline block. This is just the rollup.</div>
+        <sc-if value="{{ noMoney }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No costs recorded yet. Estimates and receipts land here as the timeline fills in.</div>
+        </sc-if>
+        <sc-if value="{{ hasMoney }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+              <span>CATEGORY</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">PAID</span><span style="text-align:right">TOTAL</span>
+            </div>
+            <sc-for list="{{ moneyRows }}" as="r" hint-placeholder-count="10">
+              <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+                <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.emoji }}&nbsp;&nbsp;{{ r.name }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.est }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.paid }}</span>
+                <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
+              </div>
+            </sc-for>
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+              <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ moneyTotEst }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ moneyTotPaid }}</span>
+              <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ moneyTotAll }}</span>
+            </div>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPoints }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Points lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 720px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Points</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Award burn by program. Planned = on the timeline, not yet confirmed.</div>
+        <sc-if value="{{ noPoints }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No award bookings yet.</div>
+        </sc-if>
+        <sc-if value="{{ hasPoints }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+              <span>PROGRAM</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">USED</span><span style="text-align:right">TOTAL</span>
+            </div>
+            <sc-for list="{{ pointRows }}" as="r" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+                <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.name }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.planned }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.used }}</span>
+                <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
+              </div>
+            </sc-for>
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+              <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ ptsTotPlanned }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ ptsTotUsed }}</span>
+              <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ ptsTotAll }}</span>
+            </div>
+          </div>
+          <div style="margin-top:18px;display:grid;gap:6px">
+            <sc-for list="{{ pointItems }}" as="p" hint-placeholder-count="6">
+              <div onClick="{{ p.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:10px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+                <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ p.dayLabel }}</span>
+                <span style="font:500 13px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.emoji }}&nbsp;&nbsp;{{ p.title }}</span>
+                <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:{{ p.statusColor }}">{{ p.status }}</span>
+                <span style="font:600 12px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:130px;text-align:right">{{ p.ptsLabel }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isBookings }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Bookings lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 940px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Bookings</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Every block that carries a confirmation or points, gathered in one place.</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+          <sc-for list="{{ bkChips }}" as="c" hint-placeholder-count="5">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <sc-for list="{{ bookingGroups }}" as="g" hint-placeholder-count="4">
+          <div>
+            <div style="margin:20px 0 10px;font:600 10px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">{{ g.name }}</div>
+            <div style="display:grid;grid-template-columns:var(--bkcards-cols-mobile, repeat(auto-fill,minmax(390px,1fr)));gap:10px">
+              <sc-for list="{{ g.items }}" as="bk" hint-placeholder-count="3">
+                <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;overflow:hidden">
+                  <div style="padding:14px 16px 12px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:9px">
+                    <span style="font-size:15px">{{ bk.emoji }}</span>
+                    <span style="font:700 14.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ bk.title }}</span>
+                    <span style="flex:1"></span>
+                    <button onClick="{{ bk.go }}" style="cursor:pointer;flex:none;background:none;border:1px solid #dfe4e1;border-radius:6px;font:600 10px 'Spline Sans Mono',monospace;color:#647579;padding:3px 8px" style-hover="border-color:var(--accent, #16695E);color:var(--accent, #16695E)">{{ bk.dayLabel }} →</button>
+                  </div>
+
+                  <sc-if value="{{ bk.hasFacts }}" hint-placeholder-val="{{ true }}">
+                    <div style="padding:12px 16px;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;border-bottom:1px solid #eef0ed">
+                      <sc-for list="{{ bk.facts }}" as="ft" hint-placeholder-count="4">
+                        <div style="min-width:0">
+                          <div style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d">{{ ft.label }}</div>
+                          <div style="font:500 12.5px 'Schibsted Grotesk',sans-serif;margin-top:2px;text-wrap:pretty">{{ ft.value }}</div>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ bk.hasFlag }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin:12px 16px 0;background:#fdf3e3;border:1px solid #f0dcae;border-radius:8px;padding:9px 12px;display:flex;gap:8px;align-items:flex-start">
+                      <span style="flex:none;font-size:13px">⚠️</span>
+                      <span style="font:500 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#7a5a17;text-wrap:pretty">{{ bk.flag }}</span>
+                    </div>
+                  </sc-if>
+
+                  <div style="padding:12px 16px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+                    <sc-if value="{{ bk.hasConf }}" hint-placeholder-val="{{ true }}">
+                      <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">CONF</span>
+                      <sc-if value="{{ bk.confPlain }}" hint-placeholder-val="{{ true }}">
+                        <b style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;letter-spacing:0.5px;white-space:pre-wrap">{{ bk.conf }}</b>
+                      </sc-if>
+                      <sc-if value="{{ bk.hasConfLinks }}" hint-placeholder-val="{{ false }}">
+                        <sc-for list="{{ bk.confLinks }}" as="l" hint-placeholder-count="1">
+                          <a href="{{ l.url }}" target="_blank" rel="noopener" style="font:600 12px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E);text-decoration:none;border-bottom:1px dotted var(--accent, #16695E)">{{ l.label }}</a>
+                        </sc-for>
+                      </sc-if>
+                    </sc-if>
+                    <sc-if value="{{ bk.noConf }}" hint-placeholder-val="{{ false }}">
+                      <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#96690f">NOT CONFIRMED</span>
+                    </sc-if>
+                    <sc-if value="{{ bk.hasPts }}" hint-placeholder-val="{{ false }}">
+                      <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ bk.ptsLabel }}</span>
+                    </sc-if>
+                    <span style="flex:1"></span>
+                    <span style="font:600 12px 'Spline Sans Mono',monospace;color:{{ bk.moneyColor }}">{{ bk.money }}</span>
+                  </div>
+
+                  <sc-if value="{{ bk.hasNotes }}" hint-placeholder-val="{{ false }}">
+                    <div onClick="{{ bk.toggleNotes }}" style="cursor:pointer;padding:9px 16px;border-top:1px solid #eef0ed;font:600 10.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ bk.notesToggleLabel }}</div>
+                    <sc-if value="{{ bk.notesOpen }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding:0 16px 14px;font:400 11.5px/1.55 'Schibsted Grotesk',sans-serif;color:#647579;white-space:pre-wrap;text-wrap:pretty">{{ bk.notes }}</div>
+                    </sc-if>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <sc-if value="{{ noBookings }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d;margin-top:16px">No bookings yet. When you book something, paste the confirmation into chat and it will land here.</div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPacking }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Packing lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 980px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Outfits &amp; packing</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Per person, per day, per slot — with the rewear system intact.</div>
+        <sc-if value="{{ noPacking }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing here yet. Ask Claude to draft outfit plans or packing quantities from the itinerary.</div>
+        </sc-if>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ packChips }}" as="c" hint-placeholder-count="4">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasRollups }}" hint-placeholder-val="{{ true }}">
+          <div style="margin:0 0 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;align-items:start">
+            <sc-for list="{{ packRollups }}" as="pr" hint-placeholder-count="3">
+              <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px">
+                <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+                  <span style="font:700 12.5px 'Schibsted Grotesk',sans-serif">{{ pr.who }}</span>
+                  <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ pr.totalLabel }}</span>
+                </div>
+                <sc-if value="{{ pr.empty }}" hint-placeholder-val="{{ false }}">
+                  <div style="font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d;text-wrap:pretty">No pack list yet — ask Claude to count one from the outfit plan.</div>
+                </sc-if>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 14px">
+                  <sc-for list="{{ pr.items }}" as="it" hint-placeholder-count="6">
+                    <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
+                      <span style="font:600 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:22px;text-align:right">{{ it.count }}×</span>
+                      <span style="font:400 12px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ it.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-for list="{{ outfitDays }}" as="od" hint-placeholder-count="6">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;margin-bottom:10px;overflow:hidden">
+            <div style="padding:10px 16px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:12px">
+              <span style="font:700 13px 'Schibsted Grotesk',sans-serif">{{ od.date }}</span>
+              <span style="font:500 10.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ od.dayTitle }}</span>
+            </div>
+            <sc-for list="{{ od.slots }}" as="s" hint-placeholder-count="2">
+              <div style="display:grid;grid-template-columns:var(--packslot-cols-mobile, 130px 1fr);border-bottom:1px solid #f0f2ef">
+                <div style="padding:10px 14px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:#647579">{{ s.name }}</div>
+                <div style="display:flex;align-items:stretch">
+                  <sc-for list="{{ s.people }}" as="p" hint-placeholder-count="3">
+                    <div style="flex:1;min-width:0;padding:10px 12px;border-left:1px solid #f0f2ef;font:400 11px/1.5 'Schibsted Grotesk',sans-serif;white-space:pre-wrap"><span style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;display:block;margin-bottom:3px">{{ p.who }}</span>{{ p.text }}</div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ hasTracker }}" hint-placeholder-val="{{ true }}">
+          <h2 style="margin:30px 0 4px;font:700 18px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ trackerTitle }}</h2>
+          <div style="font:400 12px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Item-level, with variation numbers and rewear flags.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px">
+            <sc-for list="{{ trackerDays }}" as="tdy" hint-placeholder-count="6">
+              <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:12px 15px">
+                <div style="font:700 12.5px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">{{ tdy.date }}</div>
+                <sc-for list="{{ tdy.groups }}" as="tg" hint-placeholder-count="2">
+                  <div style="margin-bottom:7px">
+                    <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;margin-bottom:3px">{{ tg.activity }}</div>
+                    <sc-for list="{{ tg.items }}" as="it" hint-placeholder-count="2">
+                      <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
+                        <span style="font:400 11.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ it.label }}</span>
+                        <sc-if value="{{ it.rewear }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:600 8px 'Spline Sans Mono',monospace;letter-spacing:1px;color:var(--accent, #16695E);border:1px solid var(--accent, #16695E);border-radius:4px;padding:1px 4px">REWEAR</span></sc-if>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isLists }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Lists lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 940px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Lists</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Supplies to bring, and things to buy once there.</div>
+        <sc-if value="{{ noLists }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No lists yet. Tell Claude what to track — supplies, groceries, pre-trip errands.</div>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;align-items:start">
+          <sc-for list="{{ supplyGroups }}" as="g" hint-placeholder-count="3">
+            <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+              <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="6">
+                <div style="display:flex;align-items:baseline;gap:8px;padding:3px 0">
+                  <span style="flex:none;width:11px;height:11px;border:1.5px solid #b7c2bf;border-radius:4px;transform:translateY(1px)"></span>
+                  <span style="font:400 12.5px 'Schibsted Grotesk',sans-serif">{{ it }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isChecklist }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Checklist lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 760px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Pre-trip checklist</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:6px">Everything still open before you go — reservations to lock in, prices to confirm by phone. Checks are saved in this browser.</div>
+        <div style="font:600 11px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);margin-bottom:20px">{{ checklistDone }} / {{ checklistTotal }} done</div>
+        <sc-if value="{{ noChecklist }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing open right now — everything's confirmed.</div>
+        </sc-if>
+        <div style="display:grid;gap:8px">
+          <sc-for list="{{ checklistItems }}" as="ci" hint-placeholder-count="10">
+            <div onClick="{{ ci.toggle }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px;display:flex;gap:12px;align-items:flex-start;{{ ci.rowStyle }}" style-hover="border-color:var(--accent, #16695E)">
+              <span style="flex:none;width:19px;height:19px;border:1.5px solid #b7c2bf;border-radius:6px;margin-top:1px;display:flex;align-items:center;justify-content:center;font:700 12px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);background:#f4f5f3">{{ ci.boxChar }}</span>
+              <div style="min-width:0">
+                <div style="font:600 13.5px 'Schibsted Grotesk',sans-serif;text-decoration:{{ ci.strike }};">{{ ci.name }}</div>
+                <div style="font:400 12px/1.5 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:3px;text-wrap:pretty">{{ ci.note }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+        <sc-if value="{{ isIdeas }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Ideas lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 840px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Ideas &amp; staging</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Candidates that haven't earned a spot on the timeline yet.</div>
+        <sc-if value="{{ noIdeas }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Empty. Anything you're considering — restaurants, beaches, tours — parks here until it earns a day.</div>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;align-items:start">
+          <sc-for list="{{ ideaGroups }}" as="g" hint-placeholder-count="2">
+            <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+              <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+                <div style="padding:4px 0;border-bottom:1px solid #f0f2ef;display:flex;gap:10px;align-items:baseline">
+                  <span style="font:400 12.5px 'Schibsted Grotesk',sans-serif">{{ it.name }}</span>
+                  <span style="font:400 11px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">{{ it.note }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasAlt }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:14px;background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+            <div onClick="{{ toggleAlt }}" style="cursor:pointer;display:flex;align-items:baseline;gap:10px">
+              <span style="font:700 13px 'Schibsted Grotesk',sans-serif">{{ altTitle }}</span>
+              <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ altChev }}</span>
+            </div>
+            <sc-if value="{{ altOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="font:400 11.5px/1.6 'Spline Sans Mono',monospace;color:#647579;margin-top:10px;white-space:pre-wrap">{{ altText }}</div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1360,&quot;height&quot;:860},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#16695E&quot;,&quot;#1D5F8A&quot;,&quot;#5B4A8A&quot;,&quot;#37424A&quot;],&quot;default&quot;:&quot;#16695E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;startView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;overview&quot;,&quot;money&quot;,&quot;points&quot;,&quot;bookings&quot;,&quot;packing&quot;,&quot;lists&quot;,&quot;ideas&quot;],&quot;default&quot;:&quot;overview&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+function WIKI(name) { return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(name); }
+
+// Real photos — every photo below is a specific, verified real photo of the actual place,
+// activity, or restaurant (sourced from Wikimedia Commons or the venue's own official
+// website, and visually verified via browser screenshot before inclusion — one earlier
+// candidate for the Sun Voyager sculpture turned out to be a mislabeled Danish Bronze Age
+// artifact and was caught and replaced this way). No stock or generic stand-in photos.
+// Day 1 is an overnight flight with no stop-level photos to show, so it's left empty.
+const PRESENT_GALLERY = {};
+const PRESENT_VIDEOS = {};
+const PRESENT_MAP = {};
+const PRESENT_DIRECTIONS = {};
+
+class Component extends DCLogic {
+  state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, bkFilter: 'All', packFilter: 'ALL', ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {}, mobileNavOpen: false };
+
+  componentDidMount() {
+    this.loadTripData();
+    // Best-effort live ISK→USD rate; silently keep the built-in fallback if this fails
+    // (e.g. no network, or blocked when the file is opened without a server).
+    fetch('https://api.frankfurter.app/latest?from=ISK&to=USD')
+      .then(r => r.json())
+      .then(d => {
+        const rate = d && d.rates && d.rates.USD;
+        if (rate) this.setState({ fx: rate, fxLive: true });
+      })
+      .catch(() => {});
+  }
+
+  // Hosted (http/https): fetch trip.json live, so re-uploading just that one file
+  // updates the page with no rebuild step. Local (file://) or offline: fetch is
+  // blocked by the browser, so fall back to the embedded <script id="trip-data">
+  // copy that Claude keeps in sync on every edit.
+  loadTripData() {
+    const useEmbedded = () => {
+      let raw = {};
+      try {
+        const el = document.getElementById('trip-data');
+        raw = el ? JSON.parse(el.textContent) : {};
+      } catch (e) { raw = {}; }
+      this.finishLoad(raw);
+    };
+    fetch('./trip.json', { cache: 'no-store' })
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error('not ok'))))
+      .then(raw => this.finishLoad(raw))
+      .catch(useEmbedded);
+  }
+
+  finishLoad(raw) {
+    this.T = this.prepare(raw || {});
+    const sv = this.props.startView;
+    const st = { ready: true };
+    const todayN = this.findTodayDayN();
+    this.todayDayN = todayN;
+    if (sv && sv !== 'overview') { st.view = sv; }
+    else if (todayN) { st.view = 'day'; st.dayN = todayN; }
+    st.checked = this.loadChecklist();
+    this.setState(st);
+  }
+
+  // Matches the real current date against the trip's day dates (parsed the same
+  // way as the sidebar's day-of-week/short-date labels). Returns the 1-based day
+  // number if today falls within the trip, otherwise null.
+  findTodayDayN() {
+    if (!this.T || !this.T.days || !this.T.days.length) return null;
+    const now = new Date();
+    const y = now.getFullYear(), m = now.getMonth(), dd = now.getDate();
+    for (const d of this.T.days) {
+      const dt = new Date(d.date);
+      if (!isNaN(dt) && dt.getFullYear() === y && dt.getMonth() === m && dt.getDate() === dd) return d.n;
+    }
+    return null;
+  }
+
+  // Derive everything from a minimal trip.json — Claude only maintains raw facts.
+  prepare(raw) {
+    const T = raw || {};
+    const mins = t => {
+      if (!t) return null;
+      const m = String(t).trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+      if (!m) return null;
+      let h = +m[1] % 12; if (/pm/i.test(m[3])) h += 12;
+      return h * 60 + +m[2];
+    };
+    T.meta = T.meta || {};
+    T.meta.title = T.meta.title || 'New trip';
+    T.meta.dates = T.meta.dates || '';
+    T.meta.route = T.meta.route || [];
+    const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    T.days = (T.days || []).map((d, i) => {
+      const dt = new Date(d.date);
+      const blocks = (d.blocks || []).map((b, j) => {
+        const timed = !!(b.start || b.end);
+        const hasCost = b.paid != null || b.est != null;
+        let kind = b.kind;
+        if (!kind) {
+          if (!timed && hasCost) kind = 'receipt';
+          else if (!timed) kind = 'note';
+          else kind = 'stop';
+        }
+        const sM = mins(b.start), eM = mins(b.end);
+        const ptsN = b.points != null ? parseFloat(String(b.points).replace(/,/g, '')) : NaN;
+        return {
+          ...b,
+          id: 'b' + (i + 1) + '_' + j, kind,
+          sM, eM,
+          start: b.start || '', end: b.end || '',
+          dur: b.dur != null ? b.dur : (sM != null && eM != null && eM > sM ? eM - sM : null),
+          title: b.title || '(untitled)', detail: b.detail || '', notes: b.notes || '',
+          typeName: b.typeName || '', emoji: b.emoji || '',
+          est: b.est != null ? b.est : null, paid: b.paid != null ? b.paid : null,
+          program: b.program || null, points: b.points || null, conf: b.conf || null, confLinks: Array.isArray(b.confLinks) ? b.confLinks : null,
+          pointsN: isNaN(ptsN) ? null : ptsN,
+        };
+      });
+      return {
+        n: i + 1, date: d.date || '', title: d.title || '', planned: !!d.planned,
+        dow: d.dow || (isNaN(dt) ? '' : DOW[dt.getDay()]),
+        short: d.short || (isNaN(dt) ? '' : (dt.getMonth() + 1) + '/' + dt.getDate()),
+        blocks,
+        paid: blocks.reduce((a, b) => a + (b.paid || 0), 0),
+        est: blocks.reduce((a, b) => a + (b.paid == null ? (b.est || 0) : 0), 0),
+        stops: blocks.filter(b => b.kind === 'stop').length,
+        bookings: blocks.filter(b => b.conf || b.program).length,
+      };
+    });
+    const CAT_EMOJI = { Hotel: '\u{1F3E8}', Flight: '\u{2708}\u{FE0F}', Train: '\u{1F684}', Transportation: '\u{1F695}', Dining: '\u{1F37D}\u{FE0F}', Excursion: '\u{1F3BF}', Walk: '\u{1F6B6}', Logistics: '\u{1F9F3}', Luggage: '\u{1F9F3}', 'Free Time': '\u{1F6C1}' };
+    const cats = {};
+    for (const d of T.days) for (const b of d.blocks) {
+      if (b.est == null && b.paid == null) continue;
+      const k = (b.typeName || 'Other');
+      cats[k] = cats[k] || { est: 0, paid: 0 };
+      if (b.paid != null) cats[k].paid += b.paid; else cats[k].est += b.est;
+    }
+    T.costSummary = Object.entries(cats).map(([k, v]) => {
+      const name = k, emoji = CAT_EMOJI[k] || '\u{2022}';
+      return { name, emoji, est: v.est, paid: v.paid, total: v.est + v.paid };
+    }).sort((a, b) => b.total - a.total);
+    const groupOf = t => t === 'Flight' ? 'Flights' : t === 'Train' ? 'Rail' : t === 'Hotel' ? 'Stays' : t === 'Rental Car' ? 'Cars' : 'Activities';
+    T.bookingList = [];
+    for (const d of T.days) for (const b of d.blocks) {
+      if (b.conf || b.program) T.bookingList.push({ ...b, dayN: d.n, dayLabel: (d.dow + ' ' + d.short).trim() || 'D' + d.n, group: groupOf(b.typeName) });
+    }
+    // points by program (used = confirmed, planned = not yet)
+    const progs = {};
+    for (const b of T.bookingList) {
+      if (!b.program) continue;
+      const p = progs[b.program] = progs[b.program] || { planned: 0, used: 0 };
+      if (b.pointsN != null) { if (b.conf) p.used += b.pointsN; else p.planned += b.pointsN; }
+    }
+    T.pointsByProgram = Object.entries(progs).map(([name, v]) => ({ name, ...v, total: v.planned + v.used })).sort((a, b) => b.total - a.total);
+    T.meta.totals = {
+      paid: T.days.reduce((a, d) => a + d.paid, 0),
+      est: T.days.reduce((a, d) => a + d.est, 0),
+      points: T.pointsByProgram.reduce((a, p) => a + p.total, 0),
+    };
+    const P = T.packing || {};
+    T.packing = {
+      outfitDays: (P.outfitDays || []).map(od => ({
+        date: od.date, slots: (od.slots || []).map(s => ({
+          name: s.name,
+          people: s.people || ['roque', 'chloe', 'jenny'].filter(k => k in s).map(k => ({ who: k.toUpperCase(), text: s[k] || '—' })),
+        })),
+      })),
+      trackerDays: P.trackerDays || [],
+      trackerTitle: P.trackerTitle || "Roque's item tracker",
+      packLists: P.packLists || [],
+    };
+    // Auto-derive a pack rollup for the tracker's person when no stored list exists.
+    const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [])[1];
+    if (trackerWho && T.packing.trackerDays.length && !T.packing.packLists.some(pl => pl.who.toUpperCase() === trackerWho.toUpperCase())) {
+      const seen = new Set(); const counts = {};
+      for (const td of T.packing.trackerDays) for (const g of (td.groups || [])) for (const it of (g.items || [])) {
+        const style = it.style || (it.label ? String(it.label).split(' — ')[0] : '');
+        if (!style) continue;
+        const key = it.variation && it.variation !== '#N/A' ? it.variation : (style + '|' + (it.brand || '') + '|' + (it.color || ''));
+        if (seen.has(key)) continue;
+        seen.add(key);
+        counts[style] = (counts[style] || 0) + 1;
+      }
+      const items = Object.entries(counts).map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count);
+      if (items.length) T.packing.packLists.push({ who: trackerWho.toUpperCase(), items, derived: true });
+    }
+    if (Array.isArray(T.ideas)) { /* already groups */ }
+    else if (T.ideas && (T.ideas.oahu || T.ideas.kauai)) {
+      T.ideas = [
+        { name: 'Oahu', items: (T.ideas.oahu || []).map(s => ({ name: s, note: '' })) },
+        { name: 'Kauai — food', items: T.ideas.kauai || [] },
+      ];
+    } else T.ideas = [];
+    T.ideas = T.ideas.map(g => ({ name: g.name, items: (g.items || []).map(it => typeof it === 'string' ? { name: it, note: '' } : { name: it.name, note: it.note || '' }) }));
+    if (!T.alternatives && T.mauiAlternative) {
+      T.alternatives = { title: 'Alternative considered — Maui instead of Oahu', text: T.mauiAlternative.replace(/^"|"$/gm, '').replace(/,+\s*$/gm, '') };
+    }
+    if (typeof T.alternatives === 'string' && T.alternatives) T.alternatives = { title: 'Alternatives considered', text: T.alternatives };
+    T.supplies = T.supplies || [];
+    return T;
+  }
+
+  fm(n, cents) {
+    if (n == null) return '';
+    return '$' + n.toLocaleString('en-US', cents ? { minimumFractionDigits: 2, maximumFractionDigits: 2 } : { maximumFractionDigits: 0 });
+  }
+
+  fp(n) { return n ? n.toLocaleString('en-US') : '—'; }
+
+  go(view, dayN) { this.setState(dayN ? { view, dayN, mobileNavOpen: false } : { view, mobileNavOpen: false }); }
+
+  toggleMobileNav() { this.setState(s => ({ mobileNavOpen: !s.mobileNavOpen })); }
+
+  // Pre-trip checklist persistence — localStorage only (this file may be opened
+  // locally or hosted on GitHub Pages; either way it's just this browser's checkbox
+  // state, nothing sent anywhere).
+  checklistStorageKey() { return 'tripChecklist:' + (this.T && this.T.meta ? this.T.meta.title : 'trip'); }
+  loadChecklist() {
+    try {
+      const raw = localStorage.getItem(this.checklistStorageKey());
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+  toggleChecklistItem(key) {
+    const next = { ...this.state.checked, [key]: !this.state.checked[key] };
+    try { localStorage.setItem(this.checklistStorageKey(), JSON.stringify(next)); } catch (e) {}
+    this.setState({ checked: next });
+  }
+
+  moneyOf(b) {
+    if (b.paid != null) return { money: this.fm(b.paid, true), moneyColor: '#1b2629', hasCostTag: true, costTagLabel: 'PAID', costTagBg: '#e1f5ee', costTagFg: '#085041' };
+    if (b.est != null) return { money: this.fm(b.est, true), moneyColor: '#96690f', hasCostTag: true, costTagLabel: 'EST', costTagBg: '#faeeda', costTagFg: '#633806' };
+    return { money: '', moneyColor: '#1b2629', hasCostTag: false, costTagLabel: '', costTagBg: '', costTagFg: '' };
+  }
+
+  ptsLabelOf(b) {
+    if (!b.program && !b.points) return '';
+    const p = b.points ? (b.pointsN != null ? b.pointsN.toLocaleString('en-US') + ' pts' : b.points) : '';
+    return [b.program, p].filter(Boolean).join(' · ');
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#16695E';
+    const v = this.state.view;
+    const base = {
+      accent,
+      title: 'Trip', dates: '', subLine: '',
+      goOverview: () => this.go('overview'),
+      ovBg: v === 'overview' ? '#1b2629' : 'transparent',
+      ovFg: v === 'overview' ? '#f4f5f3' : '#1b2629',
+      navDays: [], lenses: [], noDays: false, hasRoute: false,
+      isOverview: v === 'overview', isDay: false, isMoney: false, isPoints: false,
+      isBookings: false, isPacking: false, isLists: false, isIdeas: false, isPresent: false, isChecklist: false,
+      hasToday: !!this.todayDayN, todayGo: this.todayDayN ? () => this.go('day', this.todayDayN) : () => {},
+      presentEmpty: false, presentHasDay: false, presentDayChips: [],
+      presentPrev: () => {}, presentNext: () => {},
+      presentDate: '', presentTitle: '', presentPhotos: [], hasPresentPhotos: false,
+      presentVideos: [], hasPresentVideos: false,
+      presentMapSrc: '', presentMapsUrl: '', presentHighlights: [], presentCost: '',
+      lightboxOpen: !!this.state.lightbox,
+      lightboxUrl: this.state.lightbox ? this.state.lightbox.url : '',
+      lightboxCaption: this.state.lightbox ? this.state.lightbox.caption : '',
+      closeLightbox: () => this.setState({ lightbox: null }),
+      route: [], obDays: [],
+      dayDate: '', dayTitle: '', dayMeta: '', dayPlanned: false, dayEmpty: false,
+      dayCostChips: [], hasDayCostChips: false,
+      dayPrev: () => {}, dayNext: () => {}, blocks: [],
+      moneyRows: [], moneyTotEst: '', moneyTotPaid: '', moneyTotAll: '', hasMoney: false, noMoney: false,
+      pointRows: [], pointItems: [], ptsTotPlanned: '', ptsTotUsed: '', ptsTotAll: '', hasPoints: false, noPoints: false,
+      bkChips: [], bookingGroups: [], noBookings: false,
+      outfitDays: [], trackerDays: [], trackerTitle: '', hasTracker: false, noPacking: false,
+      packChips: [], packRollups: [], hasRollups: false,
+      supplyGroups: [], noLists: false,
+      ideaGroups: [], noIdeas: false,
+      checklistItems: [], noChecklist: false, checklistDone: 0, checklistTotal: 0,
+      mobileNavOpen: this.state.mobileNavOpen,
+      toggleMobileNav: () => this.toggleMobileNav(),
+      asideTransform: this.state.mobileNavOpen ? 'translateX(0)' : 'var(--aside-closed-tx-mobile, translateX(0))',
+      topbarSubLabel: '',
+      hasAlt: false, altTitle: '', altText: '',
+      altOpen: this.state.altOpen, altChev: this.state.altOpen ? '−' : '+ show',
+      toggleAlt: () => this.setState(s => ({ altOpen: !s.altOpen })),
+    };
+    if (!this.T) return base;
+    const T = this.T;
+
+    base.title = T.meta.title;
+    base.dates = T.meta.dates;
+    const VIEW_LABELS = { overview: 'Trip overview', present: 'Present the trip', money: 'Money', points: 'Points', bookings: 'Bookings', packing: 'Outfits & packing', lists: 'Lists', ideas: 'Ideas & staging', checklist: 'Pre-trip checklist' };
+    base.topbarSubLabel = VIEW_LABELS[v] || '';
+    const tl = [];
+    if (T.meta.totals.paid) tl.push(this.fm(T.meta.totals.paid) + ' paid');
+    if (T.meta.totals.est) tl.push(this.fm(T.meta.totals.est) + ' planned');
+    if (T.meta.totals.points) tl.push(Math.round(T.meta.totals.points / 1000) + 'k pts');
+    base.subLine = [T.meta.dates, tl.join(' · ')].filter(Boolean).join(' · ') || 'Just getting started';
+    base.noDays = T.days.length === 0;
+    base.hasRoute = T.meta.route.length > 0;
+
+    base.navDays = T.days.map(d => ({
+      short: d.short, title: d.title || '—', planned: d.planned,
+      isToday: this.todayDayN === d.n,
+      bg: v === 'day' && this.state.dayN === d.n ? '#1b2629' : 'transparent',
+      fg: v === 'day' && this.state.dayN === d.n ? '#f4f5f3' : '#1b2629',
+      go: () => this.go('day', d.n),
+    }));
+
+    base.lenses = [
+      ['present', 'Present'],
+      ['money', 'Money'], ['points', 'Points'], ['bookings', 'Bookings'],
+      ['packing', 'Packing'], ['lists', 'Lists'], ['ideas', 'Ideas'], ['checklist', 'Checklist'],
+    ].map(([id, label]) => ({
+      label,
+      bg: v === id ? '#1b2629' : 'transparent',
+      fg: v === id ? '#f4f5f3' : '#1b2629',
+      go: () => this.go(id),
+    }));
+
+    if (v === 'overview') {
+      base.route = T.meta.route.map((s, i) => ({ ...s, conn: i < T.meta.route.length - 1 }));
+      base.obDays = T.days.map(d => {
+        const parts = [];
+        if (d.stops) parts.push(d.stops + ' stops');
+        if (d.bookings) parts.push(d.bookings + ' bk');
+        return {
+          dow: d.dow, short: d.short, title: d.title || '—', planned: d.planned,
+          summary: parts.join(' · '),
+          money: d.paid ? this.fm(d.paid) : (d.est ? this.fm(d.est) + ' est' : ''),
+          go: () => this.go('day', d.n),
+        };
+      });
+    }
+
+    if (v === 'day' && T.days.length) {
+      const d = T.days[Math.min(this.state.dayN, T.days.length) - 1];
+      base.isDay = true; base.isOverview = false;
+      base.topbarSubLabel = d.short + ' · ' + (d.title || 'Untitled day');
+      base.dayDate = d.date;
+      base.dayTitle = d.title || 'Untitled day';
+      base.dayPlanned = d.planned;
+      base.dayEmpty = d.blocks.length === 0;
+      const mp = [];
+      if (d.stops) mp.push(d.stops + ' stops');
+      base.dayMeta = mp.join(' · ');
+      base.dayCostChips = [
+        d.paid ? { label: this.fm(d.paid, true) + ' paid', bg: '#e1f5ee', fg: '#085041' } : null,
+        d.est ? { label: this.fm(d.est, true) + ' planned', bg: '#faeeda', fg: '#633806' } : null,
+      ].filter(Boolean);
+      base.hasDayCostChips = base.dayCostChips.length > 0;
+      base.dayPrev = () => this.go('day', Math.max(1, this.state.dayN - 1));
+      base.dayNext = () => this.go('day', Math.min(T.days.length, this.state.dayN + 1));
+      base.blocks = d.blocks.map(b => {
+        const m = this.moneyOf(b);
+        const row = {
+          isMove: b.kind === 'move', isReceipt: b.kind === 'receipt',
+          isNote: b.kind === 'note', isStop: b.kind === 'stop',
+          emoji: b.emoji || '·', title: b.title,
+          timeStart: b.start || '—', hasTimeEnd: !!(b.start && b.end), timeEnd: b.end || '',
+          durLabel: b.dur ? (b.dur >= 60 ? Math.floor(b.dur / 60) + 'h' + (b.dur % 60 ? String(b.dur % 60).padStart(2, '0') : '') : b.dur + 'm') : '',
+          moveLabel: (b.dur ? b.dur + 'm — ' : '') + b.title,
+          ...m,
+          hasBooking: !!(b.conf || b.program || b.points),
+          hasConf: !!b.conf, conf: b.conf || '', hasConfLinks: !!(b.confLinks && b.confLinks.length), confPlain: !!b.conf && !(b.confLinks && b.confLinks.length), confLinks: (b.confLinks || []).map(l => ({ label: l.label || l.url, url: l.url })),
+          hasPts: !!(b.program || b.points), ptsLabel: this.ptsLabelOf(b),
+          hasMeta: false, meta: '', metaCursor: 'default', toggle: () => {},
+          hasISK: !!(b.ccy === 'ISK' && b.estISK != null),
+          iskLabel: b.estISK != null ? Math.round(b.estISK).toLocaleString('en-US') + ' ISK' : '',
+          iskUsd: b.estISK != null ? '≈ ' + this.fm(b.estISK * this.state.fx, true) + (this.state.fxLive ? '' : ' (approx)') : '',
+          hasMenu: !!b.menuUrl, menuUrl: b.menuUrl || '', menuLabel: (b.menuLabel || 'View live menu') + ' \u2192',
+        };
+        row.isNow = d.n === this.todayDayN && b.sM != null && b.eM != null && (() => {
+          const now = new Date();
+          const curM = now.getHours() * 60 + now.getMinutes();
+          return curM >= b.sM && curM < b.eM;
+        })();
+        row.nowStyle = row.isNow ? 'background:#eaf5f1;border-radius:10px' : '';
+        const meta = [b.detail, b.notes].filter(Boolean).join('\n');
+        if (meta) {
+          const exp = !!this.state.expanded[b.id];
+          const long = meta.length > 170;
+          row.hasMeta = true;
+          row.meta = !long || exp ? meta : meta.slice(0, 150).trimEnd() + ' …more';
+          row.metaCursor = long ? 'pointer' : 'default';
+          if (long) row.toggle = () => this.setState(s => ({ expanded: { ...s.expanded, [b.id]: !s.expanded[b.id] } }));
+        }
+        return row;
+      });
+    }
+
+    if (v === 'present') {
+      base.isPresent = true; base.isOverview = false;
+      const totalDays = T.days.length;
+      base.presentEmpty = totalDays === 0;
+      base.presentHasDay = totalDays > 0;
+      const pdN = Math.min(Math.max(this.state.presentDayN || 1, 1), Math.max(totalDays, 1));
+      base.presentDayChips = T.days.map(d => {
+        const on = d.n === pdN;
+        return {
+          label: (d.dow + ' ' + d.short).trim() || ('Day ' + d.n),
+          bg: on ? '#1b2629' : '#ffffff', fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ presentDayN: d.n }),
+        };
+      });
+      base.presentPrev = () => this.setState(s => ({ presentDayN: Math.max(1, (s.presentDayN || 1) - 1) }));
+      base.presentNext = () => this.setState(s => ({ presentDayN: Math.min(totalDays, (s.presentDayN || 1) + 1) }));
+      if (totalDays > 0) {
+        const d = T.days[pdN - 1];
+        base.presentDate = d.date;
+        base.presentTitle = d.title || 'Untitled day';
+        base.presentPhotos = (PRESENT_GALLERY[pdN] || []).map(ph => ({
+          url: ph.url, caption: ph.caption,
+          open: () => this.setState({ lightbox: { url: ph.url, caption: ph.caption } }),
+        }));
+        base.hasPresentPhotos = base.presentPhotos.length > 0;
+        base.presentVideos = (PRESENT_VIDEOS[pdN] || []).map(v => ({
+          title: v.title,
+          thumb: 'https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg',
+          watchUrl: 'https://www.youtube.com/watch?v=' + v.id,
+        }));
+        base.hasPresentVideos = base.presentVideos.length > 0;
+        const m = PRESENT_MAP[pdN] || PRESENT_MAP[1];
+        base.presentMapSrc = 'https://www.google.com/maps?q=' + m.lat + ',' + m.lng + '&z=' + m.zoom + '&output=embed';
+        base.presentMapsUrl = PRESENT_DIRECTIONS[pdN] || '';
+        // High-level only: activities and meals, not transport/logistics/walk-between-stops.
+        const skipTypes = ['Walk', 'Transportation', 'Logistics', 'Drive', 'Parking', 'Gasoline', 'Luggage', 'Free Time'];
+        base.presentHighlights = d.blocks.filter(b => b.kind === 'stop' && !skipTypes.includes(b.typeName)).map(b => ({
+          emoji: b.emoji || '·', title: b.title,
+        }));
+        const cost = (d.paid || 0) + (d.est || 0);
+        base.presentCost = cost ? ('Est. day cost: ' + this.fm(cost, true)) : '';
+      }
+    }
+
+    if (v === 'money') {
+      base.isMoney = true; base.isOverview = false;
+      base.hasMoney = T.costSummary.some(r => r.total > 0);
+      base.noMoney = !base.hasMoney;
+      base.moneyRows = T.costSummary.filter(r => r.total > 0).map(r => ({
+        name: r.name, emoji: r.emoji,
+        est: r.est ? this.fm(r.est, true) : '—',
+        paid: r.paid ? this.fm(r.paid, true) : '—',
+        total: this.fm(r.total, true),
+      }));
+      const te = T.costSummary.reduce((a, r) => a + r.est, 0);
+      const tp = T.costSummary.reduce((a, r) => a + r.paid, 0);
+      base.moneyTotEst = this.fm(te, true);
+      base.moneyTotPaid = this.fm(tp, true);
+      base.moneyTotAll = this.fm(te + tp, true);
+    }
+
+    if (v === 'points') {
+      base.isPoints = true; base.isOverview = false;
+      base.hasPoints = T.pointsByProgram.length > 0;
+      base.noPoints = !base.hasPoints;
+      base.pointRows = T.pointsByProgram.map(p => ({
+        name: p.name, planned: this.fp(p.planned), used: this.fp(p.used), total: this.fp(p.total),
+      }));
+      base.ptsTotPlanned = this.fp(T.pointsByProgram.reduce((a, p) => a + p.planned, 0));
+      base.ptsTotUsed = this.fp(T.pointsByProgram.reduce((a, p) => a + p.used, 0));
+      base.ptsTotAll = this.fp(T.meta.totals.points);
+      base.pointItems = T.bookingList.filter(b => b.program || b.points).map(b => ({
+        dayLabel: b.dayLabel, emoji: b.emoji || '·', title: b.title,
+        status: b.conf ? 'USED' : 'PLANNED',
+        statusColor: b.conf ? '#257a5a' : '#96690f',
+        ptsLabel: this.ptsLabelOf(b),
+        go: () => this.go('day', b.dayN),
+      }));
+    }
+
+    if (v === 'bookings') {
+      base.isBookings = true; base.isOverview = false;
+      const order = ['Flights', 'Rail', 'Stays', 'Cars', 'Activities'];
+      const present = order.filter(name => T.bookingList.some(b => b.group === name));
+      const f = this.state.bkFilter;
+      base.bkChips = ['All', ...present].map(name => {
+        const on = f === name;
+        return {
+          label: name,
+          bg: on ? '#1b2629' : '#ffffff',
+          fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ bkFilter: name }),
+        };
+      });
+      const factLabels = [
+        ['route', 'ROUTE'], ['flightNo', 'FLIGHT'], ['cabin', 'CABIN'], ['seats', 'SEATS'],
+        ['nights', 'STAY'], ['roomType', 'ROOM'], ['address', 'ADDRESS'], ['cancelBy', 'CANCEL BY'],
+      ];
+      base.bookingGroups = present.filter(name => f === 'All' || f === name).map(name => ({
+        name: name.toUpperCase(),
+        items: T.bookingList.filter(b => b.group === name).map(b => {
+          const m = this.moneyOf(b);
+          const facts = factLabels.filter(([k]) => b[k]).map(([k, label]) => ({ label, value: b[k] }));
+          const nKey = 'bk_' + b.id;
+          const nOpen = !!this.state.expanded[nKey];
+          return {
+            emoji: b.emoji || '·', title: b.title,
+            dayLabel: b.dayLabel, go: () => this.go('day', b.dayN),
+            facts, hasFacts: facts.length > 0,
+            hasFlag: !!b.flag, flag: b.flag || '',
+            hasConf: !!b.conf, conf: b.conf || '', noConf: !b.conf, hasConfLinks: !!(b.confLinks && b.confLinks.length), confPlain: !!b.conf && !(b.confLinks && b.confLinks.length), confLinks: (b.confLinks || []).map(l => ({ label: l.label || l.url, url: l.url })),
+            hasPts: !!(b.program || b.points), ptsLabel: this.ptsLabelOf(b),
+            ...m,
+            hasNotes: !!b.notes, notesOpen: nOpen, notes: nOpen ? b.notes : '',
+            notesToggleLabel: nOpen ? '− Hide pricing detail' : '+ Pricing detail',
+            toggleNotes: () => this.setState(s => ({ expanded: { ...s.expanded, [nKey]: !s.expanded[nKey] } })),
+          };
+        }),
+      }));
+      base.noBookings = T.bookingList.length === 0;
+    }
+
+    if (v === 'packing') {
+      base.isPacking = true; base.isOverview = false;
+      const dayByShort = {};
+      T.days.forEach(d => { dayByShort[d.short] = d.title; });
+      // person filter
+      const personSet = [];
+      const addP = w => { const u = String(w || '').toUpperCase(); if (u && !personSet.includes(u)) personSet.push(u); };
+      T.packing.outfitDays.forEach(od => od.slots.forEach(s => s.people.forEach(p => addP(p.who))));
+      T.packing.packLists.forEach(pl => addP(pl.who));
+      const pf = this.state.packFilter && personSet.includes(this.state.packFilter) ? this.state.packFilter : 'ALL';
+      base.packChips = ['ALL', ...personSet].map(name => {
+        const on = pf === name;
+        return {
+          label: name === 'ALL' ? 'Everyone' : name.charAt(0) + name.slice(1).toLowerCase(),
+          bg: on ? '#1b2629' : '#ffffff', fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ packFilter: name }),
+        };
+      });
+      // rollups: one card per visible person
+      const visible = pf === 'ALL' ? personSet : [pf];
+      base.packRollups = visible.map(who => {
+        const pl = T.packing.packLists.find(p => String(p.who).toUpperCase() === who);
+        const items = pl ? pl.items : [];
+        const total = items.reduce((a, it) => a + (it.count || 0), 0);
+        return {
+          who: who.charAt(0) + who.slice(1).toLowerCase(),
+          totalLabel: total ? total + ' ITEMS' + (pl && pl.derived ? ' · FROM TRACKER' : '') : '',
+          empty: items.length === 0,
+          items: items.map(it => ({ count: it.count, name: it.name })),
+        };
+      });
+      base.hasRollups = base.packRollups.length > 0;
+      base.outfitDays = T.packing.outfitDays.filter(od => od.slots.length).map(od => ({
+        date: od.date,
+        dayTitle: dayByShort[String(od.date).replace(/\/\d{4}$/, '')] || '',
+        slots: od.slots.map(s => ({
+          name: s.name,
+          people: s.people.filter(p => pf === 'ALL' || String(p.who).toUpperCase() === pf).map(p => ({ who: p.who, text: p.text || '—' })),
+        })).filter(s => s.people.length),
+      })).filter(od => od.slots.length);
+      const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [''])[1] || '';
+      const showTracker = pf === 'ALL' || trackerWho.toUpperCase() === pf;
+      base.trackerDays = (showTracker ? T.packing.trackerDays : []).map(td => ({
+        date: td.date,
+        groups: (td.groups || []).filter(g => (g.items || []).some(i => i.style || i.brand || i.label)).map(g => ({
+          activity: g.activity || '—',
+          items: g.items.filter(i => i.style || i.brand || i.label).map(i => ({
+            label: i.label || [i.style, [i.brand, i.color].filter(Boolean).join(', ')].filter(Boolean).join(' — '),
+            rewear: !!i.rewear,
+          })),
+        })),
+      })).filter(td => td.groups.length);
+      base.hasTracker = base.trackerDays.length > 0;
+      base.trackerTitle = T.packing.trackerTitle;
+      base.noPacking = base.outfitDays.length === 0 && !base.hasTracker;
+    }
+
+    if (v === 'lists') {
+      base.isLists = true; base.isOverview = false;
+      base.supplyGroups = T.supplies;
+      base.noLists = T.supplies.length === 0;
+    }
+
+    if (v === 'checklist') {
+      base.isChecklist = true; base.isOverview = false;
+      const tbd = (T.ideas || []).find(g => g.name === 'Still open / TBD');
+      const items = tbd ? tbd.items : [];
+      base.checklistTotal = items.length;
+      base.checklistItems = items.map((it, i) => {
+        const key = 'tbd_' + i + '_' + it.name;
+        const done = !!this.state.checked[key];
+        return {
+          key, name: it.name, note: it.note || '',
+          done,
+          boxChar: done ? '✓' : '',
+          rowStyle: done ? 'opacity:0.5' : 'opacity:1',
+          strike: done ? 'line-through' : 'none',
+          toggle: () => this.toggleChecklistItem(key),
+        };
+      });
+      base.checklistDone = base.checklistItems.filter(it => it.done).length;
+      base.noChecklist = items.length === 0;
+    }
+
+    if (v === 'ideas') {
+      base.isIdeas = true; base.isOverview = false;
+      base.ideaGroups = T.ideas;
+      base.noIdeas = T.ideas.length === 0 && !T.alternatives;
+      if (T.alternatives && T.alternatives.text) {
+        base.hasAlt = true;
+        base.altTitle = T.alternatives.title || 'Alternatives considered';
+        base.altText = T.alternatives.text;
+      }
+    }
+
+    return base;
+  }
+}
+</script>
+<script id="trip-data" type="application/json">{
+ "meta": {
+  "title": "Australia - Winter 2027",
+  "dates": "Dec 15, 2027 – Jan 2, 2028 (FLL → Dallas → Brisbane · Australia Zoo · Noosa · Hamilton Island · Sydney for NYE · home Jan 2)",
+  "route": [
+   {
+    "name": "Fort Lauderdale",
+    "sub": "home (FLL)"
+   },
+   {
+    "name": "Brisbane",
+    "sub": "2 nights (from Dec 16) · Hyatt Regency Brisbane"
+   },
+   {
+    "name": "Noosa",
+    "sub": "5 nights · Ocean Breeze Resort, Hastings St"
+   },
+   {
+    "name": "Hamilton Island",
+    "sub": "5 nights · Reef View Hotel"
+   },
+   {
+    "name": "Sydney",
+    "sub": "5 nights · hotel TBD · NYE"
+   }
+  ]
+ },
+ "days": [
+  {
+   "date": "Wednesday, December 15, 2027",
+   "title": "Fort Lauderdale → Dallas → Brisbane",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "2:25 PM",
+     "end": "3:30 PM",
+     "title": "Arrive FLL, check bags",
+     "detail": "3 hrs ahead for an international itinerary with a family of 4.\nDeparts Fort Lauderdale, not Miami.\nHats, sun shirts and sunscreen in the carry-ons — landing day is a full day out in Brisbane.",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "5:25 PM",
+     "end": "7:40 PM",
+     "title": "American Airlines AA1373 - FLL → DFW - Nonstop - ~3h15m",
+     "detail": "FLL → DFW, Economy, 4 passengers.\nLands ~7:40 PM Central (8:40 PM Eastern).\nSegment times derived from the 22h 5m total and 2h 1m connection — confirm when booking.",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "route": "FLL → DFW",
+     "flightNo": "American 1373",
+     "cabin": "Economy",
+     "notes": "First leg of one connecting itinerary. Points and cash for the whole trip are logged on the DFW → BNE leg."
+    },
+    {
+     "start": "7:40 PM",
+     "end": "9:41 PM",
+     "title": "Layover at DFW",
+     "detail": "2h 1m connection. Dinner in the terminal before the 17-hour leg.",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "est": 60.0,
+     "notes": "~$60 for the family in the terminal."
+    },
+    {
+     "start": "9:41 PM",
+     "end": "6:30 AM",
+     "title": "American Airlines AA7 - DFW → BNE - Nonstop - ~16h49m",
+     "detail": "DFW → BNE, Economy, 4 passengers.\nCrosses the International Date Line — Thursday Dec 16 disappears in flight.\nLands 6:30 AM Friday Dec 17, Brisbane time (AEST, UTC+10, no daylight saving; 15 hrs ahead of Florida).\nTotal itinerary 22h 5m.",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "program": "Alaska Atmos Rewards",
+     "points": "170000",
+     "est": 200.4,
+     "route": "DFW → BNE",
+     "flightNo": "American 7",
+     "cabin": "Economy",
+     "seats": "Not yet assigned",
+     "flag": "Departs FLL, not MIA — plan the drive up and parking, or price a MIA-origin option.\nApply for each traveller's Australian ETA (official 'Australian ETA' app) before departure — not issued on arrival.\nDeparts Wed Dec 15 — re-search this routing for Dec 15, 2027 when award space opens (~Jan 2027).",
+     "notes": "• Placeholder from a real search of this routing for Tue Dec 8, 2026.\n• Alaska Atmos Rewards: 42,500 pts + $50.10 per person → 170,000 pts + $200.40 for four. Booking class T, 9 seats.\n• Same itinerary via American AAdvantage: 35,000 pts + $30.10 per person → 140,000 pts + $120.40 (30k fewer points, $80 less cash).\n• Award inventory for Dec 15, 2027 opens roughly Dec 2026–Jan 2027 — re-search then."
+    }
+   ]
+  },
+  {
+   "date": "Friday, December 17, 2027",
+   "title": "Arrive Brisbane — Kangaroo Point Cliffs, river cruise, Riverbar dinner",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "6:30 AM",
+     "end": "7:45 AM",
+     "title": "Arrive BNE — immigration, bags, biosecurity",
+     "detail": "SmartGate for adult US e-passports; kids use the staffed lane with a parent.\nDeclare any food. Don't carry fruit or snacks off the plane.\n75 min gate-to-curb for a family with checked bags — includes a bathroom stop before the rental desk.",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:45 AM",
+     "title": "Rental car pickup — BNE International terminal rental desks",
+     "detail": "Mid-size SUV from a major brand (Hertz / Avis / Budget / Europcar / Sixt — all have desks in the International terminal arrivals hall; the cars are in the adjacent rental carpark).\nOne booster seat for the 6-year-old (Queensland law: under 7 must be in an approved restraint). The 8-year-old may legally use the adult belt.\n60 min allowed: queue, paperwork, fitting the booster, loading bags, finding the exit. Nothing else depends on this being fast.",
+     "typeName": "Rental Car",
+     "emoji": "🚗",
+     "est": 591.5,
+     "notes": "ONE CAR FOR THE WHOLE TRIP:\n• Fri Dec 17 7:45 AM → Thu Dec 23 ~9:45 AM = 7 rental days (6 days + 2 hrs).\n• ~AUD 120/day × 7 = AUD 840 + booster ~AUD 50 + tolls ~AUD 20 ≈ AUD 910 ≈ USD 592.\n• Mid-December is the priciest month at BNE — re-quote ~6 months out; book on a free-cancellation rate for availability, not price.\n\nWHAT IT DOES:\n• Airport → Hyatt today (valet is free on a Globalist award stay).\n• Hyatt → Australia Zoo → Noosa on Sat Dec 18, all Noosa errands, Noosa → BNE Domestic on Thu Dec 23.\n• NOT the beach — every major brand's terms keep cars on sealed roads and void the insurance on sand. The one beach day is a separate 4WD delivered to the hotel (see Dec 21–22)."
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:15 AM",
+     "title": "Drive BNE → Hyatt Regency Brisbane",
+     "detail": "Airport Drive → Airport Link tunnel (toll, ~AUD 6) → Inner City Bypass → Queen St / Burnett Lane. ~17 km, 25 min at this hour.\nDrive on the left. Jet-lagged — the passenger navigates, the driver only drives.\nValet at the hotel entrance takes the car; it stays with the valet until Saturday morning.",
+     "typeName": "Drive",
+     "emoji": "🚗",
+     "est": 3.9,
+     "notes": "• Toll billed to the rental's toll account."
+    },
+    {
+     "start": "9:15 AM",
+     "end": "9:25 AM",
+     "title": "Hyatt Regency Brisbane — valet takes the car, bell desk takes the bags",
+     "detail": "• 33 Burnett Lane (Queen St Mall), middle of the CBD. Category 3 World of Hyatt.\n• Room is booked from Thu Dec 16, so it's ready on arrival — bags go straight up.\n• Ask for the Deluxe Room, Multiple Beds (sleeps 4) or connecting rooms.",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "program": "World of Hyatt",
+     "points": "24000",
+     "nights": "2 nights (Thu Dec 16 – Sat Dec 18)",
+     "roomType": "Standard room (or standard suite if available)",
+     "address": "33 Burnett Lane, Brisbane QLD 4000",
+     "notes": "• Modeled at 12,000 pts/night × 2 = 24,000 (the Dec 16 night guarantees the room on arrival).\n• Globalist early check-in is only subject to availability — the extra night is the only guarantee.\n• Globalist: free valet on an award stay; breakfast for 2 adults + 2 kids.",
+     "flag": "Email the hotel: arriving ~9 AM Dec 17 — keep the Dec 16 night held (don't treat as no-show)."
+    },
+    {
+     "start": "9:25 AM",
+     "end": "10:10 AM",
+     "title": "Breakfast — Lennons (in the hotel)",
+     "detail": "• Straight down after the valet — breakfast before showers.\n• Weekday breakfast 6:30–10:00 AM: seated by 9:30.\n• Last meal until dinner — no lunch stop today.",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "notes": "• Globalist benefit: breakfast for 2 adults + 2 kids included. AUD 0.",
+     "flag": "Confirm with Lennons that a 9:30 seating can finish at ~10:10 (breakfast ends 10:00 on weekdays)."
+    },
+    {
+     "start": "10:10 AM",
+     "end": "10:25 AM",
+     "title": "Back up to the room",
+     "detail": "• Buffer: elevator, unpack the essentials.",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "10:25 AM",
+     "end": "11:10 AM",
+     "title": "Showers and change",
+     "detail": "• 45 min for four people after a 22-hour journey.",
+     "typeName": "Logistics",
+     "emoji": "🚿"
+    },
+    {
+     "start": "11:10 AM",
+     "end": "11:25 AM",
+     "title": "Sunscreen, hats, day bag",
+     "detail": "• UV is Extreme by midday.\n• Day bag: water bottles and snacks — no lunch stop until dinner at 5.",
+     "typeName": "Logistics",
+     "emoji": "🧴"
+    },
+    {
+     "start": "11:25 AM",
+     "end": "11:40 AM",
+     "title": "Walk to the City Botanic Gardens",
+     "detail": "• ~800 m via Albert St to the Alice St gate.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "11:40 AM",
+     "end": "12:10 PM",
+     "title": "City Botanic Gardens — riverside paths + playground",
+     "detail": "• Shaded paths under giant figs, mangrove boardwalk, playground.\n• The Kangaroo Point Green Bridge starts at the Alice/Edward St corner of the gardens.",
+     "typeName": "Sightseeing",
+     "emoji": "🌳"
+    },
+    {
+     "start": "12:10 PM",
+     "end": "12:25 PM",
+     "title": "Cross the Kangaroo Point Green Bridge",
+     "detail": "• 470 m walking/cycling bridge over the river (opened Dec 2024).\n• Story Bridge and Kangaroo Point Cliffs ahead.",
+     "typeName": "Walk",
+     "emoji": "🌉"
+    },
+    {
+     "start": "12:25 PM",
+     "end": "12:45 PM",
+     "title": "Kangaroo Point Cliffs lookout",
+     "detail": "• The best free view of the city skyline and the river bend.\n• Little shade at the top — keep it short.",
+     "typeName": "Sightseeing",
+     "emoji": "📸"
+    },
+    {
+     "start": "12:45 PM",
+     "end": "1:25 PM",
+     "title": "Riverwalk to South Bank",
+     "detail": "• ~1.5–2 km, flat, along the riverfront past the Maritime Museum.\n• 40 min at kid pace, including a water stop.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "1:25 PM",
+     "end": "2:05 PM",
+     "title": "Wheel of Brisbane",
+     "detail": "• Enclosed, air-conditioned gondolas; ~15-min ride, 60 m up over South Bank.\n• 40 min allowed for the queue.",
+     "typeName": "Sightseeing",
+     "emoji": "🎡",
+     "est": 44.2,
+     "notes": "ESTIMATE (third-party listing, not the operator's own page):\n• ~AUD 20 adult × 2 + ~AUD 14 child × 2 = AUD 68 ≈ USD 44.\n• Confirm current price and hours."
+    },
+    {
+     "start": "2:05 PM",
+     "end": "2:30 PM",
+     "title": "Walk to the Cultural Centre pontoon and board",
+     "detail": "• Public pontoon in front of the Queensland Museum / art gallery, South Bank boardwalk.\n• Bathroom stop before boarding.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "2:30 PM",
+     "end": "4:00 PM",
+     "title": "River City Cruises — Mid-Afternoon Sightseeing Cruise (anchor)",
+     "detail": "• 90 min, seated and covered, with commentary; licensed bar on board.\n• Downriver past Kangaroo Point Cliffs, under the Story Bridge, out to New Farm and the Powerhouse.",
+     "typeName": "Excursion",
+     "emoji": "🛥️",
+     "est": 78.0,
+     "notes": "VERIFIED (Visit Brisbane listing):\n• Family (2 adults + 2 children 5–14) AUD 120 ≈ USD 78.\n• Adult AUD 49, child AUD 22.\n• Departs the Cultural Centre Public Pontoon, South Bank.",
+     "flag": "Confirm the 2:30 PM departure runs on Fridays in December, then book."
+    },
+    {
+     "start": "4:00 PM",
+     "end": "4:40 PM",
+     "title": "CityCat South Bank → Riverside",
+     "detail": "• ~600 m walk along the boardwalk to the South Bank CityCat terminal.\n• Flat 50-cent fare per person (tap on with a card or phone).\n• Short ride upriver past the CBD; 40 min absorbs one missed boat.",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "est": 1.3
+    },
+    {
+     "start": "4:40 PM",
+     "end": "5:00 PM",
+     "title": "Riverfront boardwalk toward the Story Bridge",
+     "detail": "• Eagle St riverwalk, right outside the restaurant.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "5:00 PM",
+     "end": "6:00 PM",
+     "title": "Dinner — Riverbar & Kitchen, Eagle St",
+     "detail": "• Casual, on the river at Riparian Plaza (71 Eagle St), Story Bridge in view.\n• Fish & chips, burgers, pizza, pasta; real kids' menu (12 and under).\n• Kitchen open 11:30 AM–9:30 PM on Fridays — book a deck table for 5:00.",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "est": 61.75,
+     "menuUrl": "https://riverbarandkitchen.com.au/lunch-and-dinner",
+     "notes": "PRICED FROM THE CURRENT MENU (Oct 2026):\n• Beer-battered fish & chips AUD 35\n• Riverbar cheeseburger with chips AUD 30\n• 2 kids' meals (fish & chips / cheeseburger / ham & pineapple pizza / fettuccine) AUD 15 each\n• = AUD 95 ≈ USD 62."
+    },
+    {
+     "start": "6:00 PM",
+     "end": "6:15 PM",
+     "title": "Walk back to the hotel",
+     "detail": "• ~700 m up Creek St / Queen St.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "6:15 PM",
+     "end": "7:15 PM",
+     "title": "Baths, pajamas — lights out by 7:15 PM",
+     "detail": "• Tomorrow's breakfast is 8:00 AM → back-at-hotel deadline 8:00 PM.\n• Bags are already packed — nothing to repack tomorrow.",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Saturday, December 18, 2027",
+   "title": "Brisbane → Australia Zoo → Noosa — Hastings Street and a sunset dinner",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "8:00 AM",
+     "end": "8:45 AM",
+     "title": "Breakfast — Lennons (in the hotel)",
+     "detail": "• Weekend breakfast 7:00–11:00 AM.\n• At 8:30, ask the valet for the car and the bell desk for the bags.",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "notes": "• Globalist benefit: breakfast for 2 adults + 2 kids included. AUD 0."
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:00 AM",
+     "title": "Check out — car out front, bags loaded, booster in",
+     "typeName": "Logistics",
+     "emoji": "🧳"
+    },
+    {
+     "start": "9:00 AM",
+     "end": "10:15 AM",
+     "title": "Drive Hyatt → Australia Zoo, Beerwah",
+     "detail": "• Inner City Bypass → Gateway Motorway north (toll) → Bruce Highway (M1) → Steve Irwin Way exit (Glass House Mountains Tourist Route).\n• ~80 km, ~1 hr with clear roads; 1h15 allowed for Saturday traffic in Queensland school holidays.\n• Bathroom stop at the highway service centre if needed.",
+     "typeName": "Drive",
+     "emoji": "🚗",
+     "est": 3.9,
+     "notes": "• Toll ~AUD 6 ≈ USD 3.90, billed to the rental's toll account."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "10:35 AM",
+     "title": "Park and walk to the zoo gate",
+     "detail": "• Free on-site parking.\n• In school holidays the car park to the gate can take 15–20 min.",
+     "typeName": "Parking",
+     "emoji": "🅿️"
+    },
+    {
+     "start": "10:35 AM",
+     "end": "10:45 AM",
+     "title": "Enter Australia Zoo — buy kangaroo food",
+     "detail": "• Family pass bought online beforehand (skips the ticket queue).\n• Two bags of roo food at Guest Services or any gift shop.\n• Zoo open 9 AM–5 PM daily. A Saturday in school holidays — expect crowds.",
+     "typeName": "Excursion",
+     "emoji": "🎟️",
+     "est": 155.97,
+     "notes": "VERIFIED (prices checked Oct 9, 2026):\n• Family of 4 pass (2 adults + 2 children 3–14) AUD 233.95 ≈ USD 152.07.\n• Roo food AUD 3 × 2 = AUD 6 ≈ USD 3.90.\n• = USD 155.97."
+    },
+    {
+     "start": "10:45 AM",
+     "end": "11:20 AM",
+     "title": "Tigers LIVE! — Tiger Temple, 11:00 AM",
+     "detail": "• Sumatran tigers with their keepers.\n• Limited seating — be there by 10:45.",
+     "typeName": "Entertainment",
+     "emoji": "🐯"
+    },
+    {
+     "start": "11:20 AM",
+     "end": "12:05 PM",
+     "title": "Hand-feed the kangaroos (anchor)",
+     "detail": "• Large walk-through enclosure: pat and hand-feed red and grey kangaroos and several kinds of wallaby.\n• Feeding runs all day.",
+     "typeName": "Excursion",
+     "emoji": "🦘"
+    },
+    {
+     "start": "12:05 PM",
+     "end": "12:35 PM",
+     "title": "Lunch — Crikey! Café",
+     "detail": "• Burgers, pizza, hot chips, sandwiches, salads — a quick 30 min.\n• Watch for birds at the outdoor tables.",
+     "typeName": "Dining",
+     "emoji": "🍔",
+     "est": 42.9,
+     "notes": "ESTIMATE — menu prices not published online:\n• 2 adult mains ~AUD 20 each\n• 2 kids' meals ~AUD 13 each\n• = AUD ~66 ≈ USD 43."
+    },
+    {
+     "start": "12:35 PM",
+     "end": "12:55 PM",
+     "title": "Walk back to the car",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "12:55 PM",
+     "end": "1:50 PM",
+     "title": "Drive Australia Zoo → IGA, Noosa Junction Plaza",
+     "detail": "• Bruce Highway north → Eumundi–Noosa Rd → Noosa Junction.\n• ~69 km, ~53 min.",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "1:50 PM",
+     "end": "2:35 PM",
+     "title": "Groceries — IGA, Noosa Junction Plaza",
+     "detail": "• Sunshine Beach Rd, Noosa Heads. Open 6 AM–8 PM daily.\n• Breakfast supplies for five mornings, snacks, and 6+ L of water for the beach day.\n• There are no shops between the ferry and Rainbow Beach.",
+     "typeName": "Shopping",
+     "emoji": "🛒",
+     "est": 117.0,
+     "notes": "ESTIMATE:\n• ~AUD 180 ≈ USD 117 for five breakfasts, a beach-day picnic, snacks and water."
+    },
+    {
+     "start": "2:35 PM",
+     "end": "2:45 PM",
+     "title": "Drive to Ocean Breeze Resort, Hastings St",
+     "detail": "• ~1.5 km down Noosa Drive to Hastings St.",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "2:45 PM",
+     "end": "4:30 PM",
+     "title": "Check in — Ocean Breeze Resort (5 nights); unload, showers, change",
+     "detail": "• 52 Hastings St, Noosa Heads: Main Beach ~3 min and Hastings St ~2 min on foot.\n• Two-bedroom apartment: 2 bathrooms, full kitchen, in-unit washer and dryer.\n• Check-in from 3:00 PM (front desk 8:30 AM–6:00 PM) — request early access for a 2:45 arrival.\n• Parking: one space per unit, first come first served, height limit.\n• Parking, check-in, unloading, showers and change; out the door at 4:30.",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "est": 1236.0,
+     "nights": "5 nights (Sat Dec 18 – Thu Dec 23)",
+     "roomType": "Two-bedroom apartment (Garden Terrace preferred)",
+     "address": "52 Hastings Street, Noosa Heads QLD 4567",
+     "notes": "PLACEHOLDER:\n• USD 1,236 for 5 nights — a price seen online; dates and room type not yet confirmed.\n• Dec 2027 rates are not published yet.\n• Guest reviews: dated decor in some units, street and taxi-rank noise in street-facing units, no lifts.\n• Check-out by 10:00 AM.",
+     "flag": "Confirm the price is a two-bedroom for Dec 18–23, 2027; request a unit away from Hastings St; confirm the SUV clears the garage height and where the 4WD parks Dec 21–22."
+    },
+    {
+     "start": "4:30 PM",
+     "end": "5:45 PM",
+     "title": "Hastings Street and the Main Beach boardwalk",
+     "detail": "• The shops and cafés of Hastings St, then the boardwalk along Main Beach.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "5:45 PM",
+     "end": "6:00 PM",
+     "title": "Walk up to the Noosa Reef Hotel",
+     "detail": "• ~600 m up Noosa Drive from the Hastings St roundabout — uphill.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:15 PM",
+     "title": "Dinner — Noosa Reef Hotel",
+     "detail": "• Casual pub on the hill above Hastings St: upstairs deck over Laguna Bay and the North Shore.\n• Sunset 6:38 PM — the sky lights up over the bay and the North Shore; the sun itself goes down behind the hills to the west-southwest.\n• Large indoor kids' playroom with a glass front.\n• Book a deck table by phone (+61 7 5430 7500).",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "est": 58.5,
+     "notes": "ESTIMATE — menu not published online:\n• 2 adult mains ~AUD 30 each\n• 2 kids' meals ~AUD 15 each\n• = AUD ~90 ≈ USD 59."
+    },
+    {
+     "start": "7:15 PM",
+     "end": "7:30 PM",
+     "title": "Walk back to Ocean Breeze",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "7:30 PM",
+     "end": "8:00 PM",
+     "title": "Bed",
+     "detail": "• Tomorrow's breakfast is 8:00 AM → back-at-hotel deadline 8:00 PM.",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Sunday, December 19, 2027",
+   "title": "Noosa — Main Beach, then sand flats and sunset on the Spit",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "8:00 AM",
+     "end": "8:45 AM",
+     "title": "Breakfast in the apartment",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:00 AM",
+     "title": "Sunscreen, hats, walk to Main Beach",
+     "detail": "• ~3 min from Ocean Breeze.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "9:00 AM",
+     "end": "11:30 AM",
+     "title": "Main Beach, Noosa (anchor)",
+     "detail": "Noosa Main Beach faces north into Laguna Bay — sheltered from the swell, the calmest patrolled beach on this coast, the one for young kids.\nBetween the flags in front of the surf club.",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️"
+    },
+    {
+     "start": "11:30 AM",
+     "end": "11:50 AM",
+     "title": "Rinse and change (surf-club change rooms)",
+     "typeName": "Logistics",
+     "emoji": "👕"
+    },
+    {
+     "start": "11:50 AM",
+     "end": "12:00 PM",
+     "title": "Walk to Betty's Burgers",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "12:00 PM",
+     "end": "1:00 PM",
+     "title": "Lunch — Betty's Burgers, Hastings Street (the original)",
+     "detail": "Betty's started here before it went national. Order-at-counter burgers, fries, shakes.\nHastings St, a few minutes from Main Beach.",
+     "typeName": "Dining",
+     "emoji": "🍔",
+     "est": 27.04,
+     "notes": "PRICED FROM THE MENU (Sep 2026):\n• 2 × Betty's Classic AUD 11.90\n• 2 × Kids beef burger AUD 8.90\n• = AUD 41.60 ≈ USD 27. Fries excluded."
+    },
+    {
+     "start": "1:00 PM",
+     "end": "1:10 PM",
+     "title": "Walk back to Ocean Breeze",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "1:10 PM",
+     "end": "4:15 PM",
+     "title": "Apartment — showers, rest",
+     "detail": "• Out of the midday sun before the evening at the Spit.",
+     "typeName": "Free Time",
+     "emoji": "⏰"
+    },
+    {
+     "start": "4:15 PM",
+     "end": "4:30 PM",
+     "title": "Drive to the Noosa Woods / Spit car park",
+     "detail": "• ~1.5 km to the river end of Hastings St, ~5 min.\n• The car park fills on summer weekends — fallback: park at Ocean Breeze and walk ~15 min.",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "4:30 PM",
+     "end": "6:45 PM",
+     "title": "Noosa Spit — sand flats and sunset (anchor)",
+     "detail": "• Where the Noosa River meets Laguna Bay: calm, warm, shallow water over sandbars, tiny fish, soldier crabs, no surf.\n• The tide falls all afternoon to a 7:09 PM low (0.51 m, BOM 2027 prediction, Noosa Head) — the flats keep growing until dark.\n• Sunset 6:38 PM over the river and the hinterland hills; light to walk until ~7:05.\n• Stay on the river side of the spit; the ocean side is unpatrolled.",
+     "typeName": "Beach/Pool",
+     "emoji": "🌅"
+    },
+    {
+     "start": "6:45 PM",
+     "end": "7:00 PM",
+     "title": "Drive back to Ocean Breeze, park",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "7:10 PM",
+     "title": "Walk to Zachary's",
+     "detail": "• 15 Hastings St, ~400 m.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "7:10 PM",
+     "end": "8:10 PM",
+     "title": "Dinner — Zachary's Gourmet Pizza Bar, Hastings St",
+     "detail": "• Relaxed wood-fired pizza and pasta bar; walk in straight from the beach — beach clothes are fine.\n• Open 7 days, noon until late.",
+     "typeName": "Dining",
+     "emoji": "🍕",
+     "est": 57.2,
+     "notes": "ESTIMATE — menu prices not published online:\n• 2 adult mains (large pizza / pasta) ~AUD 28 each\n• 2 kids' meals ~AUD 16 each\n• = AUD ~88 ≈ USD 57. (A 2022 review put most large pizzas under AUD 25.)"
+    },
+    {
+     "start": "8:10 PM",
+     "end": "8:20 PM",
+     "title": "Walk back to Ocean Breeze",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "8:20 PM",
+     "end": "8:45 PM",
+     "title": "Bed",
+     "detail": "• Tomorrow starts later: breakfast 8:15, out the door at 9:00.",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Monday, December 20, 2027",
+   "title": "Noosa National Park — Granite Bay and Tea Tree Bay; Noosaville riverfront",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "8:15 AM",
+     "end": "9:00 AM",
+     "title": "Breakfast in the apartment; pack the picnic",
+     "detail": "• Picnic lunch from the IGA shop, 2 L+ of water each, hats, sunscreen, reef shoes for the rock pools.",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "9:00 AM",
+     "end": "9:20 AM",
+     "title": "Boardwalk to the Noosa National Park day-use area",
+     "detail": "• ~1 km of seaside boardwalk from Hastings St, with some steps.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "9:20 AM",
+     "end": "9:35 AM",
+     "title": "Boiling Pot lookout",
+     "detail": "• 300 m in on the sealed track.",
+     "typeName": "Sightseeing",
+     "emoji": "📸"
+    },
+    {
+     "start": "9:35 AM",
+     "end": "10:20 AM",
+     "title": "Coastal track past Tea Tree Bay and Dolphin Point to Granite Bay",
+     "detail": "• Tea Tree Bay 750 m, Dolphin Point 1.3 km, Granite Bay 1.7 km from the day-use area.\n• Sealed to Dolphin Point; unsealed with some steps after.\n• Koalas are regularly spotted in the trees along this stretch.",
+     "typeName": "Walk",
+     "emoji": "🥾"
+    },
+    {
+     "start": "10:20 AM",
+     "end": "11:00 AM",
+     "title": "Granite Bay — boulders and rock pools",
+     "detail": "• Big black granite boulders, rock pools, a pebbly-sandy beach.\n• Go early: the beach disappears at high tide (1:20 PM today, BOM 2027 prediction).\n• Steep track down. Unpatrolled — no swimming.",
+     "typeName": "Beach/Pool",
+     "emoji": "🪨"
+    },
+    {
+     "start": "11:00 AM",
+     "end": "11:30 AM",
+     "title": "Walk back to Tea Tree Bay",
+     "detail": "• ~1 km.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "11:30 AM",
+     "end": "1:00 PM",
+     "title": "Tea Tree Bay — beach play, rock pools, picnic lunch (anchor)",
+     "detail": "• The prettiest bay in the park: sand, rock pools with crabs and small fish.\n• Picnic lunch around 12:15. Toilets and tap water here.\n• Unpatrolled — paddling at the edge only; Parks Queensland advises against swimming.\n• Keep food covered: brush turkeys and lace monitors.",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "1:40 PM",
+     "title": "Walk out and the boardwalk back to Hastings St",
+     "detail": "• 750 m to the day-use area, then ~1 km of boardwalk.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "1:40 PM",
+     "end": "3:45 PM",
+     "title": "Ocean Breeze — showers and rest",
+     "typeName": "Free Time",
+     "emoji": "⏰"
+    },
+    {
+     "start": "3:45 PM",
+     "end": "4:05 PM",
+     "title": "Drive to Noosaville",
+     "detail": "• ~6 km along Noosa Parade / Gympie Terrace.\n• Park at the Yacht & Rowing Club precinct or Quota Park.",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "4:05 PM",
+     "end": "5:30 PM",
+     "title": "Noosaville riverfront walk",
+     "detail": "• Flat 2 km strip of riverside paths and parks along Gympie Terrace: Chaplin Park, Lions Park with the Pirate Playground, Quota Park and the Big Pelican, Pelican Beach Park.\n• Small river beaches, boats coming and going, cafés along the path. Toilets and showers in several parks.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "5:30 PM",
+     "end": "6:50 PM",
+     "title": "Dinner — Noosa Yacht & Rowing Club",
+     "detail": "• The club's Riverside Bistro at Lions Park, on the water next to the Pirate Playground.\n• 5:30 PM sitting (vacate by 6:50) — bookings strongly advised.\n• No kids' menu; half serves for little ones.",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "est": 54.47,
+     "notes": "PRICED FROM THE CLUB'S SUMMER 2023–24 MENU (expect higher by 2027):\n• Fish & chips AUD 28.90\n• Crispy-skin barramundi AUD 21.90\n• 2 kids' half-serve fish & chips AUD 16.50 each\n• = AUD 83.80 ≈ USD 54."
+    },
+    {
+     "start": "6:50 PM",
+     "end": "7:05 PM",
+     "title": "Drive back to Ocean Breeze",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "7:05 PM",
+     "end": "7:30 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Tuesday, December 21, 2027",
+   "title": "Noosa Spit sand flats — 4WD delivered tonight",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:15 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast in the apartment",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:00 AM",
+     "title": "Walk to Noosa Spit",
+     "detail": "• West along Hastings St to Noosa Woods and the Spit, ~1 km.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "8:00 AM",
+     "end": "11:15 AM",
+     "title": "Noosa Spit — the river-mouth sand flats (anchor)",
+     "detail": "Where the Noosa River meets Laguna Bay: calm, warm, ankle-to-waist-deep water over sandbars, tiny fish, soldier crabs, no surf.\nLow tide is 8:24 AM (BOM 2027 prediction, Noosa Head) — the flats are at their widest from ~7 to 10:30, then slowly fill toward the 2:21 PM high.\nShade under the casuarinas on the river side. Stay on the river side of the spit; the ocean side is unpatrolled.",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️"
+    },
+    {
+     "start": "11:15 AM",
+     "end": "11:30 AM",
+     "title": "Walk back to Ocean Breeze",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "11:30 AM",
+     "end": "12:00 PM",
+     "title": "Showers and change",
+     "typeName": "Logistics",
+     "emoji": "🚿"
+    },
+    {
+     "start": "12:00 PM",
+     "end": "12:45 PM",
+     "title": "Lunch — Betty's Burgers, Hastings Street (the original)",
+     "detail": "Betty's started here before it went national. Order-at-counter burgers, fries, shakes.\nHastings St, next to Ocean Breeze.",
+     "typeName": "Dining",
+     "emoji": "🍔",
+     "est": 27.04,
+     "notes": "PRICED FROM THE MENU (Sep 2026):\n• 2 × Betty's Classic AUD 11.90\n• 2 × Kids beef burger AUD 8.90\n• = AUD 41.60 ≈ USD 27. Fries excluded."
+    },
+    {
+     "start": "12:45 PM",
+     "end": "1:30 PM",
+     "title": "Hastings Street — gelato, surf-shop souvenirs, Lions Park playground",
+     "detail": "• The village end of the trip. Lions Park playground is just off Hastings St.",
+     "typeName": "Shopping",
+     "emoji": "🍦",
+     "est": 39.0,
+     "notes": "• ~AUD 90 for gelato and a couple of small souvenirs ≈ USD 60 (not a meal — not part of the dining audit)."
+    },
+    {
+     "start": "1:30 PM",
+     "end": "4:00 PM",
+     "title": "Quiet afternoon in the apartment — 5:15 AM start tomorrow",
+     "detail": "• Out of the midday sun; naps for anyone who needs one.",
+     "typeName": "Free Time",
+     "emoji": "⏰"
+    },
+    {
+     "start": "4:00 PM",
+     "end": "5:00 PM",
+     "title": "Buy the Cooloola permit; check tomorrow's conditions",
+     "detail": "Cooloola vehicle access permit for Dec 22 online (AUD 15.40 for the calendar day, plate-recognised, nothing to display) — you'll need the 4WD's plate number from the operator.\nCheck the QPWS Cooloola conditions report and the ferry's timetable/tide page.\nPack the beach bags: 6 L water, picnic breakfast and lunch, sunscreen, hats, rash shirts, towels, dry bag, sand shoes.",
+     "typeName": "Logistics",
+     "emoji": "🎒",
+     "est": 10.01,
+     "notes": "• AUD 15.40 ≈ USD 10."
+    },
+    {
+     "start": "5:00 PM",
+     "end": "5:45 PM",
+     "title": "4WD delivered to Ocean Breeze — handover and beach briefing",
+     "detail": "Noosa 2 Fraser / Noosa2K'gari 4WD Hire (Richard, Pomona/Doonan yard) delivers a Prado/Pajero-class 4WD to Ocean Breeze (52 Hastings St) for a one-day hire: tonight's handover, tomorrow's drive, collected here tomorrow evening or Thursday morning.\n30-min briefing: tyre pressures (they supply gauge, compressor and recovery kit), the tide chart, where the Third Cutting is, 80 km/h beach / 40 km/h camping-zone limits, Mudlo Rocks, no night driving.\nMove the booster seat across from the rental. Load the beach bags tonight.",
+     "typeName": "Rental Car",
+     "emoji": "🚙",
+     "est": 184.86,
+     "flag": "Book by email (info@noosa2fraser.com.au) and get the delivery to Ocean Breeze, the evening handover, the evening-of-Dec-22 collection and the one-day price confirmed in writing — their default meeting point is the Tewantin ferry carpark. Ocean Breeze allows one parking space per unit: confirm where the 4WD parks overnight.",
+     "notes": "COST:\n• Day hire AUD 225 (BookMe listing; confirm direct)\n• Excess reduction AUD 29 (AUD 5,000 excess → AUD 1,800)\n• Cooloola permit AUD 15.40 (on the logistics block)\n• Ferry one way AUD 15\n• = AUD ~284 ≈ USD 185 — plus fuel on the drive block.\n\nWHY THIS OPERATOR:\n• Reviewers report exactly this shape of hire: 'picked up the 4WD the night before, drove to Rainbow Beach and back along 40 km of beach'; 'offered to hand over the car the very same evening so we could head up the beach early'; a car left at the airport on request.\n• Pomona/Doonan is ~20 min from Hastings St, so delivery is a short hop for him.\n\nBACKUPS:\n• Drop Bear Adventures, 3 Sanders St, Noosaville (10 min away) — LandCruisers with permit and recovery gear included, but they push multi-day hires.\n• East Coast 4WD Hire (Prado, AUD 395/day).\n• Guided: Great Beach Drive 4WD Tours, 8-hr day with lunch, ferry and permits, max 6 guests — the no-driving fallback.\n\nDRIVER: 30–75 years old, 3+ years on a full licence; a US licence is fine — carry it."
+    },
+    {
+     "start": "5:45 PM",
+     "end": "6:45 PM",
+     "title": "Dinner in the apartment",
+     "detail": "Kitchen night — something easy from Saturday's shop. Early and quiet on purpose.",
+     "typeName": "Dining",
+     "emoji": "🍝"
+    },
+    {
+     "start": "6:45 PM",
+     "end": "7:30 PM",
+     "title": "Bed — lights out 7:30 PM",
+     "detail": "Tomorrow's ready time is 5:45 AM → deadline 5:45 PM. This runs ~1 hr over for the one early start of the week; 9.5 hrs of sleep and a slow Thursday after it.",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Wednesday, December 22, 2027",
+   "title": "4WD day — Teewah Beach, the Double Island Point lagoon, Rainbow Beach",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "5:15 AM",
+     "end": "5:50 AM",
+     "title": "Up, quick breakfast, into the 4WD",
+     "detail": "Light by 4:50. Cereal and fruit in the apartment; picnic and water already in the car. 35 min because it's two kids at 5 AM.",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "5:50 AM",
+     "end": "6:15 AM",
+     "title": "Drive to the Noosa North Shore Ferry, Tewantin",
+     "detail": "Hastings St → Noosa Parade → Gympie Terrace → Moorindil St. ~10 km, 20 min, plus 5 for the queue lane.",
+     "typeName": "Drive",
+     "emoji": "🚙"
+    },
+    {
+     "start": "6:15 AM",
+     "end": "6:40 AM",
+     "title": "Car ferry across the Noosa River",
+     "detail": "Cable ferry, every ~10 min, from 5:30 AM. The crossing is 5 min; the pre-Christmas queue can be 15–25 min — that's what the 25-min block is.\nPay on board by card, or a QR ticket bought online.",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "est": 9.75,
+     "notes": "• AUD 15 one way per car. One crossing today — the return is inland."
+    },
+    {
+     "start": "6:40 AM",
+     "end": "7:00 AM",
+     "title": "Onto the beach — the Third Cutting",
+     "detail": "Off the ferry: 2.2 km Maximillian Rd → right onto Beach Rd, 2.1 km of bitumen → the marked third sand cutting (the only legal entry).\nAt the top of the cutting: tyres down to ~18 psi, 4WD engaged. Bathroom stop for the kids at the Noosa North Shore campground on the way past.\nFirst 3 km past the camping area is 40 km/h.",
+     "typeName": "Logistics",
+     "emoji": "🛞"
+    },
+    {
+     "start": "7:00 AM",
+     "end": "8:05 AM",
+     "title": "Teewah Beach north — 40 km on the sand",
+     "detail": "The beach is the road: firm sand below the high-water line, 80 km/h limit, 40 km/h past the camping zones, pedestrians and anglers own the beach.\nTeewah village and the coloured cliffs slide past on the left.\nOne 15-min stop at the Red Canyon (red-sand gully in the cliffs, ~35 km up) — the kids can run up it.",
+     "typeName": "Drive",
+     "emoji": "🏖️",
+     "notes": "TIDE — official Bureau of Meteorology 2027 predictions, Noosa Head standard port (AEST, LAT datum):\n• Wed Dec 22: high 3:45 AM 1.65 m → LOW 9:43 AM 0.82 m → high 3:24 PM 1.55 m → low 9:54 PM.\n• Range 0.73 m — a neap (new moon Dec 27). Beach drivable roughly 7:15 AM–12:15 PM (low ±2½ hrs); QPWS rule is never within 2 hrs of high water.\n• The other candidates: Tue Dec 21 low 8:24 AM (0.77 m); Thu Dec 23 low 10:58 AM (0.82 m). Dec 22 is the latest start that still clears Rainbow Beach before noon.\n• Double Island Point sits ~55 km north of the Noosa Head gauge on the same open coast — same tide within minutes.\n• Source: BOM tide predictions 2027 via ausmarinescience.com (Noosa Head; Mooloolaba cross-checked: low 9:43 AM both)."
+    },
+    {
+     "start": "8:05 AM",
+     "end": "8:20 AM",
+     "title": "Leisha Track — over the headland to the lagoon",
+     "detail": "At the base of Double Island Point the beach ends. The Leisha Track is a short sand track across the back of the headland to the north (Rainbow Beach) side.\nThe lagoon is 400 m from the track's northern end.",
+     "typeName": "Drive",
+     "emoji": "🚙"
+    },
+    {
+     "start": "8:20 AM",
+     "end": "10:20 AM",
+     "title": "Double Island Point lagoon — 2 hours (anchor)",
+     "detail": "The turquoise lagoon behind the sand spit on the north side of the point.\nSheltered from the wind and the swell; calm, clear, shallow. Fish, soldier crabs in their thousands at low tide, turtles and dolphins in the channel.\nLow tide is 9:43 AM (BOM 2027 prediction), right in the middle of this block — the lagoon at its shallowest and warmest, refilling as the tide turns.\nWading, swimming, picnic on the spit. Unpatrolled — an adult in the water with the kids, and stay in the shallows, not the channel mouth.\nHoneymoon Bay (the calm cove on the point itself) is 5 min back if the lagoon is busy.",
+     "typeName": "Beach/Pool",
+     "emoji": "🏝️",
+     "notes": "• No facilities at the point — toilets are at the Freshwater day-use area 5 km south (a 10-min detour on the way up if needed).\n• The lighthouse walk (800 m from the north side, steep) is a skip — the lagoon is the point."
+    },
+    {
+     "start": "10:20 AM",
+     "end": "10:40 AM",
+     "title": "Dry off, change, back in the car",
+     "detail": "20 min. Sandy kids, wet swimmers, sunscreen again.",
+     "typeName": "Logistics",
+     "emoji": "👕"
+    },
+    {
+     "start": "10:40 AM",
+     "end": "11:05 AM",
+     "title": "North up Rainbow Beach to the township",
+     "detail": "~10 km on the sand past the Coloured Sands cliffs.\nMudlo Rocks sit at the town end — passable near low tide only. At 11:00 you're ~1h15 after the 9:43 low on a neap; fine, but don't dawdle.\nIf the rocks are covered: turn back to the Leisha Track, take the Freshwater Track inland to Rainbow Beach Rd (+45 min).",
+     "typeName": "Drive",
+     "emoji": "🚙"
+    },
+    {
+     "start": "11:05 AM",
+     "end": "11:20 AM",
+     "title": "Off the beach at the Rainbow Beach ramp — tyres up",
+     "detail": "Council carpark, end of Rainbow Beach Rd. Compressor back to road pressure, 15 min.",
+     "typeName": "Logistics",
+     "emoji": "🛞"
+    },
+    {
+     "start": "11:20 AM",
+     "end": "11:30 AM",
+     "title": "Drive up to the Carlo Sand Blow carpark",
+     "detail": "5 min up Cooloola Drive.",
+     "typeName": "Drive",
+     "emoji": "🚙"
+    },
+    {
+     "start": "11:30 AM",
+     "end": "12:30 PM",
+     "title": "Carlo Sand Blow (dunes)",
+     "detail": "600 m walk up through the forest (steep, steps) onto a 15-hectare bare sand blow on top of the headland.\n360° views: Rainbow Beach, Inskip Point, Tin Can Bay, K'gari on the horizon.\nThis is the dunes piece of Fraser — run, roll, slide down the leeward face. Shoes on, the sand is hot by now; 20 min up, 25 on top, 15 down.",
+     "typeName": "Excursion",
+     "emoji": "🏜️"
+    },
+    {
+     "start": "12:30 PM",
+     "end": "12:45 PM",
+     "title": "Drive down to the Esplanade",
+     "typeName": "Drive",
+     "emoji": "🚙"
+    },
+    {
+     "start": "12:45 PM",
+     "end": "1:45 PM",
+     "title": "Lunch — Rainbow Beach Surf Life Saving Club",
+     "detail": "On the Esplanade above the patrolled beach; lunch 11:30–2:30.\nFish & chips, steaks, burgers, salads; kids' meals. Book online.",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "est": 54.6,
+     "menuUrl": "https://rainbowbeachsurf.com.au/bistro-and-bar/",
+     "notes": "NOT VERIFIED — menu published as images (Aug 2026):\n• 2 adult mains ~AUD 28 each (surf-club bistro: fish & chips, parmi, burgers)\n• 2 kids' meals ~AUD 14 each\n• = AUD ~84 ≈ USD 55."
+    },
+    {
+     "start": "1:45 PM",
+     "end": "2:00 PM",
+     "title": "Drive to Seary's Creek",
+     "detail": "7.5 km back out Rainbow Beach Rd — on the way home.",
+     "typeName": "Drive",
+     "emoji": "🚙"
+    },
+    {
+     "start": "2:00 PM",
+     "end": "3:00 PM",
+     "title": "Seary's Creek — freshwater wade",
+     "detail": "100 m boardwalk from the carpark to a crystal-clear, tea-tinted creek with a sandy bottom, very shallow — made for 6- and 8-year-olds to wade and float.\nThe freshwater rinse after a salty morning. Picnic tables, toilets, free.",
+     "typeName": "Excursion",
+     "emoji": "🌿"
+    },
+    {
+     "start": "3:00 PM",
+     "end": "3:20 PM",
+     "title": "Change into dry clothes",
+     "typeName": "Logistics",
+     "emoji": "👕"
+    },
+    {
+     "start": "3:20 PM",
+     "end": "5:20 PM",
+     "title": "Drive home via the inland highway",
+     "detail": "Rainbow Beach Rd → Tin Can Bay Rd → Bruce Highway south at Gympie → Cooroy → Noosa. ~140 km, 2 hrs.\nNot the beach: the tide is rising toward the 3:24 PM high and Teewah is under water until evening. Fuel at Gympie or Cooroy so the 4WD goes back full.",
+     "typeName": "Drive",
+     "emoji": "🛣️",
+     "est": 29.25,
+     "notes": "• ~AUD 70 fuel for ~230 km (sand roughly doubles consumption) ≈ USD 45."
+    },
+    {
+     "start": "5:20 PM",
+     "end": "5:50 PM",
+     "title": "Unload, hose the sand off, booster back into the rental",
+     "typeName": "Logistics",
+     "emoji": "🧴"
+    },
+    {
+     "start": "5:50 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Hastings St (restaurant to be chosen)",
+     "detail": "• Walking distance from Ocean Breeze — nobody drives after a 5 AM start.",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "7:20 PM",
+     "title": "4WD collected at Ocean Breeze",
+     "typeName": "Rental Car",
+     "emoji": "🚙",
+     "detail": "• Noosa 2 Fraser collects tonight so tomorrow's 7:15 AM departure isn't held up.\n• Put this evening collection in writing when booking."
+    },
+    {
+     "start": "7:20 PM",
+     "end": "8:00 PM",
+     "title": "Pack for Hamilton Island, bed",
+     "typeName": "Hotel",
+     "emoji": "🌙",
+     "detail": "• Car loaded tonight except the overnight bag."
+    }
+   ]
+  },
+  {
+   "date": "Thursday, December 23, 2027",
+   "title": "Noosa → Brisbane Airport → Hamilton Island",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "6:30 AM",
+     "end": "7:15 AM",
+     "title": "Breakfast in the apartment, final pack",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "7:15 AM",
+     "end": "7:45 AM",
+     "title": "Check out of Ocean Breeze, load the car",
+     "typeName": "Hotel",
+     "emoji": "🧳",
+     "detail": "• Check-out is by 10:00 AM."
+    },
+    {
+     "start": "7:45 AM",
+     "end": "9:45 AM",
+     "title": "Drive Noosa → Brisbane Airport (Domestic)",
+     "typeName": "Drive",
+     "emoji": "🛣️",
+     "detail": "• ~150 km via the Bruce Hwy / M1, 1h45 with clear roads.\n• 2h allowed: pre-Christmas traffic + one bathroom stop.\n• Refuel near the airport (full-to-full).",
+     "est": 29.25,
+     "notes": "• Fuel top-up estimate carried over from the earlier plan."
+    },
+    {
+     "start": "9:45 AM",
+     "end": "10:15 AM",
+     "title": "Return the rental — Brisbane Domestic terminal",
+     "typeName": "Rental Car",
+     "emoji": "🚗",
+     "detail": "• Unload bags at the kerb first; one adult returns the car.\n• Booster goes back with the car."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "11:00 AM",
+     "title": "Qantas bag drop + security (Domestic T2)",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Bag drop closes 30 min before departure; aim to be through security by 11:00."
+    },
+    {
+     "start": "11:00 AM",
+     "end": "11:50 AM",
+     "title": "Lunch at the airport",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "est": 46.8,
+     "notes": "ESTIMATE — airport food court:\n• 2 adult mains ~AUD 22 each\n• 2 kids' meals ~AUD 14 each\n• = AUD ~72 ≈ USD 47"
+    },
+    {
+     "start": "11:50 AM",
+     "end": "12:30 PM",
+     "title": "Gate and boarding",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "12:30 PM",
+     "end": "2:15 PM",
+     "title": "QantasLink QF1592 - BNE → HTI - Nonstop - 1h45m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• Domestic, Economy, 4 passengers.\n• The ~noon Qantas departure (QF1592 12:30 PM; QF1898 12:05 PM runs some days).\n• Lands Hamilton Island 2:15 PM (same time zone).",
+     "route": "BNE → HTI",
+     "flightNo": "Qantas 1592",
+     "cabin": "Economy",
+     "program": "Qantas Frequent Flyer (via Chase transfer)",
+     "points": "29200",
+     "est": 177.76,
+     "flag": "Classic Reward seats (7,300 pts) are scarce near Christmas — book the day Dec 2027 opens (~353 days out). If none: Classic Plus ran 20,100–27,900 pts per person on this flight in Oct–Nov 2026.",
+     "notes": "POINTS (Qantas, per person):\n• Classic Reward 7,300 + AUD 68.37 tax (seen Nov–Dec 2026) → 29,200 pts + AUD 273 ≈ USD 178 for four.\n• Fallback Classic Plus: 20,100–27,900 → 80,400–111,600 for four.\n• Other options seen: Atmos 7,500 · Velocity 7,900 (Virgin VA1495 10:15 AM) · AAdvantage 10,000 · United 12,500."
+    },
+    {
+     "start": "2:15 PM",
+     "end": "2:45 PM",
+     "title": "Deplane, collect bags — Hamilton Island Airport",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Small terminal; bags out within ~20 min."
+    },
+    {
+     "start": "2:45 PM",
+     "end": "3:05 PM",
+     "title": "Free hotel shuttle → Reef View Hotel",
+     "typeName": "Transportation",
+     "emoji": "🚌",
+     "detail": "• Included when booking direct; ~5–10 min ride."
+    },
+    {
+     "start": "3:05 PM",
+     "end": "3:30 PM",
+     "title": "Check in — Reef View Hotel, Coral Sea View Room (5 nights)",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Upper floors (5–18), sea-view balcony, 2 queens; kids 12 and under stay free in existing bedding.\n• Included: airport shuttle, island shuttle, kayaks, paddleboards, catamarans and snorkel gear at Catseye Beach, Kids Eat Free at Pool Terrace and Sails (with an adult main).",
+     "est": 2697.5,
+     "nights": "5 nights (Thu–Tue, Dec 23–28)",
+     "roomType": "Coral Sea View Room — 2 queens, balcony, B&B rate",
+     "flag": "Festive-season terms: 20% non-refundable deposit, full payment 60 days before arrival, 100% cancellation fee inside 60 days.",
+     "notes": "VERIFIED on hamiltonisland.com.au for Dec 23–28, 2027, 2 adults + 2 kids:\n• Room only: AUD 3,700\n• With breakfast: AUD 4,150 ≈ USD 2,698 ← modeled (kids' breakfast free on the B&B rate)\n• Reef Family Room for comparison: AUD 4,800 / 5,250\n• Earns 11,100+ Velocity points."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "5:15 PM",
+     "title": "Reef View pool + Catseye Beach",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️",
+     "detail": "• Stinger season (Nov–May): swim in the stinger net / wear the free stinger suits."
+    },
+    {
+     "start": "5:15 PM",
+     "end": "5:45 PM",
+     "title": "Shower, change",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "5:45 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Pool Terrace (Reef View Hotel)",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Next to the hotel pool; dinner from 5 PM.\n• Kids Eat Free from the kids' menu with each adult main (Reef View guests).",
+     "est": 50.7,
+     "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-pool-terrace.pdf?ext=.pdf",
+     "notes": "PRICED FROM THE CURRENT MENU:\n• Chicken Breast AUD 42 + Mediterranean Fettuccini AUD 36\n• 2 kids' meals free (Kids Eat Free)\n• = AUD 78 ≈ USD 51"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "7:30 PM",
+     "title": "Bed — reef day tomorrow",
+     "typeName": "Hotel",
+     "emoji": "🌙"
+    }
+   ]
+  },
+  {
+   "date": "Friday, December 24, 2027",
+   "title": "Great Barrier Reef — Reefworld pontoon at Hardy Reef (Christmas Eve)",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "6:45 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast — Pool Terrace (included)",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Hotel-guest breakfast 6:00–10:30 AM; included in the B&B rate."
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:15 AM",
+     "title": "Pack the reef bag",
+     "typeName": "Logistics",
+     "emoji": "🎒",
+     "detail": "• Swimsuits, rash vests, hats, reef-safe sunscreen, motion-sickness tablets (~2 hrs each way)."
+    },
+    {
+     "start": "8:15 AM",
+     "end": "8:30 AM",
+     "title": "Island shuttle → Hamilton Island Marina",
+     "typeName": "Transportation",
+     "emoji": "🚌",
+     "detail": "• Free shuttle; ~10 min."
+    },
+    {
+     "start": "8:30 AM",
+     "end": "9:00 AM",
+     "title": "Check in — Cruise Whitsundays, Marina",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "9:00 AM",
+     "end": "5:00 PM",
+     "title": "Great Barrier Reef Adventure — Reefworld, Hardy Reef (anchor)",
+     "typeName": "Excursion",
+     "emoji": "🐠",
+     "detail": "• Departs Hamilton Island 9:00 AM, returns 5:00 PM.\n• ~4 hours on the pontoon: snorkelling (stinger suits included), underwater observatory, semi-submarine tour.\n• Morning tea, buffet lunch 11:30–2:00, afternoon tea.",
+     "est": 720.2,
+     "flag": "Book early. Weather backup: swap with Dec 25 or 26 (buggy days) if the trip is cancelled.",
+     "notes": "Cruise Whitsundays 2026 brochure fares (AUD):\n• Adult 295–369, child (4–14) 145–185\n• Modeled at the higher fare for Christmas week: 2 × 369 + 2 × 185 = AUD 1,108 ≈ USD 720\n• At the lower fare: AUD 880 ≈ USD 572"
+    },
+    {
+     "start": "5:00 PM",
+     "end": "5:20 PM",
+     "title": "Island shuttle back to the hotel",
+     "typeName": "Transportation",
+     "emoji": "🚌"
+    },
+    {
+     "start": "5:20 PM",
+     "end": "6:00 PM",
+     "title": "Showers, change",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:00 PM",
+     "title": "Christmas Eve dinner — Marina Tavern",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Pub on the marina; deck seating.\n• Confirm Christmas Eve hours and book.",
+     "est": 69.55,
+     "notes": "PRICED FROM THE CURRENT MENU:\n• Wagyu beef burger AUD 31 + chicken schnitzel parmi AUD 32\n• Kids' cheeseburger & chips AUD 22 + kids' battered fish & chips AUD 22\n• = AUD 107 ≈ USD 70"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Carols by Candlelight — Frangipani Lawns (optional)",
+     "typeName": "Entertainment",
+     "emoji": "🎄",
+     "detail": "• Island tradition: carols, Santa, fireworks, sausage sizzle.\n• Times from past years — confirm the 2027 program."
+    },
+    {
+     "start": "8:00 PM",
+     "end": "8:30 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🌙"
+    }
+   ]
+  },
+  {
+   "date": "Saturday, December 25, 2027",
+   "title": "Christmas Day — golf buggy day 1, Catseye Beach, Christmas lunch",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "8:00 AM",
+     "title": "Christmas morning in the room",
+     "typeName": "Free Time",
+     "emoji": "🎁"
+    },
+    {
+     "start": "8:00 AM",
+     "end": "8:45 AM",
+     "title": "Breakfast — Pool Terrace (included)",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:15 AM",
+     "title": "Pick up the golf buggy — Resort Side Buggy Hire",
+     "typeName": "Rental Car",
+     "emoji": "🛺",
+     "detail": "• 4-seater; driver 21+ with a full licence.\n• No child seats needed (kids are over 4).\n• Keep it until 5:00 PM tomorrow (desk hours: Sat 8–5, Sun 9–5).",
+     "est": 206.7,
+     "flag": "Buggies sell out months ahead — book with the room. Confirm Christmas Day desk hours.",
+     "notes": "Official pricing:\n• From AUD 140 per 24 hrs × 2 = AUD 280\n• Damage waiver AUD 19/day × 2 = AUD 38\n• = AUD 318 ≈ USD 207"
+    },
+    {
+     "start": "9:15 AM",
+     "end": "10:15 AM",
+     "title": "Buggy loop — One Tree Hill lookout and the marina",
+     "typeName": "Sightseeing",
+     "emoji": "📸"
+    },
+    {
+     "start": "10:15 AM",
+     "end": "12:00 PM",
+     "title": "Catseye Beach — kayaks, paddleboards, catamarans (free)",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️",
+     "detail": "• Non-motorised watersports included with the room.\n• Stinger suits on."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "12:30 PM",
+     "title": "Rinse, change",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "12:30 PM",
+     "end": "2:30 PM",
+     "title": "Christmas lunch (book ahead)",
+     "typeName": "Dining",
+     "emoji": "🎄",
+     "detail": "• Santa visits Sails Main Pool, the Resort Centre and Reef View Hotel on Christmas Day.\n• Festive menus are released in the second half of the year — book as soon as they open.",
+     "est": 313.95,
+     "flag": "Festive-menu price not published yet — estimate.",
+     "notes": "ESTIMATE:\n• Christmas buffet ~AUD 140 adult × 2 + ~AUD 70 child × 2 = AUD 420\n• + 15% public-holiday surcharge = AUD 483 ≈ USD 314"
+    },
+    {
+     "start": "2:30 PM",
+     "end": "5:00 PM",
+     "title": "Pool and rest",
+     "typeName": "Free Time",
+     "emoji": "🏊"
+    },
+    {
+     "start": "5:30 PM",
+     "end": "6:30 PM",
+     "title": "Dinner — Pizzeria & Gelato Bar",
+     "typeName": "Dining",
+     "emoji": "🍕",
+     "detail": "• Open 4–9:30 PM; dine in, takeaway or delivery to the room.",
+     "est": 59.8,
+     "flag": "Menu prices not published — estimate.",
+     "notes": "ESTIMATE:\n• 2 adult pizzas ~AUD 25 + 2 kids' pizzas ~AUD 15\n• + 15% public-holiday surcharge = AUD ~92 ≈ USD 60"
+    },
+    {
+     "start": "6:30 PM",
+     "end": "7:15 PM",
+     "title": "Buggy to One Tree Hill for sunset",
+     "typeName": "Sightseeing",
+     "emoji": "🌅",
+     "detail": "• Sunset ~6:55 PM."
+    },
+    {
+     "start": "7:15 PM",
+     "end": "7:45 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🌙"
+    }
+   ]
+  },
+  {
+   "date": "Sunday, December 26, 2027",
+   "title": "Golf buggy day 2 — koalas, bakery picnic, pools",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:30 AM",
+     "title": "Breakfast — Pool Terrace (included)",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:30 AM",
+     "end": "8:45 AM",
+     "title": "Buggy to Wild Life Hamilton Island",
+     "typeName": "Drive",
+     "emoji": "🛺"
+    },
+    {
+     "start": "8:45 AM",
+     "end": "10:30 AM",
+     "title": "Wild Life Hamilton Island — koalas, crocs, wombats",
+     "typeName": "Excursion",
+     "emoji": "🐨",
+     "detail": "• Open 8:00 AM–4:00 PM.\n• Optional Koala Encounter 9:30–10:00 AM, AUD 35 per person (photo emailed).",
+     "est": 61.75,
+     "notes": "Official pricing: family pass (2 adults + 2 kids 3–14) AUD 95 ≈ USD 62 — unlimited entry."
+    },
+    {
+     "start": "10:30 AM",
+     "end": "12:00 PM",
+     "title": "Buggy around the island — marina, resort side, lookouts",
+     "typeName": "Sightseeing",
+     "emoji": "🛺"
+    },
+    {
+     "start": "12:00 PM",
+     "end": "1:00 PM",
+     "title": "Lunch — Bob's Bakery pies, picnic at the marina",
+     "typeName": "Dining",
+     "emoji": "🥧",
+     "detail": "• Open 6:30 AM–3:00 PM.",
+     "est": 26.0,
+     "flag": "Prices not published — estimate.",
+     "notes": "ESTIMATE: 4 pies/sausage rolls + 2 kids' items ≈ AUD 40 ≈ USD 26"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "4:00 PM",
+     "title": "Pool and rest — heat of the day",
+     "typeName": "Free Time",
+     "emoji": "🏊"
+    },
+    {
+     "start": "4:00 PM",
+     "end": "4:45 PM",
+     "title": "Last buggy run, return by 5:00 PM",
+     "typeName": "Rental Car",
+     "emoji": "🛺"
+    },
+    {
+     "start": "5:30 PM",
+     "end": "6:45 PM",
+     "title": "Dinner — Romano's (Italian, waterside)",
+     "typeName": "Dining",
+     "emoji": "🍝",
+     "detail": "• Open from 5 PM Wed–Sun (closed Mon–Tue in the Oct 2026 schedule) — so it goes on Sunday.\n• Book ahead.",
+     "est": 92.69,
+     "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-romanos.pdf?ext=.pdf",
+     "notes": "PRICED FROM THE CURRENT MENU (adults) + ESTIMATE (kids):\n• Rigatoni Bolognese AUD 40 + house-made gnocchi AUD 44\n• Kids' pasta not on the published menu — ~AUD 20 each (estimate)\n• + Sunday/public-holiday surcharge (10–15%) → AUD ~143 ≈ USD 93"
+    },
+    {
+     "start": "6:45 PM",
+     "end": "7:15 PM",
+     "title": "Bed — early start tomorrow",
+     "typeName": "Hotel",
+     "emoji": "🌙"
+    }
+   ]
+  },
+  {
+   "date": "Monday, December 27, 2027",
+   "title": "Whitehaven Beach + Hill Inlet lookout",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "6:30 AM",
+     "end": "7:10 AM",
+     "title": "Breakfast — Pool Terrace (included)",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "7:10 AM",
+     "end": "7:30 AM",
+     "title": "Island shuttle → Hamilton Island Marina",
+     "typeName": "Transportation",
+     "emoji": "🚌"
+    },
+    {
+     "start": "7:30 AM",
+     "end": "8:00 AM",
+     "title": "Check in — Explore Whitsundays catamaran (30 min early)",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "8:00 AM",
+     "end": "12:00 PM",
+     "title": "Hill Inlet + Whitehaven Beach half-day (anchor)",
+     "typeName": "Excursion",
+     "emoji": "🏝️",
+     "detail": "• 40-min cruise to Tongue Bay.\n• 20-min walk up to the Hill Inlet lookout (the swirling-sand view), then 20 min down to Whitehaven's north end for a swim.\n• Times are tide-dependent — confirm the week before.",
+     "est": 409.5,
+     "notes": "Sailing Whitsundays pricing (valid to Mar 2027):\n• Family (2+2) AUD 520 sale / AUD 630 RRP → modeled at RRP: AUD 630 ≈ USD 410\n• Alternative: Cruise Whitsundays Whitehaven morning cruise 8:30 AM–12:30 PM, family AUD 414–495, but it does NOT go to the Hill Inlet lookout."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "12:20 PM",
+     "title": "Shuttle back",
+     "typeName": "Transportation",
+     "emoji": "🚌"
+    },
+    {
+     "start": "12:20 PM",
+     "end": "1:15 PM",
+     "title": "Lunch — Popeyes fish & chips, eat by the beach",
+     "typeName": "Dining",
+     "emoji": "🐟",
+     "detail": "• Open 11:30 AM–4 PM and 5–8:30 PM.",
+     "est": 44.85,
+     "flag": "Prices not published — estimate.",
+     "notes": "ESTIMATE: 2 adult fish & chips ~AUD 22 + 2 kids' ~AUD 12, + 15% public-holiday surcharge ≈ AUD 69 ≈ USD 45"
+    },
+    {
+     "start": "1:15 PM",
+     "end": "4:30 PM",
+     "title": "Pool / Catseye Beach / rest",
+     "typeName": "Free Time",
+     "emoji": "🏊"
+    },
+    {
+     "start": "4:30 PM",
+     "end": "5:15 PM",
+     "title": "Pack for Sydney",
+     "typeName": "Logistics",
+     "emoji": "🧳"
+    },
+    {
+     "start": "5:30 PM",
+     "end": "6:45 PM",
+     "title": "Last island dinner — Manta Ray (Greek, marina)",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Open Mon from 5 PM in the Oct 2026 schedule — confirm.",
+     "est": 96.43,
+     "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-manta-ray.pdf?ext=.pdf",
+     "notes": "PRICED FROM THE CURRENT MENU:\n• Chicken souvlaki skewers AUD 44 + moussaka AUD 40\n• Kids' souvlaki AUD 24 + kids' penne AUD 21\n• = AUD 129 + 15% public-holiday surcharge (Dec 27 is the Christmas Day holiday) = AUD 148 ≈ USD 96"
+    },
+    {
+     "start": "6:45 PM",
+     "end": "7:30 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🌙"
+    }
+   ]
+  },
+  {
+   "date": "Tuesday, December 28, 2027",
+   "title": "Hamilton Island → Sydney",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "8:00 AM",
+     "title": "Breakfast — Pool Terrace (included)",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:00 AM",
+     "end": "10:00 AM",
+     "title": "Last swim — Catseye Beach",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️"
+    },
+    {
+     "start": "10:00 AM",
+     "end": "10:30 AM",
+     "title": "Shower, check out, bags to the bell desk",
+     "typeName": "Hotel",
+     "emoji": "🧳"
+    },
+    {
+     "start": "10:30 AM",
+     "end": "11:30 AM",
+     "title": "Marina stroll — Ice Cream Parlour",
+     "typeName": "Free Time",
+     "emoji": "🍦"
+    },
+    {
+     "start": "11:30 AM",
+     "end": "12:15 PM",
+     "title": "Lunch — Pool Terrace",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Lunch from 11:30 AM; Kids Eat Free.",
+     "est": 49.34,
+     "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-pool-terrace.pdf?ext=.pdf",
+     "notes": "PRICED FROM THE CURRENT MENU:\n• Wagyu beef burger AUD 34 + burrito bowl AUD 32\n• Kids free\n• + 15% public-holiday surcharge (Boxing Day holiday) = AUD 76 ≈ USD 49"
+    },
+    {
+     "start": "12:15 PM",
+     "end": "12:35 PM",
+     "title": "Free hotel shuttle → Hamilton Island Airport",
+     "typeName": "Transportation",
+     "emoji": "🚌"
+    },
+    {
+     "start": "12:35 PM",
+     "end": "1:25 PM",
+     "title": "Check in, bag drop, gate",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Bag drop closes 30 min before departure."
+    },
+    {
+     "start": "1:55 PM",
+     "end": "5:15 PM",
+     "title": "Qantas QF581 - HTI → SYD - Nonstop - 2h20m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• Economy, 4 passengers. Lands Sydney Domestic T3.\n• Sydney is 1 hr ahead (daylight saving) — 2h20 in the air.",
+     "route": "HTI → SYD",
+     "flightNo": "Qantas 581",
+     "cabin": "Economy",
+     "program": "Alaska Atmos Rewards",
+     "points": "30000",
+     "est": 209.2,
+     "notes": "• Seen on seats.aero: Atmos 7,500 pts + USD 52.30 per person (QF581, 8 seats on Dec 22, 2026).\n• Four: 30,000 pts + USD 209.20.\n• Earlier option: QF579 11:55 AM → 3:15 PM."
+    },
+    {
+     "start": "5:15 PM",
+     "end": "5:50 PM",
+     "title": "Deplane, bags — Sydney T3",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "5:50 PM",
+     "end": "6:40 PM",
+     "title": "Maxi Taxi SYD → Sydney hotel (TBD)",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~13 km; 30–45 min in evening traffic.\n• Maxi Taxi for 4 people + 3 checked bags + carry-on + 3 backpacks.",
+     "est": 52.0,
+     "flag": "The fixed airport fare is an 18-month trial from Nov 2025 — confirm it's still in place.",
+     "notes": "• Fixed fare airport → CBD (The Rocks included): AUD 60 sedan / AUD 80 Maxi Taxi, tolls and airport fees included.\n• Modeled AUD 80 ≈ USD 52."
+    },
+    {
+     "start": "6:40 PM",
+     "end": "7:10 PM",
+     "title": "Check in — Sydney hotel TBD (5 nights)",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Park Hyatt dropped: no room with an Opera House view sleeps 4.\n• Shortlist (all rated 9.0–9.2):\n  – Sydney Harbour Marriott, Circular Quay — 2 double beds, sleeps 4, Bridge/Opera House-view options (top pick for location).\n  – Hyatt Regency Sydney — Family Room, 2 queens, balcony, Darling Harbour view.\n  – Hilton Sydney — Family Room, city view.",
+     "nights": "5 nights (Tue Dec 28 – Sun Jan 2)",
+     "flag": "Pick the Sydney hotel — rate/points not priced yet."
+    },
+    {
+     "start": "7:15 PM",
+     "end": "8:15 PM",
+     "title": "Dinner — Pancakes on the Rocks",
+     "typeName": "Dining",
+     "emoji": "🥞",
+     "detail": "• 22 Playfair St, The Rocks — 5-min walk; open 6 AM–2 AM.\n• A Sydney institution since 1975.",
+     "est": 55.9,
+     "menuUrl": "https://pancakesontherocks.com.au/menu/",
+     "flag": "Only sweet-pancake prices were verifiable (AUD 13.95–15.95).",
+     "notes": "PARTLY VERIFIED:\n• 2 adult savoury mains ~AUD 28 (estimate)\n• 2 kids' pancakes AUD 13.95–15.95 (verified range)\n• = AUD ~86 ≈ USD 56"
+    },
+    {
+     "start": "8:15 PM",
+     "end": "8:45 PM",
+     "title": "Walk back to the hotel, bed",
+     "typeName": "Hotel",
+     "emoji": "🌙"
+    }
+   ]
+  },
+  {
+   "date": "Wednesday, December 29, 2027",
+   "title": "Manly by ferry · Opera House · Mamak",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:30 AM",
+     "title": "Breakfast — hotel or nearby café",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:30 AM",
+     "end": "8:50 AM",
+     "title": "Walk to Circular Quay, Wharf 3",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• Buy 2 Child Opal cards (kids can't tap a credit card)."
+    },
+    {
+     "start": "8:55 AM",
+     "end": "9:25 AM",
+     "title": "Ferry F1 Circular Quay → Manly",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "detail": "• ~30 min; sit outside on the right for the Opera House.",
+     "est": 32.73,
+     "notes": "Opal: adult AUD 8.39 per ferry trip, child ~half.\n• Return for 4: 2 × 2 × 8.39 + 2 × 2 × 4.20 = AUD ~50 ≈ USD 33\n• Mon–Thu daily cap AUD 19.30 adult."
+    },
+    {
+     "start": "9:30 AM",
+     "end": "11:30 AM",
+     "title": "Manly Beach + Shelly Beach snorkel",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️",
+     "detail": "• Shelly Beach is a calm, protected cove 15 min' walk along Marine Parade — best snorkelling for kids in Sydney."
+    },
+    {
+     "start": "11:30 AM",
+     "end": "12:00 PM",
+     "title": "Rinse, walk back to the wharf",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "12:00 PM",
+     "end": "1:00 PM",
+     "title": "Lunch — Hugos Manly (on Manly Wharf)",
+     "typeName": "Dining",
+     "emoji": "🍕",
+     "est": 64.35,
+     "notes": "PARTLY VERIFIED:\n• Pizzas AUD 30–36 (verified range) → 2 adult pizzas ~AUD 66\n• No published kids' menu → 1 shared pizza for the kids ~AUD 33\n• = AUD ~99 ≈ USD 64"
+    },
+    {
+     "start": "1:10 PM",
+     "end": "1:40 PM",
+     "title": "Ferry back to Circular Quay",
+     "typeName": "Transportation",
+     "emoji": "⛴️"
+    },
+    {
+     "start": "1:45 PM",
+     "end": "4:30 PM",
+     "title": "Hotel pool, rest",
+     "typeName": "Free Time",
+     "emoji": "🏊"
+    },
+    {
+     "start": "4:30 PM",
+     "end": "5:45 PM",
+     "title": "Opera House forecourt + Royal Botanic Garden",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• 10-min walk around Circular Quay."
+    },
+    {
+     "start": "5:45 PM",
+     "end": "6:05 PM",
+     "title": "Taxi → Mamak, Haymarket",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "est": 11.7,
+     "notes": "ESTIMATE: ~AUD 18 metered."
+    },
+    {
+     "start": "6:05 PM",
+     "end": "7:20 PM",
+     "title": "Dinner — Mamak (Malaysian roti, Chinatown)",
+     "typeName": "Dining",
+     "emoji": "🫓",
+     "detail": "• 15 Goulburn St; no bookings — expect a 20–30 min queue; watch the roti being stretched in the window.",
+     "est": 37.7,
+     "notes": "PRICED FROM THE CURRENT MENU (no kids' menu):\n• Nasi lemak AUD 15 + mee goreng AUD 20\n• 2 × roti canai for the kids AUD 11.50 each\n• = AUD 58 ≈ USD 38"
+    },
+    {
+     "start": "7:20 PM",
+     "end": "7:40 PM",
+     "title": "Taxi back to the hotel",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "est": 11.7
+    },
+    {
+     "start": "7:45 PM",
+     "end": "8:15 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🌙"
+    }
+   ]
+  },
+  {
+   "date": "Thursday, December 30, 2027",
+   "title": "Taronga Zoo by ferry",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:30 AM",
+     "title": "Breakfast — hotel or nearby café",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:30 AM",
+     "end": "8:45 AM",
+     "title": "Walk to Circular Quay, Wharf 4",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:00 AM",
+     "title": "Ferry F2 → Taronga Zoo",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "detail": "• ~12 min; every 30 min from 8:45 AM.",
+     "est": 32.72,
+     "notes": "Opal return for 4 ≈ AUD 50 ≈ USD 33."
+    },
+    {
+     "start": "9:00 AM",
+     "end": "9:30 AM",
+     "title": "Zoo shuttle up to the top entrance",
+     "typeName": "Transportation",
+     "emoji": "🚌",
+     "detail": "• The Sky Safari cable car is closed for redevelopment; free shuttle or an 800 m uphill walk."
+    },
+    {
+     "start": "9:30 AM",
+     "end": "3:30 PM",
+     "title": "Taronga Zoo Sydney (anchor)",
+     "typeName": "Excursion",
+     "emoji": "🦘",
+     "detail": "• Australian Walkabout first, Seal Show ~11 AM, Free Flight Bird Show ~12 PM, Wild Asia after lunch.\n• Harbour and Opera House views from the top.",
+     "est": 100.75,
+     "notes": "Book online: family (2+2) from AUD 155 ≈ USD 101."
+    },
+    {
+     "start": "12:30 PM",
+     "end": "1:15 PM",
+     "title": "Lunch at the zoo",
+     "typeName": "Dining",
+     "emoji": "🍔",
+     "est": 45.5,
+     "flag": "Zoo café prices not checked — estimate.",
+     "notes": "ESTIMATE: ~AUD 70 ≈ USD 46"
+    },
+    {
+     "start": "3:30 PM",
+     "end": "4:15 PM",
+     "title": "Walk down to the wharf, ferry back",
+     "typeName": "Transportation",
+     "emoji": "⛴️"
+    },
+    {
+     "start": "4:15 PM",
+     "end": "5:30 PM",
+     "title": "Hotel rest",
+     "typeName": "Free Time",
+     "emoji": "🛏️"
+    },
+    {
+     "start": "5:45 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Fortune of War (Sydney's oldest pub, est. 1828)",
+     "typeName": "Dining",
+     "emoji": "🍺",
+     "detail": "• 143A George St, The Rocks — 3-min walk.",
+     "est": 61.75,
+     "flag": "Menu prices not published online — estimate.",
+     "notes": "ESTIMATE: 2 pub mains ~AUD 32 + 2 kids' ~AUD 15 ≈ AUD 95 ≈ USD 62"
+    },
+    {
+     "start": "7:15 PM",
+     "end": "7:45 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🌙"
+    }
+   ]
+  },
+  {
+   "date": "Friday, December 31, 2027",
+   "title": "New Year's Eve on the harbour",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "8:00 AM",
+     "end": "9:00 AM",
+     "title": "Breakfast — hotel or nearby café",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "9:00 AM",
+     "end": "11:30 AM",
+     "title": "Royal Botanic Garden + Opera House walk",
+     "typeName": "Walk",
+     "emoji": "🌿",
+     "detail": "• Easy morning loop before the crowds and road closures build.\n• Circular Quay station closes 3 PM–midnight on NYE — use Wynyard or Martin Place."
+    },
+    {
+     "start": "11:30 AM",
+     "end": "12:30 PM",
+     "title": "Lunch — The Rocks",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "est": 58.5,
+     "flag": "Estimate.",
+     "notes": "ESTIMATE: ~AUD 90 ≈ USD 59"
+    },
+    {
+     "start": "12:30 PM",
+     "end": "4:30 PM",
+     "title": "Nap / quiet time — long night ahead",
+     "typeName": "Free Time",
+     "emoji": "🛏️"
+    },
+    {
+     "start": "4:30 PM",
+     "end": "5:30 PM",
+     "title": "Early dinner near the hotel",
+     "typeName": "Dining",
+     "emoji": "🍝",
+     "detail": "• Eat before heading to the viewing spot."
+    },
+    {
+     "start": "5:30 PM",
+     "end": "9:15 PM",
+     "title": "NYE viewing spot — TBD + 9 PM family fireworks",
+     "typeName": "Entertainment",
+     "emoji": "🎇",
+     "detail": "• 9:00 PM family fireworks (~8 min).\n• Shortlist (needs Bridge + Opera House view, no all-day wait):\n  – Taronga Zoo NYE, Silver tier: gates 6 PM, lawn picnic, ~AUD 740 for 4 (~USD 480). Tickets on sale ~Sept 2027; sells out by mid-Oct.\n  – Opera House forecourt: free, but entry 12–3 PM only; tickets Dec 26, 10 AM.\n  – Embarkation Park (Potts Point): free walk-up, never declared full in 2024 — but trees block part of the Bridge and no Opera House.",
+     "flag": "Decide the NYE plan — tickets release ~Sept 2027."
+    },
+    {
+     "start": "9:15 PM",
+     "end": "12:15 AM",
+     "title": "Midnight fireworks (~12 min) — kids optional",
+     "typeName": "Entertainment",
+     "emoji": "🎆",
+     "detail": "• Plan the route home in advance — roads stay closed until ~4 AM."
+    }
+   ]
+  },
+  {
+   "date": "Saturday, January 1, 2028",
+   "title": "New Year's Day — Bondi to Bronte",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "8:30 AM",
+     "end": "9:30 AM",
+     "title": "Breakfast — hotel or nearby café",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "9:30 AM",
+     "end": "10:15 AM",
+     "title": "Bus 333 Circular Quay → Bondi Beach",
+     "typeName": "Transportation",
+     "emoji": "🚌",
+     "detail": "• ~35–45 min.",
+     "est": 18.85,
+     "notes": "Sunday cap: adult AUD 9.65 → whole day for 4 ≈ AUD 29 ≈ USD 19."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "11:30 AM",
+     "title": "Bondi Beach — swim between the flags",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️"
+    },
+    {
+     "start": "11:30 AM",
+     "end": "12:30 PM",
+     "title": "Lunch — Bergs Bistro, Bondi Icebergs Club",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Overlooks the Icebergs ocean pool. Walk-ins OK; adults sign in with photo ID.",
+     "est": 62.4,
+     "menuUrl": "https://icebergs.com.au/bergs-bistro-menu",
+     "notes": "PRICED FROM THE CURRENT MENU:\n• Famous battered fish AUD 38 + cheeseburger AUD 26\n• Kids (under 12): fish & chips AUD 16 + cheeseburger slider AUD 16\n• = AUD 96 ≈ USD 62",
+     "flag": "Confirm New Year's Day hours."
+    },
+    {
+     "start": "12:30 PM",
+     "end": "2:30 PM",
+     "title": "Bondi to Bronte coastal walk + Bronte rock pool",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• ~2.5 km each way of cliff path; ~1 hr with stops; swim at the Bronte Baths."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "3:15 PM",
+     "title": "Taxi back to the hotel",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "est": 26.0,
+     "notes": "ESTIMATE: ~AUD 40 metered."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "5:30 PM",
+     "title": "Pack, hotel pool",
+     "typeName": "Free Time",
+     "emoji": "🧳"
+    },
+    {
+     "start": "5:30 PM",
+     "end": "6:45 PM",
+     "title": "Farewell dinner — Opera Bar (under the Opera House)",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "est": 71.5,
+     "flag": "Menu prices not published online — estimate.",
+     "notes": "ESTIMATE: ~AUD 110 ≈ USD 72"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "7:30 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🌙"
+    }
+   ]
+  },
+  {
+   "date": "Sunday, January 2, 2028",
+   "title": "Fly Sydney → Dallas → Fort Lauderdale",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "9:00 AM",
+     "title": "Breakfast, final pack",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "10:00 AM",
+     "end": "10:30 AM",
+     "title": "Check out — Sydney hotel",
+     "typeName": "Hotel",
+     "emoji": "🧳",
+     "detail": "• Globalist late check-out not needed — 10:30 AM departure."
+    },
+    {
+     "start": "10:30 AM",
+     "end": "11:15 AM",
+     "title": "Taxi Sydney hotel → SYD T1 International",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~30–40 min. The fixed fare only applies FROM the airport; this way is metered.",
+     "est": 45.5,
+     "notes": "ESTIMATE: Maxi Taxi ~AUD 70 ≈ USD 46."
+    },
+    {
+     "start": "11:15 AM",
+     "end": "1:30 PM",
+     "title": "Check in, security, passport control",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• 3 hrs before an international departure."
+    },
+    {
+     "start": "2:05 PM",
+     "end": "12:30 PM",
+     "title": "Qantas QF7 - SYD → DFW - Nonstop - 15h25m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• Airbus A380, Economy.\n• Crosses the date line: lands 12:30 PM the same day (Sun Jan 2) in Dallas.",
+     "route": "SYD → DFW",
+     "flightNo": "Qantas 7",
+     "cabin": "Economy",
+     "program": "Alaska Atmos Rewards",
+     "points": "170000",
+     "est": 466.36,
+     "flag": "Return award space opens ~Jan 2027 — book SYD → DFW → FLL as one Atmos award.",
+     "notes": "• Seen on seats.aero (Jan 2027): QF7 at 42,500 Atmos + USD 116.59 per person.\n• SYD → DFW → FLL ≈ 9,700 miles = the 42,500 band → 170,000 pts + USD 466 for four.\n• Same flight via AAdvantage: 40,000 + USD 96."
+    },
+    {
+     "start": "12:30 PM",
+     "end": "3:45 PM",
+     "title": "Dallas — immigration, customs, re-check bags, connect",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "3:45 PM",
+     "end": "7:35 PM",
+     "title": "American Airlines - DFW → FLL (placeholder)",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• AA flies DFW–FLL several times a day; on the same Atmos award.",
+     "route": "DFW → FLL",
+     "cabin": "Economy"
+    }
+   ]
+  }
+ ],
+ "packing": {
+  "trackerTitle": "Item tracker",
+  "outfitDays": [],
+  "trackerDays": [],
+  "packLists": []
+ },
+ "supplies": [],
+ "ideas": [
+  {
+   "name": "Still open / TBD",
+   "items": [
+    {
+     "name": "Sydney hotel (5 nights, Dec 28 – Jan 2)",
+     "note": "Park Hyatt dropped (no Opera-view room sleeps 4). Shortlist: Sydney Harbour Marriott (Circular Quay, 2 doubles sleep 4, view options), Hyatt Regency Sydney (Family Room, harbour-view balcony), Hilton Sydney (Family Room)."
+    },
+    {
+     "name": "NYE viewing plan",
+     "note": "Taronga Silver (~USD 480 for 4, gates 6 PM) vs. Opera House forecourt (free, entry 12–3 PM) vs. Embarkation Park (free walk-up, partial Bridge view only). Tickets release ~Sept 2027."
+    },
+    {
+     "name": "Qantas BNE → HTI on points",
+     "note": "Classic Reward 7,300 pp is scarce near Christmas; book the day Dec 2027 opens. Confirm which program Chase adds."
+    },
+    {
+     "name": "Award flights to/from the US",
+     "note": "Outbound FLL → DFW → BNE Wed Dec 15; return SYD → DFW → FLL Sun Jan 2 (QF7). Re-search both when award space opens."
+    },
+    {
+     "name": "Hamilton Island bookings",
+     "note": "Reef View Coral Sea View Room B&B AUD 4,150 (book direct). Buggy hire with the room. Reefworld (Dec 24) and Hill Inlet/Whitehaven (Dec 27) — book early. Christmas lunch when festive menus open."
+    },
+    {
+     "name": "Noosa 2 Fraser 4WD",
+     "note": "Delivery to Ocean Breeze (52 Hastings St) ~5 PM Dec 21, collection the EVENING of Dec 22 (in writing). Confirm overnight parking with the hotel."
+    },
+    {
+     "name": "River City Cruises — Dec 17",
+     "note": "Mid-Afternoon Sightseeing Cruise 2:30–4:00 PM from the Cultural Centre pontoon; family AUD 120. Confirm it runs Fridays in December, then book."
+    },
+    {
+     "name": "Riverbar & Kitchen — Dec 17",
+     "note": "Book a deck table for 5:00 PM."
+    },
+    {
+     "name": "Australia Zoo — Sat Dec 18",
+     "note": "Buy the Family of 4 pass online (AUD 233.95 as of Oct 2026). Re-check the Tigers LIVE! time (11:00) the week before."
+    },
+    {
+     "name": "Noosa bookings",
+     "note": "Noosa Reef Hotel deck table Dec 18 (6:00 PM); Noosa Yacht & Rowing Club Dec 20 (5:30 PM sitting). Dec 21 plan still open."
+    },
+    {
+     "name": "Dinner — Dec 22, Noosa",
+     "note": "Restaurant not chosen yet; walking distance from Ocean Breeze, ~5:50 PM after the 4WD day."
+    },
+    {
+     "name": "Rental car",
+     "note": "BNE International Fri Dec 17 ~7:45 AM → BNE Domestic Thu Dec 23 ~9:45 AM (6 days + 2 hrs)."
+    },
+    {
+     "name": "Ocean Breeze Resort, Noosa",
+     "note": "Two-bedroom apartment Dec 18–23 (5 nights). USD 1,236 seen online — confirm dates and room type; request a unit away from the street."
+    },
+    {
+     "name": "Hyatt Regency Brisbane",
+     "note": "Dec 16–18 on points (2 × 12,000 = 24,000 modeled). The Dec 16 night guarantees the room at 9:15 AM on Dec 17 — tell the hotel you arrive that morning so it isn't a no-show."
+    },
+    {
+     "name": "Australian ETA",
+     "note": "One per traveller via the official app before departure."
+    },
+    {
+     "name": "Child Opal cards",
+     "note": "Buy 2 in Sydney (kids can't tap a credit card)."
+    }
+   ]
+  },
+  {
+   "name": "Pricing rules used",
+   "items": [
+    {
+     "name": "Meals",
+     "note": "2 adult mains + 2 kids' meals, no drinks/starters/dessert. Each meal labeled verified (current menu) or estimate."
+    },
+    {
+     "name": "Exchange rate",
+     "note": "AUD × 0.65 = USD."
+    },
+    {
+     "name": "Hamilton Island surcharges",
+     "note": "Restaurants add 10% Sundays and 15% public holidays (Dec 25, 27, 28 in 2027)."
+    }
+   ]
+  },
+  {
+   "name": "Not included on purpose",
+   "items": [
+    {
+     "name": "Pullman Brisbane Airport night",
+     "note": "Dropped — flying BNE → HTI the morning after Noosa."
+    },
+    {
+     "name": "NYE restaurant packages",
+     "note": "Kid-friendly harbour terraces exist (e.g., Luna Lu ~AUD 3,670 for 4) but too expensive."
+    },
+    {
+     "name": "Watsons Bay + Doyles",
+     "note": "Cut when Sydney went to 4 full days."
+    },
+    {
+     "name": "Free foreshore spots (Mrs Macquaries etc.)",
+     "note": "Fill by early afternoon — an all-day wait with the kids."
+    }
+   ]
+  }
+ ],
+ "alternatives": null
+}</script>
+</body>
+</html>
