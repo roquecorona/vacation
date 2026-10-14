@@ -1,7 +1,7 @@
 {
  "meta": {
   "title": "Australia V5 — Brisbane, Noosa, Hamilton Island & Sydney, December 2027",
-  "dates": "Dec 14, 2027 – Jan 2, 2028 (FLL → Dallas → Brisbane · Noosa · Hamilton Island · Sydney for NYE · home Jan 2)",
+  "dates": "Dec 14, 2027 – Jan 2, 2028 (FLL → Dallas → Brisbane · Australia Zoo · Noosa · Hamilton Island · Sydney for NYE · home Jan 2)",
   "route": [
    {
     "name": "Fort Lauderdale",
@@ -9,11 +9,11 @@
    },
    {
     "name": "Brisbane",
-    "sub": "3 nights (from Dec 15) · Hyatt Regency Brisbane"
+    "sub": "2 nights (from Dec 15) · Hyatt Regency Brisbane"
    },
    {
     "name": "Noosa",
-    "sub": "5 nights · RACV Noosa Resort"
+    "sub": "6 nights · RACV Noosa Resort"
    },
    {
     "name": "Hamilton Island",
@@ -82,7 +82,7 @@
   },
   {
    "date": "Thursday, December 16, 2027",
-   "title": "Arrive Brisbane — hotel breakfast, City Hall, Queensland Museum",
+   "title": "Arrive Brisbane — Kangaroo Point Cliffs, river cruise, Riverbar dinner",
    "planned": false,
    "blocks": [
     {
@@ -101,7 +101,7 @@
      "typeName": "Rental Car",
      "emoji": "🚗",
      "est": 669.5,
-     "notes": "ONE CAR FOR THE WHOLE TRIP:\n• Thu Dec 16 7:45 AM → Thu Dec 23 ~9:45 AM = 8 rental days.\n• ~AUD 120/day × 8 = AUD 960 + booster ~AUD 50 + tolls ~AUD 20 ≈ AUD 1,030 ≈ USD 670.\n• Mid-December is the priciest month at BNE — re-quote ~6 months out; book on a free-cancellation rate for availability, not price.\n\nWHAT IT DOES:\n• Airport → Hyatt today (valet is free on a Globalist award stay).\n• Hyatt → Noosa on Sunday, all Noosa errands, Noosa → airport on Christmas Eve.\n• NOT the beach — every major brand's terms keep cars on sealed roads and void the insurance on sand. The one beach day is a separate 4WD delivered to the resort (see Dec 20)."
+     "notes": "ONE CAR FOR THE WHOLE TRIP:\n• Thu Dec 16 7:45 AM → Thu Dec 23 ~9:45 AM = 8 rental days.\n• ~AUD 120/day × 8 = AUD 960 + booster ~AUD 50 + tolls ~AUD 20 ≈ AUD 1,030 ≈ USD 670.\n• Mid-December is the priciest month at BNE — re-quote ~6 months out; book on a free-cancellation rate for availability, not price.\n\nWHAT IT DOES:\n• Airport → Hyatt today (valet is free on a Globalist award stay).\n• Hyatt → Australia Zoo → Noosa on Fri Dec 17, all Noosa errands, Noosa → BNE Domestic on Thu Dec 23.\n• NOT the beach — every major brand's terms keep cars on sealed roads and void the insurance on sand. The one beach day is a separate 4WD delivered to the resort (see Dec 22)."
     },
     {
      "start": "8:45 AM",
@@ -115,117 +115,163 @@
     },
     {
      "start": "9:15 AM",
-     "end": "9:30 AM",
-     "title": "Hyatt Regency Brisbane — straight up to the room (booked from Dec 15)",
-     "detail": "• 33 Burnett Lane, middle of the CBD. Category 3 World of Hyatt.\n• Room is booked from Wed Dec 15, so it's ready when you walk in — drop bags and go.\n• Ask for the Deluxe Room, Multiple Beds (sleeps 4) or connecting rooms.",
+     "end": "9:25 AM",
+     "title": "Hyatt Regency Brisbane — valet takes the car, bell desk takes the bags",
+     "detail": "• 33 Burnett Lane (Queen St Mall), middle of the CBD. Category 3 World of Hyatt.\n• Room is booked from Wed Dec 15, so it's ready on arrival — bags go straight up.\n• Ask for the Deluxe Room, Multiple Beds (sleeps 4) or connecting rooms.",
      "typeName": "Hotel",
      "emoji": "🏨",
      "program": "World of Hyatt",
-     "points": "36000",
-     "nights": "3 nights (Wed Dec 15 – Sat Dec 18)",
+     "points": "24000",
+     "nights": "2 nights (Wed Dec 15 – Fri Dec 17)",
      "roomType": "Standard room (or standard suite if available)",
      "address": "33 Burnett Lane, Brisbane QLD 4000",
-     "notes": "• Modeled at 12,000 pts/night × 3 = 36,000 (the extra Dec 15 night guarantees the room on arrival).\n• Globalist early check-in is only subject to availability — the extra night is the only guarantee.",
+     "notes": "• Modeled at 12,000 pts/night × 2 = 24,000 (the Dec 15 night guarantees the room on arrival).\n• Globalist early check-in is only subject to availability — the extra night is the only guarantee.\n• Globalist: free valet on an award stay; breakfast for 2 adults + 2 kids.",
      "flag": "Email the hotel: arriving ~9 AM Dec 16 — keep the Dec 15 night held (don't treat as no-show)."
     },
     {
-     "start": "9:30 AM",
-     "end": "10:00 AM",
+     "start": "9:25 AM",
+     "end": "10:10 AM",
      "title": "Breakfast — Lennons (in the hotel)",
+     "detail": "• Straight down after the valet — breakfast before showers.\n• Weekday breakfast 6:30–10:00 AM: seated by 9:30.\n• Last meal until dinner — no lunch stop today.",
      "typeName": "Dining",
      "emoji": "🍳",
-     "detail": "• Weekday breakfast ends 10:00 AM — go straight down after dropping bags.\n• If the flight runs late, grab breakfast at a café on the walk instead.",
-     "notes": "• Globalist benefit: breakfast for 2 adults + 2 kids included. AUD 0."
+     "notes": "• Globalist benefit: breakfast for 2 adults + 2 kids included. AUD 0.",
+     "flag": "Confirm with Lennons that a 9:30 seating can finish at ~10:10 (breakfast ends 10:00 on weekdays)."
     },
     {
-     "start": "10:00 AM",
-     "end": "10:30 AM",
-     "title": "Showers, change, sunscreen",
+     "start": "10:10 AM",
+     "end": "10:25 AM",
+     "title": "Back up to the room",
+     "detail": "• Buffer: elevator, unpack the essentials.",
      "typeName": "Logistics",
-     "emoji": "🚿",
-     "detail": "• UV is Extreme by mid-morning — hats on."
+     "emoji": "⏱️"
     },
     {
-     "start": "10:30 AM",
-     "end": "10:45 AM",
-     "title": "Walk to Brisbane City Hall (King George Square)",
-     "typeName": "Walk",
-     "emoji": "🚶",
-     "detail": "• ~500 m via Albert St; 10–15 min at kid pace."
+     "start": "10:25 AM",
+     "end": "11:10 AM",
+     "title": "Showers and change",
+     "detail": "• 45 min for four people after a 22-hour journey.",
+     "typeName": "Logistics",
+     "emoji": "🚿"
     },
     {
-     "start": "10:45 AM",
-     "end": "11:45 AM",
-     "title": "Museum of Brisbane + City Hall Clock Tower tour",
-     "typeName": "Sightseeing",
-     "emoji": "🕰️",
-     "detail": "• Free. Clock Tower tours run every 15 min up to the observation level for city views.\n• Museum of Brisbane is on Level 3 of City Hall.",
-     "flag": "Book the free Clock Tower tour slot (Eventbrite) once dates open; confirm hours."
+     "start": "11:10 AM",
+     "end": "11:25 AM",
+     "title": "Sunscreen, hats, day bag",
+     "detail": "• UV is Extreme by midday.\n• Day bag: water bottles and snacks — no lunch stop until dinner at 5.",
+     "typeName": "Logistics",
+     "emoji": "🧴"
     },
     {
-     "start": "11:45 AM",
-     "end": "12:15 PM",
-     "title": "Walk Queen St Mall → Victoria Bridge → Cultural Centre",
-     "typeName": "Walk",
-     "emoji": "🚶",
-     "detail": "• ~1.2 km, 25–30 min with kids. Shops and buskers on Queen St Mall."
-    },
-    {
-     "start": "12:15 PM",
-     "end": "1:45 PM",
-     "title": "Queensland Museum Kurilpa (free)",
-     "typeName": "Sightseeing",
-     "emoji": "🦕",
-     "detail": "• Open daily 9:30 AM–5 PM, free entry.\n• Dinosaurs Unearthed, SuperCroc, life-size T-rex in the Dinosaur Garden.\n• SparkLab (hands-on science) is ticketed — optional.\n• Air-conditioned: good for the hottest part of a jet-lagged day."
-    },
-    {
-     "start": "1:45 PM",
-     "end": "2:45 PM",
-     "title": "Lunch — The Charming Squire, South Bank",
-     "detail": "Gastropub on Grey St, across the road from the museum.\nSeafood, steaks, pasta, burgers; kids' meals; outdoor tables.",
-     "typeName": "Dining",
-     "emoji": "🍽️",
-     "est": 63.05,
-     "notes": "PRICED FROM THE MENU + reviewer receipts:\n• Fish, chips & salad AUD 32\n• Seafood linguine AUD 33 (kingfish 37, rump 46)\n• 2 kids' meals ~AUD 16 each — kids' prices not published, estimate\n• = AUD ~97 ≈ USD 63."
-    },
-    {
-     "start": "2:45 PM",
-     "end": "3:15 PM",
-     "title": "Walk back to the hotel over Victoria Bridge",
+     "start": "11:25 AM",
+     "end": "11:40 AM",
+     "title": "Walk to the City Botanic Gardens",
+     "detail": "• ~800 m via Albert St to the Alice St gate.",
      "typeName": "Walk",
      "emoji": "🚶"
     },
     {
-     "start": "3:15 PM",
-     "end": "4:30 PM",
-     "title": "Quiet time / short nap — hard stop 4:30 PM",
-     "typeName": "Hotel",
-     "emoji": "🛏️",
-     "detail": "• 75 minutes max. Longer and the kids are awake at 2 AM. Set an alarm."
+     "start": "11:40 AM",
+     "end": "12:10 PM",
+     "title": "City Botanic Gardens — riverside paths + playground",
+     "detail": "• Shaded paths under giant figs, mangrove boardwalk, playground.\n• The Kangaroo Point Green Bridge starts at the Alice/Edward St corner of the gardens.",
+     "typeName": "Sightseeing",
+     "emoji": "🌳"
     },
     {
-     "start": "4:30 PM",
-     "end": "5:30 PM",
-     "title": "City Botanic Gardens riverwalk + playground",
+     "start": "12:10 PM",
+     "end": "12:25 PM",
+     "title": "Cross the Kangaroo Point Green Bridge",
+     "detail": "• 470 m walking/cycling bridge over the river (opened Dec 2024).\n• Story Bridge and Kangaroo Point Cliffs ahead.",
      "typeName": "Walk",
-     "emoji": "🌳",
-     "detail": "• 10 min down Edward St. Shaded riverside paths, giant figs, playground, mangrove boardwalk."
+     "emoji": "🌉"
     },
     {
-     "start": "5:30 PM",
-     "end": "6:45 PM",
-     "title": "Dinner — Lennons Restaurant & Bar (in the hotel)",
-     "detail": "The hotel's restaurant. Dinner from 5:30 PM daily, children's menu.\nChosen because it's an elevator ride from bed on the one night that matters.",
+     "start": "12:25 PM",
+     "end": "12:45 PM",
+     "title": "Kangaroo Point Cliffs lookout",
+     "detail": "• The best free view of the city skyline and the river bend.\n• Little shade at the top — keep it short.",
+     "typeName": "Sightseeing",
+     "emoji": "📸"
+    },
+    {
+     "start": "12:45 PM",
+     "end": "1:25 PM",
+     "title": "Riverwalk to South Bank",
+     "detail": "• ~1.5–2 km, flat, along the riverfront past the Maritime Museum.\n• 40 min at kid pace, including a water stop.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "1:25 PM",
+     "end": "2:05 PM",
+     "title": "Wheel of Brisbane",
+     "detail": "• Enclosed, air-conditioned gondolas; ~15-min ride, 60 m up over South Bank.\n• 40 min allowed for the queue.",
+     "typeName": "Sightseeing",
+     "emoji": "🎡",
+     "est": 44.2,
+     "notes": "ESTIMATE (third-party listing, not the operator's own page):\n• ~AUD 20 adult × 2 + ~AUD 14 child × 2 = AUD 68 ≈ USD 44.\n• Confirm current price and hours."
+    },
+    {
+     "start": "2:05 PM",
+     "end": "2:30 PM",
+     "title": "Walk to the Cultural Centre pontoon and board",
+     "detail": "• Public pontoon in front of the Queensland Museum / art gallery, South Bank boardwalk.\n• Bathroom stop before boarding.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "2:30 PM",
+     "end": "4:00 PM",
+     "title": "River City Cruises — Mid-Afternoon Sightseeing Cruise (anchor)",
+     "detail": "• 90 min, seated and covered, with commentary; licensed bar on board.\n• Downriver past Kangaroo Point Cliffs, under the Story Bridge, out to New Farm and the Powerhouse.",
+     "typeName": "Excursion",
+     "emoji": "🛥️",
+     "est": 78.0,
+     "notes": "VERIFIED (Visit Brisbane listing):\n• Family (2 adults + 2 children 5–14) AUD 120 ≈ USD 78.\n• Adult AUD 49, child AUD 22.\n• Departs the Cultural Centre Public Pontoon, South Bank.",
+     "flag": "Confirm the 2:30 PM departure runs on Thursdays in December, then book."
+    },
+    {
+     "start": "4:00 PM",
+     "end": "4:40 PM",
+     "title": "CityCat South Bank → Riverside",
+     "detail": "• ~600 m walk along the boardwalk to the South Bank CityCat terminal.\n• Flat 50-cent fare per person (tap on with a card or phone).\n• Short ride upriver past the CBD; 40 min absorbs one missed boat.",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "est": 1.3
+    },
+    {
+     "start": "4:40 PM",
+     "end": "5:00 PM",
+     "title": "Riverfront boardwalk toward the Story Bridge",
+     "detail": "• Eagle St riverwalk, right outside the restaurant.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "5:00 PM",
+     "end": "6:00 PM",
+     "title": "Dinner — Riverbar & Kitchen, Eagle St",
+     "detail": "• Casual, on the river at Riparian Plaza (71 Eagle St), Story Bridge in view.\n• Fish & chips, burgers, pizza, pasta; real kids' menu (12 and under).\n• Kitchen open from 11:30 AM on Thursdays — book a deck table for 5:00.",
      "typeName": "Dining",
      "emoji": "🍽️",
-     "est": 78.0,
-     "notes": "NOT VERIFIED — menu is QR-code only:\n• 2 adult mains ~AUD 42 each\n• 2 kids' meals ~AUD 18 each (children's menu confirmed to exist)\n• = AUD ~120 ≈ USD 78."
+     "est": 61.75,
+     "menuUrl": "https://riverbarandkitchen.com.au/lunch-and-dinner",
+     "notes": "PRICED FROM THE CURRENT MENU (Oct 2026):\n• Beer-battered fish & chips AUD 35\n• Riverbar cheeseburger with chips AUD 30\n• 2 kids' meals (fish & chips / cheeseburger / ham & pineapple pizza / fettuccine) AUD 15 each\n• = AUD 95 ≈ USD 62."
     },
     {
-     "start": "6:45 PM",
-     "end": "7:30 PM",
-     "title": "Bedtime — lights out 7:30 PM",
-     "detail": "Tomorrow starts at 7:30 AM → lights out 7:30 PM.",
+     "start": "6:00 PM",
+     "end": "6:15 PM",
+     "title": "Walk back to the hotel",
+     "detail": "• ~700 m up Creek St / Queen St.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "6:15 PM",
+     "end": "7:15 PM",
+     "title": "Baths, pajamas — lights out by 7:15 PM",
+     "detail": "• Tomorrow's breakfast is 8:00 AM → back-at-hotel deadline 8:00 PM.\n• Bags are already packed — nothing to repack tomorrow.",
      "typeName": "Hotel",
      "emoji": "🛏️"
     }
@@ -233,260 +279,153 @@
   },
   {
    "date": "Friday, December 17, 2027",
-   "title": "Brisbane by river — CityCat, Streets Beach, Eat Street",
+   "title": "Brisbane → Australia Zoo → Noosa",
    "planned": false,
    "blocks": [
     {
-     "start": "7:30 AM",
-     "end": "8:30 AM",
+     "start": "8:00 AM",
+     "end": "8:45 AM",
      "title": "Breakfast — Lennons (in the hotel)",
-     "detail": "Weekday breakfast 6:30–10:00 AM. Expect an early natural wake-up.",
+     "detail": "• At 8:30, ask the valet for the car and the bell desk for the bags.",
      "typeName": "Dining",
      "emoji": "🍳",
      "notes": "• Globalist benefit: breakfast for 2 adults + 2 kids included. AUD 0."
     },
     {
-     "start": "8:30 AM",
-     "end": "8:50 AM",
-     "title": "Walk to Riverside CityCat terminal (Eagle St)",
-     "detail": "The car stays with the valet all day — the river is the transport. ~700 m, 15 min with kids.",
-     "typeName": "Walk",
-     "emoji": "🚶"
-    },
-    {
-     "start": "8:50 AM",
-     "end": "9:20 AM",
-     "title": "CityCat downriver → New Farm Park",
-     "detail": "Tap on with any credit card or phone: every bus, train and ferry in SE Queensland is a flat 50 cents (still in force Aug 2026).\nBest sightseeing in Brisbane, ~15–20 min under the Story Bridge. CityCats run every 15–30 min — the 30-min block absorbs one missed boat.",
-     "typeName": "Transportation",
-     "emoji": "⛴️",
-     "est": 1.3
-    },
-    {
-     "start": "9:20 AM",
-     "end": "10:30 AM",
-     "title": "New Farm Park — playground in the fig trees",
-     "detail": "Playground built into a grove of 100-year-old Moreton Bay figs on the riverbank; the old Powerhouse next door.\nShaded, big, right for 6- and 8-year-olds. Coffee kiosk.",
-     "typeName": "Entertainment",
-     "emoji": "🌳"
-    },
-    {
-     "start": "10:30 AM",
-     "end": "11:10 AM",
-     "title": "CityCat upriver → South Bank",
-     "detail": "~25 min to South Bank 1/2 terminal, plus waiting time.",
-     "typeName": "Transportation",
-     "emoji": "⛴️",
-     "est": 1.3
-    },
-    {
-     "start": "11:10 AM",
-     "end": "1:00 PM",
-     "title": "Streets Beach + Aquativity water park (anchor)",
-     "detail": "A real sand beach and lagoon in the middle of the city: free, lifeguards year-round, Aquativity kids' water-play park beside it.\nNo ticket, no queue, no museum.",
-     "typeName": "Beach/Pool",
-     "emoji": "🏖️"
-    },
-    {
-     "start": "1:00 PM",
-     "end": "1:25 PM",
-     "title": "Change out of wet gear",
-     "detail": "Change rooms and showers at the lagoon. 25 min for two kids.",
-     "typeName": "Logistics",
-     "emoji": "👕"
-    },
-    {
-     "start": "1:25 PM",
-     "end": "2:25 PM",
-     "title": "Lunch — Popolo, South Bank riverfront",
-     "detail": "Italian on the boardwalk (pasta, grills, salads), 5 min from Streets Beach.",
-     "typeName": "Dining",
-     "emoji": "🍝",
-     "est": 69.55,
-     "notes": "PRICED FROM THE CURRENT MENU:\n• Pappardelle beef-cheek ragù AUD 39\n• Ravioli cacio e pepe AUD 34\n• No kids' menu — the kids share a Gnocchi Sorrentina AUD 34 (tomato, basil, mozzarella)\n• = AUD 107 ≈ USD 70. Pasta, secondi and pizza — not pizza-only."
-    },
-    {
-     "start": "2:25 PM",
-     "end": "2:55 PM",
-     "title": "Walk back over Victoria Bridge",
-     "typeName": "Walk",
-     "emoji": "🚶"
-    },
-    {
-     "start": "2:55 PM",
-     "end": "4:30 PM",
-     "title": "Hotel downtime / rooftop pool",
-     "detail": "Day 2 of a 15-hour time change is the hardest afternoon. This is the rest block.",
-     "typeName": "Free Time",
-     "emoji": "🏊"
-    },
-    {
-     "start": "4:30 PM",
-     "end": "4:50 PM",
-     "title": "Walk to Riverside CityCat terminal",
-     "typeName": "Walk",
-     "emoji": "🚶"
-    },
-    {
-     "start": "4:50 PM",
-     "end": "5:40 PM",
-     "title": "CityCat downriver → Northshore Hamilton",
-     "detail": "The long ride, ~40 min plus waiting. Eat Street is a flat 250 m from the wharf.",
-     "typeName": "Transportation",
-     "emoji": "⛴️",
-     "est": 1.3
-    },
-    {
-     "start": "5:40 PM",
-     "end": "7:15 PM",
-     "title": "Dinner — Eat Street Northshore (Friday night market)",
-     "detail": "Shipping-container street-food market on the river: 70+ vendors, live music, fairy lights.\nFri–Sun nights only, which is why it's tonight. Card only at the gate and bars.",
-     "typeName": "Dining",
-     "emoji": "🍢",
-     "est": 59.8,
-     "notes": "• Entry AUD 6/adult, under-13s free = AUD 12.\n• Food ~AUD 20/adult + ~AUD 15/child across a few vendors ≈ AUD 70.\n• With a treat ≈ AUD 92 ≈ USD 60.\n• Eat Street Northshore opens Fri & Sat 4–10 PM, Sun 4–9 PM; entry from AUD 6 (kids' entry to confirm)."
-    },
-    {
-     "start": "7:15 PM",
-     "end": "7:30 PM",
-     "title": "Walk back to the wharf",
-     "typeName": "Walk",
-     "emoji": "🚶"
-    },
-    {
-     "start": "7:30 PM",
-     "end": "8:20 PM",
-     "title": "CityCat upriver → Riverside",
-     "detail": "~40 min plus waiting. Check the Translink app for the exact evening service before leaving the market.",
-     "typeName": "Transportation",
-     "emoji": "⛴️",
-     "est": 1.3
-    },
-    {
-     "start": "8:20 PM",
-     "end": "8:40 PM",
-     "title": "Walk to the hotel — in the room by 8:40 PM",
-     "detail": "Tomorrow leaves at 9:15 AM → back-at-hotel deadline 9:15 PM. 35 min to spare.",
-     "typeName": "Walk",
-     "emoji": "🚶"
-    }
-   ]
-  },
-  {
-   "date": "Saturday, December 18, 2027",
-   "title": "Brisbane → Noosa",
-   "planned": false,
-   "blocks": [
-    {
-     "start": "7:30 AM",
-     "end": "8:45 AM",
-     "title": "Breakfast at Lennons, check out",
-     "detail": "Packed the night before. Ask the valet for the car at 8:45 — allow 20 min for it to come up.",
-     "typeName": "Dining",
-     "emoji": "🍳",
-     "notes": "• Globalist benefit: breakfast included. AUD 0."
-    },
-    {
      "start": "8:45 AM",
-     "end": "9:15 AM",
-     "title": "Valet brings the car, load bags, booster check",
+     "end": "9:00 AM",
+     "title": "Check out — car out front, bags loaded, booster in",
      "typeName": "Logistics",
      "emoji": "🧳"
     },
     {
-     "start": "9:15 AM",
-     "end": "11:00 AM",
-     "title": "Drive Hyatt → Noosa",
-     "detail": "Inner City Bypass → Gateway Motorway north (toll ~AUD 6) → Bruce Highway (M1) → Eumundi–Noosa Rd exit → Noosa.\n~140 km, 1h35 clear; 1h45 allowed for Sunday-before-Christmas northbound traffic. One 10-min stop at the Aussie World / Glass House Mountains service centre if anyone needs it.\nNo airport, no train, no rental counter — Brisbane to Noosa in one go.",
+     "start": "9:00 AM",
+     "end": "10:15 AM",
+     "title": "Drive Hyatt → Australia Zoo, Beerwah",
+     "detail": "• Inner City Bypass → Gateway Motorway north (toll) → Bruce Highway (M1) → Steve Irwin Way exit (Glass House Mountains Tourist Route).\n• ~80 km, ~1 hr with clear roads; 1h15 allowed for Friday traffic in Queensland school holidays.\n• Bathroom stop at the highway service centre if needed.",
      "typeName": "Drive",
-     "emoji": "🛣️",
+     "emoji": "🚗",
      "est": 3.9,
-     "notes": "• Toll billed to the rental's toll account."
+     "notes": "• Toll ~AUD 6 ≈ USD 3.90, billed to the rental's toll account."
     },
     {
-     "start": "11:00 AM",
-     "end": "11:45 AM",
-     "title": "Groceries — Coles or Woolworths, Noosa Junction",
-     "detail": "First stop before the resort: breakfast supplies for the apartment kitchen, picnic food, and 6+ L of water for the beach day.\nThere are no shops between the ferry and Rainbow Beach.",
-     "typeName": "Shopping",
-     "emoji": "🛒",
-     "est": 78.0,
-     "notes": "• ~AUD 180 ≈ USD 120 for five breakfasts, a beach-day picnic, snacks and water."
+     "start": "10:15 AM",
+     "end": "10:35 AM",
+     "title": "Park and walk to the zoo gate",
+     "detail": "• Free on-site parking.\n• In school holidays the car park to the gate can take 15–20 min.",
+     "typeName": "Parking",
+     "emoji": "🅿️"
     },
     {
-     "start": "11:45 AM",
-     "end": "12:00 PM",
-     "title": "Drive to Hastings St, park at Noosa Woods",
-     "detail": "5 min. The Noosa Woods carpark at the river end of Hastings St — the kerb is hopeless in December.",
-     "typeName": "Drive",
-     "emoji": "🚗"
+     "start": "10:35 AM",
+     "end": "10:45 AM",
+     "title": "Enter Australia Zoo — buy kangaroo food",
+     "detail": "• Family pass bought online beforehand (skips the ticket queue).\n• Two bags of roo food at Guest Services or any gift shop.\n• Zoo open 9 AM–5 PM daily.",
+     "typeName": "Excursion",
+     "emoji": "🎟️",
+     "est": 155.97,
+     "notes": "VERIFIED (prices checked Oct 9, 2026):\n• Family of 4 pass (2 adults + 2 children 3–14) AUD 233.95 ≈ USD 152.07.\n• Roo food AUD 3 × 2 = AUD 6 ≈ USD 3.90.\n• = USD 155.97."
     },
     {
-     "start": "12:00 PM",
-     "end": "12:45 PM",
-     "title": "Lunch — Betty's Burgers, Hastings Street (the original)",
-     "detail": "Betty's started here before it went national. Order-at-counter burgers, fries, shakes. 5-min walk from the carpark.",
+     "start": "10:45 AM",
+     "end": "11:20 AM",
+     "title": "Tigers LIVE! — Tiger Temple, 11:00 AM",
+     "detail": "• Sumatran tigers with their keepers.\n• Limited seating — be there by 10:45.",
+     "typeName": "Entertainment",
+     "emoji": "🐯"
+    },
+    {
+     "start": "11:20 AM",
+     "end": "12:15 PM",
+     "title": "Hand-feed the kangaroos (anchor)",
+     "detail": "• Large walk-through enclosure: pat and hand-feed red and grey kangaroos and several kinds of wallaby.\n• Feeding runs all day.",
+     "typeName": "Excursion",
+     "emoji": "🦘"
+    },
+    {
+     "start": "12:15 PM",
+     "end": "12:55 PM",
+     "title": "Lunch — Crikey! Café",
+     "detail": "• Burgers, pizza, hot chips, sandwiches, salads.\n• Watch for birds at the outdoor tables.",
      "typeName": "Dining",
      "emoji": "🍔",
-     "est": 27.04,
-     "notes": "PRICED FROM THE MENU (Sep 2026):\n• 2 × Betty's Classic AUD 11.90\n• 2 × Kids beef burger AUD 8.90\n• = AUD 41.60 ≈ USD 27. Fries excluded."
+     "est": 42.9,
+     "notes": "ESTIMATE — menu prices not published online:\n• 2 adult mains ~AUD 20 each\n• 2 kids' meals ~AUD 13 each\n• = AUD ~66 ≈ USD 43."
     },
     {
-     "start": "12:45 PM",
-     "end": "2:30 PM",
-     "title": "Main Beach — first swim",
-     "detail": "Noosa Main Beach faces north into Laguna Bay — sheltered from the swell, the calmest patrolled beach on this coast, the one for young kids.\nBetween the flags in front of the surf club.",
-     "typeName": "Beach/Pool",
-     "emoji": "🏖️"
+     "start": "12:55 PM",
+     "end": "2:15 PM",
+     "title": "Wildlife Warriors Show — Crocoseum, 1:15 PM",
+     "detail": "• The zoo's signature show: birds, snakes and a saltwater crocodile strike at the water's edge.\n• Seating is first-come — be seated by 1:00.\n• Show length isn't published; ~1 hr allowed.",
+     "typeName": "Entertainment",
+     "emoji": "🐊"
     },
     {
-     "start": "2:30 PM",
-     "end": "2:50 PM",
-     "title": "Rinse and change (surf-club change rooms), walk to the car",
-     "typeName": "Logistics",
-     "emoji": "👕"
+     "start": "2:15 PM",
+     "end": "2:45 PM",
+     "title": "Koala walk-through — pat a koala",
+     "detail": "• On the way back toward the exit.",
+     "typeName": "Sightseeing",
+     "emoji": "🐨"
     },
     {
-     "start": "2:50 PM",
+     "start": "2:45 PM",
      "end": "3:05 PM",
-     "title": "Drive to RACV Noosa Resort",
-     "detail": "94 Noosa Drive — 5 minutes up the hill from Hastings St.",
-     "typeName": "Drive",
-     "emoji": "🚗"
+     "title": "Walk back to the car",
+     "typeName": "Walk",
+     "emoji": "🚶"
     },
     {
      "start": "3:05 PM",
-     "end": "3:35 PM",
-     "title": "Check in — RACV Noosa Resort (5 nights)",
+     "end": "4:00 PM",
+     "title": "Drive Australia Zoo → Noosa Junction",
+     "detail": "• Bruce Highway north → Eumundi–Noosa Rd → Noosa.\n• ~69 km, ~53 min.",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "4:00 PM",
+     "end": "4:45 PM",
+     "title": "Groceries — Coles or Woolworths, Noosa Junction",
+     "detail": "• Breakfast supplies for six mornings, picnic food, and 6+ L of water for the beach day.\n• There are no shops between the ferry and Rainbow Beach.",
+     "typeName": "Shopping",
+     "emoji": "🛒",
+     "est": 130.0,
+     "notes": "ESTIMATE:\n• ~AUD 200 ≈ USD 130 for six breakfasts, a beach-day picnic, snacks and water."
+    },
+    {
+     "start": "4:45 PM",
+     "end": "4:55 PM",
+     "title": "Drive to RACV Noosa Resort",
+     "detail": "• 94 Noosa Drive, Noosa Heads.",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "4:55 PM",
+     "end": "5:25 PM",
+     "title": "Check in — RACV Noosa Resort (6 nights)",
      "detail": "The resort, not the apartment block: heated lagoon pool with sand entry, a second pool with two waterslides, a splash park, playground, games room, school-holiday kids' club (4+), restaurant, tennis.\nTwo-bedroom apartments with full kitchen and laundry; free parking.\nFree shuttle to Hastings St every 30 min, 8 AM–6 PM.\nNot walkable to the beach (5-min drive) — that is the trade for resort grounds at roughly two-thirds the Hastings St price.",
      "typeName": "Hotel",
      "emoji": "🏨",
-     "est": 1690.0,
-     "nights": "5 nights (Sat–Thu, Dec 18–23)",
+     "est": 2028.0,
+     "nights": "6 nights (Fri Dec 17 – Thu Dec 23)",
      "roomType": "Two-Bedroom Apartment (king + king/twin, sleeps 5)",
      "address": "94 Noosa Drive, Noosa Heads QLD 4567",
      "flag": "Dec 2027 rates and any Christmas-week minimum stay are not published yet. Book ~10–12 months out for availability; confirm check-in time (assumed 3 PM).",
-     "notes": "• Placeholder ~AUD 520/night × 5 = AUD 2,600 ≈ USD 1,690. Published range for standard rooms is AUD 290–756/night; a two-bedroom the week before Christmas will sit in the upper half.\n• Versus Seahaven on Hastings St: AUD 630–1,050+/night for a beachfront two-bedroom → AUD 3,750–5,250 for the week.\n• Walkable, cheaper alternative if you'd rather be on Hastings St: Mantra French Quarter (lagoon pool, 6-min walk to the beach) — but Dec 2025/2026 reviews cite bugs, thin walls and dark units.\n• No Marriott/Hyatt/Hilton property exists in Noosa — cash stay either way."
+     "notes": "• Placeholder ~AUD 520/night × 6 = AUD 3,120 ≈ USD 2,028. Published range for standard rooms is AUD 290–756/night; a two-bedroom the week before Christmas will sit in the upper half.\n• Versus Seahaven on Hastings St: AUD 630–1,050+/night for a beachfront two-bedroom → AUD 3,750–5,250 for the week.\n• Walkable, cheaper alternative if you'd rather be on Hastings St: Mantra French Quarter (lagoon pool, 6-min walk to the beach) — but Dec 2025/2026 reviews cite bugs, thin walls and dark units.\n• No Marriott/Hyatt/Hilton property exists in Noosa — cash stay either way."
     },
     {
-     "start": "3:35 PM",
-     "end": "5:15 PM",
-     "title": "Water park + lagoon pool",
-     "detail": "Waterslides and the splash park — the kids' first look at the resort.",
-     "typeName": "Beach/Pool",
-     "emoji": "🏊"
-    },
-    {
-     "start": "5:15 PM",
+     "start": "5:25 PM",
      "end": "5:45 PM",
-     "title": "Shower, change, drive to Hastings St",
-     "detail": "Park at Noosa Woods — a 3-min walk to the surf club.",
+     "title": "Drive to Hastings St, park at Noosa Woods",
+     "detail": "• 5 min from the resort. Noosa Woods carpark — a 3-min walk to the surf club.",
      "typeName": "Drive",
      "emoji": "🚗"
     },
     {
      "start": "5:45 PM",
-     "end": "7:00 PM",
+     "end": "6:45 PM",
      "title": "Dinner — Noosa Heads Surf Club",
      "detail": "Upstairs at the surf lifesaving club, 69 Hastings St, over the patrolled beach.\nFish & chips, steaks, pasta, salads, seafood, kids' menu, sunset table.\nWalk-ins only — 5:45 beats the queue.",
      "typeName": "Dining",
@@ -496,20 +435,141 @@
      "notes": "PRICED FROM A MENU LISTING (Aug 2025; the club's own menu is an image):\n• Fish & chips AUD 24–28 → 26\n• Chicken parmigiana AUD 28–32 → 30\n• 2 × kids (nuggets / mini fish & chips / pasta) AUD 12–14 → 13\n• = AUD ~82 ≈ USD 53."
     },
     {
-     "start": "7:00 PM",
-     "end": "7:15 PM",
+     "start": "6:45 PM",
+     "end": "7:00 PM",
      "title": "Drive back to the resort",
      "typeName": "Drive",
      "emoji": "🚗"
     },
     {
-     "start": "7:15 PM",
-     "end": "8:00 PM",
+     "start": "7:00 PM",
+     "end": "7:30 PM",
      "title": "Bed",
-     "detail": "Tomorrow's walk starts at 7:15 AM → deadline 7:15 PM. Runs 45 min over; the walk can slide to 7:45 without losing anything.",
+     "detail": "• Tomorrow's breakfast is 7:30 AM in the apartment → back-at-resort deadline 7:30 PM.",
      "typeName": "Hotel",
-     "emoji": "🛏️",
-     "nights": "5 nights (Sat–Thu, Dec 18–23)"
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Saturday, December 18, 2027",
+   "title": "Noosa — Main Beach, Hastings Street, resort water park",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:15 AM",
+     "title": "Breakfast in the apartment",
+     "detail": "• From last night's groceries.",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:15 AM",
+     "end": "8:45 AM",
+     "title": "Sunscreen, hats, beach bag",
+     "typeName": "Logistics",
+     "emoji": "🧴"
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:00 AM",
+     "title": "Drive to Hastings St, park at Noosa Woods",
+     "detail": "• 5 min. The Noosa Woods carpark at the river end of Hastings St — arrive early on a December Saturday.",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "9:00 AM",
+     "end": "11:30 AM",
+     "title": "Main Beach, Noosa",
+     "detail": "Noosa Main Beach faces north into Laguna Bay — sheltered from the swell, the calmest patrolled beach on this coast, the one for young kids.\nBetween the flags in front of the surf club.",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️"
+    },
+    {
+     "start": "11:30 AM",
+     "end": "11:50 AM",
+     "title": "Rinse and change (surf-club change rooms)",
+     "typeName": "Logistics",
+     "emoji": "👕"
+    },
+    {
+     "start": "11:50 AM",
+     "end": "12:00 PM",
+     "title": "Walk to Betty's Burgers",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "12:00 PM",
+     "end": "12:45 PM",
+     "title": "Lunch — Betty's Burgers, Hastings Street (the original)",
+     "detail": "Betty's started here before it went national. Order-at-counter burgers, fries, shakes.\nHastings St, a 5-min walk from the surf club.",
+     "typeName": "Dining",
+     "emoji": "🍔",
+     "est": 27.04,
+     "notes": "PRICED FROM THE MENU (Sep 2026):\n• 2 × Betty's Classic AUD 11.90\n• 2 × Kids beef burger AUD 8.90\n• = AUD 41.60 ≈ USD 27. Fries excluded."
+    },
+    {
+     "start": "12:45 PM",
+     "end": "1:15 PM",
+     "title": "Hastings St stroll back to the car",
+     "detail": "• Shops and gelato along the way.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "1:15 PM",
+     "end": "1:30 PM",
+     "title": "Drive to the resort",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "1:30 PM",
+     "end": "4:00 PM",
+     "title": "Water park + lagoon pool",
+     "detail": "• Waterslides, splash park and the sand-entry lagoon pool.\n• Retreat to the apartment whenever the kids flag — day 3 of jet lag.",
+     "typeName": "Beach/Pool",
+     "emoji": "🏊"
+    },
+    {
+     "start": "4:00 PM",
+     "end": "4:30 PM",
+     "title": "Showers and change",
+     "typeName": "Logistics",
+     "emoji": "🚿"
+    },
+    {
+     "start": "4:30 PM",
+     "end": "4:45 PM",
+     "title": "Drive to dinner",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "4:45 PM",
+     "end": "5:45 PM",
+     "title": "Dinner — restaurant to be chosen",
+     "detail": "• Within 15 min of the resort.",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "5:45 PM",
+     "end": "6:00 PM",
+     "title": "Drive back to the resort",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "6:30 PM",
+     "title": "Back at the resort — bed by 6:30 PM",
+     "detail": "• Tomorrow's breakfast is 6:30 AM for the coastal walk → back-at-resort deadline 6:30 PM.",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
     }
    ]
   },
@@ -2147,16 +2207,32 @@
      "note": "Delivery to RACV ~5 PM Dec 21, collection the EVENING of Dec 22 (in writing)."
     },
     {
+     "name": "River City Cruises — Dec 16",
+     "note": "Mid-Afternoon Sightseeing Cruise 2:30–4:00 PM from the Cultural Centre pontoon; family AUD 120. Confirm it runs Thursdays in December, then book."
+    },
+    {
+     "name": "Riverbar & Kitchen — Dec 16",
+     "note": "Book a deck table for 5:00 PM."
+    },
+    {
+     "name": "Australia Zoo — Dec 17",
+     "note": "Buy the Family of 4 pass online (AUD 233.95 as of Oct 2026). Re-check show times the week before: Tigers LIVE! 11:00, Wildlife Warriors 1:15."
+    },
+    {
+     "name": "Dinner — Dec 18, Noosa",
+     "note": "Restaurant not chosen yet; 4:45 PM, within 15 min of RACV."
+    },
+    {
      "name": "Rental car",
      "note": "BNE International Thu Dec 16 ~7:45 AM → BNE Domestic Thu Dec 23 ~9:45 AM (7 days)."
     },
     {
      "name": "RACV Noosa Resort",
-     "note": "Two-bedroom apartment Dec 18–23; rate placeholder AUD 520/night."
+     "note": "Two-bedroom apartment Dec 17–23 (6 nights); rate placeholder AUD 520/night. Check any Christmas-week minimum stay."
     },
     {
      "name": "Hyatt Regency Brisbane",
-     "note": "Dec 15–18 on points (3 × 12,000 = 36,000 modeled). The Dec 15 night guarantees the room at 9:15 AM on Dec 16 — tell the hotel you arrive that morning so it isn't a no-show."
+     "note": "Dec 15–17 on points (2 × 12,000 = 24,000 modeled). The Dec 15 night guarantees the room at 9:15 AM on Dec 16 — tell the hotel you arrive that morning so it isn't a no-show."
     },
     {
      "name": "Australian ETA",
