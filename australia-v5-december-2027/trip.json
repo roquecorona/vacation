@@ -452,7 +452,7 @@
   },
   {
    "date": "Sunday, December 19, 2027",
-   "title": "Noosa — Main Beach, river ferry to Noosaville",
+   "title": "Noosa — Main Beach, then sand flats and sunset on the Spit",
    "planned": false,
    "blocks": [
     {
@@ -488,89 +488,88 @@
     {
      "start": "11:50 AM",
      "end": "12:00 PM",
-     "title": "Walk to Bistro C",
+     "title": "Walk to Betty's Burgers",
      "typeName": "Walk",
      "emoji": "🚶"
     },
     {
      "start": "12:00 PM",
      "end": "1:00 PM",
-     "title": "Lunch — Bistro C, Hastings Street",
-     "detail": "Beachfront, lunch 12–3 PM, bookings taken — book the night before.\nCoconut chicken salad, local fish, steak, calamari; kids' menu.",
+     "title": "Lunch — Betty's Burgers, Hastings Street (the original)",
+     "detail": "Betty's started here before it went national. Order-at-counter burgers, fries, shakes.\nHastings St, a few minutes from Main Beach.",
      "typeName": "Dining",
-     "emoji": "🍽️",
-     "est": 83.2,
-     "menuUrl": "https://www.bistroc.com.au/noosa-beach-restaurant-menus/",
-     "notes": "NOT VERIFIED — menu published as images:\n• 2 adult mains ~AUD 46 each (Hastings St beachfront; reviewers rate it $$–$$$)\n• 2 kids' meals ~AUD 18 each (children's menu confirmed by reviewers)\n• = AUD ~128 ≈ USD 83."
+     "emoji": "🍔",
+     "est": 27.04,
+     "notes": "PRICED FROM THE MENU (Sep 2026):\n• 2 × Betty's Classic AUD 11.90\n• 2 × Kids beef burger AUD 8.90\n• = AUD 41.60 ≈ USD 27. Fries excluded."
     },
     {
      "start": "1:00 PM",
-     "end": "1:30 PM",
-     "title": "Back to the apartment — drop beach gear",
-     "detail": "• Fresh sunscreen, hats and water for the afternoon.",
-     "typeName": "Logistics",
-     "emoji": "⏱️"
-    },
-    {
-     "start": "1:30 PM",
-     "end": "1:40 PM",
-     "title": "Walk to the Noosa Ferry jetty",
-     "detail": "• River end of Hastings St.",
+     "end": "1:10 PM",
+     "title": "Walk back to Ocean Breeze",
      "typeName": "Walk",
      "emoji": "🚶"
     },
     {
-     "start": "1:40 PM",
-     "end": "2:40 PM",
-     "title": "Noosa Ferry → Noosaville",
-     "detail": "• The hop-on hop-off river ferry from the jetty at the river end of Hastings St — slow, open-sided, past the canals and houseboats.\n• ~30 min ride; services roughly hourly — the 60-min block absorbs a wait.\n• Get off at the Noosa Yacht Club stop.",
-     "typeName": "Transportation",
-     "emoji": "⛴️",
-     "est": 45.5,
-     "notes": "• All-day family pass ~AUD 70 ≈ USD 45.50 (confirm current fares and the Sunday timetable)."
+     "start": "1:10 PM",
+     "end": "4:15 PM",
+     "title": "Apartment — showers, rest",
+     "detail": "• Out of the midday sun before the evening at the Spit.",
+     "typeName": "Free Time",
+     "emoji": "⏰"
     },
     {
-     "start": "2:40 PM",
-     "end": "4:40 PM",
-     "title": "Pirate Playground + Gympie Terrace riverfront",
-     "detail": "• Sunken-ship playground on the river beside the Noosa Yacht Club, with picnic tables and toilets.\n• Then the shaded Gympie Terrace riverfront: pelicans, boats, a gelato stop.",
-     "typeName": "Entertainment",
-     "emoji": "🏴‍☠️"
+     "start": "4:15 PM",
+     "end": "4:30 PM",
+     "title": "Drive to the Noosa Woods / Spit car park",
+     "detail": "• ~1.5 km to the river end of Hastings St, ~5 min.\n• The car park fills on summer weekends — fallback: park at Ocean Breeze and walk ~15 min.",
+     "typeName": "Drive",
+     "emoji": "🚗"
     },
     {
-     "start": "4:40 PM",
-     "end": "5:00 PM",
-     "title": "Walk along Gympie Terrace to the Noosa Boathouse",
-     "detail": "• ~600 m along the river.",
+     "start": "4:30 PM",
+     "end": "6:45 PM",
+     "title": "Noosa Spit — sand flats and sunset (anchor)",
+     "detail": "• Where the Noosa River meets Laguna Bay: calm, warm, shallow water over sandbars, tiny fish, soldier crabs, no surf.\n• The tide falls all afternoon to a 7:09 PM low (0.51 m, BOM 2027 prediction, Noosa Head) — the flats keep growing until dark.\n• Sunset 6:38 PM over the river and the hinterland hills; light to walk until ~7:05.\n• Stay on the river side of the spit; the ocean side is unpatrolled.",
+     "typeName": "Beach/Pool",
+     "emoji": "🌅"
+    },
+    {
+     "start": "6:45 PM",
+     "end": "7:00 PM",
+     "title": "Drive back to Ocean Breeze, park",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "7:10 PM",
+     "title": "Walk to Zachary's",
+     "detail": "• 15 Hastings St, ~400 m.",
      "typeName": "Walk",
      "emoji": "🚶"
     },
     {
-     "start": "5:00 PM",
-     "end": "6:00 PM",
-     "title": "Dinner — Noosa Boathouse, Noosaville",
-     "detail": "Three-storey floating restaurant on the river at Gympie Terrace. Bistro downstairs, rooftop bar upstairs; the kids watch the boats from the deck.\nFish & chips, steaks, short rib, lamb gnocchi; a real kids' menu. Book a deck table for 5:00.",
+     "start": "7:10 PM",
+     "end": "8:10 PM",
+     "title": "Dinner — Zachary's Gourmet Pizza Bar, Hastings St",
+     "detail": "• Relaxed wood-fired pizza and pasta bar; walk in straight from the beach — beach clothes are fine.\n• Open 7 days, noon until late.",
      "typeName": "Dining",
-     "emoji": "🍽️",
-     "est": 77.35,
-     "menuUrl": "https://www.noosaboathouse.com.au/uploads/images/Noosa-Boathouse-Menu-July-2026-WEB.pdf",
-     "notes": "PRICED FROM THE MENU (July 2026):\n• Fish & chips AUD 39\n• Slow-braised beef short rib AUD 44\n• Kids battered dory & chips AUD 18\n• Kids penne bolognese AUD 18\n• = AUD 119 ≈ USD 77."
+     "emoji": "🍕",
+     "est": 57.2,
+     "notes": "ESTIMATE — menu prices not published online:\n• 2 adult mains (large pizza / pasta) ~AUD 28 each\n• 2 kids' meals ~AUD 16 each\n• = AUD ~88 ≈ USD 57. (A 2022 review put most large pizzas under AUD 25.)"
     },
     {
-     "start": "6:00 PM",
-     "end": "6:20 PM",
-     "title": "Taxi back to Hastings St",
-     "detail": "• ~6 km, 15 min. Book a taxi or rideshare from the Boathouse at 5:50.",
-     "typeName": "Transportation",
-     "emoji": "🚕",
-     "est": 16.25,
-     "notes": "ESTIMATE:\n• ~AUD 25 ≈ USD 16."
+     "start": "8:10 PM",
+     "end": "8:20 PM",
+     "title": "Walk back to Ocean Breeze",
+     "typeName": "Walk",
+     "emoji": "🚶"
     },
     {
-     "start": "6:20 PM",
-     "end": "6:30 PM",
+     "start": "8:20 PM",
+     "end": "8:45 PM",
      "title": "Bed",
-     "detail": "• Tomorrow's breakfast is 6:30 AM for the coastal walk → back-at-hotel deadline 6:30 PM.",
+     "detail": "• Tomorrow starts later: breakfast 8:15, out the door at 9:00.",
      "typeName": "Hotel",
      "emoji": "🛏️"
     }
@@ -2104,7 +2103,7 @@
     },
     {
      "name": "Noosa bookings",
-     "note": "Noosa Reef Hotel deck table Dec 18 (6:40 PM); Bistro C lunch Dec 19 (12:00); Noosa Boathouse Dec 19 (5:00 PM); Everglades Serenity Cruise Dec 20 (2:00 PM)."
+     "note": "Noosa Reef Hotel deck table Dec 18 (6:40 PM). Dec 20–21 plans being reworked."
     },
     {
      "name": "Dinner — Dec 22, Noosa",
