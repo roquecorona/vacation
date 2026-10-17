@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "title": "Maui Summer 2027",
+    "dates": "Jul 13–21, 2027 (FLL → Seattle → Maui · Grand Wailea · home via LAX red-eye)",
+    "route": [
+      {
+        "name": "Fort Lauderdale",
+        "sub": "home (FLL)"
+      },
+      {
+        "name": "Wailea, Maui",
+        "sub": "7 nights · Grand Wailea, A Waldorf Astoria Resort"
+      },
+      {
+        "name": "Fort Lauderdale",
+        "sub": "home Wed Jul 21 (red-eye via LAX)"
+      }
+    ]
+  },
+  "days": [
+    {
+      "date": "Tuesday, July 13, 2027",
+      "title": "Fort Lauderdale → Seattle → Maui",
+      "planned": false,
+      "blocks": [
+        {
+          "start": "4:30 AM",
+          "end": "5:30 AM",
+          "title": "Wake up & get ready at home",
+          "detail": "• 1 hr morning prep — dress, bathroom, last bags to the car.\n• Night before (Mon Jul 12): kids asleep by 6:30 PM for 10 hrs of sleep — bedtime routine starts 5:30 PM.\n• Breakfast is at the airport, after security.\n• Kids' two backless boosters go in their backpacks.",
+          "typeName": "Logistics",
+          "emoji": "⏰"
+        },
+        {
+          "start": "5:30 AM",
+          "end": "6:15 AM",
+          "title": "Drive home → FLL (Hibiscus Garage, Terminal 2)",
+          "detail": "• ~45 min incl. the garage ramps at this hour.\n• Delta flies from Terminal 2 — Hibiscus Garage is the one connected to Terminals 1–2.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "6:15 AM",
+          "end": "6:25 AM",
+          "title": "Park — FLL Hibiscus Garage, long-term levels 3–7",
+          "detail": "• Long-term rate: $20/day max (incl. tax).\n• Note the level and row — you return on a 6:52 AM red-eye.",
+          "typeName": "Parking",
+          "emoji": "🅿️",
+          "est": 172.0,
+          "notes": "• Parked Tue Jul 13 ~6:15 AM → exit Wed Jul 21 ~7:45 AM = 8 full days + ~1.5 hrs.\n• 8 × $20 = $160 + ~6 × $2 (20-min intervals) ≈ $172. Estimate.\n• Rate source: Broward County Aviation Dept (FLL) parking page."
+        },
+        {
+          "start": "6:25 AM",
+          "end": "6:35 AM",
+          "title": "Walk to Terminal 2 with bags",
+          "detail": "• 3 large checked bags, 1 carry-on, 2 backpacks, umbrella stroller.",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "6:35 AM",
+          "end": "7:00 AM",
+          "title": "Delta bag drop + TSA",
+          "detail": "• Check the 3 large bags at the Delta counter (tagged through to OGG).\n• Umbrella stroller: keep it and gate-check it at the jet bridge.\n• Arriving ~2 hrs before departure for a family of 4 with checked bags.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "7:00 AM",
+          "end": "7:35 AM",
+          "title": "Breakfast — FLL Terminal 2 (airside, restaurant TBD)",
+          "detail": "• Quick-service near the gate.\n• Main Cabin on both flights is snacks only — real food is buy-on-board or what you bring.",
+          "typeName": "Dining",
+          "emoji": "🍳",
+          "est": 40.0,
+          "notes": "• Estimate — restaurant not chosen, menu not checked.\n• ~2 adult breakfasts + 2 kids' breakfasts."
+        },
+        {
+          "start": "7:35 AM",
+          "end": "8:15 AM",
+          "title": "Boarding — DL356",
+          "detail": "• Delta usually boards ~40 min before departure.\n• Be at the gate by 7:35 AM.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "8:15 AM",
+          "end": "12:00 PM",
+          "title": "Delta DL356 — FLL → SEA — Nonstop — 6h45m",
+          "detail": "• FLL → SEA, Economy (Main), 4 passengers, Airbus A320.\n• Lands 12:00 PM Pacific (3:00 PM Eastern).\n• Bags are checked through to OGG — no baggage claim in Seattle.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "route": "FLL → SEA",
+          "flightNo": "Delta 356",
+          "cabin": "Economy (Main)",
+          "seats": "Not yet assigned",
+          "notes": "• First leg of one connecting award itinerary. Points and cash for the whole outbound are logged on the SEA → OGG leg."
+        },
+        {
+          "start": "12:00 PM",
+          "end": "12:15 PM",
+          "title": "Deplane & walk into the terminal",
+          "detail": "• Family of 4 rarely deplanes first — full gate-to-food-court time.\n• Collect the gate-checked stroller at the jet bridge.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "12:15 PM",
+          "end": "1:00 PM",
+          "title": "Lunch — SEA airport (restaurant TBD, near the connecting gate)",
+          "detail": "• 2h 30m connection — sit-down or quick-service both fit.\n• Pick something near the DL537 gate once the gate is posted in the Fly Delta app.",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "est": 60.0,
+          "notes": "• Estimate — restaurant not chosen, menu not checked.\n• 2 adult mains + 2 kids' meals."
+        },
+        {
+          "start": "1:00 PM",
+          "end": "1:50 PM",
+          "title": "Bathrooms, refill water bottles, walk to the DL537 gate",
+          "detail": "• Buffer before a 6-hour flight.\n• Buy snacks for the second flight here.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "1:50 PM",
+          "end": "2:30 PM",
+          "title": "Boarding — DL537",
+          "detail": "• Be at the gate by 1:50 PM.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "2:30 PM",
+          "end": "5:46 PM",
+          "title": "Delta DL537 — SEA → OGG (Kahului, Maui) — Nonstop — 6h16m",
+          "detail": "• SEA → OGG, Economy (Main), 4 passengers, Airbus A320.\n• Lands 5:46 PM Hawaii time (8:46 PM Pacific / 11:46 PM Eastern).\n• Hawaii stays on HST all year — 6 hrs behind Florida in July.\n• Fill in the Hawaii agricultural declaration form before landing (handed out on board).\n• Total outbound: 8:15 AM ET → 5:46 PM HST = 15h 31m.",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "route": "SEA → OGG",
+          "flightNo": "Delta 537",
+          "cabin": "Economy (Main)",
+          "seats": "Not yet assigned",
+          "program": "Delta SkyMiles",
+          "points": "120400",
+          "est": 22.4,
+          "flag": "Not booked yet — book FLL → SEA → OGG (DL356 + DL537) for Tue Jul 13, 2027 on Delta SkyMiles.",
+          "notes": "• Outbound award as priced on seats.aero: 30.1K SkyMiles + $5.60 per person → 120,400 + $22.40 for four.\n• 9 seats showing at that price.\n• Whole itinerary (both legs) logged here."
+        },
+        {
+          "start": "5:46 PM",
+          "end": "6:05 PM",
+          "title": "Deplane & walk to baggage claim",
+          "detail": "• Collect the gate-checked stroller at the jet bridge.\n• Bathroom stop before claim.",
+          "typeName": "Logistics",
+          "emoji": "⏱️"
+        },
+        {
+          "start": "6:05 PM",
+          "end": "6:35 PM",
+          "title": "Baggage claim",
+          "detail": "• 3 large bags — OGG claim is often slow in the evening arrival wave.",
+          "typeName": "Logistics",
+          "emoji": "🧳"
+        },
+        {
+          "start": "6:35 PM",
+          "end": "6:50 PM",
+          "title": "Tram to the Consolidated Rental Car Facility",
+          "detail": "• Board the tram across from baggage claim.\n• Short ride to the rental car center.",
+          "typeName": "Transportation",
+          "emoji": "🚋"
+        },
+        {
+          "start": "6:50 PM",
+          "end": "7:25 PM",
+          "title": "Rental car pickup — Alamo, Chrysler Pacifica (or similar minivan)",
+          "detail": "• Use Alamo mobile check-in to skip the counter.\n• Fold the third row flat — 3 large bags, carry-on, backpacks and stroller fit behind row 2.\n• Install both boosters. Hawaii law: booster seat until age 10 unless the child is at least 4'9\".\n• 35 min: walk-around, boosters, loading bags, finding the exit.",
+          "typeName": "Rental Car",
+          "emoji": "🚗",
+          "est": 60.0,
+          "notes": "• Estimate.\n• Pickup Tue Jul 13 6:30 PM → return Tue Jul 20 by 10:30 AM (stays 7 rental days).\n• Live quote seen Oct 17, 2026 on Discount Hawaii Car Rental: Alamo Pacifica $623.90 total, taxes incl., unlimited miles, free cancellation, pay at pickup."
+        },
+        {
+          "start": "7:25 PM",
+          "end": "7:35 PM",
+          "title": "Drive to dinner (Kahului)",
+          "detail": "• Kahului is next to the airport — stay close, then one drive to Wailea.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "7:35 PM",
+          "end": "8:20 PM",
+          "title": "Dinner — TBD (Kahului, on the way to Wailea)",
+          "detail": "• Restaurant not chosen yet.\n• Pick somewhere quick with a kids' menu — body clock is past 1:30 AM Eastern.",
+          "typeName": "Dining",
+          "emoji": "🍽️",
+          "est": 100.0,
+          "notes": "• Estimate — restaurant not chosen, menu not checked.\n• 2 adult mains + 2 kids' meals."
+        },
+        {
+          "start": "8:20 PM",
+          "end": "8:55 PM",
+          "title": "Drive Kahului → Grand Wailea",
+          "detail": "• ~17 mi, ~25–30 min: Mokulele Hwy (311) → Piʻilani Hwy (31) → Wailea Ike Dr → Wailea Alanui Dr.\n• 5 min buffer for the resort entrance in the dark.",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "8:55 PM",
+          "end": "9:00 PM",
+          "title": "Valet — Grand Wailea (valet only, no self-parking)",
+          "detail": "• Valet only — no self-park option at the resort.\n• Use the resort's free Wailea ride app for short hops instead of pulling the car.",
+          "typeName": "Parking",
+          "emoji": "🅿️",
+          "est": 476.44,
+          "notes": "• $65 per car per day (Grand Wailea official resort-inclusions page) × 7 nights = $455.\n• + ~4.712% Hawaii GET ≈ $476.44 for the stay. Estimate.\n• Not covered by the points booking."
+        },
+        {
+          "start": "9:00 PM",
+          "end": "9:25 PM",
+          "title": "Check in — Grand Wailea, A Waldorf Astoria Resort",
+          "detail": "• Lei greeting at arrival.\n• Ask for a quiet room near the Wailea Canyon Activity Pool side if Garden View allows.\n• Kids pick up their Grand Passport (on-property activity map) at check-in.",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "program": "Hilton Honors",
+          "points": "805000",
+          "conf": "3115673578",
+          "nights": "7 nights (Tue Jul 13 – Tue Jul 20)",
+          "roomType": "Garden View – 2 Queen Beds (Standard Room Reward), 2 adults + 2 kids",
+          "address": "3850 Wailea Alanui Dr, Wailea, HI 96753",
+          "flag": "805,000 = 7 × 115,000 — confirm Hilton applied the 5th-night-free benefit (Silver+ on a 5+ night Standard Room Reward).",
+          "notes": "• BOOKED — confirmation 3115673578. Total 805,000 Hilton Honors points.\n• Check-in 4:00 PM, check-out 11:00 AM.\n• Resort fee ($50/night) is waived on award stays.\n• Valet parking billed separately — see the valet block."
+        },
+        {
+          "start": "9:25 PM",
+          "end": "10:25 PM",
+          "title": "Bedtime routine",
+          "detail": "• Lights out ~10:25 PM Hawaii time (4:25 AM on the kids' Florida clock).\n• Expect a very early wake-up tomorrow — Day 2 is a resort day with no fixed start.",
+          "typeName": "Free Time",
+          "emoji": "🌙"
+        }
+      ]
+    },
+    {
+      "date": "Wednesday, July 14, 2027",
+      "title": "Resort day — Wailea Canyon Activity Pool",
+      "planned": false,
+      "blocks": []
+    },
+    {
+      "date": "Thursday, July 15, 2027",
+      "title": "Molokini sunrise snorkel",
+      "planned": false,
+      "blocks": []
+    },
+    {
+      "date": "Friday, July 16, 2027",
+      "title": "ʻĪao Valley · Wailuku · Paʻia · Hoʻokipa",
+      "planned": false,
+      "blocks": []
+    },
+    {
+      "date": "Saturday, July 17, 2027",
+      "title": "Beach & resort day · Grand Lūʻau",
+      "planned": false,
+      "blocks": []
+    },
+    {
+      "date": "Sunday, July 18, 2027",
+      "title": "Upcountry — Kula · Makawao",
+      "planned": false,
+      "blocks": []
+    },
+    {
+      "date": "Monday, July 19, 2027",
+      "title": "Ulua Beach snorkel",
+      "planned": false,
+      "blocks": []
+    },
+    {
+      "date": "Tuesday, July 20, 2027",
+      "title": "Depart — OGG → LAX → FLL (red-eye)",
+      "planned": false,
+      "blocks": []
+    },
+    {
+      "date": "Wednesday, July 21, 2027",
+      "title": "Arrive FLL 6:52 AM",
+      "planned": false,
+      "blocks": []
+    }
+  ],
+  "packing": {
+    "trackerTitle": "Item tracker",
+    "outfitDays": [],
+    "trackerDays": []
+  },
+  "supplies": [],
+  "ideas": [
+    {
+      "name": "Still open / TBD",
+      "items": [
+        {
+          "name": "Book the outbound award",
+          "note": "DL356 + DL537 FLL → SEA → OGG, Tue Jul 13 — 30.1K + $5.60 pp on Delta SkyMiles (seats.aero)."
+        },
+        {
+          "name": "Book the return award",
+          "note": "DL463 + DL477 OGG → LAX → FLL, Tue Jul 20 12:45 PM → Wed 6:52 AM — 47.7K + $5.60 pp. Compare Jul 19/21 or an SEA routing first."
+        },
+        {
+          "name": "Reserve the minivan",
+          "note": "Alamo Pacifica via Discount Hawaii Car Rental — free cancellation, pay at pickup."
+        },
+        {
+          "name": "Hilton 5th night free",
+          "note": "805,000 = 7 × 115,000 — confirm with Hilton."
+        },
+        {
+          "name": "Haleakalā",
+          "note": "Daytime/sunset visit or skip. Sunrise needs a Recreation.gov reservation (60 days out) and a ~3 AM start."
+        },
+        {
+          "name": "Kahului dinner",
+          "note": "Pick a quick spot with a kids' menu for arrival night."
+        }
+      ]
+    }
+  ],
+  "alternatives": null
+}
