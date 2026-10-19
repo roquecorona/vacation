@@ -97,19 +97,26 @@
         {
           "start": "7:41 AM",
           "end": "11:33 AM",
-          "title": "Alaska 316 - MIA → SEA - nonstop 6h52m",
+          "title": "Alaska 316 - MIA → SEA - nonstop 6h52m — BOOKED",
           "typeName": "Flight",
           "emoji": "✈️",
           "detail": "• Boeing 737 MAX 9, Economy\n• Lands 11:33 AM Pacific (2:33 PM Miami time)\n• Main cabin food is for purchase - snacks and soft drinks are free\n• Packed lunch from home before landing",
           "program": "Alaska Atmos Rewards",
-          "points": "50000",
+          "points": 50000,
           "paid": 22.4,
-          "conf": "CTIYJB",
+          "conf": "Alaska CTIYJB",
           "seats": "24C, 24D, 24E, 24F",
           "route": "MIA → SEA",
           "flightNo": "Alaska 316",
           "cabin": "Economy (Main)",
-          "notes": "Booked. 12,500 Atmos points + $5.60 per person x 4 = 50,000 points + $22.40; taxes paid with the BofA Atmos Ascent card ending 1029. Add each traveler's Atmos number to the reservation."
+          "notes": "Booked. 12,500 Atmos points + $5.60 per person x 4 = 50,000 points + $22.40; taxes paid with the BofA Atmos Ascent card ending 1029. Add each traveler's Atmos number to the reservation.",
+          "confLinks": [
+            {
+              "label": "Alaska CTIYJB",
+              "url": "https://www.alaskaair.com/booking/reservation/manage"
+            }
+          ],
+          "flag": "BOOKED — seats 24C, 24D, 24E, 24F; $22.40 taxes paid on the BofA Atmos Ascent card ending 1029. Still to do: add each traveler's Atmos number to the reservation."
         },
         {
           "start": "11:33 AM",
@@ -145,7 +152,14 @@
           "program": "Turo",
           "est": 570,
           "notes": "Estimate: ~$570 for 8 days, return Dec 29. Confirm whether child seats are included.",
-          "flag": "Get written OK from the host to drive into Canada, plus Canada insurance coverage and winter-rated (M+S or snowflake) tires for the Sea-to-Sky."
+          "flag": "Get written OK from the host to drive into Canada, plus Canada insurance coverage and winter-rated (M+S or snowflake) tires for the Sea-to-Sky.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Turo — trips",
+              "url": "https://turo.com/us/en/trips"
+            }
+          ]
         },
         {
           "start": "1:00 PM",
@@ -158,18 +172,24 @@
         {
           "start": "1:30 PM",
           "end": "1:45 PM",
-          "title": "Arrive Hyatt Regency Seattle - park & check in",
+          "title": "Arrive Hyatt Regency Seattle - park & check in — BOOKED",
           "typeName": "Hotel",
           "emoji": "🏨",
           "detail": "• Hotel garage (no valet)\n• Ask for early check-in; bell desk holds bags if the room isn't ready\n• Regency Club (8th floor) open to Globalists",
           "program": "World of Hyatt",
-          "points": "30000",
-          "conf": "40023B30138298",
+          "points": 30000,
+          "conf": "World of Hyatt — 40023B30138298 (guest: Jennifer Borges)",
           "roomType": "Regency Suite (Suite Upgrade Award)",
           "nights": "2 nights (Mon-Wed, Dec 21-23)",
           "address": "808 Howell St, Seattle, WA 98101",
           "notes": "Booked under Jennifer Borges: Regency Suite via Suite Upgrade Award, 15,000 points/night (Category 5) = 30,000 points, 2 adults + 2 children. Globalist: breakfast at Andare buffet, Regency Club access, free parking on award stays. The confirmation shows a $29/night destination fee for bookings from June 1, 2026 - usually waived on award stays; confirm at check-in.",
-          "flag": "Official check-in is 4:00 PM - ask for early check-in; the bell desk can hold bags."
+          "flag": "Official check-in is 4:00 PM - ask for early check-in; the bell desk can hold bags.",
+          "confLinks": [
+            {
+              "label": "Hyatt 40023B30138298",
+              "url": "https://www.hyatt.com/en-US/account/reservations"
+            }
+          ]
         },
         {
           "start": "1:45 PM",
@@ -206,7 +226,14 @@
           "detail": "• Fisher Pavilion block at the foot of the Space Needle\n• Christmas carousel, walk-through tree, daily snow showers, Santa photos\n• Heated Alpen Haus for warming up\n• Lights come on around sunset (~4:20 PM) with the Space Needle lit overhead",
           "est": 64.99,
           "notes": "Family Season Pass $64.99 covers 2 adults + 2 youth; kids 6 and under always free; no timeslot booking needed. Single-day alternative: adult $23.59 for a Dec 21 afternoon slot; youth (7-14) discounted rate shown at checkout. Prices from the official ticket site, Oct 2026. Carousel may cost extra.",
-          "flag": "Dec 19-23 are the busiest days - buy ahead."
+          "flag": "Dec 19-23 are the busiest days - buy ahead.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Seattle Christmas Market — tickets",
+              "url": "https://tickets.seattlechristmasmarket.com/"
+            }
+          ]
         },
         {
           "start": "4:30 PM",
@@ -242,7 +269,15 @@
           "detail": "• 2202B 8th Ave; Pan-Asian, family style\n• Kids' menu: chicken nuggets, egg noodles, chicken satay, fried rice\n• Open Mon 4-8 PM - reserve the 5:00 table",
           "est": 87.33,
           "menuUrl": "https://www.wildginger.net/s/wgm_060226.pdf",
-          "notes": "Kung Pao Chicken $24 + Seven Flavor Beef $30 (adults) + large jasmine rice $4.50 + Kids Wild Chicken Nuggets $4.50 + Kids Chicken Fried Rice $4 = $67.00. Water. + 10.35% tax ($6.93) + 20% tip ($13.40) = $87.33. Main menu dated 06.02.26; the kids' menu PDF is undated and its prices may have gone up (kids menu: https://www.wildginger.net/s/wgm_kids_menu-f5fh.pdf)."
+          "notes": "Kung Pao Chicken $24 + Seven Flavor Beef $30 (adults) + large jasmine rice $4.50 + Kids Wild Chicken Nuggets $4.50 + Kids Chicken Fried Rice $4 = $67.00. Water. + 10.35% tax ($6.93) + 20% tip ($13.40) = $87.33. Main menu dated 06.02.26; the kids' menu PDF is undated and its prices may have gone up (kids menu: https://www.wildginger.net/s/wgm_kids_menu-f5fh.pdf).",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Wild Ginger McKenzie — reservations",
+              "url": "https://www.wildginger.net/seattlemckenzie"
+            }
+          ],
+          "flag": "Book 5:00 PM Mon Dec 21 for four."
         },
         {
           "start": "6:05 PM",
@@ -405,7 +440,14 @@
           "emoji": "🎡",
           "detail": "• 175 ft, out over Elliott Bay\n• Timed for sunset (~4:20 PM)\n• Light shows run on weekend evenings",
           "est": 86,
-          "notes": "2 adults x $25 + 2 youth (3-11) x $18 = $86. Online price, Oct 2026; tickets are not date-specific."
+          "notes": "2 adults x $25 + 2 youth (3-11) x $18 = $86. Online price, Oct 2026; tickets are not date-specific.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Seattle Great Wheel — tickets",
+              "url": "https://seattlegreatwheel.com/"
+            }
+          ]
         },
         {
           "start": "4:35 PM",
@@ -440,7 +482,15 @@
           "detail": "• Cedar longhouse on Lake Union\n• Views of the lake and the downtown skyline lights\n• Reserve ahead",
           "est": 126.63,
           "menuUrl": "https://www.ivars.com/s/sh_dinner.pdf",
-          "notes": "Cedar Plank Sockeye Salmon $44 + Seared Chicken Piccata $36 (adults) + 2x Grilled Cheese w/ fries ~$8.50 (kids) = $97. Entrees only, water. + 10.55% tax ($10.23) + 20% tip ($19.40) = $126.63. Adult prices from the current dinner menu; kids' price read from Ivar's kids menu PDF - treat as approximate."
+          "notes": "Cedar Plank Sockeye Salmon $44 + Seared Chicken Piccata $36 (adults) + 2x Grilled Cheese w/ fries ~$8.50 (kids) = $97. Entrees only, water. + 10.55% tax ($10.23) + 20% tip ($19.40) = $126.63. Adult prices from the current dinner menu; kids' price read from Ivar's kids menu PDF - treat as approximate.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Ivar's — reservations",
+              "url": "https://www.ivars.com/"
+            }
+          ],
+          "flag": "Book 5:50 PM Tue Dec 22 for four."
         },
         {
           "start": "7:00 PM",
@@ -531,7 +581,15 @@
           "est": 116.1,
           "ccy": "CAD",
           "menuUrl": "https://www.joefortes.ca/wp-content/uploads/2026/05/156939-CFWC-Joe_Fortes_Lunch-May2026-P7.pdf",
-          "notes": "Fish & Chips C$32 + Salmon Cakes C$36 (adults) + Chicken & Waffles C$29 + Fish & Chips C$32 (kids, no kids' menu) = C$129. Entrees only, water. + 5% GST (C$6.45) + 20% tip (C$25.80) = C$161.25, about US$116 at ~0.72. Prices from the May 2026 lunch menu; kids' portions, if offered, would lower this."
+          "notes": "Fish & Chips C$32 + Salmon Cakes C$36 (adults) + Chicken & Waffles C$29 + Fish & Chips C$32 (kids, no kids' menu) = C$129. Entrees only, water. + 5% GST (C$6.45) + 20% tip (C$25.80) = C$161.25, about US$116 at ~0.72. Prices from the May 2026 lunch menu; kids' portions, if offered, would lower this.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Joe Fortes — reservations",
+              "url": "https://www.joefortes.ca/"
+            }
+          ],
+          "flag": "Book 12:45 PM Wed Dec 23 for four."
         },
         {
           "start": "2:00 PM",
@@ -544,20 +602,26 @@
         {
           "start": "2:20 PM",
           "end": "3:20 PM",
-          "title": "Hyatt Regency Vancouver - valet, check in & relax",
+          "title": "Hyatt Regency Vancouver - valet, check in & relax — BOOKED",
           "typeName": "Hotel",
           "emoji": "🏨",
           "detail": "• Valet the car and luggage\n• Early check-in requested (Globalist)\n• Up to the room to unpack and rest",
           "program": "World of Hyatt",
-          "points": "125000",
-          "conf": "40023B30138789",
+          "points": 125000,
+          "conf": "World of Hyatt — 40023B30138789 (guest: Jennifer Borges)",
           "roomType": "2 Double Beds",
           "nights": "5 nights (Wed-Mon, Dec 23-28)",
           "address": "655 Burrard St, Vancouver, BC V6C 2R7",
           "est": 187.2,
           "ccy": "CAD",
           "notes": "Booked under Jennifer Borges: 25,000 points/night (Category 5) x 5 = 125,000 points, 2 adults + 2 children; checkout 12:00 PM. Globalist breakfast at Mosaic Grille covers the family. Cost shown is valet: C$52/night x 5 = C$260, about US$187 at ~0.72 - ask whether it's waived on award stays.",
-          "flag": "Official check-in is 4:00 PM - early check-in requested but not guaranteed."
+          "flag": "Official check-in is 4:00 PM - early check-in requested but not guaranteed.",
+          "confLinks": [
+            {
+              "label": "Hyatt 40023B30138789",
+              "url": "https://www.hyatt.com/en-US/account/reservations"
+            }
+          ]
         },
         {
           "start": "3:20 PM",
@@ -625,7 +689,15 @@
           "est": 57.37,
           "ccy": "CAD",
           "menuUrl": "https://oldspaghettifactory.ca/locations/gastown/#menu",
-          "notes": "Lasagna C$21.25 + Chicken Parmigiana C$24.50 (adults) + Kids Spaghetti & Meatballs C$8.50 + Kids Chicken Tenders & Fries C$9.50 = C$63.75. Water for adults. + 5% GST (C$3.19) + 20% tip (C$12.75) = C$79.69, about US$57 at ~0.72. Prices from the Gastown menu, Oct 2026."
+          "notes": "Lasagna C$21.25 + Chicken Parmigiana C$24.50 (adults) + Kids Spaghetti & Meatballs C$8.50 + Kids Chicken Tenders & Fries C$9.50 = C$63.75. Water for adults. + 5% GST (C$3.19) + 20% tip (C$12.75) = C$79.69, about US$57 at ~0.72. Prices from the Gastown menu, Oct 2026.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "The Old Spaghetti Factory Gastown",
+              "url": "https://oldspaghettifactory.ca/locations/gastown/"
+            }
+          ],
+          "flag": "Book 6:15 PM Wed Dec 23 for four."
         },
         {
           "start": "7:30 PM",
@@ -685,7 +757,15 @@
           "detail": "• Red Skyride to the summit, ~8 min\n• Family Mountain Admission (2 adults + 2 kids)",
           "est": 164.88,
           "ccy": "CAD",
-          "notes": "Family Mountain Admission ticket C$229 (2 adults + 2 children 5-12), about US$165 at ~0.72. Grouse's posted 2026 rate; ticket is date-specific - buy online."
+          "notes": "Family Mountain Admission ticket C$229 (2 adults + 2 children 5-12), about US$165 at ~0.72. Grouse's posted 2026 rate; ticket is date-specific - buy online.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Grouse Mountain — admission tickets",
+              "url": "https://www.grousemountain.com/general-admission-membership"
+            }
+          ],
+          "flag": "Non-refundable and date-specific - buy 1-2 weeks out once you can see the forecast."
         },
         {
           "start": "10:00 AM",
@@ -747,7 +827,15 @@
           "detail": "• Cross the 450-ft suspension bridge, then Cliffwalk and Treetops Adventure in daylight\n• Stay as Canyon Lights come on at dusk (~4:15 PM)\n• Timed tickets - book the 2:00 PM hourly entry slot; children 0-5 free\n• Canyon Lights runs Nov 20, 2026-Jan 3",
           "est": 128.16,
           "ccy": "CAD",
-          "notes": "2 adults x C$75 + 1 child (6-12) x C$28 + 1 child (5) free = C$178, about US$128 at ~0.72. Capilano's listed 2026 admission rates; holiday-week timed tickets can price higher, and tax may be added at checkout."
+          "notes": "2 adults x C$75 + 1 child (6-12) x C$28 + 1 child (5) free = C$178, about US$128 at ~0.72. Capilano's listed 2026 admission rates; holiday-week timed tickets can price higher, and tax may be added at checkout.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Capilano — tickets (2:00 PM slot)",
+              "url": "https://www.capbridge.com/tickets-and-hours/"
+            }
+          ],
+          "flag": "Book the 2:00 PM entry slot for Thu Dec 24. Date changes by email to info@capbridge.com."
         },
         {
           "start": "5:30 PM",
@@ -775,7 +863,15 @@
           "est": 105.3,
           "ccy": "CAD",
           "menuUrl": "https://thekeg.com/en/locations/alberni/menu",
-          "notes": "Top Sirloin 8 oz C$43 + Blackened Chicken C$36 (adults) + Kids Sirloin 4 oz C$22 + Kids Chicken Strips C$16 = C$117. Water. + 5% GST (C$5.85) + 20% tip (C$23.40) = C$146.25, about US$105 at ~0.72. Prices from The Keg Alberni online menu, Oct 2026."
+          "notes": "Top Sirloin 8 oz C$43 + Blackened Chicken C$36 (adults) + Kids Sirloin 4 oz C$22 + Kids Chicken Strips C$16 = C$117. Water. + 5% GST (C$5.85) + 20% tip (C$23.40) = C$146.25, about US$105 at ~0.72. Prices from The Keg Alberni online menu, Oct 2026.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "The Keg Alberni — reservations (SevenRooms)",
+              "url": "https://www.sevenrooms.com/explore/thekegsteakhousebaralberni/reservations/create/search/"
+            }
+          ],
+          "flag": "Book 6:15 PM Thu Dec 24 (Christmas Eve) for four - holiday tables go first."
         },
         {
           "start": "7:30 PM",
@@ -907,7 +1003,15 @@
           "est": 327.67,
           "ccy": "CAD",
           "menuUrl": "https://www.hyatt.com/en-US/hotel/canada/hyatt-regency-vancouver/yvrrv/dining",
-          "notes": "ESTIMATE from 2025 pricing (C$60-125 per person): 2 adults x C$125 + 2 kids x C$60 = C$370 + 5% GST (C$18.50) + 18% gratuity (C$66.60) = C$455.10, about US$328. The 2026 menu and prices aren't posted yet."
+          "notes": "ESTIMATE from 2025 pricing (C$60-125 per person): 2 adults x C$125 + 2 kids x C$60 = C$370 + 5% GST (C$18.50) + 18% gratuity (C$66.60) = C$455.10, about US$328. The 2026 menu and prices aren't posted yet.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Mosaic Grille — OpenTable",
+              "url": "https://www.opentable.com/r/mosaic-grille-hyatt-regency-vancouver"
+            }
+          ],
+          "flag": "Book the 4:30 PM seating as soon as the 2026 Christmas buffet is announced."
         },
         {
           "start": "6:30 PM",
@@ -1026,7 +1130,15 @@
           "detail": "• ~10 min ride to the Summit Lodge\n• Family ticket online (2 adults + 2 kids)",
           "est": 119.48,
           "ccy": "CAD",
-          "notes": "Family ticket C$165.95 online (2 adults + 2 child/youth), about US$119 at ~0.72; window price C$191.95, so buy online. Children 5 and under are free, but the family ticket is still cheaper than single tickets. Winter hours Nov 27-Dec 31: 9 AM-5 PM."
+          "notes": "Family ticket C$165.95 online (2 adults + 2 child/youth), about US$119 at ~0.72; window price C$191.95, so buy online. Children 5 and under are free, but the family ticket is still cheaper than single tickets. Winter hours Nov 27-Dec 31: 9 AM-5 PM.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Sea to Sky Gondola — tickets",
+              "url": "https://www.seatoskygondola.com/plan-your-visit/hours-and-prices/"
+            }
+          ],
+          "flag": "Day tickets are valid any day until the printed expiry - safe to buy early online (C$165.95 family)."
         },
         {
           "start": "12:20 PM",
@@ -1093,7 +1205,15 @@
           "est": 66.24,
           "ccy": "CAD",
           "menuUrl": "https://www.rockymountainflatbread.ca/wp-content/uploads/2026/06/vancouver-menu.pdf",
-          "notes": "Pesto Chicken flatbread 10-in C$24.85 + Apple Rosemary Bacon flatbread C$24.85 (adults) + Kids Mozza Pizza C$11.95 + Kids Mozza Pizza C$11.95 = C$73.60. Water. + 5% GST (C$3.68) + 20% tip (C$14.72) = C$92.00, about US$66 at ~0.72. Prices from the Vancouver menu, Jun 2026."
+          "notes": "Pesto Chicken flatbread 10-in C$24.85 + Apple Rosemary Bacon flatbread C$24.85 (adults) + Kids Mozza Pizza C$11.95 + Kids Mozza Pizza C$11.95 = C$73.60. Water. + 5% GST (C$3.68) + 20% tip (C$14.72) = C$92.00, about US$66 at ~0.72. Prices from the Vancouver menu, Jun 2026.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Rocky Mountain Flatbread — reservations",
+              "url": "https://www.rockymountainflatbread.ca/reservations/"
+            }
+          ],
+          "flag": "Book 6:00 PM Sat Dec 26 for four."
         },
         {
           "start": "7:15 PM",
@@ -1220,7 +1340,15 @@
           "detail": "• Over a million lights across the 55-acre garden\n• Timed entry - book a 4:15-4:30 PM slot\n• Open nightly Nov 27-Jan 3 (closed Dec 25), 4-10 PM",
           "est": 61.99,
           "ccy": "CAD",
-          "notes": "2 adults x C$29 + 2 children (5-12) x C$12 = C$82 + 5% GST (C$4.10) = C$86.10, about US$62. Published 2026 prices; tickets go on sale Nov 4, 2026."
+          "notes": "2 adults x C$29 + 2 children (5-12) x C$12 = C$82 + 5% GST (C$4.10) = C$86.10, about US$62. Published 2026 prices; tickets go on sale Nov 4, 2026.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "VanDusen Festival of Lights — City of Vancouver",
+              "url": "https://vancouver.ca/news-calendar/festival-of-lights-brightens-the-holidays-nov-2025.aspx"
+            }
+          ],
+          "flag": "Tickets go on sale Nov 4, 2026 - book the 4:15-4:30 PM slot for Sun Dec 27."
         },
         {
           "start": "5:45 PM",
@@ -1240,7 +1368,15 @@
           "est": 68.4,
           "ccy": "CAD",
           "menuUrl": "https://tapandbarrel.com/wp-content/uploads/2026/09/Shipyards-Food-Menu.pdf",
-          "notes": "ESTIMATE from the Tap & Barrel Shipyards menu (Sep 2026), same chain: Fish & Chips C$24 + Pesto Linguine C$26 + Kids Chicken Strips C$13 + Kids Fish & Chips C$13 = C$76 + 5% GST + 20% tip = C$95, about US$68. The Olympic Village menu may differ slightly."
+          "notes": "ESTIMATE from the Tap & Barrel Shipyards menu (Sep 2026), same chain: Fish & Chips C$24 + Pesto Linguine C$26 + Kids Chicken Strips C$13 + Kids Fish & Chips C$13 = C$76 + 5% GST + 20% tip = C$95, about US$68. The Olympic Village menu may differ slightly.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Tap & Barrel Olympic Village — OpenTable",
+              "url": "https://www.opentable.com/tap-and-barrel-olympic-village"
+            }
+          ],
+          "flag": "Book 6:05 PM Sun Dec 27 for four."
         },
         {
           "start": "7:20 PM",
@@ -1359,11 +1495,18 @@
           "emoji": "🏨",
           "detail": "• On the lake at Southport, ~20 min from Sea-Tac\n• Ask for early check-in (Globalist)",
           "program": "World of Hyatt",
-          "points": "20000",
+          "points": 20000,
           "nights": "1 night (Mon-Tue, Dec 28-29)",
           "address": "1053 Lake Washington Blvd N, Renton, WA 98056",
           "notes": "20,000 points standard room (Category 4); 29,000 for a standard suite, per seats.aero Oct 2026. Globalist parking free on award stays.",
-          "flag": "Not booked yet."
+          "flag": "Not booked yet.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Hyatt — book",
+              "url": "https://www.hyatt.com/"
+            }
+          ]
         },
         {
           "start": "3:30 PM",
@@ -1382,7 +1525,21 @@
           "detail": "• Northwest & Pan-Asian, lake and skyline views\n• Listed as child friendly\n• Dinner from 5:30 PM",
           "est": 125.0,
           "menuUrl": "https://www.seattlemet.com/businesses/water-s-table",
-          "notes": "ESTIMATE - menu and prices not posted online: about 2 adult mains at $35 + 2 kids' plates at $12 = $94 + tax + 20% tip, about $125."
+          "notes": "ESTIMATE - menu and prices not posted online: about 2 adult mains at $35 + 2 kids' plates at $12 = $94 + tax + 20% tip, about $125.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Water's Table",
+              "url": "https://www.seattlemet.com/businesses/water-s-table"
+            }
+          ],
+          "flag": "Book 5:30 PM Mon Dec 28 for four - call 425-207-2240.",
+          "phones": [
+            {
+              "label": "425-207-2240",
+              "tel": "+14252072240"
+            }
+          ]
         },
         {
           "start": "6:30 PM",
@@ -1462,13 +1619,20 @@
           "emoji": "✈️",
           "detail": "• Boeing 737 MAX 9, Economy\n• Lands 5:08 PM Eastern\n• Pack lunch for the flight - main cabin food is for purchase",
           "program": "Alaska Atmos Rewards",
-          "points": "70000",
+          "points": 70000,
           "est": 22.4,
           "route": "SEA → MIA",
           "flightNo": "Alaska 305",
           "cabin": "Economy (Main)",
           "notes": "17,500 Atmos points + $5.60 per person x 4 = 70,000 points + $22.40. Award space seen on seats.aero Oct 19, 2026 (9 seats).",
-          "flag": "Not booked yet - award space can disappear."
+          "flag": "Not booked yet - award space can disappear.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Alaska — book award",
+              "url": "https://www.alaskaair.com/"
+            }
+          ]
         },
         {
           "start": "5:08 PM",
