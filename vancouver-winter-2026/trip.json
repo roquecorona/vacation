@@ -103,7 +103,7 @@
           "detail": "• Boeing 737 MAX 9, Economy\n• Lands 11:33 AM Pacific (2:33 PM Miami time)\n• Main cabin food is for purchase - snacks and soft drinks are free\n• Packed lunch from home before landing",
           "program": "Alaska Atmos Rewards",
           "points": "50000",
-          "est": 22.4,
+          "paid": 22.4,
           "conf": "CTIYJB",
           "seats": "24C, 24D, 24E, 24F",
           "route": "MIA → SEA",
