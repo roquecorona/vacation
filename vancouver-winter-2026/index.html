@@ -1319,20 +1319,12 @@ class Component extends DCLogic {
           "detail": "• Check in all 4 in the Alaska app (opens 24 hrs before departure)\n• Mobile boarding passes; bag tags printed at the MIA kiosk"
         },
         {
-          "start": "8:00 AM",
-          "end": "8:15 AM",
-          "title": "Pre-order onboard breakfast (Alaska app)",
-          "typeName": "Logistics",
-          "emoji": "🍽️",
-          "detail": "• Pre-order closes before departure - do it this morning\n• Popular items sell out on board"
-        },
-        {
-          "start": "5:15 PM",
-          "end": "6:15 PM",
+          "start": "4:50 PM",
+          "end": "5:50 PM",
           "title": "Kids' bedtime routine",
           "typeName": "Logistics",
           "emoji": "🛏️",
-          "detail": "• Lights out 6:15 PM = 10 hrs before the 4:15 AM wake-up\n• Bags packed and by the door before bedtime"
+          "detail": "• Lights out 5:50 PM = 10 hrs before the 3:50 AM wake-up\n• Bags packed and by the door before bedtime"
         }
       ]
     },
@@ -1342,44 +1334,55 @@ class Component extends DCLogic {
       "planned": true,
       "blocks": [
         {
-          "start": "4:15 AM",
-          "end": "5:15 AM",
+          "start": "3:50 AM",
+          "end": "4:50 AM",
           "title": "Wake up & get ready",
           "typeName": "Logistics",
           "emoji": "⏰",
           "detail": "• 1 hr to dress and load the bags"
         },
         {
-          "start": "5:15 AM",
-          "end": "5:40 AM",
+          "start": "4:50 AM",
+          "end": "5:15 AM",
           "title": "Ride to MIA - drop-off at departures",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• Dropped off at the Alaska Airlines curb on the departures level - no parking needed\n• Early Monday - light traffic; ride time is an estimate from home"
+          "detail": "• Drop-off at Door 13 on the departures level (Alaska counters 211-214, Concourse E) - no parking needed\n• Early Monday - light traffic; ride time is an estimate from home"
         },
         {
-          "start": "5:40 AM",
-          "end": "6:10 AM",
+          "start": "5:15 AM",
+          "end": "5:40 AM",
           "title": "Alaska check-in & bag drop",
           "typeName": "Logistics",
           "emoji": "🧳",
           "detail": "• Bag drop closes 40 min before departure (7:01 AM)\n• Holiday-week Monday - expect lines"
         },
         {
-          "start": "6:10 AM",
-          "end": "6:40 AM",
-          "title": "TSA security",
+          "start": "5:40 AM",
+          "end": "6:10 AM",
+          "title": "TSA security (Concourse E)",
           "typeName": "Logistics",
           "emoji": "🛂",
           "detail": "• 5-8 AM is MIA's peak security window\n• 30 min budgeted for a family of four"
         },
         {
-          "start": "6:40 AM",
+          "start": "6:10 AM",
+          "end": "6:55 AM",
+          "title": "Breakfast - Starbucks (Concourse E)",
+          "typeName": "Dining",
+          "emoji": "☕",
+          "detail": "• Post-security in Concourse E, Alaska's concourse\n• Breakfast sandwiches, egg bites, oatmeal; hot chocolate for the kids\n• Refill water bottles before heading to the gate",
+          "est": 55.0,
+          "menuUrl": "https://www.starbucks.com/menu",
+          "notes": "ESTIMATE: 2 adult drinks + 2 breakfast sandwiches + 2 kids' hot chocolates + 2 kids' food items, about $55 at airport prices. Airport menus and hours aren't posted; check the Starbucks or MIA app the morning of."
+        },
+        {
+          "start": "6:55 AM",
           "end": "7:05 AM",
-          "title": "Buffer - restrooms, water, walk to gate",
-          "typeName": "Logistics",
-          "emoji": "🚻",
-          "detail": "• Fill water bottles after security\n• Real breakfast is the pre-ordered onboard meal"
+          "title": "Walk to the gate & restrooms",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Gate is posted on the boarding pass / Alaska app the day of"
         },
         {
           "start": "7:05 AM",
@@ -1395,7 +1398,7 @@ class Component extends DCLogic {
           "title": "Alaska 316 - MIA → SEA - nonstop 6h52m",
           "typeName": "Flight",
           "emoji": "✈️",
-          "detail": "• Boeing 737 MAX 9, Economy\n• Lands 11:33 AM Pacific (2:33 PM Miami time)\n• Breakfast on board (pre-ordered)\n• Packed lunch from home before landing",
+          "detail": "• Boeing 737 MAX 9, Economy\n• Lands 11:33 AM Pacific (2:33 PM Miami time)\n• Main cabin food is for purchase - snacks and soft drinks are free\n• Packed lunch from home before landing",
           "program": "Alaska Atmos Rewards",
           "points": "50000",
           "est": 22.4,
@@ -1405,15 +1408,6 @@ class Component extends DCLogic {
           "flightNo": "Alaska 316",
           "cabin": "Economy (Main)",
           "notes": "Booked. 12,500 Atmos points + $5.60 per person x 4 = 50,000 points + $22.40; taxes paid with the BofA Atmos Ascent card ending 1029. Add each traveler's Atmos number to the reservation."
-        },
-        {
-          "start": "8:30 AM",
-          "end": "9:00 AM",
-          "title": "Breakfast on board",
-          "typeName": "Dining",
-          "emoji": "🥐",
-          "detail": "• Pre-ordered in the Alaska app",
-          "menuUrl": "https://milesmate.io/blog/alaska-airlines-inflight-food-nutrition-guide-summer-2026"
         },
         {
           "start": "11:33 AM",
@@ -2709,7 +2703,7 @@ class Component extends DCLogic {
           "title": "Wake up & load the car",
           "typeName": "Logistics",
           "emoji": "⏰",
-          "detail": "• Breakfast on board or grab-and-go at the airport"
+          "detail": "• Grab-and-go breakfast at the airport after security"
         },
         {
           "start": "5:40 AM",
@@ -2764,7 +2758,7 @@ class Component extends DCLogic {
           "title": "Alaska 305 - SEA → MIA - nonstop",
           "typeName": "Flight",
           "emoji": "✈️",
-          "detail": "• Boeing 737 MAX 9, Economy\n• Lands 5:08 PM Eastern\n• Pack food for the flight or pre-order in the Alaska app",
+          "detail": "• Boeing 737 MAX 9, Economy\n• Lands 5:08 PM Eastern\n• Pack lunch for the flight - main cabin food is for purchase",
           "program": "Alaska Atmos Rewards",
           "points": "70000",
           "est": 22.4,
