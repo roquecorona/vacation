@@ -574,6 +574,154 @@
           "detail": "• Walk 5 min to Waterfront Station\n• Expo Line 1 stop to Burrard Station (~2 min)\n• Kids 12 and under ride free; tap a credit card to pay\n• 2 blocks to the hotel"
         }
       ]
+    },
+    {
+      "date": "Tuesday, December 22, 2026",
+      "title": "Grouse Mountain & Capilano",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:00 AM",
+          "end": "8:00 AM",
+          "title": "Wake up & get ready",
+          "typeName": "Logistics",
+          "emoji": "⏰",
+          "detail": "• Snow pants, boots, gloves on; pack dry layers for the car"
+        },
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast - Mosaic Grille (hotel)",
+          "typeName": "Dining",
+          "emoji": "🍳",
+          "detail": "• 2nd floor; buffet or a la carte\n• Globalist breakfast covers 2 adults + 2 kids",
+          "est": 0,
+          "menuUrl": "https://www.hyatt.com/en-US/hotel/canada/hyatt-regency-vancouver/yvrrv/dining"
+        },
+        {
+          "start": "8:45 AM",
+          "end": "9:15 AM",
+          "title": "Car from the valet",
+          "typeName": "Logistics",
+          "emoji": "🚗",
+          "detail": "• Call down for the car before leaving the room"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:45 AM",
+          "title": "Drive to Grouse Mountain",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• ~8 mi over the Lions Gate Bridge to the base of Grouse\n• Paid parking at the base lot"
+        },
+        {
+          "start": "9:45 AM",
+          "end": "10:00 AM",
+          "title": "Tickets & Skyride up",
+          "typeName": "Transportation",
+          "emoji": "🚡",
+          "detail": "• Red Skyride to the summit, ~8 min\n• Family Mountain Admission (2 adults + 2 kids)",
+          "est": 164.88,
+          "ccy": "CAD",
+          "notes": "Family Mountain Admission ticket C$229 (2 adults + 2 children 5-12), about US$165 at ~0.72. Grouse's posted 2026 rate; ticket is date-specific - buy online."
+        },
+        {
+          "start": "10:00 AM",
+          "end": "12:00 PM",
+          "title": "Peak of Christmas - snow play",
+          "typeName": "Excursion",
+          "emoji": "🏔️",
+          "detail": "• Mountaintop skating pond (skates C$10 adult / C$6 child)\n• Sliding Zone (sled rental C$5)\n• Sleigh ride through the snowy forest - needs a minimum snow base\n• Santa's Workshop and Elf Headquarters crafts\n• Peak of Christmas runs Nov 20-Dec 24, 2026"
+        },
+        {
+          "start": "12:00 PM",
+          "end": "12:45 PM",
+          "title": "Lunch - Lupins Cafe (Peak Chalet)",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "detail": "• Self-serve, main floor of the Peak Chalet\n• Burgers, hot dogs, mac & cheese, chicken tenders",
+          "est": 42.34,
+          "ccy": "CAD",
+          "menuUrl": "https://www.grousemountain.com/lupins/menu",
+          "notes": "Bacon Cheeseburger C$18 + Hot Honey Chicken Sandwich C$17 (adults) + Mac & Cheese C$12 + All Beef Canadian Hot Dog C$9 (kids) = C$56. Water. + 5% GST (C$2.80) = C$58.80, about US$42. Self-serve, no tip. Prices from Lupins' posted 2026 menu board; winter menu may differ slightly."
+        },
+        {
+          "start": "12:45 PM",
+          "end": "1:30 PM",
+          "title": "More snow time & summit views",
+          "typeName": "Free Time",
+          "emoji": "❄️",
+          "detail": "• Back to the sliding lanes or the pond\n• City and harbour views from the Peak Chalet decks"
+        },
+        {
+          "start": "1:30 PM",
+          "end": "1:50 PM",
+          "title": "Skyride down",
+          "typeName": "Transportation",
+          "emoji": "🚡"
+        },
+        {
+          "start": "1:50 PM",
+          "end": "2:05 PM",
+          "title": "Change out of wet snow gear at the car",
+          "typeName": "Logistics",
+          "emoji": "🧦",
+          "detail": "• Dry socks and layers before the next stop"
+        },
+        {
+          "start": "2:05 PM",
+          "end": "2:15 PM",
+          "title": "Drive to Capilano Suspension Bridge Park",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• ~2 mi down Capilano Rd"
+        },
+        {
+          "start": "2:15 PM",
+          "end": "5:30 PM",
+          "title": "Capilano Suspension Bridge & Canyon Lights",
+          "typeName": "Excursion",
+          "emoji": "🌉",
+          "detail": "• Cross the 450-ft suspension bridge, then Cliffwalk and Treetops Adventure in daylight\n• Stay as Canyon Lights come on at dusk (~4:15 PM)\n• Timed tickets; children 0-5 free\n• Canyon Lights runs Nov 20, 2026-Jan 3",
+          "notes": "Ticket prices show only after choosing a date and time on capbridge.com - add once booked."
+        },
+        {
+          "start": "5:30 PM",
+          "end": "5:55 PM",
+          "title": "Drive to Lower Lonsdale (Shipyards)",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• ~5 mi east along Marine Dr\n• Park in the Shipyards area"
+        },
+        {
+          "start": "6:00 PM",
+          "end": "7:15 PM",
+          "title": "Dinner - Tap & Barrel Shipyards",
+          "typeName": "Dining",
+          "emoji": "🍽️",
+          "detail": "• On the water with views straight across to the downtown skyline\n• Kids' menu (12 & under) includes a drink and gelato\n• Reserve ahead",
+          "est": 68.4,
+          "ccy": "CAD",
+          "menuUrl": "https://tapandbarrel.com/wp-content/uploads/2026/09/Shipyards-Food-Menu.pdf",
+          "notes": "Fish & Chips C$24 + Pesto Linguine C$26 (adults) + Kids Chicken Strips C$13 + Kids Fish & Chips C$13 = C$76. Water for adults. + 5% GST (C$3.80) + 20% tip (C$15.20) = C$95.00, about US$68 at ~0.72. Prices from the Shipyards menu, Sep 2026."
+        },
+        {
+          "start": "7:15 PM",
+          "end": "7:45 PM",
+          "title": "Drive back to the hotel",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• Lions Gate Bridge traffic eases after the evening rush\n• Valet the car"
+        },
+        {
+          "start": "7:45 PM",
+          "end": "8:45 PM",
+          "title": "Bedtime routine",
+          "typeName": "Logistics",
+          "emoji": "🛏️",
+          "detail": "• Back by 8:00 PM keeps 10 hrs of sleep before a 7:00 AM wake-up"
+        }
+      ]
     }
   ],
   "packing": {
