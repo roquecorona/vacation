@@ -1,0 +1,419 @@
+{
+  "meta": {
+    "title": "Seattle & Vancouver - Winter 2026",
+    "dates": "December 19-27, 2026 (in progress)",
+    "route": [
+      {
+        "name": "Miami",
+        "sub": "MIA - departure"
+      },
+      {
+        "name": "Seattle",
+        "sub": "2 nights - Hyatt Regency Seattle"
+      },
+      {
+        "name": "Vancouver",
+        "sub": "Hyatt Regency Vancouver"
+      },
+      {
+        "name": "Whistler",
+        "sub": "under consideration"
+      }
+    ]
+  },
+  "days": [
+    {
+      "date": "Friday, December 18, 2026",
+      "title": "Departure eve",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:41 AM",
+          "end": "7:50 AM",
+          "title": "Online check-in opens - Alaska 316",
+          "typeName": "Logistics",
+          "emoji": "📲",
+          "detail": "• Check in all 4 in the Alaska app (opens 24 hrs before departure)\n• Mobile boarding passes; bag tags printed at the MIA kiosk"
+        },
+        {
+          "start": "8:00 AM",
+          "end": "8:15 AM",
+          "title": "Pre-order onboard breakfast (Alaska app)",
+          "typeName": "Logistics",
+          "emoji": "🍽️",
+          "detail": "• Pre-order closes before departure - do it this morning\n• Popular items sell out on board"
+        },
+        {
+          "start": "5:00 PM",
+          "end": "6:00 PM",
+          "title": "Kids' bedtime routine",
+          "typeName": "Logistics",
+          "emoji": "🛏️",
+          "detail": "• Lights out 6:00 PM = 10 hrs before the 4:00 AM wake-up\n• Bags packed and by the door before bedtime"
+        }
+      ]
+    },
+    {
+      "date": "Saturday, December 19, 2026",
+      "title": "Miami → Seattle",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "4:00 AM",
+          "end": "5:00 AM",
+          "title": "Wake up & get ready",
+          "typeName": "Logistics",
+          "emoji": "⏰",
+          "detail": "• 1 hr to dress, pack the car and load car seats"
+        },
+        {
+          "start": "5:00 AM",
+          "end": "5:30 AM",
+          "title": "Drive to MIA - park in Dolphin or Flamingo garage",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• Early Saturday, light traffic\n• Drive time is an estimate from home",
+          "est": 225,
+          "notes": "Parking: $25/day (MIA garage rate published 2025) x 9 days (Dec 19-27) = $225. Estimate - confirm current rate. Assumes return Dec 27."
+        },
+        {
+          "start": "5:30 AM",
+          "end": "5:45 AM",
+          "title": "Garage → terminal with bags",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Garages connect to the terminal by skywalk / MIA Mover\n• Extra time for luggage and kids"
+        },
+        {
+          "start": "5:45 AM",
+          "end": "6:10 AM",
+          "title": "Alaska check-in & bag drop",
+          "typeName": "Logistics",
+          "emoji": "🧳",
+          "detail": "• Bag drop closes 40 min before departure (7:01 AM)\n• Holiday-week Saturday - expect lines"
+        },
+        {
+          "start": "6:10 AM",
+          "end": "6:40 AM",
+          "title": "TSA security",
+          "typeName": "Logistics",
+          "emoji": "🛂",
+          "detail": "• 5-8 AM is MIA's peak security window\n• 30 min budgeted for a family of four"
+        },
+        {
+          "start": "6:40 AM",
+          "end": "7:05 AM",
+          "title": "Buffer - restrooms, water, walk to gate",
+          "typeName": "Logistics",
+          "emoji": "🚻",
+          "detail": "• Fill water bottles after security\n• Real breakfast is the pre-ordered onboard meal"
+        },
+        {
+          "start": "7:05 AM",
+          "end": "7:41 AM",
+          "title": "At the gate - boarding",
+          "typeName": "Logistics",
+          "emoji": "🛫",
+          "detail": "• Boarding starts about 35-40 min before departure\n• Families can pre-board"
+        },
+        {
+          "start": "7:41 AM",
+          "end": "11:33 AM",
+          "title": "Alaska 316 - MIA → SEA - nonstop 6h52m",
+          "typeName": "Flight",
+          "emoji": "✈️",
+          "detail": "• Boeing 737 MAX 9, Economy\n• Lands 11:33 AM Pacific (2:33 PM Miami time)\n• Breakfast on board (pre-ordered)",
+          "program": "Alaska Atmos Rewards",
+          "points": "70000",
+          "est": 22.4,
+          "route": "MIA → SEA",
+          "flightNo": "Alaska 316",
+          "cabin": "Economy (Main)",
+          "notes": "17,500 Atmos points + $5.60 per person x 4 = 70,000 points + $22.40. Award space seen on seats.aero Oct 18, 2026 (5 seats).",
+          "flag": "Not booked yet - award space can disappear."
+        },
+        {
+          "start": "8:30 AM",
+          "end": "9:00 AM",
+          "title": "Breakfast on board",
+          "typeName": "Dining",
+          "emoji": "🥐",
+          "detail": "• Pre-ordered in the Alaska app",
+          "est": 41.96,
+          "menuUrl": "https://milesmate.io/blog/alaska-airlines-inflight-food-nutrition-guide-summer-2026",
+          "notes": "Estimate: 2x Signature Fruit & Cheese Platter $11.99 (adults) + 2x Kids' Choice Picnic Pack $8.99 (kids) = $41.96. Prices from Alaska's 2026 buy-on-board menu; the morning menu on this flight may differ."
+        },
+        {
+          "start": "11:33 AM",
+          "end": "11:55 AM",
+          "title": "Deplane & walk to baggage claim",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Families rarely deplane first\n• If arriving at an N gate, take the SEA Underground (trains every 3 min)"
+        },
+        {
+          "start": "11:55 AM",
+          "end": "12:15 PM",
+          "title": "Baggage claim & restrooms",
+          "typeName": "Logistics",
+          "emoji": "🧳",
+          "detail": "• Domestic arrival, no customs\n• Alaska bags usually on the carousel within 20 min"
+        },
+        {
+          "start": "12:15 PM",
+          "end": "12:30 PM",
+          "title": "To the Turo meeting spot",
+          "typeName": "Transportation",
+          "emoji": "🚌",
+          "detail": "• Exact spot comes from the host in the Turo app\n• Often an off-airport lot by shuttle, or the parking garage"
+        },
+        {
+          "start": "12:30 PM",
+          "end": "1:00 PM",
+          "title": "Turo pickup - 8 days",
+          "typeName": "Rental Car",
+          "emoji": "🚙",
+          "detail": "• Walk-around photos in the app\n• Load luggage, install 2 car seats\n• Check tire sidewalls for M+S or snowflake symbol",
+          "program": "Turo",
+          "est": 570,
+          "notes": "Estimate: ~$570 for 8 days, return Dec 27. Confirm whether child seats are included.",
+          "flag": "Get written OK from the host to drive into Canada, plus Canada insurance coverage and winter-rated (M+S or snowflake) tires for the Sea-to-Sky."
+        },
+        {
+          "start": "1:00 PM",
+          "end": "1:30 PM",
+          "title": "Drive SEA → Hyatt Regency Seattle",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• ~14 mi via I-5 to 808 Howell St\n• About 25 min on a Saturday midday + buffer"
+        },
+        {
+          "start": "1:30 PM",
+          "end": "1:45 PM",
+          "title": "Arrive Hyatt Regency Seattle - park & check in",
+          "typeName": "Hotel",
+          "emoji": "🏨",
+          "detail": "• Hotel garage (no valet)\n• Ask for early check-in; bell desk holds bags if the room isn't ready\n• Regency Club (8th floor) open to Globalists",
+          "program": "World of Hyatt",
+          "nights": "2 nights (Sat-Sun)",
+          "address": "808 Howell St, Seattle, WA 98101",
+          "notes": "Globalist: breakfast at Andare buffet, Regency Club access, free parking on award stays (otherwise ~$55-65/night). Award rate and room type not set yet.",
+          "flag": "Not booked yet. Standard check-in is afternoon - early check-in isn't guaranteed."
+        },
+        {
+          "start": "1:45 PM",
+          "end": "2:30 PM",
+          "title": "Settle in & get ready",
+          "typeName": "Logistics",
+          "emoji": "🚿",
+          "detail": "• Showers, change, unpack basics\n• If the room isn't ready: freshen up in the Regency Club"
+        }
+      ]
+    },
+    {
+      "date": "Sunday, December 20, 2026",
+      "title": "Pike Place & Bainbridge Island",
+      "planned": true,
+      "blocks": [
+        {
+          "start": "7:00 AM",
+          "end": "8:00 AM",
+          "title": "Wake up & get ready",
+          "typeName": "Logistics",
+          "emoji": "⏰"
+        },
+        {
+          "start": "8:00 AM",
+          "end": "8:45 AM",
+          "title": "Breakfast - Andare (hotel buffet)",
+          "typeName": "Dining",
+          "emoji": "🍳",
+          "detail": "• Lobby level, buffet 6:30-11:00 AM\n• Globalist breakfast benefit",
+          "est": 0,
+          "menuUrl": "https://www.hyatt.com/hyatt-regency/en-US/sears-hyatt-regency-seattle/dining",
+          "notes": "Covered by Globalist breakfast. Confirm at check-in how it applies to the kids."
+        },
+        {
+          "start": "8:45 AM",
+          "end": "9:00 AM",
+          "title": "Coats, shoes, out the door",
+          "typeName": "Logistics",
+          "emoji": "🧥",
+          "detail": "• Rain jackets - December is Seattle's wettest month"
+        },
+        {
+          "start": "9:00 AM",
+          "end": "9:15 AM",
+          "title": "Walk to Pike Place Market",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• 0.6 mi downhill, ~11 min at adult pace"
+        },
+        {
+          "start": "9:15 AM",
+          "end": "9:45 AM",
+          "title": "Original Starbucks (1912 Pike Pl)",
+          "typeName": "Dining",
+          "emoji": "☕",
+          "detail": "• The 1971 store with the original logo\n• Line is usually shortest early in the morning",
+          "est": 25,
+          "menuUrl": "https://www.starbucks.com/menu",
+          "notes": "Estimate: 2 adult drinks + 2 kids' hot chocolates. This location's own prices aren't posted online."
+        },
+        {
+          "start": "9:45 AM",
+          "end": "11:30 AM",
+          "title": "Pike Place Market walk-through",
+          "typeName": "Sightseeing",
+          "emoji": "🐟",
+          "detail": "• Pike Place Fish Market - fish tossing at the main arcade\n• Rachel the bronze pig, the neon Public Market clock\n• Main Arcade stalls and the Down Under lower levels\n• Post Alley & the Gum Wall\n• Mornings before noon are the least crowded"
+        },
+        {
+          "start": "11:30 AM",
+          "end": "11:50 AM",
+          "title": "Walk to Colman Dock (ferry terminal)",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Down the Overlook Walk to the waterfront\n• 0.7 mi to Pier 52"
+        },
+        {
+          "start": "11:50 AM",
+          "end": "12:30 PM",
+          "title": "Ferry terminal - tickets & boarding",
+          "typeName": "Logistics",
+          "emoji": "🎫",
+          "detail": "• Walk-on fare paid in Seattle covers the round trip\n• Walk-ons board about 10-15 min before sailing",
+          "est": 22.7,
+          "notes": "2 adults x $11.35 round trip = $22.70. Ages 18 and under ride free. WSF fare as of Oct 2026."
+        },
+        {
+          "start": "12:30 PM",
+          "end": "1:05 PM",
+          "title": "Ferry to Bainbridge Island",
+          "typeName": "Transportation",
+          "emoji": "⛴️",
+          "detail": "• 35-min crossing, skyline views behind you\n• Fall/holiday weekend schedule (valid Sep 20-Dec 26)"
+        },
+        {
+          "start": "1:05 PM",
+          "end": "1:20 PM",
+          "title": "Walk to Doc's Marina Grill",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• ~0.5 mi through Winslow"
+        },
+        {
+          "start": "1:20 PM",
+          "end": "2:20 PM",
+          "title": "Lunch - Doc's Marina Grill",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "detail": "• On Eagle Harbor marina\n• Burgers, sandwiches, fish & chips, kids' menu\n• Open daily 10:45 AM-9:45 PM",
+          "est": 87.86,
+          "menuUrl": "https://order.toasttab.com/online/docs-marina-grill-bainbridge-island",
+          "notes": "Big Doc Burger $22 + Chicken Cheddar Club $22 (adults) + Kids Chicken Strips $14 + Kids Grilled Cheese $10 (kids) = $68. Entrees only, water. + ~9.2% tax ($6.26) + 20% tip ($13.60) = $87.86. Prices from Doc's online menu, Oct 2026."
+        },
+        {
+          "start": "2:20 PM",
+          "end": "2:40 PM",
+          "title": "Stroll back to the ferry terminal",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Waterfront Park path along the harbor"
+        },
+        {
+          "start": "2:40 PM",
+          "end": "3:00 PM",
+          "title": "Board the return ferry",
+          "typeName": "Logistics",
+          "emoji": "⛴️",
+          "detail": "• No fare collected on the Bainbridge side for walk-ons"
+        },
+        {
+          "start": "3:00 PM",
+          "end": "3:35 PM",
+          "title": "Ferry back to Seattle",
+          "typeName": "Transportation",
+          "emoji": "⛴️",
+          "detail": "• Best skyline views of the day on the way in"
+        },
+        {
+          "start": "3:35 PM",
+          "end": "3:50 PM",
+          "title": "Walk to Pier 57",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• 0.3 mi along the new waterfront promenade"
+        },
+        {
+          "start": "3:50 PM",
+          "end": "4:35 PM",
+          "title": "Seattle Great Wheel",
+          "typeName": "Sightseeing",
+          "emoji": "🎡",
+          "detail": "• 175 ft, out over Elliott Bay\n• Timed for sunset (~4:20 PM)\n• Light shows run on weekend evenings",
+          "est": 86,
+          "notes": "2 adults x $25 + 2 youth (3-11) x $18 = $86. Online price, Oct 2026; tickets are not date-specific."
+        },
+        {
+          "start": "4:35 PM",
+          "end": "5:05 PM",
+          "title": "Walk back to the hotel",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• ~1.1 mi, mostly uphill\n• A rideshare is ~10 min if the kids are done walking"
+        },
+        {
+          "start": "5:05 PM",
+          "end": "5:35 PM",
+          "title": "Quick stop at the hotel",
+          "typeName": "Logistics",
+          "emoji": "🏨",
+          "detail": "• Restrooms, dry layers, grab the car"
+        },
+        {
+          "start": "5:35 PM",
+          "end": "5:50 PM",
+          "title": "Drive to Ivar's Salmon House",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• ~3 mi to Lake Union's north shore"
+        },
+        {
+          "start": "5:50 PM",
+          "end": "7:00 PM",
+          "title": "Dinner - Ivar's Salmon House",
+          "typeName": "Dining",
+          "emoji": "🍽️",
+          "detail": "• Cedar longhouse on Lake Union\n• Views of the lake and the downtown skyline lights\n• Open Sun 11 AM-8 PM; reserve ahead",
+          "est": 126.63,
+          "menuUrl": "https://www.ivars.com/s/sh_dinner.pdf",
+          "notes": "Cedar Plank Sockeye Salmon $44 + Seared Chicken Piccata $36 (adults) + 2x Grilled Cheese w/ fries ~$8.50 (kids) = $97. Entrees only, water. + 10.55% tax ($10.23) + 20% tip ($19.40) = $126.63. Adult prices from the current dinner menu; kids' price read from Ivar's kids menu PDF - treat as approximate."
+        },
+        {
+          "start": "7:00 PM",
+          "end": "7:15 PM",
+          "title": "Drive back to the hotel",
+          "typeName": "Drive",
+          "emoji": "🚗"
+        },
+        {
+          "start": "7:15 PM",
+          "end": "8:15 PM",
+          "title": "Bedtime routine",
+          "typeName": "Logistics",
+          "emoji": "🛏️",
+          "detail": "• Back by 8:00 PM keeps 10 hrs of sleep before the 7:00 AM wake-up"
+        }
+      ]
+    }
+  ],
+  "packing": {
+    "trackerTitle": "Item tracker",
+    "outfitDays": [],
+    "trackerDays": []
+  },
+  "supplies": [],
+  "ideas": [],
+  "alternatives": null
+}
