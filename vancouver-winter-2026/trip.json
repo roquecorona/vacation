@@ -31,29 +31,6 @@
   },
   "days": [
     {
-      "date": "Sunday, December 20, 2026",
-      "title": "Departure eve",
-      "planned": true,
-      "blocks": [
-        {
-          "start": "7:41 AM",
-          "end": "7:50 AM",
-          "title": "Online check-in opens - Alaska 316",
-          "typeName": "Logistics",
-          "emoji": "📲",
-          "detail": "• Check in all 4 in the Alaska app (opens 24 hrs before departure)\n• Mobile boarding passes; bag tags printed at the MIA kiosk"
-        },
-        {
-          "start": "4:50 PM",
-          "end": "5:50 PM",
-          "title": "Kids' bedtime routine",
-          "typeName": "Logistics",
-          "emoji": "🛏️",
-          "detail": "• Lights out 5:50 PM = 10 hrs before the 3:50 AM wake-up\n• Bags packed and by the door before bedtime"
-        }
-      ]
-    },
-    {
       "date": "Monday, December 21, 2026",
       "title": "Miami → Seattle",
       "planned": true,
