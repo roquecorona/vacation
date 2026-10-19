@@ -52,12 +52,12 @@
           "detail": "• Pre-order closes before departure - do it this morning\n• Popular items sell out on board"
         },
         {
-          "start": "5:00 PM",
-          "end": "6:00 PM",
+          "start": "5:15 PM",
+          "end": "6:15 PM",
           "title": "Kids' bedtime routine",
           "typeName": "Logistics",
           "emoji": "🛏️",
-          "detail": "• Lights out 6:00 PM = 10 hrs before the 4:00 AM wake-up\n• Bags packed and by the door before bedtime"
+          "detail": "• Lights out 6:15 PM = 10 hrs before the 4:15 AM wake-up\n• Bags packed and by the door before bedtime"
         }
       ]
     },
@@ -67,36 +67,28 @@
       "planned": true,
       "blocks": [
         {
-          "start": "4:00 AM",
-          "end": "5:00 AM",
+          "start": "4:15 AM",
+          "end": "5:15 AM",
           "title": "Wake up & get ready",
           "typeName": "Logistics",
           "emoji": "⏰",
-          "detail": "• 1 hr to dress, pack the car and load car seats"
+          "detail": "• 1 hr to dress and load the bags"
         },
         {
-          "start": "5:00 AM",
-          "end": "5:30 AM",
-          "title": "Drive to MIA - park in Dolphin or Flamingo garage",
+          "start": "5:15 AM",
+          "end": "5:40 AM",
+          "title": "Ride to MIA - drop-off at departures",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• Early Saturday, light traffic\n• Drive time is an estimate from home"
+          "detail": "• Dropped off at the Alaska Airlines curb on the departures level - no parking needed\n• Early Monday - light traffic; ride time is an estimate from home"
         },
         {
-          "start": "5:30 AM",
-          "end": "5:45 AM",
-          "title": "Garage → terminal with bags",
-          "typeName": "Walk",
-          "emoji": "🚶",
-          "detail": "• Garages connect to the terminal by skywalk / MIA Mover\n• Extra time for luggage and kids"
-        },
-        {
-          "start": "5:45 AM",
+          "start": "5:40 AM",
           "end": "6:10 AM",
           "title": "Alaska check-in & bag drop",
           "typeName": "Logistics",
           "emoji": "🧳",
-          "detail": "• Bag drop closes 40 min before departure (7:01 AM)\n• Holiday-week Saturday - expect lines"
+          "detail": "• Bag drop closes 40 min before departure (7:01 AM)\n• Holiday-week Monday - expect lines"
         },
         {
           "start": "6:10 AM",
@@ -1523,15 +1515,16 @@
         },
         {
           "start": "5:55 PM",
-          "end": "6:15 PM",
-          "title": "Walk to the Dolphin/Flamingo garage",
-          "typeName": "Walk",
-          "emoji": "🚶"
+          "end": "6:10 PM",
+          "title": "Pickup at the arrivals curb",
+          "typeName": "Logistics",
+          "emoji": "🚗",
+          "detail": "• Text your ride once bags are in hand - no parking needed"
         },
         {
-          "start": "6:15 PM",
-          "end": "6:45 PM",
-          "title": "Drive home",
+          "start": "6:10 PM",
+          "end": "6:40 PM",
+          "title": "Ride home",
           "typeName": "Drive",
           "emoji": "🚗"
         }
