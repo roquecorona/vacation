@@ -682,8 +682,10 @@
           "title": "Capilano Suspension Bridge & Canyon Lights",
           "typeName": "Excursion",
           "emoji": "🌉",
-          "detail": "• Cross the 450-ft suspension bridge, then Cliffwalk and Treetops Adventure in daylight\n• Stay as Canyon Lights come on at dusk (~4:15 PM)\n• Timed tickets; children 0-5 free\n• Canyon Lights runs Nov 20, 2026-Jan 3",
-          "notes": "Ticket prices show only after choosing a date and time on capbridge.com - add once booked."
+          "detail": "• Cross the 450-ft suspension bridge, then Cliffwalk and Treetops Adventure in daylight\n• Stay as Canyon Lights come on at dusk (~4:15 PM)\n• Timed tickets - book a 2:00-2:30 PM entry; children 0-5 free\n• Canyon Lights runs Nov 20, 2026-Jan 3",
+          "est": 128.16,
+          "ccy": "CAD",
+          "notes": "2 adults x C$75 + 1 child (6-12) x C$28 + 1 child (5) free = C$178, about US$128 at ~0.72. Capilano's listed 2026 admission rates; holiday-week timed tickets can price higher, and tax may be added at checkout."
         },
         {
           "start": "5:30 PM",
