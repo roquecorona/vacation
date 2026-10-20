@@ -1354,51 +1354,97 @@
         },
         {
           "start": "4:45 PM",
-          "end": "6:00 PM",
-          "title": "Drive to Rocky Mountain Flatbread (Main St)",
+          "end": "5:00 PM",
+          "title": "Walk to the car & load up",
+          "typeName": "Logistics",
+          "emoji": "🚗",
+          "detail": "• Restrooms at the base before leaving\n• Snow gear off, dry layers on for the drive"
+        },
+        {
+          "start": "5:00 PM",
+          "end": "5:35 PM",
+          "title": "Drive to Horseshoe Bay",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM the gondola → TO Rocky Mountain Flatbread\n• ~45 mi back down Hwy 99, through downtown to Main St\n• Driving after dark - allow extra time\n• Street parking on Main St",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Sea%20to%20Sky%20Gondola%2C%2036800%20BC-99%2C%20Squamish%2C%20BC&destination=Rocky%20Mountain%20Flatbread%2C%204186%20Main%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
+          "detail": "• FROM the gondola → TO Horseshoe Bay village (Bay St)\n• ~25 mi south on Hwy 99 - dark by now, allow extra time\n• Take the Horseshoe Bay exit and follow signs to the village (Bay St)",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Sea%20to%20Sky%20Gondola%2C%2036800%20BC-99%2C%20Squamish%2C%20BC&destination=Troll%27s%20Restaurant%2C%206408%20Bay%20St%2C%20West%20Vancouver%2C%20BC&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "6:00 PM",
-          "end": "7:15 PM",
-          "title": "Dinner - Rocky Mountain Flatbread",
-          "typeName": "Dining",
-          "emoji": "🍕",
-          "detail": "• 4186 Main St; wood-fired flatbread pizzas\n• Kids' menu and a kids' play kitchen area\n• Open Sat 11 AM-10 PM - reserve ahead",
-          "est": 66.24,
+          "start": "5:35 PM",
+          "end": "5:40 PM",
+          "title": "Park in Horseshoe Bay village",
+          "typeName": "Parking",
+          "emoji": "🅿️",
+          "detail": "• Street and lot parking along Bay St and Nelson Ave, a block from the water\n• Troll's and Goldie's are a 2-min walk apart",
+          "est": 3.6,
           "ccy": "CAD",
-          "menuUrl": "https://www.rockymountainflatbread.ca/wp-content/uploads/2026/06/vancouver-menu.pdf",
-          "notes": "Pesto Chicken flatbread 10-in C$24.85 + Apple Rosemary Bacon flatbread C$24.85 (adults) + Kids Mozza Pizza C$11.95 + Kids Mozza Pizza C$11.95 = C$73.60. Water. + 5% GST (C$3.68) + 20% tip (C$14.72) = C$92.00, about US$66 at ~0.72. Prices from the Vancouver menu, Jun 2026.",
+          "notes": "ESTIMATE: about C$5 for the evening (village pay parking), about US$3.60 at ~0.72."
+        },
+        {
+          "start": "5:40 PM",
+          "end": "5:50 PM",
+          "title": "Goldie's Donuts & Bakery - treats to go",
+          "typeName": "Dining",
+          "emoji": "🍩",
+          "detail": "• FROM the parking → TO Goldie's Donuts\n• 101-6693 Nelson Ave - Korean-style cream-filled brioche donuts\n• Go BEFORE dinner: the best donuts sell out by late afternoon, and holiday hours have closed at 6 PM\n• Grab a box for dessert / tomorrow morning",
+          "est": 18.0,
+          "ccy": "CAD",
+          "menuUrl": "https://www.goldiesdonuts.ca",
+          "menuLabel": "Goldie's Donuts",
+          "notes": "ESTIMATE: about 5 donuts at C$4.50-5.25 + 5% GST = about C$25, about US$18. Counter service, no tip. Regular hours 7:30 AM-8 PM; a holiday-season post listed Horseshoe Bay at 7:30 AM-6 PM - confirm Dec 26 hours."
+        },
+        {
+          "start": "5:50 PM",
+          "end": "6:50 PM",
+          "title": "Dinner - Troll's Restaurant",
+          "typeName": "Dining",
+          "emoji": "🐟",
+          "detail": "• FROM Goldie's → TO Troll's\n• 6408 Bay St, at the Horseshoe Bay ferry terminal - fish & chips since 1946\n• Kids' meals (under 10) C$7.25 each, include a soft drink or milk and an ice cream cone: fish & chips, chicken fingers & fries, mac & cheese\n• Winter closing time depends on foot traffic - confirm a 5:50 PM table when you book",
+          "est": 61.65,
+          "ccy": "CAD",
+          "menuUrl": "https://www.trollsrestaurant.com/the-menus",
+          "menuLabel": "Troll's menus",
+          "notes": "Cod & Chips 2-piece C$25 + Grilled Salmon C$29 (adults) + 2 kids' meals x C$7.25 = C$68.50. Water. + 5% GST (C$3.43) + 20% tip (C$13.70) = C$85.63, about US$62 at ~0.72. Prices from Troll's online menus, Oct 2026.",
           "conf": "NOT BOOKED",
           "confLinks": [
             {
-              "label": "Rocky Mountain Flatbread — reservations",
-              "url": "https://www.rockymountainflatbread.ca/reservations/"
+              "label": "Troll's - reservations",
+              "url": "https://www.trollsrestaurant.com/reserve-now"
             }
           ],
-          "flag": "Book 6:00 PM Sat Dec 26 for four."
+          "flag": "Book 5:50 PM Sat Dec 26 for four - and confirm they'll be open and seating then (winter closing varies). Phone 604-921-7755.",
+          "phones": [
+            {
+              "label": "604-921-7755",
+              "tel": "+16049217755"
+            }
+          ]
         },
         {
-          "start": "7:15 PM",
-          "end": "7:40 PM",
+          "start": "6:50 PM",
+          "end": "6:55 PM",
+          "title": "Walk back to the car",
+          "typeName": "Walk",
+          "emoji": "🚶"
+        },
+        {
+          "start": "6:55 PM",
+          "end": "7:25 PM",
           "title": "Drive back to the hotel",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM Main St → TO the hotel\n• ~4 mi to the Hyatt Regency\n• Valet the car",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Rocky%20Mountain%20Flatbread%2C%204186%20Main%20St%2C%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
+          "detail": "• FROM Horseshoe Bay → TO the hotel\n• ~13 mi on Hwy 1 east, then over the Lions Gate Bridge\n• Valet the car",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Troll%27s%20Restaurant%2C%206408%20Bay%20St%2C%20West%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "7:45 PM",
-          "end": "8:45 PM",
+          "start": "7:30 PM",
+          "end": "8:30 PM",
           "title": "Bedtime routine",
           "typeName": "Logistics",
           "emoji": "🛏️",
-          "detail": "• Back before 8:00 PM keeps 10 hrs of sleep before a 7:00 AM wake-up"
+          "detail": "• Lights out 8:30-9:00 PM keeps 10 hrs of sleep before a 7:00 AM wake-up"
         }
       ]
     },
