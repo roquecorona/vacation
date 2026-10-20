@@ -780,16 +780,16 @@
       "planned": false,
       "blocks": [
         {
-          "start": "7:00 AM",
-          "end": "8:00 AM",
+          "start": "6:30 AM",
+          "end": "7:30 AM",
           "title": "Wake up & get ready",
           "typeName": "Logistics",
           "emoji": "⏰",
-          "detail": "• Snow pants, boots, gloves on; pack dry layers for the car"
+          "detail": "• Snow pants, boots, gloves on; pack dry layers for the car\n• Early start for the Christmas Eve crowds"
         },
         {
-          "start": "8:00 AM",
-          "end": "8:35 AM",
+          "start": "7:30 AM",
+          "end": "8:05 AM",
           "title": "Breakfast - Mosaic Grille (hotel)",
           "typeName": "Dining",
           "emoji": "🍳",
@@ -798,19 +798,19 @@
           "menuUrl": "https://www.hyatt.com/en-US/hotel/canada/hyatt-regency-vancouver/yvrrv/dining"
         },
         {
-          "start": "8:35 AM",
-          "end": "8:50 AM",
+          "start": "8:05 AM",
+          "end": "8:20 AM",
           "title": "Car from the valet",
           "typeName": "Logistics",
           "emoji": "🚗",
-          "detail": "• Call down for the car at 8:30 before leaving the room\n• Tip the valet C$5 (about US$3.60)",
+          "detail": "• Call down for the car at 8:00 before leaving the room\n• Tip the valet C$5 (about US$3.60)",
           "est": 3.6,
           "ccy": "CAD",
           "notes": "Valet tip: C$5 when they bring the car up (about US$3.60) - US cash is fine too. Nothing needed at drop-off."
         },
         {
-          "start": "8:50 AM",
-          "end": "9:20 AM",
+          "start": "8:20 AM",
+          "end": "8:50 AM",
           "title": "Drive to Grouse Mountain",
           "typeName": "Drive",
           "emoji": "🚗",
@@ -819,8 +819,8 @@
           "menuLabel": "Driving directions"
         },
         {
-          "start": "9:20 AM",
-          "end": "9:30 AM",
+          "start": "8:50 AM",
+          "end": "9:00 AM",
           "title": "Park at the Grouse base lot",
           "typeName": "Parking",
           "emoji": "🅿️",
@@ -830,12 +830,12 @@
           "notes": "ESTIMATE from last season's posted rates: about C$12 for the day (C$10 for 3 hours), about US$9 at ~0.72."
         },
         {
-          "start": "9:30 AM",
-          "end": "9:50 AM",
+          "start": "9:00 AM",
+          "end": "9:20 AM",
           "title": "Tickets & Skyride up",
           "typeName": "Transportation",
           "emoji": "🚡",
-          "detail": "• Red Skyride to the summit, ~8 min (100-person tram)\n• Family Mountain Admission (2 adults + 2 kids ages 5-12) - show the online ticket\n• Holiday lines: 20-min buffer built in",
+          "detail": "• Red Skyride to the summit, ~8 min (100-person tram)\n• Family Mountain Admission (2 adults + 2 kids ages 5-12) - show the online ticket\n• Early start beats the Christmas Eve lines",
           "est": 164.88,
           "ccy": "CAD",
           "notes": "Family Mountain Admission ticket C$229 (2 adults + 2 children 5-12), about US$165 at ~0.72. Grouse's posted rate; ticket is date-specific and non-refundable - buy online.",
@@ -849,42 +849,47 @@
           "flag": "Non-refundable and date-specific - buy 1-2 weeks out once you can see the forecast."
         },
         {
-          "start": "9:50 AM",
-          "end": "10:15 AM",
+          "start": "9:20 AM",
+          "end": "10:10 AM",
+          "title": "Sliding Zone - sledding",
+          "typeName": "Excursion",
+          "emoji": "❄️",
+          "detail": "• Two groomed sledding lanes just west of the skating pond - quietest first thing\n• Rent sleds at the Fireside Hut - C$5 each, no booking\n• Activity start times aren't posted - check Today on Grouse that morning",
+          "est": 14.4,
+          "ccy": "CAD",
+          "notes": "4 sled rentals x C$5 = C$20, about US$14 at ~0.72 (Grouse's posted 2026 price)."
+        },
+        {
+          "start": "10:10 AM",
+          "end": "10:40 AM",
           "title": "Santa's Workshop",
           "typeName": "Excursion",
           "emoji": "🎅",
-          "detail": "• Behind the skating pond - go first, before the Christmas Eve line builds\n• Visiting Santa is free; no booking (skipping the C$5 photos)"
+          "detail": "• Behind the skating pond - visiting Santa is free, no booking\n• Line grows through the day on Christmas Eve (skipping the C$5 photos)"
         },
         {
-          "start": "10:15 AM",
-          "end": "10:40 AM",
+          "start": "10:40 AM",
+          "end": "11:10 AM",
           "title": "Sleigh ride",
           "typeName": "Excursion",
           "emoji": "🛷",
           "detail": "• Leaves from just behind Santa's Workshop; loops through the snowy summit forest\n• Included with admission, walk-up\n• Runs only as conditions allow (needs a minimum snow base) - ask at the top whether it's running"
         },
         {
-          "start": "10:40 AM",
-          "end": "11:20 AM",
-          "title": "Sliding Zone - sledding",
+          "start": "11:10 AM",
+          "end": "11:50 AM",
+          "title": "Elf Headquarters",
           "typeName": "Excursion",
-          "emoji": "❄️",
-          "detail": "• Two groomed sledding lanes just west of the skating pond\n• Rent sleds at the Fireside Hut - C$5 each, no booking",
-          "est": 14.4,
-          "ccy": "CAD",
-          "notes": "4 sled rentals x C$5 = C$20, about US$14 at ~0.72 (Grouse's posted 2026 price)."
+          "emoji": "🧝",
+          "detail": "• Free kids' craft area: write letters to Santa and make DIY ornaments\n• Open 10 AM-4 PM on Dec 24"
         },
         {
-          "start": "11:20 AM",
+          "start": "11:50 AM",
           "end": "12:00 PM",
-          "title": "Skating pond",
-          "typeName": "Excursion",
-          "emoji": "⛸️",
-          "detail": "• Mountaintop outdoor skating pond\n• Skate rentals at the pond: C$10 adult, C$6 child",
-          "est": 23.04,
-          "ccy": "CAD",
-          "notes": "2 adult rentals x C$10 + 2 child rentals x C$6 = C$32, about US$23 at ~0.72 (Grouse's posted 2026 prices)."
+          "title": "Walk to the reindeer pen",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Behind the skating pond"
         },
         {
           "start": "12:00 PM",
@@ -892,11 +897,11 @@
           "title": "Reindeer Talk",
           "typeName": "Excursion",
           "emoji": "🦌",
-          "detail": "• Meet Vixen, Grouse's resident reindeer, at her pen behind the skating pond\n• Staff talk about her favourite foods and games - free, no booking (also at 3:00 PM)"
+          "detail": "• Meet Vixen, Grouse's resident reindeer\n• Staff talk about her favourite foods and games - free, no booking (also at 3:00 PM)"
         },
         {
           "start": "12:20 PM",
-          "end": "1:00 PM",
+          "end": "1:05 PM",
           "title": "Lunch - Lupins Cafe (Peak Chalet)",
           "typeName": "Dining",
           "emoji": "🍔",
@@ -907,12 +912,12 @@
           "notes": "ESTIMATE from Lupins' posted summer 2026 menu board (winter menu may differ): Bacon Cheeseburger C$18 + Hot Honey Chicken Sandwich C$17 (adults) + Mac & Cheese C$12 + All Beef Canadian Hot Dog C$9 (kids) = C$56. Water. + 5% GST (C$2.80) = C$58.80, about US$42. Self-serve, no tip."
         },
         {
-          "start": "1:00 PM",
+          "start": "1:05 PM",
           "end": "1:30 PM",
-          "title": "Elf Headquarters",
-          "typeName": "Excursion",
-          "emoji": "🧝",
-          "detail": "• Free kids' craft area: write letters to Santa and make DIY ornaments\n• Open 10 AM-4 PM on Dec 24\n• Christmas films loop in the Theatre in the Sky if anyone needs to warm up"
+          "title": "Buffer - more sledding or warm up",
+          "typeName": "Free Time",
+          "emoji": "❄️",
+          "detail": "• Back to the Sliding Zone, or Christmas films on a loop in the Theatre in the Sky\n• Skating dropped to keep the day relaxed - add it here if you're ahead (C$10 adult / C$6 child rentals)"
         },
         {
           "start": "1:30 PM",
