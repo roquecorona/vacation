@@ -850,11 +850,41 @@
         },
         {
           "start": "9:50 AM",
-          "end": "12:00 PM",
-          "title": "Peak of Christmas - snow play",
+          "end": "10:15 AM",
+          "title": "Santa's Workshop",
           "typeName": "Excursion",
-          "emoji": "🏔️",
-          "detail": "• Mountaintop skating pond (skates C$10 adult / C$6 child)\n• Sliding Zone (sled rental C$5)\n• Sleigh ride through the snowy forest - runs as conditions allow (needs a minimum snow base)\n• Peak of Christmas runs Nov 20-Dec 24, 2026 - today is the last day\n• Check Today on Grouse that morning for conditions"
+          "emoji": "🎅",
+          "detail": "• Behind the skating pond - go first, before the Christmas Eve line builds\n• Visiting Santa is free; no booking (skipping the C$5 photos)"
+        },
+        {
+          "start": "10:15 AM",
+          "end": "10:40 AM",
+          "title": "Sleigh ride",
+          "typeName": "Excursion",
+          "emoji": "🛷",
+          "detail": "• Leaves from just behind Santa's Workshop; loops through the snowy summit forest\n• Included with admission, walk-up\n• Runs only as conditions allow (needs a minimum snow base) - ask at the top whether it's running"
+        },
+        {
+          "start": "10:40 AM",
+          "end": "11:20 AM",
+          "title": "Sliding Zone - sledding",
+          "typeName": "Excursion",
+          "emoji": "❄️",
+          "detail": "• Two groomed sledding lanes just west of the skating pond\n• Rent sleds at the Fireside Hut - C$5 each, no booking",
+          "est": 14.4,
+          "ccy": "CAD",
+          "notes": "4 sled rentals x C$5 = C$20, about US$14 at ~0.72 (Grouse's posted 2026 price)."
+        },
+        {
+          "start": "11:20 AM",
+          "end": "12:00 PM",
+          "title": "Skating pond",
+          "typeName": "Excursion",
+          "emoji": "⛸️",
+          "detail": "• Mountaintop outdoor skating pond\n• Skate rentals at the pond: C$10 adult, C$6 child",
+          "est": 23.04,
+          "ccy": "CAD",
+          "notes": "2 adult rentals x C$10 + 2 child rentals x C$6 = C$32, about US$23 at ~0.72 (Grouse's posted 2026 prices)."
         },
         {
           "start": "12:00 PM",
@@ -862,11 +892,11 @@
           "title": "Reindeer Talk",
           "typeName": "Excursion",
           "emoji": "🦌",
-          "detail": "• Daily at 12:00 PM (and 3:00 PM) at the reindeer pen\n• Included with admission"
+          "detail": "• Meet Vixen, Grouse's resident reindeer, at her pen behind the skating pond\n• Staff talk about her favourite foods and games - free, no booking (also at 3:00 PM)"
         },
         {
           "start": "12:20 PM",
-          "end": "1:05 PM",
+          "end": "1:00 PM",
           "title": "Lunch - Lupins Cafe (Peak Chalet)",
           "typeName": "Dining",
           "emoji": "🍔",
@@ -877,60 +907,60 @@
           "notes": "ESTIMATE from Lupins' posted summer 2026 menu board (winter menu may differ): Bacon Cheeseburger C$18 + Hot Honey Chicken Sandwich C$17 (adults) + Mac & Cheese C$12 + All Beef Canadian Hot Dog C$9 (kids) = C$56. Water. + 5% GST (C$2.80) = C$58.80, about US$42. Self-serve, no tip."
         },
         {
-          "start": "1:05 PM",
-          "end": "2:15 PM",
-          "title": "Elf Headquarters & more snow time",
-          "typeName": "Free Time",
-          "emoji": "❄️",
-          "detail": "• Elf Headquarters crafts - open 10 AM-4 PM on Dec 24\n• Santa's Workshop in the Peak Chalet (photos C$5 at the kiosks)\n• Back to the sliding lanes or the pond; city views from the Chalet decks"
+          "start": "1:00 PM",
+          "end": "1:30 PM",
+          "title": "Elf Headquarters",
+          "typeName": "Excursion",
+          "emoji": "🧝",
+          "detail": "• Free kids' craft area: write letters to Santa and make DIY ornaments\n• Open 10 AM-4 PM on Dec 24\n• Christmas films loop in the Theatre in the Sky if anyone needs to warm up"
         },
         {
-          "start": "2:15 PM",
-          "end": "2:35 PM",
+          "start": "1:30 PM",
+          "end": "1:45 PM",
           "title": "Skyride down",
           "typeName": "Transportation",
           "emoji": "🚡"
         },
         {
-          "start": "2:35 PM",
-          "end": "2:50 PM",
+          "start": "1:45 PM",
+          "end": "2:00 PM",
           "title": "Change out of wet snow gear at the car",
           "typeName": "Logistics",
           "emoji": "🧦",
           "detail": "• Dry socks and layers"
         },
         {
-          "start": "2:50 PM",
-          "end": "3:20 PM",
+          "start": "2:00 PM",
+          "end": "2:30 PM",
           "title": "Drive Grouse → hotel",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM Grouse Mountain base → TO the hotel\n• ~8 mi over the Lions Gate Bridge\n• Leave the car with the valet for a short stay - you'll need it again at 4:00",
+          "detail": "• FROM Grouse Mountain base → TO the hotel\n• ~8 mi over the Lions Gate Bridge\n• Leave the car with the valet for a short stay - you'll need it again at 4:05",
           "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Grouse%20Mountain%2C%206400%20Nancy%20Greene%20Way%2C%20North%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "3:20 PM",
-          "end": "3:50 PM",
-          "title": "Rest at the hotel",
+          "start": "2:30 PM",
+          "end": "4:05 PM",
+          "title": "Showers & wind-down at the hotel",
           "typeName": "Free Time",
-          "emoji": "🛋️",
-          "detail": "• Warm up, snacks, dry clothes for the evening"
+          "emoji": "🚿",
+          "detail": "• Showers, warm up, rest\n• Dress warm for the evening lights"
         },
         {
-          "start": "3:50 PM",
-          "end": "4:00 PM",
+          "start": "4:05 PM",
+          "end": "4:15 PM",
           "title": "Car from the valet",
           "typeName": "Logistics",
           "emoji": "🚗",
-          "detail": "• Call down for the car at 3:45\n• Tip the valet C$5 (about US$3.60)",
+          "detail": "• Call down for the car at 4:00\n• Tip the valet C$5 (about US$3.60)",
           "est": 3.6,
           "ccy": "CAD",
           "notes": "Valet tip: C$5 when they bring the car up (about US$3.60) - US cash is fine too. Nothing needed at drop-off."
         },
         {
-          "start": "4:00 PM",
-          "end": "4:25 PM",
+          "start": "4:15 PM",
+          "end": "4:40 PM",
           "title": "Drive to VanDusen Botanical Garden",
           "typeName": "Drive",
           "emoji": "🚗",
@@ -939,12 +969,12 @@
           "menuLabel": "Driving directions"
         },
         {
-          "start": "4:30 PM",
-          "end": "5:45 PM",
+          "start": "4:45 PM",
+          "end": "6:00 PM",
           "title": "VanDusen Festival of Lights",
           "typeName": "Excursion",
           "emoji": "✨",
-          "detail": "• Over a million lights across the 55-acre garden; catch one Dancing Lights show\n• Timed entry - book the 4:30 PM slot (everyone needs a reservation)\n• Standard hours 4-10 PM, closed Dec 25 - Christmas Eve hours not posted yet",
+          "detail": "• Over a million lights across the 55-acre garden; catch one Dancing Lights show\n• Timed entry - book the 4:45 PM slot (everyone needs a reservation)\n• Standard hours 4-10 PM, closed Dec 25 - Christmas Eve hours not posted yet",
           "est": 61.99,
           "ccy": "CAD",
           "notes": "2 adults x C$29 + 2 children (5-12) x C$12 = C$82 + 5% GST (C$4.10) = C$86.10, about US$62. Published 2026 prices; tickets go on sale Nov 4, 2026.",
@@ -955,11 +985,11 @@
               "url": "https://vancouver.ca/news-calendar/festival-of-lights-brightens-the-holidays-nov-2025.aspx"
             }
           ],
-          "flag": "Tickets go on sale Nov 4, 2026 - confirm Christmas Eve hours and book the 4:30 PM slot for Thu Dec 24."
+          "flag": "Tickets go on sale Nov 4, 2026 - confirm Christmas Eve hours and book the 4:45 PM slot for Thu Dec 24."
         },
         {
-          "start": "5:45 PM",
-          "end": "6:10 PM",
+          "start": "6:00 PM",
+          "end": "6:25 PM",
           "title": "Drive VanDusen → hotel",
           "typeName": "Drive",
           "emoji": "🚗",
@@ -968,8 +998,8 @@
           "menuLabel": "Driving directions"
         },
         {
-          "start": "6:10 PM",
-          "end": "6:30 PM",
+          "start": "6:25 PM",
+          "end": "6:45 PM",
           "title": "Quick hotel stop & walk to dinner",
           "typeName": "Walk",
           "emoji": "🚶",
@@ -978,8 +1008,8 @@
           "menuLabel": "Walking directions"
         },
         {
-          "start": "6:30 PM",
-          "end": "7:45 PM",
+          "start": "6:45 PM",
+          "end": "8:00 PM",
           "title": "Dinner - The Keg Steakhouse + Bar (Alberni)",
           "typeName": "Dining",
           "emoji": "🥩",
@@ -995,11 +1025,11 @@
               "url": "https://www.sevenrooms.com/explore/thekegsteakhousebaralberni/reservations/create/search/"
             }
           ],
-          "flag": "Book 6:30 PM Thu Dec 24 (Christmas Eve) for four - holiday tables go first."
+          "flag": "Book 6:45 PM Thu Dec 24 (Christmas Eve) for four - holiday tables go first."
         },
         {
-          "start": "7:45 PM",
-          "end": "8:00 PM",
+          "start": "8:00 PM",
+          "end": "8:15 PM",
           "title": "Walk back to the hotel",
           "typeName": "Walk",
           "emoji": "🚶",
@@ -1008,12 +1038,12 @@
           "menuLabel": "Walking directions"
         },
         {
-          "start": "8:00 PM",
-          "end": "9:00 PM",
+          "start": "8:15 PM",
+          "end": "9:15 PM",
           "title": "Bedtime routine",
           "typeName": "Logistics",
           "emoji": "🛏️",
-          "detail": "• Stockings out for Christmas morning\n• Lights out by 9:00 PM keeps 10 hrs of sleep before a 7:00 AM wake-up"
+          "detail": "• Stockings out for Christmas morning\n• Lights out by 9:15 PM - about 9 hrs 45 min before a 7:00 AM Christmas morning"
         }
       ]
     },
