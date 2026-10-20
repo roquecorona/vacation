@@ -1003,52 +1003,32 @@
           "menuLabel": "Driving directions"
         },
         {
-          "start": "6:25 PM",
-          "end": "6:45 PM",
-          "title": "Quick hotel stop & walk to dinner",
-          "typeName": "Walk",
-          "emoji": "🚶",
-          "detail": "• FROM the hotel → TO The Keg Alberni\n• Drop layers in the room\n• ~8-min walk to 1121 Alberni St",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=The%20Keg%20Steakhouse%20%2B%20Bar%20Alberni%2C%201121%20Alberni%20St%2C%20Vancouver%2C%20BC&travelmode=walking",
-          "menuLabel": "Walking directions"
-        },
-        {
-          "start": "6:45 PM",
-          "end": "8:00 PM",
-          "title": "Dinner - The Keg Steakhouse + Bar (Alberni)",
+          "start": "6:30 PM",
+          "end": "7:45 PM",
+          "title": "Dinner at the hotel - Cloudstreet or Grain Tasting Bar",
           "typeName": "Dining",
-          "emoji": "🥩",
-          "detail": "• 1121 Alberni St\n• Christmas Eve hours 2:00-9:00 PM (closed Christmas Day)\n• Kids' menu - meals come with a side (vegetables, Caesar or fries)\n• Reserve ahead (SevenRooms)",
-          "est": 105.3,
-          "ccy": "CAD",
-          "menuUrl": "https://thekeg.com/en/locations/alberni/menu",
-          "notes": "Top Sirloin 8 oz C$43 + Blackened Chicken C$36 (adults) + Kids Sirloin 4 oz C$22 + Kids Chicken Strips C$16 = C$117. Water. + 5% GST (C$5.85) + 20% tip (C$23.40) = C$146.25, about US$105 at ~0.72. Adult prices from The Keg Alberni online menu, Oct 2026; kids' prices are an ESTIMATE (not posted for this location).",
+          "emoji": "🍽️",
+          "detail": "• In the Hyatt Regency - no walking or driving after VanDusen\n• Grain Tasting Bar: lobby bar off Burrard St with a food menu\n• Hotel's main restaurant (listed by Hyatt as Mosaic Grille; reported as Cloudstreet for 2026) - on Christmas Eve it may serve only its holiday buffet, so ask when you book",
+          "est": 100.0,
+          "menuUrl": "https://www.hyatt.com/en-US/hotel/canada/hyatt-regency-vancouver/yvrrv/dining",
+          "menuLabel": "Hotel dining",
+          "notes": "ESTIMATE: about $100 for the family (Roque's budget).",
           "conf": "NOT BOOKED",
           "confLinks": [
             {
-              "label": "The Keg Alberni — reservations (SevenRooms)",
-              "url": "https://www.sevenrooms.com/explore/thekegsteakhousebaralberni/reservations/create/search/"
+              "label": "Hotel restaurant - OpenTable",
+              "url": "https://www.opentable.ca/r/mosaic-grille-hyatt-regency-vancouver"
             }
           ],
-          "flag": "Book 6:45 PM Thu Dec 24 (Christmas Eve) for four - holiday tables go first."
+          "flag": "Reserve 6:30 PM Thu Dec 24 for four, and ask whether the regular menu runs alongside the Christmas Eve buffet."
         },
         {
-          "start": "8:00 PM",
-          "end": "8:15 PM",
-          "title": "Walk back to the hotel",
-          "typeName": "Walk",
-          "emoji": "🚶",
-          "detail": "• FROM The Keg → TO the hotel",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=The%20Keg%20Steakhouse%20%2B%20Bar%20Alberni%2C%201121%20Alberni%20St%2C%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=walking",
-          "menuLabel": "Walking directions"
-        },
-        {
-          "start": "8:15 PM",
-          "end": "9:15 PM",
+          "start": "7:45 PM",
+          "end": "8:45 PM",
           "title": "Bedtime routine",
           "typeName": "Logistics",
           "emoji": "🛏️",
-          "detail": "• Stockings out for Christmas morning\n• Lights out by 9:15 PM - about 9 hrs 45 min before a 7:00 AM Christmas morning"
+          "detail": "• Stockings out for Christmas morning\n• Lights out by 8:45 PM keeps 10 hrs of sleep before a 7:00 AM Christmas morning"
         }
       ]
     },
