@@ -658,11 +658,11 @@
         },
         {
           "start": "2:20 PM",
-          "end": "3:20 PM",
+          "end": "4:00 PM",
           "title": "Hyatt Regency Vancouver - valet, check in & relax — BOOKED",
           "typeName": "Hotel",
           "emoji": "🏨",
-          "detail": "• Valet the car and luggage\n• Early check-in requested (Globalist)\n• Up to the room to unpack and rest",
+          "detail": "• Valet the car and luggage\n• Early check-in requested (Globalist)\n• Up to the room: unpack, showers, change - out the door by 4:00",
           "program": "World of Hyatt",
           "points": 100000,
           "conf": "World of Hyatt — 40023B30138789 (guest: Jennifer Borges)",
@@ -681,8 +681,8 @@
           ]
         },
         {
-          "start": "3:20 PM",
-          "end": "3:35 PM",
+          "start": "4:00 PM",
+          "end": "4:15 PM",
           "title": "Walk to the Coal Harbour seawall",
           "typeName": "Walk",
           "emoji": "🚶",
@@ -691,24 +691,24 @@
           "menuLabel": "Walking directions"
         },
         {
-          "start": "3:35 PM",
-          "end": "4:30 PM",
+          "start": "4:15 PM",
+          "end": "4:45 PM",
           "title": "Coal Harbour seawall at sunset",
           "typeName": "Walk",
           "emoji": "🌅",
           "detail": "• Sunset ~4:15 PM over the harbour\n• Floatplanes landing and taking off, North Shore mountains\n• Digital Orca sculpture and the Olympic Cauldron\n• Vancouver Christmas Market (paid entry) is at Jack Poole Plaza - walk past"
         },
         {
-          "start": "4:30 PM",
-          "end": "4:50 PM",
+          "start": "4:45 PM",
+          "end": "5:05 PM",
           "title": "Canada Place promenade",
           "typeName": "Sightseeing",
           "emoji": "⛵",
           "detail": "• Harbour views under the white sails\n• Part of the west promenade is under construction; no holiday display this year"
         },
         {
-          "start": "4:50 PM",
-          "end": "5:10 PM",
+          "start": "5:05 PM",
+          "end": "5:25 PM",
           "title": "Walk to Gastown",
           "typeName": "Walk",
           "emoji": "🚶",
@@ -717,15 +717,15 @@
           "menuLabel": "Walking directions"
         },
         {
-          "start": "5:10 PM",
-          "end": "5:45 PM",
+          "start": "5:25 PM",
+          "end": "5:50 PM",
           "title": "Gastown stroll",
           "typeName": "Walk",
           "emoji": "🏮",
           "detail": "• Cobblestone Water St lit up after dark\n• Gassy Jack statue in Maple Tree Square\n• Stay on Water St and Maple Tree Square - avoid wandering south toward Hastings"
         },
         {
-          "start": "5:45 PM",
+          "start": "5:50 PM",
           "end": "6:05 PM",
           "title": "Gastown Steam Clock",
           "typeName": "Sightseeing",
