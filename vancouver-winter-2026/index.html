@@ -2043,7 +2043,7 @@ class Component extends DCLogic {
     },
     {
       "date": "Thursday, December 24, 2026",
-      "title": "Christmas Eve - Grouse Mountain & Capilano",
+      "title": "Christmas Eve - Grouse Mountain & VanDusen Lights",
       "planned": true,
       "blocks": [
         {
@@ -2056,7 +2056,7 @@ class Component extends DCLogic {
         },
         {
           "start": "8:00 AM",
-          "end": "8:45 AM",
+          "end": "8:35 AM",
           "title": "Breakfast - Mosaic Grille (hotel)",
           "typeName": "Dining",
           "emoji": "🍳",
@@ -2065,33 +2065,44 @@ class Component extends DCLogic {
           "menuUrl": "https://www.hyatt.com/en-US/hotel/canada/hyatt-regency-vancouver/yvrrv/dining"
         },
         {
-          "start": "8:45 AM",
-          "end": "9:15 AM",
+          "start": "8:35 AM",
+          "end": "8:50 AM",
           "title": "Car from the valet",
           "typeName": "Logistics",
           "emoji": "🚗",
-          "detail": "• Call down for the car before leaving the room"
+          "detail": "• Call down for the car at 8:30 before leaving the room"
         },
         {
-          "start": "9:15 AM",
-          "end": "9:45 AM",
+          "start": "8:50 AM",
+          "end": "9:20 AM",
           "title": "Drive to Grouse Mountain",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM the hotel → TO Grouse Mountain base\n• ~8 mi over the Lions Gate Bridge to the base of Grouse\n• Paid parking at the base lot",
+          "detail": "• FROM the hotel → TO Grouse Mountain base\n• ~8 mi over the Lions Gate Bridge to the base of Grouse\n• Christmas Eve is one of Grouse's busiest days - early arrival beats the lot and the Skyride line",
           "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=Grouse%20Mountain%2C%206400%20Nancy%20Greene%20Way%2C%20North%20Vancouver%2C%20BC&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "9:45 AM",
-          "end": "10:00 AM",
+          "start": "9:20 AM",
+          "end": "9:30 AM",
+          "title": "Park at the Grouse base lot",
+          "typeName": "Parking",
+          "emoji": "🅿️",
+          "detail": "• Pay with the PayByPhone app or at the machines\n• Day rate covers the whole visit",
+          "est": 8.64,
+          "ccy": "CAD",
+          "notes": "ESTIMATE from last season's posted rates: about C$12 for the day (C$10 for 3 hours), about US$9 at ~0.72."
+        },
+        {
+          "start": "9:30 AM",
+          "end": "9:50 AM",
           "title": "Tickets & Skyride up",
           "typeName": "Transportation",
           "emoji": "🚡",
-          "detail": "• Red Skyride to the summit, ~8 min\n• Family Mountain Admission (2 adults + 2 kids)",
+          "detail": "• Red Skyride to the summit, ~8 min (100-person tram)\n• Family Mountain Admission (2 adults + 2 kids ages 5-12) - show the online ticket\n• Holiday lines: 20-min buffer built in",
           "est": 164.88,
           "ccy": "CAD",
-          "notes": "Family Mountain Admission ticket C$229 (2 adults + 2 children 5-12), about US$165 at ~0.72. Grouse's posted 2026 rate; ticket is date-specific - buy online.",
+          "notes": "Family Mountain Admission ticket C$229 (2 adults + 2 children 5-12), about US$165 at ~0.72. Grouse's posted rate; ticket is date-specific and non-refundable - buy online.",
           "conf": "NOT BOOKED",
           "confLinks": [
             {
@@ -2102,100 +2113,126 @@ class Component extends DCLogic {
           "flag": "Non-refundable and date-specific - buy 1-2 weeks out once you can see the forecast."
         },
         {
-          "start": "10:00 AM",
+          "start": "9:50 AM",
           "end": "12:00 PM",
           "title": "Peak of Christmas - snow play",
           "typeName": "Excursion",
           "emoji": "🏔️",
-          "detail": "• Mountaintop skating pond (skates C$10 adult / C$6 child)\n• Sliding Zone (sled rental C$5)\n• Sleigh ride through the snowy forest - needs a minimum snow base\n• Santa's Workshop and Elf Headquarters crafts\n• Peak of Christmas runs Nov 20-Dec 24, 2026 - today is the last day\n• Christmas Eve hours may end early - check Today on Grouse that morning"
+          "detail": "• Mountaintop skating pond (skates C$10 adult / C$6 child)\n• Sliding Zone (sled rental C$5)\n• Sleigh ride through the snowy forest - runs as conditions allow (needs a minimum snow base)\n• Peak of Christmas runs Nov 20-Dec 24, 2026 - today is the last day\n• Check Today on Grouse that morning for conditions"
         },
         {
           "start": "12:00 PM",
-          "end": "12:45 PM",
+          "end": "12:20 PM",
+          "title": "Reindeer Talk",
+          "typeName": "Excursion",
+          "emoji": "🦌",
+          "detail": "• Daily at 12:00 PM (and 3:00 PM) at the reindeer pen\n• Included with admission"
+        },
+        {
+          "start": "12:20 PM",
+          "end": "1:05 PM",
           "title": "Lunch - Lupins Cafe (Peak Chalet)",
           "typeName": "Dining",
           "emoji": "🍔",
-          "detail": "• Self-serve, main floor of the Peak Chalet\n• Burgers, hot dogs, mac & cheese, chicken tenders",
+          "detail": "• Self-serve, main floor of the Peak Chalet - after the noon rush\n• Burgers, hot dogs, mac & cheese, chicken tenders",
           "est": 42.34,
           "ccy": "CAD",
           "menuUrl": "https://www.grousemountain.com/lupins/menu",
-          "notes": "Bacon Cheeseburger C$18 + Hot Honey Chicken Sandwich C$17 (adults) + Mac & Cheese C$12 + All Beef Canadian Hot Dog C$9 (kids) = C$56. Water. + 5% GST (C$2.80) = C$58.80, about US$42. Self-serve, no tip. Prices from Lupins' posted 2026 menu board; winter menu may differ slightly."
+          "notes": "ESTIMATE from Lupins' posted summer 2026 menu board (winter menu may differ): Bacon Cheeseburger C$18 + Hot Honey Chicken Sandwich C$17 (adults) + Mac & Cheese C$12 + All Beef Canadian Hot Dog C$9 (kids) = C$56. Water. + 5% GST (C$2.80) = C$58.80, about US$42. Self-serve, no tip."
         },
         {
-          "start": "12:45 PM",
-          "end": "1:30 PM",
-          "title": "More snow time & summit views",
+          "start": "1:05 PM",
+          "end": "2:15 PM",
+          "title": "Elf Headquarters & more snow time",
           "typeName": "Free Time",
           "emoji": "❄️",
-          "detail": "• Back to the sliding lanes or the pond\n• City and harbour views from the Peak Chalet decks"
+          "detail": "• Elf Headquarters crafts - open 10 AM-4 PM on Dec 24\n• Santa's Workshop in the Peak Chalet (photos C$5 at the kiosks)\n• Back to the sliding lanes or the pond; city views from the Chalet decks"
         },
         {
-          "start": "1:30 PM",
-          "end": "1:50 PM",
+          "start": "2:15 PM",
+          "end": "2:35 PM",
           "title": "Skyride down",
           "typeName": "Transportation",
           "emoji": "🚡"
         },
         {
-          "start": "1:50 PM",
-          "end": "2:05 PM",
+          "start": "2:35 PM",
+          "end": "2:50 PM",
           "title": "Change out of wet snow gear at the car",
           "typeName": "Logistics",
           "emoji": "🧦",
-          "detail": "• Dry socks and layers before the next stop"
+          "detail": "• Dry socks and layers"
         },
         {
-          "start": "2:05 PM",
-          "end": "2:15 PM",
-          "title": "Drive to Capilano Suspension Bridge Park",
+          "start": "2:50 PM",
+          "end": "3:20 PM",
+          "title": "Drive Grouse → hotel",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM Grouse Mountain base → TO Capilano Suspension Bridge Park\n• ~2 mi down Capilano Rd",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Grouse%20Mountain%2C%206400%20Nancy%20Greene%20Way%2C%20North%20Vancouver%2C%20BC&destination=Capilano%20Suspension%20Bridge%20Park%2C%203735%20Capilano%20Rd%2C%20North%20Vancouver%2C%20BC&travelmode=driving",
+          "detail": "• FROM Grouse Mountain base → TO the hotel\n• ~8 mi over the Lions Gate Bridge\n• Leave the car with the valet for a short stay - you'll need it again at 4:00",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Grouse%20Mountain%2C%206400%20Nancy%20Greene%20Way%2C%20North%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "2:15 PM",
-          "end": "5:30 PM",
-          "title": "Capilano Suspension Bridge & Canyon Lights",
+          "start": "3:20 PM",
+          "end": "4:00 PM",
+          "title": "Rest at the hotel",
+          "typeName": "Free Time",
+          "emoji": "🛋️",
+          "detail": "• Warm up, snacks, dry clothes for the evening"
+        },
+        {
+          "start": "4:00 PM",
+          "end": "4:25 PM",
+          "title": "Drive to VanDusen Botanical Garden",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM the hotel → TO VanDusen Botanical Garden\n• ~5 mi south to 5251 Oak St\n• On-site parking lot",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=VanDusen%20Botanical%20Garden%2C%205251%20Oak%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
+          "menuLabel": "Driving directions"
+        },
+        {
+          "start": "4:30 PM",
+          "end": "5:45 PM",
+          "title": "VanDusen Festival of Lights",
           "typeName": "Excursion",
-          "emoji": "🌉",
-          "detail": "• Cross the 450-ft suspension bridge, then Cliffwalk and Treetops Adventure in daylight\n• Stay as Canyon Lights come on at dusk (~4:15 PM)\n• Timed tickets - book the 2:00 PM hourly entry slot; children 0-5 free\n• Canyon Lights runs Nov 20, 2026-Jan 3",
-          "est": 128.16,
+          "emoji": "✨",
+          "detail": "• Over a million lights across the 55-acre garden; catch one Dancing Lights show\n• Timed entry - book the 4:30 PM slot (everyone needs a reservation)\n• Standard hours 4-10 PM, closed Dec 25 - Christmas Eve hours not posted yet",
+          "est": 61.99,
           "ccy": "CAD",
-          "notes": "2 adults x C$75 + 1 child (6-12) x C$28 + 1 child (5) free = C$178, about US$128 at ~0.72. Capilano's listed 2026 admission rates; holiday-week timed tickets can price higher, and tax may be added at checkout.",
+          "notes": "2 adults x C$29 + 2 children (5-12) x C$12 = C$82 + 5% GST (C$4.10) = C$86.10, about US$62. Published 2026 prices; tickets go on sale Nov 4, 2026.",
           "conf": "NOT BOOKED",
           "confLinks": [
             {
-              "label": "Capilano — tickets (2:00 PM slot)",
-              "url": "https://www.capbridge.com/tickets-and-hours/"
+              "label": "VanDusen Festival of Lights — City of Vancouver",
+              "url": "https://vancouver.ca/news-calendar/festival-of-lights-brightens-the-holidays-nov-2025.aspx"
             }
           ],
-          "flag": "Book the 2:00 PM entry slot for Thu Dec 24. Date changes by email to info@capbridge.com."
+          "flag": "Tickets go on sale Nov 4, 2026 - confirm Christmas Eve hours and book the 4:30 PM slot for Thu Dec 24."
         },
         {
-          "start": "5:30 PM",
-          "end": "5:55 PM",
-          "title": "Drive back to the hotel",
+          "start": "5:45 PM",
+          "end": "6:10 PM",
+          "title": "Drive VanDusen → hotel",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM Capilano → TO the hotel\n• ~5 mi over the Lions Gate Bridge\n• Valet the car",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Capilano%20Suspension%20Bridge%20Park%2C%203735%20Capilano%20Rd%2C%20North%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
+          "detail": "• FROM VanDusen → TO the hotel\n• ~5 mi back downtown\n• Valet the car for the night",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=VanDusen%20Botanical%20Garden%2C%205251%20Oak%20St%2C%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "5:55 PM",
-          "end": "6:15 PM",
+          "start": "6:10 PM",
+          "end": "6:30 PM",
           "title": "Quick hotel stop & walk to dinner",
           "typeName": "Walk",
           "emoji": "🚶",
-          "detail": "• FROM the hotel → TO The Keg Alberni\n• Drop wet layers in the room\n• ~8-min walk to 1121 Alberni St",
+          "detail": "• FROM the hotel → TO The Keg Alberni\n• Drop layers in the room\n• ~8-min walk to 1121 Alberni St",
           "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=The%20Keg%20Steakhouse%20%2B%20Bar%20Alberni%2C%201121%20Alberni%20St%2C%20Vancouver%2C%20BC&travelmode=walking",
           "menuLabel": "Walking directions"
         },
         {
-          "start": "6:15 PM",
-          "end": "7:30 PM",
+          "start": "6:30 PM",
+          "end": "7:45 PM",
           "title": "Dinner - The Keg Steakhouse + Bar (Alberni)",
           "typeName": "Dining",
           "emoji": "🥩",
@@ -2203,7 +2240,7 @@ class Component extends DCLogic {
           "est": 105.3,
           "ccy": "CAD",
           "menuUrl": "https://thekeg.com/en/locations/alberni/menu",
-          "notes": "Top Sirloin 8 oz C$43 + Blackened Chicken C$36 (adults) + Kids Sirloin 4 oz C$22 + Kids Chicken Strips C$16 = C$117. Water. + 5% GST (C$5.85) + 20% tip (C$23.40) = C$146.25, about US$105 at ~0.72. Prices from The Keg Alberni online menu, Oct 2026.",
+          "notes": "Top Sirloin 8 oz C$43 + Blackened Chicken C$36 (adults) + Kids Sirloin 4 oz C$22 + Kids Chicken Strips C$16 = C$117. Water. + 5% GST (C$5.85) + 20% tip (C$23.40) = C$146.25, about US$105 at ~0.72. Adult prices from The Keg Alberni online menu, Oct 2026; kids' prices are an ESTIMATE (not posted for this location).",
           "conf": "NOT BOOKED",
           "confLinks": [
             {
@@ -2211,11 +2248,11 @@ class Component extends DCLogic {
               "url": "https://www.sevenrooms.com/explore/thekegsteakhousebaralberni/reservations/create/search/"
             }
           ],
-          "flag": "Book 6:15 PM Thu Dec 24 (Christmas Eve) for four - holiday tables go first."
+          "flag": "Book 6:30 PM Thu Dec 24 (Christmas Eve) for four - holiday tables go first."
         },
         {
-          "start": "7:30 PM",
-          "end": "7:45 PM",
+          "start": "7:45 PM",
+          "end": "8:00 PM",
           "title": "Walk back to the hotel",
           "typeName": "Walk",
           "emoji": "🚶",
@@ -2224,8 +2261,8 @@ class Component extends DCLogic {
           "menuLabel": "Walking directions"
         },
         {
-          "start": "7:45 PM",
-          "end": "8:45 PM",
+          "start": "8:00 PM",
+          "end": "9:00 PM",
           "title": "Bedtime routine",
           "typeName": "Logistics",
           "emoji": "🛏️",
@@ -2599,7 +2636,7 @@ class Component extends DCLogic {
     },
     {
       "date": "Sunday, December 27, 2026",
-      "title": "Granville Island & Festival of Lights",
+      "title": "Granville Island & Capilano Canyon Lights",
       "planned": true,
       "blocks": [
         {
@@ -2681,56 +2718,67 @@ class Component extends DCLogic {
         },
         {
           "start": "1:20 PM",
-          "end": "3:30 PM",
+          "end": "2:45 PM",
           "title": "Downtime at the hotel",
           "typeName": "Free Time",
           "emoji": "🛋️",
           "detail": "• Rest before the evening lights"
         },
         {
-          "start": "3:30 PM",
-          "end": "3:50 PM",
+          "start": "2:45 PM",
+          "end": "3:00 PM",
           "title": "Car from the valet",
           "typeName": "Logistics",
           "emoji": "🚗"
         },
         {
-          "start": "3:50 PM",
-          "end": "4:15 PM",
-          "title": "Drive to VanDusen Botanical Garden",
+          "start": "3:00 PM",
+          "end": "3:25 PM",
+          "title": "Drive to Capilano Suspension Bridge Park",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM the hotel → TO VanDusen Botanical Garden\n• ~5 mi south to 5251 Oak St\n• On-site parking lot",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=VanDusen%20Botanical%20Garden%2C%205251%20Oak%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
+          "detail": "• FROM the hotel → TO Capilano Suspension Bridge Park\n• ~5 mi over the Lions Gate Bridge, then 1 mi up Capilano Rd\n• If the lot is full, staff send you to the free overflow lot with a shuttle",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=Capilano%20Suspension%20Bridge%20Park%2C%203735%20Capilano%20Rd%2C%20North%20Vancouver%2C%20BC&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "4:15 PM",
-          "end": "5:45 PM",
-          "title": "VanDusen Festival of Lights",
-          "typeName": "Excursion",
-          "emoji": "✨",
-          "detail": "• Over a million lights across the 55-acre garden\n• Timed entry - book a 4:15-4:30 PM slot\n• Open nightly Nov 27-Jan 3 (closed Dec 25), 4-10 PM",
-          "est": 61.99,
+          "start": "3:25 PM",
+          "end": "3:35 PM",
+          "title": "Park at Capilano",
+          "typeName": "Parking",
+          "emoji": "🅿️",
+          "detail": "• Pay at the meters (card) or PayByPhone location 4536",
+          "est": 6.48,
           "ccy": "CAD",
-          "notes": "2 adults x C$29 + 2 children (5-12) x C$12 = C$82 + 5% GST (C$4.10) = C$86.10, about US$62. Published 2026 prices; tickets go on sale Nov 4, 2026.",
+          "notes": "C$9 for up to 3 hours (posted rate), about US$6.50 at ~0.72."
+        },
+        {
+          "start": "3:35 PM",
+          "end": "5:15 PM",
+          "title": "Capilano Suspension Bridge & Canyon Lights",
+          "typeName": "Excursion",
+          "emoji": "🌉",
+          "detail": "• Cross the 450-ft suspension bridge, then Cliffwalk and Treetops Adventure in the last daylight\n• Stay as Canyon Lights come on at dusk (~4:15 PM)\n• Timed tickets - book the 3:30 PM entry; weekend windows are 30 min, so arrive by 4:00\n• Children 0-5 free; Canyon Lights runs Nov 20, 2026-Jan 10, 2027",
+          "est": 128.16,
+          "ccy": "CAD",
+          "notes": "2 adults x C$75 + 1 child (6-12) x C$28 + 1 child (5) free = C$178, about US$128 at ~0.72. ESTIMATE from Capilano's 2026 rate range (about C$70-75 adult / C$25-30 child); holiday-week timed tickets can price higher, and GST may be added at checkout.",
           "conf": "NOT BOOKED",
           "confLinks": [
             {
-              "label": "VanDusen Festival of Lights — City of Vancouver",
-              "url": "https://vancouver.ca/news-calendar/festival-of-lights-brightens-the-holidays-nov-2025.aspx"
+              "label": "Capilano — tickets (2:00 PM slot)",
+              "url": "https://www.capbridge.com/tickets-and-hours/"
             }
           ],
-          "flag": "Tickets go on sale Nov 4, 2026 - book the 4:15-4:30 PM slot for Sun Dec 27."
+          "flag": "Book the 3:30 PM entry for Sun Dec 27 (weekend windows are 30 min). Date changes by email to info@capbridge.com."
         },
         {
-          "start": "5:45 PM",
+          "start": "5:15 PM",
           "end": "6:05 PM",
           "title": "Drive to Olympic Village",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM VanDusen → TO Tap & Barrel Olympic Village\n• ~4 mi to 1 Athletes Way on False Creek",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=VanDusen%20Botanical%20Garden%2C%205251%20Oak%20St%2C%20Vancouver%2C%20BC&destination=Tap%20%26%20Barrel%20Olympic%20Village%2C%201%20Athletes%20Way%2C%20Vancouver%2C%20BC&travelmode=driving",
+          "detail": "• FROM Capilano → TO Tap & Barrel Olympic Village\n• ~8 mi back over the Lions Gate Bridge to 1 Athletes Way on False Creek\n• Sunday evening - allow 30-40 min plus parking",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Capilano%20Suspension%20Bridge%20Park%2C%203735%20Capilano%20Rd%2C%20North%20Vancouver%2C%20BC&destination=Tap%20%26%20Barrel%20Olympic%20Village%2C%201%20Athletes%20Way%2C%20Vancouver%2C%20BC&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
