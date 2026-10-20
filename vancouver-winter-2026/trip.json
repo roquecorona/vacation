@@ -1976,6 +1976,10 @@
               {
                 "t": "#1 12/21",
                 "r": false
+              },
+              {
+                "t": "#1 12/21",
+                "r": true
               }
             ]
           },
@@ -2123,14 +2127,14 @@
     "outfitDays": [
       {
         "date": "12/21",
-        "rewears": 0,
+        "rewears": 1,
         "slots": [
           {
             "name": "Flight · MIA → SEA",
             "people": [
               {
                 "who": "ROQUE",
-                "text": "• Jeans #1\n• Underwear #1\n• Merino Socks #1\n• Sneakers (TBD)\n• Merino Top\n• Hoodie",
+                "text": "• Jeans #1\n• Underwear #1\n• Merino Socks #1\n• Sneakers (TBD)\n• Merino Top #1\n• Hoodie",
                 "items": [
                   {
                     "label": "Jeans #1",
@@ -2157,7 +2161,7 @@
                     "toBuy": false
                   },
                   {
-                    "label": "Merino Top",
+                    "label": "Merino Top #1",
                     "rewear": false,
                     "wearLabel": "",
                     "toBuy": false
@@ -2177,7 +2181,7 @@
             "people": [
               {
                 "who": "ROQUE",
-                "text": "• Merino Bottom #1\n• Jeans #2\n• Merino Top #1\n• Sweater #1\n• Casual Coat\n• Beanie\n• Merino Socks #2\n• Rockport Boots",
+                "text": "• Merino Bottom #1\n• Jeans #2\n• Merino Top #1  ↺ 2ND WEAR · 12/21\n• Sweater #1\n• Casual Coat\n• Beanie\n• Merino Socks #2\n• Rockport Boots",
                 "items": [
                   {
                     "label": "Merino Bottom #1",
@@ -2193,8 +2197,8 @@
                   },
                   {
                     "label": "Merino Top #1",
-                    "rewear": false,
-                    "wearLabel": "",
+                    "rewear": true,
+                    "wearLabel": "↺ 2ND WEAR · 12/21",
                     "toBuy": false
                   },
                   {
