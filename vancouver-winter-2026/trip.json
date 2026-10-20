@@ -333,8 +333,8 @@
     },
     {
       "date": "Tuesday, December 22, 2026",
-      "title": "Pike Place & Bainbridge Island",
-      "planned": true,
+      "title": "Pike Place & Bainbridge Island (draft)",
+      "planned": false,
       "blocks": [
         {
           "start": "7:00 AM",
@@ -555,8 +555,8 @@
     },
     {
       "date": "Wednesday, December 23, 2026",
-      "title": "Seattle → Vancouver",
-      "planned": true,
+      "title": "Seattle → Vancouver (draft)",
+      "planned": false,
       "blocks": [
         {
           "start": "7:00 AM",
@@ -769,8 +769,8 @@
     },
     {
       "date": "Thursday, December 24, 2026",
-      "title": "Christmas Eve - Grouse Mountain & VanDusen Lights",
-      "planned": true,
+      "title": "Christmas Eve - Grouse Mountain & VanDusen Lights (draft)",
+      "planned": false,
       "blocks": [
         {
           "start": "7:00 AM",
@@ -998,8 +998,8 @@
     },
     {
       "date": "Friday, December 25, 2026",
-      "title": "Christmas Day - Stanley Park & Robson Square",
-      "planned": true,
+      "title": "Christmas Day - Stanley Park & Robson Square (draft)",
+      "planned": false,
       "blocks": [
         {
           "start": "7:00 AM",
@@ -1148,8 +1148,8 @@
     },
     {
       "date": "Saturday, December 26, 2026",
-      "title": "Squamish & Sea to Sky Gondola",
-      "planned": true,
+      "title": "Squamish & Sea to Sky Gondola (draft)",
+      "planned": false,
       "blocks": [
         {
           "start": "7:00 AM",
@@ -1362,8 +1362,8 @@
     },
     {
       "date": "Sunday, December 27, 2026",
-      "title": "Granville Island & Capilano Canyon Lights",
-      "planned": true,
+      "title": "Granville Island & Capilano Canyon Lights (draft)",
+      "planned": false,
       "blocks": [
         {
           "start": "7:00 AM",
@@ -1549,8 +1549,8 @@
     },
     {
       "date": "Monday, December 28, 2026",
-      "title": "Vancouver → Seattle (SeaTac)",
-      "planned": true,
+      "title": "Vancouver → Seattle (SeaTac) (draft)",
+      "planned": false,
       "blocks": [
         {
           "start": "7:00 AM",
@@ -1752,8 +1752,8 @@
     },
     {
       "date": "Tuesday, December 29, 2026",
-      "title": "Seattle → Miami",
-      "planned": true,
+      "title": "Seattle → Miami (draft)",
+      "planned": false,
       "blocks": [
         {
           "start": "5:15 AM",
