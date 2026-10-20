@@ -1598,23 +1598,24 @@
         {
           "start": "3:00 PM",
           "end": "3:20 PM",
-          "title": "Skybridge Seattle Airport Hotel - check in",
+          "title": "Skybridge Seattle Airport Hotel - check in — BOOKED",
           "typeName": "Hotel",
           "emoji": "🏨",
           "detail": "• Check-in from 3 PM - drop Jenny, the kids and all the bags in the room\n• Ask the front desk for the first morning shuttle time (need ~5:45 AM)",
-          "program": "Marriott Bonvoy",
-          "points": 30000,
+          "program": "Marriott Bonvoy (Free Night Award)",
+          "points": 0,
           "nights": "1 night (Mon-Tue, Dec 28-29)",
           "address": "17338 International Blvd, SeaTac, WA 98188",
-          "notes": "30,000 Bonvoy points standard room, or about $142 cash, per seats.aero Oct 20, 2026. Being converted to an AC Hotel by Marriott - confirm the name and that it's open in December.",
-          "conf": "NOT BOOKED",
+          "notes": "Booked with 1 Free Night Award (30,000-point value) + 0 points, on Jennifer's Bonvoy account (Gold Elite). Guaranteed to Visa. Free cancellation until 5:59 PM hotel time Sat Dec 26, 2026. Hotel is converting to an AC Hotel by Marriott.",
+          "conf": "Marriott Bonvoy — 0S0CY3SLWV (guest: Jennifer Borges)",
           "confLinks": [
             {
-              "label": "Marriott — Skybridge Seattle Airport Hotel",
-              "url": "https://www.marriott.com/en-us/hotels/seaaa-skybridge-seattle-airport-hotel/overview"
+              "label": "Marriott 0S0CY3SLWV",
+              "url": "https://www.marriott.com/loyalty/myAccount/activity.mi"
             }
           ],
-          "flag": "Book Mon Dec 28 (30,000 Bonvoy points or ~$142). Call 206-248-1000 to confirm a ~5:45 AM shuttle on Dec 29.",
+          "roomType": "2 Queen Beds",
+          "flag": "BOOKED — 2 Queen Beds, Free Night Award. Free cancellation until 5:59 PM Sat Dec 26. Call 206-248-1000 to confirm the first morning shuttle (~5:45 AM Dec 29).",
           "phones": [
             {
               "label": "206-248-1000",
