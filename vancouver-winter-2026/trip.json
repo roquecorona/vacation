@@ -333,8 +333,8 @@
     },
     {
       "date": "Tuesday, December 22, 2026",
-      "title": "Pike Place & Bainbridge Island (draft)",
-      "planned": false,
+      "title": "Pike Place & Bainbridge Island",
+      "planned": true,
       "blocks": [
         {
           "start": "7:00 AM",
