@@ -558,8 +558,8 @@
     },
     {
       "date": "Wednesday, December 23, 2026",
-      "title": "Seattle → Vancouver (draft)",
-      "planned": false,
+      "title": "Seattle → Vancouver",
+      "planned": true,
       "blocks": [
         {
           "start": "7:00 AM",
@@ -664,14 +664,14 @@
           "emoji": "🏨",
           "detail": "• Valet the car and luggage\n• Early check-in requested (Globalist)\n• Up to the room to unpack and rest",
           "program": "World of Hyatt",
-          "points": 125000,
+          "points": 100000,
           "conf": "World of Hyatt — 40023B30138789 (guest: Jennifer Borges)",
           "roomType": "2 Double Beds",
           "nights": "5 nights (Wed-Mon, Dec 23-28)",
           "address": "655 Burrard St, Vancouver, BC V6C 2R7",
           "est": 187.2,
           "ccy": "CAD",
-          "notes": "Booked under Jennifer Borges: 25,000 points/night (Category 5) x 5 = 125,000 points, 2 adults + 2 children; checkout 12:00 PM. Globalist breakfast at Mosaic Grille covers the family. Cost shown is valet: C$52/night x 5 = C$260, about US$187 at ~0.72 - ask whether it's waived on award stays.",
+          "notes": "Booked under Jennifer Borges: 4 nights x 25,000 points (Category 5) = 100,000 points + 1 night on a Free Night Award, 2 adults + 2 children; checkout 12:00 PM. Globalist breakfast at Mosaic Grille covers the family. Cost shown is valet: C$52/night x 5 = C$260, about US$187 at ~0.72 - ask whether it's waived on award stays.",
           "flag": "Official check-in is 4:00 PM - early check-in requested but not guaranteed.",
           "confLinks": [
             {
