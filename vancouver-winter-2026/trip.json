@@ -1665,16 +1665,16 @@
       "planned": true,
       "blocks": [
         {
-          "start": "5:00 AM",
-          "end": "5:40 AM",
+          "start": "4:45 AM",
+          "end": "5:25 AM",
           "title": "Wake up & load the car",
           "typeName": "Logistics",
           "emoji": "⏰",
           "detail": "• Grab-and-go breakfast at the airport after security"
         },
         {
-          "start": "5:40 AM",
-          "end": "6:00 AM",
+          "start": "5:25 AM",
+          "end": "5:45 AM",
           "title": "Drive to Sea-Tac",
           "typeName": "Drive",
           "emoji": "🚗",
@@ -1683,92 +1683,94 @@
           "menuLabel": "Driving directions"
         },
         {
-          "start": "6:00 AM",
-          "end": "6:20 AM",
+          "start": "5:45 AM",
+          "end": "6:05 AM",
           "title": "Turo return",
           "typeName": "Rental Car",
           "emoji": "🚙",
           "detail": "• Return spot comes from the host in the Turo app\n• Photos of the car, fuel gauge and mileage"
         },
         {
-          "start": "6:20 AM",
-          "end": "6:35 AM",
+          "start": "6:05 AM",
+          "end": "6:20 AM",
           "title": "To the terminal with bags",
           "typeName": "Transportation",
-          "emoji": "🚌"
+          "emoji": "🚌",
+          "detail": "• Delta check-in counters are on the departures (upper) level - follow the Delta signs"
         },
         {
-          "start": "6:35 AM",
-          "end": "7:00 AM",
-          "title": "Alaska bag drop",
+          "start": "6:20 AM",
+          "end": "6:45 AM",
+          "title": "Delta check-in & bag drop",
           "typeName": "Logistics",
           "emoji": "🧳",
-          "detail": "• Bag drop closes 40 min before departure (7:36 AM)"
+          "detail": "• Check in all 4 in the Fly Delta app the day before (opens 24 hrs ahead)\n• Drop bags well before Delta's cutoff - aim to be done by 7:00 AM"
         },
         {
-          "start": "7:00 AM",
-          "end": "7:30 AM",
+          "start": "6:45 AM",
+          "end": "7:15 AM",
           "title": "TSA security",
           "typeName": "Logistics",
           "emoji": "🛂",
-          "detail": "• Holiday travel week - keep the buffer"
+          "detail": "• Holiday travel week - keep the buffer\n• Gate is posted in the Fly Delta app the day of"
         },
         {
-          "start": "7:30 AM",
-          "end": "8:16 AM",
+          "start": "7:15 AM",
+          "end": "8:00 AM",
           "title": "At the gate - boarding",
           "typeName": "Logistics",
           "emoji": "🛫",
-          "detail": "• Boarding starts about 40 min before departure"
+          "detail": "• Boarding starts about 35-40 min before departure"
         },
         {
-          "start": "8:16 AM",
-          "end": "5:08 PM",
-          "title": "Alaska 305 - SEA → MIA - nonstop",
+          "start": "8:00 AM",
+          "end": "4:52 PM",
+          "title": "Delta 506 - SEA → MIA - nonstop 5h52m — BOOKED",
           "typeName": "Flight",
           "emoji": "✈️",
-          "detail": "• Boeing 737 MAX 9, Economy\n• Lands 5:08 PM Eastern\n• Pack lunch for the flight - main cabin food is for purchase",
-          "program": "Alaska Atmos Rewards",
-          "points": 70000,
-          "est": 22.4,
+          "detail": "• Airbus A321neo, Delta Main Classic\n• Seats 28A, 28B, 28C, 28D (row 28 - A-B-C together, D across the aisle)\n• Lands 4:52 PM Eastern\n• Pack lunch for the flight - complimentary snacks and soft drinks onboard",
+          "program": "Delta SkyMiles",
+          "points": 78000,
+          "paid": 22.4,
+          "seats": "28A, 28B, 28C, 28D",
           "route": "SEA → MIA",
-          "flightNo": "Alaska 305",
-          "cabin": "Economy (Main)",
-          "notes": "17,500 Atmos points + $5.60 per person x 4 = 70,000 points + $22.40. Award space seen on seats.aero Oct 19, 2026 (9 seats).",
-          "flag": "Not booked yet - award space can disappear.",
-          "conf": "NOT BOOKED",
+          "flightNo": "Delta 506",
+          "cabin": "Main Classic (Economy)",
+          "notes": "78,000 SkyMiles + $22.40 taxes for 4 (19,500 miles + $5.60 per person). Changeable / nonrefundable; ticket credit valid until Oct 20, 2027.",
+          "conf": "Delta HSYUCT",
           "confLinks": [
             {
-              "label": "Alaska — book award",
-              "url": "https://www.alaskaair.com/"
+              "label": "Delta HSYUCT",
+              "url": "https://www.delta.com/mytrips/"
             }
-          ]
+          ],
+          "flag": "BOOKED — seats 28A, 28B, 28C, 28D; 78,000 SkyMiles + $22.40 taxes paid on Visa ending 6730. Changeable / nonrefundable."
         },
         {
-          "start": "5:08 PM",
-          "end": "5:30 PM",
+          "start": "4:52 PM",
+          "end": "5:15 PM",
           "title": "Deplane & walk to baggage claim",
           "typeName": "Walk",
           "emoji": "🚶"
         },
         {
-          "start": "5:30 PM",
-          "end": "5:55 PM",
+          "start": "5:15 PM",
+          "end": "5:40 PM",
           "title": "Baggage claim",
           "typeName": "Logistics",
           "emoji": "🧳"
         },
         {
-          "start": "5:55 PM",
-          "end": "6:10 PM",
+          "start": "5:40 PM",
+          "end": "5:55 PM",
           "title": "Pickup at the arrivals curb",
           "typeName": "Logistics",
           "emoji": "🚗",
           "detail": "• Text your ride once bags are in hand - no parking needed"
         },
         {
-          "start": "6:10 PM",
-          "end": "6:40 PM",
+          "start": "5:55 PM",
+          "end": "6:25 PM",
           "title": "Ride home",
           "typeName": "Drive",
           "emoji": "🚗"
