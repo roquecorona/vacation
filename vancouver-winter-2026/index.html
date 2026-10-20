@@ -3230,12 +3230,16 @@ class Component extends DCLogic {
         "items": [
           {
             "name": "Underwear",
-            "count": 1,
+            "count": 2,
             "category": "Underwear & socks",
             "toBuy": false,
             "log": [
               {
                 "t": "#1 12/21",
+                "r": false
+              },
+              {
+                "t": "#2 12/21",
                 "r": false
               }
             ]
@@ -3254,7 +3258,7 @@ class Component extends DCLogic {
           },
           {
             "name": "Merino Top",
-            "count": 1,
+            "count": 2,
             "category": "Tops",
             "toBuy": false,
             "log": [
@@ -3263,8 +3267,8 @@ class Component extends DCLogic {
                 "r": false
               },
               {
-                "t": "#1 12/21",
-                "r": true
+                "t": "#2 12/21",
+                "r": false
               }
             ]
           },
@@ -3353,7 +3357,7 @@ class Component extends DCLogic {
     "outfitDays": [
       {
         "date": "12/21",
-        "rewears": 1,
+        "rewears": 0,
         "slots": [
           {
             "name": "Flight · MIA → SEA",
@@ -3407,8 +3411,14 @@ class Component extends DCLogic {
             "people": [
               {
                 "who": "ROQUE",
-                "text": "• Merino Bottom #1\n• Merino Top #1  ↺ 2ND WEAR · 12/21\n• Merino Socks #2\n• Jeans #2\n• Sweater #1\n• Casual Coat\n• Beanie\n• Rockport Boots",
+                "text": "• Underwear #2\n• Merino Bottom #1\n• Merino Top #2\n• Merino Socks #2\n• Jeans #2\n• Sweater #1\n• Casual Coat\n• Beanie\n• Rockport Boots",
                 "items": [
+                  {
+                    "label": "Underwear #2",
+                    "rewear": false,
+                    "wearLabel": "",
+                    "toBuy": false
+                  },
                   {
                     "label": "Merino Bottom #1",
                     "rewear": false,
@@ -3416,9 +3426,9 @@ class Component extends DCLogic {
                     "toBuy": false
                   },
                   {
-                    "label": "Merino Top #1",
-                    "rewear": true,
-                    "wearLabel": "↺ 2ND WEAR · 12/21",
+                    "label": "Merino Top #2",
+                    "rewear": false,
+                    "wearLabel": "",
                     "toBuy": false
                   },
                   {
