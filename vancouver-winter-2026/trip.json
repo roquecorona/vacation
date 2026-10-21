@@ -337,16 +337,16 @@
       "planned": true,
       "blocks": [
         {
-          "start": "7:00 AM",
-          "end": "8:00 AM",
+          "start": "7:15 AM",
+          "end": "8:05 AM",
           "title": "Wake up & get ready",
           "typeName": "Logistics",
           "emoji": "⏰",
           "detail": "• Rain layers - most of today is outdoors"
         },
         {
-          "start": "8:00 AM",
-          "end": "8:45 AM",
+          "start": "8:05 AM",
+          "end": "8:50 AM",
           "title": "Breakfast - Andare (hotel buffet)",
           "typeName": "Dining",
           "emoji": "🍳",
@@ -356,16 +356,16 @@
           "notes": "Covered by Globalist breakfast. Confirm at check-in how it applies to the kids."
         },
         {
-          "start": "8:45 AM",
-          "end": "9:00 AM",
+          "start": "8:50 AM",
+          "end": "9:05 AM",
           "title": "Car from the hotel garage",
           "typeName": "Logistics",
           "emoji": "🚗",
-          "detail": "• Kids' car seats are in the Turo"
+          "detail": "• Straight from breakfast - elevator to the garage, kids into their car seats (in the Turo)"
         },
         {
-          "start": "9:00 AM",
-          "end": "9:10 AM",
+          "start": "9:05 AM",
+          "end": "9:15 AM",
           "title": "Drive to Colman Dock (ferry terminal)",
           "typeName": "Drive",
           "emoji": "🚗",
@@ -374,12 +374,12 @@
           "menuLabel": "Driving directions"
         },
         {
-          "start": "9:10 AM",
+          "start": "9:15 AM",
           "end": "9:35 AM",
           "title": "Ferry car line & boarding (Seattle)",
           "typeName": "Logistics",
           "emoji": "⛴️",
-          "detail": "• Pay at the vehicle toll booth, then wait in the numbered holding lanes\n• The 9:35 weekday sailing is rated 'unlikely to fill'",
+          "detail": "• Pay at the vehicle toll booth, then wait in the numbered holding lanes\n• The 9:35 weekday sailing is rated 'unlikely to fill' - 20 min cushion",
           "est": 53.05,
           "notes": "ESTIMATE: car + driver about $20.85 each way x 2 = $41.70 (WSF $20.25 from Oct 2025, ~3% increase May 2026) + Jenny's passenger fare $11.35 (round trip, paid westbound) = $53.05. Kids 18 and under ride free. If vehicle fares are only collected westbound, it's about $32."
         },
@@ -393,7 +393,15 @@
         },
         {
           "start": "10:10 AM",
-          "end": "10:30 AM",
+          "end": "10:20 AM",
+          "title": "Drive off the ferry",
+          "typeName": "Logistics",
+          "emoji": "🚗",
+          "detail": "• Back down to the car deck; vehicles unload after walk-on passengers"
+        },
+        {
+          "start": "10:20 AM",
+          "end": "10:32 AM",
           "title": "Drive to Battle Point Park",
           "typeName": "Drive",
           "emoji": "🚗",
@@ -402,16 +410,32 @@
           "menuLabel": "Driving directions"
         },
         {
-          "start": "10:30 AM",
-          "end": "11:00 AM",
+          "start": "10:32 AM",
+          "end": "10:40 AM",
+          "title": "Park & walk to the playground",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Bathroom stop at the park restrooms"
+        },
+        {
+          "start": "10:40 AM",
+          "end": "11:10 AM",
           "title": "KidsUp! Playground - Battle Point Park",
           "typeName": "Free Time",
           "emoji": "🛝",
           "detail": "• 47-ft climbable ferry boat, tube and roller slides, swings, orca sculptures\n• Free; restrooms in the park"
         },
         {
-          "start": "11:00 AM",
+          "start": "11:10 AM",
           "end": "11:20 AM",
+          "title": "Back to the car & buckle in",
+          "typeName": "Logistics",
+          "emoji": "🚗",
+          "detail": "• Walk back to the lot, kids into car seats"
+        },
+        {
+          "start": "11:20 AM",
+          "end": "11:42 AM",
           "title": "Drive to Poulsbo",
           "typeName": "Drive",
           "emoji": "🚗",
@@ -420,122 +444,152 @@
           "menuLabel": "Driving directions"
         },
         {
-          "start": "11:20 AM",
-          "end": "11:55 AM",
+          "start": "11:42 AM",
+          "end": "11:50 AM",
+          "title": "Park & walk to Front St",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Public lots off Front St / Jensen Way - free"
+        },
+        {
+          "start": "11:50 AM",
+          "end": "12:35 PM",
           "title": "Poulsbo - Front Street & Sluys Bakery",
           "typeName": "Walk",
           "emoji": "🛍️",
           "detail": "• 'Little Norway' - Norwegian-themed shops along Front St and the Liberty Bay waterfront\n• Sluys Poulsbo Bakery (18924 Front St NE, daily 5 AM-6 PM): Viking donuts and the gingerbread-man 'Dough Boy' - grab treats for later"
         },
         {
-          "start": "11:55 AM",
-          "end": "12:55 PM",
+          "start": "12:35 PM",
+          "end": "1:45 PM",
           "title": "Lunch - Casa Luna (Poulsbo)",
           "typeName": "Dining",
           "emoji": "🌮",
-          "detail": "• 18830 Front St NE - family-friendly Mexican on Front Street\n• Little Amigos kids' menu, all $8.99: burrito, tacos, mini quesadilla, chicken nuggets, mac & cheese, cheeseburger\n• Open Tue 11 AM-9 PM; phone (360) 779-7676",
+          "detail": "• 18830 Front St NE - family-friendly Mexican on Front Street\n• Little Amigos kids' menu, all $8.99: burrito, tacos, mini quesadilla, chicken nuggets, mac & cheese, cheeseburger\n• Open Tue 11 AM-9 PM; phone (360) 779-7676\n• 70 min allows for seating, bathroom and paying",
           "est": 67.21,
           "menuUrl": "https://togo.ordercasalunapoulsbo.com/order",
           "menuLabel": "Casa Luna menu",
           "notes": "Burrito Colorado $17 + Enchiladas Luna $17 (adults) + Kids Taco $8.99 + Kids Mini Quesadilla $8.99 = $51.98. Water. + ~9.3% tax ($4.83) + 20% tip ($10.40) = $67.21. Prices from Casa Luna's online menu, Oct 2026."
         },
         {
-          "start": "12:55 PM",
-          "end": "1:15 PM",
-          "title": "Drive to Fay Bainbridge Park",
-          "typeName": "Drive",
-          "emoji": "🚗",
-          "detail": "• FROM Casa Luna, Poulsbo → TO Fay Bainbridge Park\n• Back over Agate Pass, then to the island's north-east shore",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=18830%20Front%20St%20NE%2C%20Poulsbo%2C%20WA&destination=Fay%20Bainbridge%20Park%2C%2015446%20Sunrise%20Dr%20NE%2C%20Bainbridge%20Island%2C%20WA&travelmode=driving",
-          "menuLabel": "Driving directions"
-        },
-        {
-          "start": "1:15 PM",
-          "end": "1:40 PM",
-          "title": "Fay Bainbridge Park beach",
-          "typeName": "Sightseeing",
-          "emoji": "🌊",
-          "detail": "• Driftwood beach looking across Puget Sound to Seattle\n• Clear day: Mount Rainier and Mount Baker\n• Free; day-use parking by the beach"
-        },
-        {
-          "start": "1:40 PM",
+          "start": "1:45 PM",
           "end": "1:55 PM",
-          "title": "Drive to Winslow & park",
-          "typeName": "Drive",
+          "title": "Walk back to the car & buckle in",
+          "typeName": "Logistics",
           "emoji": "🚗",
-          "detail": "• FROM Fay Bainbridge Park → TO Winslow (Town & Country Market)\n• Street parking along Winslow Way or the lots by Town & Country Market",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Fay%20Bainbridge%20Park%2C%2015446%20Sunrise%20Dr%20NE%2C%20Bainbridge%20Island%2C%20WA&destination=Town%20%26%20Country%20Market%2C%20343%20Winslow%20Way%20E%2C%20Bainbridge%20Island%2C%20WA&travelmode=driving",
-          "menuLabel": "Driving directions"
+          "detail": "• Back to the Front St lot, kids into car seats"
         },
         {
           "start": "1:55 PM",
-          "end": "2:20 PM",
+          "end": "2:17 PM",
+          "title": "Drive to Winslow",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM Casa Luna, Poulsbo → TO Winslow (Town & Country Market)\n• ~13 mi back over the Agate Pass Bridge",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=18830%20Front%20St%20NE%2C%20Poulsbo%2C%20WA&destination=Town%20%26%20Country%20Market%2C%20343%20Winslow%20Way%20E%2C%20Bainbridge%20Island%2C%20WA&travelmode=driving",
+          "menuLabel": "Driving directions"
+        },
+        {
+          "start": "2:17 PM",
+          "end": "2:25 PM",
+          "title": "Park & walk to Winslow Way",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Street parking along Winslow Way or the lots by Town & Country Market"
+        },
+        {
+          "start": "2:25 PM",
+          "end": "3:10 PM",
           "title": "Winslow Way & Town & Country Market",
           "typeName": "Walk",
           "emoji": "🛍️",
           "detail": "• Stroll Bainbridge's main street - Eagle Harbor Book Co. and Calico Toy Shoppe\n• Town & Country Market, 343 Winslow Way E"
         },
         {
-          "start": "2:20 PM",
-          "end": "2:30 PM",
+          "start": "3:10 PM",
+          "end": "3:20 PM",
+          "title": "Back to the car & buckle in",
+          "typeName": "Logistics",
+          "emoji": "🚗",
+          "detail": "• Bathroom stop before the ferry"
+        },
+        {
+          "start": "3:20 PM",
+          "end": "3:25 PM",
           "title": "Drive to the ferry terminal",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM Winslow → TO the Bainbridge ferry terminal\n• A few blocks - be in the car line by about 2:30",
+          "detail": "• FROM Winslow → TO the Bainbridge ferry terminal\n• A few blocks - be in the car line by about 3:25",
           "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Town%20%26%20Country%20Market%2C%20343%20Winslow%20Way%20E%2C%20Bainbridge%20Island%2C%20WA&destination=Bainbridge%20Island%20Ferry%20Terminal%2C%20Bainbridge%20Island%2C%20WA&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "2:30 PM",
-          "end": "2:55 PM",
+          "start": "3:25 PM",
+          "end": "3:50 PM",
           "title": "Ferry car line & boarding (Bainbridge)",
           "typeName": "Logistics",
           "emoji": "⛴️",
-          "detail": "• The 2:55 weekday sailing is rated 'sometimes full' - don't cut it close\n• Backup: next sailing 3:50 PM"
+          "detail": "• Holiday week - 25 min cushion, don't cut it close\n• Backup: next sailing 4:45 PM"
         },
         {
-          "start": "2:55 PM",
-          "end": "3:30 PM",
-          "title": "2:55 PM ferry back to Seattle",
+          "start": "3:50 PM",
+          "end": "4:25 PM",
+          "title": "3:50 PM ferry back to Seattle",
           "typeName": "Transportation",
           "emoji": "⛴️",
           "detail": "• Skyline views on the way in"
         },
         {
-          "start": "3:30 PM",
-          "end": "3:45 PM",
+          "start": "4:25 PM",
+          "end": "4:35 PM",
+          "title": "Drive off the ferry",
+          "typeName": "Logistics",
+          "emoji": "🚗",
+          "detail": "• Vehicles unload after walk-on passengers"
+        },
+        {
+          "start": "4:35 PM",
+          "end": "4:55 PM",
           "title": "Drive to the hotel",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM Colman Dock → TO the hotel\n• ~1 mi up to 808 Howell St - back in the garage",
+          "detail": "• FROM Colman Dock → TO the hotel\n• ~1 mi up to 808 Howell St - start of rush hour",
           "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Seattle%20Ferry%20Terminal%2C%20801%20Alaskan%20Way%2C%20Seattle%2C%20WA&destination=Hyatt%20Regency%20Seattle%2C%20808%20Howell%20St%2C%20Seattle%2C%20WA&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "3:45 PM",
-          "end": "5:25 PM",
+          "start": "4:55 PM",
+          "end": "5:10 PM",
+          "title": "Park & up to the room",
+          "typeName": "Logistics",
+          "emoji": "🚶",
+          "detail": "• Hotel garage, elevator up"
+        },
+        {
+          "start": "5:10 PM",
+          "end": "5:40 PM",
           "title": "Rest at the hotel",
           "typeName": "Free Time",
           "emoji": "🛋️",
-          "detail": "• Downtime, showers, change for dinner"
+          "detail": "• Freshen up and change for dinner"
         },
         {
-          "start": "5:25 PM",
-          "end": "5:40 PM",
+          "start": "5:40 PM",
+          "end": "6:00 PM",
           "title": "Walk to Purple Cafe",
           "typeName": "Walk",
           "emoji": "🚶",
-          "detail": "• FROM the hotel → TO Purple Cafe (4th Ave & University St)\n• ~0.6 mi downhill to 4th Ave & University St (~12 min)",
+          "detail": "• FROM the hotel → TO Purple Cafe (4th Ave & University St)\n• ~0.6 mi downhill to 4th Ave & University St (~20 min at kid pace)",
           "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Seattle%2C%20808%20Howell%20St%2C%20Seattle%2C%20WA&destination=Purple%20Cafe%20and%20Wine%20Bar%2C%201225%204th%20Ave%2C%20Seattle%2C%20WA&travelmode=walking",
           "menuLabel": "Walking directions"
         },
         {
-          "start": "5:40 PM",
-          "end": "6:50 PM",
+          "start": "6:00 PM",
+          "end": "7:10 PM",
           "title": "Dinner - Purple Cafe and Wine Bar",
           "typeName": "Dining",
           "emoji": "🍷",
-          "detail": "• 1225 4th Ave; upscale-casual American in a soaring wine-tower dining room\n• Kids' menu: chicken strips, kids' noodles, beef sliders, steak & fries\n• Open Tue 11 AM-9 PM - reserve the 5:30 table\n• Roque & Jenny's return visit - first time here was 2017",
+          "detail": "• 1225 4th Ave; upscale-casual American in a soaring wine-tower dining room\n• Kids' menu: chicken strips, kids' noodles, beef sliders, steak & fries\n• Open Tue 11 AM-9 PM - reserve the 6:00 table\n• Roque & Jenny's return visit - first time here was 2017",
           "est": 118.62,
           "menuUrl": "https://www.purplecafe.com/menus",
           "menuLabel": "Purple Cafe menus",
@@ -547,25 +601,25 @@
               "url": "https://www.opentable.com/restref/client/?restref=6570&lang=en-US&ot_source=Restaurant%20website"
             }
           ],
-          "flag": "Book 5:30 PM Tue Dec 22 for four."
+          "flag": "Book 6:00 PM Tue Dec 22 for four."
         },
         {
-          "start": "6:50 PM",
-          "end": "7:05 PM",
+          "start": "7:10 PM",
+          "end": "7:30 PM",
           "title": "Back to the hotel",
           "typeName": "Transportation",
           "emoji": "🚕",
-          "detail": "• FROM Purple Cafe → TO the hotel\n• ~0.6 mi uphill - a rideshare from the door is about 5 min, or ~15 min on foot",
+          "detail": "• FROM Purple Cafe → TO the hotel\n• ~0.6 mi uphill - a rideshare from the door is about 5 min, or ~20 min on foot",
           "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Purple%20Cafe%20and%20Wine%20Bar%2C%201225%204th%20Ave%2C%20Seattle%2C%20WA&destination=Hyatt%20Regency%20Seattle%2C%20808%20Howell%20St%2C%20Seattle%2C%20WA&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "7:05 PM",
-          "end": "8:05 PM",
+          "start": "7:30 PM",
+          "end": "8:30 PM",
           "title": "Bedtime routine",
           "typeName": "Logistics",
           "emoji": "🛏️",
-          "detail": "• Lights out by 9:00 PM keeps 10 hrs of sleep before the 7:00 AM wake-up"
+          "detail": "• Lights out by 8:30 PM - 10.5 hrs of sleep before the 7:00 AM wake-up"
         }
       ]
     },
@@ -2250,7 +2304,7 @@
         "rewears": 0,
         "slots": [
           {
-            "name": "Day · Ferry, Battle Point, Poulsbo, Fay Bainbridge, Purple Cafe",
+            "name": "Day · Ferry, Battle Point, Poulsbo, Winslow, Purple Cafe",
             "people": [
               {
                 "who": "ROQUE",
