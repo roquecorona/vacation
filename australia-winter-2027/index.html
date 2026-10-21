@@ -1276,7 +1276,7 @@ class Component extends DCLogic {
 <script id="trip-data" type="application/json">{
  "meta": {
   "title": "Australia - Winter 2027",
-  "dates": "Dec 15, 2027 – Jan 2, 2028 (FLL → Dallas → Brisbane · Australia Zoo · Noosa · Hamilton Island · Sydney for NYE · home Jan 2)",
+  "dates": "Dec 15, 2027 – Jan 2, 2028 (FLL → Los Angeles → Brisbane · Australia Zoo · Noosa · Hamilton Island · Sydney for NYE · home Jan 2)",
   "route": [
    {
     "name": "Fort Lauderdale",
@@ -1303,55 +1303,146 @@ class Component extends DCLogic {
  "days": [
   {
    "date": "Wednesday, December 15, 2027",
-   "title": "Fort Lauderdale → Dallas → Brisbane",
+   "title": "Fort Lauderdale → Los Angeles → Brisbane",
    "planned": false,
    "blocks": [
     {
-     "start": "2:25 PM",
-     "end": "3:30 PM",
-     "title": "Arrive FLL, check bags",
-     "detail": "3 hrs ahead for an international itinerary with a family of 4.\nDeparts Fort Lauderdale, not Miami.\nHats, sun shirts and sunscreen in the carry-ons — landing day is a full day out in Brisbane.",
+     "start": "10:00 AM",
+     "end": "10:30 AM",
+     "title": "Arrive FLL Terminal 3 — JetBlue bag drop",
+     "detail": "• 2 hrs ahead of a domestic flight — holiday-week crowds, family of 4, 3 checked bags.\n• Bags are tagged to LAX only: this is a separate ticket from the Qantas flight.\n• JetBlue bag drop closes 40 min before departure.\n• Hats, sun shirts and sunscreen in the carry-ons — landing day is a full day out in Brisbane.",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "est": 147.0,
+     "notes": "• Award fares don't include a checked bag: 3 bags × $49 (peak) = $147 — estimated; $39 per bag if Dec 15 is off-peak.\n• Prepay in the app; bags added within 24 hrs of departure cost $10 more each.",
+     "flag": "Departs Fort Lauderdale, not Miami — plan the drive up and parking."
+    },
+    {
+     "start": "10:30 AM",
+     "end": "11:10 AM",
+     "title": "TSA, then lunch to go — FLL Terminal 3",
+     "detail": "• Buy lunch after security to eat on the plane — the flight spans lunchtime and JetBlue only sells snack boxes.\n• Refill water bottles at the gate.",
+     "typeName": "Dining",
+     "emoji": "🥪",
+     "est": 50.0,
+     "notes": "• ~$50 for 2 adult + 2 kids' grab-and-go meals — estimated."
+    },
+    {
+     "start": "11:10 AM",
+     "end": "12:00 PM",
+     "title": "At the gate — boarding",
+     "detail": "• Bathroom stop before boarding.\n• Boarding starts ~30–40 min before departure.",
      "typeName": "Logistics",
      "emoji": "⏱️"
     },
     {
-     "start": "5:25 PM",
-     "end": "7:40 PM",
-     "title": "American Airlines AA1373 - FLL → DFW - Nonstop - ~3h15m",
-     "detail": "FLL → DFW, Economy, 4 passengers.\nLands ~7:40 PM Central (8:40 PM Eastern).\nSegment times derived from the 22h 5m total and 2h 1m connection — confirm when booking.",
+     "start": "12:00 PM",
+     "end": "2:53 PM",
+     "title": "JetBlue B6201 - FLL → LAX - Nonstop - 5h53m",
+     "detail": "• Departs 12:00 PM Eastern, lands 2:53 PM Pacific (3 hrs behind Florida).\n• Economy, 4 passengers.\n• Lunch on board. Kids: a nap of 45 min max — the long sleep happens on the Qantas flight.\n• All LAX times below are Pacific.",
      "typeName": "Flight",
      "emoji": "✈️",
-     "route": "FLL → DFW",
-     "flightNo": "American 1373",
+     "program": "JetBlue TrueBlue",
+     "points": "65200",
+     "est": 22.4,
+     "route": "FLL → LAX",
+     "flightNo": "JetBlue 6201",
      "cabin": "Economy",
-     "notes": "First leg of one connecting itinerary. Points and cash for the whole trip are logged on the DFW → BNE leg."
+     "seats": "Not yet assigned",
+     "notes": "• Not booked.\n• Seen on seats.aero (Oct 2026 search): 16,300 TrueBlue pts + $5.60 per person → 65,200 pts + $22.40 for four. Class U, 9 seats.\n• Same flight via United MileagePlus: 35,000 pts + $5.60 per person.\n• Separate ticket from the Qantas leg — chosen so the business-class award only has to be found on one leg.",
+     "flag": "If this flight cancels or runs very late, rebook the same day: American MIA → LAX nonstops at ~1:45 PM and ~3:40 PM Eastern still make Qantas check-in (closes 8:45 PM Pacific).\nQantas isn't responsible for a missed connection on a separate ticket — get travel insurance that covers missed connections."
     },
     {
-     "start": "7:40 PM",
-     "end": "9:41 PM",
-     "title": "Layover at DFW",
-     "detail": "2h 1m connection. Dinner in the terminal before the 17-hour leg.",
+     "start": "2:53 PM",
+     "end": "3:15 PM",
+     "title": "Land LAX — deplane, Terminal 1",
+     "detail": "• JetBlue uses Terminal 1 at LAX — confirm the week before.\n• Domestic arrival: no immigration or customs.\n• Bathroom stop on the way to baggage claim.",
      "typeName": "Logistics",
-     "emoji": "⏱️",
-     "est": 60.0,
-     "notes": "~$60 for the family in the terminal."
+     "emoji": "⏱️"
     },
     {
-     "start": "9:41 PM",
-     "end": "6:30 AM",
-     "title": "American Airlines AA7 - DFW → BNE - Nonstop - ~16h49m",
-     "detail": "DFW → BNE, Economy, 4 passengers.\nCrosses the International Date Line — Thursday Dec 16 disappears in flight.\nLands 6:30 AM Friday Dec 17, Brisbane time (AEST, UTC+10, no daylight saving; 15 hrs ahead of Florida).\nTotal itinerary 22h 5m.",
+     "start": "3:15 PM",
+     "end": "3:45 PM",
+     "title": "Baggage claim — Terminal 1",
+     "detail": "• Collect all 3 checked bags.\n• Grab a luggage cart at claim.",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "est": 6.0,
+     "notes": "• Luggage cart ~$6 — estimated."
+    },
+    {
+     "start": "3:45 PM",
+     "end": "4:10 PM",
+     "title": "Terminal 1 → Tom Bradley International Terminal",
+     "detail": "• Stay landside — exit claim and walk west along the Upper/Departures Level sidewalk past Terminals 2 and 3 to Tom Bradley (~0.6 mi, ~20 min with a cart and kids).\n• Alternative: the free LAX inter-terminal shuttle from the Lower/Arrivals Level island outside Terminal 1.\n• Qantas check-in is Aisle B inside Tom Bradley.",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "4:10 PM",
+     "end": "4:40 PM",
+     "title": "Qantas check-in and bag drop — Tom Bradley, Aisle B",
+     "detail": "• Counters B23–32 open 3:30 PM; check-in closes 60 min before departure (8:45 PM).\n• Business check-in: bags tagged through to Brisbane.\n• Business allowance: 2 bags × 32 kg (70 lb) per person.\n• Have passports and the Australian ETA confirmations ready.\n• Online check-in opens 24 hrs before departure.",
+     "typeName": "Logistics",
+     "emoji": "🧳"
+    },
+    {
+     "start": "4:40 PM",
+     "end": "5:15 PM",
+     "title": "TSA security — Tom Bradley",
+     "detail": "• Holiday-week evening rush at Tom Bradley — 35 min allowed.",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "5:15 PM",
+     "end": "6:00 PM",
+     "title": "Qantas International Business Lounge — settle in",
+     "detail": "• Access comes with the business-class boarding pass.\n• Showers available — book one for the kids at the lounge desk.\n• Charge devices; download shows for the flight.",
+     "typeName": "Free Time",
+     "emoji": "🛋️"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:00 PM",
+     "title": "Dinner in the lounge — the main meal before the flight",
+     "detail": "• Full dinner here so everyone can skip the onboard dinner and sleep right after takeoff.\n• Light on sugar and caffeine.",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "notes": "• Included with lounge access. $0."
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:40 PM",
+     "title": "Wind down — pajamas, teeth, quiet time",
+     "detail": "• Kids change into pajamas and brush teeth in the lounge.\n• Dim screens, quiet activities — no new movies started.",
+     "typeName": "Free Time",
+     "emoji": "🪥"
+    },
+    {
+     "start": "8:40 PM",
+     "end": "9:45 PM",
+     "title": "Walk to the gate and board",
+     "detail": "• Boarding starts ~60 min before departure; the gate closes 20 min before.\n• Last bathroom stop at the gate.",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "9:45 PM",
+     "end": "5:50 AM",
+     "title": "Qantas QF16 - LAX → BNE - Nonstop - ~14h05m",
+     "detail": "• Business, 4 passengers.\n• Departs 9:45 PM Pacific = 3:45 PM Thursday in Brisbane.\n• Crosses the International Date Line — Thursday Dec 16 disappears in flight.\n• Lands 5:50 AM Friday Dec 17, Brisbane time (AEST, UTC+10, no daylight saving; 18 hrs ahead of LA, 15 hrs ahead of Florida).",
      "typeName": "Flight",
      "emoji": "✈️",
      "program": "Alaska Atmos Rewards",
-     "points": "170000",
-     "est": 200.4,
-     "route": "DFW → BNE",
-     "flightNo": "American 7",
-     "cabin": "Economy",
+     "points": "160000",
+     "est": 492.0,
+     "route": "LAX → BNE",
+     "flightNo": "Qantas 16",
+     "cabin": "Business",
      "seats": "Not yet assigned",
-     "flag": "Departs FLL, not MIA — plan the drive up and parking, or price a MIA-origin option.\nApply for each traveller's Australian ETA (official 'Australian ETA' app) before departure — not issued on arrival.\nDeparts Wed Dec 15 — re-search this routing for Dec 15, 2027 when award space opens (~Jan 2027).",
-     "notes": "• Placeholder from a real search of this routing for Tue Dec 8, 2026.\n• Alaska Atmos Rewards: 42,500 pts + $50.10 per person → 170,000 pts + $200.40 for four. Booking class T, 9 seats.\n• Same itinerary via American AAdvantage: 35,000 pts + $30.10 per person → 140,000 pts + $120.40 (30k fewer points, $80 less cash).\n• Award inventory for Dec 15, 2027 opens roughly Dec 2026–Jan 2027 — re-search then."
+     "notes": "• Not booked — planning assumption: 40,000 Atmos + $123 per person → 160,000 pts + $492 for four.\n• Award space for Dec 15, 2027 opens roughly Dec 2026–Jan 2027.\n\nSLEEP PLAN (Brisbane time in brackets):\n• Skip the dinner service; seats to bed mode as soon as the seatbelt sign goes off (~10:15 PM LA / 4:15 PM BNE).\n• Lights out by ~10:30 PM LA (4:30 PM BNE). Eye masks, earplugs, kids' headphones.\n• Let the kids sleep until breakfast — ask the crew to wake them ~90 min before landing (~4:15 AM BNE).\n• Adults: aim for 6–8 hrs, up by ~3:00 AM BNE at the latest.\n• Breakfast on board; no more sleep after it. Window shades up and screens on so everyone is awake for landing.",
+     "flag": "Apply for each traveller's Australian ETA (official 'Australian ETA' app) before departure — not issued on arrival.\nConfirm the exact flight number, times and aircraft when Dec 15, 2027 award space opens."
     }
    ]
   },
@@ -1361,36 +1452,36 @@ class Component extends DCLogic {
    "planned": false,
    "blocks": [
     {
-     "start": "6:30 AM",
-     "end": "7:45 AM",
+     "start": "5:50 AM",
+     "end": "7:05 AM",
      "title": "Arrive BNE — immigration, bags, biosecurity",
      "detail": "SmartGate for adult US e-passports; kids use the staffed lane with a parent.\nDeclare any food. Don't carry fruit or snacks off the plane.\n75 min gate-to-curb for a family with checked bags — includes a bathroom stop before the rental desk.",
      "typeName": "Logistics",
      "emoji": "⏱️"
     },
     {
-     "start": "7:45 AM",
-     "end": "8:45 AM",
+     "start": "7:05 AM",
+     "end": "8:05 AM",
      "title": "Rental car pickup — BNE International terminal rental desks",
      "detail": "Mid-size SUV from a major brand (Hertz / Avis / Budget / Europcar / Sixt — all have desks in the International terminal arrivals hall; the cars are in the adjacent rental carpark).\nOne booster seat for the 6-year-old (Queensland law: under 7 must be in an approved restraint). The 8-year-old may legally use the adult belt.\n60 min allowed: queue, paperwork, fitting the booster, loading bags, finding the exit. Nothing else depends on this being fast.",
      "typeName": "Rental Car",
      "emoji": "🚗",
      "est": 591.5,
-     "notes": "ONE CAR FOR THE WHOLE TRIP:\n• Fri Dec 17 7:45 AM → Thu Dec 23 ~9:45 AM = 7 rental days (6 days + 2 hrs).\n• ~AUD 120/day × 7 = AUD 840 + booster ~AUD 50 + tolls ~AUD 20 ≈ AUD 910 ≈ USD 592.\n• Mid-December is the priciest month at BNE — re-quote ~6 months out; book on a free-cancellation rate for availability, not price.\n\nWHAT IT DOES:\n• Airport → Hyatt today (valet is free on a Globalist award stay).\n• Hyatt → Australia Zoo → Noosa on Sat Dec 18, all Noosa errands, Noosa → BNE Domestic on Thu Dec 23.\n• NOT the beach — every major brand's terms keep cars on sealed roads and void the insurance on sand. The one beach day is a separate 4WD delivered to the hotel (see Dec 21–22)."
+     "notes": "ONE CAR FOR THE WHOLE TRIP:\n• Fri Dec 17 7:05 AM → Thu Dec 23 ~9:45 AM = 7 rental days (6 days + ~2h40m).\n• ~AUD 120/day × 7 = AUD 840 + booster ~AUD 50 + tolls ~AUD 20 ≈ AUD 910 ≈ USD 592.\n• Mid-December is the priciest month at BNE — re-quote ~6 months out; book on a free-cancellation rate for availability, not price.\n\nWHAT IT DOES:\n• Airport → Hyatt today (valet is free on a Globalist award stay).\n• Hyatt → Australia Zoo → Noosa on Sat Dec 18, all Noosa errands, Noosa → BNE Domestic on Thu Dec 23.\n• NOT the beach — every major brand's terms keep cars on sealed roads and void the insurance on sand. The one beach day is a separate 4WD delivered to the hotel (see Dec 21–22)."
     },
     {
-     "start": "8:45 AM",
-     "end": "9:15 AM",
+     "start": "8:05 AM",
+     "end": "8:45 AM",
      "title": "Drive BNE → Hyatt Regency Brisbane",
-     "detail": "Airport Drive → Airport Link tunnel (toll, ~AUD 6) → Inner City Bypass → Queen St / Burnett Lane. ~17 km, 25 min at this hour.\nDrive on the left. Jet-lagged — the passenger navigates, the driver only drives.\nValet at the hotel entrance takes the car; it stays with the valet until Saturday morning.",
+     "detail": "Airport Drive → Airport Link tunnel (toll, ~AUD 6) → Inner City Bypass → Queen St / Burnett Lane. ~17 km: 25 min in free-flowing traffic; 40 min allowed for the Friday morning peak (school holidays usually thin it).\nDrive on the left. Jet-lagged — the passenger navigates, the driver only drives.\nValet at the hotel entrance takes the car; it stays with the valet until Saturday morning.",
      "typeName": "Drive",
      "emoji": "🚗",
      "est": 3.9,
      "notes": "• Toll billed to the rental's toll account."
     },
     {
-     "start": "9:15 AM",
-     "end": "9:25 AM",
+     "start": "8:45 AM",
+     "end": "8:55 AM",
      "title": "Hyatt Regency Brisbane — valet takes the car, bell desk takes the bags",
      "detail": "• 33 Burnett Lane (Queen St Mall), middle of the CBD. Category 3 World of Hyatt.\n• Room is booked from Thu Dec 16, so it's ready on arrival — bags go straight up.\n• Ask for the Deluxe Room, Multiple Beds (sleeps 4) or connecting rooms.",
      "typeName": "Hotel",
@@ -1401,55 +1492,54 @@ class Component extends DCLogic {
      "roomType": "Standard room (or standard suite if available)",
      "address": "33 Burnett Lane, Brisbane QLD 4000",
      "notes": "• Modeled at 12,000 pts/night × 2 = 24,000 (the Dec 16 night guarantees the room on arrival).\n• Globalist early check-in is only subject to availability — the extra night is the only guarantee.\n• Globalist: free valet on an award stay; breakfast for 2 adults + 2 kids.",
-     "flag": "Email the hotel: arriving ~9 AM Dec 17 — keep the Dec 16 night held (don't treat as no-show)."
+     "flag": "Email the hotel: arriving ~8:45 AM Dec 17 — keep the Dec 16 night held (don't treat as no-show)."
     },
     {
-     "start": "9:25 AM",
-     "end": "10:10 AM",
+     "start": "8:55 AM",
+     "end": "9:40 AM",
      "title": "Breakfast — Lennons (in the hotel)",
-     "detail": "• Straight down after the valet — breakfast before showers.\n• Weekday breakfast 6:30–10:00 AM: seated by 9:30.\n• Last meal until dinner — no lunch stop today.",
+     "detail": "• Straight down after the valet — breakfast before showers.\n• Weekday breakfast 6:30–10:00 AM: seated by 9:00.\n• Last meal until dinner — no lunch stop today.",
      "typeName": "Dining",
      "emoji": "🍳",
-     "notes": "• Globalist benefit: breakfast for 2 adults + 2 kids included. AUD 0.",
-     "flag": "Confirm with Lennons that a 9:30 seating can finish at ~10:10 (breakfast ends 10:00 on weekdays)."
+     "notes": "• Globalist benefit: breakfast for 2 adults + 2 kids included. AUD 0."
     },
     {
-     "start": "10:10 AM",
-     "end": "10:25 AM",
+     "start": "9:40 AM",
+     "end": "9:55 AM",
      "title": "Back up to the room",
      "detail": "• Buffer: elevator, unpack the essentials.",
      "typeName": "Logistics",
      "emoji": "⏱️"
     },
     {
-     "start": "10:25 AM",
-     "end": "11:10 AM",
+     "start": "9:55 AM",
+     "end": "10:40 AM",
      "title": "Showers and change",
-     "detail": "• 45 min for four people after a 22-hour journey.",
+     "detail": "• 45 min for four people after a ~30-hour door-to-door journey.",
      "typeName": "Logistics",
      "emoji": "🚿"
     },
     {
-     "start": "11:10 AM",
-     "end": "11:25 AM",
+     "start": "10:40 AM",
+     "end": "10:55 AM",
      "title": "Sunscreen, hats, day bag",
      "detail": "• UV is Extreme by midday.\n• Day bag: water bottles and snacks — no lunch stop until dinner at 5.",
      "typeName": "Logistics",
      "emoji": "🧴"
     },
     {
-     "start": "11:25 AM",
-     "end": "11:40 AM",
+     "start": "10:55 AM",
+     "end": "11:10 AM",
      "title": "Walk to the City Botanic Gardens",
      "detail": "• ~800 m via Albert St to the Alice St gate.",
      "typeName": "Walk",
      "emoji": "🚶"
     },
     {
-     "start": "11:40 AM",
+     "start": "11:10 AM",
      "end": "12:10 PM",
      "title": "City Botanic Gardens — riverside paths + playground",
-     "detail": "• Shaded paths under giant figs, mangrove boardwalk, playground.\n• The Kangaroo Point Green Bridge starts at the Alice/Edward St corner of the gardens.",
+     "detail": "• A full hour here: shaded paths under giant figs, mangrove boardwalk, playground.\n• Morning daylight helps reset body clocks — stay outside, no naps today.\n• The Kangaroo Point Green Bridge starts at the Alice/Edward St corner of the gardens.",
      "typeName": "Sightseeing",
      "emoji": "🌳"
     },
@@ -3322,7 +3412,7 @@ class Component extends DCLogic {
     },
     {
      "name": "Award flights to/from the US",
-     "note": "Outbound FLL → DFW → BNE Wed Dec 15; return SYD → DFW → FLL Sun Jan 2 (QF7). Re-search both when award space opens."
+     "note": "Outbound Wed Dec 15 on two separate tickets: JetBlue FLL → LAX (TrueBlue) + Qantas LAX → BNE in business (Atmos). Return SYD → DFW → FLL Sun Jan 2 (QF7). Re-search all when award space opens."
     },
     {
      "name": "Hamilton Island bookings",
@@ -3354,7 +3444,7 @@ class Component extends DCLogic {
     },
     {
      "name": "Rental car",
-     "note": "BNE International Fri Dec 17 ~7:45 AM → BNE Domestic Thu Dec 23 ~9:45 AM (6 days + 2 hrs)."
+     "note": "BNE International Fri Dec 17 ~7:05 AM → BNE Domestic Thu Dec 23 ~9:45 AM (6 days + ~2h40m)."
     },
     {
      "name": "Ocean Breeze Resort, Noosa",
