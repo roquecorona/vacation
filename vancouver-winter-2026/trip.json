@@ -333,7 +333,7 @@
     },
     {
       "date": "Tuesday, December 22, 2026",
-      "title": "Pike Place & Bainbridge Island",
+      "title": "Bainbridge Island & Poulsbo (ferry with the car)",
       "planned": true,
       "blocks": [
         {
@@ -341,7 +341,8 @@
           "end": "8:00 AM",
           "title": "Wake up & get ready",
           "typeName": "Logistics",
-          "emoji": "⏰"
+          "emoji": "⏰",
+          "detail": "• Rain layers - most of today is outdoors"
         },
         {
           "start": "8:00 AM",
@@ -357,162 +358,166 @@
         {
           "start": "8:45 AM",
           "end": "9:00 AM",
-          "title": "Coats, shoes, out the door",
+          "title": "Car from the hotel garage",
           "typeName": "Logistics",
-          "emoji": "🧥",
-          "detail": "• Rain jackets - December is Seattle's wettest month"
+          "emoji": "🚗",
+          "detail": "• Kids' car seats are in the Turo"
         },
         {
           "start": "9:00 AM",
-          "end": "9:15 AM",
-          "title": "Walk to Pike Place Market",
-          "typeName": "Walk",
-          "emoji": "🚶",
-          "detail": "• FROM the hotel → TO Pike Place Market (Public Market clock, Pike St & 1st Ave)\n• 0.6 mi downhill, ~11 min at adult pace",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Seattle%2C%20808%20Howell%20St%2C%20Seattle%2C%20WA&destination=Pike%20Place%20Market%2C%2085%20Pike%20St%2C%20Seattle%2C%20WA&travelmode=walking",
-          "menuLabel": "Walking directions"
+          "end": "9:10 AM",
+          "title": "Drive to Colman Dock (ferry terminal)",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM the hotel → TO Colman Dock vehicle tolls\n• ~1 mi down to Alaskan Way - follow the signs for vehicle ferry tolls to Bainbridge",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Seattle%2C%20808%20Howell%20St%2C%20Seattle%2C%20WA&destination=Seattle%20Ferry%20Terminal%2C%20801%20Alaskan%20Way%2C%20Seattle%2C%20WA&travelmode=driving",
+          "menuLabel": "Driving directions"
         },
         {
-          "start": "9:15 AM",
-          "end": "9:45 AM",
-          "title": "Original Starbucks (1912 Pike Pl)",
-          "typeName": "Dining",
-          "emoji": "☕",
-          "detail": "• The 1971 store with the original logo\n• Line is usually shortest early in the morning",
-          "est": 25,
-          "menuUrl": "https://www.starbucks.com/menu",
-          "notes": "Estimate: 2 adult drinks + 2 kids' hot chocolates. This location's own prices aren't posted online."
-        },
-        {
-          "start": "9:45 AM",
-          "end": "11:30 AM",
-          "title": "Pike Place Market walk-through",
-          "typeName": "Sightseeing",
-          "emoji": "🐟",
-          "detail": "• Pike Place Fish Market - fish tossing at the main arcade\n• Rachel the bronze pig, the neon Public Market clock\n• Main Arcade stalls and the Down Under lower levels\n• Post Alley & the Gum Wall\n• Mornings before noon are the least crowded"
-        },
-        {
-          "start": "11:30 AM",
-          "end": "11:50 AM",
-          "title": "Walk to Colman Dock (ferry terminal)",
-          "typeName": "Walk",
-          "emoji": "🚶",
-          "detail": "• FROM Pike Place Market → TO Colman Dock ferry terminal (Pier 52)\n• Down the Overlook Walk to the waterfront\n• 0.7 mi to Pier 52",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Pike%20Place%20Market%2C%2085%20Pike%20St%2C%20Seattle%2C%20WA&destination=Seattle%20Ferry%20Terminal%2C%20801%20Alaskan%20Way%2C%20Seattle%2C%20WA&travelmode=walking",
-          "menuLabel": "Walking directions"
-        },
-        {
-          "start": "11:50 AM",
-          "end": "12:25 PM",
-          "title": "Ferry terminal - tickets & boarding",
+          "start": "9:10 AM",
+          "end": "9:35 AM",
+          "title": "Ferry car line & boarding (Seattle)",
           "typeName": "Logistics",
-          "emoji": "🎫",
-          "detail": "• Walk-on fare paid in Seattle covers the round trip\n• Walk-ons board about 10-15 min before sailing",
-          "est": 22.7,
-          "notes": "2 adults x $11.35 round trip = $22.70. Ages 18 and under ride free. WSF fare as of Oct 2026."
+          "emoji": "⛴️",
+          "detail": "• Pay at the vehicle toll booth, then wait in the numbered holding lanes\n• The 9:35 weekday sailing is rated 'unlikely to fill'",
+          "est": 53.05,
+          "notes": "ESTIMATE: car + driver about $20.85 each way x 2 = $41.70 (WSF $20.25 from Oct 2025, ~3% increase May 2026) + Jenny's passenger fare $11.35 (round trip, paid westbound) = $53.05. Kids 18 and under ride free. If vehicle fares are only collected westbound, it's about $32."
         },
         {
-          "start": "12:25 PM",
-          "end": "1:00 PM",
-          "title": "12:25 PM ferry to Bainbridge Island",
+          "start": "9:35 AM",
+          "end": "10:10 AM",
+          "title": "9:35 AM ferry to Bainbridge Island",
           "typeName": "Transportation",
           "emoji": "⛴️",
-          "detail": "• 35-min crossing, skyline views behind you\n• Fall 2026 weekday schedule (valid Sep 20-Dec 26) - recheck sailing times on the WSF site before you go"
+          "detail": "• 35-min crossing - park on the car deck, then head upstairs for skyline views\n• Fall 2026 weekday schedule - recheck in the WSF app before you go"
         },
         {
-          "start": "1:00 PM",
-          "end": "1:15 PM",
-          "title": "Walk to Doc's Marina Grill",
+          "start": "10:10 AM",
+          "end": "10:30 AM",
+          "title": "Drive to Battle Point Park",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM the Bainbridge ferry terminal → TO Battle Point Park\n• ~6 mi north-west across the island",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Bainbridge%20Island%20Ferry%20Terminal%2C%20Bainbridge%20Island%2C%20WA&destination=Battle%20Point%20Park%2C%2011299%20Arrow%20Point%20Dr%20NE%2C%20Bainbridge%20Island%2C%20WA&travelmode=driving",
+          "menuLabel": "Driving directions"
+        },
+        {
+          "start": "10:30 AM",
+          "end": "11:00 AM",
+          "title": "KidsUp! Playground - Battle Point Park",
+          "typeName": "Free Time",
+          "emoji": "🛝",
+          "detail": "• 47-ft climbable ferry boat, tube and roller slides, swings, orca sculptures\n• Free; restrooms in the park"
+        },
+        {
+          "start": "11:00 AM",
+          "end": "11:20 AM",
+          "title": "Drive to Poulsbo",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM Battle Point Park → TO downtown Poulsbo (Front St)\n• ~10 mi over the Agate Pass Bridge\n• Park in the public lots off Front St / Jensen Way",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Battle%20Point%20Park%2C%2011299%20Arrow%20Point%20Dr%20NE%2C%20Bainbridge%20Island%2C%20WA&destination=Front%20St%20NE%2C%20Poulsbo%2C%20WA&travelmode=driving",
+          "menuLabel": "Driving directions"
+        },
+        {
+          "start": "11:20 AM",
+          "end": "11:55 AM",
+          "title": "Poulsbo - Front Street & Sluys Bakery",
           "typeName": "Walk",
-          "emoji": "🚶",
-          "detail": "• FROM the Bainbridge ferry terminal → TO Doc's Marina Grill\n• ~0.5 mi through Winslow",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Bainbridge%20Island%20Ferry%20Terminal%2C%20Bainbridge%20Island%2C%20WA&destination=Doc%27s%20Marina%20Grill%2C%20Bainbridge%20Island%2C%20WA&travelmode=walking",
-          "menuLabel": "Walking directions"
+          "emoji": "🛍️",
+          "detail": "• 'Little Norway' - Norwegian-themed shops along Front St and the Liberty Bay waterfront\n• Sluys Poulsbo Bakery (18924 Front St NE, daily 5 AM-6 PM): Viking donuts and the gingerbread-man 'Dough Boy' - grab treats for later"
+        },
+        {
+          "start": "11:55 AM",
+          "end": "12:55 PM",
+          "title": "Lunch - Casa Luna (Poulsbo)",
+          "typeName": "Dining",
+          "emoji": "🌮",
+          "detail": "• 18830 Front St NE - family-friendly Mexican on Front Street\n• Little Amigos kids' menu, all $8.99: burrito, tacos, mini quesadilla, chicken nuggets, mac & cheese, cheeseburger\n• Open Tue 11 AM-9 PM; phone (360) 779-7676",
+          "est": 67.21,
+          "menuUrl": "https://togo.ordercasalunapoulsbo.com/order",
+          "menuLabel": "Casa Luna menu",
+          "notes": "Burrito Colorado $17 + Enchiladas Luna $17 (adults) + Kids Taco $8.99 + Kids Mini Quesadilla $8.99 = $51.98. Water. + ~9.3% tax ($4.83) + 20% tip ($10.40) = $67.21. Prices from Casa Luna's online menu, Oct 2026."
+        },
+        {
+          "start": "12:55 PM",
+          "end": "1:15 PM",
+          "title": "Drive to Fay Bainbridge Park",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM Casa Luna, Poulsbo → TO Fay Bainbridge Park\n• Back over Agate Pass, then to the island's north-east shore",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=18830%20Front%20St%20NE%2C%20Poulsbo%2C%20WA&destination=Fay%20Bainbridge%20Park%2C%2015446%20Sunrise%20Dr%20NE%2C%20Bainbridge%20Island%2C%20WA&travelmode=driving",
+          "menuLabel": "Driving directions"
         },
         {
           "start": "1:15 PM",
-          "end": "2:25 PM",
-          "title": "Lunch - Doc's Marina Grill",
-          "typeName": "Dining",
-          "emoji": "🍔",
-          "detail": "• On Eagle Harbor marina\n• Burgers, sandwiches, fish & chips, kids' menu\n• Open daily 10:45 AM-9:45 PM",
-          "est": 87.86,
-          "menuUrl": "https://order.toasttab.com/online/docs-marina-grill-bainbridge-island",
-          "notes": "Big Doc Burger $22 + Chicken Cheddar Club $22 (adults) + Kids Chicken Strips $14 + Kids Grilled Cheese $10 (kids) = $68. Entrees only, water. + ~9.2% tax ($6.26) + 20% tip ($13.60) = $87.86. Prices from Doc's online menu, Oct 2026."
+          "end": "1:40 PM",
+          "title": "Fay Bainbridge Park beach",
+          "typeName": "Sightseeing",
+          "emoji": "🌊",
+          "detail": "• Driftwood beach looking across Puget Sound to Seattle\n• Clear day: Mount Rainier and Mount Baker\n• Free; day-use parking by the beach"
         },
         {
-          "start": "2:25 PM",
-          "end": "2:45 PM",
-          "title": "Waterfront Park playground",
-          "typeName": "Free Time",
-          "emoji": "🛝",
-          "detail": "• FROM Doc's Marina Grill → TO Waterfront Park, Winslow\n• Fenced playground with swings on Eagle Harbor, behind Town & Country Market\n• Play structure is aimed at ages 2-5 - fine for a short run-around\n• Free; restrooms in the park",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Doc%27s%20Marina%20Grill%2C%20Bainbridge%20Island%2C%20WA&destination=Waterfront%20Park%2C%20Bainbridge%20Island%2C%20WA&travelmode=walking",
-          "menuLabel": "Walking directions"
+          "start": "1:40 PM",
+          "end": "1:55 PM",
+          "title": "Drive to Winslow & park",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM Fay Bainbridge Park → TO Winslow (Town & Country Market)\n• Street parking along Winslow Way or the lots by Town & Country Market",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Fay%20Bainbridge%20Park%2C%2015446%20Sunrise%20Dr%20NE%2C%20Bainbridge%20Island%2C%20WA&destination=Town%20%26%20Country%20Market%2C%20343%20Winslow%20Way%20E%2C%20Bainbridge%20Island%2C%20WA&travelmode=driving",
+          "menuLabel": "Driving directions"
         },
         {
-          "start": "2:45 PM",
-          "end": "3:10 PM",
+          "start": "1:55 PM",
+          "end": "2:20 PM",
           "title": "Winslow Way & Town & Country Market",
           "typeName": "Walk",
           "emoji": "🛍️",
-          "detail": "• FROM Waterfront Park → TO Town & Country Market\n• Stroll Winslow Way, Bainbridge's main street\n• Eagle Harbor Book Co. (big kids' section) and Calico Toy Shoppe along the way\n• Town & Country Market, 343 Winslow Way E - local grocery with a deli",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Waterfront%20Park%2C%20Bainbridge%20Island%2C%20WA&destination=Town%20%26%20Country%20Market%2C%20343%20Winslow%20Way%20E%2C%20Bainbridge%20Island%2C%20WA&travelmode=walking",
-          "menuLabel": "Walking directions"
+          "detail": "• Stroll Bainbridge's main street - Eagle Harbor Book Co. and Calico Toy Shoppe\n• Town & Country Market, 343 Winslow Way E"
         },
         {
-          "start": "3:10 PM",
-          "end": "3:25 PM",
-          "title": "Walk to the ferry terminal",
-          "typeName": "Walk",
-          "emoji": "🚶",
-          "detail": "• FROM Town & Country Market → TO the Bainbridge ferry terminal\n• ~0.4 mi down Winslow Way to the terminal",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Town%20%26%20Country%20Market%2C%20343%20Winslow%20Way%20E%2C%20Bainbridge%20Island%2C%20WA&destination=Bainbridge%20Island%20Ferry%20Terminal%2C%20Bainbridge%20Island%2C%20WA&travelmode=walking",
-          "menuLabel": "Walking directions"
+          "start": "2:20 PM",
+          "end": "2:30 PM",
+          "title": "Drive to the ferry terminal",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM Winslow → TO the Bainbridge ferry terminal\n• A few blocks - be in the car line by about 2:30",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Town%20%26%20Country%20Market%2C%20343%20Winslow%20Way%20E%2C%20Bainbridge%20Island%2C%20WA&destination=Bainbridge%20Island%20Ferry%20Terminal%2C%20Bainbridge%20Island%2C%20WA&travelmode=driving",
+          "menuLabel": "Driving directions"
         },
         {
-          "start": "3:25 PM",
-          "end": "3:50 PM",
-          "title": "Board the return ferry",
+          "start": "2:30 PM",
+          "end": "2:55 PM",
+          "title": "Ferry car line & boarding (Bainbridge)",
           "typeName": "Logistics",
           "emoji": "⛴️",
-          "detail": "• No fare collected on the Bainbridge side for walk-ons\n• Walk-ons board about 10-15 min before sailing; warm waiting room in the terminal"
+          "detail": "• The 2:55 weekday sailing is rated 'sometimes full' - don't cut it close\n• Backup: next sailing 3:50 PM"
         },
         {
-          "start": "3:50 PM",
-          "end": "4:25 PM",
-          "title": "3:50 PM ferry back to Seattle",
+          "start": "2:55 PM",
+          "end": "3:30 PM",
+          "title": "2:55 PM ferry back to Seattle",
           "typeName": "Transportation",
           "emoji": "⛴️",
-          "detail": "• Skyline at dusk on the way in (sunset ~4:20 PM)\n• Fall 2026 weekday schedule lists 3:50 PM from Bainbridge - recheck in the WSF app before you go"
+          "detail": "• Skyline views on the way in"
         },
         {
-          "start": "4:25 PM",
-          "end": "4:35 PM",
-          "title": "Walk off the ferry to the rideshare pickup",
-          "typeName": "Walk",
-          "emoji": "🚶",
-          "detail": "• Follow the Colman Dock signs down to the Alaskan Way curb\n• Request the Uber as the ferry docks"
-        },
-        {
-          "start": "4:35 PM",
-          "end": "4:50 PM",
-          "title": "Uber from Colman Dock to the hotel",
-          "typeName": "Transportation",
-          "emoji": "🚕",
-          "detail": "• FROM Colman Dock → TO the hotel\n• ~1.2 mi uphill to 808 Howell St, about 8-12 min in 4:30 PM traffic\n• UberX seats all 4 - Uber has no car-seat option here, so consider packing travel boosters",
-          "est": 22.0,
-          "notes": "ESTIMATE: UberX about $16-20 for ~1.2 mi / ~10 min at weekday rush (Seattle has the priciest rideshare fares in the US because of its driver-pay rules) + ~$4 tip = about $22. Check the live quote in the app; surge after a ferry docks can push it higher.",
+          "start": "3:30 PM",
+          "end": "3:45 PM",
+          "title": "Drive to the hotel",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM Colman Dock → TO the hotel\n• ~1 mi up to 808 Howell St - back in the garage",
           "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Seattle%20Ferry%20Terminal%2C%20801%20Alaskan%20Way%2C%20Seattle%2C%20WA&destination=Hyatt%20Regency%20Seattle%2C%20808%20Howell%20St%2C%20Seattle%2C%20WA&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "4:50 PM",
+          "start": "3:45 PM",
           "end": "5:25 PM",
-          "title": "Freshen up at the hotel",
-          "typeName": "Logistics",
-          "emoji": "🏨",
-          "detail": "• Restrooms, dry layers, a short rest - then grab the car"
+          "title": "Rest at the hotel",
+          "typeName": "Free Time",
+          "emoji": "🛋️",
+          "detail": "• Downtime, showers, change for dinner"
         },
         {
           "start": "5:25 PM",
