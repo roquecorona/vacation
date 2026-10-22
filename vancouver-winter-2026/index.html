@@ -2475,28 +2475,77 @@ class Component extends DCLogic {
         {
           "start": "12:30 PM",
           "end": "12:45 PM",
-          "title": "Back to the hotel",
+          "title": "Drive to lunch",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM Stanley Park → TO the hotel\n• Valet the car",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Lost%20Lagoon%2C%20Stanley%20Park%2C%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
-          "menuLabel": "Driving directions"
+          "detail": "• From Lost Lagoon (the Stanley Park exit):\n• Denny's - ~1.5 mi via Denman St to 1098 Davie St (~8 min)\n• Desi - ~2.5 mi via W Georgia St and Hornby St to 1355 Hornby St (~12 min)\n• Street pay parking nearby (PayByPhone)"
         },
         {
           "start": "12:45 PM",
-          "end": "1:30 PM",
-          "title": "Light lunch - in-room dining",
+          "end": "1:45 PM",
+          "title": "Lunch - Denny's or Desi Indian Lounge",
           "typeName": "Dining",
-          "emoji": "🥪",
-          "detail": "• Most restaurants are closed Christmas Day\n• Keep it light before the 4:30 PM buffet",
-          "est": 57.6,
+          "emoji": "🍽️",
+          "detail": "• Pick one - both were open Christmas Day in past years; call in early December to confirm\n• Option 1 - Denny's Davie, 1098 Davie St (West End): open 24 hours; Denny's Canada was open Christmas Day 2025\n• Denny's kids' menu: Jr Grand Slam C$6.99, Jr Chicken Tenders C$7.99, Jr Grilled Cheese C$7.29 - walk-in only\n• Option 2 - Desi Indian Lounge, 1355 Hornby St: diners reviewed Christmas Day 2025 meals; opens 11 AM\n• Desi: 2025 holiday 4-course menu C$35/person ran Dec 24-Jan 1; no kids' menu - kids share butter chicken & naan; takes reservations",
+          "est": 67.5,
           "ccy": "CAD",
-          "menuUrl": "https://www.hyatt.com/en-US/hotel/canada/hyatt-regency-vancouver/yvrrv/dining",
-          "notes": "ESTIMATE - in-room dining menu and holiday hours not posted online. About C$80 for sandwiches and kids' items, about US$58."
+          "menuUrl": "https://www.dennys.ca/restaurant/british-columbia/vancouver-davie/menu/",
+          "menuLabel": "Denny's Davie menu",
+          "notes": "Denny's: Single Cheeseburger C$17.99 + Seasoned Grilled Chicken C$20.99 (adults) + Jr Chicken Tenders C$7.99 + Jr Grilled Cheese C$7.29 = C$54.26. Water. + 5% GST + 20% tip = C$67.83, about US$49 (menu prices VERIFIED). Desi: Butter Chicken C$23 + Chicken Biryani C$21 (adults) + kids share a Butter Chicken C$23 + 2 naan ~C$8 = C$75. Water. + 5% GST + 20% tip = C$93.75, about US$68 (naan ESTIMATE). Estimate shown is Desi, the higher of the two.",
+          "conf": "NOT BOOKED",
+          "confLinks": [
+            {
+              "label": "Denny's Davie menu",
+              "url": "https://www.dennys.ca/restaurant/british-columbia/vancouver-davie/menu/"
+            },
+            {
+              "label": "Desi Indian Lounge menu",
+              "url": "https://desilounge.ca/pages/menu"
+            },
+            {
+              "label": "Desi - reserve a table",
+              "url": "https://desilounge.ca/pages/reserve-table"
+            },
+            {
+              "label": "Directions: Stanley Park to Denny's",
+              "url": "https://www.google.com/maps/dir/?api=1&origin=Lost%20Lagoon%2C%20Stanley%20Park%2C%20Vancouver%2C%20BC&destination=Denny%27s%2C%201098%20Davie%20St%2C%20Vancouver%2C%20BC&travelmode=driving"
+            },
+            {
+              "label": "Directions: Stanley Park to Desi",
+              "url": "https://www.google.com/maps/dir/?api=1&origin=Lost%20Lagoon%2C%20Stanley%20Park%2C%20Vancouver%2C%20BC&destination=Desi%20Indian%20Lounge%2C%201355%20Hornby%20St%2C%20Vancouver%2C%20BC&travelmode=driving"
+            },
+            {
+              "label": "Directions: Denny's to hotel",
+              "url": "https://www.google.com/maps/dir/?api=1&origin=Denny%27s%2C%201098%20Davie%20St%2C%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving"
+            },
+            {
+              "label": "Directions: Desi to hotel",
+              "url": "https://www.google.com/maps/dir/?api=1&origin=Desi%20Indian%20Lounge%2C%201355%20Hornby%20St%2C%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving"
+            }
+          ],
+          "flag": "Pick Denny's or Desi. Call in early December to confirm Christmas Day lunch hours; if Desi, book 12:45 PM for four.",
+          "phones": [
+            {
+              "label": "Denny's 604-689-0509",
+              "tel": "+16046890509"
+            },
+            {
+              "label": "Desi 604-681-2131",
+              "tel": "+16046812131"
+            }
+          ]
         },
         {
-          "start": "1:30 PM",
-          "end": "1:40 PM",
+          "start": "1:45 PM",
+          "end": "1:55 PM",
+          "title": "Drive back to the hotel",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• Denny's - ~1 mi via Davie St and Burrard St (~7 min)\n• Desi - ~1 mi via Hornby St and Burrard St (~6 min)\n• Valet the car"
+        },
+        {
+          "start": "1:55 PM",
+          "end": "2:05 PM",
           "title": "Walk to Robson Square",
           "typeName": "Walk",
           "emoji": "🚶",
@@ -2505,8 +2554,8 @@ class Component extends DCLogic {
           "menuLabel": "Walking directions"
         },
         {
-          "start": "1:40 PM",
-          "end": "3:10 PM",
+          "start": "2:05 PM",
+          "end": "3:35 PM",
           "title": "Skating - Robson Square ice rink",
           "typeName": "Excursion",
           "emoji": "⛸️",
@@ -2516,8 +2565,8 @@ class Component extends DCLogic {
           "notes": "Skate rentals 4 x C$5 = C$20, about US$14. Hours from the 2025-26 season; confirm the 2026 schedule."
         },
         {
-          "start": "3:10 PM",
-          "end": "3:20 PM",
+          "start": "3:35 PM",
+          "end": "3:45 PM",
           "title": "Walk back to the hotel",
           "typeName": "Walk",
           "emoji": "🚶",
@@ -2526,7 +2575,7 @@ class Component extends DCLogic {
           "menuLabel": "Walking directions"
         },
         {
-          "start": "3:20 PM",
+          "start": "3:45 PM",
           "end": "4:20 PM",
           "title": "Downtime & dress for dinner",
           "typeName": "Free Time",
