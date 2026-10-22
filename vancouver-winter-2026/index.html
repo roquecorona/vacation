@@ -2118,8 +2118,8 @@ class Component extends DCLogic {
     },
     {
       "date": "Thursday, December 24, 2026",
-      "title": "Christmas Eve - Grouse Mountain & VanDusen Lights (draft)",
-      "planned": false,
+      "title": "Christmas Eve - Grouse Mountain & VanDusen Lights",
+      "planned": true,
       "blocks": [
         {
           "start": "6:30 AM",
@@ -2282,25 +2282,25 @@ class Component extends DCLogic {
           "title": "Drive Grouse → hotel",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM Grouse Mountain base → TO the hotel\n• ~8 mi over the Lions Gate Bridge\n• Leave the car with the valet for a short stay - you'll need it again at 4:05",
+          "detail": "• FROM Grouse Mountain base → TO the hotel\n• ~8 mi over the Lions Gate Bridge\n• Leave the car with the valet for a short stay - you'll need it again at 4:00",
           "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Grouse%20Mountain%2C%206400%20Nancy%20Greene%20Way%2C%20North%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
           "start": "2:30 PM",
-          "end": "4:05 PM",
+          "end": "4:00 PM",
           "title": "Showers & wind-down at the hotel",
           "typeName": "Free Time",
           "emoji": "🚿",
-          "detail": "• Showers, warm up, rest\n• Dress warm for the evening lights"
+          "detail": "• Showers, warm up, rest\n• Dress warm - dinner, then the evening lights"
         },
         {
-          "start": "4:05 PM",
+          "start": "4:00 PM",
           "end": "4:15 PM",
           "title": "Car from the valet",
           "typeName": "Logistics",
           "emoji": "🚗",
-          "detail": "• Call down for the car at 4:00\n• Tip the valet C$5 (about US$3.60)",
+          "detail": "• Call down for the car at 3:50\n• Tip the valet C$5 (about US$3.60)",
           "est": 3.6,
           "ccy": "CAD",
           "notes": "Valet tip: C$5 when they bring the car up (about US$3.60) - US cash is fine too. Nothing needed at drop-off."
@@ -2308,20 +2308,75 @@ class Component extends DCLogic {
         {
           "start": "4:15 PM",
           "end": "4:40 PM",
-          "title": "Drive to VanDusen Botanical Garden",
+          "title": "Drive to Seasons in the Park",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM the hotel → TO VanDusen Botanical Garden\n• ~5 mi south to 5251 Oak St\n• On-site parking lot",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=VanDusen%20Botanical%20Garden%2C%205251%20Oak%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
+          "detail": "• FROM the hotel → TO Seasons in the Park (Queen Elizabeth Park)\n• ~5 mi south via Cambie St to Queen Elizabeth Park (W 33rd Ave & Cambie)\n• Extra time built in for Christmas Eve traffic",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=Seasons%20in%20the%20Park%2C%20W%2033rd%20Ave%20%26%20Cambie%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "4:45 PM",
-          "end": "6:00 PM",
+          "start": "4:40 PM",
+          "end": "5:00 PM",
+          "title": "Park & walk to Seasons",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Queen Elizabeth Park pay parking near the Bloedel Conservatory, then a short walk to the restaurant"
+        },
+        {
+          "start": "5:00 PM",
+          "end": "6:20 PM",
+          "title": "Dinner - Seasons in the Park — BOOKED",
+          "typeName": "Dining",
+          "emoji": "🍽️",
+          "detail": "• Hilltop in Queen Elizabeth Park - views over the city and North Shore mountains\n• Christmas Eve 3-course prix fixe, C$78 per adult:\n• Starter: butternut squash soup, harvest salad or Seasons mushrooms\n• Main: oven-roasted turkey, prime rib, Summit seafood duo or wild mushroom ravioli\n• Dessert: pumpkin bread pudding or chocolate truffle cake\n• Kids order from the kids' menu (not posted online)",
+          "est": 167.4,
+          "ccy": "CAD",
+          "menuUrl": "https://www.vancouverdine.com/seasons/menus/",
+          "menuLabel": "Seasons menus",
+          "notes": "2 x C$78 prix fixe (adults) + 2 kids' meals ~C$15 each (ESTIMATE - kids' menu not online) = C$186. Water. + 5% GST (C$9.30) + 20% tip (C$37.20) = C$232.50, about US$167.",
+          "conf": "Seasons in the Park - 5:00 PM, party of 4",
+          "confLinks": [
+            {
+              "label": "Seasons menus",
+              "url": "https://www.vancouverdine.com/seasons/menus/"
+            }
+          ],
+          "flag": "BOOKED - 5:00 PM Thu Dec 24 for four. Christmas Eve prix fixe C$78 per adult; kids order from the kids' menu."
+        },
+        {
+          "start": "6:20 PM",
+          "end": "6:30 PM",
+          "title": "Back to the car",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Seasons back to the Queen Elizabeth Park lot, kids into car seats"
+        },
+        {
+          "start": "6:30 PM",
+          "end": "6:40 PM",
+          "title": "Drive to VanDusen Botanical Garden",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM Seasons in the Park → TO VanDusen Botanical Garden\n• ~1 mi west to 5251 Oak St",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Seasons%20in%20the%20Park%2C%20W%2033rd%20Ave%20%26%20Cambie%20St%2C%20Vancouver%2C%20BC&destination=VanDusen%20Botanical%20Garden%2C%205251%20Oak%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
+          "menuLabel": "Driving directions"
+        },
+        {
+          "start": "6:40 PM",
+          "end": "6:50 PM",
+          "title": "Park & walk to the VanDusen entrance",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• On-site lot is limited on busy nights - nearby street parking as a backup"
+        },
+        {
+          "start": "6:50 PM",
+          "end": "8:05 PM",
           "title": "VanDusen Festival of Lights",
           "typeName": "Excursion",
           "emoji": "✨",
-          "detail": "• Over a million lights across the 55-acre garden; catch one Dancing Lights show\n• Timed entry - book the 4:45 PM slot (everyone needs a reservation)\n• Standard hours 4-10 PM, closed Dec 25 - Christmas Eve hours not posted yet",
+          "detail": "• Over a million lights across the 55-acre garden; catch one Dancing Lights show\n• Timed entry - book the 6:45 PM slot (everyone needs a reservation)\n• Standard hours 4-10 PM, closed Dec 25 - Christmas Eve hours not posted yet",
           "est": 61.99,
           "ccy": "CAD",
           "notes": "2 adults x C$29 + 2 children (5-12) x C$12 = C$82 + 5% GST (C$4.10) = C$86.10, about US$62. Published 2026 prices; tickets go on sale Nov 4, 2026.",
@@ -2332,11 +2387,19 @@ class Component extends DCLogic {
               "url": "https://vancouver.ca/news-calendar/festival-of-lights-brightens-the-holidays-nov-2025.aspx"
             }
           ],
-          "flag": "Tickets go on sale Nov 4, 2026 - confirm Christmas Eve hours and book the 4:45 PM slot for Thu Dec 24."
+          "flag": "Tickets go on sale Nov 4, 2026 - confirm Christmas Eve hours and book the 6:45 PM slot for Thu Dec 24."
         },
         {
-          "start": "6:00 PM",
-          "end": "6:25 PM",
+          "start": "8:05 PM",
+          "end": "8:15 PM",
+          "title": "Back to the car",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• VanDusen entrance back to the car"
+        },
+        {
+          "start": "8:15 PM",
+          "end": "8:40 PM",
           "title": "Drive VanDusen → hotel",
           "typeName": "Drive",
           "emoji": "🚗",
@@ -2345,42 +2408,12 @@ class Component extends DCLogic {
           "menuLabel": "Driving directions"
         },
         {
-          "start": "6:30 PM",
-          "end": "7:45 PM",
-          "title": "Dinner - Cloudstreet (hotel)",
-          "typeName": "Dining",
-          "emoji": "🍽️",
-          "detail": "• In the Hyatt Regency - no walking or driving after VanDusen\n• Hotel confirmed (Oct 20): open Christmas Eve, and you can order from the regular menu\n• Christmas Eve dinner buffet also offered: C$120 adults / C$70 children\n• Kids' menu: not confirmed yet - ask when booking",
-          "est": 100.0,
-          "menuUrl": "https://www.opentable.ca/r/mosaic-grille-hyatt-regency-vancouver",
-          "menuLabel": "Cloudstreet - OpenTable",
-          "notes": "ESTIMATE: about $100 ordering from the regular menu (Roque's budget). The holiday buffet instead would be 2 x C$120 + 2 x C$70 = C$380 + 5% GST + 20% tip = about C$475 (US$342).",
-          "conf": "NOT BOOKED",
-          "confLinks": [
-            {
-              "label": "Cloudstreet - OpenTable",
-              "url": "https://www.opentable.ca/r/mosaic-grille-hyatt-regency-vancouver"
-            },
-            {
-              "label": "Email Jason Kim (F&B Manager)",
-              "url": "mailto:jason.kim@hyatt.com"
-            }
-          ],
-          "flag": "Reserve 6:30 PM Thu Dec 24 for four - expected to be busy. Jason Kim (F&B Manager) offered to help book; still ask about a kids' menu.",
-          "phones": [
-            {
-              "label": "Hotel +1 604 683 1234",
-              "tel": "+16046831234"
-            }
-          ]
-        },
-        {
-          "start": "7:45 PM",
-          "end": "8:45 PM",
+          "start": "8:40 PM",
+          "end": "9:30 PM",
           "title": "Bedtime routine",
           "typeName": "Logistics",
           "emoji": "🛏️",
-          "detail": "• Stockings out for Christmas morning\n• Lights out by 8:45 PM keeps 10 hrs of sleep before a 7:00 AM Christmas morning"
+          "detail": "• Stockings out for Christmas morning\n• Lights out by 9:30 PM - sleeping in on Christmas morning"
         }
       ]
     },
