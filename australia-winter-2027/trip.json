@@ -1324,10 +1324,10 @@
      "title": "Pick up the golf buggy — Resort Side Buggy Hire",
      "typeName": "Rental Car",
      "emoji": "🛺",
-     "detail": "• 4-seater; driver 21+ with a full licence.\n• No child seats needed (kids are over 4).\n• Keep it 3 × 24 hrs: Sat Dec 25 ~8:45 AM → Tue Dec 28 ~8:15 AM (desk opens 8 AM Mon–Sat, 9 AM Sun).\n• Covers Christmas Day, the drive to the marina for the reef trip and Romano's on Dec 26, and the island day on Dec 27.",
-     "est": 310.05,
+     "detail": "• 4-seater; driver 21+ with a full licence.\n• No child seats needed (kids are over 4).\n• Christmas Day only: return by 5:00 PM today (desk closes 5 PM).",
+     "est": 103.35,
      "flag": "Buggies sell out months ahead — book with the room. Confirm Christmas Day desk hours.",
-     "notes": "Official pricing (from):\n• AUD 140 per 24 hrs × 3 = AUD 420\n• Optional damage waiver AUD 19/day × 3 = AUD 57\n• = AUD 477 ≈ USD 310\n• Not booked."
+     "notes": "Official pricing (from):\n• AUD 140 per 24 hrs (also a 4-hr rate from AUD ~95–100)\n• + optional damage waiver AUD 19\n• = AUD 159 ≈ USD 103\n• Not booked."
     },
     {
      "start": "9:15 AM",
@@ -1365,10 +1365,25 @@
     },
     {
      "start": "1:30 PM",
-     "end": "5:00 PM",
+     "end": "4:30 PM",
      "title": "Pool and rest",
      "typeName": "Free Time",
      "emoji": "🏊"
+    },
+    {
+     "start": "4:30 PM",
+     "end": "5:00 PM",
+     "title": "Return the buggy — Resort Side Buggy Hire",
+     "typeName": "Rental Car",
+     "emoji": "🛺",
+     "detail": "• Back by 5:00 PM; walk or take the free island shuttle from here."
+    },
+    {
+     "start": "5:00 PM",
+     "end": "5:30 PM",
+     "title": "Showers, change",
+     "typeName": "Logistics",
+     "emoji": "🚿"
     },
     {
      "start": "5:30 PM",
@@ -1376,7 +1391,7 @@
      "title": "Christmas dinner — casual (choose on the day)",
      "typeName": "Dining",
      "emoji": "🍕",
-     "detail": "• All four are listed under \"Restaurants operating as usual on Christmas Day\" — regular menus, no Christmas set menu; 15% public-holiday surcharge.\n• Pizzeria & Gelato Bar — 4–9:30 PM; dine in, takeaway, or delivery to the room 5–9 PM (AUD 10). Menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/Pizzeria-and-Gelato-Bar-Menu.pdf?ext=.pdf\n• Popeye's — fish & chips and burgers at the marina, open to 8:30 PM. Menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-popeyes.pdf?ext=.pdf\n• Sails — beachfront by the main pool; Kids Eat Free with each adult main. Menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-sails.pdf?ext=.pdf · Kids: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/Sails-KEF-Menu.pdf\n• Marina Tavern — pub on the marina, kitchen to 9 PM. Menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-marina-tavern.pdf?ext=.pdf\n• Not these on Christmas night: Pool Terrace (Christmas buffet AUD 255 adult / 49 child) and the adults-only venues.",
+     "detail": "• All four are listed under \"Restaurants operating as usual on Christmas Day\" — regular menus, no Christmas set menu; 15% public-holiday surcharge.\n• Getting there: Sails is a walk from Reef View; the marina venues by free island shuttle (~10 min); or Pizzeria delivery to the room.\n• Pizzeria & Gelato Bar — 4–9:30 PM; dine in, takeaway, or delivery to the room 5–9 PM (AUD 10). Menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/Pizzeria-and-Gelato-Bar-Menu.pdf?ext=.pdf\n• Popeye's — fish & chips and burgers at the marina, open to 8:30 PM. Menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-popeyes.pdf?ext=.pdf\n• Sails — beachfront by the main pool; Kids Eat Free with each adult main. Menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-sails.pdf?ext=.pdf · Kids: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/Sails-KEF-Menu.pdf\n• Marina Tavern — pub on the marina, kitchen to 9 PM. Menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-marina-tavern.pdf?ext=.pdf\n• Not these on Christmas night: Pool Terrace (Christmas buffet AUD 255 adult / 49 child) and the adults-only venues.",
      "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/Pizzeria-and-Gelato-Bar-Menu.pdf?ext=.pdf",
      "est": 65.09,
      "flag": "Confirm the 2027 Christmas Day page lists the same venues as 'operating as usual'.",
@@ -1385,17 +1400,17 @@
     {
      "start": "6:30 PM",
      "end": "7:15 PM",
-     "title": "Buggy to One Tree Hill for sunset",
-     "typeName": "Sightseeing",
-     "emoji": "🌅",
-     "detail": "• Sunset ~6:55 PM."
+     "title": "Christmas evening in the room",
+     "typeName": "Free Time",
+     "emoji": "🎁"
     },
     {
      "start": "7:15 PM",
      "end": "7:45 PM",
      "title": "Bed",
      "typeName": "Hotel",
-     "emoji": "🌙"
+     "emoji": "🌙",
+     "detail": "• Early start tomorrow — reef day, breakfast 7:00 AM."
     }
    ]
   },
@@ -1423,10 +1438,10 @@
     {
      "start": "8:05 AM",
      "end": "8:20 AM",
-     "title": "Buggy to Hamilton Island Marina — park for the day",
-     "typeName": "Rental Car",
-     "emoji": "🛺",
-     "detail": "• From Reef View down to Marina Village; buggy parking by the marina."
+     "title": "Island shuttle → Hamilton Island Marina",
+     "typeName": "Transportation",
+     "emoji": "🚌",
+     "detail": "• Free island shuttle from the Reef View stop (runs 6:50 AM–11 PM); ~10 min to Marina Village."
     },
     {
      "start": "8:20 AM",
@@ -1449,13 +1464,13 @@
     },
     {
      "start": "5:00 PM",
-     "end": "5:15 PM",
-     "title": "Buggy back to Reef View",
-     "typeName": "Rental Car",
-     "emoji": "🛺"
+     "end": "5:20 PM",
+     "title": "Island shuttle back to Reef View",
+     "typeName": "Transportation",
+     "emoji": "🚌"
     },
     {
-     "start": "5:15 PM",
+     "start": "5:20 PM",
      "end": "5:55 PM",
      "title": "Showers, change",
      "typeName": "Logistics",
@@ -1463,13 +1478,13 @@
     },
     {
      "start": "5:55 PM",
-     "end": "6:05 PM",
-     "title": "Buggy to the marina",
-     "typeName": "Rental Car",
-     "emoji": "🛺"
+     "end": "6:10 PM",
+     "title": "Island shuttle → marina",
+     "typeName": "Transportation",
+     "emoji": "🚌"
     },
     {
-     "start": "6:05 PM",
+     "start": "6:10 PM",
      "end": "7:15 PM",
      "title": "Dinner — Romano's (Italian, waterside)",
      "typeName": "Dining",
@@ -1481,13 +1496,13 @@
     },
     {
      "start": "7:15 PM",
-     "end": "7:30 PM",
-     "title": "Buggy back to Reef View",
-     "typeName": "Rental Car",
-     "emoji": "🛺"
+     "end": "7:35 PM",
+     "title": "Island shuttle back to Reef View",
+     "typeName": "Transportation",
+     "emoji": "🚌"
     },
     {
-     "start": "7:30 PM",
+     "start": "7:35 PM",
      "end": "8:00 PM",
      "title": "Bed",
      "typeName": "Hotel",
@@ -1498,15 +1513,26 @@
   },
   {
    "date": "Monday, December 27, 2027",
-   "title": "Island day — buggy, koalas at Wild Life, beach and pool",
+   "title": "Island day — buggy, koalas at Wild Life, beach, One Tree Hill sunset",
    "planned": false,
    "blocks": [
     {
-     "start": "8:00 AM",
-     "end": "8:45 AM",
+     "start": "7:45 AM",
+     "end": "8:30 AM",
      "title": "Breakfast — Pool Terrace (included)",
      "typeName": "Dining",
      "emoji": "🍳"
+    },
+    {
+     "start": "8:30 AM",
+     "end": "8:45 AM",
+     "title": "Pick up the golf buggy — Resort Side Buggy Hire",
+     "typeName": "Rental Car",
+     "emoji": "🛺",
+     "detail": "• 24-hr hire: today 8:30 AM → tomorrow 8:00 AM (desk opens 8 AM Mon–Sat).\n• 4-seater; driver 21+ with a full licence.",
+     "est": 103.35,
+     "flag": "Book with the room — Christmas week sells out.",
+     "notes": "Official pricing (from):\n• AUD 140 per 24 hrs + optional damage waiver AUD 19 = AUD 159 ≈ USD 103\n• Not booked."
     },
     {
      "start": "8:45 AM",
@@ -1568,7 +1594,7 @@
     },
     {
      "start": "5:30 PM",
-     "end": "6:45 PM",
+     "end": "6:35 PM",
      "title": "Last island dinner — Manta Ray (Greek, marina)",
      "typeName": "Dining",
      "emoji": "🍽️",
@@ -1578,19 +1604,27 @@
      "notes": "PRICED FROM THE CURRENT MENU:\n• Chicken souvlaki skewers AUD 44 + moussaka AUD 40\n• Kids' souvlaki AUD 24 + kids' penne AUD 21\n• = AUD 129 + 15% public-holiday surcharge (Dec 27 is the Christmas Day holiday) = AUD 148 ≈ USD 96\n• Australian menu prices include 10% GST; tipping isn't expected."
     },
     {
-     "start": "6:45 PM",
-     "end": "7:00 PM",
+     "start": "6:35 PM",
+     "end": "7:10 PM",
+     "title": "Buggy up to One Tree Hill — sunset",
+     "typeName": "Sightseeing",
+     "emoji": "🌅",
+     "detail": "• From the marina up the hill road to the One Tree Hill lookout, ~10 min.\n• Sunset ~6:55 PM over the islands."
+    },
+    {
+     "start": "7:10 PM",
+     "end": "7:25 PM",
      "title": "Buggy back to Reef View",
      "typeName": "Rental Car",
      "emoji": "🛺"
     },
     {
-     "start": "7:00 PM",
+     "start": "7:25 PM",
      "end": "7:30 PM",
      "title": "Bed",
      "typeName": "Hotel",
      "emoji": "🌙",
-     "detail": "• Breakfast 7:00 AM tomorrow; buggy goes back at 8:00 AM."
+     "detail": "• Breakfast 7:30 AM tomorrow; buggy goes back at 8:15 AM."
     }
    ]
   },
@@ -1600,22 +1634,22 @@
    "planned": false,
    "blocks": [
     {
-     "start": "7:00 AM",
-     "end": "8:00 AM",
+     "start": "7:30 AM",
+     "end": "8:15 AM",
      "title": "Breakfast — Pool Terrace (included)",
      "typeName": "Dining",
      "emoji": "🍳"
     },
     {
-     "start": "8:00 AM",
-     "end": "8:15 AM",
+     "start": "8:15 AM",
+     "end": "8:30 AM",
      "title": "Return the buggy — Resort Side Buggy Hire",
      "typeName": "Rental Car",
      "emoji": "🛺",
      "detail": "• Desk opens 8:00 AM Mon–Sat.\n• Free island shuttle for the rest of the day, including to the airport."
     },
     {
-     "start": "8:15 AM",
+     "start": "8:30 AM",
      "end": "10:00 AM",
      "title": "Last swim — Catseye Beach",
      "typeName": "Beach/Pool",
@@ -2179,7 +2213,7 @@
     },
     {
      "name": "Hamilton Island bookings",
-     "note": "Reef View Coral Sea View Room B&B AUD 4,150 (book direct). Golf buggy 3 × 24 hrs (Dec 25 → Dec 28 AM). Whitehaven Chill & Grill (Dec 24) + cabana, Reefworld (Dec 26), Romano's (Dec 26) — book early. Christmas lunch/dinner are casual walk-ins."
+     "note": "Reef View Coral Sea View Room B&B AUD 4,150 (book direct). Golf buggy: Dec 25 (return by 5 PM) and Dec 27 8:30 AM → Dec 28 8:15 AM. Whitehaven Chill & Grill (Dec 24) + cabana, Reefworld (Dec 26), Romano's (Dec 26) — book early. Christmas lunch/dinner are casual walk-ins."
     },
     {
      "name": "Noosa 2 Fraser 4WD",
