@@ -1208,89 +1208,94 @@
   },
   {
    "date": "Friday, December 24, 2027",
-   "title": "Great Barrier Reef — Reefworld pontoon at Hardy Reef (Christmas Eve)",
+   "title": "Whitehaven Beach + Hill Inlet full day — Christmas Eve carols",
    "planned": false,
    "blocks": [
     {
      "start": "6:45 AM",
-     "end": "7:45 AM",
+     "end": "7:30 AM",
      "title": "Breakfast — Pool Terrace (included)",
      "typeName": "Dining",
      "emoji": "🍳",
-     "detail": "• Hotel-guest breakfast 6:00–10:30 AM; included in the B&B rate."
+     "detail": "• Hotel-guest breakfast 6:00–10:30 AM; included in the B&B rate (kids 12 and under free)."
+    },
+    {
+     "start": "7:30 AM",
+     "end": "7:45 AM",
+     "title": "Grab the beach bag",
+     "typeName": "Logistics",
+     "emoji": "🎒",
+     "detail": "• Packed last night: swimsuits, rash vests, hats, reef-safe sunscreen, towels, sunglasses, walking shoes for the Hill Inlet track.\n• Extra snacks and water bottles for the kids — lunch is a simple beach BBQ."
     },
     {
      "start": "7:45 AM",
-     "end": "8:15 AM",
-     "title": "Pack the reef bag",
-     "typeName": "Logistics",
-     "emoji": "🎒",
-     "detail": "• Swimsuits, rash vests, hats, reef-safe sunscreen, motion-sickness tablets (~2 hrs each way)."
-    },
-    {
-     "start": "8:15 AM",
-     "end": "8:30 AM",
+     "end": "8:00 AM",
      "title": "Island shuttle → Hamilton Island Marina",
      "typeName": "Transportation",
      "emoji": "🚌",
-     "detail": "• Free shuttle; ~10 min."
+     "detail": "• Free island shuttle from the Reef View stop; ~10 min to Marina Village."
+    },
+    {
+     "start": "8:00 AM",
+     "end": "8:30 AM",
+     "title": "Check in — Cruise Whitsundays office, Marina Village",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Check in 30 min before departure.\n• Ask for the beach cabana if not pre-booked."
     },
     {
      "start": "8:30 AM",
-     "end": "9:00 AM",
-     "title": "Check in — Cruise Whitsundays, Marina",
-     "typeName": "Logistics",
-     "emoji": "⏱️"
-    },
-    {
-     "start": "9:00 AM",
      "end": "5:00 PM",
-     "title": "Great Barrier Reef Adventure — Reefworld, Hardy Reef (anchor)",
+     "title": "Whitehaven Beach & Hill Inlet Chill & Grill — Cruise Whitsundays (anchor)",
      "typeName": "Excursion",
-     "emoji": "🐠",
-     "detail": "• Check in at the Cruise Whitsundays office, Marina Village, 8:30 AM.\n• Departs Hamilton Island Marina 9:00 AM → ~2 hrs out to Reefworld at Hardy Reef (arrive ~11:00).\n• ~3¾ hrs on the pontoon (~11:00 AM–2:45 PM): snorkelling (stinger suits included), underwater observatory, semi-submersible tour.\n• Buffet lunch ~12–2 PM; morning and afternoon tea on board.\n• Departs the pontoon ~2:45 PM → ~2¼ hrs back; returns 5:00 PM.",
-     "est": 720.2,
-     "flag": "Book early. Weather backup: swap with Dec 25 or 26 (buggy days) if the trip is cancelled.",
-     "notes": "Cruise Whitsundays 2026 brochure fares (AUD):\n• Adult 295–369, child (4–14) 145–185\n• Modeled at the higher fare for Christmas week: 2 × 369 + 2 × 185 = AUD 1,108 ≈ USD 720\n• At the lower fare: AUD 880 ≈ USD 572"
+     "emoji": "🏝️",
+     "detail": "• Departs Hamilton Island Marina 8:30 AM; returns 5:00 PM.\n• Scenic cruise with commentary → guided walk to the Hill Inlet lookout (the swirling white sand) → beach time at the north end and the southern end of Whitehaven.\n• Up to ~6 hrs in Whitehaven and around Hill Inlet — the most beach time of any Whitehaven tour from Hamilton Island.\n• Morning tea, a crew-cooked BBQ lunch on the beach (sausage sizzle / burgers), afternoon tea. Snacks and soft drinks for sale on board.\n• Stinger suits free (stinger season) — swim in them.\n• Almost no natural shade on Whitehaven: the cabana is the shade for the day.\n• Optional walks from the southern end: Whitehaven lookout, Solway Circuit.",
+     "est": 497.44,
+     "flag": "Book early and confirm it operates on Dec 24. Weather backup: move it to Sun Dec 26 and shift the buggy/koala day.",
+     "notes": "COST (Cruise Whitsundays, dynamic pricing, Nov 2026):\n• Family (2 adults + 2 kids 4–14) from AUD 725 (adult from 255, child from 129)\n• + 1.42% card surcharge = AUD ~735\n• + beach cabana AUD 30 (fits 4; first in, best dressed)\n• = AUD ~765 ≈ USD 497\n• Not booked."
     },
     {
      "start": "5:00 PM",
      "end": "5:20 PM",
-     "title": "Island shuttle back to the hotel",
+     "title": "Island shuttle back to Reef View",
      "typeName": "Transportation",
-     "emoji": "🚌"
+     "emoji": "🚌",
+     "detail": "• From the Marina Village shuttle stop."
     },
     {
      "start": "5:20 PM",
      "end": "6:00 PM",
-     "title": "Showers, change",
+     "title": "Showers, change for Christmas Eve",
      "typeName": "Logistics",
-     "emoji": "⏱️"
+     "emoji": "🚿",
+     "detail": "• Salt and sand off after 6 hrs on Whitehaven."
     },
     {
      "start": "6:00 PM",
      "end": "7:00 PM",
-     "title": "Christmas Eve dinner — Marina Tavern",
+     "title": "Christmas Eve dinner — Pool Terrace (Reef View Hotel)",
      "typeName": "Dining",
      "emoji": "🍽️",
-     "detail": "• Pub on the marina; deck seating.\n• Confirm Christmas Eve hours and book.",
-     "est": 80.98,
-     "notes": "PRICED FROM THE CURRENT MENU:\n• Wagyu beef burger AUD 31 + chicken schnitzel parmi AUD 32\n• Kids' cheeseburger & chips AUD 22 + kids' battered fish & chips AUD 22\n• = AUD 107\n• + 15% public-holiday surcharge — Christmas Eve is a Queensland public holiday from 6 PM\n• + 1.25% card surcharge\n• = AUD ~125 ≈ USD 81\n• Australian menu prices include 10% GST; tipping isn't expected."
+     "detail": "• Downstairs next to the Reef View pool — no shuttle needed, and a short walk to the carols.\n• Kids Eat Free: up to 2 kids' meals per adult main (Reef View guests; show the room key).\n• Confirm Christmas Eve hours; book if bookings are taken.",
+     "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-pool-terrace.pdf?ext=.pdf",
+     "est": 59.03,
+     "notes": "PRICED FROM THE CURRENT MENU:\n• Chicken Breast AUD 42 + Mediterranean Fettuccini AUD 36\n• 2 kids' meals free (Kids Eat Free) — kids' menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/Pool-Terrace-KEF-Menu.pdf\n• = AUD 78 + 15% public-holiday surcharge (Christmas Eve is a Queensland public holiday from 6 PM) + 1.25% card surcharge = AUD ~91 ≈ USD 59\n• Australian menu prices include 10% GST; tipping isn't expected."
     },
     {
      "start": "7:00 PM",
-     "end": "8:00 PM",
-     "title": "Carols by Candlelight — Frangipani Lawns (optional)",
+     "end": "7:45 PM",
+     "title": "Carols by Candlelight — Beach Pavilion, Catseye Beach",
      "typeName": "Entertainment",
      "emoji": "🎄",
-     "detail": "• Island tradition: carols, Santa, fireworks, sausage sizzle.\n• Times from past years — confirm the 2027 program."
+     "detail": "• Walk: from Pool Terrace down the path to Catseye Beach; the Beach Pavilion is on the beachfront by the main resort pool (~5 min).\n• Carols ~5–8 PM; face painting until ~7; glow sticks for sale until ~7:30.\n• Fireworks at 7:30 PM — the one to stay for.\n• Times from the island's 2023 December program — confirm the 2027 program in the Hamilton Island app."
     },
     {
-     "start": "8:00 PM",
+     "start": "7:45 PM",
      "end": "8:30 PM",
-     "title": "Bed",
+     "title": "Walk back to Reef View — bed",
      "typeName": "Hotel",
-     "emoji": "🌙"
+     "emoji": "🌙",
+     "detail": "• Same path back up to Reef View; in by 8:00 PM.\n• Christmas morning breakfast is 8:00 AM."
     }
    ]
   },
