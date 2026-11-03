@@ -1251,7 +1251,7 @@
      "emoji": "🏝️",
      "detail": "• Departs Hamilton Island Marina 8:30 AM; returns 5:00 PM.\n• Scenic cruise with commentary → guided walk to the Hill Inlet lookout (the swirling white sand) → beach time at the north end and the southern end of Whitehaven.\n• Up to ~6 hrs in Whitehaven and around Hill Inlet — the most beach time of any Whitehaven tour from Hamilton Island.\n• Morning tea, a crew-cooked BBQ lunch on the beach (sausage sizzle / burgers), afternoon tea. Snacks and soft drinks for sale on board.\n• Stinger suits free (stinger season) — swim in them.\n• Almost no natural shade on Whitehaven: the cabana is the shade for the day.\n• Optional walks from the southern end: Whitehaven lookout, Solway Circuit.",
      "est": 497.44,
-     "flag": "Book early and confirm it operates on Dec 24. Weather backup: move it to Sun Dec 26 and shift the buggy/koala day.",
+     "flag": "Book early and confirm it operates on Dec 24. Weather backup: swap with Mon Dec 27 (the free island day).",
      "notes": "COST (Cruise Whitsundays, dynamic pricing, Nov 2026):\n• Family (2 adults + 2 kids 4–14) from AUD 725 (adult from 255, child from 129)\n• + 1.42% card surcharge = AUD ~735\n• + beach cabana AUD 30 (fits 4; first in, best dressed)\n• = AUD ~765 ≈ USD 497\n• Not booked."
     },
     {
@@ -1324,10 +1324,10 @@
      "title": "Pick up the golf buggy — Resort Side Buggy Hire",
      "typeName": "Rental Car",
      "emoji": "🛺",
-     "detail": "• 4-seater; driver 21+ with a full licence.\n• No child seats needed (kids are over 4).\n• Keep it until 5:00 PM tomorrow (desk hours: Sat 8–5, Sun 9–5).",
-     "est": 206.7,
+     "detail": "• 4-seater; driver 21+ with a full licence.\n• No child seats needed (kids are over 4).\n• Keep it 3 × 24 hrs: Sat Dec 25 ~8:45 AM → Tue Dec 28 ~8:15 AM (desk opens 8 AM Mon–Sat, 9 AM Sun).\n• Covers Christmas Day, the drive to the marina for the reef trip and Romano's on Dec 26, and the island day on Dec 27.",
+     "est": 310.05,
      "flag": "Buggies sell out months ahead — book with the room. Confirm Christmas Day desk hours.",
-     "notes": "Official pricing:\n• From AUD 140 per 24 hrs × 2 = AUD 280\n• Damage waiver AUD 19/day × 2 = AUD 38\n• = AUD 318 ≈ USD 207"
+     "notes": "Official pricing (from):\n• AUD 140 per 24 hrs × 3 = AUD 420\n• Optional damage waiver AUD 19/day × 3 = AUD 57\n• = AUD 477 ≈ USD 310\n• Not booked."
     },
     {
      "start": "9:15 AM",
@@ -1401,145 +1401,156 @@
   },
   {
    "date": "Sunday, December 26, 2027",
-   "title": "Golf buggy day 2 — koalas, bakery picnic, pools",
+   "title": "Great Barrier Reef — Reefworld pontoon at Hardy Reef (Boxing Day)",
    "planned": false,
    "blocks": [
     {
-     "start": "7:30 AM",
-     "end": "8:30 AM",
+     "start": "7:00 AM",
+     "end": "7:45 AM",
      "title": "Breakfast — Pool Terrace (included)",
      "typeName": "Dining",
-     "emoji": "🍳"
+     "emoji": "🍳",
+     "detail": "• Hotel-guest breakfast 6:00–10:30 AM; included in the B&B rate."
     },
     {
-     "start": "8:30 AM",
-     "end": "8:45 AM",
-     "title": "Buggy to Wild Life Hamilton Island",
-     "typeName": "Drive",
-     "emoji": "🛺"
+     "start": "7:45 AM",
+     "end": "8:05 AM",
+     "title": "Grab the reef bag",
+     "typeName": "Logistics",
+     "emoji": "🎒",
+     "detail": "• Swimsuits, rash vests, hats, reef-safe sunscreen, towels, change of clothes.\n• Motion-sickness tablets for anyone prone — ~2 hrs each way on open water."
     },
     {
-     "start": "8:45 AM",
-     "end": "10:30 AM",
-     "title": "Wild Life Hamilton Island — koalas, crocs, wombats",
+     "start": "8:05 AM",
+     "end": "8:20 AM",
+     "title": "Buggy to Hamilton Island Marina — park for the day",
+     "typeName": "Rental Car",
+     "emoji": "🛺",
+     "detail": "• From Reef View down to Marina Village; buggy parking by the marina."
+    },
+    {
+     "start": "8:20 AM",
+     "end": "9:00 AM",
+     "title": "Check in — Cruise Whitsundays office, Marina Village",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Check-in from 8:30 AM; departure 9:00 AM."
+    },
+    {
+     "start": "9:00 AM",
+     "end": "5:00 PM",
+     "title": "Great Barrier Reef Adventure — Reefworld, Hardy Reef (anchor)",
      "typeName": "Excursion",
-     "emoji": "🐨",
-     "detail": "• Open 8:00 AM–4:00 PM.\n• Optional Koala Encounter 9:30–10:00 AM, AUD 35 per person (photo emailed).",
-     "est": 61.75,
-     "notes": "Official pricing: family pass (2 adults + 2 kids 3–14) AUD 95 ≈ USD 62 — unlimited entry."
+     "emoji": "🐠",
+     "detail": "• Departs Hamilton Island Marina 9:00 AM → ~2 hrs to Reefworld on Hardy Reef, on the outer Great Barrier Reef (arrive ~11:00).\n• ~3½ hrs at the pontoon: snorkelling (gear and stinger suits included), underwater viewing chamber, semi-submersible tour — the kids see the coral even without snorkelling.\n• Buffet lunch ~12–2 PM; morning and afternoon tea on board; change rooms.\n• Departs the pontoon ~2:45 PM → ~2¼ hrs back; returns 5:00 PM.",
+     "est": 584.74,
+     "flag": "Book early. December is a 'marginal' reef month (wind, visibility) — weather backup: swap with Mon Dec 27.",
+     "notes": "COST (Hamilton Island tours compendium, dynamic pricing):\n• Family (2 adults + 2 children 4–14) from AUD 887 (adult from 329, child from 195)\n• + 1.42% card surcharge = AUD ~900 ≈ USD 585\n• Optional 10-min Heart Reef scenic flight from the pontoon: from AUD 220 per person (not included)\n• Not booked."
     },
     {
-     "start": "10:30 AM",
-     "end": "12:00 PM",
-     "title": "Buggy around the island — marina, resort side, lookouts",
-     "typeName": "Sightseeing",
-     "emoji": "🛺"
-    },
-    {
-     "start": "12:00 PM",
-     "end": "1:00 PM",
-     "title": "Lunch — Bob's Bakery pies, picnic at the marina",
-     "typeName": "Dining",
-     "emoji": "🥧",
-     "detail": "• Open 6:30 AM–3:00 PM.",
-     "est": 30.27,
-     "flag": "Prices not published — estimate.",
-     "notes": "ESTIMATE: 4 pies/sausage rolls + 2 kids' items ≈ AUD 40\n• + 15% Boxing Day public-holiday surcharge + 1.25% card surcharge = AUD ~47 ≈ USD 30\n• Australian menu prices include 10% GST; tipping isn't expected."
-    },
-    {
-     "start": "1:00 PM",
-     "end": "4:00 PM",
-     "title": "Pool and rest — heat of the day",
-     "typeName": "Free Time",
-     "emoji": "🏊"
-    },
-    {
-     "start": "4:00 PM",
-     "end": "4:45 PM",
-     "title": "Last buggy run, return by 5:00 PM",
+     "start": "5:00 PM",
+     "end": "5:15 PM",
+     "title": "Buggy back to Reef View",
      "typeName": "Rental Car",
      "emoji": "🛺"
     },
     {
-     "start": "5:30 PM",
-     "end": "6:45 PM",
+     "start": "5:15 PM",
+     "end": "5:55 PM",
+     "title": "Showers, change",
+     "typeName": "Logistics",
+     "emoji": "🚿"
+    },
+    {
+     "start": "5:55 PM",
+     "end": "6:05 PM",
+     "title": "Buggy to the marina",
+     "typeName": "Rental Car",
+     "emoji": "🛺"
+    },
+    {
+     "start": "6:05 PM",
+     "end": "7:15 PM",
      "title": "Dinner — Romano's (Italian, waterside)",
      "typeName": "Dining",
      "emoji": "🍝",
-     "detail": "• Open from 5 PM Wed–Sun (closed Mon–Tue in the Oct 2026 schedule) — so it goes on Sunday.\n• Book ahead.",
+     "detail": "• On the marina; open from 5 PM Wed–Sun (Oct 2026 schedule).\n• Book ahead for 6 PM.",
      "est": 93.85,
      "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-romanos.pdf?ext=.pdf",
      "notes": "PRICED FROM THE CURRENT MENU (adults) + ESTIMATE (kids):\n• Rigatoni Bolognese AUD 40 + house-made gnocchi AUD 44\n• Kids' pasta not on the published menu — ~AUD 20 each (estimate)\n• = AUD 124 + 15% Boxing Day public-holiday surcharge + 1.25% card surcharge = AUD ~144 ≈ USD 94\n• Australian menu prices include 10% GST; tipping isn't expected."
     },
     {
-     "start": "6:45 PM",
-     "end": "7:15 PM",
-     "title": "Bed — early start tomorrow",
+     "start": "7:15 PM",
+     "end": "7:30 PM",
+     "title": "Buggy back to Reef View",
+     "typeName": "Rental Car",
+     "emoji": "🛺"
+    },
+    {
+     "start": "7:30 PM",
+     "end": "8:00 PM",
+     "title": "Bed",
      "typeName": "Hotel",
-     "emoji": "🌙"
+     "emoji": "🌙",
+     "detail": "• Slow morning tomorrow — breakfast 8:00 AM."
     }
    ]
   },
   {
    "date": "Monday, December 27, 2027",
-   "title": "Whitehaven Beach + Hill Inlet lookout",
+   "title": "Island day — buggy, koalas at Wild Life, beach and pool",
    "planned": false,
    "blocks": [
     {
-     "start": "6:30 AM",
-     "end": "7:10 AM",
+     "start": "8:00 AM",
+     "end": "8:45 AM",
      "title": "Breakfast — Pool Terrace (included)",
      "typeName": "Dining",
      "emoji": "🍳"
     },
     {
-     "start": "7:10 AM",
-     "end": "7:30 AM",
-     "title": "Island shuttle → Hamilton Island Marina",
-     "typeName": "Transportation",
-     "emoji": "🚌"
+     "start": "8:45 AM",
+     "end": "9:00 AM",
+     "title": "Buggy to Wild Life Hamilton Island",
+     "typeName": "Rental Car",
+     "emoji": "🛺",
+     "detail": "• Short drive from Reef View along the resort side."
     },
     {
-     "start": "7:30 AM",
-     "end": "8:00 AM",
-     "title": "Check in — Explore Whitsundays catamaran (30 min early)",
-     "typeName": "Logistics",
-     "emoji": "⏱️"
-    },
-    {
-     "start": "8:00 AM",
-     "end": "12:00 PM",
-     "title": "Hill Inlet + Whitehaven Beach half-day (anchor)",
+     "start": "9:00 AM",
+     "end": "11:00 AM",
+     "title": "Wild Life Hamilton Island — koalas, crocs, wombats",
      "typeName": "Excursion",
-     "emoji": "🏝️",
-     "detail": "• 40-min cruise to Tongue Bay.\n• 20-min walk up to the Hill Inlet lookout (the swirling-sand view), then 20 min down to Whitehaven's north end for a swim.\n• Times are tide-dependent — confirm the week before.",
-     "est": 409.5,
-     "notes": "Sailing Whitsundays pricing (valid to Mar 2027):\n• Family (2+2) AUD 520 sale / AUD 630 RRP → modeled at RRP: AUD 630 ≈ USD 410\n• Alternative: Cruise Whitsundays Whitehaven morning cruise 8:30 AM–12:30 PM, family AUD 414–495, but it does NOT go to the Hill Inlet lookout."
+     "emoji": "🐨",
+     "detail": "• Open 8:00 AM–4:00 PM.\n• Optional Koala Encounter 9:30–10:00 AM, AUD 35 per person (photo emailed).\n• Free guided park tour 10:00–10:30 AM.\n• Koalas, wombats, crocs, birds; Wildlife Café on site.\n• Confirm public-holiday hours (Dec 27 is the Christmas Day holiday).",
+     "est": 61.75,
+     "notes": "Official pricing: family pass (2 adults + 2 kids 3–14) AUD 95 ≈ USD 62 — unlimited entry."
+    },
+    {
+     "start": "11:00 AM",
+     "end": "12:00 PM",
+     "title": "Buggy around the island — lookouts and the marina",
+     "typeName": "Sightseeing",
+     "emoji": "📸"
     },
     {
      "start": "12:00 PM",
-     "end": "12:20 PM",
-     "title": "Shuttle back",
-     "typeName": "Transportation",
-     "emoji": "🚌"
-    },
-    {
-     "start": "12:20 PM",
-     "end": "1:15 PM",
-     "title": "Lunch — Popeyes fish & chips, eat by the beach",
+     "end": "1:00 PM",
+     "title": "Lunch — Popeyes fish & chips at the marina",
      "typeName": "Dining",
      "emoji": "🐟",
-     "detail": "• Open 11:30 AM–4 PM and 5–8:30 PM.",
+     "detail": "• Takeaway on the marina; open 11:30 AM–8:30 PM. Eat by the water.",
      "est": 63.58,
      "notes": "PRICED FROM THE CURRENT MENU (no kids' menu):\n• 2 × beer-battered fish & chips AUD 28 + 1 shared for the kids AUD 28\n• = AUD 84 + 15% public-holiday surcharge (Dec 27 is the Christmas Day holiday) + 1.25% card surcharge = AUD ~98 ≈ USD 64\n• Australian menu prices include 10% GST; tipping isn't expected.",
      "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-popeyes.pdf?ext=.pdf"
     },
     {
-     "start": "1:15 PM",
+     "start": "1:00 PM",
      "end": "4:30 PM",
-     "title": "Pool / Catseye Beach / rest",
+     "title": "Pool, Catseye Beach, rest",
      "typeName": "Free Time",
-     "emoji": "🏊"
+     "emoji": "🏊",
+     "detail": "• Free kayaks, paddleboards and catamarans at Catseye Beach; stinger suits on."
     },
     {
      "start": "4:30 PM",
@@ -1547,6 +1558,13 @@
      "title": "Pack for Sydney",
      "typeName": "Logistics",
      "emoji": "🧳"
+    },
+    {
+     "start": "5:15 PM",
+     "end": "5:30 PM",
+     "title": "Buggy to the marina",
+     "typeName": "Rental Car",
+     "emoji": "🛺"
     },
     {
      "start": "5:30 PM",
@@ -1561,10 +1579,18 @@
     },
     {
      "start": "6:45 PM",
+     "end": "7:00 PM",
+     "title": "Buggy back to Reef View",
+     "typeName": "Rental Car",
+     "emoji": "🛺"
+    },
+    {
+     "start": "7:00 PM",
      "end": "7:30 PM",
      "title": "Bed",
      "typeName": "Hotel",
-     "emoji": "🌙"
+     "emoji": "🌙",
+     "detail": "• Breakfast 7:00 AM tomorrow; buggy goes back at 8:00 AM."
     }
    ]
   },
@@ -1582,6 +1608,14 @@
     },
     {
      "start": "8:00 AM",
+     "end": "8:15 AM",
+     "title": "Return the buggy — Resort Side Buggy Hire",
+     "typeName": "Rental Car",
+     "emoji": "🛺",
+     "detail": "• Desk opens 8:00 AM Mon–Sat.\n• Free island shuttle for the rest of the day, including to the airport."
+    },
+    {
+     "start": "8:15 AM",
      "end": "10:00 AM",
      "title": "Last swim — Catseye Beach",
      "typeName": "Beach/Pool",
@@ -2145,7 +2179,7 @@
     },
     {
      "name": "Hamilton Island bookings",
-     "note": "Reef View Coral Sea View Room B&B AUD 4,150 (book direct). Buggy hire with the room. Reefworld (Dec 24) and Hill Inlet/Whitehaven (Dec 27) — book early. Christmas lunch when festive menus open."
+     "note": "Reef View Coral Sea View Room B&B AUD 4,150 (book direct). Golf buggy 3 × 24 hrs (Dec 25 → Dec 28 AM). Whitehaven Chill & Grill (Dec 24) + cabana, Reefworld (Dec 26), Romano's (Dec 26) — book early. Christmas lunch/dinner are casual walk-ins."
     },
     {
      "name": "Noosa 2 Fraser 4WD",
