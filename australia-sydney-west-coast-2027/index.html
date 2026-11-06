@@ -1586,16 +1586,149 @@ class Component extends DCLogic {
   },
   {
    "date": "Saturday, December 18, 2027",
-   "title": "Sydney — Manly",
-   "planned": false,
+   "title": "Manly day — ferry, Shelly Beach swim and snorkel",
+   "planned": true,
    "blocks": [
     {
-     "start": "9:00 AM",
-     "end": "5:00 PM",
-     "title": "Draft — to plan",
+     "start": "8:30 AM",
+     "end": "8:35 AM",
+     "title": "Walk to Starbucks The Rocks",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Marriott, Pitt St exit → left on Alfred St → right on George St.\n• To: Starbucks The Rocks, 135 George St (opposite the Museum of Contemporary Art) — ~400 m, 5 min.\n• Pack for the beach: swimsuits on under clothes, towels, rash guards, sunscreen, hats, kids' snorkel masks, a dry bag."
+    },
+    {
+     "start": "8:35 AM",
+     "end": "9:10 AM",
+     "title": "Breakfast — Starbucks The Rocks",
+     "typeName": "Dining",
+     "emoji": "☕",
+     "detail": "• 135 George St, The Rocks.\n• Open 7 AM – 7 PM on Saturdays.\n• Sit-down breakfast: coffee, kids' drinks, croissants / toasties.",
+     "menuUrl": "https://www.starbucks.com.au/store/starbucks-the-rocks",
+     "est": 32.5,
+     "notes": "• Store address and Saturday hours verified on starbucks.com.au.\n• ~AUD 50 for 2 coffees, 2 kids' drinks and 4 food items — estimated (Starbucks Australia doesn't publish prices online) = USD ~33.\n• Australian prices include 10% GST; tipping isn't expected."
+    },
+    {
+     "start": "9:10 AM",
+     "end": "9:20 AM",
+     "title": "Walk to Circular Quay Wharf 3 — Manly ferry",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Starbucks → east along Circular Quay West.\n• To: Wharf 3 (Manly ferries) — ~250 m, 5 min; 5 min buffer.\n• The wharf can change at short notice — check the indicator boards."
+    },
+    {
+     "start": "9:20 AM",
+     "end": "9:30 AM",
+     "title": "Tap on and board — gates close 9:28",
+     "typeName": "Logistics",
+     "emoji": "🎫",
+     "detail": "• Adults: tap on with a contactless credit card (separate cards — one each).\n• Kids (ages 4–15): Child/Youth Opal card each.\n• Manly ferry gates close 2 min before departure.",
+     "flag": "Buy the two Child/Youth Opal cards beforehand at an Opal retailer (newsagents/convenience stores showing the Opal sign around Circular Quay) — the kids can't use a credit card for child fares."
+    },
+    {
+     "start": "9:30 AM",
+     "end": "9:52 AM",
+     "title": "F1 Manly ferry — Circular Quay → Manly",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "route": "Circular Quay → Manly",
+     "detail": "• Saturday departure 9:30 AM from Wharf 3, arrives Manly 9:52 AM (22 min).\n• Sit outside on the right (starboard) side for the Opera House, then the Heads.\n• Next ferries if you miss it: 9:45 → 10:07, 9:50 → 10:20 (classic Freshwater ferry).",
+     "est": 18.79,
+     "notes": "• Times from the current Transport NSW F1 timetable (valid from Oct 2, 2026), weekend schedule — verified.\n• Dec 2027 timetable not out yet; summer weekends usually add services, not remove them.\n\nFARES (round trip, whole day):\n• Fri–Sun daily cap: adults AUD 9.65 each, kids AUD 4.80 each (Opal fares from July 2025, IPART).\n• The return trip hits the cap → ~AUD 28.90 for four = USD ~19.\n• Fares rise most Julys — expect a little more by 2027 (estimated)."
+    },
+    {
+     "start": "9:52 AM",
+     "end": "10:00 AM",
+     "title": "Manly Wharf — off the ferry, bathrooms",
+     "typeName": "Logistics",
+     "emoji": "🚻",
+     "detail": "• Tap off with the same cards.\n• Bathrooms in the wharf building."
+    },
+    {
+     "start": "10:00 AM",
+     "end": "10:25 AM",
+     "title": "Walk to Shelly Beach — The Corso → Manly Beach → Marine Parade",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Manly Wharf → straight down The Corso (pedestrian street) to Manly Beach.\n• Turn right along Marine Parade, the flat seaside path past Fairy Bower.\n• To: Shelly Beach — ~1.4 km, 25 min at kid pace."
+    },
+    {
+     "start": "10:25 AM",
+     "end": "12:45 PM",
+     "title": "Shelly Beach — swim and snorkel",
+     "typeName": "Beach",
+     "emoji": "🏖️",
+     "detail": "• Small sheltered cove inside the Cabbage Tree Bay Aquatic Reserve — calm, clear water and lots of fish close to shore.\n• Bathrooms and rinse showers at the beach.\n• Shade under the trees on the grass behind the sand.\n• Water ~70°F in December — rash guards help the kids stay in longer.",
+     "flag": "Shelly Beach has no lifeguard patrol — keep the kids close. Australian UV is extreme: reapply sunscreen every 2 hrs."
+    },
+    {
+     "start": "12:45 PM",
+     "end": "1:45 PM",
+     "title": "Lunch — The Boathouse Shelly Beach",
+     "typeName": "Dining",
+     "emoji": "🐟",
+     "detail": "• 1 Marine Parade — right on Shelly Beach, walk in off the sand.\n• No reservations; Saturday lunch is busy, so grab a table as soon as you finish swimming.\n• Kids' menu (Little Nippers): fish & chips, cheeseburger or pasta.\n• Lunch menu served 12–3 PM; open 7 AM – 5 PM Fri–Sun.",
+     "menuUrl": "https://d244ntdegtqm0w.cloudfront.net/2596/Shelly-Beach-Lunch---Website.pdf",
+     "est": 69.36,
+     "notes": "PRICED FROM THE CURRENT LUNCH MENU:\n• Wagyu beef burger AUD 29 + Fish & chips AUD 36\n• 2 kids' meals AUD 16 each\n• Subtotal AUD 97\n• Saturday surcharge 10%: AUD 9.70\n• = AUD 106.70 ≈ USD 69.\n• Australian menu prices include 10% GST; tipping isn't expected."
+    },
+    {
+     "start": "1:45 PM",
+     "end": "2:15 PM",
+     "title": "Walk back along Marine Parade — Fairy Bower",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Shelly Beach → Marine Parade past the Fairy Bower rock pool and the sea-form sculptures.\n• To: south end of Manly Beach — ~1 km, 30 min with stops."
+    },
+    {
+     "start": "2:15 PM",
+     "end": "3:00 PM",
+     "title": "Manly Beach and The Corso",
      "typeName": "Free Time",
-     "emoji": "📝",
-     "detail": "• Ferry Circular Quay → Manly (30 min).\n• Manly beach and the Shelly Beach snorkel (water ~71°F)."
+     "emoji": "🌊",
+     "detail": "• Look at the surf (patrolled — swim between the red-and-yellow flags only if the kids want another dip).\n• Rinse off at the beach showers.\n• Stroll up The Corso toward the wharf."
+    },
+    {
+     "start": "3:00 PM",
+     "end": "3:15 PM",
+     "title": "Walk to Manly Wharf",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Manly Beach → up The Corso.\n• To: Manly Wharf — ~600 m, 10 min; 5 min buffer."
+    },
+    {
+     "start": "3:15 PM",
+     "end": "3:30 PM",
+     "title": "Bathrooms, tap on, board — gates close 3:28",
+     "typeName": "Logistics",
+     "emoji": "🎫",
+     "detail": "• 15 min buffer at the wharf.\n• Backup: the 3:45 PM ferry arrives Circular Quay 4:07 PM — still back at the hotel by 4:15."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "4:00 PM",
+     "title": "F1 Manly ferry — Manly → Circular Quay (Freshwater ferry)",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "route": "Manly → Circular Quay",
+     "detail": "• Saturday departure 3:30 PM, arrives Circular Quay 4:00 PM (30 min).\n• This run is one of the big classic Freshwater-class ferries — sit outside on the front deck.\n• Fare included in the day-cap estimate on the morning ferry.",
+     "notes": "• Times from the current Transport NSW F1 weekend timetable — verified; recheck the Dec 2027 timetable."
+    },
+    {
+     "start": "4:00 PM",
+     "end": "4:10 PM",
+     "title": "Walk back to the Marriott",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Circular Quay wharf → across Alfred St → Pitt St.\n• To: Marriott, 30 Pitt St — ~400 m, 7 min.\n• In the room by ~4:10 PM — 20 min buffer before the 4:30 PM target."
+    },
+    {
+     "start": "4:10 PM",
+     "end": "5:30 PM",
+     "title": "Showers and get ready for dinner",
+     "typeName": "Free Time",
+     "emoji": "🚿",
+     "detail": "• Rinse the swim gear and hang it to dry.\n• Dinner plan — to be picked."
     }
    ]
   },
