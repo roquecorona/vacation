@@ -1,0 +1,1177 @@
+{
+ "meta": {
+  "title": "Australia - Jervis Bay, Port Stephens & Sydney 2027",
+  "dates": "Dec 16, 2027 – Jan 2, 2028 (MIA → LAX → Sydney Dec 16 · Jervis Bay → Port Stephens → Sydney for NYE · fly home Jan 2)",
+  "route": [
+   {
+    "name": "Miami",
+    "sub": "home (MIA)"
+   },
+   {
+    "name": "Jervis Bay",
+    "sub": "5 nights · Jervis Bay Motel, Huskisson"
+   },
+   {
+    "name": "Port Stephens",
+    "sub": "5 nights · Oaks Pacific Blue or the Anchorage"
+   },
+   {
+    "name": "Sydney",
+    "sub": "5 nights · Park Hyatt (Globalist) · NYE"
+   }
+  ]
+ },
+ "days": [
+  {
+   "date": "Thursday, December 16, 2027",
+   "title": "Fly Miami → Los Angeles → Sydney",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "3:15 PM",
+     "end": "4:30 PM",
+     "title": "Arrive MIA, check bags",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "3 hrs ahead for an international itinerary with a family of 4.\n3 checked bags + 1 carry-on + 3 backpacks — tag the carry-on for the long leg.\nSwimsuits, sun shirts and hats in the backpacks: landing day goes to the beach."
+    },
+    {
+     "start": "6:15 PM",
+     "end": "8:46 PM",
+     "title": "American Airlines AA2290 - MIA → LAX - Nonstop - 5h31m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "MIA → LAX, Economy, 4 passengers, Airbus A321neo.\nLands 8:46 PM Pacific.",
+     "route": "MIA → LAX",
+     "flightNo": "American 2290",
+     "cabin": "Economy",
+     "notes": "• First leg of one connecting itinerary; points and cash for the whole trip are logged on the LAX → SYD leg."
+    },
+    {
+     "start": "8:46 PM",
+     "end": "10:55 PM",
+     "title": "Change planes at LAX",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "2h 9m connection. Last real food before the 15-hour leg — eat here.",
+     "est": 60.0,
+     "notes": "• ~$60 for the family in the terminal."
+    },
+    {
+     "start": "10:55 PM",
+     "end": "7:05 AM",
+     "title": "American Airlines AA73 - LAX → SYD - Nonstop - 15h10m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "LAX → SYD, Economy, 4 passengers, Boeing 777-300ER.\nCrosses the International Date Line — Friday Dec 17 disappears in flight.\nLands 7:05 AM Saturday Dec 18, Sydney time (AEDT, UTC+11, 16 hrs ahead of Miami).\nTotal itinerary 22h 50m.",
+     "route": "LAX → SYD",
+     "flightNo": "American 73",
+     "cabin": "Economy",
+     "seats": "Not yet assigned",
+     "program": "Alaska Atmos Rewards",
+     "points": "260000",
+     "est": 192.0,
+     "flag": "Apply for each traveller's Australian ETA (official 'Australian ETA' app) before departure — not issued on arrival.",
+     "notes": "• Alaska Atmos Rewards: 65,000 pts + $48 per person → 260,000 pts + $192 for four.\n• Schedule from a real AA search of this routing; confirm the Dec 16, 2027 times when award inventory opens (~Dec 2026–Jan 2027).\n• Board at 11 PM Pacific, land at 7 AM Sydney — sleep as much as possible on board."
+    }
+   ]
+  },
+  {
+   "date": "Saturday, December 18, 2027",
+   "title": "Land Sydney → Cronulla brunch on the beach → straight to Jervis Bay",
+   "planned": true,
+   "blocks": [
+    {
+     "start": "7:05 AM",
+     "end": "7:25 AM",
+     "title": "Land SYD T1, taxi to the gate, deplane",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "Wheels-down to doors-open is ~20 min on a 777 in the 7 AM arrival wave. A family of four isn't off first."
+    },
+    {
+     "start": "7:25 AM",
+     "end": "8:55 AM",
+     "title": "Immigration, bags, biosecurity — 90 min",
+     "typeName": "Logistics",
+     "emoji": "🛂",
+     "detail": "SmartGate for the adults' US e-passports; the kids go through the staffed lane with a parent.\nBags off a 777 take 25–40 min to reach the carousel.\nBiosecurity: declare any food — no snacks or fruit off the plane.\nReported SYD mornings: 30–40 min on a good day, up to 1.5–2 hrs in the 6–9 AM wave when several widebodies land together. 90 min is the honest planning figure for four people and three bags."
+    },
+    {
+     "start": "8:55 AM",
+     "end": "9:10 AM",
+     "title": "Bathroom stop, eSIM check, walk to the rental desks",
+     "typeName": "Logistics",
+     "emoji": "🚶",
+     "detail": "Rental counters are in the T1 arrivals hall; the cars are in the T1 carpark a few minutes' walk away."
+    },
+    {
+     "start": "9:10 AM",
+     "end": "10:00 AM",
+     "title": "Rental car pickup — Sydney Airport T1 (10 days)",
+     "typeName": "Rental Car",
+     "emoji": "🚗",
+     "detail": "LARGE SUV or people-mover, not a mid-size: 3 checked bags + a carry-on + 3 backpacks don't fit behind the second row of a RAV4-class car with four people in it.\nBook the 'Full-size / Large SUV' class — Toyota Kluger (Highlander), Kia Sorento, Hyundai Santa Fe, Ford Everest — or the Kia Carnival people-mover, which takes all of it with room to spare.\nOne booster for the 6-year-old (NSW: under 7 in an approved restraint; the 8-year-old may use the adult belt).\n50 min: holiday-week queue, paperwork, fitting the booster, loading, finding the exit. Drive on the left.",
+     "est": 1105.0,
+     "flag": "Book now on a free-cancellation rate — large SUVs and Carnivals are the first class to sell out at SYD over Christmas. Confirm the boot takes 3 large checked bags with the third row folded.",
+     "notes": "COST (estimate):\n• Sat Dec 18 9:10 AM → Tue Dec 28 ~noon in Sydney = 10 rental days (no car during the Sydney stay).\n• Aggregator averages for Sydney SUVs: ~USD 51/day overall, ~USD 61/day in December (the peak month), full-size class USD 52–66/day — roughly AUD 80–100/day off-peak.\n• Christmas week from a major brand at T1 (Hertz/Avis/Budget/Europcar/Sixt) for a Kluger/Carnival class: AUD 140–180/day → modeled at AUD 160 × 10 = AUD 1,600.\n• + booster ~AUD 50 + Sydney motorway tolls ~AUD 50 ≈ AUD 1,700 ≈ USD 1,105.\n• Re-quote ~6 months out; Dec 2027 rates aren't open yet."
+    },
+    {
+     "start": "10:00 AM",
+     "end": "10:30 AM",
+     "title": "Drive SYD T1 → North Cronulla",
+     "typeName": "Drive",
+     "emoji": "🚗",
+     "detail": "General Holmes Dr → Captain Cook Bridge → Taren Point → Cronulla. ~20 km, 25 min; 30 allowed for the first drive on the left.\nCronulla is Sydney's only beach suburb south of the airport — 10 min off the route into the Royal National Park, not a detour.\nPark in the North Cronulla beachfront / Kingsway parking (metered)."
+    },
+    {
+     "start": "10:30 AM",
+     "end": "11:40 AM",
+     "title": "First meal in Australia — Next Door, North Cronulla beach (brunch)",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "Beachside café-restaurant at 4–6 Kingsway, on North Cronulla beach with the ocean in front of the outdoor tables — the view you want for the first meal, without harbour-restaurant prices.\nOpen from 6:30 AM Saturdays; all-day breakfast (jalapeño corn fritters, chilli scrambled eggs, eggs benedict, French-toast brûlée) plus lunch plates and burgers. Kid-friendly.\nLocal chef, open since 2016 — a Shire institution rather than a tourist spot.\nWalk the 50 m onto the sand after: the kids' first Australian beach, 3½ hours after landing.",
+     "est": 55.0,
+     "menuUrl": "https://nextdoorcronulla.com.au/",
+     "notes": "ESTIMATE — menu online, prices not published (reviewers: 'reasonable for the area', $$–$$$):\n• 2 adult brunch mains ~AUD 28 each (Sydney beachside café range AUD 24–32)\n• 2 kids' plates ~AUD 14 each\n• = AUD ~84 ≈ USD 55.\n• Backup with the same view, cheaper and more kiosk-like: Bianchini's Elouera, 5 min up the beach at Elouera Beach (all-day breakfast).\n• Zimzala, the old Rydges beachfront restaurant, no longer operates."
+    },
+    {
+     "start": "11:40 AM",
+     "end": "12:00 PM",
+     "title": "Walk on North Cronulla beach, back to the car",
+     "typeName": "Walk",
+     "emoji": "🏖️",
+     "detail": "• From: Next Door → across the Kingsway promenade onto North Cronulla Beach (50 m).\n• Feet in the water, then back to the car in the Kingsway beachfront parking.\n• Bathroom stop before the 2-hour drive."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "2:00 PM",
+     "title": "Drive North Cronulla → Huskisson (direct)",
+     "typeName": "Drive",
+     "emoji": "🚗",
+     "detail": "• Kingsway → Princes Hwy (Sutherland) → M1 Princes Motorway south past Wollongong → Princes Hwy through Kiama, the Berry bypass and Nowra → left onto Jervis Bay Rd (Falls Creek) → Huskisson Rd → Owen St.\n• ~170 km; ~1h50 driving + a 10-min bathroom stop — estimated. Holiday-Saturday traffic at Nowra can add 15 min.\n• Bathroom stop: Kiama Blowhole car park (public toilets open at all times, ~5 min off the highway) or Berry.\n• To: Jervis Bay Motel, 41 Owen St (free on-site parking).\n• The scenic Grand Pacific Drive (Royal NP, Bald Hill, Sea Cliff Bridge) moves to a later driving day.",
+     "flag": "Driver fatigue: you land after an overnight economy flight — swap drivers at the bathroom stop."
+    },
+    {
+     "start": "2:00 PM",
+     "end": "2:15 PM",
+     "title": "Check in — Jervis Bay Motel, Deluxe Family Room (5 nights)",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• 41 Owen St, Huskisson — a 2–3 min walk to the beach at Huskisson Whitesands Park.\n• Deluxe Family Room: king bed + a separate bedroom with 2 single beds, kitchenette (microwave, toaster, bar fridge), ensuite, glimpses of Jervis Bay. Sleeps 4.\n• Check-in from 2 PM (earlier only if a room is free); check-out 10 AM. Reception open 9:30 AM–5 PM Saturdays.",
+     "nights": "5 nights (Sat Dec 18 – Thu Dec 23)",
+     "roomType": "Deluxe Family Room (king + separate room with 2 singles)",
+     "est": 1466.6,
+     "notes": "PRICED FOR THESE EXACT DATES (checked Nov 6, 2026):\n• Hotel website (RMS booking engine), 2 adults + 2 children, Dec 18–23, 2027: AUD 2,256.30 total (AUD 451.26 avg/night) ≈ USD 1,467.\n• Booking.com, same room: AUD 2,279 — free cancellation before Dec 11, 2027, pay the property before arrival.\n• Cheaper 4-person option: Ocean View with Queen and Double (one room, sea view) — AUD 1,760.40 direct / AUD 1,733 Booking.com.\n• Not booked."
+    },
+    {
+     "start": "2:15 PM",
+     "end": "3:45 PM",
+     "title": "Unpack, showers, rest in the room",
+     "typeName": "Free Time",
+     "emoji": "🛋️",
+     "detail": "• 90 min: bags open, showers, fresh clothes, feet up.\n• Kids: quiet time on the beds — keep them awake (no naps) so they sleep tonight.\n• Curtains open for daylight — helps reset body clocks."
+    },
+    {
+     "start": "3:45 PM",
+     "end": "5:00 PM",
+     "title": "Walk around Huskisson — Whitesands Park beach, Currambene Creek, the wharf",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: motel → along Owen St to Huskisson Whitesands Park and the beach (~200 m, 3 min) — paddle in the calm bay water (~70°F in December, range ~64–74°F).\n• Then along the foreshore to the Currambene Creek bridge and Huskisson wharf, where the dolphin cruises leave.\n• Ends at the shops on Owen St.\n• Daylight and fresh air keep everyone awake until bedtime."
+    },
+    {
+     "start": "5:00 PM",
+     "end": "5:20 PM",
+     "title": "Breakfast groceries — Friendly Grocer Huskisson",
+     "typeName": "Logistics",
+     "emoji": "🛒",
+     "detail": "• Friendly Grocer Huskisson, 66 Owen St — open to 7 PM Saturdays.\n• Cereal, milk, yogurt, fruit, bread for 5 kitchenette breakfasts.\n• Backup: Woolworths Vincentia (5 min drive) first thing Sunday.\n• Then walk the groceries back to the motel (~250 m, 4 min).",
+     "est": 29.25,
+     "notes": "• ~AUD 45 for breakfast supplies — estimated.\n• = USD ~29."
+    },
+    {
+     "start": "5:20 PM",
+     "end": "5:35 PM",
+     "title": "Groceries into the room, then walk to the Huskisson Hotel",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Friendly Grocer → back to the motel (~250 m, 4 min); groceries into the bar fridge.\n• Then: motel, 41 Owen St → east along Owen St.\n• To: Huskisson Hotel, 75 Owen St — ~450 m, 8 min."
+    },
+    {
+     "start": "5:35 PM",
+     "end": "6:35 PM",
+     "title": "Dinner — Huskisson Hotel (\"Husky Pub\") bistro",
+     "typeName": "Dining",
+     "emoji": "🍔",
+     "detail": "• The town pub on the water: big wrap-around deck over Currambene Creek and the bay.\n• Bistro dinner 5–8:30 PM; book a deck table online (NowBookIt) or call 02 4441 5001.\n• Kids' meals include a juice.",
+     "menuUrl": "https://huskissonhotel.com.au/wp-content/uploads/2026/10/Sept-Dec-2026-Bistro-Menu.pdf",
+     "est": 52.0,
+     "notes": "PRICED FROM THE CURRENT MENU (Sept–Dec 2026):\n• Husky Burger AUD 23 + Fish & Chips AUD 29\n• 2 kids' meals AUD 14 each (tenders, battered fish, kids burger, steak)\n• = AUD 80 ≈ USD 52.\n• Saturday: no surcharge (Sundays +10%, public holidays +15%).\n• Australian menu prices include 10% GST; tipping isn't expected."
+    },
+    {
+     "start": "6:35 PM",
+     "end": "6:45 PM",
+     "title": "Walk back to Jervis Bay Motel",
+     "typeName": "Walk",
+     "emoji": "🌙",
+     "detail": "• From: Huskisson Hotel, 75 Owen St → west along Owen St.\n• To: Jervis Bay Motel, 41 Owen St — ~450 m, 8 min. Groceries into the bar fridge."
+    },
+    {
+     "start": "6:45 PM",
+     "end": "7:30 PM",
+     "title": "Pajamas, teeth — lights out 7:30",
+     "typeName": "Hotel",
+     "emoji": "🛏️",
+     "detail": "• Wind down; everyone in bed by 7:30 — first night after the long flight.\n• Sunday breakfast in the room at 7:30 AM (12 hrs later)."
+    }
+   ]
+  },
+  {
+   "date": "Sunday, December 19, 2027",
+   "title": "Booderee National Park — Green Patch, Murrays Beach",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:30 AM",
+     "title": "Breakfast in the room — Jervis Bay Motel kitchenette",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:30 AM",
+     "end": "9:00 AM",
+     "title": "Drive to Booderee National Park (Green Patch)",
+     "typeName": "Drive",
+     "emoji": "🚗",
+     "detail": "~20 min; park entry fee per vehicle at the gate."
+    },
+    {
+     "start": "9:00 AM",
+     "end": "12:00 PM",
+     "title": "Green Patch — kangaroos on the beach, calm-water swim (anchor)",
+     "typeName": "Beach/Pool",
+     "emoji": "🦘",
+     "detail": "Flat, clear, protected water; the kangaroos graze on the grass behind the sand in the morning."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "1:00 PM",
+     "title": "Picnic lunch at Green Patch",
+     "typeName": "Dining",
+     "emoji": "🧺"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:30 PM",
+     "title": "Murrays Beach + Cave Beach lookout",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️",
+     "detail": "10 min further into the park; Murrays is the glassy one."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "3:00 PM",
+     "title": "Drive back to Huskisson",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "3:00 PM",
+     "end": "5:00 PM",
+     "title": "Apartment / Huskisson beach downtime",
+     "typeName": "Free Time",
+     "emoji": "😴"
+    },
+    {
+     "start": "5:30 PM",
+     "end": "6:45 PM",
+     "title": "Dinner — Huskisson (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Monday, December 20, 2027",
+   "title": "Dolphin cruise + kayaks on the bay",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:45 AM",
+     "title": "Breakfast in the apartment, walk to the wharf",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "9:00 AM",
+     "end": "11:00 AM",
+     "title": "Dolphin cruise from Huskisson wharf (anchor)",
+     "typeName": "Excursion",
+     "emoji": "🐬",
+     "detail": "Jervis Bay's resident bottlenose pod; ~2 hrs; morning departures are calmest. Book ahead."
+    },
+    {
+     "start": "11:00 AM",
+     "end": "12:30 PM",
+     "title": "Lunch — Huskisson (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "12:30 PM",
+     "end": "2:30 PM",
+     "title": "Apartment downtime",
+     "typeName": "Free Time",
+     "emoji": "😴"
+    },
+    {
+     "start": "2:30 PM",
+     "end": "4:30 PM",
+     "title": "Kayak / SUP hire at Huskisson",
+     "typeName": "Excursion",
+     "emoji": "🛶",
+     "detail": "Double kayaks with a kid in front; the bay is flat in the afternoon lee."
+    },
+    {
+     "start": "5:30 PM",
+     "end": "6:45 PM",
+     "title": "Dinner — Huskisson (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Tuesday, December 21, 2027",
+   "title": "Bendalong stingrays + Mollymook",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:30 AM",
+     "title": "Breakfast in the apartment",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:30 AM",
+     "end": "9:15 AM",
+     "title": "Drive to Bendalong Boat Harbour",
+     "typeName": "Drive",
+     "emoji": "🚗",
+     "detail": "~45 min south."
+    },
+    {
+     "start": "9:15 AM",
+     "end": "10:45 AM",
+     "title": "Bendalong — wild stingrays in the shallows (anchor)",
+     "typeName": "Excursion",
+     "emoji": "🐟",
+     "detail": "The rays come into the boat-harbour shallows; kids stand ankle-deep beside them. Wild, unfenced — an adult per kid."
+    },
+    {
+     "start": "10:45 AM",
+     "end": "11:15 AM",
+     "title": "Drive to Mollymook",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "11:15 AM",
+     "end": "1:00 PM",
+     "title": "Mollymook Beach — patrolled swim",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:00 PM",
+     "title": "Lunch — Mollymook (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "2:00 PM",
+     "end": "2:45 PM",
+     "title": "Drive back to Huskisson",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "2:45 PM",
+     "end": "5:00 PM",
+     "title": "Apartment / beach downtime",
+     "typeName": "Free Time",
+     "emoji": "😴"
+    },
+    {
+     "start": "5:30 PM",
+     "end": "6:45 PM",
+     "title": "Dinner — Huskisson (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Wednesday, December 22, 2027",
+   "title": "Hyams Beach early, Huskisson free day",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "6:30 AM",
+     "end": "7:15 AM",
+     "title": "Breakfast in the apartment",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "7:15 AM",
+     "end": "7:35 AM",
+     "title": "Drive to Hyams Beach",
+     "typeName": "Drive",
+     "emoji": "🚗",
+     "detail": "Parking is gone by 9 AM in December — this is why it's the early one."
+    },
+    {
+     "start": "7:35 AM",
+     "end": "10:30 AM",
+     "title": "Hyams Beach — the white sand (anchor)",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️",
+     "detail": "Squeaky white quartz sand, clear water, gentle; the postcard beach of the bay."
+    },
+    {
+     "start": "10:30 AM",
+     "end": "11:00 AM",
+     "title": "Drive back to Huskisson",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "11:00 AM",
+     "end": "12:30 PM",
+     "title": "Huskisson — wharf, ice cream, pack for tomorrow",
+     "typeName": "Free Time",
+     "emoji": "🍦"
+    },
+    {
+     "start": "12:30 PM",
+     "end": "1:30 PM",
+     "title": "Lunch — Huskisson (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "1:30 PM",
+     "end": "5:00 PM",
+     "title": "Apartment / beach downtime — buffer day",
+     "typeName": "Free Time",
+     "emoji": "😴",
+     "detail": "Deliberately empty: the weather-swap day for the dolphin cruise or Bendalong if either got rained out."
+    },
+    {
+     "start": "5:30 PM",
+     "end": "6:45 PM",
+     "title": "Dinner — Huskisson (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Thursday, December 23, 2027",
+   "title": "Fitzroy Falls, then the long drive north to Port Stephens",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "8:00 AM",
+     "title": "Breakfast, check out",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:00 AM",
+     "end": "9:15 AM",
+     "title": "Drive Huskisson → Fitzroy Falls via Kangaroo Valley",
+     "typeName": "Drive",
+     "emoji": "🚗",
+     "detail": "~75 min through the valley."
+    },
+    {
+     "start": "9:15 AM",
+     "end": "10:15 AM",
+     "title": "Fitzroy Falls — boardwalk to the lookout",
+     "typeName": "Walk",
+     "emoji": "🌊",
+     "detail": "Easy, flat, 20 min each way; 81 m waterfall."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "2:45 PM",
+     "title": "Drive Fitzroy Falls → Port Stephens",
+     "typeName": "Drive",
+     "emoji": "🛣️",
+     "detail": "Hume Hwy → M7/M2 Sydney bypass → M1 north → Port Stephens. ~300 km, 3h45 clear; 4h30 allowed with a lunch stop.\nThe loop's one long day."
+    },
+    {
+     "start": "2:45 PM",
+     "end": "3:30 PM",
+     "title": "Check in — Oaks Pacific Blue, Salamander Bay (5 nights)",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "Lagoon pool, apartments, the family pick. The Anchorage (Corlette) is the boutique-luxury alternative.",
+     "nights": "5 nights (Thu–Tue)",
+     "flag": "Placeholder — book the resort AND its Christmas Day lunch now; no Hyatt/Marriott/Hilton in Port Stephens."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "5:30 PM",
+     "title": "Lagoon pool",
+     "typeName": "Beach/Pool",
+     "emoji": "🏊"
+    },
+    {
+     "start": "5:45 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — resort (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Friday, December 24, 2027",
+   "title": "Tomaree Head + Shoal Bay — Christmas Eve",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "6:30 AM",
+     "end": "7:15 AM",
+     "title": "Breakfast in the apartment",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "7:15 AM",
+     "end": "7:35 AM",
+     "title": "Drive to the Tomaree Head trailhead, Shoal Bay",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "7:35 AM",
+     "end": "9:15 AM",
+     "title": "Tomaree Head summit walk (anchor)",
+     "typeName": "Walk",
+     "emoji": "🥾",
+     "detail": "1.5 km each way, steep with steps, 40 min up at kid pace; the view over the whole bay and the islands."
+    },
+    {
+     "start": "9:15 AM",
+     "end": "12:00 PM",
+     "title": "Shoal Bay — flat, calm swimming",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️",
+     "detail": "Harbour-calm; the kids swim without flags."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "1:00 PM",
+     "title": "Lunch — Shoal Bay (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "4:30 PM",
+     "title": "Resort downtime; 4WD delivered for tomorrow (placeholder)",
+     "typeName": "Logistics",
+     "emoji": "🚙",
+     "detail": "One-day 4WD hire from a Port Stephens/Newcastle operator, delivered to the resort — to be researched; Worimi permit bought online."
+    },
+    {
+     "start": "5:30 PM",
+     "end": "7:00 PM",
+     "title": "Christmas Eve dinner — resort (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🎄"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Saturday, December 25, 2027",
+   "title": "Christmas Day — Stockton dunes beach drive",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "6:30 AM",
+     "end": "7:30 AM",
+     "title": "Christmas morning in the apartment",
+     "typeName": "Dining",
+     "emoji": "🎁"
+    },
+    {
+     "start": "7:30 AM",
+     "end": "8:00 AM",
+     "title": "Drive to the Lavis Lane / Anna Bay beach entry",
+     "typeName": "Drive",
+     "emoji": "🚙"
+    },
+    {
+     "start": "8:00 AM",
+     "end": "12:00 PM",
+     "title": "Stockton Beach & Worimi dunes — 4WD, sandboarding, Tin City (anchor)",
+     "typeName": "Excursion",
+     "emoji": "🏜️",
+     "detail": "19 km of beach plus the dune recreation area; sandboards from the car.\nTide window from the BOM 2027 Newcastle table — avoid an hour either side of high water; if Christmas Day's tide is wrong, swap this with Dec 26 or 27."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "12:30 PM",
+     "title": "Tyres up, drive back",
+     "typeName": "Logistics",
+     "emoji": "🛞"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "3:00 PM",
+     "title": "Christmas lunch — resort (placeholder, book now)",
+     "typeName": "Dining",
+     "emoji": "🎄"
+    },
+    {
+     "start": "3:00 PM",
+     "end": "5:30 PM",
+     "title": "Pool / Fingal Spit walk at low tide",
+     "typeName": "Beach/Pool",
+     "emoji": "🏊"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:00 PM",
+     "title": "Light dinner in the apartment",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Sunday, December 26, 2027",
+   "title": "Myall Lakes — Bombah Point ferry, Mungo Brush, Seal Rocks",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "8:00 AM",
+     "title": "Breakfast in the apartment",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:00 AM",
+     "end": "9:15 AM",
+     "title": "Drive to Bombah Point via Tea Gardens",
+     "typeName": "Drive",
+     "emoji": "🚗",
+     "detail": "~70 km, 1h15."
+    },
+    {
+     "start": "9:15 AM",
+     "end": "9:45 AM",
+     "title": "Bombah Point car ferry across Myall Lake",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "detail": "Cable ferry, every ~30 min."
+    },
+    {
+     "start": "9:45 AM",
+     "end": "12:00 PM",
+     "title": "Mungo Brush — lakeside swim and rainforest walk (anchor)",
+     "typeName": "Excursion",
+     "emoji": "🌿",
+     "detail": "Freshwater lake, paperbarks, the 2 km Mungo rainforest loop."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "1:00 PM",
+     "title": "Picnic lunch, Mungo Brush",
+     "typeName": "Dining",
+     "emoji": "🧺"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "1:45 PM",
+     "title": "Drive to Seal Rocks",
+     "typeName": "Drive",
+     "emoji": "🚗"
+    },
+    {
+     "start": "1:45 PM",
+     "end": "3:30 PM",
+     "title": "Sugarloaf Point lighthouse walk + Number One Beach",
+     "typeName": "Walk",
+     "emoji": "🗼",
+     "detail": "Short steep walk to the lighthouse; sheltered swim below."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "5:15 PM",
+     "title": "Drive back to the resort",
+     "typeName": "Drive",
+     "emoji": "🚗",
+     "detail": "~1h45 via the Pacific Hwy."
+    },
+    {
+     "start": "5:45 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Nelson Bay (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Monday, December 27, 2027",
+   "title": "Fingal Bay + Nelson Bay — last Port Stephens day",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:30 AM",
+     "title": "Breakfast in the apartment",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "8:30 AM",
+     "end": "12:00 PM",
+     "title": "Fingal Bay — calm swim, Fingal Spit at low tide",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️"
+    },
+    {
+     "start": "12:00 PM",
+     "end": "1:00 PM",
+     "title": "Lunch — Nelson Bay marina (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "4:00 PM",
+     "title": "Little Beach / resort pool; pack",
+     "typeName": "Free Time",
+     "emoji": "😴"
+    },
+    {
+     "start": "5:30 PM",
+     "end": "6:45 PM",
+     "title": "Dinner — resort (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Tuesday, December 28, 2027",
+   "title": "Drive to Sydney — check in for NYE week",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "9:00 AM",
+     "title": "Breakfast, check out",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "9:00 AM",
+     "end": "11:45 AM",
+     "title": "Drive Port Stephens → Sydney",
+     "typeName": "Drive",
+     "emoji": "🛣️",
+     "detail": "~215 km via the M1, 2h30 clear; 2h45 allowed."
+    },
+    {
+     "start": "11:45 AM",
+     "end": "12:30 PM",
+     "title": "Return the rental — Sydney (airport or CBD branch)",
+     "typeName": "Rental Car",
+     "emoji": "🚗",
+     "detail": "No car in Sydney; ferries and trains from here."
+    },
+    {
+     "start": "12:30 PM",
+     "end": "1:30 PM",
+     "title": "Lunch — Circular Quay (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "3:00 PM",
+     "end": "3:30 PM",
+     "title": "Check in — Park Hyatt Sydney (5 nights)",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "Globalist award stay; Opera House-facing rooms for the fireworks.",
+     "program": "World of Hyatt",
+     "nights": "5 nights (Tue–Sun, Dec 28 – Jan 2)",
+     "flag": "NYE nights carry minimum stays and the highest award levels of the year — book the moment Dec 2027 opens (~13 months out)."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "6:00 PM",
+     "title": "The Rocks + harbour foreshore walk",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:15 PM",
+     "title": "Dinner — The Rocks (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    }
+   ]
+  },
+  {
+   "date": "Wednesday, December 29, 2027",
+   "title": "Sydney — Manly by ferry",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "8:30 AM",
+     "end": "9:15 AM",
+     "title": "Ferry Circular Quay → Manly",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "detail": "30 min across the Heads — the best ride in the city."
+    },
+    {
+     "start": "9:15 AM",
+     "end": "1:00 PM",
+     "title": "Manly Beach + Shelly Beach snorkel (anchor)",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:00 PM",
+     "title": "Lunch — Manly (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "2:00 PM",
+     "end": "3:00 PM",
+     "title": "Ferry back",
+     "typeName": "Transportation",
+     "emoji": "⛴️"
+    },
+    {
+     "start": "3:00 PM",
+     "end": "6:00 PM",
+     "title": "Hotel pool / downtime",
+     "typeName": "Free Time",
+     "emoji": "😴"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:15 PM",
+     "title": "Dinner (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    }
+   ]
+  },
+  {
+   "date": "Thursday, December 30, 2027",
+   "title": "Sydney — Bondi to Bronte, harbour afternoon",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "8:30 AM",
+     "end": "9:15 AM",
+     "title": "Train/bus to Bondi",
+     "typeName": "Transportation",
+     "emoji": "🚌"
+    },
+    {
+     "start": "9:15 AM",
+     "end": "12:30 PM",
+     "title": "Bondi Beach + the coastal walk to Bronte (anchor)",
+     "typeName": "Walk",
+     "emoji": "🌊",
+     "detail": "Icebergs pool at one end, Bronte's ocean pool at the other; 2.5 km, flat-ish, kid-friendly."
+    },
+    {
+     "start": "12:30 PM",
+     "end": "1:30 PM",
+     "title": "Lunch — Bronte/Bondi (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "2:00 PM",
+     "end": "5:00 PM",
+     "title": "Royal Botanic Garden + Mrs Macquarie's Chair",
+     "typeName": "Walk",
+     "emoji": "🌳",
+     "detail": "Scout the fireworks sightlines."
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:15 PM",
+     "title": "Dinner (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    }
+   ]
+  },
+  {
+   "date": "Friday, December 31, 2027",
+   "title": "New Year's Eve — Sydney Harbour",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "8:00 AM",
+     "end": "11:00 AM",
+     "title": "Slow morning, hotel pool",
+     "typeName": "Free Time",
+     "emoji": "🏊"
+    },
+    {
+     "start": "11:00 AM",
+     "end": "1:00 PM",
+     "title": "Opera House forecourt + Circular Quay before the closures",
+     "typeName": "Walk",
+     "emoji": "🚶"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:00 PM",
+     "title": "Lunch (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "2:00 PM",
+     "end": "5:00 PM",
+     "title": "Hotel — rest before the long night",
+     "typeName": "Free Time",
+     "emoji": "😴"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "9:30 PM",
+     "title": "Dinner + the 9 PM family fireworks",
+     "typeName": "Entertainment",
+     "emoji": "🎆",
+     "detail": "From the hotel or a ticketed vantage point (Royal Botanic Garden / harbour cruise) — booked months out."
+    },
+    {
+     "start": "9:30 PM",
+     "end": "12:30 AM",
+     "title": "Midnight fireworks",
+     "typeName": "Entertainment",
+     "emoji": "🎇",
+     "detail": "Kids' call: stay up for midnight from the room, or sleep after the 9 PM show."
+    }
+   ]
+  },
+  {
+   "date": "Saturday, January 1, 2028",
+   "title": "New Year's Day — slow harbour day",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "9:00 AM",
+     "end": "10:30 AM",
+     "title": "Late breakfast",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "10:30 AM",
+     "end": "1:00 PM",
+     "title": "Hotel pool / Barangaroo Reserve playground and foreshore",
+     "typeName": "Free Time",
+     "emoji": "🏊",
+     "detail": "Everything else is shut or hungover; the harbour foreshore and the pool are the day."
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:00 PM",
+     "title": "Lunch (placeholder)",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    },
+    {
+     "start": "2:00 PM",
+     "end": "5:00 PM",
+     "title": "Ferry ride to Watsons Bay and back — the last harbour view",
+     "typeName": "Transportation",
+     "emoji": "⛴️"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:15 PM",
+     "title": "Dinner (placeholder); pack",
+     "typeName": "Dining",
+     "emoji": "🍽️"
+    }
+   ]
+  },
+  {
+   "date": "Sunday, January 2, 2028",
+   "title": "Fly home",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "9:00 AM",
+     "end": "10:30 AM",
+     "title": "Breakfast, check out",
+     "typeName": "Dining",
+     "emoji": "🍳"
+    },
+    {
+     "start": "11:00 AM",
+     "end": "12:00 PM",
+     "title": "Transfer to SYD",
+     "typeName": "Transportation",
+     "emoji": "🚕"
+    },
+    {
+     "start": "2:00 PM",
+     "end": "10:30 AM",
+     "title": "Fly SYD → home (placeholder)",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "US nonstops depart Sydney early afternoon; arrives the same calendar day in the US.",
+     "route": "SYD → DFW/LAX",
+     "cabin": "Economy"
+    }
+   ]
+  }
+ ],
+ "packing": {
+  "trackerTitle": "Item tracker",
+  "outfitDays": [],
+  "trackerDays": [],
+  "packLists": []
+ },
+ "supplies": [],
+ "ideas": [
+  {
+   "name": "V2 status",
+   "items": [
+    {
+     "name": "What this file is",
+     "note": "Outline-level alternative to V1 (Brisbane/Noosa). Days, drive times and anchors are set; hotels, meals and prices are placeholders to be researched if this variant is chosen."
+    },
+    {
+     "name": "Flights",
+     "note": "Modeled on a real AA search: AA2290 MIA 6:15 PM → LAX 8:46 PM, 2h09m connection, AA73 LAX 10:55 PM → SYD 7:05 AM (+2 days), 22h50m total; 65,000 Atmos pts + $48 per person = 260,000 + $192. Confirm Dec 16, 2027 times when award inventory opens (~Dec 2026–Jan 2027)."
+    },
+    {
+     "name": "Tides — Stockton Beach (Newcastle reference port)",
+     "note": "Pick the beach-driving day from the BOM 2027 Newcastle table the same way Noosa was done (low tide mid-morning). Worimi beach permit AUD 33 / 3 days, online only."
+    },
+    {
+     "name": "Christmas week bookings",
+     "note": "Port Stephens resort + its Christmas Day lunch, Jervis Bay Motel Deluxe Family Room (Dec 18–23), Park Hyatt NYE nights (minimum stays likely), NYE fireworks vantage tickets — all book out months ahead."
+    },
+    {
+     "name": "Rental car",
+     "note": "Large SUV (Kluger/Sorento/Santa Fe/Everest) or Kia Carnival — must take 3 checked bags + carry-on + 3 backpacks. SYD T1 pickup Dec 18 ~9:10 AM, returned in Sydney Dec 28 (10 days, ~AUD 1,700 est.). Book free-cancellation now; this class sells out at Christmas."
+    },
+    {
+     "name": "Grand Pacific Drive — moved off Dec 18",
+     "note": "Royal National Park (AUD 12/car), Bald Hill Lookout, Sea Cliff Bridge walk and Kiama Blowhole were dropped from arrival day so check-in is ~2 PM. Candidate day: Dec 23 drive north to Port Stephens (Kiama → Sea Cliff Bridge → Bald Hill → Royal NP → Sydney) instead of Fitzroy Falls / Kangaroo Valley — adds ~1.5 hrs to an already long drive. Not yet planned."
+    }
+   ]
+  },
+  {
+   "name": "Not included on purpose",
+   "items": [
+    {
+     "name": "Blue Mountains",
+     "note": "Dropped at the user's request."
+    },
+    {
+     "name": "Repeats",
+     "note": "Dolphins only in Jervis Bay; beach driving and dunes only in Port Stephens; one calm-bay day and one big-nature day in each base."
+    }
+   ]
+  }
+ ],
+ "alternatives": null
+}
