@@ -250,56 +250,54 @@
     },
     {
      "start": "2:30 PM",
-     "end": "3:15 PM",
+     "end": "3:30 PM",
      "title": "Walk down under the Bridge — Dawes Point Park → Campbells Cove",
      "typeName": "Walk",
      "emoji": "🚶",
-     "detail": "• From: Observatory Hill → down the Agar Steps / Lower Fort St to Dawes Point Park, right under the southern end of the Bridge.\n• Then along the waterfront past Campbells Cove and the cruise terminal.\n• To: Circular Quay West — ~1.3 km, 45 min with photo stops."
+     "detail": "• From: Observatory Hill → down the Agar Steps / Lower Fort St to Dawes Point Park, right under the southern end of the Bridge.\n• Then along the waterfront past Campbells Cove and the cruise terminal.\n• To: Circular Quay West — ~1.3 km, 60 min at an easy pace with photo stops."
     },
     {
-     "start": "3:15 PM",
+     "start": "3:30 PM",
      "end": "3:45 PM",
-     "title": "Circular Quay — snack, bathrooms, watch the ferries",
-     "typeName": "Free Time",
-     "emoji": "🍦",
-     "detail": "• Ice cream or a drink along the Circular Quay promenade.\n• Free toilets at the Museum of Contemporary Art (Circular Quay West).",
-     "est": 13.0,
-     "notes": "• ~AUD 20 for ice creams/drinks — estimated.\n• = USD ~13."
+     "title": "Walk Circular Quay → Opera House forecourt",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Circular Quay West → past the ferry wharves and along East Circular Quay.\n• To: Sydney Opera House forecourt — ~700 m, 15 min.\n• Free toilets at the Museum of Contemporary Art (Circular Quay West) on the way."
     },
     {
      "start": "3:45 PM",
-     "end": "5:15 PM",
+     "end": "5:30 PM",
      "title": "Opera House → Royal Botanic Garden → Mrs Macquarie's Chair",
      "typeName": "Walk",
      "emoji": "🌿",
-     "detail": "• From: Circular Quay → along East Circular Quay to the Opera House forecourt (~700 m).\n• Through the Queen Elizabeth II Gate into the Royal Botanic Garden; follow the Farm Cove foreshore path.\n• To: Mrs Macquarie's Chair — the classic photo of the Opera House with the Bridge behind (~1.5 km from the Opera House).\n• Free. Shade and lawns along the way; turn back early if the kids are fading."
+     "detail": "• From: Opera House forecourt → through the Queen Elizabeth II Gate into the Royal Botanic Garden; follow the Farm Cove foreshore path.\n• To: Mrs Macquarie's Chair — the classic photo of the Opera House with the Bridge behind (~1.5 km from the Opera House).\n• Free. Shade and lawns along the way; turn back early if the kids are fading.\n• Sit on the lawns facing Farm Cove for a break before heading back."
     },
     {
-     "start": "5:15 PM",
-     "end": "5:35 PM",
+     "start": "5:30 PM",
+     "end": "6:00 PM",
      "title": "Walk back to East Circular Quay",
      "typeName": "Walk",
      "emoji": "🚶",
-     "detail": "• From: Mrs Macquarie's Chair → back along Farm Cove to the Opera House.\n• To: Whalebridge, 8–10 East Circular Quay — ~1.6 km, 20 min."
+     "detail": "• From: Mrs Macquarie's Chair → back along Farm Cove to the Opera House.\n• To: Whalebridge, 8–10 East Circular Quay — ~1.6 km, 25 min with tired kids; 5 min buffer."
     },
     {
-     "start": "5:35 PM",
-     "end": "6:35 PM",
+     "start": "6:00 PM",
+     "end": "7:00 PM",
      "title": "Dinner — Whalebridge (waterfront, East Circular Quay)",
      "typeName": "Dining",
      "emoji": "🐟",
-     "detail": "• French bistro on the water, looking at the Opera House and Harbour Bridge.\n• Kids' menu: burger, fish & chips, crumbed chicken or ham & cheese baguette.\n• Book the bistro (walk-ins only in the bar); ask for an outdoor waterfront table.",
+     "detail": "• French bistro on the water, looking at the Opera House and Harbour Bridge.\n• Kids' menu: burger, fish & chips, crumbed chicken or ham & cheese baguette.\n• Book the bistro for 6:00 PM (walk-ins only in the bar); ask for an outdoor waterfront table.",
      "menuUrl": "https://sundayco.com/wp-content/uploads/2026/10/08-WLB-Main-Menu-2026_New-WR2.pdf",
      "est": 66.3,
      "notes": "PRICED FROM THE CURRENT MENU (Oct 2026):\n• Burger Maison AUD 34 + Poisson et Frites AUD 38\n• 2 kids' mains AUD 15 each (kids menu: https://sundayco.com/wp-content/uploads/2026/09/14-WLB-Kids-Menu-2026_New-WR1.pdf)\n• = AUD 102 ≈ USD 66.\n• Friday: no public-holiday surcharge.\n• Australian menu prices include 10% GST; tipping isn't expected."
     },
     {
-     "start": "6:35 PM",
+     "start": "7:00 PM",
      "end": "7:15 PM",
-     "title": "Opera House steps at golden hour",
+     "title": "Opera House steps — last look at the harbour",
      "typeName": "Sightseeing",
      "emoji": "🎭",
-     "detail": "• From: Whalebridge → north along East Circular Quay to the Opera House steps (~250 m, 4 min).\n• Last look at the harbour before bed; sunset is ~8 PM."
+     "detail": "• From: Whalebridge → north along East Circular Quay to the Opera House steps (~250 m, 4 min).\n• Quick photo stop before bed; sunset is ~8 PM."
     },
     {
      "start": "7:15 PM",
