@@ -42,7 +42,7 @@ body{margin:0;background:#eef0ed;overflow-x:hidden}
     --aside-maxw-mobile: 320px;
     --aside-z-mobile: 1000;
     --aside-shadow-mobile: 0 0 32px rgba(10,16,18,0.35);
-    --aside-closed-tx-mobile: translateX(-100%);
+    --aside-closed-tx-mobile: translateX(calc(-100% - 40px));
     --asideclose-display-mobile: flex;
     --scrim-display-mobile: block;
     --navrow-pad-mobile: 11px 12px;
@@ -63,13 +63,14 @@ body{margin:0;background:#eef0ed;overflow-x:hidden}
     --tbl-est-display-mobile: none;
     --ovrow-cols-mobile: 44px minmax(0,1fr) auto;
     --ovrow-summary-display-mobile: none;
+    --ovrow-title-ws-mobile: normal;
     --bkcards-cols-mobile: minmax(0,1fr);
     --packslot-cols-mobile: 92px minmax(0,1fr);
   }
 }
 
 @media (max-width: 780px) {
-  html, body { max-width: 100%; overflow-x: hidden; }
+  html, body { max-width: 100%; overflow-x: clip; }
   img, video, iframe, table { max-width: 100%; }
 }
 </style>
@@ -162,7 +163,7 @@ Edits happen in chat with Claude.</div>
           <sc-for list="{{ obDays }}" as="d" hint-placeholder-count="10">
             <div onClick="{{ d.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:11px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px minmax(0,1fr) auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
               <span style="font:600 12px 'Spline Sans Mono',monospace;color:#647579">{{ d.dow }} {{ d.short }}</span>
-              <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ d.title }}<sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;margin-left:8px">✅</span></sc-if></span>
+              <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:var(--ovrow-title-ws-mobile, nowrap);line-height:1.3;overflow:hidden;text-overflow:ellipsis">{{ d.title }}<sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;margin-left:8px">✅</span></sc-if></span>
               <span style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;display:var(--ovrow-summary-display-mobile, inline)">{{ d.summary }}</span>
               <span style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;min-width:56px;text-align:right">{{ d.money }}</span>
             </div>
@@ -679,7 +680,7 @@ function WIKI(name) { return 'https://commons.wikimedia.org/wiki/Special:FilePat
 // Day 1 is an overnight flight with no stop-level photos to show, so it's left empty.
 const PRESENT_GALLERY = {};
 const PRESENT_VIDEOS = {};
-const PRESENT_MAP = {};
+const PRESENT_MAP = {1:{lat:33.9416,lng:-118.4085,zoom:10},2:{lat:-27.25,lng:153.25,zoom:9},3:{lat:-27.177,lng:153.372,zoom:12},4:{lat:-27.03,lng:153.44,zoom:11},5:{lat:-27.33,lng:153.40,zoom:11},6:{lat:-27.99,lng:153.43,zoom:11},7:{lat:-28.09,lng:153.455,zoom:13},8:{lat:-28.165,lng:153.545,zoom:13},9:{lat:-28.13,lng:153.49,zoom:13},10:{lat:-20.348,lng:148.956,zoom:12},11:{lat:-19.74,lng:149.18,zoom:10},12:{lat:-20.28,lng:149.04,zoom:11},13:{lat:-20.348,lng:148.956,zoom:13},14:{lat:-33.861,lng:151.211,zoom:13},15:{lat:-33.90,lng:151.27,zoom:13},16:{lat:-33.80,lng:151.29,zoom:13},17:{lat:-33.86,lng:151.21,zoom:13},18:{lat:-33.94,lng:151.175,zoom:11}};
 const PRESENT_DIRECTIONS = {};
 
 class Component extends DCLogic {
@@ -1086,7 +1087,7 @@ class Component extends DCLogic {
           watchUrl: 'https://www.youtube.com/watch?v=' + v.id,
         }));
         base.hasPresentVideos = base.presentVideos.length > 0;
-        const m = PRESENT_MAP[pdN] || PRESENT_MAP[1];
+        const m = PRESENT_MAP[pdN] || PRESENT_MAP[1] || { lat: -27.47, lng: 153.03, zoom: 8 };
         base.presentMapSrc = 'https://www.google.com/maps?q=' + m.lat + ',' + m.lng + '&z=' + m.zoom + '&output=embed';
         base.presentMapsUrl = PRESENT_DIRECTIONS[pdN] || '';
         // High-level only: activities and meals, not transport/logistics/walk-between-stops.
