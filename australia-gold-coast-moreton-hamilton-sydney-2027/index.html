@@ -29,7 +29,7 @@ body{margin:0;background:#eef0ed;overflow-x:hidden}
 /* squeezed-down copy of the desktop sidebar sitting above the content. */
 @media (max-width: 780px) {
   :root {
-    --layout-cols-mobile: 1fr;
+    --layout-cols-mobile: minmax(0,1fr);
     --layout-rows-mobile: auto 1fr;
     --layout-h-mobile: auto;
     --layout-minh-mobile: 100vh;
@@ -52,24 +52,29 @@ body{margin:0;background:#eef0ed;overflow-x:hidden}
     --sec-maxw-mobile: 100%;
     --h1-34-mobile: 25px;
     --h1-27-mobile: 21px;
-    --dayrow-cols-mobile: 60px 22px 1fr;
+    --dayrow-cols-mobile: 60px 22px minmax(0,1fr);
     --dayrow-gap-mobile: 6px;
-    --present-cols-mobile: 1fr;
+    --present-cols-mobile: minmax(0,1fr);
     --present-br-mobile: none;
-    --money-cols-mobile: 1fr 76px 88px;
+    --money-cols-mobile: minmax(0,1fr) 76px 88px;
     --money-gap-mobile: 8px;
-    --points-cols-mobile: 1fr 80px 92px;
+    --points-cols-mobile: minmax(0,1fr) 80px 92px;
     --points-gap-mobile: 8px;
     --tbl-est-display-mobile: none;
-    --ovrow-cols-mobile: 44px 1fr auto;
+    --ovrow-cols-mobile: 44px minmax(0,1fr) auto;
     --ovrow-summary-display-mobile: none;
-    --bkcards-cols-mobile: 1fr;
-    --packslot-cols-mobile: 92px 1fr;
+    --bkcards-cols-mobile: minmax(0,1fr);
+    --packslot-cols-mobile: 92px minmax(0,1fr);
   }
+}
+
+@media (max-width: 780px) {
+  html, body { max-width: 100%; overflow-x: hidden; }
+  img, video, iframe, table { max-width: 100%; }
 }
 </style>
 </helmet>
-<div style="--accent: {{ accent }}; display:grid;grid-template-columns:var(--layout-cols-mobile, 236px 1fr);grid-template-rows:var(--layout-rows-mobile, none);height:var(--layout-h-mobile, 100%);min-height:var(--layout-minh-mobile, 760px);overflow:var(--layout-of-mobile, hidden);background:#f4f5f3;color:#1b2629;font-family:'Schibsted Grotesk',sans-serif">
+<div style="--accent: {{ accent }}; display:grid;grid-template-columns:var(--layout-cols-mobile, 236px minmax(0,1fr));grid-template-rows:var(--layout-rows-mobile, none);height:var(--layout-h-mobile, 100%);min-height:var(--layout-minh-mobile, 760px);overflow:var(--layout-of-mobile, hidden);background:#f4f5f3;color:#1b2629;font-family:'Schibsted Grotesk',sans-serif">
 
   <div data-screen-label="Mobile top bar" style="display:var(--topbar-display-mobile, none);align-items:center;gap:10px;padding:10px 14px;background:#eceeea;border-bottom:1px solid #dfe4e1;position:sticky;top:0;z-index:500">
     <button onClick="{{ toggleMobileNav }}" aria-label="Open menu" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;width:40px;height:40px;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">&#9776;</button>
@@ -101,7 +106,7 @@ body{margin:0;background:#eef0ed;overflow-x:hidden}
       <div onClick="{{ goOverview }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 8px 10px);border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ ovBg }};color:{{ ovFg }}" style-hover="background:#e1e5e0">Trip</div>
       <div style="margin:12px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">DAYS</div>
       <sc-for list="{{ navDays }}" as="d" hint-placeholder-count="8">
-        <div onClick="{{ d.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 5px 10px);border-radius:8px;display:grid;grid-template-columns:30px 1fr auto auto;gap:7px;align-items:baseline;background:{{ d.bg }};color:{{ d.fg }}" style-hover="background:#e1e5e0">
+        <div onClick="{{ d.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 5px 10px);border-radius:8px;display:grid;grid-template-columns:30px minmax(0,1fr) auto auto;gap:7px;align-items:baseline;background:{{ d.bg }};color:{{ d.fg }}" style-hover="background:#e1e5e0">
           <span style="font:600 11px 'Spline Sans Mono',monospace;opacity:0.75">{{ d.short }}</span>
           <span style="font:500 12.5px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ d.title }}</span>
           <sc-if value="{{ d.isToday }}" hint-placeholder-val="{{ false }}"><span style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E)">TODAY</span></sc-if>
@@ -155,7 +160,7 @@ Edits happen in chat with Claude.</div>
 
         <div style="margin-top:28px;display:grid;gap:6px">
           <sc-for list="{{ obDays }}" as="d" hint-placeholder-count="10">
-            <div onClick="{{ d.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:11px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+            <div onClick="{{ d.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:11px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px minmax(0,1fr) auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
               <span style="font:600 12px 'Spline Sans Mono',monospace;color:#647579">{{ d.dow }} {{ d.short }}</span>
               <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ d.title }}<sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;margin-left:8px">✅</span></sc-if></span>
               <span style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;display:var(--ovrow-summary-display-mobile, inline)">{{ d.summary }}</span>
@@ -207,7 +212,7 @@ Edits happen in chat with Claude.</div>
               <div style="padding:4px 0 4px 96px;font:400 12px 'Schibsted Grotesk',sans-serif;font-style:italic;color:#8b9a9d">{{ b.title }}</div>
             </sc-if>
             <sc-if value="{{ b.isStop }}" hint-placeholder-val="{{ true }}">
-              <div style="display:grid;grid-template-columns:var(--dayrow-cols-mobile, 88px 30px 1fr);gap:var(--dayrow-gap-mobile, 8px);padding:10px 10px;margin:0 -10px;border-top:1px solid #e5e9e5;{{ b.nowStyle }}">
+              <div style="display:grid;grid-template-columns:var(--dayrow-cols-mobile, 88px 30px minmax(0,1fr));gap:var(--dayrow-gap-mobile, 8px);padding:10px 10px;margin:0 -10px;border-top:1px solid #e5e9e5;{{ b.nowStyle }}">
                 <div style="padding-top:1px">
                   <sc-if value="{{ b.isNow }}" hint-placeholder-val="{{ false }}">
                     <div style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E);margin-bottom:2px">● NOW</div>
@@ -301,7 +306,7 @@ Edits happen in chat with Claude.</div>
               </div>
             </sc-if>
 
-            <div style="display:grid;grid-template-columns:var(--present-cols-mobile, 1fr 360px);gap:0;margin-top:8px">
+            <div style="display:grid;grid-template-columns:var(--present-cols-mobile, minmax(0,1fr) 360px);gap:0;margin-top:8px">
               <div style="padding:18px 26px 24px;border-right:var(--present-br-mobile, 1px solid #eef0ed);border-top:1px solid #eef0ed">
                 <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:10px">HERE'S WHAT WE'RE DOING</div>
                 <sc-for list="{{ presentHighlights }}" as="h" hint-placeholder-count="8">
@@ -321,7 +326,7 @@ Edits happen in chat with Claude.</div>
             <sc-if value="{{ hasPresentVideos }}" hint-placeholder-val="{{ false }}">
               <div style="padding:20px 26px 26px;border-top:1px solid #eef0ed">
                 <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:12px">SEE IT IN ACTION — CLICK TO WATCH ON YOUTUBE</div>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:16px">
                   <sc-for list="{{ presentVideos }}" as="v" hint-placeholder-count="2">
                     <a href="{{ v.watchUrl }}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
                       <div style="position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000">
@@ -360,18 +365,18 @@ Edits happen in chat with Claude.</div>
         </sc-if>
         <sc-if value="{{ hasMoney }}" hint-placeholder-val="{{ true }}">
           <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
-            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, minmax(0,1fr) 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
               <span>CATEGORY</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">PAID</span><span style="text-align:right">TOTAL</span>
             </div>
             <sc-for list="{{ moneyRows }}" as="r" hint-placeholder-count="10">
-              <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+              <div style="display:grid;grid-template-columns:var(--money-cols-mobile, minmax(0,1fr) 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
                 <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.emoji }}&nbsp;&nbsp;{{ r.name }}</span>
                 <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.est }}</span>
                 <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.paid }}</span>
                 <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
               </div>
             </sc-for>
-            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, minmax(0,1fr) 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
               <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
               <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ moneyTotEst }}</span>
               <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ moneyTotPaid }}</span>
@@ -391,18 +396,18 @@ Edits happen in chat with Claude.</div>
         </sc-if>
         <sc-if value="{{ hasPoints }}" hint-placeholder-val="{{ true }}">
           <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
-            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, minmax(0,1fr) 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
               <span>PROGRAM</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">USED</span><span style="text-align:right">TOTAL</span>
             </div>
             <sc-for list="{{ pointRows }}" as="r" hint-placeholder-count="4">
-              <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+              <div style="display:grid;grid-template-columns:var(--points-cols-mobile, minmax(0,1fr) 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
                 <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.name }}</span>
                 <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.planned }}</span>
                 <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.used }}</span>
                 <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
               </div>
             </sc-for>
-            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, minmax(0,1fr) 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
               <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
               <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ ptsTotPlanned }}</span>
               <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ ptsTotUsed }}</span>
@@ -411,7 +416,7 @@ Edits happen in chat with Claude.</div>
           </div>
           <div style="margin-top:18px;display:grid;gap:6px">
             <sc-for list="{{ pointItems }}" as="p" hint-placeholder-count="6">
-              <div onClick="{{ p.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:10px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+              <div onClick="{{ p.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:10px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px minmax(0,1fr) auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
                 <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ p.dayLabel }}</span>
                 <span style="font:500 13px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.emoji }}&nbsp;&nbsp;{{ p.title }}</span>
                 <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:{{ p.statusColor }}">{{ p.status }}</span>
@@ -435,7 +440,7 @@ Edits happen in chat with Claude.</div>
         <sc-for list="{{ bookingGroups }}" as="g" hint-placeholder-count="4">
           <div>
             <div style="margin:20px 0 10px;font:600 10px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">{{ g.name }}</div>
-            <div style="display:grid;grid-template-columns:var(--bkcards-cols-mobile, repeat(auto-fill,minmax(390px,1fr)));gap:10px">
+            <div style="display:grid;grid-template-columns:var(--bkcards-cols-mobile, repeat(auto-fill,minmax(min(390px,100%),1fr)));gap:10px">
               <sc-for list="{{ g.items }}" as="bk" hint-placeholder-count="3">
                 <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;overflow:hidden">
                   <div style="padding:14px 16px 12px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:9px">
@@ -446,7 +451,7 @@ Edits happen in chat with Claude.</div>
                   </div>
 
                   <sc-if value="{{ bk.hasFacts }}" hint-placeholder-val="{{ true }}">
-                    <div style="padding:12px 16px;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;border-bottom:1px solid #eef0ed">
+                    <div style="padding:12px 16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px 14px;border-bottom:1px solid #eef0ed">
                       <sc-for list="{{ bk.facts }}" as="ft" hint-placeholder-count="4">
                         <div style="min-width:0">
                           <div style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d">{{ ft.label }}</div>
@@ -515,7 +520,7 @@ Edits happen in chat with Claude.</div>
           </sc-for>
         </div>
         <sc-if value="{{ hasRollups }}" hint-placeholder-val="{{ true }}">
-          <div style="margin:0 0 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;align-items:start">
+          <div style="margin:0 0 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(250px,100%),1fr));gap:10px;align-items:start">
             <sc-for list="{{ packRollups }}" as="pr" hint-placeholder-count="3">
               <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px">
                 <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
@@ -525,7 +530,7 @@ Edits happen in chat with Claude.</div>
                 <sc-if value="{{ pr.empty }}" hint-placeholder-val="{{ false }}">
                   <div style="font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d;text-wrap:pretty">No pack list yet — ask Claude to count one from the outfit plan.</div>
                 </sc-if>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 14px">
+                <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2px 14px">
                   <sc-for list="{{ pr.items }}" as="it" hint-placeholder-count="6">
                     <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
                       <span style="font:600 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:22px;text-align:right">{{ it.count }}×</span>
@@ -544,7 +549,7 @@ Edits happen in chat with Claude.</div>
               <span style="font:500 10.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ od.dayTitle }}</span>
             </div>
             <sc-for list="{{ od.slots }}" as="s" hint-placeholder-count="2">
-              <div style="display:grid;grid-template-columns:var(--packslot-cols-mobile, 130px 1fr);border-bottom:1px solid #f0f2ef">
+              <div style="display:grid;grid-template-columns:var(--packslot-cols-mobile, 130px minmax(0,1fr));border-bottom:1px solid #f0f2ef">
                 <div style="padding:10px 14px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:#647579">{{ s.name }}</div>
                 <div style="display:flex;align-items:stretch">
                   <sc-for list="{{ s.people }}" as="p" hint-placeholder-count="3">
@@ -559,7 +564,7 @@ Edits happen in chat with Claude.</div>
         <sc-if value="{{ hasTracker }}" hint-placeholder-val="{{ true }}">
           <h2 style="margin:30px 0 4px;font:700 18px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ trackerTitle }}</h2>
           <div style="font:400 12px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Item-level, with variation numbers and rewear flags.</div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(290px,100%),1fr));gap:10px">
             <sc-for list="{{ trackerDays }}" as="tdy" hint-placeholder-count="6">
               <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:12px 15px">
                 <div style="font:700 12.5px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">{{ tdy.date }}</div>
@@ -588,7 +593,7 @@ Edits happen in chat with Claude.</div>
         <sc-if value="{{ noLists }}" hint-placeholder-val="{{ false }}">
           <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No lists yet. Tell Claude what to track — supplies, groceries, pre-trip errands.</div>
         </sc-if>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;align-items:start">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(270px,100%),1fr));gap:12px;align-items:start">
           <sc-for list="{{ supplyGroups }}" as="g" hint-placeholder-count="3">
             <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
               <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
@@ -633,7 +638,7 @@ Edits happen in chat with Claude.</div>
         <sc-if value="{{ noIdeas }}" hint-placeholder-val="{{ false }}">
           <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Empty. Anything you're considering — restaurants, beaches, tours — parks here until it earns a day.</div>
         </sc-if>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;align-items:start">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:12px;align-items:start">
           <sc-for list="{{ ideaGroups }}" as="g" hint-placeholder-count="2">
             <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
               <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
