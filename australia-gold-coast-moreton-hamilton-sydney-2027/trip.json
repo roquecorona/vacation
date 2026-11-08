@@ -507,7 +507,7 @@
   },
   {
    "date": "Sunday, December 19, 2027",
-   "title": "4WD the north end — Champagne Pools, Cape Moreton lighthouse; The Desert at golden hour",
+   "title": "4WD the north end — Champagne Pools and Honeymoon Bay (2+ hrs); The Desert at golden hour",
    "planned": false,
    "blocks": [
     {
@@ -553,27 +553,11 @@
     },
     {
      "start": "8:15 AM",
-     "end": "9:30 AM",
+     "end": "10:35 AM",
      "title": "Champagne Pools and Honeymoon Bay",
      "typeName": "Beach",
      "emoji": "🫧",
-     "detail": "• Champagne Pools: rock pools where waves fizz over the edge — best on the falling-to-low tide this morning.\n• Honeymoon Bay: sheltered, picturesque cove; 700 m return walk from the north end of the North Point camping area.\n• Swim only in the pools/bay; stay off the outer rocks — surf can wash you off (Queensland Parks)."
-    },
-    {
-     "start": "9:30 AM",
-     "end": "9:40 AM",
-     "title": "Drive to Cape Moreton car park",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• 900 m back, then North Point–Cape Moreton Road 2 km."
-    },
-    {
-     "start": "9:40 AM",
-     "end": "10:35 AM",
-     "title": "Cape Moreton Lighthouse walk",
-     "typeName": "Sightseeing",
-     "emoji": "🗼",
-     "detail": "• 1.5 km stepped circuit (allow 1 hr) to Queensland's first lighthouse (1857), the only stone one in the state; information centre.\n• Look down for turtles, rays and dolphins.\n• Non-flush toilets."
+     "detail": "• Champagne Pools: rock pools where waves fizz over the edge — best on the rising tide this morning (Brisbane Bar low 7:27 AM; ocean side ~1.5 hrs earlier).\n• Honeymoon Bay: sheltered, picturesque cove; 700 m return walk from the north end of the North Point camping area.\n• Swim only in the pools/bay; stay off the outer rocks — surf can wash you off (Queensland Parks).\n• Plenty of time: swim, snorkel the pools with masks, then the 700 m return walk to Honeymoon Bay.\n• Water/reef shoes for the rocks; if a big swell is washing over the pools, watch from the rocks instead."
     },
     {
      "start": "10:35 AM",
