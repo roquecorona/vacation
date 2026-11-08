@@ -1275,32 +1275,28 @@ class Component extends DCLogic {
 </script>
 <script id="trip-data" type="application/json">{
  "meta": {
-  "title": "Australia - Gold Coast, Moreton Island, Hamilton Island & Sydney 2027",
-  "dates": "Dec 15, 2027 – Jan 2, 2028 (FLL → Los Angeles → Brisbane · Gold Coast · Moreton Island · Hamilton Island · Sydney for NYE · home Jan 2)",
+  "title": "Australia - Moreton Island, Gold Coast, Hamilton Island & Sydney 2027",
+  "dates": "Dec 15, 2027 – Jan 2, 2028 (FLL → Los Angeles → Brisbane · Moreton Island · Gold Coast · Hamilton Island for Christmas night · Sydney for NYE · home Jan 2)",
   "route": [
    {
     "name": "Fort Lauderdale",
     "sub": "home (FLL)"
    },
    {
-    "name": "Gold Coast",
-    "sub": "4 nights (from Dec 16) · JW Marriott Gold Coast · own 4WD from Brisbane Airport"
-   },
-   {
     "name": "Moreton Island",
-    "sub": "3 nights · Tangalooma Island Resort, Family Suite · Micat ferry"
+    "sub": "4 nights · Tangalooma Island Resort, Family Suite · own 4WD from Brisbane Airport + Micat"
    },
    {
-    "name": "Brisbane",
-    "sub": "1 night · Hyatt Regency Brisbane"
+    "name": "Gold Coast",
+    "sub": "4 nights · JW Marriott Gold Coast · Christmas Eve"
    },
    {
     "name": "Hamilton Island",
-    "sub": "6 nights · Reef View Hotel · Christmas"
+    "sub": "4 nights · Reef View Hotel · from Christmas afternoon"
    },
    {
     "name": "Sydney",
-    "sub": "3 nights · Sydney Harbour Marriott · NYE"
+    "sub": "4 nights · Sydney Harbour Marriott · NYE"
    }
   ]
  },
@@ -1453,7 +1449,7 @@ class Component extends DCLogic {
   },
   {
    "date": "Friday, December 17, 2027",
-   "title": "Land Brisbane → collect the 4WD → Gold Coast (JW Marriott); Kurrawa beachfront dinner",
+   "title": "Land Brisbane → 4WD → groceries → Micat to Moreton Island; dolphin feeding",
    "planned": false,
    "blocks": [
     {
@@ -1498,11 +1494,11 @@ class Component extends DCLogic {
      "title": "Collect the 4WD — Wongai 4WD Hire",
      "typeName": "Rental Car",
      "emoji": "🚙",
-     "detail": "• Toyota LandCruiser Prado (seats up to 7) — fold the third row for luggage.\n• Moreton Island package; keep the same car through the Gold Coast, Moreton and Brisbane until Fri Dec 24.\n• Collection from 8:00 AM, 7 days (verified, Wongai listing).\n• Mandatory safety briefing; maps and tide times; $5,000 refundable bond on a physical credit card.\n• Ask them to show tyre deflation/reinflation and the recovery gear.",
+     "detail": "• Toyota LandCruiser Prado (seats up to 7) — fold the third row for luggage.\n• Moreton Island package; keep the same car through the Gold Coast, Moreton and Brisbane until Christmas morning (Sat Dec 25).\n• Collection from 8:00 AM, 7 days (verified, Wongai listing).\n• Mandatory safety briefing; maps and tide times; $5,000 refundable bond on a physical credit card.\n• Ask them to show tyre deflation/reinflation and the recovery gear.",
      "program": "Wongai 4WD Hire",
-     "est": 1300.0,
-     "notes": "• Package includes the Moreton Island vehicle access permit (verified, Wongai listing).\n• Quote-only: 'from AUD 690' for the 2-day minimum (verified). Modeled ~AUD 250/day × 8 days (Fri Dec 17 – Fri Dec 24) = ~AUD 2,000 — estimated ≈ USD 1,300.\n• Fuel, tolls and the ferry not included.",
-     "flag": "Not booked. Ask Wongai for an 8-day quote that includes the Gold Coast road days, plus a booster seat if Chloe still needs one (Queensland: approved restraint under 7)."
+     "est": 1462.5,
+     "notes": "• Package includes the Moreton Island vehicle access permit (verified, Wongai listing).\n• Quote-only: 'from AUD 690' for the 2-day minimum (verified). Modeled ~AUD 250/day × 9 days (Fri Dec 17 – Sat Dec 25) = ~AUD 2,250 — estimated ≈ USD 1,300.\n• Fuel, tolls and the ferry not included.",
+     "flag": "Not booked. Ask Wongai for a 9-day quote including the Gold Coast road days, a Christmas Day 9:45 AM return, and a booster if Chloe still needs one (Queensland: approved restraint under 7)."
     },
     {
      "start": "8:55 AM",
@@ -1525,120 +1521,742 @@ class Component extends DCLogic {
     },
     {
      "start": "9:35 AM",
-     "end": "10:50 AM",
-     "title": "Drive Virginia → JW Marriott Gold Coast, Surfers Paradise",
+     "end": "9:45 AM",
+     "title": "Drive to Woolworths Taigum",
      "typeName": "Drive",
      "emoji": "🚙",
-     "detail": "• To: 158 Ferny Ave, Surfers Paradise.\n• ~80 km via the Gateway Motorway and the M1 (Pacific Motorway).\n• 1 hr 12 min from Geebung (Google Maps, checked Nov 2026, weekend traffic) — 1 hr 15 allowed for Friday morning.",
-     "est": 6.5,
-     "notes": "• Possible Gateway toll ~AUD 5–10, billed through the rental — estimated."
+     "detail": "• ~3 km, 5–10 min."
     },
     {
-     "start": "10:50 AM",
-     "end": "11:15 AM",
-     "title": "Check in — JW Marriott Gold Coast Resort & Spa (room held from Dec 16)",
-     "typeName": "Hotel",
-     "emoji": "🏨",
-     "detail": "• Booked from the night of Thu Dec 16, so the room is ready on arrival.\n• Saltwater lagoon stocked with ~300 tropical fish (20 species) — snorkel gear from the recreation centre; freshwater pool with a kids' slide.\n• Self-parking AUD 30/day; valet AUD 50/day (verified, Misono/JW site).",
-     "program": "Marriott Bonvoy",
-     "points": "336000",
-     "nights": "4 nights (Thu Dec 16 – Mon Dec 20)",
-     "roomType": "Deluxe Room, 2 beds (confirm it books for 4)",
-     "address": "158 Ferny Ave, Surfers Paradise QLD 4217",
-     "est": 78.0,
-     "notes": "POINTS — PLANNING ASSUMPTION:\n• ~84,000 pts/night × 4 = 336,000 (December holiday pricing seen in Nov 2026; rooms.aero's recent lowest is 73,000).\n• Marriott.com blocked automated searches — confirm on marriott.com the day Dec 2027 opens.\n• No 5th-night-free (4 nights).\n• Skipping the Dec 16 night saves ~84k pts, but check-in is 3 PM — early check-in not guaranteed.\n\nCASH: self-parking AUD 30 × 4 days = AUD 120 ≈ USD 78 (in this block's estimate).",
-     "flag": "Not booked. Confirm the 2-bed room books on points for 2 adults + 2 children."
+     "start": "9:45 AM",
+     "end": "10:40 AM",
+     "title": "Groceries — Woolworths Taigum",
+     "typeName": "Shopping",
+     "emoji": "🛒",
+     "detail": "• Woolworths Taigum, Church Rd & Beams Rd — 5 min from BCF.\n• The resort only has a small, pricey convenience shop.\n• For 4 nights: breakfasts, 3 picnic lunches (Dec 18–20), today's ferry picnic, snacks, 20+ L of water.\n• Mon Dec 20 BBQ dinner: sausages/steak, rolls, salad (free resort barbecues).\n• Pack the cooler last with ice.",
+     "est": 182.0,
+     "notes": "• ~AUD 280 for 4 nights — estimated ≈ USD 182."
     },
     {
-     "start": "11:15 AM",
-     "end": "12:45 PM",
-     "title": "Showers, unpack, short rest",
-     "typeName": "Free Time",
-     "emoji": "🛋️",
-     "detail": "• Showers and fresh clothes after the flight.\n• Keep naps short so the kids sleep tonight; curtains open for daylight."
+     "start": "10:40 AM",
+     "end": "11:20 AM",
+     "title": "Drive to the Micat ferry terminal, Port of Brisbane",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• To: 14 Howard Smith Dr, Port of Brisbane — ~30 km via the Gateway Motorway, ~35 min.\n• Gates open 1 hr before departure (11:30 AM)."
     },
     {
-     "start": "12:45 PM",
-     "end": "1:00 PM",
-     "title": "Walk to Bumbles Café, Budds Beach",
-     "typeName": "Walk",
-     "emoji": "🚶",
-     "detail": "• From: JW lobby → along the river side streets to River Dr, Budds Beach.\n• To: Bumbles Café, 19–21 River Dr — 10 min walk (Google Maps, checked Nov 2026)."
+     "start": "11:20 AM",
+     "end": "12:30 PM",
+     "title": "Micat check-in — stay in the vehicle",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• A crew member checks you in at the car.\n• Bathroom stop at the terminal before boarding."
     },
     {
-     "start": "1:00 PM",
+     "start": "12:30 PM",
      "end": "2:00 PM",
-     "title": "Lunch — Bumbles Café (riverside, Budds Beach)",
-     "typeName": "Dining",
-     "emoji": "🥪",
-     "detail": "• Garden café on the Nerang River, a Gold Coast favourite since 1999.\n• Lunch menu from noon; open to 2:30 PM weekdays.\n• No kids' section on the current menu — the kids share smaller plates.",
-     "menuUrl": "https://bumblescafe.com.au/wp-content/uploads/2025/10/Bumbles-Menu-OCT-2025.pdf",
-     "est": 57.62,
-     "notes": "PRICED FROM THE CURRENT MENU (Oct 2025):\n• Queen Bee burger AUD 24 + grilled salmon with Greek salad AUD 28\n• Kids (no kids' menu): chicken sandwich & fries AUD 16.50 + prawn sandwich & fries AUD 18.50\n• = AUD 87 + 1.9% card surcharge = AUD ~89 ≈ USD 58. Friday — no weekend surcharge (5% Sat–Sun, 15% public holidays).\n• Australian menu prices include 10% GST; tipping isn't expected.",
-     "flag": "Menu is dated Oct 2025 — check the current one closer to the trip."
+     "title": "Micat vehicle ferry — Port of Brisbane → Moreton Island (picnic lunch on board)",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "detail": "• Departs 12:30 PM, arrives ~2:00 PM (90 min). Lands on the beach at the Tangalooma Wrecks.\n• Picnic lunch from the groceries on the upper deck at ~1 PM; there's also a café and bar on board.",
+     "route": "Port of Brisbane → Tangalooma Wrecks",
+     "est": 194.11,
+     "notes": "• Micat quote seen Nov 2026: AUD 243–284 one way for 1 vehicle + 2 adults + 2 children (stand-in dates); modeled AUD 284\n• + 5.15% fuel levy on new bookings = AUD ~299 ≈ USD 194.\n• Dec 2026 weekday sailings from Brisbane: 8:00 AM and 12:30 PM (demand-based timetable) — confirm the Friday 12:30 PM when booking.",
+     "flag": "Not booked. Holiday sailings sell out — book as soon as Dec 2027 opens."
     },
     {
      "start": "2:00 PM",
-     "end": "2:10 PM",
-     "title": "Walk back to the JW",
-     "typeName": "Walk",
-     "emoji": "🚶",
-     "detail": "• From: Bumbles → back along River Dr to Ferny Ave.\n• To: JW lobby — 10 min."
+     "end": "2:15 PM",
+     "title": "Drive off at the Wrecks → resort northern car park",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• Engage 4WD; lower tyre pressure as Wongai shows you.\n• ~5 min south to the Tangalooma Island Resort northern car park (official guests only).\n• No driving on the beach in front of the resort — use the bypass.\n• Tide: Tangalooma high water 11:52 AM, falling — fine for the short beach stretch.",
+     "notes": "TIDES — official 2027 predictions (Maritime Safety Queensland, Queensland Tide Tables 2027, Brisbane Bar):\n• Tangalooma (west beach): high water 23 min earlier, low water 27 min earlier than Brisbane Bar.\n• Ocean beaches (east side, Cape Moreton): 1 hr 30 min earlier than Brisbane Bar.\n• Queensland Parks: drive beaches around low tide; avoid 2 hrs either side of high tide.\n\nToday (Tangalooma): low 5:11 AM, high 11:52 AM, low 6:40 PM."
     },
     {
-     "start": "2:10 PM",
-     "end": "4:30 PM",
-     "title": "JW lagoon — snorkel with the fish",
-     "typeName": "Beach/Pool",
-     "emoji": "🐠",
-     "detail": "• Swim and snorkel the saltwater lagoon; sandy beach edges, swim-up grotto and waterfall.\n• Gear from the recreation centre (ask about the underwater scooters).\n• Hats and sunscreen — UV is extreme even late afternoon."
+     "start": "2:15 PM",
+     "end": "2:45 PM",
+     "title": "Check in — Tangalooma Island Resort, 1-bedroom Family Suite",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Reception in the Resort Centre.\n• Family Suite: 1 bedroom + large living area + kitchenette; sleeps up to 6; includes wild dolphin feeding.\n• Register for tonight's dolphin feeding at The Eco Centre (registration 1–4 PM).\n• Free beach towels from Reception (refundable deposit).",
+     "est": 1167.4,
+     "nights": "4 nights (Fri Dec 17 – Tue Dec 21)",
+     "roomType": "Family Suite (1 bedroom)",
+     "notes": "• AUD 449/night — verified on the resort's booking site for Dec 6–10, 2027 (furthest dates bookable, 2 adults + 2 kids).\n• 4 nights × 449 = AUD 1,796 ≈ USD 1,167.\n• Dec 17–21 is Queensland school holidays — expect higher.\n• Check-out is strictly 10:00 AM.\n• Car parks can be some distance from the room — no porter from the car park.",
+     "flag": "Not booked. Bookings open 399 days ahead — Dec 17, 2027 opens ~Nov 13, 2026 (this week). Book that day; the 2026 dates sold out.",
+     "program": "Tangalooma Island Resort"
     },
     {
-     "start": "4:30 PM",
-     "end": "5:15 PM",
-     "title": "Showers, change for dinner",
+     "start": "2:45 PM",
+     "end": "3:30 PM",
+     "title": "Unload groceries, settle into the suite",
+     "typeName": "Free Time",
+     "emoji": "🛋️",
+     "detail": "• Cooler contents into the fridge; swimsuits on."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "4:45 PM",
+     "title": "Swim at the resort beach (Moreton Bay side)",
+     "typeName": "Beach",
+     "emoji": "🏖️",
+     "detail": "• Calm, west-facing bay beach in front of the resort.\n• No lifeguards anywhere on the island — stay with the kids in the water.\n• Water is ~77°F in December.",
+     "flag": "Queensland Parks: no patrolled swimming areas on Moreton Island."
+    },
+    {
+     "start": "4:45 PM",
+     "end": "5:00 PM",
+     "title": "Kookaburra feeding (free)",
+     "typeName": "Wildlife",
+     "emoji": "🐦",
+     "detail": "• Daily 4:45 PM outside the Deep Blue Apartments, run by the Eco Centre rangers.\n• No booking needed."
+    },
+    {
+     "start": "5:00 PM",
+     "end": "5:30 PM",
+     "title": "Showers, dry clothes",
      "typeName": "Logistics",
      "emoji": "🚿"
     },
     {
-     "start": "5:15 PM",
-     "end": "5:30 PM",
-     "title": "Drive to Kurrawa Surf Club, Broadbeach",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• To: Kurrawa Surf Club, Old Burleigh Rd, Broadbeach — 10 min (Google Maps, checked Nov 2026).\n• Street/beachfront parking along Old Burleigh Rd (paid)."
-    },
-    {
      "start": "5:30 PM",
-     "end": "6:30 PM",
-     "title": "Dinner — Kurrawa Surf Club (beachfront deck)",
+     "end": "6:20 PM",
+     "title": "Dinner — The Beach Café",
      "typeName": "Dining",
-     "emoji": "🍽️",
-     "detail": "• Right on Broadbeach with an ocean view — first-night dinner on the sand's edge.\n• Dinner from 5:30 PM. Non-members sign in with photo ID.\n• Little Nippers kids' meals come with a drink and an activity pack.",
-     "menuUrl": "https://www.kurrawasurf.com.au/_files/ugd/59693a_386dc890d74d440dac1f5412549b6877.pdf",
-     "est": 65.65,
-     "notes": "PRICED FROM THE CURRENT MENU (visitor prices):\n• Chicken parmigiana AUD 30 + Humpty Doo barramundi AUD 39\n• 2 Little Nippers meals (cheeseburger / battered fish & chips) AUD 16 each\n• = AUD 101 ≈ USD 66. Friday — no surcharge listed.\n• Australian menu prices include 10% GST; tipping isn't expected.",
-     "flag": "Book a 5:30 PM table online (kurrawasurf.com.au) — Christmas-holiday Fridays are busy."
+     "emoji": "🍕",
+     "detail": "• Casual pizza, grills and kids' meals by the pool; open 5:00–9:00 PM for dinner.\n• Earlier dinner tonight — the dolphins come in at sunset, and it's landing day.",
+     "menuUrl": "https://www.tangalooma.com/TangaloomaV2/media/Documents/Menus/Beach-Cafe-Menu_190726.pdf",
+     "est": 59.48,
+     "notes": "PRICED FROM THE CURRENT MENU (Jul 2026):\n• Grilled lemon thyme chicken AUD 32 + pepperoni pizza AUD 29\n• Kids' fish & chips AUD 16 + chicken tenders & chips AUD 14.50\n• = AUD 91.50 ≈ USD 59.\n• Australian menu prices include 10% GST; tipping isn't expected."
     },
     {
-     "start": "6:30 PM",
-     "end": "6:50 PM",
-     "title": "Beach walk, then drive back to the JW",
+     "start": "6:20 PM",
+     "end": "6:40 PM",
+     "title": "Back to the suite — get ready for the dolphins",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Wear clothes that can get wet up to the waist.\n• No sunscreen, insect repellent or perfume on hands/legs; remove rings and watches."
+    },
+    {
+     "start": "6:40 PM",
+     "end": "7:45 PM",
+     "title": "Wild dolphin feeding at the jetty",
+     "typeName": "Wildlife",
+     "emoji": "🐬",
+     "detail": "• Near sunset (time posted daily; 6:30 PM in mid-November).\n• Hand-feed a wild bottlenose dolphin, once per person per stay — doing it the first night leaves the other nights as backup.\n• Kids 102 cm (3'4\") and taller walk in with a parent; shorter kids are carried.\n• ~99% dolphin attendance.",
+     "notes": "• Included with the Family Suite rate (verified).\n• Waders can be hired for AUD 15 if you want to stay dry."
+    },
+    {
+     "start": "7:45 PM",
+     "end": "8:00 PM",
+     "title": "Back to the suite — bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️",
+     "detail": "• First night after the long flight — early bed."
+    }
+   ]
+  },
+  {
+   "date": "Saturday, December 18, 2027",
+   "title": "Snorkel the Tangalooma Wrecks; Blue Lagoon swim in the afternoon; Fire & Stone dinner",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast in the suite",
+     "typeName": "Dining",
+     "emoji": "🥣",
+     "detail": "• From the groceries."
+    },
+    {
+     "start": "7:45 AM",
+     "end": "9:15 AM",
+     "title": "Pool and easy morning",
+     "typeName": "Free Time",
+     "emoji": "🏊",
+     "detail": "• Resort pools; sunscreen on before 9."
+    },
+    {
+     "start": "9:15 AM",
+     "end": "9:30 AM",
+     "title": "Walk to Tangatours (next to Fire & Stone)",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• Check in for the snorkel tour."
+    },
+    {
+     "start": "9:30 AM",
+     "end": "11:00 AM",
+     "title": "Snorkel the Tangalooma Wrecks — guided tour",
+     "typeName": "Excursion",
+     "emoji": "🤿",
+     "detail": "• Boat out to the 15 sunken ships; ~30–35 min in the water.\n• All gear included: wetsuits, fins, mask, snorkel, life jackets, pool noodles, prescription masks.\n• Minimum age 6.",
+     "est": 179.4,
+     "notes": "• AUD 69 per person × 4 = AUD 276 (verified, resort site).\n• = USD ~179. AUD 207 for 3 if Chloe sits out.",
+     "flag": "Minimum age 6 — confirm Chloe is 6 by Dec 2027. Tour times move with the tide — confirm when booking."
+    },
+    {
+     "start": "11:00 AM",
+     "end": "1:00 PM",
+     "title": "Rinse off, pool, rest",
+     "typeName": "Free Time",
+     "emoji": "🛋️",
+     "detail": "• Midday UV is extreme — shade and water."
+    },
+    {
+     "start": "1:00 PM",
+     "end": "1:45 PM",
+     "title": "Lunch in the suite (groceries)",
+     "typeName": "Dining",
+     "emoji": "🥪"
+    },
+    {
+     "start": "1:45 PM",
+     "end": "2:30 PM",
+     "title": "Load the car — towels, water, snorkels",
+     "typeName": "Logistics",
+     "emoji": "🎒"
+    },
+    {
+     "start": "2:30 PM",
+     "end": "3:05 PM",
+     "title": "Middle Road east → east beach → Blue Lagoon",
      "typeName": "Drive",
      "emoji": "🚙",
-     "detail": "• 10 min on the sand at Kurrawa, then 10 min back to the JW."
+     "detail": "• Tangalooma Bypass → Middle Road (inland, ~30 km/h) across the island to the east beach, then a short run north on the sand to the Blue Lagoon access track.\n• Ocean beach high water 11:32 AM — fine to drive after 1:32 PM.",
+     "notes": "TIDES — official 2027 predictions (Maritime Safety Queensland, Queensland Tide Tables 2027, Brisbane Bar):\n• Tangalooma (west beach): high water 23 min earlier, low water 27 min earlier than Brisbane Bar.\n• Ocean beaches (east side, Cape Moreton): 1 hr 30 min earlier than Brisbane Bar.\n• Queensland Parks: drive beaches around low tide; avoid 2 hrs either side of high tide.\n\nToday — Tangalooma: low 6:03 AM, high 12:39 PM, low 7:28 PM. Ocean beach: high 11:32 AM, low 6:25 PM."
     },
     {
-     "start": "6:50 PM",
+     "start": "3:05 PM",
+     "end": "4:30 PM",
+     "title": "Blue Lagoon — swim in the freshwater lake",
+     "typeName": "Beach/Pool",
+     "emoji": "💧",
+     "detail": "• Moreton's largest freshwater lake, tea-tree tinted and warm — the closest thing to Fraser's lakes.\n• Shallow sandy edges; no lifeguards."
+    },
+    {
+     "start": "4:30 PM",
+     "end": "5:10 PM",
+     "title": "East beach → Middle Road → resort",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• Same way back; off the sand well before the next high tide (after midnight)."
+    },
+    {
+     "start": "5:10 PM",
+     "end": "5:50 PM",
+     "title": "Showers, change",
+     "typeName": "Logistics",
+     "emoji": "🚿"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Fire & Stone (Asian, shared plates)",
+     "typeName": "Dining",
+     "emoji": "🥢",
+     "detail": "• Sichuan and broader Asian; dishes come out to share as they're ready.\n• Bookings preferred: (07) 3410 6791. Open 5:00–8:30 PM.\n• Kids' meals: chicken nuggets, sweet-chili chicken tenders or fish, each with chips.",
+     "menuUrl": "https://www.tangalooma.com/TangaloomaV2/media/Documents/Menus/2026-Fire-and-stone-menu.pdf",
+     "est": 96.2,
+     "notes": "PRICED FROM THE CURRENT MENU (2026):\n• Honey chicken AUD 39 + Mongolian beef AUD 39 + special fried rice AUD 30 to share\n• Kids' nuggets & chips AUD 20 + sweet-chili tenders & chips AUD 20\n• = AUD 148 ≈ USD 96.\n• Prices include 10% GST; tipping isn't expected."
+    },
+    {
+     "start": "7:00 PM",
      "end": "7:30 PM",
-     "title": "Baths, pajamas — lights out by 7:30",
+     "title": "Watch the dolphins from the jetty",
+     "typeName": "Wildlife",
+     "emoji": "🐬",
+     "detail": "• Viewing is free for resort guests every night (feeding is once per stay)."
+    },
+    {
+     "start": "7:30 PM",
+     "end": "8:00 PM",
+     "title": "Lay out tomorrow’s gear — 6:50 AM start",
      "typeName": "Hotel",
      "emoji": "🛏️"
     }
    ]
   },
   {
-   "date": "Saturday, December 18, 2027",
+   "date": "Sunday, December 19, 2027",
+   "title": "4WD the north end — Champagne Pools, Cape Moreton lighthouse; The Desert at golden hour",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "6:15 AM",
+     "end": "6:50 AM",
+     "title": "Quick breakfast in the suite; pack the picnic",
+     "typeName": "Dining",
+     "emoji": "🥣",
+     "detail": "• Early start for the morning low tide on the west beach."
+    },
+    {
+     "start": "6:50 AM",
+     "end": "7:20 AM",
+     "title": "West beach north → Bulwer",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• From the Wrecks 3.7 km north to the Cowan Bypass (1.7 km), back onto the west beach and 5.4 km to the Bulwer–North Point Road, just past the Bulwer Wrecks (Queensland Parks route).\n• Tide: Tangalooma low water 7:00 AM — ideal.",
+     "notes": "TIDES — official 2027 predictions (Maritime Safety Queensland, Queensland Tide Tables 2027, Brisbane Bar):\n• Tangalooma (west beach): high water 23 min earlier, low water 27 min earlier than Brisbane Bar.\n• Ocean beaches (east side, Cape Moreton): 1 hr 30 min earlier than Brisbane Bar.\n• Queensland Parks: drive beaches around low tide; avoid 2 hrs either side of high tide.\n\nToday — Tangalooma: low 7:00 AM, high 1:29 PM. Ocean beach: high 12:22 PM (not used today)."
+    },
+    {
+     "start": "7:20 AM",
+     "end": "7:40 AM",
+     "title": "Bulwer–North Point Road → Five Hills lookout",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• 7.8 km inland."
+    },
+    {
+     "start": "7:40 AM",
+     "end": "7:55 AM",
+     "title": "Five Hills lookout",
+     "typeName": "Sightseeing",
+     "emoji": "📸",
+     "detail": "• View over the north end of the island."
+    },
+    {
+     "start": "7:55 AM",
+     "end": "8:15 AM",
+     "title": "On to North Point",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• 3.5 km to Yellow Patch Beach, then 2 km north-east to North Point — go around the tidal lagoons."
+    },
+    {
+     "start": "8:15 AM",
+     "end": "9:30 AM",
+     "title": "Champagne Pools and Honeymoon Bay",
+     "typeName": "Beach",
+     "emoji": "🫧",
+     "detail": "• Champagne Pools: rock pools where waves fizz over the edge — best on the falling-to-low tide this morning.\n• Honeymoon Bay: sheltered, picturesque cove; 700 m return walk from the north end of the North Point camping area.\n• Swim only in the pools/bay; stay off the outer rocks — surf can wash you off (Queensland Parks)."
+    },
+    {
+     "start": "9:30 AM",
+     "end": "9:40 AM",
+     "title": "Drive to Cape Moreton car park",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• 900 m back, then North Point–Cape Moreton Road 2 km."
+    },
+    {
+     "start": "9:40 AM",
+     "end": "10:35 AM",
+     "title": "Cape Moreton Lighthouse walk",
+     "typeName": "Sightseeing",
+     "emoji": "🗼",
+     "detail": "• 1.5 km stepped circuit (allow 1 hr) to Queensland's first lighthouse (1857), the only stone one in the state; information centre.\n• Look down for turtles, rays and dolphins.\n• Non-flush toilets."
+    },
+    {
+     "start": "10:35 AM",
+     "end": "11:00 AM",
+     "title": "North Point → Bulwer (same track back)",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• Bulwer–North Point Road back to the west beach at Bulwer."
+    },
+    {
+     "start": "11:00 AM",
+     "end": "11:30 AM",
+     "title": "West beach south → resort",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• Via the Cowan Bypass; off the west beach by 11:30 AM (2 hrs before the 1:29 PM Tangalooma high tide).",
+     "flag": "Hard stop: leave Bulwer by 11:00 AM."
+    },
+    {
+     "start": "11:30 AM",
+     "end": "1:00 PM",
+     "title": "Rinse off, pool",
+     "typeName": "Free Time",
+     "emoji": "🏊"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "1:45 PM",
+     "title": "Picnic lunch in the suite",
+     "typeName": "Dining",
+     "emoji": "🥪"
+    },
+    {
+     "start": "1:45 PM",
+     "end": "4:15 PM",
+     "title": "Quiet time, beach",
+     "typeName": "Free Time",
+     "emoji": "🛋️"
+    },
+    {
+     "start": "4:15 PM",
+     "end": "4:30 PM",
+     "title": "Drive to The Desert car park",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• Inland tracks only — no tide issue: Tangalooma Bypass → The Desert Road, ~5 km, 15 min at 30 km/h."
+    },
+    {
+     "start": "4:30 PM",
+     "end": "5:45 PM",
+     "title": "The Desert — sand tobogganing at golden hour",
+     "typeName": "Sightseeing",
+     "emoji": "🏜️",
+     "detail": "• Moreton's giant sand blow, a popular tobogganing spot (Queensland Parks).\n• Late afternoon: the sand is cooler and the light is pink.\n• Ride lying on your stomach; little ones start partway up.",
+     "notes": "• Free — your own boards from BCF."
+    },
+    {
+     "start": "5:45 PM",
+     "end": "6:00 PM",
+     "title": "Drive back to the resort",
+     "typeName": "Drive",
+     "emoji": "🚙"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Beach BBQ (bistro on the beach)",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Overlooks Moreton Bay; open 5:00–8:30 PM (closed Mon & Tue — open tonight).\n• Kids' meals come with chips and salad.",
+     "menuUrl": "https://www.tangalooma.com/TangaloomaV2/media/Documents/Menus/Beach-BBQ-A4-Menu_190626.pdf",
+     "est": 65.98,
+     "notes": "PRICED FROM THE CURRENT MENU (Jun 2026):\n• Chicken parmigiana AUD 31 + Humpty Doo barramundi AUD 38.50\n• 2 kids' meals (minute steak / chicken schnitzel) AUD 16 each\n• = AUD 101.50 ≈ USD 66.\n• No weekend surcharge (15% on public holidays only).\n• Australian menu prices include 10% GST; tipping isn't expected."
+    },
+    {
+     "start": "7:00 PM",
+     "end": "7:45 PM",
+     "title": "Bed — early start again tomorrow",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Monday, December 20, 2027",
+   "title": "4WD the south end — Big Sandhills, Mirapool, Rous Battery; BBQ night",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "6:00 AM",
+     "end": "6:45 AM",
+     "title": "Breakfast in the suite; pack the picnic",
+     "typeName": "Dining",
+     "emoji": "🥣",
+     "detail": "• Cooler with ice, water, snacks, boards in the car."
+    },
+    {
+     "start": "6:45 AM",
+     "end": "7:05 AM",
+     "title": "Walk to the car park, load up",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "7:05 AM",
+     "end": "7:35 AM",
+     "title": "West beach south → Big Sandhills",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• Tangalooma Bypass 1 km to the west beach just south of the resort, then 11.5 km south (Queensland Parks route).\n• Tide: Tangalooma low water 8:03 AM — ideal.\n• Beach speed limit 60 km/h; slow near people.",
+     "notes": "TIDES — official 2027 predictions (Maritime Safety Queensland, Queensland Tide Tables 2027, Brisbane Bar):\n• Tangalooma (west beach): high water 23 min earlier, low water 27 min earlier than Brisbane Bar.\n• Ocean beaches (east side, Cape Moreton): 1 hr 30 min earlier than Brisbane Bar.\n• Queensland Parks: drive beaches around low tide; avoid 2 hrs either side of high tide.\n\nToday — Tangalooma: low 8:03 AM, high 2:21 PM. Ocean beach: low 7:00 AM, high 1:14 PM.",
+     "flag": "Queensland Parks: the west beach between Tangalooma and Kooringal is not always passable even at low tide — ask Wongai/rangers about current conditions."
+    },
+    {
+     "start": "7:35 AM",
+     "end": "8:50 AM",
+     "title": "Big Sandhills — tobogganing on the biggest dunes",
+     "typeName": "Sightseeing",
+     "emoji": "🏜️",
+     "detail": "• Steepest dunes on the island; go early before the sand heats up.\n• Stay off the vegetation; walk up the open sand only."
+    },
+    {
+     "start": "8:50 AM",
+     "end": "9:05 AM",
+     "title": "Little Sandhills (2 km further south)",
+     "typeName": "Sightseeing",
+     "emoji": "🏜️",
+     "detail": "• Quick stop and photos."
+    },
+    {
+     "start": "9:05 AM",
+     "end": "9:30 AM",
+     "title": "Kooringal → Mirapool bypass",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• Before Kooringal turn onto the Kooringal–Mirapool Road (2 km), then the Mirapool Bypass Track (1.3 km).\n• Beach at Mirapool is closed to vehicles 3 hrs either side of high tide — use the bypass."
+    },
+    {
+     "start": "9:30 AM",
+     "end": "9:45 AM",
+     "title": "Mirapool Lagoon",
+     "typeName": "Wildlife",
+     "emoji": "🦩",
+     "detail": "• Shorebird sanctuary — look, no swimming (prohibited)."
+    },
+    {
+     "start": "9:45 AM",
+     "end": "10:05 AM",
+     "title": "East beach north → Rous Battery",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• 7.5 km north on the ocean beach."
+    },
+    {
+     "start": "10:05 AM",
+     "end": "10:30 AM",
+     "title": "Rous Battery — WWII gun emplacements",
+     "typeName": "Sightseeing",
+     "emoji": "🏚️",
+     "detail": "• Short walk around the fort remains; supervise kids around the relics."
+    },
+    {
+     "start": "10:30 AM",
+     "end": "10:50 AM",
+     "title": "East beach north → Middle Road",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• 11.6 km; off the beach before 11:14 AM (2 hrs before the 1:14 PM ocean high tide)."
+    },
+    {
+     "start": "10:50 AM",
+     "end": "11:20 AM",
+     "title": "Middle Road west → resort",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~6 km inland at 30 km/h."
+    },
+    {
+     "start": "11:20 AM",
+     "end": "12:30 PM",
+     "title": "Rinse off, change, pool",
+     "typeName": "Free Time",
+     "emoji": "🚿",
+     "detail": "• Sand off the boards and the kids."
+    },
+    {
+     "start": "12:30 PM",
+     "end": "1:00 PM",
+     "title": "Rest in the suite",
+     "typeName": "Free Time",
+     "emoji": "🛋️"
+    },
+    {
+     "start": "1:00 PM",
+     "end": "1:45 PM",
+     "title": "Picnic lunch",
+     "typeName": "Dining",
+     "emoji": "🥪",
+     "detail": "• From the groceries, at the suite or a resort picnic table."
+    },
+    {
+     "start": "1:45 PM",
+     "end": "5:00 PM",
+     "title": "Quiet time, then pool",
+     "typeName": "Free Time",
+     "emoji": "🏊"
+    },
+    {
+     "start": "5:00 PM",
+     "end": "6:30 PM",
+     "title": "Optional: Illuminated Wrecks cruise (glass-bottom, sunset)",
+     "typeName": "Excursion",
+     "emoji": "🛥️",
+     "detail": "• 41 ft glass-bottom boat; lights draw fish up around the wrecks at sunset — no getting wet.",
+     "notes": "• Adult AUD 79, child AUD 65 → AUD 288 for four (verified, resort site) ≈ USD 187 — not in the totals."
+    },
+    {
+     "start": "6:30 PM",
+     "end": "7:30 PM",
+     "title": "BBQ dinner at the resort barbecues",
+     "typeName": "Dining",
+     "emoji": "🔥",
+     "detail": "• Free gas barbecues around the resort grounds; Beach BBQ restaurant is closed Tuesdays.\n• Sausages/steak, rolls and salad from the groceries.",
+     "notes": "• Food included in the grocery estimate."
+    },
+    {
+     "start": "7:30 PM",
+     "end": "8:00 PM",
+     "title": "Pack most bags — check-out tomorrow",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• Check-out is strictly 10 AM; the ferry leaves at 10:15 AM."
+    }
+   ]
+  },
+  {
+   "date": "Tuesday, December 21, 2027",
+   "title": "Micat back to Brisbane → Gold Coast; JW lagoon; Kurrawa beachfront dinner",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast in the suite",
+     "typeName": "Dining",
+     "emoji": "🥣",
+     "detail": "• Finish the groceries."
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:45 AM",
+     "title": "Pack, clean out the fridge, return towels",
+     "typeName": "Logistics",
+     "emoji": "🧳"
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:15 AM",
+     "title": "Check out, load the car",
+     "typeName": "Hotel",
+     "emoji": "🧳",
+     "detail": "• Check-out is strictly 10 AM."
+    },
+    {
+     "start": "9:15 AM",
+     "end": "9:30 AM",
+     "title": "Drive to the Micat landing at the Wrecks",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~2 km north via the bypass."
+    },
+    {
+     "start": "9:30 AM",
+     "end": "10:15 AM",
+     "title": "Micat check-in at the landing",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Toilets at The Wrecks campground.",
+     "flag": "Confirm the island-side check-in time when booking."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "11:45 AM",
+     "title": "Micat vehicle ferry — Moreton Island → Port of Brisbane",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "detail": "• Departs 10:15 AM, arrives 11:45 AM.\n• Dec 2026 weekday sailings off the island: 10:15 AM and 3:00 PM.",
+     "route": "Tangalooma Wrecks → Port of Brisbane",
+     "est": 175.38,
+     "notes": "• AUD 256.60 for 1 vehicle + 2 adults + 2 children (Micat quote, Dec 2026 stand-in) + 5.15% fuel levy = AUD ~270 ≈ USD 175.\n\nTide: Tangalooma low 9:15 AM — easy drive to the landing.",
+     "flag": "Not booked — book with the outbound sailing; the 3 PM Thursday fills first."
+    },
+    {
+     "start": "11:45 AM",
+     "end": "12:05 PM",
+     "title": "Drive to BayWash Tingalpa",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• To: 4 Tenbar St, Tingalpa — ~10 km.\n• Re-inflate tyres to road pressure first (air at the wash or a servo)."
+    },
+    {
+     "start": "12:05 PM",
+     "end": "12:35 PM",
+     "title": "Underbody wash + quick vacuum",
+     "typeName": "Logistics",
+     "emoji": "🧽",
+     "detail": "• Wongai requires a quick underbody wash before handback.\n• BayWash is open 24 hours.",
+     "est": 16.25,
+     "notes": "• ~AUD 25 — estimated."
+    },
+    {
+     "start": "12:35 PM",
+     "end": "1:35 PM",
+     "title": "Drive Tingalpa → Bumbles Café, Budds Beach (Surfers Paradise)",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• To: 19–21 River Dr, Budds Beach — ~1 hr via the Gateway Motorway and the M1 (the Port → JW leg is 1 hr 2 min, Google Maps, checked Nov 2026)."
+    },
+    {
+     "start": "1:40 PM",
+     "end": "2:30 PM",
+     "title": "Lunch — Bumbles Café (riverside, Budds Beach)",
+     "typeName": "Dining",
+     "emoji": "🥪",
+     "detail": "• Garden café on the Nerang River, a Gold Coast favourite since 1999.\n• Lunch menu from noon; kitchen open to 2:30 PM weekdays — order as soon as you sit.\n• Street parking on River Dr; 4 min from the JW.",
+     "menuUrl": "https://bumblescafe.com.au/wp-content/uploads/2025/10/Bumbles-Menu-OCT-2025.pdf",
+     "est": 57.62,
+     "notes": "PRICED FROM THE CURRENT MENU (Oct 2025):\n• Queen Bee burger AUD 24 + grilled salmon with Greek salad AUD 28\n• Kids (no kids' menu): chicken sandwich & fries AUD 16.50 + prawn sandwich & fries AUD 18.50\n• = AUD 87 + 1.9% card surcharge = AUD ~89 ≈ USD 58. Friday — no weekend surcharge (5% Sat–Sun, 15% public holidays).\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "flag": "Menu is dated Oct 2025 — check the current one closer to the trip."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "2:40 PM",
+     "title": "Drive to the JW Marriott",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• 4 min (Google Maps, checked Nov 2026)."
+    },
+    {
+     "start": "2:40 PM",
+     "end": "3:05 PM",
+     "title": "Check in — JW Marriott Gold Coast Resort & Spa (4 nights)",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Saltwater lagoon stocked with ~300 tropical fish (20 species) — snorkel gear from the recreation centre; freshwater pool with a kids' slide.\n• Check-in from 3 PM.\n• Self-parking AUD 30/day; valet AUD 50/day (verified, Misono/JW site).",
+     "program": "Marriott Bonvoy",
+     "points": "336000",
+     "nights": "4 nights (Tue Dec 21 – Sat Dec 25)",
+     "roomType": "Deluxe Room, 2 beds (confirm it books for 4)",
+     "address": "158 Ferny Ave, Surfers Paradise QLD 4217",
+     "est": 78.0,
+     "notes": "POINTS — PLANNING ASSUMPTION:\n• ~84,000 pts/night × 4 = 336,000 (December holiday pricing seen in Nov 2026; rooms.aero's recent lowest is 73,000).\n• Marriott.com blocked automated searches — confirm on marriott.com the day Dec 2027 opens.\n• No 5th-night-free (4 nights).\n\nCASH: self-parking AUD 30 × 4 days = AUD 120 ≈ USD 78 (in this block's estimate).",
+     "flag": "Not booked. Confirm the 2-bed room books on points for 2 adults + 2 children."
+    },
+    {
+     "start": "3:05 PM",
+     "end": "5:00 PM",
+     "title": "JW lagoon — snorkel with the fish",
+     "typeName": "Beach/Pool",
+     "emoji": "🐠",
+     "detail": "• Swim and snorkel the saltwater lagoon; sandy beach edges, swim-up grotto and waterfall.\n• Gear from the recreation centre."
+    },
+    {
+     "start": "5:00 PM",
+     "end": "5:40 PM",
+     "title": "Showers, change for dinner",
+     "typeName": "Logistics",
+     "emoji": "🚿"
+    },
+    {
+     "start": "5:40 PM",
+     "end": "5:55 PM",
+     "title": "Drive to Kurrawa Surf Club, Broadbeach",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• To: Kurrawa Surf Club, Old Burleigh Rd, Broadbeach — 10 min (Google Maps, checked Nov 2026).\n• Street/beachfront parking along Old Burleigh Rd (paid)."
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Kurrawa Surf Club (beachfront deck)",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Right on Broadbeach with an ocean view — first-night dinner on the sand's edge.\n• Dinner from 5:30 PM. Non-members sign in with photo ID.\n• Little Nippers kids' meals come with a drink and an activity pack.",
+     "menuUrl": "https://www.kurrawasurf.com.au/_files/ugd/59693a_386dc890d74d440dac1f5412549b6877.pdf",
+     "est": 65.65,
+     "notes": "PRICED FROM THE CURRENT MENU (visitor prices):\n• Chicken parmigiana AUD 30 + Humpty Doo barramundi AUD 39\n• 2 Little Nippers meals (cheeseburger / battered fish & chips) AUD 16 each\n• = AUD 101 ≈ USD 66. Tuesday — no surcharge listed.\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "flag": "Book a 6:00 PM table online (kurrawasurf.com.au)."
+    },
+    {
+     "start": "7:00 PM",
+     "end": "7:20 PM",
+     "title": "Beach walk, then drive back to the JW",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• 10 min on the sand at Kurrawa, then 10 min back to the JW."
+    },
+    {
+     "start": "7:20 PM",
+     "end": "7:50 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Wednesday, December 22, 2027",
    "title": "Tallebudgera Creek swim, Burleigh Head headland walk, Burleigh Pavilion lunch; Hurricane’s dinner",
    "planned": false,
    "blocks": [
@@ -1674,7 +2292,7 @@ class Component extends DCLogic {
      "title": "Tallebudgera Creek — calm, clear creek swim",
      "typeName": "Beach/Pool",
      "emoji": "🏖️",
-     "detail": "• The Gold Coast's best calm water for kids: a wide, sandy, shallow creek mouth under Burleigh headland.\n• Lifeguards patrol from Tower 17 on weekends and public holidays, 8 AM – 5 PM, September school holidays to May (City of Gold Coast) — swim between the red and yellow flags.\n• Toilets, beach showers, tables and shade in the parkland.\n• Calmest on an incoming tide — check the MSQ Gold Coast Seaway table for the day."
+     "detail": "• The Gold Coast's best calm water for kids: a wide, sandy, shallow creek mouth under Burleigh headland.\n• Lifeguards patrol from Tower 17 on weekends and public holidays, 8 AM – 5 PM (City of Gold Coast) — today is a Wednesday, so expect no patrol: stay in the shallows and keep the kids close.\n• Toilets, beach showers, tables and shade in the parkland.\n• Calmest on an incoming tide — check the MSQ Gold Coast Seaway table for the day."
     },
     {
      "start": "11:45 AM",
@@ -1705,11 +2323,11 @@ class Component extends DCLogic {
      "title": "Lunch — Burleigh Pavilion (beachfront)",
      "typeName": "Dining",
      "emoji": "🍽️",
-     "detail": "• Right on Burleigh beach, looking up the coast to Surfers Paradise.\n• Full menu from 11 AM on Fridays–Sundays; kids' menu.",
+     "detail": "• Right on Burleigh beach, looking up the coast to Surfers Paradise.\n• Full menu from 12 PM Monday–Thursday; kids' menu.",
      "menuUrl": "https://www.thepavburleigh.com/food-menu",
      "est": 62.37,
-     "notes": "PRICED FROM THE CURRENT MENU:\n• Battered fish & chips AUD 33 + grilled beef burger AUD 30\n• Kids' burger AUD 16 + kids' battered fish AUD 16\n• = AUD 95 + 1% card surcharge = AUD ~96 ≈ USD 62.\n• Saturday — no surcharge (10% Sundays, 15% public holidays).\n• Australian menu prices include 10% GST; tipping isn't expected.",
-     "flag": "Book a 1:00 PM table — Burleigh Pavilion is busy on summer Saturdays."
+     "notes": "PRICED FROM THE CURRENT MENU:\n• Battered fish & chips AUD 33 + grilled beef burger AUD 30\n• Kids' burger AUD 16 + kids' battered fish AUD 16\n• = AUD 95 + 1% card surcharge = AUD ~96 ≈ USD 62.\n• Wednesday — no surcharge (10% Sundays, 15% public holidays).\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "flag": "Book a 1:00 PM table — Christmas-holiday weeks are busy."
     },
     {
      "start": "2:00 PM",
@@ -1768,7 +2386,7 @@ class Component extends DCLogic {
      "detail": "• Famous for flame-grilled ribs; views over Surfers Paradise beach.\n• Kids' menu (under 12s): pasta, cheeseburger & chips, crumbed chicken & chips.",
      "menuUrl": "https://www.hurricanesgrillandbar.com.au/surfers-paradise-menu",
      "est": 77.35,
-     "notes": "PRICED FROM THE CURRENT MENU:\n• Half rack signature pork ribs AUD 56 + grilled chicken burger AUD 29\n• 2 kids' meals AUD 17 each\n• = AUD 119 ≈ USD 77.\n• Saturday — no surcharge (10% Sundays, 15–20% public holidays).\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "notes": "PRICED FROM THE CURRENT MENU:\n• Half rack signature pork ribs AUD 56 + grilled chicken burger AUD 29\n• 2 kids' meals AUD 17 each\n• = AUD 119 ≈ USD 77.\n• Wednesday — no surcharge (10% Sundays, 15–20% public holidays).\n• Australian menu prices include 10% GST; tipping isn't expected.",
      "flag": "Book a 6:00 PM table."
     },
     {
@@ -1781,7 +2399,7 @@ class Component extends DCLogic {
    ]
   },
   {
-   "date": "Sunday, December 19, 2027",
+   "date": "Thursday, December 23, 2027",
    "title": "Rainbow Bay & Greenmount — calm north-facing beaches, Point Danger; Misono teppanyaki",
    "planned": false,
    "blocks": [
@@ -1845,7 +2463,7 @@ class Component extends DCLogic {
      "detail": "• Upstairs deck over Rainbow Bay and Snapper Rocks.\n• Lunch 11 AM – 2 PM. Nipper's Meals (up to 12) include a kids' activity pack.",
      "menuUrl": "https://www.rainbowbayslsc.com.au/site/wp-content/uploads/2026_June_Bistro_Menu.pdf",
      "est": 55.9,
-     "notes": "PRICED FROM THE CURRENT MENU (June 2026, visitor prices):\n• Angus beef burger AUD 26 + grilled barramundi AUD 36\n• 2 Nipper's Meals (cheeseburger / fish bites & chips) AUD 12 each\n• = AUD 86 ≈ USD 56.\n• No Sunday surcharge shown on the menu.\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "notes": "PRICED FROM THE CURRENT MENU (June 2026, visitor prices):\n• Angus beef burger AUD 26 + grilled barramundi AUD 36\n• 2 Nipper's Meals (cheeseburger / fish bites & chips) AUD 12 each\n• = AUD 86 ≈ USD 56.\n• Thursday — no surcharge shown on the menu.\n• Australian menu prices include 10% GST; tipping isn't expected.",
      "flag": "Kitchen closes at 2 PM — be seated by 1:15. Book on (07) 5536 6390."
     },
     {
@@ -1867,10 +2485,10 @@ class Component extends DCLogic {
     {
      "start": "4:15 PM",
      "end": "5:45 PM",
-     "title": "Showers, pack island bags for Moreton",
+     "title": "Showers, rest",
      "typeName": "Logistics",
      "emoji": "🧳",
-     "detail": "• Island bags: swimwear, rash guards, hats, sunscreen, kids' masks, water shoes, a warm layer.\n• Everything else stays packed in the Prado."
+     "detail": "• Rinse the swim gear."
     },
     {
      "start": "5:45 PM",
@@ -1888,730 +2506,224 @@ class Component extends DCLogic {
      "emoji": "🔥",
      "detail": "• Teppanyaki show cooking at the grill — a kids' favourite.\n• Open Tue–Sun 5:00–8:30 PM.\n• Kids' banquets (up to 12) come with miso soup, hibachi vegetables, hibachi chicken rice and an ice block.",
      "menuUrl": "https://www.misonorestaurant.com/our-menus",
-     "est": 144.43,
-     "notes": "PRICED FROM THE CURRENT MENU:\n• Wadaiko banquet (fillet steak + chicken) AUD 68 + Teriyaki Chicken banquet AUD 58\n• 2 kids' Teriyaki Chicken banquets AUD 38 each\n• = AUD 202 ≈ USD 131\n• Sunday surcharge not published — modeled +10% = AUD ~222 ≈ USD 144.\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "est": 131.3,
+     "notes": "PRICED FROM THE CURRENT MENU:\n• Wadaiko banquet (fillet steak + chicken) AUD 68 + Teriyaki Chicken banquet AUD 58\n• 2 kids' Teriyaki Chicken banquets AUD 38 each\n• = AUD 202 ≈ USD 131. Thursday — no surcharge.\n• Australian menu prices include 10% GST; tipping isn't expected.",
      "flag": "Book a 6:00 PM grill table (07 5592 9800) — teppanyaki tables are shared, ask for a family table."
     },
     {
      "start": "7:15 PM",
      "end": "7:45 PM",
-     "title": "Bed — ferry day tomorrow",
+     "title": "Bed",
      "typeName": "Hotel",
      "emoji": "🛏️"
     }
    ]
   },
   {
-   "date": "Monday, December 20, 2027",
-   "title": "Gold Coast → groceries → Micat to Moreton Island; first swim, dolphin feeding",
+   "date": "Friday, December 24, 2027",
+   "title": "Christmas Eve — Currumbin Alley swim and Currumbin Rock; Vikings lunch; beachfront dinner at Northcliffe",
    "planned": false,
    "blocks": [
     {
-     "start": "7:00 AM",
-     "end": "7:45 AM",
+     "start": "7:15 AM",
+     "end": "8:00 AM",
      "title": "Breakfast — Citrique buffet (JW Marriott)",
      "typeName": "Dining",
      "emoji": "🍳",
-     "detail": "• Same buffet as Saturday — the quickest option on check-out morning.",
+     "detail": "• Same buffet as Wednesday — easiest on the last full Gold Coast day.",
      "est": 114.4,
      "notes": "PRICED FROM LISTED PRICES (EatClub listing): adults AUD 55 × 2 + kids AUD 33 × 2 = AUD 176 ≈ USD 114.\n• Australian menu prices include 10% GST; tipping isn't expected."
     },
     {
-     "start": "7:45 AM",
-     "end": "8:45 AM",
-     "title": "Pack, check out, load the Prado",
-     "typeName": "Hotel",
-     "emoji": "🧳",
-     "detail": "• Island bags on top; cooler empty and ready."
-    },
-    {
-     "start": "8:45 AM",
-     "end": "9:05 AM",
-     "title": "Drive to Woolworths Helensvale",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• To: Woolworths Helensvale, 29 Millaroo Dr (Westfield Helensvale) — 19 min (Google Maps, checked Nov 2026)."
-    },
-    {
-     "start": "9:05 AM",
-     "end": "10:05 AM",
-     "title": "Groceries — Woolworths Helensvale",
-     "typeName": "Shopping",
-     "emoji": "🛒",
-     "detail": "• The resort only has a small, pricey convenience shop.\n• For 3 nights: breakfasts (cereal, milk, yogurt, bread, eggs, fruit), 2 picnic lunches for the 4WD days, today's ferry picnic, snacks, 20+ L of water, drinks.\n• Tue Dec 21 BBQ dinner: sausages/steak, rolls, salad (free resort barbecues).\n• Pack the cooler last with ice.",
-     "est": 149.5,
-     "notes": "• ~AUD 230 — estimated ≈ USD 150.",
-     "flag": "Confirm Monday opening hours (usually from 7 AM)."
-    },
-    {
-     "start": "10:05 AM",
-     "end": "11:05 AM",
-     "title": "Drive to the Micat ferry terminal, Port of Brisbane",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• To: 14 Howard Smith Dr, Port of Brisbane.\n• 48 min (Google Maps, checked Nov 2026) via the M1, Gateway Motorway and Port of Brisbane Motorway; 60 min allowed for weekday traffic.\n• Gates open 1 hr before departure (11:30 AM)."
-    },
-    {
-     "start": "11:05 AM",
-     "end": "12:30 PM",
-     "title": "Micat check-in — stay in the vehicle",
-     "typeName": "Logistics",
-     "emoji": "⏱️",
-     "detail": "• A crew member comes to the car to check you in.\n• Bathroom stop at the terminal before boarding."
-    },
-    {
-     "start": "12:30 PM",
-     "end": "2:00 PM",
-     "title": "Micat vehicle ferry — Port of Brisbane → Moreton Island (picnic lunch on board)",
-     "typeName": "Transportation",
-     "emoji": "⛴️",
-     "detail": "• Departs 12:30 PM, arrives ~2:00 PM (90 min). Lands on the beach at the Tangalooma Wrecks.\n• Picnic lunch from the groceries on the upper deck at ~1 PM; there's also a café and bar on board.",
-     "route": "Port of Brisbane → Tangalooma Wrecks",
-     "est": 194.11,
-     "notes": "• Micat quote seen Nov 2026: AUD 243–284 one way for 1 vehicle + 2 adults + 2 children (stand-in dates); modeled AUD 284\n• + 5.15% fuel levy on new bookings = AUD ~299 ≈ USD 194.\n• Dec 2026 Monday sailings from Brisbane: 4:30 AM, 8:00 AM, 12:30 PM (demand-based timetable).",
-     "flag": "Not booked. Holiday sailings sell out — book as soon as Dec 2027 opens."
-    },
-    {
-     "start": "2:00 PM",
-     "end": "2:15 PM",
-     "title": "Drive off at the Wrecks → resort northern car park",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• Engage 4WD; lower tyre pressure as Wongai shows you.\n• ~5 min south to the Tangalooma Island Resort northern car park (official guests only).\n• No driving on the beach in front of the resort — use the bypass.\n• Tide: Tangalooma high water 2:21 PM — go slowly on the short beach stretch near the top of the tide.",
-     "notes": "TIDES — official 2027 predictions (Maritime Safety Queensland, Queensland Tide Tables 2027, Brisbane Bar):\n• Tangalooma (west beach): high water 23 min earlier, low water 27 min earlier than Brisbane Bar.\n• Ocean beaches (east side, Cape Moreton): 1 hr 30 min earlier than Brisbane Bar.\n• Queensland Parks: drive beaches around low tide; avoid 2 hrs either side of high tide.\n\nToday (Tangalooma): low 8:03 AM, high 2:21 PM, low 9:06 PM."
-    },
-    {
-     "start": "2:15 PM",
-     "end": "2:45 PM",
-     "title": "Check in — Tangalooma Island Resort, 1-bedroom Family Suite",
-     "typeName": "Hotel",
-     "emoji": "🏨",
-     "detail": "• Reception in the Resort Centre.\n• Family Suite: 1 bedroom + large living area + kitchenette; sleeps up to 6; includes wild dolphin feeding.\n• Register for tonight's dolphin feeding at The Eco Centre (registration 1–4 PM).\n• Free beach towels from Reception (refundable deposit).",
-     "est": 875.55,
-     "nights": "3 nights (Mon Dec 20 – Thu Dec 23)",
-     "roomType": "Family Suite (1 bedroom)",
-     "notes": "• AUD 449/night — verified on the resort's booking site for Dec 6–10, 2027 (furthest dates bookable, 2 adults + 2 kids).\n• 3 nights × 449 = AUD 1,347 ≈ USD 876.\n• Dec 20–23 is Queensland school holidays — expect higher.\n• Check-out is strictly 10:00 AM.\n• Car parks can be some distance from the room — no porter from the car park.",
-     "flag": "Not booked. Bookings open 399 days ahead — Dec 20, 2027 opens ~Nov 16, 2026. Book that day; the 2026 dates sold out.",
-     "program": "Tangalooma Island Resort"
-    },
-    {
-     "start": "2:45 PM",
-     "end": "3:30 PM",
-     "title": "Unload groceries, settle into the suite",
-     "typeName": "Free Time",
-     "emoji": "🛋️",
-     "detail": "• Cooler contents into the fridge; swimsuits on."
-    },
-    {
-     "start": "3:30 PM",
-     "end": "4:45 PM",
-     "title": "Swim at the resort beach (Moreton Bay side)",
-     "typeName": "Beach",
-     "emoji": "🏖️",
-     "detail": "• Calm, west-facing bay beach in front of the resort.\n• No lifeguards anywhere on the island — stay with the kids in the water.\n• Water is ~77°F in December.",
-     "flag": "Queensland Parks: no patrolled swimming areas on Moreton Island."
-    },
-    {
-     "start": "4:45 PM",
-     "end": "5:00 PM",
-     "title": "Kookaburra feeding (free)",
-     "typeName": "Wildlife",
-     "emoji": "🐦",
-     "detail": "• Daily 4:45 PM outside the Deep Blue Apartments, run by the Eco Centre rangers.\n• No booking needed."
-    },
-    {
-     "start": "5:00 PM",
-     "end": "5:30 PM",
-     "title": "Showers, dry clothes",
-     "typeName": "Logistics",
-     "emoji": "🚿"
-    },
-    {
-     "start": "5:30 PM",
-     "end": "6:20 PM",
-     "title": "Dinner — The Beach Café",
-     "typeName": "Dining",
-     "emoji": "🍕",
-     "detail": "• Beach BBQ is closed Mondays.\n• Open 5:00–9:00 PM for dinner.\n• Earlier dinner tonight — the dolphins come in at sunset.",
-     "menuUrl": "https://www.tangalooma.com/TangaloomaV2/media/Documents/Menus/Beach-Cafe-Menu_190726.pdf",
-     "est": 59.48,
-     "notes": "PRICED FROM THE CURRENT MENU (Jul 2026):\n• Grilled lemon thyme chicken AUD 32 + pepperoni pizza AUD 29\n• Kids' fish & chips AUD 16 + chicken tenders & chips AUD 14.50\n• = AUD 91.50 ≈ USD 59.\n• Australian menu prices include 10% GST; tipping isn't expected."
-    },
-    {
-     "start": "6:20 PM",
-     "end": "6:40 PM",
-     "title": "Back to the suite — get ready for the dolphins",
-     "typeName": "Logistics",
-     "emoji": "⏱️",
-     "detail": "• Wear clothes that can get wet up to the waist.\n• No sunscreen, insect repellent or perfume on hands/legs; remove rings and watches."
-    },
-    {
-     "start": "6:40 PM",
-     "end": "7:45 PM",
-     "title": "Wild dolphin feeding at the jetty",
-     "typeName": "Wildlife",
-     "emoji": "🐬",
-     "detail": "• Near sunset (time posted daily; 6:30 PM in mid-November).\n• Hand-feed a wild bottlenose dolphin, once per person per stay — doing it the first night leaves the other nights as backup.\n• Kids 102 cm (3'4\") and taller walk in with a parent; shorter kids are carried.\n• ~99% dolphin attendance.",
-     "notes": "• Included with the Family Suite rate (verified).\n• Waders can be hired for AUD 15 if you want to stay dry."
-    },
-    {
-     "start": "7:45 PM",
-     "end": "8:00 PM",
-     "title": "Back to the suite — bed",
-     "typeName": "Hotel",
-     "emoji": "🛏️",
-     "detail": "• Early start tomorrow for the south-end low tide."
-    }
-   ]
-  },
-  {
-   "date": "Tuesday, December 21, 2027",
-   "title": "4WD the south end — Big Sandhills, Mirapool, Rous Battery; BBQ night",
-   "planned": false,
-   "blocks": [
-    {
-     "start": "7:00 AM",
-     "end": "7:45 AM",
-     "title": "Breakfast in the suite; pack the picnic",
-     "typeName": "Dining",
-     "emoji": "🥣",
-     "detail": "• Cooler with ice, water, snacks, boards in the car."
-    },
-    {
-     "start": "7:45 AM",
-     "end": "8:05 AM",
-     "title": "Walk to the car park, load up",
-     "typeName": "Logistics",
-     "emoji": "⏱️"
-    },
-    {
-     "start": "8:05 AM",
-     "end": "8:35 AM",
-     "title": "West beach south → Big Sandhills",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• Tangalooma Bypass 1 km to the west beach just south of the resort, then 11.5 km south (Queensland Parks route).\n• Tide: Tangalooma low water 9:15 AM — ideal.\n• Beach speed limit 60 km/h; slow near people.",
-     "notes": "TIDES — official 2027 predictions (Maritime Safety Queensland, Queensland Tide Tables 2027, Brisbane Bar):\n• Tangalooma (west beach): high water 23 min earlier, low water 27 min earlier than Brisbane Bar.\n• Ocean beaches (east side, Cape Moreton): 1 hr 30 min earlier than Brisbane Bar.\n• Queensland Parks: drive beaches around low tide; avoid 2 hrs either side of high tide.\n\nToday (Tangalooma): low 9:15 AM, high 3:18 PM. Ocean beach: low 8:12 AM, high 2:11 PM → off the east beach by 12:11 PM.",
-     "flag": "Queensland Parks: the west beach between Tangalooma and Kooringal is not always passable even at low tide — ask Wongai/rangers about current conditions."
-    },
-    {
-     "start": "8:35 AM",
-     "end": "9:50 AM",
-     "title": "Big Sandhills — tobogganing on the biggest dunes",
-     "typeName": "Sightseeing",
-     "emoji": "🏜️",
-     "detail": "• Steepest dunes on the island; go early before the sand heats up.\n• Stay off the vegetation; walk up the open sand only."
-    },
-    {
-     "start": "9:50 AM",
-     "end": "10:05 AM",
-     "title": "Little Sandhills (2 km further south)",
-     "typeName": "Sightseeing",
-     "emoji": "🏜️",
-     "detail": "• Quick stop and photos."
-    },
-    {
-     "start": "10:05 AM",
-     "end": "10:30 AM",
-     "title": "Kooringal → Mirapool bypass",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• Before Kooringal turn onto the Kooringal–Mirapool Road (2 km), then the Mirapool Bypass Track (1.3 km).\n• Beach at Mirapool is closed to vehicles 3 hrs either side of high tide — use the bypass."
-    },
-    {
-     "start": "10:30 AM",
-     "end": "10:45 AM",
-     "title": "Mirapool Lagoon",
-     "typeName": "Wildlife",
-     "emoji": "🦩",
-     "detail": "• Shorebird sanctuary — look, no swimming (prohibited)."
-    },
-    {
-     "start": "10:45 AM",
-     "end": "11:05 AM",
-     "title": "East beach north → Rous Battery",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• 7.5 km north on the ocean beach."
-    },
-    {
-     "start": "11:05 AM",
-     "end": "11:30 AM",
-     "title": "Rous Battery — WWII gun emplacements",
-     "typeName": "Sightseeing",
-     "emoji": "🏚️",
-     "detail": "• Short walk around the fort remains; supervise kids around the relics."
-    },
-    {
-     "start": "11:30 AM",
-     "end": "11:50 AM",
-     "title": "East beach north → Middle Road",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• 11.6 km; off the beach before 12:11 PM (2 hrs before the 2:11 PM ocean high tide)."
-    },
-    {
-     "start": "11:50 AM",
-     "end": "12:20 PM",
-     "title": "Middle Road west → resort",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• ~6 km inland at 30 km/h."
-    },
-    {
-     "start": "12:20 PM",
-     "end": "1:00 PM",
-     "title": "Rinse off, change",
-     "typeName": "Logistics",
-     "emoji": "🚿",
-     "detail": "• Sand off the boards and the kids; cooler back in the fridge."
-    },
-    {
-     "start": "1:00 PM",
-     "end": "1:45 PM",
-     "title": "Picnic lunch",
-     "typeName": "Dining",
-     "emoji": "🥪",
-     "detail": "• From the groceries, at the suite or a resort picnic table."
-    },
-    {
-     "start": "1:45 PM",
-     "end": "5:00 PM",
-     "title": "Quiet time, then pool",
-     "typeName": "Free Time",
-     "emoji": "🏊"
-    },
-    {
-     "start": "5:00 PM",
-     "end": "6:30 PM",
-     "title": "Optional: Illuminated Wrecks cruise (glass-bottom, sunset)",
-     "typeName": "Excursion",
-     "emoji": "🛥️",
-     "detail": "• 41 ft glass-bottom boat; lights draw fish up around the wrecks at sunset — no getting wet.",
-     "notes": "• Adult AUD 79, child AUD 65 → AUD 288 for four (verified, resort site) ≈ USD 187 — not in the totals."
-    },
-    {
-     "start": "6:30 PM",
-     "end": "7:30 PM",
-     "title": "BBQ dinner at the resort barbecues",
-     "typeName": "Dining",
-     "emoji": "🔥",
-     "detail": "• Free gas barbecues around the resort grounds; Beach BBQ restaurant is closed Tuesdays.\n• Sausages/steak, rolls and salad from the groceries.",
-     "notes": "• Food included in the grocery estimate."
-    },
-    {
-     "start": "7:30 PM",
-     "end": "8:00 PM",
-     "title": "Lay out tomorrow’s gear — early start",
-     "typeName": "Logistics",
-     "emoji": "🧳",
-     "detail": "• North-end day leaves at 7:45 AM for the falling tide."
-    }
-   ]
-  },
-  {
-   "date": "Wednesday, December 22, 2027",
-   "title": "4WD the north end — Champagne Pools, Cape Moreton, Blue Lagoon; The Desert at golden hour",
-   "planned": false,
-   "blocks": [
-    {
-     "start": "6:45 AM",
-     "end": "7:20 AM",
-     "title": "Breakfast in the suite; pack the picnic",
-     "typeName": "Dining",
-     "emoji": "🥣"
-    },
-    {
-     "start": "7:20 AM",
-     "end": "7:45 AM",
-     "title": "Load the car — picnic, water, boards, towels",
+     "start": "8:00 AM",
+     "end": "8:30 AM",
+     "title": "Swimsuits on, beach bag, load the car",
      "typeName": "Logistics",
      "emoji": "🎒"
     },
     {
-     "start": "7:45 AM",
-     "end": "8:15 AM",
-     "title": "West beach north → Bulwer",
+     "start": "8:30 AM",
+     "end": "9:05 AM",
+     "title": "Drive to Currumbin Alley",
      "typeName": "Drive",
      "emoji": "🚙",
-     "detail": "• From the Wrecks 3.7 km north to the Cowan Bypass (1.7 km), back onto the west beach and 5.4 km to the Bulwer–North Point Road, just past the Bulwer Wrecks (Queensland Parks route).\n• Tide: Bulwer low water 10:30 AM — falling tide, fine.",
-     "notes": "TIDES — official 2027 predictions (Maritime Safety Queensland, Queensland Tide Tables 2027, Brisbane Bar):\n• Tangalooma (west beach): high water 23 min earlier, low water 27 min earlier than Brisbane Bar.\n• Ocean beaches (east side, Cape Moreton): 1 hr 30 min earlier than Brisbane Bar.\n• Queensland Parks: drive beaches around low tide; avoid 2 hrs either side of high tide.\n\nToday — Tangalooma: low 10:33 AM, high 4:21 PM. Bulwer Wrecks: low 10:30 AM. Ocean beach: low 9:30 AM, high 3:14 PM → off the east beach by 1:14 PM."
+     "detail": "• To: Currumbin Alley, Pacific Pde, Currumbin (south side of Currumbin Creek mouth) — ~35 min via the Gold Coast Hwy (estimate; Rainbow Bay, 5 km further south, is 44 min — Google Maps, checked Nov 2026).\n• Parking at Currumbin Alley / Duringan St fills early in school holidays."
     },
     {
-     "start": "8:15 AM",
-     "end": "8:35 AM",
-     "title": "Bulwer–North Point Road → Five Hills lookout",
+     "start": "9:05 AM",
+     "end": "11:45 AM",
+     "title": "Currumbin Alley — calm creek-mouth swim",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️",
+     "detail": "• Sheltered sandy beach where Currumbin Creek meets the ocean — gentle water inside the point, a local family favourite.\n• Swim on the beach side, not in the creek-mouth channel (strong tidal flow); stay inside the flags if posted.\n• Toilets and showers at the beach."
+    },
+    {
+     "start": "11:45 AM",
+     "end": "12:20 PM",
+     "title": "Currumbin Rock — short climb to the top",
+     "typeName": "Walk",
+     "emoji": "🧗",
+     "detail": "• From: Currumbin Beach (north side of the creek) → the stepped track up Currumbin Rock.\n• ~10 min up; views up the coast to Surfers Paradise and south to Coolangatta.\n• Steep and uneven near the top — hold hands."
+    },
+    {
+     "start": "12:20 PM",
+     "end": "1:00 PM",
+     "title": "Rinse, change, sign in at the club",
+     "typeName": "Logistics",
+     "emoji": "🚿",
+     "detail": "• Non-members sign in with photo ID; dry, covered swimwear only."
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:00 PM",
+     "title": "Lunch — Currumbin Beach Vikings Surf Club",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Deck overlooking Currumbin Beach and the Rock — voted the Gold Coast's best surf club.\n• Lunch 11:30 AM – 2:30 PM weekdays. Little Nippers kids' meals.",
+     "menuUrl": "https://currumbinslsc.com.au/supporters/wp-content/uploads/2026/09/SPRING-Menu-September-2026-Final.pdf",
+     "est": 53.3,
+     "notes": "PRICED FROM THE CURRENT MENU (Spring Sept 2026, visitor prices):\n• Beer-battered flathead AUD 26 + beef & bacon burger AUD 26\n• 2 Little Nippers meals AUD 15 each\n• = AUD 82 ≈ USD 53. Christmas Eve lunch is before the 6 PM public holiday — no surcharge expected.\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "flag": "Confirm Christmas Eve hours (the summer menu comes out in late November)."
+    },
+    {
+     "start": "2:00 PM",
+     "end": "2:40 PM",
+     "title": "Drive back to the JW",
      "typeName": "Drive",
      "emoji": "🚙",
-     "detail": "• 7.8 km inland."
+     "detail": "• ~35 min."
     },
     {
-     "start": "8:35 AM",
-     "end": "8:50 AM",
-     "title": "Five Hills lookout",
-     "typeName": "Sightseeing",
-     "emoji": "📸",
-     "detail": "• View over the north end of the island."
+     "start": "2:40 PM",
+     "end": "4:45 PM",
+     "title": "JW lagoon and pool — last afternoon",
+     "typeName": "Beach/Pool",
+     "emoji": "🐠"
     },
     {
-     "start": "8:50 AM",
-     "end": "9:10 AM",
-     "title": "On to North Point",
+     "start": "4:45 PM",
+     "end": "5:40 PM",
+     "title": "Showers, pack most bags, change for dinner",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• Christmas morning leaves at 8:30 AM — pack tonight."
+    },
+    {
+     "start": "5:40 PM",
+     "end": "5:55 PM",
+     "title": "Drive to BMD Northcliffe Surf Club",
      "typeName": "Drive",
      "emoji": "🚙",
-     "detail": "• 3.5 km to Yellow Patch Beach, then 2 km north-east to North Point — go around the tidal lagoons."
-    },
-    {
-     "start": "9:10 AM",
-     "end": "10:30 AM",
-     "title": "Champagne Pools and Honeymoon Bay",
-     "typeName": "Beach",
-     "emoji": "🫧",
-     "detail": "• Champagne Pools: rock pools where waves fizz over the edge — best around the 9:30 AM low tide.\n• Honeymoon Bay: sheltered, picturesque cove; 700 m return walk from the north end of the North Point camping area.\n• Swim only in the pools/bay; stay off the outer rocks — surf can wash you off (Queensland Parks)."
-    },
-    {
-     "start": "10:30 AM",
-     "end": "10:40 AM",
-     "title": "Drive to Cape Moreton car park",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• 900 m back, then North Point–Cape Moreton Road 2 km."
-    },
-    {
-     "start": "10:40 AM",
-     "end": "11:30 AM",
-     "title": "Cape Moreton Lighthouse walk",
-     "typeName": "Sightseeing",
-     "emoji": "🗼",
-     "detail": "• 1.5 km stepped circuit (allow 1 hr) to Queensland's first lighthouse (1857), the only stone one in the state; information centre.\n• Look down for turtles, rays and dolphins.\n• Non-flush toilets."
-    },
-    {
-     "start": "11:30 AM",
-     "end": "11:50 AM",
-     "title": "Harpers Track → east beach → Blue Lagoon",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• 900 m to the beach, 6.9 km south, then the Blue Lagoon access road 450 m to the car park."
-    },
-    {
-     "start": "11:50 AM",
-     "end": "12:45 PM",
-     "title": "Blue Lagoon — swim and picnic lunch",
-     "typeName": "Beach",
-     "emoji": "💧",
-     "detail": "• 200 m walk to the island's largest freshwater lagoon: smooth white sand and crystal-clear blue water (Queensland Parks).\n• Closest thing on Moreton to K'gari's Lake McKenzie.\n• Use the toilets before swimming; skip sunscreen in the water if you can (it harms the lagoon).",
-     "notes": "• Picnic from the groceries."
-    },
-    {
-     "start": "12:45 PM",
-     "end": "1:05 PM",
-     "title": "East beach south → Middle Road",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• 6.8 km; off the beach before 1:14 PM (2 hrs before the 3:14 PM ocean high tide)."
-    },
-    {
-     "start": "1:05 PM",
-     "end": "1:35 PM",
-     "title": "Middle Road west → resort",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• ~6.7 km inland at 30 km/h, then the Tangalooma Bypass to the resort car park."
-    },
-    {
-     "start": "1:35 PM",
-     "end": "4:15 PM",
-     "title": "Rinse off, quiet time, pool",
-     "typeName": "Free Time",
-     "emoji": "🛋️",
-     "detail": "• Midday UV is extreme — rest inside, then the resort pool."
-    },
-    {
-     "start": "4:15 PM",
-     "end": "4:30 PM",
-     "title": "Drive to The Desert car park",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• Inland tracks only — no tide issue: Tangalooma Bypass → The Desert Road, ~5 km, 15 min at 30 km/h."
-    },
-    {
-     "start": "4:30 PM",
-     "end": "5:45 PM",
-     "title": "The Desert — sand tobogganing at golden hour",
-     "typeName": "Sightseeing",
-     "emoji": "🏜️",
-     "detail": "• Moreton's giant sand blow, a popular tobogganing spot (Queensland Parks).\n• Late afternoon: the sand is cooler and the light is pink.\n• Ride lying on your stomach; little ones start partway up.",
-     "notes": "• Free — your own boards from BCF."
-    },
-    {
-     "start": "5:45 PM",
-     "end": "6:00 PM",
-     "title": "Drive back to the resort",
-     "typeName": "Drive",
-     "emoji": "🚙"
+     "detail": "• To: BMD Northcliffe SLSC, Garfield Tce, Surfers Paradise — ~10 min south of the JW (estimate).\n• Beachfront parking (paid)."
     },
     {
      "start": "6:00 PM",
      "end": "7:00 PM",
-     "title": "Dinner — Beach BBQ (bistro on the beach)",
+     "title": "Christmas Eve dinner — BMD Northcliffe Surf Club (beachfront deck)",
      "typeName": "Dining",
-     "emoji": "🍽️",
-     "detail": "• Overlooks Moreton Bay; open 5:00–8:30 PM (closed Mon & Tue — open tonight).\n• Kids' meals come with chips and salad.",
-     "menuUrl": "https://www.tangalooma.com/TangaloomaV2/media/Documents/Menus/Beach-BBQ-A4-Menu_190626.pdf",
-     "est": 65.98,
-     "notes": "PRICED FROM THE CURRENT MENU (Jun 2026):\n• Chicken parmigiana AUD 31 + Humpty Doo barramundi AUD 38.50\n• 2 kids' meals (minute steak / chicken schnitzel) AUD 16 each\n• = AUD 101.50 ≈ USD 66.\n• No weekend surcharge (15% on public holidays only).\n• Australian menu prices include 10% GST; tipping isn't expected."
+     "emoji": "🎄",
+     "detail": "• Open-air deck over Northcliffe beach and Lifesaving Tower 32.\n• Dinner from 5 PM daily.",
+     "menuUrl": "https://bmdnorthcliffe.com.au/sites/bmdnorthcliffe.com.au/files/uploads/files/Lunch_Dinner_Menu_May_2026_web.pdf",
+     "est": 65.03,
+     "notes": "PRICED FROM THE CURRENT MENU (May 2026, visitor prices) + ESTIMATE (kids):\n• BMD burger AUD 27 + beer-battered fish & chips AUD 30\n• Kids' meals aren't on the online menu — ~AUD 15 each (estimate)\n• = AUD 87 + 15% public-holiday surcharge (Christmas Eve from 6 PM is a Queensland holiday) = AUD ~100 ≈ USD 65.\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "flag": "Confirm Christmas Eve trading and book — Kurrawa closes at 5 PM on Christmas Eve, so surf clubs fill up."
     },
     {
      "start": "7:00 PM",
-     "end": "7:30 PM",
-     "title": "Watch the dolphins from the jetty",
-     "typeName": "Wildlife",
-     "emoji": "🐬",
-     "detail": "• Viewing is free for resort guests every night (feeding is once per stay)."
+     "end": "7:15 PM",
+     "title": "Drive back to the JW",
+     "typeName": "Drive",
+     "emoji": "🚙"
     },
     {
-     "start": "7:30 PM",
+     "start": "7:15 PM",
      "end": "8:00 PM",
-     "title": "Pack most bags — check-out tomorrow",
-     "typeName": "Logistics",
-     "emoji": "🧳",
-     "detail": "• Check-out is strictly 10 AM."
+     "title": "Christmas Eve in the room — stockings out, bed",
+     "typeName": "Hotel",
+     "emoji": "🎄"
     }
    ]
   },
   {
-   "date": "Thursday, December 23, 2027",
-   "title": "Snorkel the Tangalooma Wrecks → Micat back to Brisbane; Howard Smith Wharves dinner",
+   "date": "Saturday, December 25, 2027",
+   "title": "Christmas Day — presents at the JW → fly to Hamilton Island; Marina Tavern Christmas dinner",
    "planned": false,
    "blocks": [
     {
-     "start": "6:45 AM",
-     "end": "7:30 AM",
-     "title": "Breakfast in the suite",
-     "typeName": "Dining",
-     "emoji": "🥣",
-     "detail": "• Finish the groceries."
-    },
-    {
-     "start": "7:30 AM",
-     "end": "8:45 AM",
-     "title": "Pack, clean out the fridge, return towels",
-     "typeName": "Logistics",
-     "emoji": "🧳"
-    },
-    {
-     "start": "8:45 AM",
-     "end": "9:15 AM",
-     "title": "Check out, load the car",
+     "start": "6:30 AM",
+     "end": "7:15 AM",
+     "title": "Christmas morning — presents in the room",
      "typeName": "Hotel",
-     "emoji": "🧳",
-     "detail": "• Check-out is strictly 10 AM — the car stays in the resort car park until after lunch.\n• Swimsuits on under clothes."
+     "emoji": "🎁"
     },
     {
-     "start": "9:15 AM",
-     "end": "9:30 AM",
-     "title": "Walk to Tangatours (next to Fire & Stone)",
-     "typeName": "Walk",
-     "emoji": "🚶",
-     "detail": "• Check in for the snorkel tour."
-    },
-    {
-     "start": "9:30 AM",
-     "end": "11:00 AM",
-     "title": "Snorkel the Tangalooma Wrecks — guided tour",
-     "typeName": "Excursion",
-     "emoji": "🤿",
-     "detail": "• Boat out to the 15 sunken ships; ~30–35 min in the water.\n• All gear included: wetsuits, fins, mask, snorkel, life jackets, pool noodles, prescription masks.\n• Minimum age 6.",
-     "est": 179.4,
-     "notes": "• AUD 69 per person × 4 = AUD 276 (verified, resort site).\n• = USD ~179. AUD 207 for 3 if Chloe sits out.",
-     "flag": "Minimum age 6 — confirm Chloe is 6 by Dec 2027. If not, swap for the 2:15 PM glass-bottom Wrecks fish-feeding cruise (AUD 159 family) on Tue Dec 21 afternoon."
-    },
-    {
-     "start": "11:00 AM",
-     "end": "12:00 PM",
-     "title": "Rinse off, last beach time",
-     "typeName": "Beach/Pool",
-     "emoji": "🏖️",
-     "detail": "• Beach showers; change into dry clothes for the ferry."
-    },
-    {
-     "start": "12:00 PM",
-     "end": "1:00 PM",
-     "title": "Lunch — The Beach Café",
-     "typeName": "Dining",
-     "emoji": "🍔",
-     "detail": "• Beachfront, casual; open 11:30 AM – 3:30 PM for lunch.",
-     "menuUrl": "https://www.tangalooma.com/TangaloomaV2/media/Documents/Menus/Beach-Cafe-Menu_190726.pdf",
-     "est": 48.75,
-     "notes": "PRICED FROM THE CURRENT MENU (Jul 2026):\n• Tanga beef burger AUD 24.50 + fish & chips AUD 19.50\n• Kids' cheeseburger & chips AUD 17 + kids' spaghetti bolognese AUD 14\n• = AUD 75 ≈ USD 49.\n• Prices include 10% GST; tipping isn't expected."
-    },
-    {
-     "start": "1:00 PM",
-     "end": "1:20 PM",
-     "title": "Drive to the Micat landing at the Wrecks",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• ~2 km north via the bypass.\n• Tide: Tangalooma low 11:50 AM, high 5:25 PM — easy conditions.",
-     "notes": "TIDES — official 2027 predictions (Maritime Safety Queensland, Queensland Tide Tables 2027, Brisbane Bar):\n• Tangalooma (west beach): high water 23 min earlier, low water 27 min earlier than Brisbane Bar.\n• Ocean beaches (east side, Cape Moreton): 1 hr 30 min earlier than Brisbane Bar.\n• Queensland Parks: drive beaches around low tide; avoid 2 hrs either side of high tide.\n\nToday (Tangalooma): low 11:50 AM, high 5:25 PM. Ocean beach: low 10:47 AM, high 4:18 PM."
-    },
-    {
-     "start": "1:20 PM",
-     "end": "3:00 PM",
-     "title": "Check in at the Micat landing — wait in the shade",
-     "typeName": "Logistics",
-     "emoji": "⏱️",
-     "detail": "• Arrive early; toilets at The Wrecks campground.\n• Last look at the Wrecks from the beach.",
-     "flag": "Confirm the island-side check-in time when booking."
-    },
-    {
-     "start": "3:00 PM",
-     "end": "4:30 PM",
-     "title": "Micat vehicle ferry — Moreton Island → Port of Brisbane",
-     "typeName": "Transportation",
-     "emoji": "⛴️",
-     "detail": "• Departs 3:00 PM, arrives 4:30 PM.\n• Dec 2026 weekday sailings off the island: 10:15 AM and 3:00 PM (the Thursday 3 PM had only 3 car spaces left by early Nov 2026).",
-     "route": "Tangalooma Wrecks → Port of Brisbane",
-     "est": 175.38,
-     "notes": "• AUD 256.60 for 1 vehicle + 2 adults + 2 children (Micat quote, Dec 2026 stand-in) + 5.15% fuel levy = AUD ~270 ≈ USD 175.",
-     "flag": "Not booked — book with the outbound sailing; the 3 PM Thursday fills first."
-    },
-    {
-     "start": "4:30 PM",
-     "end": "4:50 PM",
-     "title": "Drive to BayWash Tingalpa",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• To: 4 Tenbar St, Tingalpa — ~10 km.\n• Re-inflate tyres to road pressure first (air at the wash or a servo)."
-    },
-    {
-     "start": "4:50 PM",
-     "end": "5:20 PM",
-     "title": "Underbody wash + quick vacuum",
-     "typeName": "Logistics",
-     "emoji": "🧽",
-     "detail": "• Wongai requires a quick underbody wash before handback.\n• BayWash is open 24 hours.",
-     "est": 16.25,
-     "notes": "• ~AUD 25 — estimated."
-    },
-    {
-     "start": "5:20 PM",
-     "end": "5:55 PM",
-     "title": "Drive to Hyatt Regency Brisbane",
-     "typeName": "Drive",
-     "emoji": "🚙",
-     "detail": "• To: Hyatt Regency Brisbane, 33 Burnett Lane — 25 min (Google Maps, checked Nov 2026); 35 min allowed for evening traffic.\n• Valet takes the 4WD."
-    },
-    {
-     "start": "5:55 PM",
-     "end": "6:15 PM",
-     "title": "Check in — Hyatt Regency Brisbane (1 night)",
-     "typeName": "Hotel",
-     "emoji": "🏨",
-     "detail": "• 33 Burnett Lane, Brisbane CBD. Valet keeps the 4WD overnight.\n• Showers can wait until after dinner.",
-     "program": "World of Hyatt",
-     "points": "12000",
-     "nights": "1 night (Thu Dec 23 – Fri Dec 24)",
-     "roomType": "Deluxe Room, Multiple Beds",
-     "notes": "• Modeled at 12,000 pts (Category 3; the Oct 2026 search showed 8,000/night for Dec 13–23 dates).\n• Globalist: breakfast + free valet on an award stay.",
-     "flag": "Not booked. Confirm the multiple-beds room on points for 4."
-    },
-    {
-     "start": "6:15 PM",
-     "end": "6:35 PM",
-     "title": "Walk to Howard Smith Wharves",
-     "typeName": "Walk",
-     "emoji": "🚶",
-     "detail": "• ~1.3 km along the riverfront under the Story Bridge; taxi if the kids are done."
-    },
-    {
-     "start": "6:35 PM",
-     "end": "7:35 PM",
-     "title": "Dinner — Felons Barrel Hall (Howard Smith Wharves)",
-     "typeName": "Dining",
-     "emoji": "🍽️",
-     "detail": "• Riverside under the Story Bridge; Thai-inspired menu plus burgers; kids' menu.\n• Order at the table by QR code.",
-     "menuUrl": "https://go.felonsbrewingco.com.au/Barrel-Hall-Main",
-     "est": 63.05,
-     "notes": "PRICED FROM THE CURRENT MENU (Oct 2026):\n• Classic cheeseburger & chips AUD 28 + green chicken curry AUD 35\n• Kids' cheeseburger & chips AUD 16.50 + kids' fish & chips AUD 17.50\n• = AUD 97 ≈ USD 63.\n• Card surcharge applies (rate not published) — estimated small extra.\n• Prices include 10% GST; tipping isn't expected."
-    },
-    {
-     "start": "7:35 PM",
-     "end": "8:00 PM",
-     "title": "Back to the hotel — baths, bed",
-     "typeName": "Hotel",
-     "emoji": "🛏️",
-     "detail": "• Repack: island bags back into the suitcases."
-    }
-   ]
-  },
-  {
-   "date": "Friday, December 24, 2027",
-   "title": "Return the 4WD → fly to Hamilton Island; Christmas Eve dinner and carols",
-   "planned": false,
-   "blocks": [
-    {
-     "start": "7:00 AM",
-     "end": "7:45 AM",
-     "title": "Breakfast — Lennons",
+     "start": "7:15 AM",
+     "end": "7:55 AM",
+     "title": "Breakfast — Citrique (JW Marriott)",
      "typeName": "Dining",
      "emoji": "🍳",
-     "notes": "• Globalist benefit: AUD 0."
+     "detail": "• Last Gold Coast breakfast.",
+     "est": 114.4,
+     "notes": "ESTIMATE: everyday buffet price AUD 176 for 4 (EatClub listing); Christmas Day pricing may be higher — confirm.\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "flag": "Confirm Christmas Day breakfast pricing (the JW runs separate Christmas lunch/dinner buffets at ~AUD 179 adult)."
     },
     {
-     "start": "7:45 AM",
-     "end": "8:30 AM",
-     "title": "Check out; valet brings the 4WD",
+     "start": "7:55 AM",
+     "end": "8:25 AM",
+     "title": "Check out, load the Prado",
      "typeName": "Hotel",
      "emoji": "🧳"
     },
     {
-     "start": "8:30 AM",
-     "end": "9:00 AM",
-     "title": "Drive Hyatt Regency → Wongai, Geebung",
+     "start": "8:25 AM",
+     "end": "9:45 AM",
+     "title": "Drive JW Marriott → Wongai 4WD Hire, Geebung",
      "typeName": "Drive",
      "emoji": "🚙",
-     "detail": "• To: Wongai, 91 Basalt St, Geebung — 21 min (Google Maps, checked Nov 2026); 30 min allowed.\n• Top up fuel on the way if Wongai asks for it back full.",
+     "detail": "• To: 91 Basalt St, Geebung — 1 hr 12 min (Google Maps, checked Nov 2026); Christmas morning traffic is light.\n• Fill the tank on the way if Wongai wants it back full.",
      "est": 130.0,
-     "notes": "• Fuel for the whole 8-day hire ~AUD 200 — estimated ≈ USD 130."
+     "notes": "• Fuel for the 9-day hire ~AUD 200 — estimated ≈ USD 130."
     },
     {
-     "start": "9:00 AM",
-     "end": "9:30 AM",
+     "start": "9:45 AM",
+     "end": "10:15 AM",
      "title": "Return the 4WD — Wongai 4WD Hire",
      "typeName": "Rental Car",
      "emoji": "🚙",
      "detail": "• Inspection and bond release.\n• Booster back if borrowed.",
-     "flag": "Confirm a Christmas Eve 9 AM return (Wongai is open 7 days)."
+     "flag": "Confirm Wongai takes returns on Christmas Day morning — if not, ask about an after-hours key drop on Christmas Eve night and a taxi from the JW."
     },
     {
-     "start": "9:30 AM",
-     "end": "9:55 AM",
+     "start": "10:15 AM",
+     "end": "10:35 AM",
      "title": "Taxi Geebung → BNE Domestic terminal",
      "typeName": "Transportation",
      "emoji": "🚕",
      "detail": "• To: Brisbane Domestic Terminal — 17 min (Google Maps, checked Nov 2026).",
      "est": 22.75,
-     "notes": "• ~AUD 35 — estimated."
+     "notes": "• ~AUD 35 — estimated.",
+     "flag": "Pre-book the Maxi Taxi — Christmas Day taxis are scarce (public-holiday fares)."
     },
     {
-     "start": "9:55 AM",
-     "end": "11:00 AM",
+     "start": "10:35 AM",
+     "end": "11:20 AM",
      "title": "Qantas bag drop + security (Domestic T2)",
      "typeName": "Logistics",
      "emoji": "⏱️",
      "detail": "• Bag drop closes 30 min before departure; aim to be through security by 11:00."
     },
     {
-     "start": "11:00 AM",
-     "end": "11:50 AM",
-     "title": "Lunch at the airport",
+     "start": "11:20 AM",
+     "end": "12:00 PM",
+     "title": "Early Christmas lunch at the airport",
      "typeName": "Dining",
-     "emoji": "🍽️",
-     "est": 46.8,
-     "notes": "ESTIMATE — airport food court:\n• 2 adult mains ~AUD 22 each\n• 2 kids' meals ~AUD 14 each\n• = AUD ~72 ≈ USD 47\n• Australian menu prices include 10% GST; tipping isn't expected."
+     "emoji": "🥪",
+     "detail": "• Domestic terminal cafés airside — limited choice on Christmas Day.",
+     "est": 42.25,
+     "notes": "• ~AUD 65 for 4 — estimated (airport café; public-holiday surcharges likely) ≈ USD 42.\n• Australian menu prices include 10% GST; tipping isn't expected."
     },
     {
-     "start": "11:50 AM",
+     "start": "12:00 PM",
      "end": "12:30 PM",
      "title": "Gate and boarding",
      "typeName": "Logistics",
@@ -2623,15 +2735,15 @@ class Component extends DCLogic {
      "title": "QantasLink QF1592 - BNE → HTI - Nonstop - 1h45m",
      "typeName": "Flight",
      "emoji": "✈️",
-     "detail": "• Domestic, Economy, 4 passengers.\n• On Christmas Eve only two Brisbane → Hamilton Island departures ran in 2026: VA1495 10:15 AM and QF1592 12:30 PM — no afternoon flight.\n• Lands Hamilton Island 2:15 PM (same time zone).",
+     "detail": "• Domestic, 4 passengers. Lands Hamilton Island 2:15 PM.\n• Christmas Day 2026 departures BNE → HTI: VA1493 7:15 AM, VA1495 10:15 AM, QF1592 12:30 PM.",
      "route": "BNE → HTI",
      "flightNo": "Qantas 1592",
-     "cabin": "Economy",
-     "program": "Qantas Frequent Flyer (via Chase transfer)",
-     "points": "29200",
-     "est": 177.76,
-     "flag": "Classic Reward seats (7,300 pts) are scarce near Christmas — book the day Dec 2027 opens (~353 days out). If none: Classic Plus ran 20,100–27,900 pts per person on this flight in Oct–Nov 2026.",
-     "notes": "POINTS (Qantas, per person):\n• Classic Reward 7,300 + AUD 68.37 tax (seen Nov–Dec 2026) → 29,200 pts + AUD 273 ≈ USD 178 for four.\n• Fallback Classic Plus: 20,100–27,900 → 80,400–111,600 for four.\n• Other options seen: Atmos 7,500 · Velocity 7,900 (Virgin VA1495 10:15 AM) · AAdvantage 10,000 · United 12,500."
+     "cabin": "Business",
+     "program": "Alaska Atmos",
+     "points": "60000",
+     "est": 206.4,
+     "flag": "Not booked. Christmas Day space is thin — book the day Dec 2027 opens (~353 days out).",
+     "notes": "AWARD SEEN FOR CHRISTMAS DAY 2026 (seats.aero, stand-in date):\n• Atmos business 15,000 pts + USD 51.60 per person — only 2 seats showed; economy via Qantas was 23,500 pts + AUD 68.37.\n• Modeled 4 × 15,000 = 60,000 Atmos + USD ~206.\n• Normal days run ~7,300 Qantas pts in economy — Christmas Day is pricier."
     },
     {
      "start": "2:15 PM",
@@ -2652,139 +2764,24 @@ class Component extends DCLogic {
     {
      "start": "3:05 PM",
      "end": "3:30 PM",
-     "title": "Check in — Reef View Hotel, Coral Sea View Room (6 nights)",
+     "title": "Check in — Reef View Hotel, Coral Sea View Room (4 nights)",
      "typeName": "Hotel",
      "emoji": "🏨",
      "detail": "• Upper floors (5–18), sea-view balcony, 2 queens; kids 12 and under stay free in existing bedding.\n• Included: airport shuttle, island shuttle, kayaks, paddleboards, catamarans and snorkel gear at Catseye Beach, Kids Eat Free at Pool Terrace and Sails (with an adult main).",
-     "est": 3237.0,
-     "nights": "6 nights (Fri Dec 24 – Thu Dec 30)",
+     "est": 2158.0,
+     "nights": "4 nights (Sat Dec 25 – Wed Dec 29)",
      "roomType": "Coral Sea View Room (2 queens)",
      "flag": "Not booked. Festive terms: 20% deposit, balance 60 days out, 100% cancellation fee inside 60 days.",
-     "notes": "VERIFIED on bookings.hamiltonisland.com.au (Nov 2026) for Dec 24–30, 2027, 2 adults + 2 kids:\n• Room only (no breakfast): AUD 4,440 total incl. taxes; deposit AUD 888, balance 60 days prior.\n• With breakfast: ~AUD 4,980 ← modeled (breakfast rate ~AUD 90/night more, from the verified Dec 2027 B&B difference; kids' breakfast free) ≈ USD 3,237.\n• Reef Family Room for comparison: AUD 5,760 room only.\n• Earns 13,320+ Velocity points.",
+     "notes": "VERIFIED on bookings.hamiltonisland.com.au (Nov 2026) for Dec 25–29, 2027, 2 adults + 2 kids:\n• Coral Sea View, room only: AUD 2,960 total incl. taxes (Garden View AUD 2,800).\n• With breakfast: ~AUD 3,320 ← modeled (breakfast rate ~AUD 90/night more, from the verified Dec 2027 B&B difference; kids' breakfast free) ≈ USD 2,158.",
      "program": "Hamilton Island (book direct)"
     },
     {
      "start": "3:30 PM",
-     "end": "5:15 PM",
-     "title": "Catseye Beach — first swim",
-     "typeName": "Beach/Pool",
-     "emoji": "🏖️",
-     "detail": "• From: Reef View lobby → down the path to the resort centre and Catseye Beach (~5 min).\n• Free kayaks, paddleboards and snorkel gear at the beach hut.\n• Stinger suits on (Nov–May)."
-    },
-    {
-     "start": "5:15 PM",
-     "end": "6:00 PM",
-     "title": "Showers, change for Christmas Eve",
-     "typeName": "Logistics",
-     "emoji": "🚿"
-    },
-    {
-     "start": "6:00 PM",
-     "end": "7:00 PM",
-     "title": "Christmas Eve dinner — Pool Terrace (Reef View Hotel)",
-     "typeName": "Dining",
-     "emoji": "🍽️",
-     "detail": "• Downstairs next to the Reef View pool — no shuttle needed, and a short walk to the carols.\n• Kids Eat Free: up to 2 kids' meals per adult main (Reef View guests; show the room key).\n• Confirm Christmas Eve hours; book if bookings are taken.",
-     "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-pool-terrace.pdf?ext=.pdf",
-     "est": 59.03,
-     "notes": "PRICED FROM THE CURRENT MENU:\n• Chicken Breast AUD 42 + Mediterranean Fettuccini AUD 36\n• 2 kids' meals free (Kids Eat Free) — kids' menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/Pool-Terrace-KEF-Menu.pdf\n• = AUD 78 + 15% public-holiday surcharge (Christmas Eve is a Queensland public holiday from 6 PM) + 1.25% card surcharge = AUD ~91 ≈ USD 59\n• Australian menu prices include 10% GST; tipping isn't expected."
-    },
-    {
-     "start": "7:00 PM",
-     "end": "7:45 PM",
-     "title": "Carols by Candlelight — Beach Pavilion, Catseye Beach",
-     "typeName": "Entertainment",
-     "emoji": "🎄",
-     "detail": "• Walk: from Pool Terrace down the path to Catseye Beach; the Beach Pavilion is on the beachfront by the main resort pool (~5 min).\n• Carols ~5–8 PM; face painting until ~7; glow sticks for sale until ~7:30.\n• Fireworks at 7:30 PM — the one to stay for.\n• Times from the island's 2023 December program — confirm the 2027 program in the Hamilton Island app."
-    },
-    {
-     "start": "7:45 PM",
-     "end": "8:15 PM",
-     "title": "Walk back to Reef View — bed",
-     "typeName": "Hotel",
-     "emoji": "🛏️",
-     "detail": "• Stockings out for the morning."
-    }
-   ]
-  },
-  {
-   "date": "Saturday, December 25, 2027",
-   "title": "Christmas Day — golf buggy, Catseye Beach, Sails lunch, Marina Tavern dinner",
-   "planned": false,
-   "blocks": [
-    {
-     "start": "7:00 AM",
-     "end": "8:00 AM",
-     "title": "Christmas morning in the room",
-     "typeName": "Free Time",
-     "emoji": "🎁"
-    },
-    {
-     "start": "8:00 AM",
-     "end": "8:45 AM",
-     "title": "Breakfast — Pool Terrace (included)",
-     "typeName": "Dining",
-     "emoji": "🍳"
-    },
-    {
-     "start": "8:45 AM",
-     "end": "9:15 AM",
-     "title": "Pick up the golf buggy — Resort Side Buggy Hire",
-     "typeName": "Rental Car",
-     "emoji": "🛺",
-     "detail": "• 4-seater; driver 21+ with a full licence.\n• No child seats needed (kids are over 4).\n• Christmas Day only: return by 5:00 PM today (desk closes 5 PM).",
-     "est": 103.35,
-     "flag": "Buggies sell out months ahead — book with the room. Confirm Christmas Day desk hours.",
-     "notes": "Official pricing (from):\n• AUD 140 per 24 hrs (also a 4-hr rate from AUD ~95–100)\n• + optional damage waiver AUD 19\n• = AUD 159 ≈ USD 103\n• Not booked."
-    },
-    {
-     "start": "9:15 AM",
-     "end": "10:15 AM",
-     "title": "Buggy loop — One Tree Hill lookout and the marina",
-     "typeName": "Sightseeing",
-     "emoji": "📸"
-    },
-    {
-     "start": "10:15 AM",
-     "end": "12:00 PM",
-     "title": "Catseye Beach — kayaks, paddleboards, catamarans (free)",
-     "typeName": "Beach/Pool",
-     "emoji": "🏖️",
-     "detail": "• Non-motorised watersports included with the room.\n• Stinger suits on."
-    },
-    {
-     "start": "12:00 PM",
-     "end": "12:30 PM",
-     "title": "Rinse, change",
-     "typeName": "Logistics",
-     "emoji": "⏱️"
-    },
-    {
-     "start": "12:30 PM",
-     "end": "1:30 PM",
-     "title": "Christmas lunch — Sails (beachfront, Kids Eat Free)",
-     "typeName": "Dining",
-     "emoji": "🎄",
-     "detail": "• Open as usual on Christmas Day (Hamilton Island's Christmas page); 15% public-holiday surcharge everywhere.\n• Sails — beachfront by the main pool, walk from Reef View; Kids Eat Free with each adult main. Menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-sails.pdf?ext=.pdf · Kids: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/Sails-KEF-Menu.pdf\n• Popeye's — fish & chips and burgers, takeaway at the marina (11:30 AM–8:30 PM). Menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-popeyes.pdf?ext=.pdf\n• Marina Tavern — pub on the marina (11:30 AM–late). Menu: https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-marina-tavern.pdf?ext=.pdf\n• Santa is around Sails Main Pool, the Resort Centre and Reef View on Christmas Day.",
-     "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-sails.pdf?ext=.pdf",
-     "est": 51.47,
-     "flag": "Confirm Kids Eat Free applies on Christmas Day (program is 'subject to availability').",
-     "notes": "ESTIMATES (current menus, + 15% public-holiday + 1.25% card surcharge):\n• Sails: 2 burgers AUD 34 each, kids free = AUD ~79 ≈ USD 51 (modeled here)\n• Popeye's: 2 fish & chips AUD 28 + 1 shared for the kids AUD 28 (no kids' menu) = AUD ~98 ≈ USD 64\n• Marina Tavern: 2 adult mains AUD 31–32 + 2 kids' meals AUD 22 = AUD ~125 ≈ USD 81\n• Australian menu prices include 10% GST; tipping isn't expected."
-    },
-    {
-     "start": "1:30 PM",
-     "end": "4:30 PM",
-     "title": "Pool and rest",
-     "typeName": "Free Time",
-     "emoji": "🏊"
-    },
-    {
-     "start": "4:30 PM",
      "end": "5:00 PM",
-     "title": "Return the buggy — Resort Side Buggy Hire",
-     "typeName": "Rental Car",
-     "emoji": "🛺",
-     "detail": "• Back by 5:00 PM; walk or take the free island shuttle from here."
+     "title": "Catseye Beach — Christmas afternoon swim",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️",
+     "detail": "• From: Reef View lobby → down the path to the resort centre and Catseye Beach (~5 min).\n• Free kayaks, paddleboards and snorkel gear at the beach hut.\n• Santa visits around Sails main pool, the Resort Centre and Reef View on Christmas Day.\n• Stinger suits on (Nov–May)."
     },
     {
      "start": "5:00 PM",
@@ -2874,7 +2871,7 @@ class Component extends DCLogic {
      "emoji": "🐠",
      "detail": "• Departs Hamilton Island Marina 9:00 AM → ~2 hrs to Reefworld on Hardy Reef, on the outer Great Barrier Reef (arrive ~11:00).\n• ~3½ hrs at the pontoon: snorkelling (gear and stinger suits included), underwater viewing chamber, semi-submersible tour — the kids see the coral even without snorkelling.\n• Buffet lunch ~12–2 PM; morning and afternoon tea on board; change rooms.\n• Departs the pontoon ~2:45 PM → ~2¼ hrs back; returns 5:00 PM.",
      "est": 584.74,
-     "flag": "Book early. December is a 'marginal' reef month (wind, visibility) — weather backup: swap with Wed Dec 29 (the free day).",
+     "flag": "Book early. December is a 'marginal' reef month (wind, visibility) — weather backup: swap with Tue Dec 28 (the island day).",
      "notes": "COST (Hamilton Island tours compendium, dynamic pricing):\n• Family (2 adults + 2 children 4–14) from AUD 887 (adult from 329, child from 195)\n• + 1.42% card surcharge = AUD ~900 ≈ USD 585\n• Optional 10-min Heart Reef scenic flight from the pontoon: from AUD 220 per person (not included)\n• Not booked."
     },
     {
@@ -2971,7 +2968,7 @@ class Component extends DCLogic {
      "emoji": "🏝️",
      "detail": "• Departs Hamilton Island Marina 8:30 AM; returns 5:00 PM.\n• Scenic cruise with commentary → guided walk to the Hill Inlet lookout (the swirling white sand) → beach time at the north end and the southern end of Whitehaven.\n• Up to ~6 hrs in Whitehaven and around Hill Inlet — the most beach time of any Whitehaven tour from Hamilton Island.\n• Morning tea, a crew-cooked BBQ lunch on the beach (sausage sizzle / burgers), afternoon tea. Snacks and soft drinks for sale on board.\n• Stinger suits free (stinger season) — swim in them.\n• Almost no natural shade on Whitehaven: the cabana is the shade for the day.\n• Optional walks from the southern end: Whitehaven lookout, Solway Circuit.",
      "est": 497.44,
-     "flag": "Book early. Mon Dec 27 is a Queensland public holiday (Christmas Day substitute) — confirm it operates. Weather backup: swap with Wed Dec 29.",
+     "flag": "Book early. Mon Dec 27 is a Queensland public holiday (Christmas Day substitute) — confirm it operates. Weather backup: swap with Tue Dec 28.",
      "notes": "COST (Cruise Whitsundays, dynamic pricing, Nov 2026):\n• Family (2 adults + 2 kids 4–14) from AUD 725 (adult from 255, child from 129)\n• + 1.42% card surcharge = AUD ~735\n• + beach cabana AUD 30 (fits 4; first in, best dressed)\n• = AUD ~765 ≈ USD 497\n• Not booked."
     },
     {
@@ -3136,110 +3133,6 @@ class Component extends DCLogic {
   },
   {
    "date": "Wednesday, December 29, 2027",
-   "title": "Free beach day — Catseye watersports, pool; pack for Sydney",
-   "planned": false,
-   "blocks": [
-    {
-     "start": "7:30 AM",
-     "end": "8:15 AM",
-     "title": "Breakfast — Pool Terrace (included)",
-     "typeName": "Dining",
-     "emoji": "🍳"
-    },
-    {
-     "start": "8:15 AM",
-     "end": "8:30 AM",
-     "title": "Return the buggy — Resort Side Buggy Hire",
-     "typeName": "Rental Car",
-     "emoji": "🛺",
-     "detail": "• 24-hr hire from yesterday morning ends at 8:30 AM."
-    },
-    {
-     "start": "8:30 AM",
-     "end": "11:45 AM",
-     "title": "Catseye Beach — kayaks, paddleboards, catamarans, snorkel gear (free)",
-     "typeName": "Beach/Pool",
-     "emoji": "🏖️",
-     "detail": "• From: Reef View → the path down to the resort centre (~5 min).\n• Non-motorised watersports and snorkel gear included with the room.\n• Stinger suits on.\n• Backup day: if weather cancelled the reef or Whitehaven trip, do it today instead."
-    },
-    {
-     "start": "11:45 AM",
-     "end": "12:15 PM",
-     "title": "Rinse, change",
-     "typeName": "Logistics",
-     "emoji": "🚿"
-    },
-    {
-     "start": "12:15 PM",
-     "end": "1:15 PM",
-     "title": "Lunch — Pool Terrace (Kids Eat Free)",
-     "typeName": "Dining",
-     "emoji": "🍽️",
-     "detail": "• By the Reef View pool — no shuttle needed.\n• Kids Eat Free with each adult main (show the room key).",
-     "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/menu-pool-terrace.pdf?ext=.pdf",
-     "est": 43.44,
-     "notes": "PRICED FROM THE CURRENT MENU:\n• Wagyu beef burger AUD 34 + burrito bowl AUD 32\n• 2 kids' meals free (Kids Eat Free)\n• = AUD 66 + 1.25% card surcharge = AUD ~67 ≈ USD 43. Wednesday — no surcharge.\n• Australian menu prices include 10% GST; tipping isn't expected."
-    },
-    {
-     "start": "1:15 PM",
-     "end": "4:30 PM",
-     "title": "Pool, beach, rest",
-     "typeName": "Free Time",
-     "emoji": "🏊"
-    },
-    {
-     "start": "4:30 PM",
-     "end": "5:30 PM",
-     "title": "Pack for Sydney",
-     "typeName": "Logistics",
-     "emoji": "🧳",
-     "detail": "• Swim gear dried and packed; day bags ready for the flight."
-    },
-    {
-     "start": "5:30 PM",
-     "end": "5:50 PM",
-     "title": "Island shuttle → Marina Village",
-     "typeName": "Transportation",
-     "emoji": "🚌"
-    },
-    {
-     "start": "5:50 PM",
-     "end": "6:00 PM",
-     "title": "Walk to the Pizzeria — Marina Village",
-     "typeName": "Walk",
-     "emoji": "🚶",
-     "detail": "• From the marina shuttle stop along the boardwalk (~3 min)."
-    },
-    {
-     "start": "6:00 PM",
-     "end": "7:00 PM",
-     "title": "Dinner — Pizzeria & Gelato Bar (marina)",
-     "typeName": "Dining",
-     "emoji": "🍕",
-     "detail": "• Casual last-night dinner by the water; gelato counter in the same venue.\n• Open 4–9:30 PM; also delivers to the room 5–9 PM (AUD 10).",
-     "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/Pizzeria-and-Gelato-Bar-Menu.pdf?ext=.pdf",
-     "est": 56.6,
-     "notes": "PRICED FROM THE CURRENT MENU (no kids' menu):\n• Margherita AUD 28 + pepperoni AUD 29 + 1 ham & pineapple AUD 29 shared by the kids\n• = AUD 86 + 1.25% card surcharge = AUD ~87 ≈ USD 57. Wednesday — no surcharge.\n• Australian menu prices include 10% GST; tipping isn't expected.",
-     "flag": "Pizza-only venue — if the kids aren't in a pizza mood, Sails (reef fish, peri-peri chicken, Kids Eat Free, ~AUD 94) is the alternative."
-    },
-    {
-     "start": "7:00 PM",
-     "end": "7:20 PM",
-     "title": "Island shuttle back to Reef View",
-     "typeName": "Transportation",
-     "emoji": "🚌"
-    },
-    {
-     "start": "7:20 PM",
-     "end": "7:45 PM",
-     "title": "Bed",
-     "typeName": "Hotel",
-     "emoji": "🛏️"
-    }
-   ]
-  },
-  {
-   "date": "Thursday, December 30, 2027",
    "title": "Hamilton Island → Sydney; Whalebridge dinner on the harbour",
    "planned": false,
    "blocks": [
@@ -3252,6 +3145,14 @@ class Component extends DCLogic {
     },
     {
      "start": "8:00 AM",
+     "end": "8:15 AM",
+     "title": "Return the buggy — Resort Side Buggy Hire",
+     "typeName": "Rental Car",
+     "emoji": "🛺",
+     "detail": "• 24-hr hire from yesterday morning."
+    },
+    {
+     "start": "8:15 AM",
      "end": "9:30 AM",
      "title": "Last swim — Catseye Beach",
      "typeName": "Beach/Pool",
@@ -3274,7 +3175,7 @@ class Component extends DCLogic {
      "detail": "• From: Reef View → free island shuttle with the bags (~5 min) to Marina Village.\n• To: Bob's Bakery, Front St, overlooking the marina; open 6:30 AM–3 PM.\n• Pick up pies, sausage rolls and sandwiches to eat at the airport gate.\n• Qantas economy also serves a light complimentary snack on board.",
      "menuUrl": "https://www.hamiltonisland.com.au/HamiltonIsland/media/Menu/Bobs-Bakery-sample-menu.pdf?ext=.pdf",
      "est": 35.54,
-     "notes": "PRICED FROM THE SAMPLE MENU:\n• 2 gourmet sandwiches AUD 18 each + 2 Angus beef sausage rolls AUD 9 each (no kids' menu)\n• = AUD 54 + 1.25% card surcharge = AUD ~55 ≈ USD 36. Thursday — no surcharge.\n• Australian menu prices include 10% GST; tipping isn't expected."
+     "notes": "PRICED FROM THE SAMPLE MENU:\n• 2 gourmet sandwiches AUD 18 each + 2 Angus beef sausage rolls AUD 9 each (no kids' menu)\n• = AUD 54 + 1.25% card surcharge = AUD ~55 ≈ USD 36. Wednesday — no surcharge.\n• Australian menu prices include 10% GST; tipping isn't expected."
     },
     {
      "start": "10:30 AM",
@@ -3330,16 +3231,16 @@ class Component extends DCLogic {
     {
      "start": "4:20 PM",
      "end": "4:45 PM",
-     "title": "Check in — Sydney Harbour Marriott, Circular Quay (3 nights)",
+     "title": "Check in — Sydney Harbour Marriott, Circular Quay (4 nights)",
      "typeName": "Hotel",
      "emoji": "🏨",
      "detail": "• 30 Pitt St — 2 min from the Circular Quay ferry wharves, 5 min from The Rocks.\n• Room: 2 double beds (sleeps 4).",
-     "nights": "3 nights (Thu Dec 30 – Sun Jan 2)",
+     "nights": "4 nights (Wed Dec 29 – Sun Jan 2)",
      "roomType": "2 double beds (sleeps 4)",
      "program": "Marriott Bonvoy",
-     "points": "198000",
+     "points": "264000",
      "flag": "Confirm the 2-double-bed room books on points for 2 adults + 2 children, including New Year’s Eve.",
-     "notes": "• Planning assumption: 66,000 Bonvoy points per night (the rate used in the Sydney & West Coast plan) × 3 = 198,000.\n• Marriott points rates include the room tax; no resort or destination fee.\n• Not booked — Dec 2027 points dates open ~Jan 2027.",
+     "notes": "• Planning assumption: 66,000 Bonvoy points per night (the rate used in the Sydney & West Coast plan) × 4 = 264,000.\n• Marriott points rates include the room tax; no resort or destination fee.\n• Not booked — Dec 2027 points dates open ~Jan 2027.",
      "address": "30 Pitt St, Sydney NSW 2000"
     },
     {
@@ -3367,7 +3268,7 @@ class Component extends DCLogic {
      "detail": "• French bistro on the water, looking at the Opera House and Harbour Bridge.\n• Kids menu: burger, fish & chips, crumbed chicken or ham & cheese baguette, all AUD 15.\n• Book the bistro (walk-ins only in the bar); ask for an outdoor waterfront table.\n• Hours \"weather permitting\" — check the day before.",
      "menuUrl": "https://sundayco.com/wp-content/uploads/2026/10/08-WLB-Main-Menu-2026_New-WR2.pdf",
      "est": 66.3,
-     "notes": "PRICED FROM THE CURRENT MENU (Oct 2026):\n• Burger Maison AUD 34 + Poisson et Frites AUD 38\n• 2 kids' mains AUD 15 each (kids menu: https://sundayco.com/wp-content/uploads/2026/09/14-WLB-Kids-Menu-2026_New-WR1.pdf)\n• = AUD 102 ≈ USD 66. Thursday — no public-holiday surcharge.\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "notes": "PRICED FROM THE CURRENT MENU (Oct 2026):\n• Burger Maison AUD 34 + Poisson et Frites AUD 38\n• 2 kids' mains AUD 15 each (kids menu: https://sundayco.com/wp-content/uploads/2026/09/14-WLB-Kids-Menu-2026_New-WR1.pdf)\n• = AUD 102 ≈ USD 66. Wednesday — no public-holiday surcharge.\n• Australian menu prices include 10% GST; tipping isn't expected.",
      "flag": "Book the bistro for 6:00 PM and ask for an outdoor waterfront table."
     },
     {
@@ -3385,6 +3286,153 @@ class Component extends DCLogic {
      "typeName": "Walk",
      "emoji": "🌙",
      "detail": "• From: Opera House forecourt → south along East Circular Quay, past the ferry wharves, left up Pitt St.\n• To: Marriott, 30 Pitt St — ~800 m, 15 min."
+    }
+   ]
+  },
+  {
+   "date": "Thursday, December 30, 2027",
+   "title": "Clovelly swim, coastal walk to Bondi, Bergs lunch, Bondi beach time; Opera Bar dinner",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "8:30 AM",
+     "end": "8:40 AM",
+     "title": "Walk to Pancakes on the Rocks",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Marriott, Pitt St → up George St into The Rocks → Playfair St.\n• To: Pancakes on the Rocks, 22 Playfair St — 5–10 min."
+    },
+    {
+     "start": "8:40 AM",
+     "end": "9:30 AM",
+     "title": "Breakfast — Pancakes on the Rocks",
+     "typeName": "Dining",
+     "emoji": "🥞",
+     "detail": "• A Sydney institution since 1975; open 6 AM – 2 AM.",
+     "menuUrl": "https://pancakesontherocks.com.au/menu/",
+     "est": 55.9,
+     "notes": "PARTLY VERIFIED:\n• 2 adult savoury mains ~AUD 28 (estimate)\n• 2 kids' pancakes AUD 13.95–15.95 (verified range)\n• = AUD ~86 ≈ USD 56.\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "flag": "Only sweet-pancake prices were verifiable (AUD 13.95–15.95)."
+    },
+    {
+     "start": "9:30 AM",
+     "end": "9:55 AM",
+     "title": "Back to the hotel — beach bag",
+     "typeName": "Logistics",
+     "emoji": "🎒",
+     "detail": "• Swimsuits on, rash guards, towels, hats, sunscreen, kids' masks."
+    },
+    {
+     "start": "9:55 AM",
+     "end": "10:15 AM",
+     "title": "Taxi → Clovelly Beach",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• From the Marriott's Pitt St entrance.\n• To: Clovelly Beach, Clovelly Rd — 16 min (Google Maps, checked Nov 2026).",
+     "est": 26.0,
+     "notes": "• ~AUD 40 metered — estimated ≈ USD 26."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "11:45 AM",
+     "title": "Clovelly — swim and snorkel the calm inlet",
+     "typeName": "Beach/Pool",
+     "emoji": "🐟",
+     "detail": "• A long, narrow, sheltered inlet with concrete platforms — calm water and lots of fish close in.\n• Look for the friendly blue gropers.\n• Bathrooms and showers at the beach."
+    },
+    {
+     "start": "11:45 AM",
+     "end": "12:00 PM",
+     "title": "Rinse, change",
+     "typeName": "Logistics",
+     "emoji": "🚿"
+    },
+    {
+     "start": "12:00 PM",
+     "end": "1:00 PM",
+     "title": "Coastal walk — Clovelly → Bronte → Tamarama → Bondi Icebergs",
+     "typeName": "Walk",
+     "emoji": "🥾",
+     "detail": "• From: Clovelly → north along the coastal path past Waverley Cemetery to Bronte Beach, then Tamarama.\n• To: Bondi Icebergs Club, 1 Notts Ave — ~3 km; 45 min on the street route (Google Maps, checked Nov 2026), ~60 min on the clifftop path with kids.\n• Stairs in places; little shade — water and hats."
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:00 PM",
+     "title": "Lunch — Bergs Bistro, Bondi Icebergs Club",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Overlooks the Icebergs ocean pool and the length of Bondi Beach.\n• Order at the bar; kids' menu available on request.\n• Club entry at street level on Notts Ave — adults show photo ID (passport or licence).",
+     "menuUrl": "https://icebergs.com.au/bergs-bistro-menu/",
+     "est": 65.65,
+     "notes": "PRICED FROM THE CURRENT MENU (adults) + ESTIMATE (kids):\n• Classic battered fish n chips AUD 39 + Our Cheeseburger AUD 26\n• Kids' menu isn't published — ~AUD 16 each (earlier kids' prices) = AUD 32\n• = AUD 97, Thursday — no surcharge (10% Sundays, 15% public holidays); modeled AUD ~101 with a small buffer ≈ USD 66.\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "flag": "Order at the bar; ask for the kids’ menu."
+    },
+    {
+     "start": "2:00 PM",
+     "end": "3:40 PM",
+     "title": "Bondi Beach — lay out and swim between the flags",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️",
+     "detail": "• From: Icebergs → down the steps onto the south end of Bondi Beach.\n• Patrolled — swim between the red and yellow flags; the south end is the more sheltered side.\n• Beach time to lay out."
+    },
+    {
+     "start": "3:40 PM",
+     "end": "3:55 PM",
+     "title": "Rinse off — Bondi beach showers",
+     "typeName": "Logistics",
+     "emoji": "🚿"
+    },
+    {
+     "start": "3:55 PM",
+     "end": "4:15 PM",
+     "title": "Taxi Bondi → Sydney Harbour Marriott",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• Taxi rank on Campbell Pde / Uber from Notts Ave.\n• 16 min (Google Maps, checked Nov 2026).",
+     "est": 26.0,
+     "notes": "• ~AUD 40 metered — estimated ≈ USD 26."
+    },
+    {
+     "start": "4:15 PM",
+     "end": "5:45 PM",
+     "title": "Showers, rest",
+     "typeName": "Logistics",
+     "emoji": "🧳"
+    },
+    {
+     "start": "5:45 PM",
+     "end": "6:00 PM",
+     "title": "Walk to Opera Bar",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Marriott, Pitt St → Alfred St → East Circular Quay promenade.\n• To: Opera Bar, Lower Concourse, Sydney Opera House — ~900 m, 12 min."
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Opera Bar (under the Opera House, harbour edge)",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Walk-ins only — outdoor tables on the water facing the Harbour Bridge (inside dining closed for renovation).\n• Kids' packs come with fries, veggies, hummus and a choc-chip cookie.",
+     "menuUrl": "https://operabar.com.au/menus/",
+     "est": 61.1,
+     "notes": "PRICED FROM THE CURRENT MENU:\n• Fish n chips AUD 35 + cheeseburger AUD 29\n• 2 kids' packs (crumbed fish / beef cheeseburger) AUD 15 each\n• = AUD 94 ≈ USD 61. Thursday — no surcharge shown.\n• Australian menu prices include 10% GST; tipping isn't expected.",
+     "flag": "No bookings — arrive by 6 PM for an outdoor table."
+    },
+    {
+     "start": "7:00 PM",
+     "end": "7:15 PM",
+     "title": "Walk back to the Marriott",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Opera Bar → along East Circular Quay → Alfred St → Pitt St.\n• To: Marriott — ~900 m, 12 min."
+    },
+    {
+     "start": "7:15 PM",
+     "end": "7:45 PM",
+     "title": "Bed",
+     "typeName": "Hotel",
+     "emoji": "🛏️"
     }
    ]
   },
@@ -3539,109 +3587,20 @@ class Component extends DCLogic {
   },
   {
    "date": "Saturday, January 1, 2028",
-   "title": "New Year's Day — Clovelly swim, coastal walk to Bondi, Bergs lunch, Bondi beach time",
+   "title": "New Year's Day — sleep in; plan TBD; farewell dinner at The Glenmore",
    "planned": false,
    "blocks": [
     {
      "start": "8:30 AM",
-     "end": "8:40 AM",
-     "title": "Walk to Pancakes on the Rocks",
-     "typeName": "Walk",
-     "emoji": "🚶",
-     "detail": "• Sleep in after midnight.\n• From: Marriott, Pitt St → up George St into The Rocks → Playfair St.\n• To: Pancakes on the Rocks, 22 Playfair St — 5–10 min."
+     "end": "4:30 PM",
+     "title": "New Year's Day — plan TBD (late start after midnight)",
+     "typeName": "Free Time",
+     "emoji": "📝",
+     "detail": "• Late breakfast near the hotel, then an easy day.\n• Ideas: the Sydney Harbour BridgeClimb (Roque + son), Royal Botanic Garden walk, ferry to Watsons Bay.",
+     "flag": "TBD — public holiday: restaurants add ~15%."
     },
     {
-     "start": "8:40 AM",
-     "end": "9:30 AM",
-     "title": "Breakfast — Pancakes on the Rocks",
-     "typeName": "Dining",
-     "emoji": "🥞",
-     "detail": "• A Sydney institution since 1975; open 6 AM – 2 AM.",
-     "menuUrl": "https://pancakesontherocks.com.au/menu/",
-     "est": 55.9,
-     "notes": "PARTLY VERIFIED:\n• 2 adult savoury mains ~AUD 28 (estimate)\n• 2 kids' pancakes AUD 13.95–15.95 (verified range)\n• = AUD ~86 ≈ USD 56; a New Year's Day surcharge may apply.\n• Australian menu prices include 10% GST; tipping isn't expected.",
-     "flag": "Only sweet-pancake prices were verifiable (AUD 13.95–15.95)."
-    },
-    {
-     "start": "9:30 AM",
-     "end": "9:55 AM",
-     "title": "Back to the hotel — beach bag",
-     "typeName": "Logistics",
-     "emoji": "🎒",
-     "detail": "• Swimsuits on, rash guards, towels, hats, sunscreen, kids' masks."
-    },
-    {
-     "start": "9:55 AM",
-     "end": "10:15 AM",
-     "title": "Taxi → Clovelly Beach",
-     "typeName": "Transportation",
-     "emoji": "🚕",
-     "detail": "• From the Marriott's Pitt St entrance.\n• To: Clovelly Beach, Clovelly Rd — 16 min (Google Maps, checked Nov 2026).",
-     "est": 26.0,
-     "notes": "• ~AUD 40 metered — estimated; public-holiday rates may apply ≈ USD 26."
-    },
-    {
-     "start": "10:15 AM",
-     "end": "11:45 AM",
-     "title": "Clovelly — swim and snorkel the calm inlet",
-     "typeName": "Beach/Pool",
-     "emoji": "🐟",
-     "detail": "• A long, narrow, sheltered inlet with concrete platforms — calm water and lots of fish close in.\n• Look for the friendly blue gropers.\n• Bathrooms and showers at the beach."
-    },
-    {
-     "start": "11:45 AM",
-     "end": "12:00 PM",
-     "title": "Rinse, change",
-     "typeName": "Logistics",
-     "emoji": "🚿"
-    },
-    {
-     "start": "12:00 PM",
-     "end": "1:00 PM",
-     "title": "Coastal walk — Clovelly → Bronte → Tamarama → Bondi Icebergs",
-     "typeName": "Walk",
-     "emoji": "🥾",
-     "detail": "• From: Clovelly → north along the coastal path past Waverley Cemetery to Bronte Beach, then Tamarama.\n• To: Bondi Icebergs Club, 1 Notts Ave — ~3 km; 45 min on the street route (Google Maps, checked Nov 2026), ~60 min on the clifftop path with kids.\n• Stairs in places; little shade — water and hats."
-    },
-    {
-     "start": "1:00 PM",
-     "end": "2:00 PM",
-     "title": "Lunch — Bergs Bistro, Bondi Icebergs Club",
-     "typeName": "Dining",
-     "emoji": "🍽️",
-     "detail": "• Overlooks the Icebergs ocean pool and the length of Bondi Beach.\n• Order at the bar; kids' menu available on request.\n• Club entry at street level on Notts Ave — adults show photo ID (passport or licence).",
-     "menuUrl": "https://icebergs.com.au/bergs-bistro-menu/",
-     "est": 75.5,
-     "notes": "PRICED FROM THE CURRENT MENU (adults) + ESTIMATE (kids):\n• Classic battered fish n chips AUD 39 + Our Cheeseburger AUD 26\n• Kids' menu isn't published — ~AUD 16 each (earlier kids' prices) = AUD 32\n• = AUD 97 + 15% public-holiday surcharge = AUD ~112; modeled AUD ~116 with a small buffer ≈ USD 76.\n• Australian menu prices include 10% GST; tipping isn't expected.",
-     "flag": "Confirm New Year's Day hours."
-    },
-    {
-     "start": "2:00 PM",
-     "end": "3:40 PM",
-     "title": "Bondi Beach — lay out and swim between the flags",
-     "typeName": "Beach/Pool",
-     "emoji": "🏖️",
-     "detail": "• From: Icebergs → down the steps onto the south end of Bondi Beach.\n• Patrolled — swim between the red and yellow flags; the south end is the more sheltered side.\n• Beach time to lay out."
-    },
-    {
-     "start": "3:40 PM",
-     "end": "3:55 PM",
-     "title": "Rinse off — Bondi beach showers",
-     "typeName": "Logistics",
-     "emoji": "🚿"
-    },
-    {
-     "start": "3:55 PM",
-     "end": "4:15 PM",
-     "title": "Taxi Bondi → Sydney Harbour Marriott",
-     "typeName": "Transportation",
-     "emoji": "🚕",
-     "detail": "• Taxi rank on Campbell Pde / Uber from Notts Ave.\n• 16 min (Google Maps, checked Nov 2026).",
-     "est": 26.0,
-     "notes": "• ~AUD 40 metered — estimated ≈ USD 26."
-    },
-    {
-     "start": "4:15 PM",
+     "start": "4:30 PM",
      "end": "5:40 PM",
      "title": "Showers, start packing",
      "typeName": "Logistics",
@@ -3774,8 +3733,8 @@ class Component extends DCLogic {
    "name": "Booking status — nothing booked yet",
    "items": [
     {
-     "name": "Tangalooma Island Resort — book ~Nov 16, 2026",
-     "note": "Family Suite Dec 20–23 (3 nights). AUD 449/night at Dec 2027 rates; bookings open 399 days ahead; the 2026 dates sold out."
+     "name": "Tangalooma Island Resort — book ~Nov 13, 2026",
+     "note": "Family Suite Dec 17–21 (4 nights). AUD 449/night at Dec 2027 rates; bookings open 399 days ahead; the 2026 dates sold out."
     },
     {
      "name": "Flights LAX → BNE and SYD → DFW → FLL",
@@ -3783,39 +3742,35 @@ class Component extends DCLogic {
     },
     {
      "name": "Micat ferry (both ways)",
-     "note": "Mon Dec 20 12:30 PM out, Thu Dec 23 3:00 PM back; ~AUD 570 return incl. the 5.15% fuel levy. The Thursday 3 PM sells out first."
-    },
-    {
-     "name": "JW Marriott Gold Coast",
-     "note": "Dec 16–20 (4 nights), ~336k Bonvoy modeled. Confirm a 2-bed room for 4 on points."
+     "note": "Fri Dec 17 12:30 PM out, Tue Dec 21 10:15 AM back; ~AUD 570 return incl. the 5.15% fuel levy."
     },
     {
      "name": "Wongai 4WD Hire",
-     "note": "Prado, Moreton package, Dec 17–24 (8 days); booster; 1800 966 424. Quote-only."
+     "note": "Prado, Moreton package, Dec 17–25 (9 days); Christmas Day morning return to confirm; booster; 1800 966 424."
     },
     {
-     "name": "QF1592 BNE → HTI (Dec 24)",
-     "note": "Classic Reward 7,300 pts + AUD 68 pp — scarce at Christmas; book the day Dec 2027 opens."
+     "name": "JW Marriott Gold Coast",
+     "note": "Dec 21–25 (4 nights), ~336k Bonvoy modeled. Confirm a 2-bed room for 4 on points."
+    },
+    {
+     "name": "QF1592 BNE → HTI (Christmas Day)",
+     "note": "Atmos business 15k + USD 51.60 pp seen for Christmas Day 2026 (2 seats); Qantas economy 23.5k. Book the day Dec 2027 opens."
     },
     {
      "name": "Reef View Hotel",
-     "note": "Coral Sea View, Dec 24–30: AUD 4,440 room only (verified); ~4,980 with breakfast. Buggy hire with the room."
+     "note": "Coral Sea View, Dec 25–29: AUD 2,960 room only (verified); ~3,320 with breakfast. Buggy hire with the room."
     },
     {
      "name": "Reefworld (Dec 26) and Whitehaven Chill & Grill (Dec 27)",
      "note": "Cruise Whitsundays; dynamic pricing."
     },
     {
-     "name": "QF579 HTI → SYD (Dec 30)",
+     "name": "QF579 HTI → SYD (Dec 29)",
      "note": "~7,500 Atmos pp modeled."
     },
     {
      "name": "Sydney Harbour Marriott",
-     "note": "Dec 30 – Jan 2, 3 nights × 66k = 198k Bonvoy (rate from the Sydney & West Coast plan)."
-    },
-    {
-     "name": "Hyatt Regency Brisbane",
-     "note": "Dec 23, 1 night, ~12k Hyatt points modeled."
+     "note": "Dec 29 – Jan 2, 4 nights × 66k = 264k Bonvoy (rate from the Sydney & West Coast plan)."
     }
    ]
   },
@@ -3827,16 +3782,20 @@ class Component extends DCLogic {
      "note": "Dinner, viewing spot, 9 PM family fireworks + midnight — TBD."
     },
     {
-     "name": "Dec 16 JW night",
-     "note": "Holds the room for the 10:50 AM arrival; drop it to save ~84k pts if early check-in is offered."
+     "name": "New Year's Day",
+     "note": "Plan TBD; BridgeClimb (Roque + son) is the leading idea."
+    },
+    {
+     "name": "Wongai on Christmas Day",
+     "note": "Confirm the 9:45 AM return or an after-hours key drop."
     },
     {
      "name": "Chloe's age for snorkelling",
-     "note": "Snorkel the Wrecks minimum age 6; dolphin feeding walk-in height 102 cm."
+     "note": "Snorkel the Wrecks minimum age 6."
     },
     {
      "name": "Restaurant bookings",
-     "note": "Kurrawa (Dec 17), Burleigh Pavilion and Hurricane’s (Dec 18), Rainbow Bay SLSC and Misono (Dec 19), Whalebridge (Dec 30), The Glenmore (Jan 1)."
+     "note": "Kurrawa (Dec 21), Burleigh Pavilion and Hurricane’s (Dec 22), Rainbow Bay SLSC and Misono (Dec 23), Northcliffe (Dec 24), Whalebridge (Dec 29), The Glenmore (Jan 1)."
     }
    ]
   },
@@ -3858,6 +3817,10 @@ class Component extends DCLogic {
     {
      "name": "Drive times",
      "note": "Google Maps, checked Nov 2026 (weekend traffic) — weekday peaks padded."
+    },
+    {
+     "name": "Tides",
+     "note": "Moreton driving times from the MSQ 2027 Queensland Tide Tables (Brisbane Bar + Tangalooma / ocean-beach offsets)."
     }
    ]
   },
@@ -3865,20 +3828,16 @@ class Component extends DCLogic {
    "name": "Not included on purpose",
    "items": [
     {
-     "name": "Brisbane sightseeing day",
-     "note": "Straight to the Gold Coast on landing; Brisbane is only the Dec 23 overnight."
+     "name": "Brisbane night",
+     "note": "Moreton first, then the Gold Coast, then a direct drive to Brisbane Airport — no overnight in Brisbane."
     },
     {
-     "name": "Sydney BridgeClimb and a 4th/5th Sydney day",
-     "note": "Sydney is 3 nights in this version."
+     "name": "Christmas Eve on Hamilton Island",
+     "note": "Christmas Eve is on the Gold Coast; the island starts Christmas afternoon."
     },
     {
      "name": "Coca Chu (Hamilton Island)",
      "note": "Spicy shared Asian plates, no kids' menu."
-    },
-    {
-     "name": "Same-day Moreton → Hamilton Island",
-     "note": "No afternoon BNE → HTI flight on Christmas Eve, so the Dec 23 Brisbane night is required."
     }
    ]
   }
