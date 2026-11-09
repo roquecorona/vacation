@@ -1144,20 +1144,20 @@
     },
     {
       "date": "Friday, December 25, 2026",
-      "title": "Christmas Day - Stanley Park & Robson Square (draft)",
+      "title": "Christmas Day - Lynn Canyon, Deep Cove & West Vancouver Lights (draft)",
       "planned": false,
       "blocks": [
         {
-          "start": "7:00 AM",
-          "end": "8:30 AM",
+          "start": "7:30 AM",
+          "end": "8:45 AM",
           "title": "Christmas morning - presents in the room",
           "typeName": "Free Time",
           "emoji": "🎁",
-          "detail": "• Stockings and presents before breakfast"
+          "detail": "• Stockings and presents - sleeping in after Christmas Eve"
         },
         {
-          "start": "8:30 AM",
-          "end": "9:30 AM",
+          "start": "8:45 AM",
+          "end": "9:25 AM",
           "title": "Breakfast - Mosaic Grille (hotel)",
           "typeName": "Dining",
           "emoji": "🍳",
@@ -1166,94 +1166,225 @@
           "menuUrl": "https://www.hyatt.com/en-US/hotel/canada/hyatt-regency-vancouver/yvrrv/dining"
         },
         {
-          "start": "9:30 AM",
-          "end": "10:15 AM",
+          "start": "9:25 AM",
+          "end": "9:40 AM",
           "title": "Get ready & car from the valet",
           "typeName": "Logistics",
           "emoji": "🧥",
-          "detail": "• Warm layers - the seawall is breezy\n• Tip the valet C$5 (about US$3.60)",
-          "est": 3.6,
-          "ccy": "CAD",
-          "notes": "Valet tip: C$5 when they bring the car up (about US$3.60) - US cash is fine too. Nothing needed at drop-off."
+          "detail": "• Call down for the car at 9:20\n• Rain layers and waterproof boots - trails are wet and muddy in December"
         },
         {
-          "start": "10:15 AM",
-          "end": "10:30 AM",
-          "title": "Drive to Stanley Park",
+          "start": "9:40 AM",
+          "end": "10:05 AM",
+          "title": "Drive to Lynn Canyon Park",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• FROM the hotel → TO Stanley Park (start the one-way loop at the park entrance)\n• ~2 mi along West Georgia St\n• Pay parking lots inside the park (PayByPhone)",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=Prospect%20Point%2C%20Stanley%20Park%2C%20Vancouver%2C%20BC&travelmode=driving",
+          "detail": "• FROM the hotel → TO Lynn Canyon Park (main lot)\n• ~15 km (9.5 mi) over the Ironworkers Memorial Bridge, ~22 min",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=Lynn%20Canyon%20Park%2C%203663%20Park%20Rd%2C%20North%20Vancouver%2C%20BC&travelmode=driving",
           "menuLabel": "Driving directions"
         },
         {
-          "start": "10:30 AM",
-          "end": "12:30 PM",
-          "title": "Stanley Park - Prospect Point, totem poles & Lost Lagoon",
-          "typeName": "Sightseeing",
-          "emoji": "🌲",
-          "detail": "• Drive the one-way Stanley Park Drive loop with stops\n• Prospect Point lookout over the Lions Gate Bridge\n• Brockton Point totem poles and a short seawall walk\n• Lost Lagoon on the way out\n• The park is always open; few facilities run on Christmas Day",
-          "est": 7.2,
-          "ccy": "CAD",
-          "notes": "ESTIMATE: pay parking about C$10 for the visit, about US$7. Rates vary by lot and season."
+          "start": "10:05 AM",
+          "end": "10:15 AM",
+          "title": "Park at Lynn Canyon",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Main lot by the café - free in winter (pay parking runs Mar-Oct only)\n• Gates open 7 AM-6 PM; washrooms on the side of the café building\n• Café and Ecology Centre likely closed Christmas Day"
         },
         {
-          "start": "12:30 PM",
-          "end": "12:45 PM",
-          "title": "Drive to lunch",
+          "start": "10:15 AM",
+          "end": "11:20 AM",
+          "title": "Lynn Canyon suspension bridge & 30 Foot Pool",
+          "typeName": "Sightseeing",
+          "emoji": "🌉",
+          "detail": "• Free suspension bridge 50 m above the canyon - about 30 steps down from the lot\n• Cross the bridge and turn left: ~15-min walk to 30 Foot Pool, then back the same way\n• Stairs and boardwalks can be slick or icy - hold hands and stay on the trail near drop-offs\n• After heavy rain, check the District of North Vancouver site that morning - the park can close in storms"
+        },
+        {
+          "start": "11:20 AM",
+          "end": "11:30 AM",
+          "title": "Back up to the car",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• FROM the suspension bridge → TO the main lot\n• Back up the stairs; kids into car seats",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Lynn%20Canyon%20Park%2C%203663%20Park%20Rd%2C%20North%20Vancouver%2C%20BC&destination=Lynn%20Canyon%20Park%2C%203663%20Park%20Rd%2C%20North%20Vancouver%2C%20BC&travelmode=walking",
+          "menuLabel": "Walking directions"
+        },
+        {
+          "start": "11:30 AM",
+          "end": "11:55 AM",
+          "title": "Drive to Deep Cove",
           "typeName": "Drive",
           "emoji": "🚗",
-          "detail": "• From Lost Lagoon (the Stanley Park exit):\n• Denny's - ~1.5 mi via Denman St to 1098 Davie St (~8 min)\n• Desi - ~2.5 mi via W Georgia St and Hornby St to 1355 Hornby St (~12 min)\n• Street pay parking nearby (PayByPhone)"
+          "detail": "• FROM Lynn Canyon Park → TO Deep Cove (Panorama Park)\n• ~13 km (8 mi) via Mt Seymour Pkwy and Deep Cove Rd, ~20 min",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Lynn%20Canyon%20Park%2C%203663%20Park%20Rd%2C%20North%20Vancouver%2C%20BC&destination=Panorama%20Park%2C%20Deep%20Cove%2C%20North%20Vancouver%2C%20BC&travelmode=driving",
+          "menuLabel": "Driving directions"
+        },
+        {
+          "start": "11:55 AM",
+          "end": "12:05 PM",
+          "title": "Park in Deep Cove",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Main lot on the east side of Panorama Dr - free in winter, 3-hour limit (strictly enforced)\n• Some side streets are resident-permit only - don't park there"
+        },
+        {
+          "start": "12:05 PM",
+          "end": "12:45 PM",
+          "title": "Deep Cove waterfront & Panorama Park",
+          "typeName": "Free Time",
+          "emoji": "🛝",
+          "detail": "• Waterfront walk along Indian Arm and the village on Gallant Ave\n• Panorama Park playground and washrooms\n• Honey Doughnuts is closed Christmas Day"
         },
         {
           "start": "12:45 PM",
           "end": "1:45 PM",
-          "title": "Lunch - Denny's or Desi Indian Lounge",
+          "title": "Lunch - Deep Cove (pick one)",
           "typeName": "Dining",
           "emoji": "🍽️",
-          "detail": "• Pick one - both were open Christmas Day in past years; call in early December to confirm\n• Option 1 - Denny's Davie, 1098 Davie St (West End): open 24 hours; Denny's Canada was open Christmas Day 2025\n• Denny's kids' menu: Jr Grand Slam C$6.99, Jr Chicken Tenders C$7.99, Jr Grilled Cheese C$7.29 - walk-in only\n• Option 2 - Desi Indian Lounge, 1355 Hornby St: diners reviewed Christmas Day 2025 meals; opens 11 AM\n• Desi: 2025 holiday 4-course menu C$35/person ran Dec 24-Jan 1; no kids' menu - kids share butter chicken & naan; takes reservations",
-          "est": 67.5,
+          "detail": "• Christmas Day hours aren't posted - call in early December\n• Option 1 - Arms Reach Bistro, 4390 Gallant Ave: Pacific Northwest bistro on the water; kids' cheeseburger and highchairs; (604) 929-7442\n• Option 2 - The Raven Pub, 1052 Deep Cove Rd: neighbourhood pub, opens at noon on Fridays; families welcome\n• Option 3 - Deep Cove Pizza, 4385 Gallant Ave: pizza by the slice and whole pies\n• Option 4 - Cafe Orso, 4316 Gallant Ave: café with sandwiches and baked goods\n• Backup if none are open: Denny's Davie downtown (open 24 hours), then drive to Dundarave from there",
+          "est": 79.2,
           "ccy": "CAD",
-          "menuUrl": "https://www.dennys.ca/restaurant/british-columbia/vancouver-davie/menu/",
-          "menuLabel": "Denny's Davie menu",
-          "notes": "Denny's: Single Cheeseburger C$17.99 + Seasoned Grilled Chicken C$20.99 (adults) + Jr Chicken Tenders C$7.99 + Jr Grilled Cheese C$7.29 = C$54.26. Water. + 5% GST + 20% tip = C$67.83, about US$49 (menu prices VERIFIED). Desi: Butter Chicken C$23 + Chicken Biryani C$21 (adults) + kids share a Butter Chicken C$23 + 2 naan ~C$8 = C$75. Water. + 5% GST + 20% tip = C$93.75, about US$68 (naan ESTIMATE). Estimate shown is Desi, the higher of the two.",
+          "menuUrl": "http://www.armsreachbistro.com/",
+          "menuLabel": "Arms Reach Bistro",
+          "notes": "ESTIMATE - Deep Cove menus with prices aren't posted online: about C$88 for 2 adult mains + 2 kids' meals. Water. + 5% GST + 20% tip = C$110, about US$79.",
           "conf": "NOT BOOKED",
           "confLinks": [
             {
-              "label": "Denny's Davie menu",
-              "url": "https://www.dennys.ca/restaurant/british-columbia/vancouver-davie/menu/"
+              "label": "Arms Reach Bistro",
+              "url": "http://www.armsreachbistro.com/"
             },
+            {
+              "label": "The Raven Pub",
+              "url": "https://www.opentable.com/r/the-raven-pub-north-vancouver"
+            },
+            {
+              "label": "Deep Cove Pizza",
+              "url": "https://www.yelp.ca/biz/deep-cove-pizza-north-vancouver"
+            },
+            {
+              "label": "Deep Cove - where to eat",
+              "url": "https://deepcovebcwebsite.pages.dev/eat-drink"
+            },
+            {
+              "label": "Backup: Denny's Davie menu",
+              "url": "https://www.dennys.ca/restaurant/british-columbia/vancouver-davie/menu/"
+            }
+          ],
+          "flag": "Call Arms Reach Bistro (604-929-7442) and The Raven Pub in early December to confirm Christmas Day lunch.",
+          "phones": [
+            {
+              "label": "Arms Reach 604-929-7442",
+              "tel": "+16049297442"
+            },
+            {
+              "label": "Denny's Davie 604-689-0509",
+              "tel": "+16046890509"
+            }
+          ]
+        },
+        {
+          "start": "1:45 PM",
+          "end": "1:55 PM",
+          "title": "Back to the car",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• FROM Gallant Ave → TO the Panorama Dr lot\n• Kids into car seats",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Panorama%20Park%2C%20Deep%20Cove%2C%20North%20Vancouver%2C%20BC&destination=Panorama%20Park%2C%20Deep%20Cove%2C%20North%20Vancouver%2C%20BC&travelmode=walking",
+          "menuLabel": "Walking directions"
+        },
+        {
+          "start": "1:55 PM",
+          "end": "2:25 PM",
+          "title": "Drive to Dundarave",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM Deep Cove → TO Dundarave Pier (25th St & Bellevue Ave)\n• ~23 km (14 mi) west on Hwy 1 (Upper Levels), ~27 min",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Panorama%20Park%2C%20Deep%20Cove%2C%20North%20Vancouver%2C%20BC&destination=Dundarave%20Pier%2C%2025th%20St%20%26%20Bellevue%20Ave%2C%20West%20Vancouver%2C%20BC&travelmode=driving",
+          "menuLabel": "Driving directions"
+        },
+        {
+          "start": "2:25 PM",
+          "end": "2:35 PM",
+          "title": "Park at Dundarave",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• Street parking along Bellevue Ave (4-hour limit; free as of 2025)\n• Washrooms at Dundarave Park, open year-round"
+        },
+        {
+          "start": "2:35 PM",
+          "end": "3:30 PM",
+          "title": "Dundarave pier, beach & Festival of Lights trees",
+          "typeName": "Sightseeing",
+          "emoji": "🎄",
+          "detail": "• Walk out the pier for views back to Stanley Park and downtown\n• Dundarave Festival of Lights - 150+ decorated trees along the waterfront toward Ambleside\n• Dundarave Park playground by the beach"
+        },
+        {
+          "start": "3:30 PM",
+          "end": "3:40 PM",
+          "title": "Drive to Ambleside",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM Dundarave → TO Ambleside (Millennium Park, foot of 14th St)\n• ~2.5 km along Bellevue Ave / Marine Dr, ~4 min\n• Ambleside Park lot: first 90 min free once a day - start a PayByPhone session to claim it",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Dundarave%20Pier%2C%2025th%20St%20%26%20Bellevue%20Ave%2C%20West%20Vancouver%2C%20BC&destination=Millennium%20Park%2C%20Ambleside%2C%20West%20Vancouver%2C%20BC&travelmode=driving",
+          "menuLabel": "Driving directions"
+        },
+        {
+          "start": "3:40 PM",
+          "end": "4:25 PM",
+          "title": "Ambleside seawalk & the 30-ft Christmas tree",
+          "typeName": "Sightseeing",
+          "emoji": "✨",
+          "detail": "• Millennium Park's 30-ft tree with 10,000+ lights at the foot of 14th St\n• Lights come on as it gets dark (sunset ~4:16 PM)\n• Ambleside Park playground and washrooms (open year-round)\n• Park Royal mall is closed Christmas Day"
+        },
+        {
+          "start": "4:25 PM",
+          "end": "4:40 PM",
+          "title": "Drive back to the hotel",
+          "typeName": "Drive",
+          "emoji": "🚗",
+          "detail": "• FROM Ambleside → TO the hotel\n• ~8 km over the Lions Gate Bridge, ~12 min\n• Valet the car for the night",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Millennium%20Park%2C%20Ambleside%2C%20West%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving",
+          "menuLabel": "Driving directions"
+        },
+        {
+          "start": "4:40 PM",
+          "end": "5:10 PM",
+          "title": "Rest & freshen up",
+          "typeName": "Free Time",
+          "emoji": "🛋️",
+          "detail": "• Downtime in the room before dinner"
+        },
+        {
+          "start": "5:10 PM",
+          "end": "5:30 PM",
+          "title": "Walk to Desi Indian Lounge",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• FROM the hotel → TO Desi Indian Lounge (1355 Hornby St)\n• ~1.3 km (0.8 mi) south via Burrard St and Hornby St, ~20 min at kid pace\n• Raining hard? A rideshare is ~5 min",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=Desi%20Indian%20Lounge%2C%201355%20Hornby%20St%2C%20Vancouver%2C%20BC&travelmode=walking",
+          "menuLabel": "Walking directions"
+        },
+        {
+          "start": "5:30 PM",
+          "end": "6:45 PM",
+          "title": "Dinner - Desi Indian Lounge — BOOKED",
+          "typeName": "Dining",
+          "emoji": "🍛",
+          "detail": "• 1355 Hornby St - modern Indian\n• 2025: a 4-course holiday prix fixe (C$35/person) ran Dec 24-Jan 1 - ask whether the regular menu is also available\n• No kids' menu - butter chicken, naan and rice work for kids",
+          "est": 67.5,
+          "ccy": "CAD",
+          "menuUrl": "https://desilounge.ca/pages/menu",
+          "menuLabel": "Desi menu",
+          "notes": "Butter Chicken C$23 + Chicken Biryani C$21 (adults) + kids share a Butter Chicken C$23 + 2 naan ~C$8 = C$75. Water. + 5% GST + 20% tip = C$93.75, about US$68 (naan ESTIMATE). If only the C$35 holiday prix fixe is served: 4 x C$35 = C$140 + GST + tip = C$175, about US$126.",
+          "conf": "OpenTable - Fri Dec 25, 5:30 PM, party of 4",
+          "confLinks": [
             {
               "label": "Desi Indian Lounge menu",
               "url": "https://desilounge.ca/pages/menu"
-            },
-            {
-              "label": "Desi - reserve a table",
-              "url": "https://desilounge.ca/pages/reserve-table"
-            },
-            {
-              "label": "Directions: Stanley Park to Denny's",
-              "url": "https://www.google.com/maps/dir/?api=1&origin=Lost%20Lagoon%2C%20Stanley%20Park%2C%20Vancouver%2C%20BC&destination=Denny%27s%2C%201098%20Davie%20St%2C%20Vancouver%2C%20BC&travelmode=driving"
-            },
-            {
-              "label": "Directions: Stanley Park to Desi",
-              "url": "https://www.google.com/maps/dir/?api=1&origin=Lost%20Lagoon%2C%20Stanley%20Park%2C%20Vancouver%2C%20BC&destination=Desi%20Indian%20Lounge%2C%201355%20Hornby%20St%2C%20Vancouver%2C%20BC&travelmode=driving"
-            },
-            {
-              "label": "Directions: Denny's to hotel",
-              "url": "https://www.google.com/maps/dir/?api=1&origin=Denny%27s%2C%201098%20Davie%20St%2C%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving"
-            },
-            {
-              "label": "Directions: Desi to hotel",
-              "url": "https://www.google.com/maps/dir/?api=1&origin=Desi%20Indian%20Lounge%2C%201355%20Hornby%20St%2C%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=driving"
             }
           ],
-          "flag": "Pick Denny's or Desi. Call in early December to confirm Christmas Day lunch hours; if Desi, book 12:45 PM for four.",
+          "flag": "BOOKED — 5:30 PM Fri Dec 25 for four (confirmation sent to roquec+opentable@gmail.com).",
           "phones": [
-            {
-              "label": "Denny's 604-689-0509",
-              "tel": "+16046890509"
-            },
             {
               "label": "Desi 604-681-2131",
               "tel": "+16046812131"
@@ -1261,73 +1392,17 @@
           ]
         },
         {
-          "start": "1:45 PM",
-          "end": "1:55 PM",
-          "title": "Drive back to the hotel",
-          "typeName": "Drive",
-          "emoji": "🚗",
-          "detail": "• Denny's - ~1 mi via Davie St and Burrard St (~7 min)\n• Desi - ~1 mi via Hornby St and Burrard St (~6 min)\n• Valet the car"
-        },
-        {
-          "start": "1:55 PM",
-          "end": "2:05 PM",
-          "title": "Walk to Robson Square",
-          "typeName": "Walk",
-          "emoji": "🚶",
-          "detail": "• FROM the hotel → TO Robson Square ice rink (below street level at Robson & Howe)\n• ~5 min to 800 Robson St",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&destination=Robson%20Square%20Ice%20Rink%2C%20800%20Robson%20St%2C%20Vancouver%2C%20BC&travelmode=walking",
-          "menuLabel": "Walking directions"
-        },
-        {
-          "start": "2:05 PM",
-          "end": "3:35 PM",
-          "title": "Skating - Robson Square ice rink",
-          "typeName": "Excursion",
-          "emoji": "⛸️",
-          "detail": "• Free covered outdoor rink downtown\n• Skate rentals C$5; helmets free and required for ages 12 and under\n• Christmas Day hours were 11 AM-5 PM last season",
-          "est": 14.4,
-          "ccy": "CAD",
-          "notes": "Skate rentals 4 x C$5 = C$20, about US$14. Hours from the 2025-26 season; confirm the 2026 schedule."
-        },
-        {
-          "start": "3:35 PM",
-          "end": "3:45 PM",
+          "start": "6:45 PM",
+          "end": "7:05 PM",
           "title": "Walk back to the hotel",
           "typeName": "Walk",
           "emoji": "🚶",
-          "detail": "• FROM Robson Square → TO the hotel",
-          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Robson%20Square%20Ice%20Rink%2C%20800%20Robson%20St%2C%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=walking",
+          "detail": "• FROM Desi Indian Lounge → TO the hotel\n• ~20 min, or a 5-min rideshare",
+          "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Desi%20Indian%20Lounge%2C%201355%20Hornby%20St%2C%20Vancouver%2C%20BC&destination=Hyatt%20Regency%20Vancouver%2C%20655%20Burrard%20St%2C%20Vancouver%2C%20BC&travelmode=walking",
           "menuLabel": "Walking directions"
         },
         {
-          "start": "3:45 PM",
-          "end": "4:20 PM",
-          "title": "Downtime & dress for dinner",
-          "typeName": "Free Time",
-          "emoji": "🛋️"
-        },
-        {
-          "start": "4:30 PM",
-          "end": "6:30 PM",
-          "title": "Christmas buffet - Mosaic Grille (hotel)",
-          "typeName": "Dining",
-          "emoji": "🎄",
-          "detail": "• Christmas Day buffet in the hotel - no driving\n• Seatings were 4:30 PM and 7:00 PM in 2025 - book the 4:30\n• Reserve as soon as it's announced",
-          "est": 327.67,
-          "ccy": "CAD",
-          "menuUrl": "https://www.hyatt.com/en-US/hotel/canada/hyatt-regency-vancouver/yvrrv/dining",
-          "notes": "ESTIMATE from 2025 pricing (C$60-125 per person): 2 adults x C$125 + 2 kids x C$60 = C$370 + 5% GST (C$18.50) + 18% gratuity (C$66.60) = C$455.10, about US$328. The 2026 menu and prices aren't posted yet.",
-          "conf": "NOT BOOKED",
-          "confLinks": [
-            {
-              "label": "Mosaic Grille — OpenTable",
-              "url": "https://www.opentable.com/r/mosaic-grille-hyatt-regency-vancouver"
-            }
-          ],
-          "flag": "Book the 4:30 PM seating as soon as the 2026 Christmas buffet is announced."
-        },
-        {
-          "start": "6:30 PM",
+          "start": "7:05 PM",
           "end": "7:45 PM",
           "title": "Evening in the room",
           "typeName": "Free Time",
@@ -1340,7 +1415,7 @@
           "title": "Bedtime routine",
           "typeName": "Logistics",
           "emoji": "🛏️",
-          "detail": "• Lights out by 9:00 PM keeps 10 hrs of sleep before a 7:00 AM wake-up"
+          "detail": "• Lights out by 8:45 PM - 10+ hrs before the 7:00 AM Squamish start"
         }
       ]
     },
