@@ -3252,7 +3252,7 @@ class Component extends DCLogic {
             }
           ],
           "roomType": "2 Queen Beds",
-          "flag": "BOOKED — 2 Queen Beds, Free Night Award. Free cancellation until 5:59 PM Sat Dec 26. Call 206-248-1000 to confirm the first morning shuttle (~5:45 AM Dec 29).",
+          "flag": "BOOKED — 2 Queen Beds, Free Night Award. Free cancellation until 5:59 PM Sat Dec 26. Call 206-248-1000 to confirm the 5:00 AM shuttle on Dec 29 (it runs on the hour and half hour).",
           "phones": [
             {
               "label": "206-248-1000",
@@ -3344,44 +3344,78 @@ class Component extends DCLogic {
       "planned": false,
       "blocks": [
         {
-          "start": "5:15 AM",
-          "end": "5:45 AM",
-          "title": "Wake up & check out",
+          "start": "4:15 AM",
+          "end": "4:50 AM",
+          "title": "Wake up, dress & check out",
           "typeName": "Logistics",
           "emoji": "⏰",
-          "detail": "• Grab-and-go breakfast at the airport after security\n• Express checkout in the Marriott app"
+          "detail": "• Express checkout in the Marriott app - leave the keys in the room\n• No breakfast included at this hotel - eat at the airport after security"
         },
         {
-          "start": "5:45 AM",
-          "end": "6:00 AM",
+          "start": "4:50 AM",
+          "end": "5:00 AM",
+          "title": "Down to the lobby",
+          "typeName": "Logistics",
+          "emoji": "🛎️",
+          "detail": "• Grab anything bought the night before at the 24/7 Market Place in the lobby"
+        },
+        {
+          "start": "5:00 AM",
+          "end": "5:10 AM",
           "title": "Hotel shuttle to the terminal",
           "typeName": "Transportation",
           "emoji": "🚌",
-          "detail": "• Free shuttle, ~3 min - confirm the first run the night before (206-248-1000)\n• Backup: Uber/Lyft from the hotel entrance, about 5 min"
+          "detail": "• Take the 5:00 AM run - the shuttle leaves on the hour and half hour (confirm with the hotel)\n• ~7-10 min to the SEA departures level\n• Backup: Uber/Lyft from the hotel entrance, about 7 min"
         },
         {
-          "start": "6:00 AM",
-          "end": "6:30 AM",
+          "start": "5:10 AM",
+          "end": "5:30 AM",
           "title": "Delta check-in & bag drop",
           "typeName": "Logistics",
           "emoji": "🧳",
-          "detail": "• Check in all 4 in the Fly Delta app the day before (opens 24 hrs ahead)\n• Delta counters are on the departures (upper) level"
+          "detail": "• Check in all 4 in the Fly Delta app the night before - this is just bag drop\n• Delta counters are on the departures (upper) level\n• Checked-bag cutoff: 7:15 AM (45 min before departure)"
         },
         {
-          "start": "6:30 AM",
-          "end": "7:00 AM",
-          "title": "TSA security",
+          "start": "5:30 AM",
+          "end": "5:35 AM",
+          "title": "Walk to TSA PreCheck",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• FROM the Delta counters → TO the nearest PreCheck lane\n• Kids 17 and under go through PreCheck with you"
+        },
+        {
+          "start": "5:35 AM",
+          "end": "5:55 AM",
+          "title": "TSA PreCheck security",
           "typeName": "Logistics",
           "emoji": "🛂",
-          "detail": "• Holiday travel week - keep the buffer\n• Gate is posted in the Fly Delta app the day of"
+          "detail": "• Early morning is SEA's busiest time at security, and Dec 29 is a heavy post-holiday day - 20 min allowed"
         },
         {
-          "start": "7:00 AM",
+          "start": "6:00 AM",
+          "end": "6:55 AM",
+          "title": "Breakfast + McDonald's to go for the flight",
+          "typeName": "Dining",
+          "emoji": "🍔",
+          "detail": "• Delta 506 usually leaves from B1-B3 (sometimes A14) - check the gate in the Fly Delta app the night before\n• McDonald's at B1 (open 24 hours): eat breakfast and buy lunch to take on the plane\n• Before 10:30 AM it's the breakfast menu - McMuffins, hash browns, hotcakes\n• Other options: Starbucks at B7 or A3, Floret at A1, or Pallino / Starbucks Evenings in the Central Terminal (24 hours)",
+          "est": 70.0,
+          "notes": "ESTIMATE - about $35 for breakfast for 4 plus about $35 for a to-go meal for 4 at airport McDonald's prices. Menu prices not posted online."
+        },
+        {
+          "start": "6:55 AM",
+          "end": "7:10 AM",
+          "title": "Walk to the gate & restrooms",
+          "typeName": "Walk",
+          "emoji": "🚶",
+          "detail": "• FROM the food court → TO the Delta 506 gate\n• Restroom stop before boarding"
+        },
+        {
+          "start": "7:10 AM",
           "end": "8:00 AM",
           "title": "At the gate - boarding",
           "typeName": "Logistics",
           "emoji": "🛫",
-          "detail": "• Pick up breakfast on the way to the gate\n• Boarding starts about 35-40 min before departure"
+          "detail": "• Boarding starts about 7:20 (35-40 min before departure)"
         },
         {
           "start": "8:00 AM",
