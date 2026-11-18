@@ -1518,17 +1518,21 @@
           "title": "Sea to Sky Gondola up — BOOKED",
           "typeName": "Transportation",
           "emoji": "🚡",
-          "detail": "• ~10 min ride to the Summit Lodge\n• Family of Three lift ticket for Sat Dec 26 (2 adults + your son); your 5-year-old rides free\n• Show the e-ticket from the confirmation email at the base terminal",
+          "detail": "• ~10 min ride to the Summit Lodge\n• Family of Three lift ticket for Sat Dec 26 (2 adults + your son); your 5-year-old rides free\n• Show the barcode from the \"Lift Tickets Sea to Sky Gondola\" email (roqueandjenny@gmail.com) at the base terminal - screenshot it in case of no signal",
           "ccy": "CAD",
           "notes": "Paid: Family of Three C$175.95 (8% online discount off C$191.95) + tax C$8.80 = C$184.75, about US$133 at ~0.72. Children 5 and under ride free. Winter hours Nov 27-Dec 31: 9 AM-5 PM.",
           "conf": "Sea to Sky Gondola order OL183875",
           "confLinks": [
             {
+              "label": "Lift ticket barcode (Gmail)",
+              "url": "https://mail.google.com/mail/?authuser=roqueandjenny@gmail.com#all/thread-f:1882218677429035116"
+            },
+            {
               "label": "Sea to Sky Gondola — hours & FAQ",
               "url": "https://www.seatoskygondola.com/faq/"
             }
           ],
-          "flag": "BOOKED — Family of Three, Sat Dec 26; C$184.75 paid. Watch for the confirmation email with the tickets.",
+          "flag": "BOOKED — Family of Three, Sat Dec 26; C$184.75 paid. Barcode ticket is in the \"Lift Tickets Sea to Sky Gondola\" email in roqueandjenny@gmail.com.",
           "paid": 133.02
         },
         {
