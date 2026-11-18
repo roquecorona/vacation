@@ -700,7 +700,7 @@
         {
           "start": "12:45 PM",
           "end": "2:00 PM",
-          "title": "Lunch - Joe Fortes Seafood & Chop House",
+          "title": "Lunch - Joe Fortes Seafood & Chop House — BOOKED",
           "typeName": "Dining",
           "emoji": "🦞",
           "detail": "• Vancouver seafood institution since 1985\n• Weekday lunch 11 AM-4 PM\n• Kids' menu - see the kids' menu photo link",
@@ -708,7 +708,7 @@
           "ccy": "CAD",
           "menuUrl": "https://www.joefortes.ca/wp-content/uploads/2026/05/156939-CFWC-Joe_Fortes_Lunch-May2026-P7.pdf",
           "notes": "Fish & Chips C$32 + Salmon Cakes C$36 (adults) + Chicken & Waffles C$29 + Fish & Chips C$32 (kids, no kids' menu) = C$129. Entrees only, water. + 5% GST (C$6.45) + 20% tip (C$25.80) = C$161.25, about US$116 at ~0.72. Prices from the May 2026 lunch menu; kids' portions, if offered, would lower this.",
-          "conf": "NOT BOOKED",
+          "conf": "OpenTable - Wed Dec 23, 12:30 PM, party of 4",
           "confLinks": [
             {
               "label": "Joe Fortes — reservations",
@@ -719,7 +719,7 @@
               "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuRISwkhqIEhEICI10_HKPZ8xBJpms8lbacKLbiRwNztHrJfU3IA9EftQ&s=10"
             }
           ],
-          "flag": "Book 12:45 PM Wed Dec 23 for four."
+          "flag": "BOOKED — 12:30 PM Wed Dec 23 for four, via OpenTable. The plan has you walking in about 12:45 after the border - call 604-669-1940 if you're running late."
         },
         {
           "start": "2:00 PM",
