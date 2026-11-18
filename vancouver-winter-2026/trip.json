@@ -820,7 +820,7 @@
         {
           "start": "6:15 PM",
           "end": "7:30 PM",
-          "title": "Dinner - The Old Spaghetti Factory, Gastown",
+          "title": "Dinner - The Old Spaghetti Factory, Gastown — BOOKED",
           "typeName": "Dining",
           "emoji": "🍝",
           "detail": "• The chain's original Vancouver location, with a vintage streetcar inside\n• Entrees include bread, green salad (or soup) and spumoni ice cream\n• Kids' menu for ages 10 and under - drink and ice cream included\n• Reservations recommended",
@@ -828,14 +828,14 @@
           "ccy": "CAD",
           "menuUrl": "https://oldspaghettifactory.ca/locations/gastown/#menu",
           "notes": "Lasagna C$21.25 + Chicken Parmigiana C$24.50 (adults) + Kids Spaghetti & Meatballs C$8.50 + Kids Chicken Tenders & Fries C$9.50 = C$63.75. Water for adults. + 5% GST (C$3.19) + 20% tip (C$12.75) = C$79.69, about US$57 at ~0.72. Prices from the Gastown menu, Oct 2026.",
-          "conf": "NOT BOOKED",
+          "conf": "Old Spaghetti Factory Gastown - Wed Dec 23, 6:15 PM, table for 4 (status: Confirmed)",
           "confLinks": [
             {
               "label": "The Old Spaghetti Factory Gastown",
               "url": "https://oldspaghettifactory.ca/locations/gastown/"
             }
           ],
-          "flag": "Book 6:15 PM Wed Dec 23 for four."
+          "flag": "BOOKED — 6:15 PM Wed Dec 23 for four. Watch for the confirmation email at roquec@gmail.com; if none arrives, call (604) 684-1288."
         },
         {
           "start": "7:30 PM",
