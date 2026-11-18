@@ -1515,21 +1515,21 @@
         {
           "start": "12:05 PM",
           "end": "12:20 PM",
-          "title": "Sea to Sky Gondola up",
+          "title": "Sea to Sky Gondola up — BOOKED",
           "typeName": "Transportation",
           "emoji": "🚡",
-          "detail": "• ~10 min ride to the Summit Lodge\n• Family ticket online (2 adults + 2 kids)",
-          "est": 119.48,
+          "detail": "• ~10 min ride to the Summit Lodge\n• Family of Three lift ticket for Sat Dec 26 (2 adults + your son); your 5-year-old rides free\n• Show the e-ticket from the confirmation email at the base terminal",
           "ccy": "CAD",
-          "notes": "Family ticket C$165.95 online (2 adults + 2 child/youth), about US$119 at ~0.72; window price C$191.95, so buy online. Children 5 and under are free, but the family ticket is still cheaper than single tickets. Winter hours Nov 27-Dec 31: 9 AM-5 PM.",
-          "conf": "NOT BOOKED",
+          "notes": "Paid: Family of Three C$175.95 (8% online discount off C$191.95) + tax C$8.80 = C$184.75, about US$133 at ~0.72. Children 5 and under ride free. Winter hours Nov 27-Dec 31: 9 AM-5 PM.",
+          "conf": "Sea to Sky Gondola order OL183875",
           "confLinks": [
             {
-              "label": "Sea to Sky Gondola — tickets",
-              "url": "https://www.seatoskygondola.com/plan-your-visit/hours-and-prices/"
+              "label": "Sea to Sky Gondola — hours & FAQ",
+              "url": "https://www.seatoskygondola.com/faq/"
             }
           ],
-          "flag": "Day tickets are valid any day until the printed expiry - safe to buy early online (C$165.95 family)."
+          "flag": "BOOKED — Family of Three, Sat Dec 26; C$184.75 paid. Watch for the confirmation email with the tickets.",
+          "paid": 133.02
         },
         {
           "start": "12:20 PM",
