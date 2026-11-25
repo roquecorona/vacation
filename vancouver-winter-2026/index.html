@@ -515,7 +515,7 @@ Edits happen in chat with Claude.</div>
           </sc-for>
         </div>
         <sc-if value="{{ hasRollups }}" hint-placeholder-val="{{ true }}">
-          <div style="margin:0 0 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;align-items:start">
+          <div style="margin:0 0 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:10px;align-items:start">
             <sc-for list="{{ packRollups }}" as="pr" hint-placeholder-count="3">
               <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px">
                 <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
@@ -525,14 +525,15 @@ Edits happen in chat with Claude.</div>
                 <sc-if value="{{ pr.empty }}" hint-placeholder-val="{{ false }}">
                   <div style="font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d;text-wrap:pretty">No pack list yet — ask Claude to count one from the outfit plan.</div>
                 </sc-if>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 14px">
-                  <sc-for list="{{ pr.items }}" as="it" hint-placeholder-count="6">
-                    <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
-                      <span style="font:600 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:22px;text-align:right">{{ it.count }}×</span>
-                      <span style="font:400 12px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ it.name }}</span>
+                <sc-for list="{{ pr.groups }}" as="g" hint-placeholder-count="4">
+                  <div style="font:500 9.5px 'Spline Sans Mono',monospace;letter-spacing:0.6px;text-transform:uppercase;color:#8b9a9d;margin:10px 0 3px">{{ g.label }}</div>
+                  <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="2">
+                    <div style="display:flex;align-items:baseline;gap:8px;padding:2px 0">
+                      <span style="font:600 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:22px;text-align:right;flex:none">{{ it.count }}×</span>
+                      <span style="font:400 12.5px/1.35 'Schibsted Grotesk',sans-serif;min-width:0;overflow-wrap:anywhere">{{ it.name }}</span>
                     </div>
                   </sc-for>
-                </div>
+                </sc-for>
               </div>
             </sc-for>
           </div>
@@ -544,13 +545,28 @@ Edits happen in chat with Claude.</div>
               <span style="font:500 10.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ od.dayTitle }}</span>
             </div>
             <sc-for list="{{ od.slots }}" as="s" hint-placeholder-count="2">
-              <div style="display:grid;grid-template-columns:var(--packslot-cols-mobile, 240px 1fr);border-bottom:1px solid #f0f2ef">
-                <div style="padding:10px 14px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:#647579">{{ s.name }}</div>
-                <div style="display:flex;align-items:stretch">
-                  <sc-for list="{{ s.people }}" as="p" hint-placeholder-count="3">
-                    <div style="flex:1;min-width:0;padding:10px 12px;border-left:1px solid #f0f2ef;font:400 11px/1.5 'Schibsted Grotesk',sans-serif;white-space:pre-wrap"><span style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;display:block;margin-bottom:3px">{{ p.who }}</span>{{ p.text }}</div>
-                  </sc-for>
-                </div>
+              <div style="padding:11px 16px 12px;border-bottom:1px solid #f0f2ef">
+                <div style="font:700 12.5px 'Schibsted Grotesk',sans-serif;color:#1b2629">{{ s.title }}</div>
+                <sc-if value="{{ s.hasSub }}" hint-placeholder-val="{{ true }}">
+                  <div style="font:500 10.5px 'Spline Sans Mono',monospace;color:#8b9a9d;margin-top:2px;overflow-wrap:anywhere">{{ s.sub }}</div>
+                </sc-if>
+                <sc-for list="{{ s.people }}" as="p" hint-placeholder-count="1">
+                  <div style="margin-top:8px">
+                    <sc-if value="{{ p.showWho }}" hint-placeholder-val="{{ false }}">
+                      <div style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#647579;margin:4px 0 2px">{{ p.who }}</div>
+                    </sc-if>
+                    <sc-for list="{{ p.groups }}" as="g" hint-placeholder-count="5">
+                      <div style="display:grid;grid-template-columns:58px 1fr;gap:8px;align-items:start;margin:5px 0">
+                        <div style="font:500 9.5px 'Spline Sans Mono',monospace;letter-spacing:0.6px;text-transform:uppercase;color:#8b9a9d;padding-top:5px">{{ g.label }}</div>
+                        <div style="display:flex;flex-wrap:wrap;gap:5px;min-width:0">
+                          <sc-for list="{{ g.items }}" as="c" hint-placeholder-count="2">
+                            <span style="font:400 12px/1.35 'Schibsted Grotesk',sans-serif;background:{{ c.bg }};border:1px solid {{ c.bd }};border-radius:999px;padding:3px 9px;overflow-wrap:anywhere">{{ c.label }}<span style="color:#a26a00;font-size:10.5px">{{ c.suffix }}</span></span>
+                          </sc-for>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-for>
               </div>
             </sc-for>
           </div>
@@ -861,6 +877,26 @@ class Component extends DCLogic {
     if (typeof T.alternatives === 'string' && T.alternatives) T.alternatives = { title: 'Alternatives considered', text: T.alternatives };
     T.supplies = T.supplies || [];
     return T;
+  }
+
+  // Sort clothing into layers (coat → mid → base → pants → feet → extras). An item's own "layer" field wins.
+  layerOf(it) {
+    const L = String(it.layer || '').toUpperCase();
+    if (['COAT', 'MID', 'BASE', 'PANTS', 'FEET', 'EXTRAS'].includes(L)) return L;
+    const n = String(it.name || '').toLowerCase();
+    if (/sock|boot|sneaker|shoe|slipper|sandal/.test(n)) return 'FEET';
+    if (/coat|puffer|jacket|parka|shell|poncho|raincoat/.test(n)) return 'COAT';
+    if (/jean|pant|chino|trouser|jogger|bib|overall|short/.test(n)) return 'PANTS';
+    if (/sweater|hoodie|fleece|henley|polo|cardigan|zip|pullover|vest|sweatshirt/.test(n)) return 'MID';
+    if (/32 degrees|merino|legging|base layer|thermal|undershirt|heattech|long underwear|\btop\b|tee|t-shirt/.test(n)) return 'BASE';
+    return 'EXTRAS';
+  }
+  layerGroups(items) {
+    const ORDER = [['COAT', 'Coat', 'Outerwear'], ['MID', 'Mid', 'Sweaters & mid layers'], ['BASE', 'Base', 'Base layers'],
+      ['PANTS', 'Pants', 'Pants'], ['FEET', 'Feet', 'Socks & footwear'], ['EXTRAS', 'Extras', 'Extras']];
+    const by = {};
+    for (const it of items) { const k = this.layerOf(it); (by[k] = by[k] || []).push(it); }
+    return ORDER.filter(([k]) => by[k]).map(([k, short, long]) => ({ key: k, short, long, items: by[k] }));
   }
 
   fm(n, cents) {
@@ -1203,6 +1239,9 @@ class Component extends DCLogic {
           totalLabel: total ? total + ' ITEMS' + (pl && pl.derived ? ' · FROM TRACKER' : '') : '',
           empty: items.length === 0,
           items: items.map(it => ({ count: it.count, name: it.name })),
+          groups: this.layerGroups(items.map(it => ({ name: it.name, layer: it.layer, count: it.count }))).map(g => ({
+            label: g.long, items: g.items.map(it => ({ count: it.count, name: it.name })),
+          })),
         };
       });
       base.hasRollups = base.packRollups.length > 0;
@@ -1211,7 +1250,24 @@ class Component extends DCLogic {
         dayTitle: dayByShort[String(od.date).replace(/\/\d{4}$/, '')] || '',
         slots: od.slots.map(s => ({
           name: s.name,
-          people: s.people.filter(p => pf === 'ALL' || String(p.who).toUpperCase() === pf).map(p => ({ who: p.who, text: p.text || '—' })),
+          title: String(s.name || '').split(' · ')[0],
+          sub: String(s.name || '').split(' · ').slice(1).join(' · ').replace(/, /g, ' · '),
+          hasSub: String(s.name || '').indexOf(' · ') > -1,
+          people: s.people.filter(p => pf === 'ALL' || String(p.who).toUpperCase() === pf).map((p, _i, arr) => {
+            const its = (p.items && p.items.length) ? p.items
+              : String(p.text || '').split('\n').map(l => l.replace(/^\s*[•\-]\s*/, '').trim()).filter(Boolean).map(l => ({ label: l }));
+            return {
+              who: p.who, text: p.text || '—', showWho: arr.length > 1,
+              groups: this.layerGroups(its.map(it => ({ name: it.label, layer: it.layer, rewear: !!it.rewear }))).map(g => ({
+                label: g.short,
+                items: g.items.map(it => ({
+                  label: String(it.name).replace(/ \(([^)]*)\)/g, ' · $1'),
+                  suffix: it.rewear ? ' · 2nd wear' : '',
+                  bg: it.rewear ? '#fff7e6' : '#f3f5f2', bd: it.rewear ? '#f1d9a6' : '#e3e7e3',
+                })),
+              })),
+            };
+          }),
         })).filter(s => s.people.length),
       })).filter(od => od.slots.length);
       const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [''])[1] || '';
