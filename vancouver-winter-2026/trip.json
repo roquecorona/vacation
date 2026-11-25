@@ -2493,7 +2493,7 @@
           },
           {
             "name": "Merino Socks",
-            "count": 3,
+            "count": 2,
             "category": "Underwear & socks",
             "toBuy": false,
             "log": [
@@ -2502,18 +2502,18 @@
                 "r": false
               },
               {
-                "t": "#2 12/21",
-                "r": false
+                "t": "#1 12/21",
+                "r": true
               },
               {
-                "t": "#3 12/22",
+                "t": "#2 12/22",
                 "r": false
               }
             ]
           },
           {
             "name": "Jeans",
-            "count": 3,
+            "count": 2,
             "category": "Bottoms",
             "toBuy": false,
             "log": [
@@ -2526,8 +2526,8 @@
                 "r": false
               },
               {
-                "t": "#3 12/22",
-                "r": false
+                "t": "#2 12/22",
+                "r": true
               }
             ]
           },
@@ -2536,87 +2536,128 @@
             "count": 1,
             "category": "Tops",
             "toBuy": false,
-            "log": []
+            "log": [
+              {
+                "t": "12/21",
+                "r": false
+              }
+            ]
           },
           {
             "name": "Sneakers (TBD)",
             "count": 1,
             "category": "Footwear",
             "toBuy": false,
-            "log": []
+            "log": [
+              {
+                "t": "12/21",
+                "r": false
+              }
+            ]
           },
           {
             "name": "Merino Leggings",
             "count": 1,
             "category": "Base layers",
             "toBuy": false,
-            "log": []
+            "log": [
+              {
+                "t": "12/21",
+                "r": false
+              },
+              {
+                "t": "12/22",
+                "r": true
+              }
+            ]
           },
           {
             "name": "Goodfellow Green Button-Up Sweater",
             "count": 1,
             "category": "Tops",
             "toBuy": false,
-            "log": []
+            "log": [
+              {
+                "t": "12/21",
+                "r": false
+              }
+            ]
           },
           {
             "name": "Michael Kors Puffer (TX.Direct-treated)",
             "count": 1,
             "category": "Outerwear",
             "toBuy": false,
-            "log": []
+            "log": [
+              {
+                "t": "12/21",
+                "r": false
+              },
+              {
+                "t": "12/22",
+                "r": false
+              }
+            ]
           },
           {
             "name": "Beanie",
             "count": 1,
             "category": "Accessories",
             "toBuy": false,
-            "log": []
+            "log": [
+              {
+                "t": "12/21",
+                "r": false
+              },
+              {
+                "t": "12/22",
+                "r": false
+              }
+            ]
           },
           {
             "name": "Gloves",
             "count": 1,
             "category": "Accessories",
             "toBuy": false,
-            "log": []
+            "log": [
+              {
+                "t": "12/21",
+                "r": false
+              },
+              {
+                "t": "12/22",
+                "r": false
+              }
+            ]
           },
           {
             "name": "Rockport Boots",
             "count": 1,
             "category": "Footwear",
             "toBuy": false,
-            "log": []
-          },
-          {
-            "name": "Merino Bottom",
-            "count": 1,
-            "category": "Base layers",
-            "toBuy": false,
             "log": [
               {
-                "t": "#2 12/22",
+                "t": "12/21",
+                "r": false
+              },
+              {
+                "t": "12/22",
                 "r": false
               }
             ]
           },
           {
-            "name": "Sweater",
+            "name": "Express Blue Zip-Up Sweater",
             "count": 1,
             "category": "Tops",
             "toBuy": false,
             "log": [
               {
-                "t": "#2 12/22",
+                "t": "12/22",
                 "r": false
               }
             ]
-          },
-          {
-            "name": "Casual Coat",
-            "count": 1,
-            "category": "Outerwear",
-            "toBuy": false,
-            "log": []
           }
         ]
       }
@@ -2624,7 +2665,7 @@
     "outfitDays": [
       {
         "date": "12/21",
-        "rewears": 0,
+        "rewears": 1,
         "slots": [
           {
             "name": "Flight · MIA → SEA",
@@ -2678,7 +2719,7 @@
             "people": [
               {
                 "who": "ROQUE",
-                "text": "• Underwear #2\n• Merino Leggings\n• 32 Degrees Top #2\n• Merino Socks #2\n• Jeans #2 (light Target)\n• Goodfellow Green Button-Up Sweater\n• Michael Kors Puffer (TX.Direct-treated)\n• Beanie\n• Gloves\n• Rockport Boots",
+                "text": "• Underwear #2\n• Merino Leggings\n• 32 Degrees Top #2\n• Merino Socks #1 (2nd wear)\n• Jeans #2 (light Target)\n• Goodfellow Green Button-Up Sweater\n• Michael Kors Puffer (TX.Direct-treated)\n• Beanie\n• Gloves\n• Rockport Boots",
                 "items": [
                   {
                     "label": "Underwear #2",
@@ -2699,9 +2740,9 @@
                     "toBuy": false
                   },
                   {
-                    "label": "Merino Socks #2",
-                    "rewear": false,
-                    "wearLabel": "",
+                    "label": "Merino Socks #1",
+                    "rewear": true,
+                    "wearLabel": "2nd wear",
                     "toBuy": false
                   },
                   {
@@ -2748,14 +2789,14 @@
       },
       {
         "date": "12/22",
-        "rewears": 0,
+        "rewears": 2,
         "slots": [
           {
             "name": "Day · Ferry, Battle Point, Poulsbo, Winslow, Purple Cafe",
             "people": [
               {
                 "who": "ROQUE",
-                "text": "• Underwear #3\n• Merino Bottom #2\n• 32 Degrees Top #3\n• Merino Socks #3\n• Jeans #3\n• Sweater #2\n• Casual Coat\n• Beanie\n• Rockport Boots",
+                "text": "• Underwear #3\n• Merino Leggings (2nd wear)\n• 32 Degrees Top #3\n• Merino Socks #2\n• Jeans #2 (light Target) (2nd wear)\n• Express Blue Zip-Up Sweater\n• Michael Kors Puffer (TX.Direct-treated)\n• Beanie\n• Gloves\n• Rockport Boots",
                 "items": [
                   {
                     "label": "Underwear #3",
@@ -2764,9 +2805,9 @@
                     "toBuy": false
                   },
                   {
-                    "label": "Merino Bottom #2",
-                    "rewear": false,
-                    "wearLabel": "",
+                    "label": "Merino Leggings",
+                    "rewear": true,
+                    "wearLabel": "2nd wear",
                     "toBuy": false
                   },
                   {
@@ -2776,31 +2817,37 @@
                     "toBuy": false
                   },
                   {
-                    "label": "Merino Socks #3",
+                    "label": "Merino Socks #2",
                     "rewear": false,
                     "wearLabel": "",
                     "toBuy": false
                   },
                   {
-                    "label": "Jeans #3",
+                    "label": "Jeans #2 (light Target)",
+                    "rewear": true,
+                    "wearLabel": "2nd wear",
+                    "toBuy": false
+                  },
+                  {
+                    "label": "Express Blue Zip-Up Sweater",
                     "rewear": false,
                     "wearLabel": "",
                     "toBuy": false
                   },
                   {
-                    "label": "Sweater #2",
-                    "rewear": false,
-                    "wearLabel": "",
-                    "toBuy": false
-                  },
-                  {
-                    "label": "Casual Coat",
+                    "label": "Michael Kors Puffer (TX.Direct-treated)",
                     "rewear": false,
                     "wearLabel": "",
                     "toBuy": false
                   },
                   {
                     "label": "Beanie",
+                    "rewear": false,
+                    "wearLabel": "",
+                    "toBuy": false
+                  },
+                  {
+                    "label": "Gloves",
                     "rewear": false,
                     "wearLabel": "",
                     "toBuy": false
