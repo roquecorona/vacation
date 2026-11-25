@@ -2492,21 +2492,13 @@
             ]
           },
           {
-            "name": "Merino Socks",
-            "count": 2,
-            "category": "Underwear & socks",
+            "name": "Regular Socks",
+            "count": 1,
+            "category": "Other",
             "toBuy": false,
             "log": [
               {
-                "t": "#1 12/21",
-                "r": false
-              },
-              {
-                "t": "#1 12/21",
-                "r": true
-              },
-              {
-                "t": "#2 12/22",
+                "t": "12/21",
                 "r": false
               }
             ]
@@ -2568,6 +2560,22 @@
               {
                 "t": "12/22",
                 "r": true
+              }
+            ]
+          },
+          {
+            "name": "Merino Socks",
+            "count": 2,
+            "category": "Underwear & socks",
+            "toBuy": false,
+            "log": [
+              {
+                "t": "#1 12/21",
+                "r": false
+              },
+              {
+                "t": "#2 12/22",
+                "r": false
               }
             ]
           },
@@ -2665,14 +2673,14 @@
     "outfitDays": [
       {
         "date": "12/21",
-        "rewears": 1,
+        "rewears": 0,
         "slots": [
           {
             "name": "Flight · MIA → SEA",
             "people": [
               {
                 "who": "ROQUE",
-                "text": "• Underwear #1\n• 32 Degrees Top #1\n• Merino Socks #1\n• Jeans #1\n• Hoodie\n• Sneakers (TBD)",
+                "text": "• Underwear #1\n• 32 Degrees Top #1\n• Regular Socks\n• Jeans #1\n• Hoodie\n• Sneakers (TBD)",
                 "items": [
                   {
                     "label": "Underwear #1",
@@ -2687,7 +2695,7 @@
                     "toBuy": false
                   },
                   {
-                    "label": "Merino Socks #1",
+                    "label": "Regular Socks",
                     "rewear": false,
                     "wearLabel": "",
                     "toBuy": false
@@ -2719,7 +2727,7 @@
             "people": [
               {
                 "who": "ROQUE",
-                "text": "• Underwear #2\n• Merino Leggings\n• 32 Degrees Top #2\n• Merino Socks #1 (2nd wear)\n• Jeans #2 (light Target)\n• Goodfellow Green Button-Up Sweater\n• Michael Kors Puffer (TX.Direct-treated)\n• Beanie\n• Gloves\n• Rockport Boots",
+                "text": "• Underwear #2\n• Merino Leggings\n• 32 Degrees Top #2\n• Merino Socks #1\n• Jeans #2 (light Target)\n• Goodfellow Green Button-Up Sweater\n• Michael Kors Puffer (TX.Direct-treated)\n• Beanie\n• Gloves\n• Rockport Boots",
                 "items": [
                   {
                     "label": "Underwear #2",
@@ -2741,8 +2749,8 @@
                   },
                   {
                     "label": "Merino Socks #1",
-                    "rewear": true,
-                    "wearLabel": "2nd wear",
+                    "rewear": false,
+                    "wearLabel": "",
                     "toBuy": false
                   },
                   {
