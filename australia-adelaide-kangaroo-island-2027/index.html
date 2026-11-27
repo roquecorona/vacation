@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=Spline+Sans+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{height:100%}
+body{margin:0;background:#eef0ed;overflow-x:hidden}
+
+/* --- Mobile layout (<=780px) --- */
+/* Inline styles are compiled into React style OBJECTS by this template's runtime */
+/* (see support.js), so plain attribute-selector overrides like div[style*="..."] */
+/* never match the rendered DOM -- they silently do nothing. Every responsive change */
+/* below instead flows through a CSS custom property referenced directly inside the */
+/* template's own inline style as var(--x-mobile, desktop-fallback). That works */
+/* regardless of how the runtime re-serializes the rest of the style object, because */
+/* var() substitution happens in the browser's CSS engine, not in the template. */
+/* Navigation on mobile is a real off-canvas drawer (the desktop sidebar itself */
+/* becomes a fixed, slide-in panel), triggered from a sticky top bar -- not a */
+/* squeezed-down copy of the desktop sidebar sitting above the content. */
+@media (max-width: 780px) {
+  :root {
+    --layout-cols-mobile: 1fr;
+    --layout-rows-mobile: auto 1fr;
+    --layout-h-mobile: auto;
+    --layout-minh-mobile: 100vh;
+    --layout-of-mobile: visible;
+    --topbar-display-mobile: flex;
+    --aside-pos-mobile: fixed;
+    --aside-top-mobile: 0;
+    --aside-bottom-mobile: 0;
+    --aside-w-mobile: 84vw;
+    --aside-maxw-mobile: 320px;
+    --aside-z-mobile: 1000;
+    --aside-shadow-mobile: 0 0 32px rgba(10,16,18,0.35);
+    --aside-closed-tx-mobile: translateX(-100%);
+    --asideclose-display-mobile: flex;
+    --scrim-display-mobile: block;
+    --navrow-pad-mobile: 11px 12px;
+    --navbtn-pad-mobile: 10px 14px;
+    --main-ovy-mobile: visible;
+    --sec-pad-mobile: 18px 16px 40px;
+    --sec-maxw-mobile: 100%;
+    --h1-34-mobile: 25px;
+    --h1-27-mobile: 21px;
+    --dayrow-cols-mobile: 60px 22px 1fr;
+    --dayrow-gap-mobile: 6px;
+    --present-cols-mobile: 1fr;
+    --present-br-mobile: none;
+    --money-cols-mobile: 1fr 76px 88px;
+    --money-gap-mobile: 8px;
+    --points-cols-mobile: 1fr 80px 92px;
+    --points-gap-mobile: 8px;
+    --tbl-est-display-mobile: none;
+    --ovrow-cols-mobile: 44px 1fr auto;
+    --ovrow-summary-display-mobile: none;
+    --bkcards-cols-mobile: 1fr;
+    --packslot-cols-mobile: 92px 1fr;
+  }
+}
+</style>
+</helmet>
+<div style="--accent: {{ accent }}; display:grid;grid-template-columns:var(--layout-cols-mobile, 236px 1fr);grid-template-rows:var(--layout-rows-mobile, none);height:var(--layout-h-mobile, 100%);min-height:var(--layout-minh-mobile, 760px);overflow:var(--layout-of-mobile, hidden);background:#f4f5f3;color:#1b2629;font-family:'Schibsted Grotesk',sans-serif">
+
+  <div data-screen-label="Mobile top bar" style="display:var(--topbar-display-mobile, none);align-items:center;gap:10px;padding:10px 14px;background:#eceeea;border-bottom:1px solid #dfe4e1;position:sticky;top:0;z-index:500">
+    <button onClick="{{ toggleMobileNav }}" aria-label="Open menu" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;width:40px;height:40px;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">&#9776;</button>
+    <div style="min-width:0;flex:1">
+      <div style="font:800 15px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ title }}</div>
+      <div style="font:500 10.5px 'Spline Sans Mono',monospace;color:#647579;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ topbarSubLabel }}</div>
+    </div>
+    <sc-if value="{{ hasToday }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ todayGo }}" aria-label="Jump to today" style="cursor:pointer;background:var(--accent, #16695E);color:#ffffff;border:none;border-radius:8px;width:40px;height:40px;font-size:15px;display:flex;align-items:center;justify-content:center;flex:none">&#128205;</button>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ mobileNavOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ toggleMobileNav }}" style="display:var(--scrim-display-mobile, none);position:fixed;inset:0;background:rgba(10,16,18,0.45);z-index:900"></div>
+  </sc-if>
+
+  <aside data-screen-label="Sidebar" style="background:#eceeea;border-right:1px solid #dfe4e1;display:flex;flex-direction:column;min-height:0;position:var(--aside-pos-mobile, static);top:var(--aside-top-mobile, auto);bottom:var(--aside-bottom-mobile, auto);left:0;width:var(--aside-w-mobile, auto);max-width:var(--aside-maxw-mobile, none);z-index:var(--aside-z-mobile, auto);box-shadow:var(--aside-shadow-mobile, none);transform:{{ asideTransform }};transition:transform 0.28s cubic-bezier(0.4,0,0.2,1)">
+    <div style="display:flex;align-items:flex-start;gap:10px;padding:20px 18px 14px">
+      <div onClick="{{ goOverview }}" style="cursor:pointer;flex:1;min-width:0">
+        <div style="font:800 19px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ title }}</div>
+        <div style="font:500 11px 'Spline Sans Mono',monospace;color:#647579;margin-top:4px">{{ dates }}</div>
+      </div>
+      <button onClick="{{ toggleMobileNav }}" aria-label="Close menu" style="display:var(--asideclose-display-mobile, none);cursor:pointer;background:none;border:1px solid #dfe4e1;border-radius:8px;width:32px;height:32px;flex:none;align-items:center;justify-content:center;font-size:14px;color:#647579">&#10005;</button>
+    </div>
+    <sc-if value="{{ hasToday }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ todayGo }}" style="cursor:pointer;margin:0 18px 14px;padding:8px 12px;border-radius:8px;background:var(--accent, #16695E);color:#ffffff;font:700 12px 'Schibsted Grotesk',sans-serif;text-align:center" style-hover="opacity:0.9">📍 Jump to today</div>
+    </sc-if>
+    <div style="flex:1;overflow-y:auto;padding-bottom:12px">
+      <div onClick="{{ goOverview }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 8px 10px);border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ ovBg }};color:{{ ovFg }}" style-hover="background:#e1e5e0">Trip</div>
+      <div style="margin:12px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">DAYS</div>
+      <sc-for list="{{ navDays }}" as="d" hint-placeholder-count="8">
+        <div onClick="{{ d.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 5px 10px);border-radius:8px;display:grid;grid-template-columns:30px 1fr auto auto;gap:7px;align-items:baseline;background:{{ d.bg }};color:{{ d.fg }}" style-hover="background:#e1e5e0">
+          <span style="font:600 11px 'Spline Sans Mono',monospace;opacity:0.75">{{ d.short }}</span>
+          <span style="font:500 12.5px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ d.title }}</span>
+          <sc-if value="{{ d.isToday }}" hint-placeholder-val="{{ false }}"><span style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E)">TODAY</span></sc-if>
+          <sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:9px;opacity:0.85">✅</span></sc-if>
+        </div>
+      </sc-for>
+      <sc-if value="{{ noDays }}" hint-placeholder-val="{{ false }}">
+        <div style="margin:0 18px;font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d">None yet</div>
+      </sc-if>
+      <div style="margin:14px 18px 4px;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">LENSES</div>
+      <sc-for list="{{ lenses }}" as="l" hint-placeholder-count="6">
+        <div onClick="{{ l.go }}" style="cursor:pointer;margin:0 10px;padding:var(--navrow-pad-mobile, 7px 10px);border-radius:8px;font:600 13px 'Schibsted Grotesk',sans-serif;background:{{ l.bg }};color:{{ l.fg }}" style-hover="background:#e1e5e0">{{ l.label }}</div>
+      </sc-for>
+    </div>
+    <div style="padding:12px 18px;border-top:1px solid #dfe4e1;font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d;line-height:1.6">Viewer only.
+Edits happen in chat with Claude.</div>
+  </aside>
+
+  <main style="overflow-y:var(--main-ovy-mobile, auto);min-width:0">
+
+    <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
+      <section data-screen-label="Trip overview" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 900px)">
+        <h1 style="margin:0;font:800 34px/1.05 'Schibsted Grotesk',sans-serif;letter-spacing:-0.8px;font-size:var(--h1-34-mobile, 34px)">{{ title }}</h1>
+        <div style="font:500 13px 'Spline Sans Mono',monospace;color:#647579;margin-top:8px">{{ subLine }}</div>
+
+        <sc-if value="{{ hasRoute }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:26px;background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;overflow-x:auto">
+            <sc-for list="{{ route }}" as="stop" hint-placeholder-count="6">
+              <div style="display:flex;align-items:flex-start;flex:none">
+                <div>
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <span style="width:10px;height:10px;border-radius:50%;background:var(--accent, #16695E);flex:none"></span>
+                    <span style="font:700 14px 'Schibsted Grotesk',sans-serif;white-space:nowrap">{{ stop.name }}</span>
+                  </div>
+                  <div style="font:500 10.5px 'Spline Sans Mono',monospace;color:#647579;margin:4px 0 0 18px;white-space:nowrap">{{ stop.sub }}</div>
+                </div>
+                <sc-if value="{{ stop.conn }}" hint-placeholder-val="{{ true }}">
+                  <div style="width:42px;border-top:2px dotted #b7c2bf;margin:6px 12px 0"></div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ noDays }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:28px;background:#ffffff;border:1px dashed #b7c2bf;border-radius:14px;padding:28px;max-width:520px">
+            <div style="font:700 15px 'Schibsted Grotesk',sans-serif">Nothing on the timeline yet</div>
+            <div style="font:400 13px/1.6 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:6px;text-wrap:pretty">Tell Claude where you're going and when. It will add skeleton days here, then you fill them in together — one conversation at a time.</div>
+          </div>
+        </sc-if>
+
+        <div style="margin-top:28px;display:grid;gap:6px">
+          <sc-for list="{{ obDays }}" as="d" hint-placeholder-count="10">
+            <div onClick="{{ d.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:11px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+              <span style="font:600 12px 'Spline Sans Mono',monospace;color:#647579">{{ d.dow }} {{ d.short }}</span>
+              <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ d.title }}<sc-if value="{{ d.planned }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;margin-left:8px">✅</span></sc-if></span>
+              <span style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;display:var(--ovrow-summary-display-mobile, inline)">{{ d.summary }}</span>
+              <span style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;min-width:56px;text-align:right">{{ d.money }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isDay }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Day view" style="padding:var(--sec-pad-mobile, 30px 44px 56px);max-width:var(--sec-maxw-mobile, 820px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font:500 12px 'Spline Sans Mono',monospace;color:#647579">{{ dayDate }}</span>
+          <sc-if value="{{ dayPlanned }}" hint-placeholder-val="{{ false }}"><span style="font:600 10px 'Spline Sans Mono',monospace;color:#257a5a">✅ PLANNED</span></sc-if>
+          <span style="flex:1"></span>
+          <button onClick="{{ dayPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ dayNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">→</button>
+        </div>
+        <h1 style="margin:10px 0 4px;font:800 27px/1.1 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;text-wrap:balance;font-size:var(--h1-27-mobile, 27px)">{{ dayTitle }}</h1>
+        <div style="font:500 12px 'Spline Sans Mono',monospace;color:#647579;margin-bottom:10px">{{ dayMeta }}</div>
+        <sc-if value="{{ hasDayCostChips }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap">
+            <sc-for list="{{ dayCostChips }}" as="cc" hint-placeholder-count="2">
+              <span style="font:600 10.5px 'Spline Sans Mono',monospace;letter-spacing:0.3px;background:{{ cc.bg }};color:{{ cc.fg }};border-radius:999px;padding:5px 11px">{{ cc.label }}</span>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ dayEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d;border-top:1px solid #e5e9e5;padding-top:16px">Nothing scheduled yet — plan this day in chat.</div>
+        </sc-if>
+
+        <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="12">
+          <div>
+            <sc-if value="{{ b.isMove }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:baseline;gap:9px;padding:6px 0 6px 96px;font:500 11.5px 'Spline Sans Mono',monospace;color:#8b9a9d">
+                <span>{{ b.emoji }}</span><span>{{ b.moveLabel }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isReceipt }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:baseline;gap:8px;padding:4px 0 4px 96px">
+                <span style="font:400 12px 'Schibsted Grotesk',sans-serif;color:#647579">{{ b.title }}</span>
+                <span style="flex:1;border-bottom:1px dotted #d3dad6;transform:translateY(-3px)"></span>
+                <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:{{ b.moneyColor }}">{{ b.money }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isNote }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:4px 0 4px 96px;font:400 12px 'Schibsted Grotesk',sans-serif;font-style:italic;color:#8b9a9d">{{ b.title }}</div>
+            </sc-if>
+            <sc-if value="{{ b.isStop }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid;grid-template-columns:var(--dayrow-cols-mobile, 88px 30px 1fr);gap:var(--dayrow-gap-mobile, 8px);padding:10px 10px;margin:0 -10px;border-top:1px solid #e5e9e5;{{ b.nowStyle }}">
+                <div style="padding-top:1px">
+                  <sc-if value="{{ b.isNow }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:700 8.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E);margin-bottom:2px">● NOW</div>
+                  </sc-if>
+                  <div style="font:600 12px 'Spline Sans Mono',monospace;white-space:nowrap">{{ b.timeStart }}</div>
+                  <sc-if value="{{ b.hasTimeEnd }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:600 12px 'Spline Sans Mono',monospace;white-space:nowrap;color:#9aa8aa">{{ b.timeEnd }}</div>
+                  </sc-if>
+                  <div style="font:500 10px 'Spline Sans Mono',monospace;color:#9aa8aa;margin-top:2px">{{ b.durLabel }}</div>
+                </div>
+                <div style="font-size:15px;line-height:1.4;text-align:center">{{ b.emoji }}</div>
+                <div style="min-width:0">
+                  <div style="display:flex;align-items:baseline;gap:10px">
+                    <span style="font:600 14.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ b.title }}</span>
+                    <span style="flex:1"></span>
+                    <sc-if value="{{ b.hasCostTag }}" hint-placeholder-val="{{ false }}">
+                      <span style="flex:none;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:0.3px;background:{{ b.costTagBg }};color:{{ b.costTagFg }};border-radius:999px;padding:2px 8px">{{ b.costTagLabel }}</span>
+                    </sc-if>
+                    <span style="flex:none;font:600 12px 'Spline Sans Mono',monospace;color:{{ b.moneyColor }}">{{ b.money }}</span>
+                  </div>
+                  <sc-if value="{{ b.hasISK }}" hint-placeholder-val="{{ false }}">
+                    <div style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;margin-top:2px">{{ b.iskLabel }} · {{ b.iskUsd }}</div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasMeta }}" hint-placeholder-val="{{ false }}">
+                    <div onClick="{{ b.toggle }}" style="cursor:{{ b.metaCursor }};font:400 12px/1.55 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:4px;white-space:pre-wrap;max-width:560px;text-wrap:pretty">{{ b.meta }}</div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasBooking }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:inline-flex;align-items:baseline;gap:12px;margin-top:8px;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;padding:7px 12px;flex-wrap:wrap">
+                      <sc-if value="{{ b.hasConf }}" hint-placeholder-val="{{ true }}">
+                        <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">CONF</span>
+                        <sc-if value="{{ b.confPlain }}" hint-placeholder-val="{{ true }}">
+                          <span style="font:600 12.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;white-space:pre-wrap">{{ b.conf }}</span>
+                        </sc-if>
+                        <sc-if value="{{ b.hasConfLinks }}" hint-placeholder-val="{{ false }}">
+                          <sc-for list="{{ b.confLinks }}" as="l" hint-placeholder-count="1">
+                            <a href="{{ l.url }}" target="_blank" rel="noopener" style="font:600 12.5px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E);text-decoration:none;border-bottom:1px dotted var(--accent, #16695E)">{{ l.label }}</a>
+                          </sc-for>
+                        </sc-if>
+                      </sc-if>
+                      <sc-if value="{{ b.hasPts }}" hint-placeholder-val="{{ false }}">
+                        <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ b.ptsLabel }}</span>
+                      </sc-if>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ b.hasMenu }}" hint-placeholder-val="{{ false }}">
+                    <a href="{{ b.menuUrl }}" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:6px 11px">{{ b.menuLabel }}</a>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPresent }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Present view" style="padding:var(--sec-pad-mobile, 30px 44px 56px);max-width:var(--sec-maxw-mobile, 980px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <h1 style="margin:0;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Present the trip</h1>
+          <span style="flex:1"></span>
+          <button onClick="{{ presentPrev }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">←</button>
+          <button onClick="{{ presentNext }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:8px;font:600 13px 'Spline Sans Mono',monospace;color:#1b2629;padding:var(--navbtn-pad-mobile, 5px 12px)" style-hover="border-color:var(--accent, #16695E)">→</button>
+        </div>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:18px">A visual, day-by-day walkthrough — real photos and a real map per day. Needs an internet connection for the map tiles and photos.</div>
+
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ presentDayChips }}" as="c" hint-placeholder-count="8">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ presentEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing planned yet — build out a day first, then come back here to present it.</div>
+        </sc-if>
+
+        <sc-if value="{{ presentHasDay }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:16px;overflow:hidden">
+            <div style="padding:22px 26px 4px">
+              <div style="font:500 11.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ presentDate }}</div>
+              <div style="font:800 24px/1.15 'Schibsted Grotesk',sans-serif;color:#1b2629;text-wrap:balance;margin-top:2px">{{ presentTitle }}</div>
+            </div>
+
+            <sc-if value="{{ hasPresentPhotos }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:12px;overflow-x:auto;padding:18px 26px 6px">
+                <sc-for list="{{ presentPhotos }}" as="ph" hint-placeholder-count="3">
+                  <div style="flex:none" onClick="{{ ph.open }}">
+                    <img src="{{ ph.url }}" style="width:100%;height:190px;object-fit:cover;border-radius:12px;display:block;background:#c8d0cb;cursor:zoom-in" style-hover="opacity:0.9" />
+                    <div style="font:400 11.5px/1.4 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:6px;text-wrap:pretty">{{ ph.caption }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <div style="display:grid;grid-template-columns:var(--present-cols-mobile, 1fr 360px);gap:0;margin-top:8px">
+              <div style="padding:18px 26px 24px;border-right:var(--present-br-mobile, 1px solid #eef0ed);border-top:1px solid #eef0ed">
+                <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:10px">HERE'S WHAT WE'RE DOING</div>
+                <sc-for list="{{ presentHighlights }}" as="h" hint-placeholder-count="8">
+                  <div style="display:flex;align-items:baseline;gap:10px;padding:7px 0;border-bottom:1px solid #f0f2ef">
+                    <span style="font-size:15px">{{ h.emoji }}</span>
+                    <span style="font:500 14px 'Schibsted Grotesk',sans-serif;min-width:0">{{ h.title }}</span>
+                  </div>
+                </sc-for>
+                <div style="margin-top:16px;font:600 12px 'Spline Sans Mono',monospace;color:#1b2629">{{ presentCost }}</div>
+              </div>
+              <div style="padding:18px 20px;border-top:1px solid #eef0ed">
+                <iframe src="{{ presentMapSrc }}" style="width:100%;height:240px;border:0;border-radius:12px;display:block" loading="lazy"></iframe>
+                <a href="{{ presentMapsUrl }}" target="_blank" rel="noopener" style="display:block;margin-top:10px;text-align:center;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);text-decoration:none;border:1px solid #dfe4e1;border-radius:8px;padding:8px" style-hover="border-color:var(--accent, #16695E)">Open full day route in Google Maps →</a>
+              </div>
+            </div>
+
+            <sc-if value="{{ hasPresentVideos }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:20px 26px 26px;border-top:1px solid #eef0ed">
+                <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d;margin-bottom:12px">SEE IT IN ACTION — CLICK TO WATCH ON YOUTUBE</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+                  <sc-for list="{{ presentVideos }}" as="v" hint-placeholder-count="2">
+                    <a href="{{ v.watchUrl }}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+                      <div style="position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000">
+                        <img src="{{ v.thumb }}" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover" />
+                        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center">
+                          <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center">
+                            <div style="width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:16px solid #ffffff;margin-left:4px"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="font:500 12.5px 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:8px">{{ v.title }}</div>
+                    </a>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+              <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;background:rgba(10,16,18,0.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;cursor:zoom-out">
+                <img src="{{ lightboxUrl }}" style="max-width:100%;max-height:80vh;object-fit:contain;border-radius:8px" />
+                <div style="font:500 13px 'Schibsted Grotesk',sans-serif;color:#dfe9e6;margin-top:16px;text-align:center;max-width:600px">{{ lightboxCaption }}</div>
+                <div style="font:500 11px 'Spline Sans Mono',monospace;color:#8b9a9d;margin-top:10px">Click anywhere to close</div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isMoney }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Money lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 720px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Money</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Every dollar lives on a timeline block. This is just the rollup.</div>
+        <sc-if value="{{ noMoney }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No costs recorded yet. Estimates and receipts land here as the timeline fills in.</div>
+        </sc-if>
+        <sc-if value="{{ hasMoney }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+              <span>CATEGORY</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">PAID</span><span style="text-align:right">TOTAL</span>
+            </div>
+            <sc-for list="{{ moneyRows }}" as="r" hint-placeholder-count="10">
+              <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+                <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.emoji }}&nbsp;&nbsp;{{ r.name }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.est }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.paid }}</span>
+                <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
+              </div>
+            </sc-for>
+            <div style="display:grid;grid-template-columns:var(--money-cols-mobile, 1fr 90px 90px 100px);gap:var(--money-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+              <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ moneyTotEst }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ moneyTotPaid }}</span>
+              <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ moneyTotAll }}</span>
+            </div>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPoints }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Points lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 720px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Points</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:22px">Award burn by program. Planned = on the timeline, not yet confirmed.</div>
+        <sc-if value="{{ noPoints }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No award bookings yet.</div>
+        </sc-if>
+        <sc-if value="{{ hasPoints }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:14px;padding:8px 22px 14px">
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:10px 0 8px;border-bottom:1px solid #e5e9e5;font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1.5px;color:#8b9a9d">
+              <span>PROGRAM</span><span style="text-align:right;display:var(--tbl-est-display-mobile, inline)">PLANNED</span><span style="text-align:right">USED</span><span style="text-align:right">TOTAL</span>
+            </div>
+            <sc-for list="{{ pointRows }}" as="r" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:8px 0;border-bottom:1px solid #f0f2ef;align-items:baseline">
+                <span style="font:500 13.5px 'Schibsted Grotesk',sans-serif">{{ r.name }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ r.planned }}</span>
+                <span style="text-align:right;font:500 12px 'Spline Sans Mono',monospace">{{ r.used }}</span>
+                <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ r.total }}</span>
+              </div>
+            </sc-for>
+            <div style="display:grid;grid-template-columns:var(--points-cols-mobile, 1fr 100px 100px 110px);gap:var(--points-gap-mobile, 10px);padding:12px 0 4px;border-top:2px solid #1b2629;align-items:baseline">
+              <span style="font:700 13.5px 'Schibsted Grotesk',sans-serif">Total</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace;color:#96690f;display:var(--tbl-est-display-mobile, inline)">{{ ptsTotPlanned }}</span>
+              <span style="text-align:right;font:600 12px 'Spline Sans Mono',monospace">{{ ptsTotUsed }}</span>
+              <span style="text-align:right;font:700 12.5px 'Spline Sans Mono',monospace">{{ ptsTotAll }}</span>
+            </div>
+          </div>
+          <div style="margin-top:18px;display:grid;gap:6px">
+            <sc-for list="{{ pointItems }}" as="p" hint-placeholder-count="6">
+              <div onClick="{{ p.go }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:11px;padding:10px 16px;display:grid;grid-template-columns:var(--ovrow-cols-mobile, 52px 1fr auto auto);gap:14px;align-items:baseline" style-hover="border-color:var(--accent, #16695E)">
+                <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ p.dayLabel }}</span>
+                <span style="font:500 13px 'Schibsted Grotesk',sans-serif;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.emoji }}&nbsp;&nbsp;{{ p.title }}</span>
+                <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:{{ p.statusColor }}">{{ p.status }}</span>
+                <span style="font:600 12px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:130px;text-align:right">{{ p.ptsLabel }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isBookings }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Bookings lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 940px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Bookings</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Every block that carries a confirmation or points, gathered in one place.</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+          <sc-for list="{{ bkChips }}" as="c" hint-placeholder-count="5">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <sc-for list="{{ bookingGroups }}" as="g" hint-placeholder-count="4">
+          <div>
+            <div style="margin:20px 0 10px;font:600 10px 'Spline Sans Mono',monospace;letter-spacing:2px;color:#8b9a9d">{{ g.name }}</div>
+            <div style="display:grid;grid-template-columns:var(--bkcards-cols-mobile, repeat(auto-fill,minmax(390px,1fr)));gap:10px">
+              <sc-for list="{{ g.items }}" as="bk" hint-placeholder-count="3">
+                <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;overflow:hidden">
+                  <div style="padding:14px 16px 12px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:9px">
+                    <span style="font-size:15px">{{ bk.emoji }}</span>
+                    <span style="font:700 14.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ bk.title }}</span>
+                    <span style="flex:1"></span>
+                    <button onClick="{{ bk.go }}" style="cursor:pointer;flex:none;background:none;border:1px solid #dfe4e1;border-radius:6px;font:600 10px 'Spline Sans Mono',monospace;color:#647579;padding:3px 8px" style-hover="border-color:var(--accent, #16695E);color:var(--accent, #16695E)">{{ bk.dayLabel }} →</button>
+                  </div>
+
+                  <sc-if value="{{ bk.hasFacts }}" hint-placeholder-val="{{ true }}">
+                    <div style="padding:12px 16px;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;border-bottom:1px solid #eef0ed">
+                      <sc-for list="{{ bk.facts }}" as="ft" hint-placeholder-count="4">
+                        <div style="min-width:0">
+                          <div style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d">{{ ft.label }}</div>
+                          <div style="font:500 12.5px 'Schibsted Grotesk',sans-serif;margin-top:2px;text-wrap:pretty">{{ ft.value }}</div>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ bk.hasFlag }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin:12px 16px 0;background:#fdf3e3;border:1px solid #f0dcae;border-radius:8px;padding:9px 12px;display:flex;gap:8px;align-items:flex-start">
+                      <span style="flex:none;font-size:13px">⚠️</span>
+                      <span style="font:500 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#7a5a17;text-wrap:pretty">{{ bk.flag }}</span>
+                    </div>
+                  </sc-if>
+
+                  <div style="padding:12px 16px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+                    <sc-if value="{{ bk.hasConf }}" hint-placeholder-val="{{ true }}">
+                      <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">CONF</span>
+                      <sc-if value="{{ bk.confPlain }}" hint-placeholder-val="{{ true }}">
+                        <b style="font:600 12px 'Spline Sans Mono',monospace;color:#1b2629;letter-spacing:0.5px;white-space:pre-wrap">{{ bk.conf }}</b>
+                      </sc-if>
+                      <sc-if value="{{ bk.hasConfLinks }}" hint-placeholder-val="{{ false }}">
+                        <sc-for list="{{ bk.confLinks }}" as="l" hint-placeholder-count="1">
+                          <a href="{{ l.url }}" target="_blank" rel="noopener" style="font:600 12px 'Spline Sans Mono',monospace;letter-spacing:0.5px;color:var(--accent, #16695E);text-decoration:none;border-bottom:1px dotted var(--accent, #16695E)">{{ l.label }}</a>
+                        </sc-for>
+                      </sc-if>
+                    </sc-if>
+                    <sc-if value="{{ bk.noConf }}" hint-placeholder-val="{{ false }}">
+                      <span style="font:600 9.5px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#96690f">NOT CONFIRMED</span>
+                    </sc-if>
+                    <sc-if value="{{ bk.hasPts }}" hint-placeholder-val="{{ false }}">
+                      <span style="font:500 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ bk.ptsLabel }}</span>
+                    </sc-if>
+                    <span style="flex:1"></span>
+                    <span style="font:600 12px 'Spline Sans Mono',monospace;color:{{ bk.moneyColor }}">{{ bk.money }}</span>
+                  </div>
+
+                  <sc-if value="{{ bk.hasNotes }}" hint-placeholder-val="{{ false }}">
+                    <div onClick="{{ bk.toggleNotes }}" style="cursor:pointer;padding:9px 16px;border-top:1px solid #eef0ed;font:600 10.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E)">{{ bk.notesToggleLabel }}</div>
+                    <sc-if value="{{ bk.notesOpen }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding:0 16px 14px;font:400 11.5px/1.55 'Schibsted Grotesk',sans-serif;color:#647579;white-space:pre-wrap;text-wrap:pretty">{{ bk.notes }}</div>
+                    </sc-if>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <sc-if value="{{ noBookings }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d;margin-top:16px">No bookings yet. When you book something, paste the confirmation into chat and it will land here.</div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPacking }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Packing lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 980px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Outfits &amp; packing</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Per person, per day, per slot — with the rewear system intact.</div>
+        <sc-if value="{{ noPacking }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing here yet. Ask Claude to draft outfit plans or packing quantities from the itinerary.</div>
+        </sc-if>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ packChips }}" as="c" hint-placeholder-count="4">
+            <button onClick="{{ c.go }}" style="cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.border }};border-radius:999px;font:600 11.5px 'Schibsted Grotesk',sans-serif;padding:6px 14px" style-hover="border-color:var(--accent, #16695E)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasRollups }}" hint-placeholder-val="{{ true }}">
+          <div style="margin:0 0 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;align-items:start">
+            <sc-for list="{{ packRollups }}" as="pr" hint-placeholder-count="3">
+              <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px">
+                <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+                  <span style="font:700 12.5px 'Schibsted Grotesk',sans-serif">{{ pr.who }}</span>
+                  <span style="font:500 10px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ pr.totalLabel }}</span>
+                </div>
+                <sc-if value="{{ pr.empty }}" hint-placeholder-val="{{ false }}">
+                  <div style="font:400 11.5px/1.5 'Schibsted Grotesk',sans-serif;color:#8b9a9d;text-wrap:pretty">No pack list yet — ask Claude to count one from the outfit plan.</div>
+                </sc-if>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 14px">
+                  <sc-for list="{{ pr.items }}" as="it" hint-placeholder-count="6">
+                    <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
+                      <span style="font:600 11.5px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);min-width:22px;text-align:right">{{ it.count }}×</span>
+                      <span style="font:400 12px 'Schibsted Grotesk',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">{{ it.name }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-for list="{{ outfitDays }}" as="od" hint-placeholder-count="6">
+          <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;margin-bottom:10px;overflow:hidden">
+            <div style="padding:10px 16px;border-bottom:1px solid #eef0ed;display:flex;align-items:baseline;gap:12px">
+              <span style="font:700 13px 'Schibsted Grotesk',sans-serif">{{ od.date }}</span>
+              <span style="font:500 10.5px 'Spline Sans Mono',monospace;color:#8b9a9d">{{ od.dayTitle }}</span>
+            </div>
+            <sc-for list="{{ od.slots }}" as="s" hint-placeholder-count="2">
+              <div style="display:grid;grid-template-columns:var(--packslot-cols-mobile, 130px 1fr);border-bottom:1px solid #f0f2ef">
+                <div style="padding:10px 14px;font:600 11.5px 'Schibsted Grotesk',sans-serif;color:#647579">{{ s.name }}</div>
+                <div style="display:flex;align-items:stretch">
+                  <sc-for list="{{ s.people }}" as="p" hint-placeholder-count="3">
+                    <div style="flex:1;min-width:0;padding:10px 12px;border-left:1px solid #f0f2ef;font:400 11px/1.5 'Schibsted Grotesk',sans-serif;white-space:pre-wrap"><span style="font:600 9px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;display:block;margin-bottom:3px">{{ p.who }}</span>{{ p.text }}</div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ hasTracker }}" hint-placeholder-val="{{ true }}">
+          <h2 style="margin:30px 0 4px;font:700 18px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.3px">{{ trackerTitle }}</h2>
+          <div style="font:400 12px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:14px">Item-level, with variation numbers and rewear flags.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px">
+            <sc-for list="{{ trackerDays }}" as="tdy" hint-placeholder-count="6">
+              <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:12px 15px">
+                <div style="font:700 12.5px 'Schibsted Grotesk',sans-serif;margin-bottom:6px">{{ tdy.date }}</div>
+                <sc-for list="{{ tdy.groups }}" as="tg" hint-placeholder-count="2">
+                  <div style="margin-bottom:7px">
+                    <div style="font:600 10px 'Spline Sans Mono',monospace;letter-spacing:1px;color:#8b9a9d;margin-bottom:3px">{{ tg.activity }}</div>
+                    <sc-for list="{{ tg.items }}" as="it" hint-placeholder-count="2">
+                      <div style="display:flex;align-items:baseline;gap:7px;padding:2px 0">
+                        <span style="font:400 11.5px 'Schibsted Grotesk',sans-serif;min-width:0">{{ it.label }}</span>
+                        <sc-if value="{{ it.rewear }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:600 8px 'Spline Sans Mono',monospace;letter-spacing:1px;color:var(--accent, #16695E);border:1px solid var(--accent, #16695E);border-radius:4px;padding:1px 4px">REWEAR</span></sc-if>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isLists }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Lists lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 940px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Lists</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Supplies to bring, and things to buy once there.</div>
+        <sc-if value="{{ noLists }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">No lists yet. Tell Claude what to track — supplies, groceries, pre-trip errands.</div>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;align-items:start">
+          <sc-for list="{{ supplyGroups }}" as="g" hint-placeholder-count="3">
+            <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+              <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="6">
+                <div style="display:flex;align-items:baseline;gap:8px;padding:3px 0">
+                  <span style="flex:none;width:11px;height:11px;border:1.5px solid #b7c2bf;border-radius:4px;transform:translateY(1px)"></span>
+                  <span style="font:400 12.5px 'Schibsted Grotesk',sans-serif">{{ it }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isChecklist }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Checklist lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 760px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Pre-trip checklist</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:6px">Everything still open before you go — reservations to lock in, prices to confirm by phone. Checks are saved in this browser.</div>
+        <div style="font:600 11px 'Spline Sans Mono',monospace;color:var(--accent, #16695E);margin-bottom:20px">{{ checklistDone }} / {{ checklistTotal }} done</div>
+        <sc-if value="{{ noChecklist }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Nothing open right now — everything's confirmed.</div>
+        </sc-if>
+        <div style="display:grid;gap:8px">
+          <sc-for list="{{ checklistItems }}" as="ci" hint-placeholder-count="10">
+            <div onClick="{{ ci.toggle }}" style="cursor:pointer;background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:13px 16px;display:flex;gap:12px;align-items:flex-start;{{ ci.rowStyle }}" style-hover="border-color:var(--accent, #16695E)">
+              <span style="flex:none;width:19px;height:19px;border:1.5px solid #b7c2bf;border-radius:6px;margin-top:1px;display:flex;align-items:center;justify-content:center;font:700 12px 'Schibsted Grotesk',sans-serif;color:var(--accent, #16695E);background:#f4f5f3">{{ ci.boxChar }}</span>
+              <div style="min-width:0">
+                <div style="font:600 13.5px 'Schibsted Grotesk',sans-serif;text-decoration:{{ ci.strike }};">{{ ci.name }}</div>
+                <div style="font:400 12px/1.5 'Schibsted Grotesk',sans-serif;color:#647579;margin-top:3px;text-wrap:pretty">{{ ci.note }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+        <sc-if value="{{ isIdeas }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Ideas lens" style="padding:var(--sec-pad-mobile, 34px 44px 48px);max-width:var(--sec-maxw-mobile, 840px)">
+        <h1 style="margin:0 0 4px;font:800 27px 'Schibsted Grotesk',sans-serif;letter-spacing:-0.5px;font-size:var(--h1-27-mobile, 27px)">Ideas &amp; staging</h1>
+        <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#647579;margin-bottom:20px">Candidates that haven't earned a spot on the timeline yet.</div>
+        <sc-if value="{{ noIdeas }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 13px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">Empty. Anything you're considering — restaurants, beaches, tours — parks here until it earns a day.</div>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;align-items:start">
+          <sc-for list="{{ ideaGroups }}" as="g" hint-placeholder-count="2">
+            <div style="background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+              <div style="font:700 13px 'Schibsted Grotesk',sans-serif;margin-bottom:8px">{{ g.name }}</div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+                <div style="padding:4px 0;border-bottom:1px solid #f0f2ef;display:flex;gap:10px;align-items:baseline">
+                  <span style="font:400 12.5px 'Schibsted Grotesk',sans-serif">{{ it.name }}</span>
+                  <span style="font:400 11px 'Schibsted Grotesk',sans-serif;color:#8b9a9d">{{ it.note }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hasAlt }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:14px;background:#ffffff;border:1px solid #dfe4e1;border-radius:12px;padding:14px 16px">
+            <div onClick="{{ toggleAlt }}" style="cursor:pointer;display:flex;align-items:baseline;gap:10px">
+              <span style="font:700 13px 'Schibsted Grotesk',sans-serif">{{ altTitle }}</span>
+              <span style="font:600 11px 'Spline Sans Mono',monospace;color:#647579">{{ altChev }}</span>
+            </div>
+            <sc-if value="{{ altOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="font:400 11.5px/1.6 'Spline Sans Mono',monospace;color:#647579;margin-top:10px;white-space:pre-wrap">{{ altText }}</div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1360,&quot;height&quot;:860},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#16695E&quot;,&quot;#1D5F8A&quot;,&quot;#5B4A8A&quot;,&quot;#37424A&quot;],&quot;default&quot;:&quot;#16695E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;startView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;overview&quot;,&quot;money&quot;,&quot;points&quot;,&quot;bookings&quot;,&quot;packing&quot;,&quot;lists&quot;,&quot;ideas&quot;],&quot;default&quot;:&quot;overview&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+function WIKI(name) { return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(name); }
+
+// Real photos — every photo below is a specific, verified real photo of the actual place,
+// activity, or restaurant (sourced from Wikimedia Commons or the venue's own official
+// website, and visually verified via browser screenshot before inclusion — one earlier
+// candidate for the Sun Voyager sculpture turned out to be a mislabeled Danish Bronze Age
+// artifact and was caught and replaced this way). No stock or generic stand-in photos.
+// Day 1 is an overnight flight with no stop-level photos to show, so it's left empty.
+const PRESENT_GALLERY = {};
+const PRESENT_VIDEOS = {};
+const PRESENT_MAP = {};
+const PRESENT_DIRECTIONS = {};
+
+class Component extends DCLogic {
+  state = { view: 'overview', dayN: 1, presentDayN: 1, expanded: {}, altOpen: false, bkFilter: 'All', packFilter: 'ALL', ready: false, fx: 1 / 125.9, fxLive: false, lightbox: null, checked: {}, mobileNavOpen: false };
+
+  componentDidMount() {
+    this.loadTripData();
+    // Best-effort live ISK→USD rate; silently keep the built-in fallback if this fails
+    // (e.g. no network, or blocked when the file is opened without a server).
+    fetch('https://api.frankfurter.app/latest?from=ISK&to=USD')
+      .then(r => r.json())
+      .then(d => {
+        const rate = d && d.rates && d.rates.USD;
+        if (rate) this.setState({ fx: rate, fxLive: true });
+      })
+      .catch(() => {});
+  }
+
+  // Hosted (http/https): fetch trip.json live, so re-uploading just that one file
+  // updates the page with no rebuild step. Local (file://) or offline: fetch is
+  // blocked by the browser, so fall back to the embedded <script id="trip-data">
+  // copy that Claude keeps in sync on every edit.
+  loadTripData() {
+    const useEmbedded = () => {
+      let raw = {};
+      try {
+        const el = document.getElementById('trip-data');
+        raw = el ? JSON.parse(el.textContent) : {};
+      } catch (e) { raw = {}; }
+      this.finishLoad(raw);
+    };
+    fetch('./trip.json', { cache: 'no-store' })
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error('not ok'))))
+      .then(raw => this.finishLoad(raw))
+      .catch(useEmbedded);
+  }
+
+  finishLoad(raw) {
+    this.T = this.prepare(raw || {});
+    const sv = this.props.startView;
+    const st = { ready: true };
+    const todayN = this.findTodayDayN();
+    this.todayDayN = todayN;
+    if (sv && sv !== 'overview') { st.view = sv; }
+    else if (todayN) { st.view = 'day'; st.dayN = todayN; }
+    st.checked = this.loadChecklist();
+    this.setState(st);
+  }
+
+  // Matches the real current date against the trip's day dates (parsed the same
+  // way as the sidebar's day-of-week/short-date labels). Returns the 1-based day
+  // number if today falls within the trip, otherwise null.
+  findTodayDayN() {
+    if (!this.T || !this.T.days || !this.T.days.length) return null;
+    const now = new Date();
+    const y = now.getFullYear(), m = now.getMonth(), dd = now.getDate();
+    for (const d of this.T.days) {
+      const dt = new Date(d.date);
+      if (!isNaN(dt) && dt.getFullYear() === y && dt.getMonth() === m && dt.getDate() === dd) return d.n;
+    }
+    return null;
+  }
+
+  // Derive everything from a minimal trip.json — Claude only maintains raw facts.
+  prepare(raw) {
+    const T = raw || {};
+    const mins = t => {
+      if (!t) return null;
+      const m = String(t).trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+      if (!m) return null;
+      let h = +m[1] % 12; if (/pm/i.test(m[3])) h += 12;
+      return h * 60 + +m[2];
+    };
+    T.meta = T.meta || {};
+    T.meta.title = T.meta.title || 'New trip';
+    T.meta.dates = T.meta.dates || '';
+    T.meta.route = T.meta.route || [];
+    const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    T.days = (T.days || []).map((d, i) => {
+      const dt = new Date(d.date);
+      const blocks = (d.blocks || []).map((b, j) => {
+        const timed = !!(b.start || b.end);
+        const hasCost = b.paid != null || b.est != null;
+        let kind = b.kind;
+        if (!kind) {
+          if (!timed && hasCost) kind = 'receipt';
+          else if (!timed) kind = 'note';
+          else kind = 'stop';
+        }
+        const sM = mins(b.start), eM = mins(b.end);
+        const ptsN = b.points != null ? parseFloat(String(b.points).replace(/,/g, '')) : NaN;
+        return {
+          ...b,
+          id: 'b' + (i + 1) + '_' + j, kind,
+          sM, eM,
+          start: b.start || '', end: b.end || '',
+          dur: b.dur != null ? b.dur : (sM != null && eM != null && eM > sM ? eM - sM : null),
+          title: b.title || '(untitled)', detail: b.detail || '', notes: b.notes || '',
+          typeName: b.typeName || '', emoji: b.emoji || '',
+          est: b.est != null ? b.est : null, paid: b.paid != null ? b.paid : null,
+          program: b.program || null, points: b.points || null, conf: b.conf || null, confLinks: Array.isArray(b.confLinks) ? b.confLinks : null,
+          pointsN: isNaN(ptsN) ? null : ptsN,
+        };
+      });
+      return {
+        n: i + 1, date: d.date || '', title: d.title || '', planned: !!d.planned,
+        dow: d.dow || (isNaN(dt) ? '' : DOW[dt.getDay()]),
+        short: d.short || (isNaN(dt) ? '' : (dt.getMonth() + 1) + '/' + dt.getDate()),
+        blocks,
+        paid: blocks.reduce((a, b) => a + (b.paid || 0), 0),
+        est: blocks.reduce((a, b) => a + (b.paid == null ? (b.est || 0) : 0), 0),
+        stops: blocks.filter(b => b.kind === 'stop').length,
+        bookings: blocks.filter(b => b.conf || b.program).length,
+      };
+    });
+    const CAT_EMOJI = { Hotel: '\u{1F3E8}', Flight: '\u{2708}\u{FE0F}', Train: '\u{1F684}', Transportation: '\u{1F695}', Dining: '\u{1F37D}\u{FE0F}', Excursion: '\u{1F3BF}', Walk: '\u{1F6B6}', Logistics: '\u{1F9F3}', Luggage: '\u{1F9F3}', 'Free Time': '\u{1F6C1}' };
+    const cats = {};
+    for (const d of T.days) for (const b of d.blocks) {
+      if (b.est == null && b.paid == null) continue;
+      const k = (b.typeName || 'Other');
+      cats[k] = cats[k] || { est: 0, paid: 0 };
+      if (b.paid != null) cats[k].paid += b.paid; else cats[k].est += b.est;
+    }
+    T.costSummary = Object.entries(cats).map(([k, v]) => {
+      const name = k, emoji = CAT_EMOJI[k] || '\u{2022}';
+      return { name, emoji, est: v.est, paid: v.paid, total: v.est + v.paid };
+    }).sort((a, b) => b.total - a.total);
+    const groupOf = t => t === 'Flight' ? 'Flights' : t === 'Train' ? 'Rail' : t === 'Hotel' ? 'Stays' : t === 'Rental Car' ? 'Cars' : 'Activities';
+    T.bookingList = [];
+    for (const d of T.days) for (const b of d.blocks) {
+      if (b.conf || b.program) T.bookingList.push({ ...b, dayN: d.n, dayLabel: (d.dow + ' ' + d.short).trim() || 'D' + d.n, group: groupOf(b.typeName) });
+    }
+    // points by program (used = confirmed, planned = not yet)
+    const progs = {};
+    for (const b of T.bookingList) {
+      if (!b.program) continue;
+      const p = progs[b.program] = progs[b.program] || { planned: 0, used: 0 };
+      if (b.pointsN != null) { if (b.conf) p.used += b.pointsN; else p.planned += b.pointsN; }
+    }
+    T.pointsByProgram = Object.entries(progs).map(([name, v]) => ({ name, ...v, total: v.planned + v.used })).sort((a, b) => b.total - a.total);
+    T.meta.totals = {
+      paid: T.days.reduce((a, d) => a + d.paid, 0),
+      est: T.days.reduce((a, d) => a + d.est, 0),
+      points: T.pointsByProgram.reduce((a, p) => a + p.total, 0),
+    };
+    const P = T.packing || {};
+    T.packing = {
+      outfitDays: (P.outfitDays || []).map(od => ({
+        date: od.date, slots: (od.slots || []).map(s => ({
+          name: s.name,
+          people: s.people || ['roque', 'chloe', 'jenny'].filter(k => k in s).map(k => ({ who: k.toUpperCase(), text: s[k] || '—' })),
+        })),
+      })),
+      trackerDays: P.trackerDays || [],
+      trackerTitle: P.trackerTitle || "Roque's item tracker",
+      packLists: P.packLists || [],
+    };
+    // Auto-derive a pack rollup for the tracker's person when no stored list exists.
+    const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [])[1];
+    if (trackerWho && T.packing.trackerDays.length && !T.packing.packLists.some(pl => pl.who.toUpperCase() === trackerWho.toUpperCase())) {
+      const seen = new Set(); const counts = {};
+      for (const td of T.packing.trackerDays) for (const g of (td.groups || [])) for (const it of (g.items || [])) {
+        const style = it.style || (it.label ? String(it.label).split(' — ')[0] : '');
+        if (!style) continue;
+        const key = it.variation && it.variation !== '#N/A' ? it.variation : (style + '|' + (it.brand || '') + '|' + (it.color || ''));
+        if (seen.has(key)) continue;
+        seen.add(key);
+        counts[style] = (counts[style] || 0) + 1;
+      }
+      const items = Object.entries(counts).map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count);
+      if (items.length) T.packing.packLists.push({ who: trackerWho.toUpperCase(), items, derived: true });
+    }
+    if (Array.isArray(T.ideas)) { /* already groups */ }
+    else if (T.ideas && (T.ideas.oahu || T.ideas.kauai)) {
+      T.ideas = [
+        { name: 'Oahu', items: (T.ideas.oahu || []).map(s => ({ name: s, note: '' })) },
+        { name: 'Kauai — food', items: T.ideas.kauai || [] },
+      ];
+    } else T.ideas = [];
+    T.ideas = T.ideas.map(g => ({ name: g.name, items: (g.items || []).map(it => typeof it === 'string' ? { name: it, note: '' } : { name: it.name, note: it.note || '' }) }));
+    if (!T.alternatives && T.mauiAlternative) {
+      T.alternatives = { title: 'Alternative considered — Maui instead of Oahu', text: T.mauiAlternative.replace(/^"|"$/gm, '').replace(/,+\s*$/gm, '') };
+    }
+    if (typeof T.alternatives === 'string' && T.alternatives) T.alternatives = { title: 'Alternatives considered', text: T.alternatives };
+    T.supplies = T.supplies || [];
+    return T;
+  }
+
+  fm(n, cents) {
+    if (n == null) return '';
+    return '$' + n.toLocaleString('en-US', cents ? { minimumFractionDigits: 2, maximumFractionDigits: 2 } : { maximumFractionDigits: 0 });
+  }
+
+  fp(n) { return n ? n.toLocaleString('en-US') : '—'; }
+
+  go(view, dayN) { this.setState(dayN ? { view, dayN, mobileNavOpen: false } : { view, mobileNavOpen: false }); }
+
+  toggleMobileNav() { this.setState(s => ({ mobileNavOpen: !s.mobileNavOpen })); }
+
+  // Pre-trip checklist persistence — localStorage only (this file may be opened
+  // locally or hosted on GitHub Pages; either way it's just this browser's checkbox
+  // state, nothing sent anywhere).
+  checklistStorageKey() { return 'tripChecklist:' + (this.T && this.T.meta ? this.T.meta.title : 'trip'); }
+  loadChecklist() {
+    try {
+      const raw = localStorage.getItem(this.checklistStorageKey());
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+  toggleChecklistItem(key) {
+    const next = { ...this.state.checked, [key]: !this.state.checked[key] };
+    try { localStorage.setItem(this.checklistStorageKey(), JSON.stringify(next)); } catch (e) {}
+    this.setState({ checked: next });
+  }
+
+  moneyOf(b) {
+    if (b.paid != null) return { money: this.fm(b.paid, true), moneyColor: '#1b2629', hasCostTag: true, costTagLabel: 'PAID', costTagBg: '#e1f5ee', costTagFg: '#085041' };
+    if (b.est != null) return { money: this.fm(b.est, true), moneyColor: '#96690f', hasCostTag: true, costTagLabel: 'EST', costTagBg: '#faeeda', costTagFg: '#633806' };
+    return { money: '', moneyColor: '#1b2629', hasCostTag: false, costTagLabel: '', costTagBg: '', costTagFg: '' };
+  }
+
+  ptsLabelOf(b) {
+    if (!b.program && !b.points) return '';
+    const p = b.points ? (b.pointsN != null ? b.pointsN.toLocaleString('en-US') + ' pts' : b.points) : '';
+    return [b.program, p].filter(Boolean).join(' · ');
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#16695E';
+    const v = this.state.view;
+    const base = {
+      accent,
+      title: 'Trip', dates: '', subLine: '',
+      goOverview: () => this.go('overview'),
+      ovBg: v === 'overview' ? '#1b2629' : 'transparent',
+      ovFg: v === 'overview' ? '#f4f5f3' : '#1b2629',
+      navDays: [], lenses: [], noDays: false, hasRoute: false,
+      isOverview: v === 'overview', isDay: false, isMoney: false, isPoints: false,
+      isBookings: false, isPacking: false, isLists: false, isIdeas: false, isPresent: false, isChecklist: false,
+      hasToday: !!this.todayDayN, todayGo: this.todayDayN ? () => this.go('day', this.todayDayN) : () => {},
+      presentEmpty: false, presentHasDay: false, presentDayChips: [],
+      presentPrev: () => {}, presentNext: () => {},
+      presentDate: '', presentTitle: '', presentPhotos: [], hasPresentPhotos: false,
+      presentVideos: [], hasPresentVideos: false,
+      presentMapSrc: '', presentMapsUrl: '', presentHighlights: [], presentCost: '',
+      lightboxOpen: !!this.state.lightbox,
+      lightboxUrl: this.state.lightbox ? this.state.lightbox.url : '',
+      lightboxCaption: this.state.lightbox ? this.state.lightbox.caption : '',
+      closeLightbox: () => this.setState({ lightbox: null }),
+      route: [], obDays: [],
+      dayDate: '', dayTitle: '', dayMeta: '', dayPlanned: false, dayEmpty: false,
+      dayCostChips: [], hasDayCostChips: false,
+      dayPrev: () => {}, dayNext: () => {}, blocks: [],
+      moneyRows: [], moneyTotEst: '', moneyTotPaid: '', moneyTotAll: '', hasMoney: false, noMoney: false,
+      pointRows: [], pointItems: [], ptsTotPlanned: '', ptsTotUsed: '', ptsTotAll: '', hasPoints: false, noPoints: false,
+      bkChips: [], bookingGroups: [], noBookings: false,
+      outfitDays: [], trackerDays: [], trackerTitle: '', hasTracker: false, noPacking: false,
+      packChips: [], packRollups: [], hasRollups: false,
+      supplyGroups: [], noLists: false,
+      ideaGroups: [], noIdeas: false,
+      checklistItems: [], noChecklist: false, checklistDone: 0, checklistTotal: 0,
+      mobileNavOpen: this.state.mobileNavOpen,
+      toggleMobileNav: () => this.toggleMobileNav(),
+      asideTransform: this.state.mobileNavOpen ? 'translateX(0)' : 'var(--aside-closed-tx-mobile, translateX(0))',
+      topbarSubLabel: '',
+      hasAlt: false, altTitle: '', altText: '',
+      altOpen: this.state.altOpen, altChev: this.state.altOpen ? '−' : '+ show',
+      toggleAlt: () => this.setState(s => ({ altOpen: !s.altOpen })),
+    };
+    if (!this.T) return base;
+    const T = this.T;
+
+    base.title = T.meta.title;
+    base.dates = T.meta.dates;
+    const VIEW_LABELS = { overview: 'Trip overview', present: 'Present the trip', money: 'Money', points: 'Points', bookings: 'Bookings', packing: 'Outfits & packing', lists: 'Lists', ideas: 'Ideas & staging', checklist: 'Pre-trip checklist' };
+    base.topbarSubLabel = VIEW_LABELS[v] || '';
+    const tl = [];
+    if (T.meta.totals.paid) tl.push(this.fm(T.meta.totals.paid) + ' paid');
+    if (T.meta.totals.est) tl.push(this.fm(T.meta.totals.est) + ' planned');
+    if (T.meta.totals.points) tl.push(Math.round(T.meta.totals.points / 1000) + 'k pts');
+    base.subLine = [T.meta.dates, tl.join(' · ')].filter(Boolean).join(' · ') || 'Just getting started';
+    base.noDays = T.days.length === 0;
+    base.hasRoute = T.meta.route.length > 0;
+
+    base.navDays = T.days.map(d => ({
+      short: d.short, title: d.title || '—', planned: d.planned,
+      isToday: this.todayDayN === d.n,
+      bg: v === 'day' && this.state.dayN === d.n ? '#1b2629' : 'transparent',
+      fg: v === 'day' && this.state.dayN === d.n ? '#f4f5f3' : '#1b2629',
+      go: () => this.go('day', d.n),
+    }));
+
+    base.lenses = [
+      ['present', 'Present'],
+      ['money', 'Money'], ['points', 'Points'], ['bookings', 'Bookings'],
+      ['packing', 'Packing'], ['lists', 'Lists'], ['ideas', 'Ideas'], ['checklist', 'Checklist'],
+    ].map(([id, label]) => ({
+      label,
+      bg: v === id ? '#1b2629' : 'transparent',
+      fg: v === id ? '#f4f5f3' : '#1b2629',
+      go: () => this.go(id),
+    }));
+
+    if (v === 'overview') {
+      base.route = T.meta.route.map((s, i) => ({ ...s, conn: i < T.meta.route.length - 1 }));
+      base.obDays = T.days.map(d => {
+        const parts = [];
+        if (d.stops) parts.push(d.stops + ' stops');
+        if (d.bookings) parts.push(d.bookings + ' bk');
+        return {
+          dow: d.dow, short: d.short, title: d.title || '—', planned: d.planned,
+          summary: parts.join(' · '),
+          money: d.paid ? this.fm(d.paid) : (d.est ? this.fm(d.est) + ' est' : ''),
+          go: () => this.go('day', d.n),
+        };
+      });
+    }
+
+    if (v === 'day' && T.days.length) {
+      const d = T.days[Math.min(this.state.dayN, T.days.length) - 1];
+      base.isDay = true; base.isOverview = false;
+      base.topbarSubLabel = d.short + ' · ' + (d.title || 'Untitled day');
+      base.dayDate = d.date;
+      base.dayTitle = d.title || 'Untitled day';
+      base.dayPlanned = d.planned;
+      base.dayEmpty = d.blocks.length === 0;
+      const mp = [];
+      if (d.stops) mp.push(d.stops + ' stops');
+      base.dayMeta = mp.join(' · ');
+      base.dayCostChips = [
+        d.paid ? { label: this.fm(d.paid, true) + ' paid', bg: '#e1f5ee', fg: '#085041' } : null,
+        d.est ? { label: this.fm(d.est, true) + ' planned', bg: '#faeeda', fg: '#633806' } : null,
+      ].filter(Boolean);
+      base.hasDayCostChips = base.dayCostChips.length > 0;
+      base.dayPrev = () => this.go('day', Math.max(1, this.state.dayN - 1));
+      base.dayNext = () => this.go('day', Math.min(T.days.length, this.state.dayN + 1));
+      base.blocks = d.blocks.map(b => {
+        const m = this.moneyOf(b);
+        const row = {
+          isMove: b.kind === 'move', isReceipt: b.kind === 'receipt',
+          isNote: b.kind === 'note', isStop: b.kind === 'stop',
+          emoji: b.emoji || '·', title: b.title,
+          timeStart: b.start || '—', hasTimeEnd: !!(b.start && b.end), timeEnd: b.end || '',
+          durLabel: b.dur ? (b.dur >= 60 ? Math.floor(b.dur / 60) + 'h' + (b.dur % 60 ? String(b.dur % 60).padStart(2, '0') : '') : b.dur + 'm') : '',
+          moveLabel: (b.dur ? b.dur + 'm — ' : '') + b.title,
+          ...m,
+          hasBooking: !!(b.conf || b.program || b.points),
+          hasConf: !!b.conf, conf: b.conf || '', hasConfLinks: !!(b.confLinks && b.confLinks.length), confPlain: !!b.conf && !(b.confLinks && b.confLinks.length), confLinks: (b.confLinks || []).map(l => ({ label: l.label || l.url, url: l.url })),
+          hasPts: !!(b.program || b.points), ptsLabel: this.ptsLabelOf(b),
+          hasMeta: false, meta: '', metaCursor: 'default', toggle: () => {},
+          hasISK: !!(b.ccy === 'ISK' && b.estISK != null),
+          iskLabel: b.estISK != null ? Math.round(b.estISK).toLocaleString('en-US') + ' ISK' : '',
+          iskUsd: b.estISK != null ? '≈ ' + this.fm(b.estISK * this.state.fx, true) + (this.state.fxLive ? '' : ' (approx)') : '',
+          hasMenu: !!b.menuUrl, menuUrl: b.menuUrl || '', menuLabel: (b.menuLabel || 'View live menu') + ' \u2192',
+        };
+        row.isNow = d.n === this.todayDayN && b.sM != null && b.eM != null && (() => {
+          const now = new Date();
+          const curM = now.getHours() * 60 + now.getMinutes();
+          return curM >= b.sM && curM < b.eM;
+        })();
+        row.nowStyle = row.isNow ? 'background:#eaf5f1;border-radius:10px' : '';
+        const meta = [b.detail, b.notes].filter(Boolean).join('\n');
+        if (meta) {
+          const exp = !!this.state.expanded[b.id];
+          const long = meta.length > 170;
+          row.hasMeta = true;
+          row.meta = !long || exp ? meta : meta.slice(0, 150).trimEnd() + ' …more';
+          row.metaCursor = long ? 'pointer' : 'default';
+          if (long) row.toggle = () => this.setState(s => ({ expanded: { ...s.expanded, [b.id]: !s.expanded[b.id] } }));
+        }
+        return row;
+      });
+    }
+
+    if (v === 'present') {
+      base.isPresent = true; base.isOverview = false;
+      const totalDays = T.days.length;
+      base.presentEmpty = totalDays === 0;
+      base.presentHasDay = totalDays > 0;
+      const pdN = Math.min(Math.max(this.state.presentDayN || 1, 1), Math.max(totalDays, 1));
+      base.presentDayChips = T.days.map(d => {
+        const on = d.n === pdN;
+        return {
+          label: (d.dow + ' ' + d.short).trim() || ('Day ' + d.n),
+          bg: on ? '#1b2629' : '#ffffff', fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ presentDayN: d.n }),
+        };
+      });
+      base.presentPrev = () => this.setState(s => ({ presentDayN: Math.max(1, (s.presentDayN || 1) - 1) }));
+      base.presentNext = () => this.setState(s => ({ presentDayN: Math.min(totalDays, (s.presentDayN || 1) + 1) }));
+      if (totalDays > 0) {
+        const d = T.days[pdN - 1];
+        base.presentDate = d.date;
+        base.presentTitle = d.title || 'Untitled day';
+        base.presentPhotos = (PRESENT_GALLERY[pdN] || []).map(ph => ({
+          url: ph.url, caption: ph.caption,
+          open: () => this.setState({ lightbox: { url: ph.url, caption: ph.caption } }),
+        }));
+        base.hasPresentPhotos = base.presentPhotos.length > 0;
+        base.presentVideos = (PRESENT_VIDEOS[pdN] || []).map(v => ({
+          title: v.title,
+          thumb: 'https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg',
+          watchUrl: 'https://www.youtube.com/watch?v=' + v.id,
+        }));
+        base.hasPresentVideos = base.presentVideos.length > 0;
+        const m = PRESENT_MAP[pdN] || PRESENT_MAP[1];
+        base.presentMapSrc = 'https://www.google.com/maps?q=' + m.lat + ',' + m.lng + '&z=' + m.zoom + '&output=embed';
+        base.presentMapsUrl = PRESENT_DIRECTIONS[pdN] || '';
+        // High-level only: activities and meals, not transport/logistics/walk-between-stops.
+        const skipTypes = ['Walk', 'Transportation', 'Logistics', 'Drive', 'Parking', 'Gasoline', 'Luggage', 'Free Time'];
+        base.presentHighlights = d.blocks.filter(b => b.kind === 'stop' && !skipTypes.includes(b.typeName)).map(b => ({
+          emoji: b.emoji || '·', title: b.title,
+        }));
+        const cost = (d.paid || 0) + (d.est || 0);
+        base.presentCost = cost ? ('Est. day cost: ' + this.fm(cost, true)) : '';
+      }
+    }
+
+    if (v === 'money') {
+      base.isMoney = true; base.isOverview = false;
+      base.hasMoney = T.costSummary.some(r => r.total > 0);
+      base.noMoney = !base.hasMoney;
+      base.moneyRows = T.costSummary.filter(r => r.total > 0).map(r => ({
+        name: r.name, emoji: r.emoji,
+        est: r.est ? this.fm(r.est, true) : '—',
+        paid: r.paid ? this.fm(r.paid, true) : '—',
+        total: this.fm(r.total, true),
+      }));
+      const te = T.costSummary.reduce((a, r) => a + r.est, 0);
+      const tp = T.costSummary.reduce((a, r) => a + r.paid, 0);
+      base.moneyTotEst = this.fm(te, true);
+      base.moneyTotPaid = this.fm(tp, true);
+      base.moneyTotAll = this.fm(te + tp, true);
+    }
+
+    if (v === 'points') {
+      base.isPoints = true; base.isOverview = false;
+      base.hasPoints = T.pointsByProgram.length > 0;
+      base.noPoints = !base.hasPoints;
+      base.pointRows = T.pointsByProgram.map(p => ({
+        name: p.name, planned: this.fp(p.planned), used: this.fp(p.used), total: this.fp(p.total),
+      }));
+      base.ptsTotPlanned = this.fp(T.pointsByProgram.reduce((a, p) => a + p.planned, 0));
+      base.ptsTotUsed = this.fp(T.pointsByProgram.reduce((a, p) => a + p.used, 0));
+      base.ptsTotAll = this.fp(T.meta.totals.points);
+      base.pointItems = T.bookingList.filter(b => b.program || b.points).map(b => ({
+        dayLabel: b.dayLabel, emoji: b.emoji || '·', title: b.title,
+        status: b.conf ? 'USED' : 'PLANNED',
+        statusColor: b.conf ? '#257a5a' : '#96690f',
+        ptsLabel: this.ptsLabelOf(b),
+        go: () => this.go('day', b.dayN),
+      }));
+    }
+
+    if (v === 'bookings') {
+      base.isBookings = true; base.isOverview = false;
+      const order = ['Flights', 'Rail', 'Stays', 'Cars', 'Activities'];
+      const present = order.filter(name => T.bookingList.some(b => b.group === name));
+      const f = this.state.bkFilter;
+      base.bkChips = ['All', ...present].map(name => {
+        const on = f === name;
+        return {
+          label: name,
+          bg: on ? '#1b2629' : '#ffffff',
+          fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ bkFilter: name }),
+        };
+      });
+      const factLabels = [
+        ['route', 'ROUTE'], ['flightNo', 'FLIGHT'], ['cabin', 'CABIN'], ['seats', 'SEATS'],
+        ['nights', 'STAY'], ['roomType', 'ROOM'], ['address', 'ADDRESS'], ['cancelBy', 'CANCEL BY'],
+      ];
+      base.bookingGroups = present.filter(name => f === 'All' || f === name).map(name => ({
+        name: name.toUpperCase(),
+        items: T.bookingList.filter(b => b.group === name).map(b => {
+          const m = this.moneyOf(b);
+          const facts = factLabels.filter(([k]) => b[k]).map(([k, label]) => ({ label, value: b[k] }));
+          const nKey = 'bk_' + b.id;
+          const nOpen = !!this.state.expanded[nKey];
+          return {
+            emoji: b.emoji || '·', title: b.title,
+            dayLabel: b.dayLabel, go: () => this.go('day', b.dayN),
+            facts, hasFacts: facts.length > 0,
+            hasFlag: !!b.flag, flag: b.flag || '',
+            hasConf: !!b.conf, conf: b.conf || '', noConf: !b.conf, hasConfLinks: !!(b.confLinks && b.confLinks.length), confPlain: !!b.conf && !(b.confLinks && b.confLinks.length), confLinks: (b.confLinks || []).map(l => ({ label: l.label || l.url, url: l.url })),
+            hasPts: !!(b.program || b.points), ptsLabel: this.ptsLabelOf(b),
+            ...m,
+            hasNotes: !!b.notes, notesOpen: nOpen, notes: nOpen ? b.notes : '',
+            notesToggleLabel: nOpen ? '− Hide pricing detail' : '+ Pricing detail',
+            toggleNotes: () => this.setState(s => ({ expanded: { ...s.expanded, [nKey]: !s.expanded[nKey] } })),
+          };
+        }),
+      }));
+      base.noBookings = T.bookingList.length === 0;
+    }
+
+    if (v === 'packing') {
+      base.isPacking = true; base.isOverview = false;
+      const dayByShort = {};
+      T.days.forEach(d => { dayByShort[d.short] = d.title; });
+      // person filter
+      const personSet = [];
+      const addP = w => { const u = String(w || '').toUpperCase(); if (u && !personSet.includes(u)) personSet.push(u); };
+      T.packing.outfitDays.forEach(od => od.slots.forEach(s => s.people.forEach(p => addP(p.who))));
+      T.packing.packLists.forEach(pl => addP(pl.who));
+      const pf = this.state.packFilter && personSet.includes(this.state.packFilter) ? this.state.packFilter : 'ALL';
+      base.packChips = ['ALL', ...personSet].map(name => {
+        const on = pf === name;
+        return {
+          label: name === 'ALL' ? 'Everyone' : name.charAt(0) + name.slice(1).toLowerCase(),
+          bg: on ? '#1b2629' : '#ffffff', fg: on ? '#f4f5f3' : '#1b2629',
+          border: on ? '#1b2629' : '#dfe4e1',
+          go: () => this.setState({ packFilter: name }),
+        };
+      });
+      // rollups: one card per visible person
+      const visible = pf === 'ALL' ? personSet : [pf];
+      base.packRollups = visible.map(who => {
+        const pl = T.packing.packLists.find(p => String(p.who).toUpperCase() === who);
+        const items = pl ? pl.items : [];
+        const total = items.reduce((a, it) => a + (it.count || 0), 0);
+        return {
+          who: who.charAt(0) + who.slice(1).toLowerCase(),
+          totalLabel: total ? total + ' ITEMS' + (pl && pl.derived ? ' · FROM TRACKER' : '') : '',
+          empty: items.length === 0,
+          items: items.map(it => ({ count: it.count, name: it.name })),
+        };
+      });
+      base.hasRollups = base.packRollups.length > 0;
+      base.outfitDays = T.packing.outfitDays.filter(od => od.slots.length).map(od => ({
+        date: od.date,
+        dayTitle: dayByShort[String(od.date).replace(/\/\d{4}$/, '')] || '',
+        slots: od.slots.map(s => ({
+          name: s.name,
+          people: s.people.filter(p => pf === 'ALL' || String(p.who).toUpperCase() === pf).map(p => ({ who: p.who, text: p.text || '—' })),
+        })).filter(s => s.people.length),
+      })).filter(od => od.slots.length);
+      const trackerWho = (T.packing.trackerTitle.match(/^(.+?)['’]s/) || [''])[1] || '';
+      const showTracker = pf === 'ALL' || trackerWho.toUpperCase() === pf;
+      base.trackerDays = (showTracker ? T.packing.trackerDays : []).map(td => ({
+        date: td.date,
+        groups: (td.groups || []).filter(g => (g.items || []).some(i => i.style || i.brand || i.label)).map(g => ({
+          activity: g.activity || '—',
+          items: g.items.filter(i => i.style || i.brand || i.label).map(i => ({
+            label: i.label || [i.style, [i.brand, i.color].filter(Boolean).join(', ')].filter(Boolean).join(' — '),
+            rewear: !!i.rewear,
+          })),
+        })),
+      })).filter(td => td.groups.length);
+      base.hasTracker = base.trackerDays.length > 0;
+      base.trackerTitle = T.packing.trackerTitle;
+      base.noPacking = base.outfitDays.length === 0 && !base.hasTracker;
+    }
+
+    if (v === 'lists') {
+      base.isLists = true; base.isOverview = false;
+      base.supplyGroups = T.supplies;
+      base.noLists = T.supplies.length === 0;
+    }
+
+    if (v === 'checklist') {
+      base.isChecklist = true; base.isOverview = false;
+      const tbd = (T.ideas || []).find(g => g.name === 'Still open / TBD');
+      const items = tbd ? tbd.items : [];
+      base.checklistTotal = items.length;
+      base.checklistItems = items.map((it, i) => {
+        const key = 'tbd_' + i + '_' + it.name;
+        const done = !!this.state.checked[key];
+        return {
+          key, name: it.name, note: it.note || '',
+          done,
+          boxChar: done ? '✓' : '',
+          rowStyle: done ? 'opacity:0.5' : 'opacity:1',
+          strike: done ? 'line-through' : 'none',
+          toggle: () => this.toggleChecklistItem(key),
+        };
+      });
+      base.checklistDone = base.checklistItems.filter(it => it.done).length;
+      base.noChecklist = items.length === 0;
+    }
+
+    if (v === 'ideas') {
+      base.isIdeas = true; base.isOverview = false;
+      base.ideaGroups = T.ideas;
+      base.noIdeas = T.ideas.length === 0 && !T.alternatives;
+      if (T.alternatives && T.alternatives.text) {
+        base.hasAlt = true;
+        base.altTitle = T.alternatives.title || 'Alternatives considered';
+        base.altText = T.alternatives.text;
+      }
+    }
+
+    return base;
+  }
+}
+</script>
+<script id="trip-data" type="application/json">{
+ "meta": {
+  "title": "Australia - Adelaide & Kangaroo Island 2027",
+  "dates": "Dec 16, 2027 – (continues) · Miami → San Francisco → Adelaide → Kangaroo Island",
+  "route": [
+   {
+    "name": "Miami",
+    "sub": "home (MIA) · United via San Francisco"
+   },
+   {
+    "name": "Adelaide",
+    "sub": "2 nights · Adelaide Marriott (2 connecting rooms, Bonvoy points)"
+   },
+   {
+    "name": "Kangaroo Island",
+    "sub": "3 nights · Villas on the Bay, Kingscote"
+   }
+  ]
+ },
+ "days": [
+  {
+   "date": "Thursday, December 16, 2027",
+   "title": "Miami → San Francisco → Adelaide (overnight)",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "1:45 PM",
+     "end": "2:30 PM",
+     "title": "Arrive MIA — United check-in and bag drop",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• ~3 hrs before departure: holiday-week crowds, family of 4, checked bags tagged all the way to Adelaide (one ticket).\n• Have all 4 passports and the Australian ETA approvals ready — the agent checks them at MIA.\n• Booster seats for the rental car go in as checked items (most airlines carry them free).",
+     "flag": "Confirm the 2027 United schedule once it loads (~Jan 2027): this plan assumes the Thursday SFO → Adelaide flight still runs and that MIA → SFO still leaves ~4:30 PM."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "3:15 PM",
+     "title": "TSA PreCheck — then snacks for the plane",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• PreCheck lane for all four.\n• Buy snacks and refill water bottles after security — the SFO leg spans dinner time but dinner is planned at SFO.",
+     "est": 25.0,
+     "notes": "• ~USD 25 for snacks and water — estimated."
+    },
+    {
+     "start": "3:15 PM",
+     "end": "4:37 PM",
+     "title": "At the gate — bathroom stop, boarding",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Boarding starts ~40 min before departure."
+    },
+    {
+     "start": "4:37 PM",
+     "end": "8:09 PM",
+     "title": "United - MIA → SFO - Nonstop - ~6h30m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• Departs 4:37 PM Eastern, lands ~8:09 PM Pacific (3 hrs behind Florida).\n• Same ticket as the Adelaide flight — bags checked through.\n• Kids: no nap longer than 45 min; the long sleep is on the next flight.",
+     "program": "United MileagePlus",
+     "points": "0",
+     "est": 0.0,
+     "route": "MIA → SFO",
+     "flightNo": "United (MIA–SFO, number TBD)",
+     "cabin": "Economy",
+     "seats": "Not yet assigned",
+     "notes": "• Not booked. Priced together with the Adelaide flight below (one United award ticket).\n• Seen on Google Flights for a Jan 7, 2027 stand-in date: United MIA 4:37 PM → SFO, 2h31m connection, → ADL 9:30 AM two days later."
+    },
+    {
+     "start": "8:09 PM",
+     "end": "8:40 PM",
+     "title": "SFO — walk Terminal 3 → International Terminal G",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: the arrival gate in Terminal 3 (United domestic).\n• To: International Terminal G — follow the \"International Departures / G Gates\" signs along the airside connector; no re-screening.\n• ~10–15 min walk with kids; bathroom stop on the way."
+    },
+    {
+     "start": "8:40 PM",
+     "end": "9:30 PM",
+     "title": "Dinner airside — International Terminal G",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Full dinner here so everyone can skip the onboard meal and sleep after takeoff.\n• Light on sugar and caffeine.",
+     "est": 80.0,
+     "notes": "• ~USD 80 for 2 adult + 2 kids' meals at SFO airport prices, incl. tax and tip — estimated."
+    },
+    {
+     "start": "9:30 PM",
+     "end": "10:00 PM",
+     "title": "Wind down — pajamas, teeth, quiet time",
+     "typeName": "Free Time",
+     "emoji": "🪥",
+     "detail": "• Kids change into pajamas at the gate restroom and brush teeth.\n• No new movies started."
+    },
+    {
+     "start": "10:00 PM",
+     "end": "10:40 PM",
+     "title": "Board UA207",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Boarding ~45 min before departure; last bathroom stop at the gate."
+    },
+    {
+     "start": "10:40 PM",
+     "end": "9:30 AM",
+     "title": "United UA207 - SFO → ADL - Nonstop - ~15h50m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• Boeing 787-9, Economy, 4 passengers.\n• Crosses the International Date Line — Friday Dec 17 disappears in flight.\n• Lands 9:30 AM Saturday Dec 18, Adelaide time (ACDT, UTC+10:30 — 15.5 hrs ahead of Florida).\n• Sleep plan: dinner already eaten, lights out right after takeoff.",
+     "program": "United MileagePlus",
+     "points": "220000",
+     "est": 136.0,
+     "route": "SFO → ADL (from MIA, one ticket)",
+     "flightNo": "United 207",
+     "cabin": "Economy",
+     "seats": "Not yet assigned",
+     "notes": "• Not booked — planning assumption: 55,000 United miles + ~USD 34 per person (MIA → SFO → ADL on one award) → 220,000 miles + ~USD 136 for four. Chase Ultimate Rewards transfers 1:1 to United.\n• seats.aero (Nov 2026, Dec 2026 season): UA207 economy saver 55,000 United / 60,000 Aeroplan / 61,800 JetBlue / 48,000 Velocity, 9 seats on most dates; the first 2 flights of the season priced 128,800–146,800.\n• For Dec 2025 flights the 55,000 saver first appeared Apr 2025 and stayed open to departure.\n• Business: 300,000–400,000 United miles (lowest ever seen 200,000) — not realistic.\n• Cash stand-in (Google Flights, Jan 7, 2027): ~USD 2,487 per person one way MIA → SFO → ADL → ~USD 9,950 for four.\n• Alaska and Delta miles can't be used: United is Star Alliance.",
+     "flag": "Seasonal route: 2026–27 runs Dec 17 – Feb 8 only (cut from 49 to 23 round trips). Dec 2027 isn't scheduled yet — if the season starts later than Dec 16, this day moves."
+    }
+   ]
+  },
+  {
+   "date": "Saturday, December 18, 2027",
+   "title": "Land Adelaide → Glenelg beach → check in",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "9:30 AM",
+     "end": "10:45 AM",
+     "title": "Arrive ADL — immigration, bags, biosecurity",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• SmartGate for adult US e-passports; kids use the staffed lane with a parent.\n• Declare all food — no fruit or snacks off the plane.\n• 75 min gate-to-curb for a family with checked bags."
+    },
+    {
+     "start": "10:45 AM",
+     "end": "11:15 AM",
+     "title": "Pick up rental car — ADL terminal car park",
+     "typeName": "Rental Car",
+     "emoji": "🚗",
+     "detail": "• Mid-size SUV for 4 + luggage; fit the boosters before leaving the lot.\n• This car stays on the mainland: it gets parked at Cape Jervis on Monday while the family crosses to Kangaroo Island on foot.\n• Any major company works since the car never goes on the ferry.",
+     "program": "Rental",
+     "est": 360.0,
+     "notes": "• Not booked. Kayak, furthest searchable date (Nov 20–25, 2027): compact SUV ~USD 36/day, 5-day total ~USD 212.\n• December school-holiday pricing runs higher: ~USD 60/day × 6 days (Dec 18–23) ≈ USD 360 — estimated.\n• Child seats: kids 6 and 8 need boosters in South Australia until they fit the adult belt — bring your own or rent (~AUD 15/day each, capped) — not included above."
+    },
+    {
+     "start": "11:15 AM",
+     "end": "11:35 AM",
+     "title": "Drive ADL → Glenelg, Moseley Square",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~6 km, 12–15 min.\n• Park at the Holdfast Shores / Moseley Square paid car parks (2-hr+).",
+     "est": 10.0,
+     "notes": "• Glenelg paid parking ~AUD 15 for ~3 hrs — estimated."
+    },
+    {
+     "start": "11:35 AM",
+     "end": "12:00 PM",
+     "title": "Walk Glenelg Jetty",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: the car park → Moseley Square → straight out the jetty (~215 m each way).\n• Easy leg-stretch after the flight."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "1:00 PM",
+     "title": "Lunch — The Moseley Bar & Kitchen, 11 Moseley Square",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Beachside, on the square at the foot of the jetty; kitchen opens 12 PM.\n• Kids' meals come with a soft drink.",
+     "est": 61.49,
+     "menuUrl": "https://www.themoseley.com.au/eat",
+     "notes": "• Line items (verified, Sept 2026 menu): Battered Flathead AUD 27.50 + Aussie Wagyu Cheeseburger AUD 28.50 + 2 kids' meals AUD 15 each = AUD 86.00.\n• Prices include GST; +10% tip (optional in Australia) = AUD 94.60 ≈ USD 61.\n• 10% surcharge on public holidays (not this date)."
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:30 PM",
+     "title": "Glenelg Beach + foreshore playground",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️",
+     "detail": "• Calm, shallow bay beach right off Moseley Square.\n• Water is ~66–68°F in mid-December — expect paddling more than swimming.\n• Shade breaks; sunscreen — the Australian UV index is extreme in December."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "2:45 PM",
+     "title": "Rinse off sand, change, back to the car",
+     "typeName": "Logistics",
+     "emoji": "🧺",
+     "detail": "• Foreshore showers by the square; dry clothes from the carry-on."
+    },
+    {
+     "start": "2:45 PM",
+     "end": "3:10 PM",
+     "title": "Drive Glenelg → Adelaide Marriott, 141 King William St",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~11 km, 25 min straight up Anzac Hwy."
+    },
+    {
+     "start": "3:10 PM",
+     "end": "3:30 PM",
+     "title": "Check in — Adelaide Marriott Hotel (2 connecting rooms)",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Inside the restored General Post Office on King William St, Victoria Square end of the CBD.\n• 2 Superior rooms, 2 double beds each, connecting (each room sleeps 3 max — no single room fits 4 on points).\n• Indoor pool.",
+     "nights": "2 nights (Sat–Sun)",
+     "roomType": "2 × Superior, 2 Double — connecting",
+     "address": "141 King William St, Adelaide SA 5000",
+     "program": "Marriott Bonvoy",
+     "points": "224000",
+     "est": 0.0,
+     "notes": "• Not booked — Dec 2027 opens ~Dec 2026 (furthest check-in today is Nov 13, 2027).\n• Furthest-date reference (marriott.com, Oct 18–20, 2027): Superior 2 Double 112,000 pts per room for 2 nights → 224,000 for 2 rooms.\n• Same dates in cash: ~AUD 531/night per room → ~AUD 2,124 for 2 rooms × 2 nights (~USD 1,380) → ~0.6¢ per point.\n• The only room that takes 4 is the Two-Bedroom (accessible) at ~AUD 982/night, cash only.\n• Credit-card surcharge 1.95% on cash charges.",
+     "flag": "Points value is poor here (~0.6¢). Cash alternative near the beach: The George, Glenelg — Superior Family Room, 2 bedrooms, AUD 1,271 for Dec 18–20, 2027 (booking.com, free cancellation)."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "3:30 PM",
+     "title": "Hotel parking — valet",
+     "typeName": "Parking",
+     "emoji": "🅿️",
+     "detail": "• On-site valet with in/out privileges.\n• Cheaper option: off-site self-park at the Auto Park ~400 m away.",
+     "est": 91.0,
+     "notes": "• Valet AUD 70/day (marriott.com) × 2 nights = AUD 140 ≈ USD 91 — verified rate."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "4:45 PM",
+     "title": "Rest — short nap (45 min max) or indoor pool",
+     "typeName": "Free Time",
+     "emoji": "🛏️",
+     "detail": "• Cap naps at 45 min to reset to Adelaide time."
+    },
+    {
+     "start": "4:50 PM",
+     "end": "5:00 PM",
+     "title": "Walk to Citi Zen, 401 King William St",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: hotel entrance on King William St → south through Victoria Square → continue on King William St to no. 401 (~800 m, 10 min)."
+    },
+    {
+     "start": "5:00 PM",
+     "end": "6:15 PM",
+     "title": "Dinner — Citi Zen (Chinese), 401 King William St",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Kid-friendly Chinese with quick table turnover.\n• Early seating to keep bedtime on track.",
+     "est": 71.5,
+     "notes": "• ~AUD 110 for 2 adult mains + 2 kids' plates with rice, incl. optional 10% tip — estimated; menu prices not confirmed online."
+    },
+    {
+     "start": "6:15 PM",
+     "end": "6:30 PM",
+     "title": "Walk back to the hotel",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• Same route north on King William St (~10 min)."
+    },
+    {
+     "start": "6:30 PM",
+     "end": "7:30 PM",
+     "title": "Bedtime routine — lights out 7:30 PM",
+     "typeName": "Free Time",
+     "emoji": "🪥",
+     "detail": "• Early night to beat the jet lag."
+    }
+   ]
+  },
+  {
+   "date": "Sunday, December 19, 2027",
+   "title": "Adelaide Hills — Mount Lofty, strawberry picking, Hahndorf",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast — hotel",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Buffet at Penny Blue, in the hotel.",
+     "est": 87.75,
+     "notes": "• ~AUD 45 per adult buffet (hotels.com listing) + kids ~AUD 22.50 each ≈ AUD 135 — estimated; check whether Bonvoy elite breakfast applies."
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:30 AM",
+     "title": "Get ready — sunscreen, hats, water bottles",
+     "typeName": "Logistics",
+     "emoji": "🧴",
+     "detail": "• Valet car requested for 8:30."
+    },
+    {
+     "start": "8:30 AM",
+     "end": "9:00 AM",
+     "title": "Drive → Mount Lofty Summit",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~16 km, 25 min up the South Eastern Fwy; free parking at the summit."
+    },
+    {
+     "start": "9:00 AM",
+     "end": "9:45 AM",
+     "title": "Mount Lofty Summit lookout",
+     "typeName": "Sightseeing",
+     "emoji": "⛰️",
+     "detail": "• Highest point in the Adelaide Hills — the whole city and coast laid out below.\n• Short walk around the obelisk lookout; bathrooms at the summit."
+    },
+    {
+     "start": "9:45 AM",
+     "end": "10:10 AM",
+     "title": "Drive → Beerenberg Farm, 2106 Mount Barker Rd, Hahndorf",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~18 km, 20 min."
+    },
+    {
+     "start": "10:10 AM",
+     "end": "11:30 AM",
+     "title": "Pick your own strawberries — Beerenberg Farm",
+     "typeName": "Excursion",
+     "emoji": "🍓",
+     "detail": "• Pay at the Farm Shop, grab a basket, pick in the patch.\n• The patch closes some days when it's \"picked out\" — check beerenberg.com.au that morning.\n• Picking season Nov–Apr; patch entry 9 AM – 4:15 PM; closed Christmas Day.",
+     "est": 15.28,
+     "notes": "• Entry AUD 5 per adult, kids under 12 free (Dec 2025) + ~1 kg berries at AUD 13.50/kg = AUD 23.50 ≈ USD 15 — verified Dec 2025 prices; 2027 may differ."
+    },
+    {
+     "start": "11:30 AM",
+     "end": "11:45 AM",
+     "title": "Drive → Hahndorf main street (Mount Barker Rd)",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~1 km, 3 min; park behind the main street."
+    },
+    {
+     "start": "11:45 AM",
+     "end": "1:00 PM",
+     "title": "Lunch — Hahndorf Inn, 35 Main St",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Historic 1863 German pub; kids' menu incl. a juice box.",
+     "est": 65.78,
+     "menuUrl": "https://www.hahndorfinn.com/s/JUNE-2026-Menu-All-Day-Dining-and-Drinks-Menu.pdf",
+     "notes": "• Line items (verified, June 2026 menu): Classic Chicken Schnitzel AUD 31 + Fish & Chips AUD 29 + 2 kids' meals AUD 16 each = AUD 92.\n• +10% optional tip = AUD 101.20 ≈ USD 66.\n• 15% surcharge applies only on public holidays."
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:15 PM",
+     "title": "Walk Hahndorf's main street",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Hahndorf Inn → north-west along Main St to the Hahndorf Academy end and back (~1 km round trip).\n• 1850s German settler village: old stone shopfronts, fudge and lolly shops."
+    },
+    {
+     "start": "2:15 PM",
+     "end": "2:50 PM",
+     "title": "Drive Hahndorf → hotel",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~28 km, 30–35 min on the South Eastern Fwy."
+    },
+    {
+     "start": "2:50 PM",
+     "end": "4:45 PM",
+     "title": "Hotel downtime — indoor pool",
+     "typeName": "Beach/Pool",
+     "emoji": "🏊",
+     "detail": "• Pool, showers, repack for tomorrow's island move."
+    },
+    {
+     "start": "5:00 PM",
+     "end": "6:15 PM",
+     "title": "Dinner — Treasury 1860, 144 King William St",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• In the old Treasury building directly across King William St from the hotel (1 min walk).\n• Listed as child-friendly; book an early table.",
+     "est": 84.5,
+     "notes": "• ~AUD 130 for 2 adult mains + 2 kids' meals incl. optional 10% tip — estimated; current menu prices not confirmed online."
+    },
+    {
+     "start": "6:15 PM",
+     "end": "7:30 PM",
+     "title": "Pack + bedtime routine",
+     "typeName": "Free Time",
+     "emoji": "🧳",
+     "detail": "• Bags packed tonight — tomorrow leaves at 9 AM."
+    }
+   ]
+  },
+  {
+   "date": "Monday, December 20, 2027",
+   "title": "Drive to Cape Jervis → ferry → Penneshaw dolphin safari → Kingscote",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast — hotel",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Buffet at Penny Blue.",
+     "est": 87.75,
+     "notes": "• ~AUD 135 — estimated (same basis as Sunday)."
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:50 AM",
+     "title": "Check out — load the car",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Request the valet car at 8:30."
+    },
+    {
+     "start": "9:00 AM",
+     "end": "10:50 AM",
+     "title": "Drive Adelaide → Cape Jervis ferry terminal",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~108 km, 1h45 via the Main South Rd through McLaren Vale and Normanville.\n• Bathroom/fuel stop at Normanville (~1 hr in).\n• Last fuel before the terminal is Aldinga — top up if low.",
+     "est": 30.0,
+     "notes": "• Fuel for the mainland driving so far (~250 km) ≈ AUD 45 — estimated."
+    },
+    {
+     "start": "10:50 AM",
+     "end": "11:00 AM",
+     "title": "Park at the SeaLink secure car park, Cape Jervis",
+     "typeName": "Parking",
+     "emoji": "🅿️",
+     "detail": "• Mainland car stays here while you're on the island.\n• Book the car park together with the ferry tickets.",
+     "est": 65.0,
+     "notes": "• AUD 25/day (SeaLink, verified) × 4 days (Dec 20–23) = AUD 100 ≈ USD 65."
+    },
+    {
+     "start": "11:00 AM",
+     "end": "11:30 AM",
+     "title": "Check in — SeaLink terminal (walk-on)",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• Check-in closes 30 min before departure.\n• Luggage goes on with you as walk-on passengers."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "12:45 PM",
+     "title": "SeaLink ferry Cape Jervis → Penneshaw (45 min)",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "detail": "• 12:00 PM weekday departure on the current timetable.\n• Ferries run daily except Christmas Day.",
+     "est": 96.85,
+     "notes": "• Walk-on fares (one way): adult AUD 49 × 2 + child (3–14) AUD 25.50 × 2 = AUD 149.00 ≈ USD 97.\n• Fares listed valid to Mar 31, 2026; peak departures can vary — re-check when booking. Not booked.",
+     "flag": "A new ferry timetable with more departures was due from Nov 2026 — confirm the noon sailing still exists."
+    },
+    {
+     "start": "12:45 PM",
+     "end": "1:15 PM",
+     "title": "Pick up island car — Budget Kangaroo Island, Penneshaw ferry terminal",
+     "typeName": "Rental Car",
+     "emoji": "🚗",
+     "detail": "• Mid-size SUV; collected at the terminal, a short walk off the ferry.\n• Budget KI cars are allowed on the island's sealed and unsealed roads.\n• A 4WD isn't needed — the main roads are sealed and 2WD is fine on the gravel ones.",
+     "program": "Rental",
+     "est": 390.0,
+     "notes": "• Not booked. Budget KI listings start ~AUD 180/day; dynamic pricing → ~AUD 600 for 3 days — estimated.\n• Kayak (furthest date, Nov 2027, Kingscote Airport): compact SUV ~USD 55/day.\n• Mainland rentals: most ban the ferry or limit you to sealed roads (Thrifty bans 2WD cars on the island) — renting on the island avoids that.",
+     "flag": "Ask Budget KI in writing that the vehicle and its insurance cover unsealed roads (the last stretch into Hanson Bay)."
+    },
+    {
+     "start": "1:15 PM",
+     "end": "2:15 PM",
+     "title": "Lunch — Penneshaw Pub, 11 Thomas Willson St",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Clifftop pub over Backstairs Passage, 3 min from the terminal; kids' meals include a soft drink.",
+     "est": 65.0,
+     "notes": "• Mains ~AUD 19–39 (Lonely Planet) → 2 adult mains + 2 kids' meals incl. optional 10% tip ≈ AUD 100 — estimated; current menu not online."
+    },
+    {
+     "start": "2:15 PM",
+     "end": "2:45 PM",
+     "title": "Drive to Christmas Cove Marina — check in",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• 500 m from the ferry terminal; check in 15 min before departure."
+    },
+    {
+     "start": "3:00 PM",
+     "end": "4:15 PM",
+     "title": "Kangaroo Island Ocean Safari — 75-minute coastal safari",
+     "typeName": "Excursion",
+     "emoji": "🐬",
+     "detail": "• Small boat (12 max) along the Penneshaw coast: dolphins and seals guaranteed, plus sea eagles.\n• Dry boat — spray jackets provided.\n• Suitable for all ages.",
+     "est": 185.9,
+     "notes": "• Adult AUD 88 × 2 + child (3–12) ~AUD 55 × 2 = AUD 286 ≈ USD 186 — adult verified; child rate from the AUD 55–88 range listed.\n• Departs 9 AM and 3 PM daily. Not booked."
+    },
+    {
+     "start": "4:15 PM",
+     "end": "4:30 PM",
+     "title": "Back to the car",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From the marina back up to the car (~2 min)."
+    },
+    {
+     "start": "4:30 PM",
+     "end": "5:20 PM",
+     "title": "Drive Penneshaw → Kingscote",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~60 km, 50 min on the sealed Hog Bay Rd.\n• Watch for wallabies on the roadside."
+    },
+    {
+     "start": "5:20 PM",
+     "end": "5:45 PM",
+     "title": "Check in — Villas on the Bay, 9–11 Esplanade, Kingscote",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• 2-bedroom villa (1 queen + 2 singles), full kitchen, laundry, lock-up garage; gated, opposite the bay and clifftop reserve.\n• Short walk to town, jetties and the playground.\n• First breakfast is complimentary.",
+     "nights": "3 nights (Mon–Wed)",
+     "roomType": "Two-Bedroom Villa",
+     "address": "9–11 Esplanade, Kingscote SA 5223",
+     "program": "Cash",
+     "est": 443.3,
+     "notes": "• Booking.com, Dec 20–23, 2027 (searched Nov 2026): AUD 682 for 3 nights, 2 adults + 2 children (6, 8); free cancellation, no prepayment ≈ USD 443.\n• Rated 9.3 (813 reviews).\n• No Hyatt, Hilton or Marriott on the island. Southern Ocean Lodge (Hyatt via Mr & Mrs Smith) only takes children 10+.\n• Larger hotel option: Ozone Hotel Family Room, pool + restaurant, AUD 1,006 for 3 nights. Not booked."
+    },
+    {
+     "start": "5:50 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Zone Restaurant, Ozone Hotel, 67 Chapman Tce",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• 5-min walk along the Esplanade; bistro over Nepean Bay — burgers, pasta, local seafood.",
+     "est": 65.0,
+     "notes": "• ~AUD 100 for 2 adult mains + 2 kids' meals incl. optional 10% tip — estimated; menu not online."
+    },
+    {
+     "start": "7:00 PM",
+     "end": "7:20 PM",
+     "title": "Groceries — Kingscote supermarket",
+     "typeName": "Shopping",
+     "emoji": "🛒",
+     "detail": "• Breakfasts, snacks and picnic water for the next three days.",
+     "est": 78.0,
+     "notes": "• ~AUD 120 — estimated."
+    },
+    {
+     "start": "7:30 PM",
+     "end": "8:30 PM",
+     "title": "Bedtime routine",
+     "typeName": "Free Time",
+     "emoji": "🪥",
+     "detail": "• Tomorrow leaves at 8:45 AM."
+    }
+   ]
+  },
+  {
+   "date": "Tuesday, December 21, 2027",
+   "title": "South coast — Seal Bay sea lions, birds of prey, Little Sahara dunes",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:45 AM",
+     "end": "8:30 AM",
+     "title": "Breakfast — villa",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Complimentary first breakfast."
+    },
+    {
+     "start": "8:30 AM",
+     "end": "8:45 AM",
+     "title": "Pack the day bag",
+     "typeName": "Logistics",
+     "emoji": "🎒",
+     "detail": "• Water, hats, sunscreen, change of clothes for after the dunes."
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:40 AM",
+     "title": "Drive Kingscote → Seal Bay Conservation Park",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~57 km, 50 min, all sealed."
+    },
+    {
+     "start": "9:45 AM",
+     "end": "10:45 AM",
+     "title": "Seal Bay — guided sea lion tour (10:00 AM)",
+     "typeName": "Excursion",
+     "emoji": "🦭",
+     "detail": "• Arrive 15 min before the tour.\n• Australian sea lions resting on the beach and dunes; tour includes the 900 m boardwalk.\n• Open 9 AM, last entry 4 PM; closed Christmas Day.",
+     "est": 71.5,
+     "notes": "• Guided tour family (2A + 2C) AUD 110 ≈ USD 72 — verified.\n• Boardwalk-only family ticket AUD 54.50.",
+     "flag": "Beach access was paused in 2026 to protect the colony — tours run from the boardwalk instead. Check parks.sa.gov.au before booking."
+    },
+    {
+     "start": "10:45 AM",
+     "end": "11:15 AM",
+     "title": "Drive → Raptor Domain, 58 Seal Bay Rd",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~10 min; time to settle before the show."
+    },
+    {
+     "start": "11:30 AM",
+     "end": "12:30 PM",
+     "title": "Raptor Domain — free-flight Birds of Prey show",
+     "typeName": "Excursion",
+     "emoji": "🦅",
+     "detail": "• Rescued wedge-tailed eagles, owls and kookaburras flying overhead (1 hr).\n• Shows at 11:30 AM and 2:30 PM.",
+     "est": 59.8,
+     "notes": "• Family AUD 92 ≈ USD 60 — verified (South Australian Tourism listing)."
+    },
+    {
+     "start": "12:30 PM",
+     "end": "12:50 PM",
+     "title": "Drive → Vivonne Bay General Store, 4417 South Coast Rd",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~15 min."
+    },
+    {
+     "start": "12:50 PM",
+     "end": "1:45 PM",
+     "title": "Lunch — Vivonne Bay General Store",
+     "typeName": "Dining",
+     "emoji": "🍔",
+     "detail": "• Home of the island's famous King George whiting burger; kids' cheeseburgers too.",
+     "est": 52.0,
+     "notes": "• ~AUD 80 for 2 whiting burgers + 2 kids' meals incl. chips — estimated; menu not online."
+    },
+    {
+     "start": "1:45 PM",
+     "end": "2:00 PM",
+     "title": "Drive → Little Sahara Adventure Centre, 3733 South Coast Rd",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~7 km, 10 min."
+    },
+    {
+     "start": "2:00 PM",
+     "end": "3:45 PM",
+     "title": "Little Sahara — sandboarding and tobogganing",
+     "typeName": "Excursion",
+     "emoji": "🏜️",
+     "detail": "• 2 km² of white inland dunes, some as tall as a 17-storey building.\n• Toboggans for the kids, sandboard for the adults; wax the base for speed.\n• Open 9 AM – 5 PM (Oct–Apr).",
+     "est": 72.15,
+     "notes": "• 2-hr hire AUD 37 per board × 3 = AUD 111 ≈ USD 72 — verified; helmets extra (recommended)."
+    },
+    {
+     "start": "3:45 PM",
+     "end": "4:00 PM",
+     "title": "Shake out the sand, change clothes",
+     "typeName": "Logistics",
+     "emoji": "🧺",
+     "detail": "• Dry clothes from the day bag before the drive."
+    },
+    {
+     "start": "4:00 PM",
+     "end": "4:50 PM",
+     "title": "Drive back to Kingscote",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~55 km, 50 min."
+    },
+    {
+     "start": "4:50 PM",
+     "end": "5:45 PM",
+     "title": "Villa — showers, rest",
+     "typeName": "Free Time",
+     "emoji": "🛁",
+     "detail": "• Sand out of everything."
+    },
+    {
+     "start": "5:45 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Kangaroo Island Fresh Seafood, Kingscote",
+     "typeName": "Dining",
+     "emoji": "🍤",
+     "detail": "• Island seafood counter: fish and chips to take back to the villa or eat on the foreshore.",
+     "est": 48.75,
+     "notes": "• ~AUD 75 for 2 adult seafood packs + 2 kids' fish and chips — estimated; menu not online."
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bedtime routine",
+     "typeName": "Free Time",
+     "emoji": "🪥",
+     "detail": "• Back by 7 PM — tomorrow leaves at 8 AM."
+    }
+   ]
+  },
+  {
+   "date": "Wednesday, December 22, 2027",
+   "title": "Flinders Chase — Remarkable Rocks, Admirals Arch, Hanson Bay koalas",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast — villa",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• From the groceries."
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:00 AM",
+     "title": "Out the door — picnic water and snacks",
+     "typeName": "Logistics",
+     "emoji": "🎒",
+     "detail": "• Fuel up in Kingscote — few stations out west."
+    },
+    {
+     "start": "8:00 AM",
+     "end": "9:35 AM",
+     "title": "Drive Kingscote → Flinders Chase Visitor Centre, 8125 South Coast Rd",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~105 km, 1h30 via the Playford and West End Hwys — all sealed.",
+     "est": 81.25,
+     "notes": "• Island fuel for ~600 km of driving over 3 days ≈ AUD 125 (KI fuel is pricier) — estimated."
+    },
+    {
+     "start": "9:35 AM",
+     "end": "9:55 AM",
+     "title": "Visitor Centre — park entry, bathrooms",
+     "typeName": "Logistics",
+     "emoji": "🎫",
+     "detail": "• Pay the one-day park fee here (or online).",
+     "est": 24.7,
+     "notes": "• One-day entry: adult AUD 14.40; family listed up to AUD 38 ≈ USD 25 — family rate estimated from the listing range."
+    },
+    {
+     "start": "9:55 AM",
+     "end": "10:15 AM",
+     "title": "Drive → Remarkable Rocks",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~15 min."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "11:15 AM",
+     "title": "Remarkable Rocks",
+     "typeName": "Sightseeing",
+     "emoji": "🪨",
+     "detail": "• Wind-sculpted granite boulders on a dome 75 m above the sea; boardwalk from the car park.\n• Hold the kids' hands near the seaward edge — no fences on the dome.\n• Can close in severe wind."
+    },
+    {
+     "start": "11:15 AM",
+     "end": "11:35 AM",
+     "title": "Drive → Admirals Arch, Cape du Couedic",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~15 min past the lighthouse."
+    },
+    {
+     "start": "11:35 AM",
+     "end": "12:20 PM",
+     "title": "Admirals Arch boardwalk — long-nosed fur seals",
+     "typeName": "Walk",
+     "emoji": "🦭",
+     "detail": "• From: the Cape du Couedic car park → boardwalk and stairs down to the arch viewing platform (~10 min each way).\n• Fur seals lounging on the rocks below the arch."
+    },
+    {
+     "start": "12:20 PM",
+     "end": "12:45 PM",
+     "title": "Drive back to the Visitor Centre",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~25 min."
+    },
+    {
+     "start": "12:45 PM",
+     "end": "1:45 PM",
+     "title": "Lunch — The Rocks Café, Flinders Chase Visitor Centre",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Café inside the visitor centre.",
+     "est": 55.25,
+     "notes": "• ~AUD 85 for 2 adult + 2 kids' meals — estimated; menu not online."
+    },
+    {
+     "start": "1:45 PM",
+     "end": "2:15 PM",
+     "title": "Drive → Hanson Bay Wildlife Sanctuary, 7797 South Coast Rd",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~5 km east of the visitor centre; the last stretch in is gravel."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "4:00 PM",
+     "title": "Hanson Bay — guided Koala Walk (2:30 PM)",
+     "typeName": "Excursion",
+     "emoji": "🐨",
+     "detail": "• Wild koalas in the eucalyptus avenues; kangaroos, wallabies and Cape Barren geese on the way.\n• Pre-booked guided tours only (10:30 AM, 2:30 PM, sunset); booking cutoff 1 hr before.",
+     "est": 78.0,
+     "notes": "• From ~AUD 35–40 per adult; child rate not published → ~AUD 120 for the family — estimated. Not booked."
+    },
+    {
+     "start": "4:00 PM",
+     "end": "5:35 PM",
+     "title": "Drive back to Kingscote",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~1h30; daylight until ~8:30 PM."
+    },
+    {
+     "start": "5:35 PM",
+     "end": "6:00 PM",
+     "title": "Villa — freshen up",
+     "typeName": "Free Time",
+     "emoji": "🛁",
+     "detail": "• Quick showers."
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:15 PM",
+     "title": "Dinner — Bella Restaurant, Kingscote",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Italian, 8-min walk from the villa.",
+     "est": 61.75,
+     "notes": "• ~AUD 95 for 2 adult mains + 2 kids' meals incl. optional 10% tip — estimated; menu not online."
+    },
+    {
+     "start": "7:15 PM",
+     "end": "8:15 PM",
+     "title": "Pack + bedtime routine",
+     "typeName": "Free Time",
+     "emoji": "🧳",
+     "detail": "• Bags packed tonight for check-out."
+    }
+   ]
+  },
+  {
+   "date": "Thursday, December 23, 2027",
+   "title": "Last island morning — Stokes Bay hidden beach",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:45 AM",
+     "end": "8:30 AM",
+     "title": "Breakfast — villa",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Use up the groceries."
+    },
+    {
+     "start": "8:30 AM",
+     "end": "9:30 AM",
+     "title": "Check out — Villas on the Bay",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Load the car; leave keys per the villa's instructions."
+    },
+    {
+     "start": "9:30 AM",
+     "end": "10:15 AM",
+     "title": "Drive Kingscote → Stokes Bay",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~48 km, 45 min along the north coast."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "11:45 AM",
+     "title": "Stokes Bay — rock tunnel to the hidden beach and rock pool",
+     "typeName": "Beach/Pool",
+     "emoji": "🏝️",
+     "detail": "• From: the car park → follow the signs through the rock tunnel (mind your head) → long white beach on the far side.\n• Enclosed rock pool = calm, kid-safe swimming; named Australia's Best Beach in 2023.\n• Swim gear on under clothes; towels in the car."
+    },
+    {
+     "start": "11:45 AM",
+     "end": "12:00 PM",
+     "title": "Next leg — to plan",
+     "typeName": "Free Time",
+     "emoji": "📝",
+     "detail": "• Stokes Bay → Penneshaw ferry terminal is ~1h40 if heading back to the mainland.\n• Budget KI car returns at Penneshaw; the mainland car is waiting at Cape Jervis."
+    }
+   ]
+  }
+ ],
+ "packing": {
+  "trackerTitle": "Item tracker",
+  "outfitDays": [],
+  "trackerDays": [],
+  "packLists": []
+ },
+ "supplies": [],
+ "ideas": [
+  {
+   "name": "Still open / TBD",
+   "items": [
+    {
+     "name": "United SFO–Adelaide 2027 season",
+     "note": "Not scheduled yet. 2026–27 runs Dec 17 – Feb 8 (Mon/Thu/Sat). Award space for Dec 2027 opens ~Jan 2027."
+    },
+    {
+     "name": "Adelaide hotel",
+     "note": "Marriott needs 2 rooms (224,000 pts, ~0.6¢). Cash alternative: The George, Glenelg, 2-bedroom family suite AUD 1,271 for 2 nights."
+    },
+    {
+     "name": "Seal Bay beach access",
+     "note": "Paused in 2026; tours from the boardwalk. Re-check before booking."
+    },
+    {
+     "name": "Ferry timetable",
+     "note": "New SeaLink timetable expected from Nov 2026 — confirm the noon Cape Jervis sailing on Dec 20."
+    },
+    {
+     "name": "Restaurant menus",
+     "note": "Verified: The Moseley, Hahndorf Inn. Estimated: Citi Zen, Treasury 1860, Penneshaw Pub, Zone, Vivonne Bay store, KI Fresh Seafood, The Rocks Café, Bella."
+    },
+    {
+     "name": "After Kangaroo Island",
+     "note": "Next leg from Dec 23 not planned yet."
+    },
+    {
+     "name": "Present tab",
+     "note": "Photos and maps not added yet."
+    }
+   ]
+  }
+ ],
+ "alternatives": null
+}</script>
+</body>
+</html>

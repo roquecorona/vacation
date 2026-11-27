@@ -1,0 +1,925 @@
+{
+ "meta": {
+  "title": "Australia - Adelaide & Kangaroo Island 2027",
+  "dates": "Dec 16, 2027 – (continues) · Miami → San Francisco → Adelaide → Kangaroo Island",
+  "route": [
+   {
+    "name": "Miami",
+    "sub": "home (MIA) · United via San Francisco"
+   },
+   {
+    "name": "Adelaide",
+    "sub": "2 nights · Adelaide Marriott (2 connecting rooms, Bonvoy points)"
+   },
+   {
+    "name": "Kangaroo Island",
+    "sub": "3 nights · Villas on the Bay, Kingscote"
+   }
+  ]
+ },
+ "days": [
+  {
+   "date": "Thursday, December 16, 2027",
+   "title": "Miami → San Francisco → Adelaide (overnight)",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "1:45 PM",
+     "end": "2:30 PM",
+     "title": "Arrive MIA — United check-in and bag drop",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• ~3 hrs before departure: holiday-week crowds, family of 4, checked bags tagged all the way to Adelaide (one ticket).\n• Have all 4 passports and the Australian ETA approvals ready — the agent checks them at MIA.\n• Booster seats for the rental car go in as checked items (most airlines carry them free).",
+     "flag": "Confirm the 2027 United schedule once it loads (~Jan 2027): this plan assumes the Thursday SFO → Adelaide flight still runs and that MIA → SFO still leaves ~4:30 PM."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "3:15 PM",
+     "title": "TSA PreCheck — then snacks for the plane",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• PreCheck lane for all four.\n• Buy snacks and refill water bottles after security — the SFO leg spans dinner time but dinner is planned at SFO.",
+     "est": 25.0,
+     "notes": "• ~USD 25 for snacks and water — estimated."
+    },
+    {
+     "start": "3:15 PM",
+     "end": "4:37 PM",
+     "title": "At the gate — bathroom stop, boarding",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Boarding starts ~40 min before departure."
+    },
+    {
+     "start": "4:37 PM",
+     "end": "8:09 PM",
+     "title": "United - MIA → SFO - Nonstop - ~6h30m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• Departs 4:37 PM Eastern, lands ~8:09 PM Pacific (3 hrs behind Florida).\n• Same ticket as the Adelaide flight — bags checked through.\n• Kids: no nap longer than 45 min; the long sleep is on the next flight.",
+     "program": "United MileagePlus",
+     "points": "0",
+     "est": 0.0,
+     "route": "MIA → SFO",
+     "flightNo": "United (MIA–SFO, number TBD)",
+     "cabin": "Economy",
+     "seats": "Not yet assigned",
+     "notes": "• Not booked. Priced together with the Adelaide flight below (one United award ticket).\n• Seen on Google Flights for a Jan 7, 2027 stand-in date: United MIA 4:37 PM → SFO, 2h31m connection, → ADL 9:30 AM two days later."
+    },
+    {
+     "start": "8:09 PM",
+     "end": "8:40 PM",
+     "title": "SFO — walk Terminal 3 → International Terminal G",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: the arrival gate in Terminal 3 (United domestic).\n• To: International Terminal G — follow the \"International Departures / G Gates\" signs along the airside connector; no re-screening.\n• ~10–15 min walk with kids; bathroom stop on the way."
+    },
+    {
+     "start": "8:40 PM",
+     "end": "9:30 PM",
+     "title": "Dinner airside — International Terminal G",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Full dinner here so everyone can skip the onboard meal and sleep after takeoff.\n• Light on sugar and caffeine.",
+     "est": 80.0,
+     "notes": "• ~USD 80 for 2 adult + 2 kids' meals at SFO airport prices, incl. tax and tip — estimated."
+    },
+    {
+     "start": "9:30 PM",
+     "end": "10:00 PM",
+     "title": "Wind down — pajamas, teeth, quiet time",
+     "typeName": "Free Time",
+     "emoji": "🪥",
+     "detail": "• Kids change into pajamas at the gate restroom and brush teeth.\n• No new movies started."
+    },
+    {
+     "start": "10:00 PM",
+     "end": "10:40 PM",
+     "title": "Board UA207",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Boarding ~45 min before departure; last bathroom stop at the gate."
+    },
+    {
+     "start": "10:40 PM",
+     "end": "9:30 AM",
+     "title": "United UA207 - SFO → ADL - Nonstop - ~15h50m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• Boeing 787-9, Economy, 4 passengers.\n• Crosses the International Date Line — Friday Dec 17 disappears in flight.\n• Lands 9:30 AM Saturday Dec 18, Adelaide time (ACDT, UTC+10:30 — 15.5 hrs ahead of Florida).\n• Sleep plan: dinner already eaten, lights out right after takeoff.",
+     "program": "United MileagePlus",
+     "points": "220000",
+     "est": 136.0,
+     "route": "SFO → ADL (from MIA, one ticket)",
+     "flightNo": "United 207",
+     "cabin": "Economy",
+     "seats": "Not yet assigned",
+     "notes": "• Not booked — planning assumption: 55,000 United miles + ~USD 34 per person (MIA → SFO → ADL on one award) → 220,000 miles + ~USD 136 for four. Chase Ultimate Rewards transfers 1:1 to United.\n• seats.aero (Nov 2026, Dec 2026 season): UA207 economy saver 55,000 United / 60,000 Aeroplan / 61,800 JetBlue / 48,000 Velocity, 9 seats on most dates; the first 2 flights of the season priced 128,800–146,800.\n• For Dec 2025 flights the 55,000 saver first appeared Apr 2025 and stayed open to departure.\n• Business: 300,000–400,000 United miles (lowest ever seen 200,000) — not realistic.\n• Cash stand-in (Google Flights, Jan 7, 2027): ~USD 2,487 per person one way MIA → SFO → ADL → ~USD 9,950 for four.\n• Alaska and Delta miles can't be used: United is Star Alliance.",
+     "flag": "Seasonal route: 2026–27 runs Dec 17 – Feb 8 only (cut from 49 to 23 round trips). Dec 2027 isn't scheduled yet — if the season starts later than Dec 16, this day moves."
+    }
+   ]
+  },
+  {
+   "date": "Saturday, December 18, 2027",
+   "title": "Land Adelaide → Glenelg beach → check in",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "9:30 AM",
+     "end": "10:45 AM",
+     "title": "Arrive ADL — immigration, bags, biosecurity",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• SmartGate for adult US e-passports; kids use the staffed lane with a parent.\n• Declare all food — no fruit or snacks off the plane.\n• 75 min gate-to-curb for a family with checked bags."
+    },
+    {
+     "start": "10:45 AM",
+     "end": "11:15 AM",
+     "title": "Pick up rental car — ADL terminal car park",
+     "typeName": "Rental Car",
+     "emoji": "🚗",
+     "detail": "• Mid-size SUV for 4 + luggage; fit the boosters before leaving the lot.\n• This car stays on the mainland: it gets parked at Cape Jervis on Monday while the family crosses to Kangaroo Island on foot.\n• Any major company works since the car never goes on the ferry.",
+     "program": "Rental",
+     "est": 360.0,
+     "notes": "• Not booked. Kayak, furthest searchable date (Nov 20–25, 2027): compact SUV ~USD 36/day, 5-day total ~USD 212.\n• December school-holiday pricing runs higher: ~USD 60/day × 6 days (Dec 18–23) ≈ USD 360 — estimated.\n• Child seats: kids 6 and 8 need boosters in South Australia until they fit the adult belt — bring your own or rent (~AUD 15/day each, capped) — not included above."
+    },
+    {
+     "start": "11:15 AM",
+     "end": "11:35 AM",
+     "title": "Drive ADL → Glenelg, Moseley Square",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~6 km, 12–15 min.\n• Park at the Holdfast Shores / Moseley Square paid car parks (2-hr+).",
+     "est": 10.0,
+     "notes": "• Glenelg paid parking ~AUD 15 for ~3 hrs — estimated."
+    },
+    {
+     "start": "11:35 AM",
+     "end": "12:00 PM",
+     "title": "Walk Glenelg Jetty",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: the car park → Moseley Square → straight out the jetty (~215 m each way).\n• Easy leg-stretch after the flight."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "1:00 PM",
+     "title": "Lunch — The Moseley Bar & Kitchen, 11 Moseley Square",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Beachside, on the square at the foot of the jetty; kitchen opens 12 PM.\n• Kids' meals come with a soft drink.",
+     "est": 61.49,
+     "menuUrl": "https://www.themoseley.com.au/eat",
+     "notes": "• Line items (verified, Sept 2026 menu): Battered Flathead AUD 27.50 + Aussie Wagyu Cheeseburger AUD 28.50 + 2 kids' meals AUD 15 each = AUD 86.00.\n• Prices include GST; +10% tip (optional in Australia) = AUD 94.60 ≈ USD 61.\n• 10% surcharge on public holidays (not this date)."
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:30 PM",
+     "title": "Glenelg Beach + foreshore playground",
+     "typeName": "Beach/Pool",
+     "emoji": "🏖️",
+     "detail": "• Calm, shallow bay beach right off Moseley Square.\n• Water is ~66–68°F in mid-December — expect paddling more than swimming.\n• Shade breaks; sunscreen — the Australian UV index is extreme in December."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "2:45 PM",
+     "title": "Rinse off sand, change, back to the car",
+     "typeName": "Logistics",
+     "emoji": "🧺",
+     "detail": "• Foreshore showers by the square; dry clothes from the carry-on."
+    },
+    {
+     "start": "2:45 PM",
+     "end": "3:10 PM",
+     "title": "Drive Glenelg → Adelaide Marriott, 141 King William St",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~11 km, 25 min straight up Anzac Hwy."
+    },
+    {
+     "start": "3:10 PM",
+     "end": "3:30 PM",
+     "title": "Check in — Adelaide Marriott Hotel (2 connecting rooms)",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Inside the restored General Post Office on King William St, Victoria Square end of the CBD.\n• 2 Superior rooms, 2 double beds each, connecting (each room sleeps 3 max — no single room fits 4 on points).\n• Indoor pool.",
+     "nights": "2 nights (Sat–Sun)",
+     "roomType": "2 × Superior, 2 Double — connecting",
+     "address": "141 King William St, Adelaide SA 5000",
+     "program": "Marriott Bonvoy",
+     "points": "224000",
+     "est": 0.0,
+     "notes": "• Not booked — Dec 2027 opens ~Dec 2026 (furthest check-in today is Nov 13, 2027).\n• Furthest-date reference (marriott.com, Oct 18–20, 2027): Superior 2 Double 112,000 pts per room for 2 nights → 224,000 for 2 rooms.\n• Same dates in cash: ~AUD 531/night per room → ~AUD 2,124 for 2 rooms × 2 nights (~USD 1,380) → ~0.6¢ per point.\n• The only room that takes 4 is the Two-Bedroom (accessible) at ~AUD 982/night, cash only.\n• Credit-card surcharge 1.95% on cash charges.",
+     "flag": "Points value is poor here (~0.6¢). Cash alternative near the beach: The George, Glenelg — Superior Family Room, 2 bedrooms, AUD 1,271 for Dec 18–20, 2027 (booking.com, free cancellation)."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "3:30 PM",
+     "title": "Hotel parking — valet",
+     "typeName": "Parking",
+     "emoji": "🅿️",
+     "detail": "• On-site valet with in/out privileges.\n• Cheaper option: off-site self-park at the Auto Park ~400 m away.",
+     "est": 91.0,
+     "notes": "• Valet AUD 70/day (marriott.com) × 2 nights = AUD 140 ≈ USD 91 — verified rate."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "4:45 PM",
+     "title": "Rest — short nap (45 min max) or indoor pool",
+     "typeName": "Free Time",
+     "emoji": "🛏️",
+     "detail": "• Cap naps at 45 min to reset to Adelaide time."
+    },
+    {
+     "start": "4:50 PM",
+     "end": "5:00 PM",
+     "title": "Walk to Citi Zen, 401 King William St",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: hotel entrance on King William St → south through Victoria Square → continue on King William St to no. 401 (~800 m, 10 min)."
+    },
+    {
+     "start": "5:00 PM",
+     "end": "6:15 PM",
+     "title": "Dinner — Citi Zen (Chinese), 401 King William St",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Kid-friendly Chinese with quick table turnover.\n• Early seating to keep bedtime on track.",
+     "est": 71.5,
+     "notes": "• ~AUD 110 for 2 adult mains + 2 kids' plates with rice, incl. optional 10% tip — estimated; menu prices not confirmed online."
+    },
+    {
+     "start": "6:15 PM",
+     "end": "6:30 PM",
+     "title": "Walk back to the hotel",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• Same route north on King William St (~10 min)."
+    },
+    {
+     "start": "6:30 PM",
+     "end": "7:30 PM",
+     "title": "Bedtime routine — lights out 7:30 PM",
+     "typeName": "Free Time",
+     "emoji": "🪥",
+     "detail": "• Early night to beat the jet lag."
+    }
+   ]
+  },
+  {
+   "date": "Sunday, December 19, 2027",
+   "title": "Adelaide Hills — Mount Lofty, strawberry picking, Hahndorf",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast — hotel",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Buffet at Penny Blue, in the hotel.",
+     "est": 87.75,
+     "notes": "• ~AUD 45 per adult buffet (hotels.com listing) + kids ~AUD 22.50 each ≈ AUD 135 — estimated; check whether Bonvoy elite breakfast applies."
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:30 AM",
+     "title": "Get ready — sunscreen, hats, water bottles",
+     "typeName": "Logistics",
+     "emoji": "🧴",
+     "detail": "• Valet car requested for 8:30."
+    },
+    {
+     "start": "8:30 AM",
+     "end": "9:00 AM",
+     "title": "Drive → Mount Lofty Summit",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~16 km, 25 min up the South Eastern Fwy; free parking at the summit."
+    },
+    {
+     "start": "9:00 AM",
+     "end": "9:45 AM",
+     "title": "Mount Lofty Summit lookout",
+     "typeName": "Sightseeing",
+     "emoji": "⛰️",
+     "detail": "• Highest point in the Adelaide Hills — the whole city and coast laid out below.\n• Short walk around the obelisk lookout; bathrooms at the summit."
+    },
+    {
+     "start": "9:45 AM",
+     "end": "10:10 AM",
+     "title": "Drive → Beerenberg Farm, 2106 Mount Barker Rd, Hahndorf",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~18 km, 20 min."
+    },
+    {
+     "start": "10:10 AM",
+     "end": "11:30 AM",
+     "title": "Pick your own strawberries — Beerenberg Farm",
+     "typeName": "Excursion",
+     "emoji": "🍓",
+     "detail": "• Pay at the Farm Shop, grab a basket, pick in the patch.\n• The patch closes some days when it's \"picked out\" — check beerenberg.com.au that morning.\n• Picking season Nov–Apr; patch entry 9 AM – 4:15 PM; closed Christmas Day.",
+     "est": 15.28,
+     "notes": "• Entry AUD 5 per adult, kids under 12 free (Dec 2025) + ~1 kg berries at AUD 13.50/kg = AUD 23.50 ≈ USD 15 — verified Dec 2025 prices; 2027 may differ."
+    },
+    {
+     "start": "11:30 AM",
+     "end": "11:45 AM",
+     "title": "Drive → Hahndorf main street (Mount Barker Rd)",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~1 km, 3 min; park behind the main street."
+    },
+    {
+     "start": "11:45 AM",
+     "end": "1:00 PM",
+     "title": "Lunch — Hahndorf Inn, 35 Main St",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Historic 1863 German pub; kids' menu incl. a juice box.",
+     "est": 65.78,
+     "menuUrl": "https://www.hahndorfinn.com/s/JUNE-2026-Menu-All-Day-Dining-and-Drinks-Menu.pdf",
+     "notes": "• Line items (verified, June 2026 menu): Classic Chicken Schnitzel AUD 31 + Fish & Chips AUD 29 + 2 kids' meals AUD 16 each = AUD 92.\n• +10% optional tip = AUD 101.20 ≈ USD 66.\n• 15% surcharge applies only on public holidays."
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:15 PM",
+     "title": "Walk Hahndorf's main street",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Hahndorf Inn → north-west along Main St to the Hahndorf Academy end and back (~1 km round trip).\n• 1850s German settler village: old stone shopfronts, fudge and lolly shops."
+    },
+    {
+     "start": "2:15 PM",
+     "end": "2:50 PM",
+     "title": "Drive Hahndorf → hotel",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~28 km, 30–35 min on the South Eastern Fwy."
+    },
+    {
+     "start": "2:50 PM",
+     "end": "4:45 PM",
+     "title": "Hotel downtime — indoor pool",
+     "typeName": "Beach/Pool",
+     "emoji": "🏊",
+     "detail": "• Pool, showers, repack for tomorrow's island move."
+    },
+    {
+     "start": "5:00 PM",
+     "end": "6:15 PM",
+     "title": "Dinner — Treasury 1860, 144 King William St",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• In the old Treasury building directly across King William St from the hotel (1 min walk).\n• Listed as child-friendly; book an early table.",
+     "est": 84.5,
+     "notes": "• ~AUD 130 for 2 adult mains + 2 kids' meals incl. optional 10% tip — estimated; current menu prices not confirmed online."
+    },
+    {
+     "start": "6:15 PM",
+     "end": "7:30 PM",
+     "title": "Pack + bedtime routine",
+     "typeName": "Free Time",
+     "emoji": "🧳",
+     "detail": "• Bags packed tonight — tomorrow leaves at 9 AM."
+    }
+   ]
+  },
+  {
+   "date": "Monday, December 20, 2027",
+   "title": "Drive to Cape Jervis → ferry → Penneshaw dolphin safari → Kingscote",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast — hotel",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Buffet at Penny Blue.",
+     "est": 87.75,
+     "notes": "• ~AUD 135 — estimated (same basis as Sunday)."
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:50 AM",
+     "title": "Check out — load the car",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Request the valet car at 8:30."
+    },
+    {
+     "start": "9:00 AM",
+     "end": "10:50 AM",
+     "title": "Drive Adelaide → Cape Jervis ferry terminal",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~108 km, 1h45 via the Main South Rd through McLaren Vale and Normanville.\n• Bathroom/fuel stop at Normanville (~1 hr in).\n• Last fuel before the terminal is Aldinga — top up if low.",
+     "est": 30.0,
+     "notes": "• Fuel for the mainland driving so far (~250 km) ≈ AUD 45 — estimated."
+    },
+    {
+     "start": "10:50 AM",
+     "end": "11:00 AM",
+     "title": "Park at the SeaLink secure car park, Cape Jervis",
+     "typeName": "Parking",
+     "emoji": "🅿️",
+     "detail": "• Mainland car stays here while you're on the island.\n• Book the car park together with the ferry tickets.",
+     "est": 65.0,
+     "notes": "• AUD 25/day (SeaLink, verified) × 4 days (Dec 20–23) = AUD 100 ≈ USD 65."
+    },
+    {
+     "start": "11:00 AM",
+     "end": "11:30 AM",
+     "title": "Check in — SeaLink terminal (walk-on)",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• Check-in closes 30 min before departure.\n• Luggage goes on with you as walk-on passengers."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "12:45 PM",
+     "title": "SeaLink ferry Cape Jervis → Penneshaw (45 min)",
+     "typeName": "Transportation",
+     "emoji": "⛴️",
+     "detail": "• 12:00 PM weekday departure on the current timetable.\n• Ferries run daily except Christmas Day.",
+     "est": 96.85,
+     "notes": "• Walk-on fares (one way): adult AUD 49 × 2 + child (3–14) AUD 25.50 × 2 = AUD 149.00 ≈ USD 97.\n• Fares listed valid to Mar 31, 2026; peak departures can vary — re-check when booking. Not booked.",
+     "flag": "A new ferry timetable with more departures was due from Nov 2026 — confirm the noon sailing still exists."
+    },
+    {
+     "start": "12:45 PM",
+     "end": "1:15 PM",
+     "title": "Pick up island car — Budget Kangaroo Island, Penneshaw ferry terminal",
+     "typeName": "Rental Car",
+     "emoji": "🚗",
+     "detail": "• Mid-size SUV; collected at the terminal, a short walk off the ferry.\n• Budget KI cars are allowed on the island's sealed and unsealed roads.\n• A 4WD isn't needed — the main roads are sealed and 2WD is fine on the gravel ones.",
+     "program": "Rental",
+     "est": 390.0,
+     "notes": "• Not booked. Budget KI listings start ~AUD 180/day; dynamic pricing → ~AUD 600 for 3 days — estimated.\n• Kayak (furthest date, Nov 2027, Kingscote Airport): compact SUV ~USD 55/day.\n• Mainland rentals: most ban the ferry or limit you to sealed roads (Thrifty bans 2WD cars on the island) — renting on the island avoids that.",
+     "flag": "Ask Budget KI in writing that the vehicle and its insurance cover unsealed roads (the last stretch into Hanson Bay)."
+    },
+    {
+     "start": "1:15 PM",
+     "end": "2:15 PM",
+     "title": "Lunch — Penneshaw Pub, 11 Thomas Willson St",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Clifftop pub over Backstairs Passage, 3 min from the terminal; kids' meals include a soft drink.",
+     "est": 65.0,
+     "notes": "• Mains ~AUD 19–39 (Lonely Planet) → 2 adult mains + 2 kids' meals incl. optional 10% tip ≈ AUD 100 — estimated; current menu not online."
+    },
+    {
+     "start": "2:15 PM",
+     "end": "2:45 PM",
+     "title": "Drive to Christmas Cove Marina — check in",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• 500 m from the ferry terminal; check in 15 min before departure."
+    },
+    {
+     "start": "3:00 PM",
+     "end": "4:15 PM",
+     "title": "Kangaroo Island Ocean Safari — 75-minute coastal safari",
+     "typeName": "Excursion",
+     "emoji": "🐬",
+     "detail": "• Small boat (12 max) along the Penneshaw coast: dolphins and seals guaranteed, plus sea eagles.\n• Dry boat — spray jackets provided.\n• Suitable for all ages.",
+     "est": 185.9,
+     "notes": "• Adult AUD 88 × 2 + child (3–12) ~AUD 55 × 2 = AUD 286 ≈ USD 186 — adult verified; child rate from the AUD 55–88 range listed.\n• Departs 9 AM and 3 PM daily. Not booked."
+    },
+    {
+     "start": "4:15 PM",
+     "end": "4:30 PM",
+     "title": "Back to the car",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From the marina back up to the car (~2 min)."
+    },
+    {
+     "start": "4:30 PM",
+     "end": "5:20 PM",
+     "title": "Drive Penneshaw → Kingscote",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~60 km, 50 min on the sealed Hog Bay Rd.\n• Watch for wallabies on the roadside."
+    },
+    {
+     "start": "5:20 PM",
+     "end": "5:45 PM",
+     "title": "Check in — Villas on the Bay, 9–11 Esplanade, Kingscote",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• 2-bedroom villa (1 queen + 2 singles), full kitchen, laundry, lock-up garage; gated, opposite the bay and clifftop reserve.\n• Short walk to town, jetties and the playground.\n• First breakfast is complimentary.",
+     "nights": "3 nights (Mon–Wed)",
+     "roomType": "Two-Bedroom Villa",
+     "address": "9–11 Esplanade, Kingscote SA 5223",
+     "program": "Cash",
+     "est": 443.3,
+     "notes": "• Booking.com, Dec 20–23, 2027 (searched Nov 2026): AUD 682 for 3 nights, 2 adults + 2 children (6, 8); free cancellation, no prepayment ≈ USD 443.\n• Rated 9.3 (813 reviews).\n• No Hyatt, Hilton or Marriott on the island. Southern Ocean Lodge (Hyatt via Mr & Mrs Smith) only takes children 10+.\n• Larger hotel option: Ozone Hotel Family Room, pool + restaurant, AUD 1,006 for 3 nights. Not booked."
+    },
+    {
+     "start": "5:50 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Zone Restaurant, Ozone Hotel, 67 Chapman Tce",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• 5-min walk along the Esplanade; bistro over Nepean Bay — burgers, pasta, local seafood.",
+     "est": 65.0,
+     "notes": "• ~AUD 100 for 2 adult mains + 2 kids' meals incl. optional 10% tip — estimated; menu not online."
+    },
+    {
+     "start": "7:00 PM",
+     "end": "7:20 PM",
+     "title": "Groceries — Kingscote supermarket",
+     "typeName": "Shopping",
+     "emoji": "🛒",
+     "detail": "• Breakfasts, snacks and picnic water for the next three days.",
+     "est": 78.0,
+     "notes": "• ~AUD 120 — estimated."
+    },
+    {
+     "start": "7:30 PM",
+     "end": "8:30 PM",
+     "title": "Bedtime routine",
+     "typeName": "Free Time",
+     "emoji": "🪥",
+     "detail": "• Tomorrow leaves at 8:45 AM."
+    }
+   ]
+  },
+  {
+   "date": "Tuesday, December 21, 2027",
+   "title": "South coast — Seal Bay sea lions, birds of prey, Little Sahara dunes",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:45 AM",
+     "end": "8:30 AM",
+     "title": "Breakfast — villa",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Complimentary first breakfast."
+    },
+    {
+     "start": "8:30 AM",
+     "end": "8:45 AM",
+     "title": "Pack the day bag",
+     "typeName": "Logistics",
+     "emoji": "🎒",
+     "detail": "• Water, hats, sunscreen, change of clothes for after the dunes."
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:40 AM",
+     "title": "Drive Kingscote → Seal Bay Conservation Park",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~57 km, 50 min, all sealed."
+    },
+    {
+     "start": "9:45 AM",
+     "end": "10:45 AM",
+     "title": "Seal Bay — guided sea lion tour (10:00 AM)",
+     "typeName": "Excursion",
+     "emoji": "🦭",
+     "detail": "• Arrive 15 min before the tour.\n• Australian sea lions resting on the beach and dunes; tour includes the 900 m boardwalk.\n• Open 9 AM, last entry 4 PM; closed Christmas Day.",
+     "est": 71.5,
+     "notes": "• Guided tour family (2A + 2C) AUD 110 ≈ USD 72 — verified.\n• Boardwalk-only family ticket AUD 54.50.",
+     "flag": "Beach access was paused in 2026 to protect the colony — tours run from the boardwalk instead. Check parks.sa.gov.au before booking."
+    },
+    {
+     "start": "10:45 AM",
+     "end": "11:15 AM",
+     "title": "Drive → Raptor Domain, 58 Seal Bay Rd",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~10 min; time to settle before the show."
+    },
+    {
+     "start": "11:30 AM",
+     "end": "12:30 PM",
+     "title": "Raptor Domain — free-flight Birds of Prey show",
+     "typeName": "Excursion",
+     "emoji": "🦅",
+     "detail": "• Rescued wedge-tailed eagles, owls and kookaburras flying overhead (1 hr).\n• Shows at 11:30 AM and 2:30 PM.",
+     "est": 59.8,
+     "notes": "• Family AUD 92 ≈ USD 60 — verified (South Australian Tourism listing)."
+    },
+    {
+     "start": "12:30 PM",
+     "end": "12:50 PM",
+     "title": "Drive → Vivonne Bay General Store, 4417 South Coast Rd",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~15 min."
+    },
+    {
+     "start": "12:50 PM",
+     "end": "1:45 PM",
+     "title": "Lunch — Vivonne Bay General Store",
+     "typeName": "Dining",
+     "emoji": "🍔",
+     "detail": "• Home of the island's famous King George whiting burger; kids' cheeseburgers too.",
+     "est": 52.0,
+     "notes": "• ~AUD 80 for 2 whiting burgers + 2 kids' meals incl. chips — estimated; menu not online."
+    },
+    {
+     "start": "1:45 PM",
+     "end": "2:00 PM",
+     "title": "Drive → Little Sahara Adventure Centre, 3733 South Coast Rd",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~7 km, 10 min."
+    },
+    {
+     "start": "2:00 PM",
+     "end": "3:45 PM",
+     "title": "Little Sahara — sandboarding and tobogganing",
+     "typeName": "Excursion",
+     "emoji": "🏜️",
+     "detail": "• 2 km² of white inland dunes, some as tall as a 17-storey building.\n• Toboggans for the kids, sandboard for the adults; wax the base for speed.\n• Open 9 AM – 5 PM (Oct–Apr).",
+     "est": 72.15,
+     "notes": "• 2-hr hire AUD 37 per board × 3 = AUD 111 ≈ USD 72 — verified; helmets extra (recommended)."
+    },
+    {
+     "start": "3:45 PM",
+     "end": "4:00 PM",
+     "title": "Shake out the sand, change clothes",
+     "typeName": "Logistics",
+     "emoji": "🧺",
+     "detail": "• Dry clothes from the day bag before the drive."
+    },
+    {
+     "start": "4:00 PM",
+     "end": "4:50 PM",
+     "title": "Drive back to Kingscote",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~55 km, 50 min."
+    },
+    {
+     "start": "4:50 PM",
+     "end": "5:45 PM",
+     "title": "Villa — showers, rest",
+     "typeName": "Free Time",
+     "emoji": "🛁",
+     "detail": "• Sand out of everything."
+    },
+    {
+     "start": "5:45 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Kangaroo Island Fresh Seafood, Kingscote",
+     "typeName": "Dining",
+     "emoji": "🍤",
+     "detail": "• Island seafood counter: fish and chips to take back to the villa or eat on the foreshore.",
+     "est": 48.75,
+     "notes": "• ~AUD 75 for 2 adult seafood packs + 2 kids' fish and chips — estimated; menu not online."
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bedtime routine",
+     "typeName": "Free Time",
+     "emoji": "🪥",
+     "detail": "• Back by 7 PM — tomorrow leaves at 8 AM."
+    }
+   ]
+  },
+  {
+   "date": "Wednesday, December 22, 2027",
+   "title": "Flinders Chase — Remarkable Rocks, Admirals Arch, Hanson Bay koalas",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast — villa",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• From the groceries."
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:00 AM",
+     "title": "Out the door — picnic water and snacks",
+     "typeName": "Logistics",
+     "emoji": "🎒",
+     "detail": "• Fuel up in Kingscote — few stations out west."
+    },
+    {
+     "start": "8:00 AM",
+     "end": "9:35 AM",
+     "title": "Drive Kingscote → Flinders Chase Visitor Centre, 8125 South Coast Rd",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~105 km, 1h30 via the Playford and West End Hwys — all sealed.",
+     "est": 81.25,
+     "notes": "• Island fuel for ~600 km of driving over 3 days ≈ AUD 125 (KI fuel is pricier) — estimated."
+    },
+    {
+     "start": "9:35 AM",
+     "end": "9:55 AM",
+     "title": "Visitor Centre — park entry, bathrooms",
+     "typeName": "Logistics",
+     "emoji": "🎫",
+     "detail": "• Pay the one-day park fee here (or online).",
+     "est": 24.7,
+     "notes": "• One-day entry: adult AUD 14.40; family listed up to AUD 38 ≈ USD 25 — family rate estimated from the listing range."
+    },
+    {
+     "start": "9:55 AM",
+     "end": "10:15 AM",
+     "title": "Drive → Remarkable Rocks",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~15 min."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "11:15 AM",
+     "title": "Remarkable Rocks",
+     "typeName": "Sightseeing",
+     "emoji": "🪨",
+     "detail": "• Wind-sculpted granite boulders on a dome 75 m above the sea; boardwalk from the car park.\n• Hold the kids' hands near the seaward edge — no fences on the dome.\n• Can close in severe wind."
+    },
+    {
+     "start": "11:15 AM",
+     "end": "11:35 AM",
+     "title": "Drive → Admirals Arch, Cape du Couedic",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~15 min past the lighthouse."
+    },
+    {
+     "start": "11:35 AM",
+     "end": "12:20 PM",
+     "title": "Admirals Arch boardwalk — long-nosed fur seals",
+     "typeName": "Walk",
+     "emoji": "🦭",
+     "detail": "• From: the Cape du Couedic car park → boardwalk and stairs down to the arch viewing platform (~10 min each way).\n• Fur seals lounging on the rocks below the arch."
+    },
+    {
+     "start": "12:20 PM",
+     "end": "12:45 PM",
+     "title": "Drive back to the Visitor Centre",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~25 min."
+    },
+    {
+     "start": "12:45 PM",
+     "end": "1:45 PM",
+     "title": "Lunch — The Rocks Café, Flinders Chase Visitor Centre",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Café inside the visitor centre.",
+     "est": 55.25,
+     "notes": "• ~AUD 85 for 2 adult + 2 kids' meals — estimated; menu not online."
+    },
+    {
+     "start": "1:45 PM",
+     "end": "2:15 PM",
+     "title": "Drive → Hanson Bay Wildlife Sanctuary, 7797 South Coast Rd",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~5 km east of the visitor centre; the last stretch in is gravel."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "4:00 PM",
+     "title": "Hanson Bay — guided Koala Walk (2:30 PM)",
+     "typeName": "Excursion",
+     "emoji": "🐨",
+     "detail": "• Wild koalas in the eucalyptus avenues; kangaroos, wallabies and Cape Barren geese on the way.\n• Pre-booked guided tours only (10:30 AM, 2:30 PM, sunset); booking cutoff 1 hr before.",
+     "est": 78.0,
+     "notes": "• From ~AUD 35–40 per adult; child rate not published → ~AUD 120 for the family — estimated. Not booked."
+    },
+    {
+     "start": "4:00 PM",
+     "end": "5:35 PM",
+     "title": "Drive back to Kingscote",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~1h30; daylight until ~8:30 PM."
+    },
+    {
+     "start": "5:35 PM",
+     "end": "6:00 PM",
+     "title": "Villa — freshen up",
+     "typeName": "Free Time",
+     "emoji": "🛁",
+     "detail": "• Quick showers."
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:15 PM",
+     "title": "Dinner — Bella Restaurant, Kingscote",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Italian, 8-min walk from the villa.",
+     "est": 61.75,
+     "notes": "• ~AUD 95 for 2 adult mains + 2 kids' meals incl. optional 10% tip — estimated; menu not online."
+    },
+    {
+     "start": "7:15 PM",
+     "end": "8:15 PM",
+     "title": "Pack + bedtime routine",
+     "typeName": "Free Time",
+     "emoji": "🧳",
+     "detail": "• Bags packed tonight for check-out."
+    }
+   ]
+  },
+  {
+   "date": "Thursday, December 23, 2027",
+   "title": "Last island morning — Stokes Bay hidden beach",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:45 AM",
+     "end": "8:30 AM",
+     "title": "Breakfast — villa",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Use up the groceries."
+    },
+    {
+     "start": "8:30 AM",
+     "end": "9:30 AM",
+     "title": "Check out — Villas on the Bay",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Load the car; leave keys per the villa's instructions."
+    },
+    {
+     "start": "9:30 AM",
+     "end": "10:15 AM",
+     "title": "Drive Kingscote → Stokes Bay",
+     "typeName": "Drive",
+     "emoji": "🚙",
+     "detail": "• ~48 km, 45 min along the north coast."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "11:45 AM",
+     "title": "Stokes Bay — rock tunnel to the hidden beach and rock pool",
+     "typeName": "Beach/Pool",
+     "emoji": "🏝️",
+     "detail": "• From: the car park → follow the signs through the rock tunnel (mind your head) → long white beach on the far side.\n• Enclosed rock pool = calm, kid-safe swimming; named Australia's Best Beach in 2023.\n• Swim gear on under clothes; towels in the car."
+    },
+    {
+     "start": "11:45 AM",
+     "end": "12:00 PM",
+     "title": "Next leg — to plan",
+     "typeName": "Free Time",
+     "emoji": "📝",
+     "detail": "• Stokes Bay → Penneshaw ferry terminal is ~1h40 if heading back to the mainland.\n• Budget KI car returns at Penneshaw; the mainland car is waiting at Cape Jervis."
+    }
+   ]
+  }
+ ],
+ "packing": {
+  "trackerTitle": "Item tracker",
+  "outfitDays": [],
+  "trackerDays": [],
+  "packLists": []
+ },
+ "supplies": [],
+ "ideas": [
+  {
+   "name": "Still open / TBD",
+   "items": [
+    {
+     "name": "United SFO–Adelaide 2027 season",
+     "note": "Not scheduled yet. 2026–27 runs Dec 17 – Feb 8 (Mon/Thu/Sat). Award space for Dec 2027 opens ~Jan 2027."
+    },
+    {
+     "name": "Adelaide hotel",
+     "note": "Marriott needs 2 rooms (224,000 pts, ~0.6¢). Cash alternative: The George, Glenelg, 2-bedroom family suite AUD 1,271 for 2 nights."
+    },
+    {
+     "name": "Seal Bay beach access",
+     "note": "Paused in 2026; tours from the boardwalk. Re-check before booking."
+    },
+    {
+     "name": "Ferry timetable",
+     "note": "New SeaLink timetable expected from Nov 2026 — confirm the noon Cape Jervis sailing on Dec 20."
+    },
+    {
+     "name": "Restaurant menus",
+     "note": "Verified: The Moseley, Hahndorf Inn. Estimated: Citi Zen, Treasury 1860, Penneshaw Pub, Zone, Vivonne Bay store, KI Fresh Seafood, The Rocks Café, Bella."
+    },
+    {
+     "name": "After Kangaroo Island",
+     "note": "Next leg from Dec 23 not planned yet."
+    },
+    {
+     "name": "Present tab",
+     "note": "Photos and maps not added yet."
+    }
+   ]
+  }
+ ],
+ "alternatives": null
+}
