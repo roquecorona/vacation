@@ -1,0 +1,1772 @@
+{
+ "meta": {
+  "title": "Chile — Santiago & Torres del Paine, December 2027",
+  "dates": "Dec 16–25, 2027 (continues — next leg not planned yet) · Miami → Santiago → Puerto Natales → Torres del Paine",
+  "route": [
+   {
+    "name": "Miami",
+    "sub": "MIA — American 957 overnight nonstop"
+   },
+   {
+    "name": "Santiago",
+    "sub": "4 nights from Dec 16 (room ready on arrival) · Hyatt Centric Las Condes (points) · Uber, no car"
+   },
+   {
+    "name": "Puerto Natales",
+    "sub": "PNT — LATAM from Santiago, 4x4 pickup"
+   },
+   {
+    "name": "Torres del Paine",
+    "sub": "5 nights · Cabañas Lago Tyndall, Río Serrano (self-catering)"
+   },
+   {
+    "name": "Next leg",
+    "sub": "from Dec 25 — not planned yet"
+   }
+  ]
+ },
+ "days": [
+  {
+   "date": "Thursday, December 16, 2027",
+   "title": "Miami → Santiago (overnight flight)",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "5:15 PM",
+     "end": "6:00 PM",
+     "title": "Dinner at home",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Full dinner before leaving, so everyone can sleep right after takeoff.\n• Light on sugar."
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:15 PM",
+     "title": "Showers, comfy flight clothes, final bag check",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• Kids in soft clothes they can sleep in.\n• All 4 passports in one pouch.\n• Pack the 2 travel booster seats (Chile requires them under age 9 / under 135 cm — in Ubers too).\n• Fleece + rain shell in carry-ons: Santiago is warm, Patagonia is not."
+    },
+    {
+     "start": "7:15 PM",
+     "end": "7:35 PM",
+     "title": "Uber XL home → MIA, American departures (Concourse D/E)",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~10 min from Miami Springs; 20-min block for loading bags.\n• No long-term parking needed (trip is 10+ days and the return isn't set yet).",
+     "est": 25.0,
+     "notes": "• ~USD 25 for Uber XL incl. tip — estimated."
+    },
+    {
+     "start": "7:35 PM",
+     "end": "8:20 PM",
+     "title": "American check-in and bag drop",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• International flight: agent checks passports.\n• Check booster seats as bags (free on American) or carry them on."
+    },
+    {
+     "start": "8:20 PM",
+     "end": "9:00 PM",
+     "title": "TSA PreCheck → walk to the gate",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• PreCheck lane for all four.\n• Confirm gate on the AA app (usually Concourse D)."
+    },
+    {
+     "start": "9:00 PM",
+     "end": "10:05 PM",
+     "title": "Gate: water bottles, snacks, pajamas, teeth",
+     "typeName": "Logistics",
+     "emoji": "🪥",
+     "detail": "• Refill water bottles after security.\n• Kids change into pajamas in the gate restroom and brush teeth.\n• No new movies once boarded — lights out after takeoff.",
+     "est": 25.0,
+     "notes": "• ~USD 25 for water and snacks — estimated."
+    },
+    {
+     "start": "10:05 PM",
+     "end": "10:50 PM",
+     "title": "Board AA957",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Boarding ~45 min before departure.\n• Last bathroom stop at the gate."
+    },
+    {
+     "start": "10:50 PM",
+     "end": "9:15 AM",
+     "title": "American AA957 - MIA → SCL - Nonstop - 8h25m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• Departs 10:50 PM Miami, lands 9:15 AM Friday Santiago (Chile is 2 hrs ahead of Florida in December).\n• Overnight: sleep right after takeoff — about 6.5 hrs of real sleep is possible.\n• Economy, 4 passengers.",
+     "program": "American AAdvantage",
+     "points": "100000",
+     "est": 102.4,
+     "route": "MIA → SCL",
+     "flightNo": "American 957",
+     "cabin": "Economy (Main)",
+     "seats": "Not yet assigned",
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Search award on aa.com",
+       "url": "https://www.aa.com/booking/find-flights"
+      }
+     ],
+     "notes": "• Not booked — planning assumption from the seats.aero result you shared: 25,000 points + USD 25.60 per person, T fare class, 9 seats, nonstop, 10:50 PM → 9:15 AM (+1).\n• 4 × 25,000 = 100,000 points + 4 × USD 25.60 = USD 102.40.\n• LATAM also flies MIA–SCL nonstop overnight (alternative if AA space disappears).",
+     "flag": "Dec 16, 2027 isn't in the award calendar yet (American opens ~331 days out, about Jan 19, 2027). Set a seats.aero alert for MIA→SCL, Dec 16, 4 seats."
+    }
+   ]
+  },
+  {
+   "date": "Friday, December 17, 2027",
+   "title": "Land Santiago → straight to the room → lunch and the historic center",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "9:15 AM",
+     "end": "10:30 AM",
+     "title": "Arrive SCL — immigration, bags, SAG agriculture check",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• PDI immigration with US passports (no visa or fee). Keep the PDI entry slip — it's your hotel VAT exemption.\n• Every bag is X-rayed by SAG: declare any food; no fresh fruit, meat or dairy off the plane.\n• 75 min gate-to-curb is realistic for a family with checked bags."
+    },
+    {
+     "start": "10:30 AM",
+     "end": "10:45 AM",
+     "title": "Meet Uber XL at the app pickup area",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• From: international arrivals hall.\n• To: the signed ride-app pickup zone outside (follow the Uber app's pickup pin; ignore drivers soliciting inside the hall).\n• Install the 2 boosters in the back seat before leaving."
+    },
+    {
+     "start": "10:45 AM",
+     "end": "11:35 AM",
+     "title": "Uber XL SCL → Hyatt Centric Las Condes",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~30 km on Costanera Norte (urban tolls are included in the fare), 35–50 min with Friday traffic.",
+     "est": 37.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Arturo%20Merino%20Ben%C3%ADtez%20International%20Airport%20%28SCL%29%2C%20Santiago%2C%20Chile&destination=Hyatt%20Centric%20Las%20Condes%20Santiago%2C%20Enrique%20Foster%2030%2C%20Las%20Condes%2C%20Santiago%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~CLP 30,000 fare + CLP 3,000 tip ≈ USD 37 — estimated (Uber/Cabify airport rides in Santiago run CLP 15,000–35,000 depending on demand)."
+    },
+    {
+     "start": "11:35 AM",
+     "end": "11:50 AM",
+     "title": "Hyatt Centric Las Condes — straight up to the room",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• The room is already yours: the stay starts the night of Thu Dec 16, so there's no waiting for 3 PM check-in.\n• Enrique Foster 30, El Golf — 2 blocks from Isidora Goyenechea's restaurant strip; rooftop pool with Andes views.\n• Room: 2 Queen Beds (29–31 m²) — the only standard room that fits 4.\n• Globalist: free breakfast for 2 adults + 2 kids at Amandine.",
+     "nights": "4 nights (Thu Dec 16 – Mon Dec 20; arrive Fri morning)",
+     "roomType": "2 Queen Beds",
+     "address": "Enrique Foster 30, Las Condes, Santiago",
+     "program": "World of Hyatt",
+     "points": "60000",
+     "est": 0.0,
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "hyatt.com — Hyatt Centric Las Condes",
+       "url": "https://www.hyatt.com/hyatt-centric/en-US/sclct-hyatt-centric-las-condes-santiago"
+      }
+     ],
+     "cancelBy": "Standard Hyatt award: free cancellation until the hotel's deadline (usually 24–48 hrs) — confirm at booking",
+     "notes": "• Not booked. Book Dec 16–20 (4 nights) — the Dec 16 night holds the room for the 11:30 AM arrival.\n• Category 3 since May 20, 2026 (moved up from 2). Standard room per night: 8,000 (lowest) / 12,000 (low) / 15,000 (moderate) / 17,500 (upper) / 20,000 (top).\n• Planned at 15,000 × 4 nights = 60,000 points; possible range 32,000–80,000 depending on the tiers Hyatt assigns to Dec 16–19.\n• No hotel tax on award stays; foreign tourists are also exempt from Chile's 19% VAT on paid hotel rates (show passport + PDI entry slip).\n• The former Grand Hyatt Santiago left Hyatt (it's not bookable with points), so this is the Hyatt to use.",
+     "flag": "You won't show up the first night — after booking, message the hotel (and add a note in the reservation) that you arrive Fri Dec 17 ~11:30 AM on AA957, so the stay isn't cancelled as a no-show. Also confirm the nightly tiers on hyatt.com (blocked automated checks)."
+    },
+    {
+     "start": "11:50 AM",
+     "end": "1:20 PM",
+     "title": "Showers and unwind in the room",
+     "typeName": "Free Time",
+     "emoji": "🚿",
+     "detail": "• Hot showers, fresh clothes, 90 min to decompress after the red-eye.\n• Swap into summer clothes: high 80s °F and sunny this afternoon — sunscreen and hats."
+    },
+    {
+     "start": "1:20 PM",
+     "end": "1:30 PM",
+     "title": "Walk to Tip y Tap, Isidora Goyenechea 2922",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: hotel entrance on Enrique Foster.\n• Walk 1 block south to Isidora Goyenechea, turn right (west) and go ~500 m to No. 2922 (8–10 min).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Centric%20Las%20Condes%20Santiago%2C%20Enrique%20Foster%2030%2C%20Las%20Condes%2C%20Santiago%2C%20Chile&destination=Tip%20y%20Tap%2C%20Isidora%20Goyenechea%202922%2C%20Las%20Condes%2C%20Santiago&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "1:30 PM",
+     "end": "2:30 PM",
+     "title": "Lunch — Tip y Tap, Isidora Goyenechea 2922",
+     "typeName": "Dining",
+     "emoji": "🥪",
+     "detail": "• Santiago sandwich-and-grill institution since 1975: churrascos, lomitos, 'a lo pobre' plates.\n• Kids' section: churrasco or grilled chicken strips with fries/rice/purée.\n• Easy first meal after the overnight flight.",
+     "est": 54.32,
+     "menuUrl": "https://tipytap.cl/carta/carta-ago2024.pdf",
+     "menuLabel": "Menu (Spanish, Aug 2024)",
+     "notes": "• Line items (menu dated Aug 2024): Churrasco filete Tip y Tap CLP 12,900 + Lomo liso a lo pobre CLP 14,900 + kids' Churrasco niño con agregado CLP 6,500 + kids' Tiritas de pollo grillé con agregado CLP 6,100 = CLP 40,400.\n• +10% for price increases since 2024 = CLP 44,440; +10% tip = CLP 48,884 ≈ USD 54.\n• Menu prices include VAT — estimated (current menu not confirmed)."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "2:55 PM",
+     "title": "Uber to Plaza de Armas (historic center)",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~10 km west along Providencia/Alameda, 20–25 min. Boosters in.",
+     "est": 10.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Tip%20y%20Tap%2C%20Isidora%20Goyenechea%202922%2C%20Las%20Condes%2C%20Santiago&destination=Plaza%20de%20Armas%2C%20Santiago%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~CLP 9,000 ≈ USD 10 — estimated."
+    },
+    {
+     "start": "2:55 PM",
+     "end": "3:20 PM",
+     "title": "Plaza de Armas and the Metropolitan Cathedral",
+     "typeName": "Sightseeing",
+     "emoji": "⛪",
+     "detail": "• Santiago's founding square (1541): palms, the Cathedral, the Central Post Office and the old Royal Court building.\n• Cathedral entry is free (hours vary — step in if it's open).\n• Busy square: phones and bags close, kids within reach."
+    },
+    {
+     "start": "3:20 PM",
+     "end": "3:30 PM",
+     "title": "Walk to the Mercado Central",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Plaza de Armas.\n• North 2 blocks on Puente to San Pablo / the cast-iron market hall (~5 min).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Plaza%20de%20Armas%2C%20Santiago%2C%20Chile&destination=Mercado%20Central%2C%20San%20Pablo%20967%2C%20Santiago%2C%20Chile&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "3:30 PM",
+     "end": "3:55 PM",
+     "title": "Mercado Central — the 1872 iron market hall",
+     "typeName": "Sightseeing",
+     "emoji": "🐟",
+     "detail": "• Fish and shellfish stalls under the wrought-iron roof the kids can wander through.\n• Look, don't eat — lunch is done; the restaurant touts get pushy.",
+     "flag": "The market closes around 5 PM on weekdays — keep this before the rest of the walk."
+    },
+    {
+     "start": "3:55 PM",
+     "end": "4:15 PM",
+     "title": "Walk to La Moneda",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Mercado Central.\n• South along pedestrian Paseo Ahumada past the Plaza de Armas to Plaza de la Constitución (~1.1 km, 15 min, flat).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Mercado%20Central%2C%20San%20Pablo%20967%2C%20Santiago%2C%20Chile&destination=Palacio%20de%20La%20Moneda%2C%20Santiago%2C%20Chile&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "4:15 PM",
+     "end": "4:35 PM",
+     "title": "Palacio de La Moneda — the presidential palace",
+     "typeName": "Sightseeing",
+     "emoji": "🏛️",
+     "detail": "• Plaza de la Constitución in front: guards in uniform, the flag and the white façade.\n• Exterior only today (the changing of the guard is a morning event)."
+    },
+    {
+     "start": "4:35 PM",
+     "end": "4:55 PM",
+     "title": "Walk to Cerro Santa Lucía",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: La Moneda.\n• East on the Alameda ~1.3 km to the Terraza Neptuno entrance at the foot of the hill (~18 min; shade on the north side).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Palacio%20de%20La%20Moneda%2C%20Santiago%2C%20Chile&destination=Cerro%20Santa%20Luc%C3%ADa%2C%20Santiago%2C%20Chile&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "4:55 PM",
+     "end": "5:40 PM",
+     "title": "Cerro Santa Lucía — Neptune fountain, castle, tower lookout",
+     "typeName": "Sightseeing",
+     "emoji": "🏰",
+     "detail": "• Free hilltop park where Santiago was founded: stone stairways, the Neptune fountain terrace and Castillo Hidalgo.\n• The last stretch up to the Torre Mirador is narrow, steep stone steps — hold the kids' hands; skip it if crowded.\n• Views across the city to the Andes.",
+     "flag": "Entry is free; the gate may ask visitors to sign in. Confirm summer closing time (usually early evening)."
+    },
+    {
+     "start": "5:40 PM",
+     "end": "5:50 PM",
+     "title": "Walk to Emporio La Rosa, Merced 291 (Lastarria)",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Cerro Santa Lucía, Lastarria-side exit.\n• Down the east side of the hill into Barrio Lastarria, then 2 blocks on Merced (~6 min).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Cerro%20Santa%20Luc%C3%ADa%2C%20Santiago%2C%20Chile&destination=Emporio%20La%20Rosa%2C%20Merced%20291%2C%20Santiago%2C%20Chile&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "5:50 PM",
+     "end": "6:10 PM",
+     "title": "Ice cream — Emporio La Rosa",
+     "typeName": "Dining",
+     "emoji": "🍦",
+     "detail": "• Santiago's famous artisan ice cream: rose-petal, chocolate-chili, lúcuma (a Chilean fruit) and plain chocolate for the kids.",
+     "est": 20.0,
+     "notes": "• ~CLP 4,500 per cup × 4 ≈ CLP 18,000 ≈ USD 20 — estimated (current price list not checked)."
+    },
+    {
+     "start": "6:10 PM",
+     "end": "6:35 PM",
+     "title": "Uber to Happening, Av. Apoquindo 3090",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~8 km east back to Las Condes, 20–25 min.",
+     "est": 10.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Emporio%20La%20Rosa%2C%20Merced%20291%2C%20Santiago%2C%20Chile&destination=Happening%2C%20Av.%20Apoquindo%203090%2C%20Las%20Condes%2C%20Santiago&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~CLP 9,000 ≈ USD 10 — estimated."
+    },
+    {
+     "start": "6:35 PM",
+     "end": "7:50 PM",
+     "title": "Dinner — Happening, Av. Apoquindo 3090",
+     "typeName": "Dining",
+     "emoji": "🥩",
+     "detail": "• Classic Las Condes parrilla (grill), open daily 12:00–21:00 — no waiting for a late kitchen.\n• No kids' menu: a breaded beef milanesa and the meatballs in tomato sauce work for the kids.\n• Sides are ordered separately.",
+     "est": 159.5,
+     "menuUrl": "https://v2.toto.menu/happening",
+     "menuLabel": "Menu (Spanish)",
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Happening — website",
+       "url": "https://www.happening.cl/"
+      }
+     ],
+     "notes": "• Line items (verified, Nov 2026 online menu): Bife de chorizo 400 g CLP 38,000 + Medallón de lomo CLP 33,000 + papas fritas CLP 10,000 + ensalada chilena CLP 6,500 + kids' Milanesa de lomo CLP 23,000 + kids' Albóndigas Patti CLP 20,000 = CLP 130,500.\n• +10% tip = CLP 143,550 ≈ USD 160. Prices include VAT.\n• Reservations recommended for Friday."
+    },
+    {
+     "start": "7:50 PM",
+     "end": "8:10 PM",
+     "title": "Walk back to the hotel",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Happening, Av. Apoquindo 3090.\n• East on Apoquindo ~1 km, then left (north) on Enrique Foster 2 blocks to the hotel (~18 min, flat, well lit).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Happening%2C%20Av.%20Apoquindo%203090%2C%20Las%20Condes%2C%20Santiago&destination=Hyatt%20Centric%20Las%20Condes%20Santiago%2C%20Enrique%20Foster%2030%2C%20Las%20Condes%2C%20Santiago%2C%20Chile&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "8:10 PM",
+     "end": "9:10 PM",
+     "title": "Bedtime routine — lights out 9:00",
+     "typeName": "Logistics",
+     "emoji": "🛏️",
+     "detail": "• Next morning wake-up 7:00 AM."
+    }
+   ]
+  },
+  {
+   "date": "Saturday, December 18, 2027",
+   "title": "Water-park day — Fantasilandia Splash Park → flamingos at Parque Bicentenario",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:30 AM",
+     "title": "Wake up and get ready",
+     "typeName": "Logistics",
+     "emoji": "⏰",
+     "detail": "• Swimsuits on under clothes; towels, sunscreen (SPF 50), hats, flip-flops and dry clothes in the day bag."
+    },
+    {
+     "start": "8:30 AM",
+     "end": "9:15 AM",
+     "title": "Breakfast — Amandine (hotel buffet)",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Globalist breakfast for 2 adults + 2 kids.",
+     "est": 0.0,
+     "menuUrl": "https://www.hyatt.com/hyatt-centric/en-US/sclct-hyatt-centric-las-condes-santiago/dining",
+     "menuLabel": "Restaurant page",
+     "notes": "• Covered by Globalist breakfast."
+    },
+    {
+     "start": "9:15 AM",
+     "end": "9:45 AM",
+     "title": "Back to the room — sunscreen on, day bag packed",
+     "typeName": "Logistics",
+     "emoji": "🎒"
+    },
+    {
+     "start": "9:45 AM",
+     "end": "10:40 AM",
+     "title": "Uber to Fantasilandia Splash Park (San Bernardo)",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~40 km south via Costanera Norte and Autopista Central (Ruta 5 Sur), 45–55 min. Boosters in.",
+     "est": 36.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Centric%20Las%20Condes%20Santiago%2C%20Enrique%20Foster%2030%2C%20Las%20Condes%2C%20Santiago%2C%20Chile&destination=Fantasilandia%20Splash%20Park%2C%20Av.%20Presidente%20Jorge%20Alessandri%2023605%2C%20San%20Bernardo%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~CLP 29,000 + tip ≈ USD 36 — estimated."
+    },
+    {
+     "start": "10:40 AM",
+     "end": "10:55 AM",
+     "title": "Splash Park entrance — tickets, lockers",
+     "typeName": "Logistics",
+     "emoji": "🎟️",
+     "detail": "• Buy tickets online in advance; rent a locker for phones and dry clothes.",
+     "est": 100.0,
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Fantasilandia — tickets",
+       "url": "https://www.fantasilandia.cl/"
+      }
+     ],
+     "notes": "• Prices not published yet (the park opens Dec 2026). Planned at ~CLP 22,000 per person × 4 + locker ≈ CLP 90,000 ≈ USD 100 — estimated from Fantasilandia's 2026 weekend ticket (CLP 22,990 over 1.4 m / CLP 10,990 under).",
+     "flag": "New park — check the Dec 2027 Saturday hours, prices and kids' height rules for each slide once posted. Fallback: Parque Bicentenario de la Infancia (40 free slides) in the morning, Hyatt rooftop pool in the afternoon."
+    },
+    {
+     "start": "10:55 AM",
+     "end": "12:45 PM",
+     "title": "Fantasilandia Splash Park — slides, wave pool, kids' splash zone",
+     "typeName": "Excursion",
+     "emoji": "🌊",
+     "detail": "• Fantasilandia's new water park in Lo Herrera, the first stage of its new San Bernardo complex.\n• Kids' play structures and lazy river for the 6-year-old; the bigger slides for the 8-year-old if tall enough.\n• Reapply sunscreen every 90 min — Santiago in December is high 80s °F with strong UV."
+    },
+    {
+     "start": "12:45 PM",
+     "end": "1:30 PM",
+     "title": "Lunch at the park food court",
+     "typeName": "Dining",
+     "emoji": "🍔",
+     "detail": "• Burgers, hot dogs, empanadas, fries — whatever the park's food court sells.",
+     "est": 50.0,
+     "notes": "• ~CLP 45,000 for 4 ≈ USD 50 — estimated (no menu published yet)."
+    },
+    {
+     "start": "1:30 PM",
+     "end": "3:45 PM",
+     "title": "More water park — wave pool and slides",
+     "typeName": "Excursion",
+     "emoji": "🌊",
+     "detail": "• Second session after lunch; shade breaks every hour."
+    },
+    {
+     "start": "3:45 PM",
+     "end": "4:15 PM",
+     "title": "Showers, dry clothes, out to the gate",
+     "typeName": "Logistics",
+     "emoji": "🚿",
+     "detail": "• Wet suits into the dry-bag."
+    },
+    {
+     "start": "4:15 PM",
+     "end": "5:05 PM",
+     "title": "Uber back to the hotel",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "est": 36.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Fantasilandia%20Splash%20Park%2C%20Av.%20Presidente%20Jorge%20Alessandri%2023605%2C%20San%20Bernardo%2C%20Chile&destination=Hyatt%20Centric%20Las%20Condes%20Santiago%2C%20Enrique%20Foster%2030%2C%20Las%20Condes%2C%20Santiago%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~USD 36 — estimated."
+    },
+    {
+     "start": "5:05 PM",
+     "end": "5:30 PM",
+     "title": "Change for the evening",
+     "typeName": "Logistics",
+     "emoji": "👕"
+    },
+    {
+     "start": "5:30 PM",
+     "end": "5:45 PM",
+     "title": "Uber to Parque Bicentenario (Vitacura)",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~4 km, 10–15 min.",
+     "est": 8.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Centric%20Las%20Condes%20Santiago%2C%20Enrique%20Foster%2030%2C%20Las%20Condes%2C%20Santiago%2C%20Chile&destination=Parque%20Bicentenario%2C%20Vitacura%2C%20Santiago&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~USD 8 — estimated."
+    },
+    {
+     "start": "5:45 PM",
+     "end": "6:20 PM",
+     "title": "Parque Bicentenario — flamingos and black-necked swans",
+     "typeName": "Sightseeing",
+     "emoji": "🦩",
+     "detail": "• Free city park on the Mapocho with lagoons where Chilean flamingos and black-necked swans live year-round.\n• Short stroll on the lagoon paths, Andes views to the east."
+    },
+    {
+     "start": "6:20 PM",
+     "end": "6:35 PM",
+     "title": "Uber to Liguria, Av. Luis Thayer Ojeda 019 (Providencia)",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~4 km, 15 min.",
+     "est": 8.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Parque%20Bicentenario%2C%20Vitacura%2C%20Santiago&destination=Liguria%2C%20Av.%20Luis%20Thayer%20Ojeda%20019%2C%20Providencia%2C%20Santiago&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~USD 8 — estimated."
+    },
+    {
+     "start": "6:35 PM",
+     "end": "7:50 PM",
+     "title": "Dinner — Liguria, Luis Thayer Ojeda 019",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Santiago's classic bar-bistro: home-style Chilean plates (pastel de choclo, plateada) plus pasta and gnocchi for the kids.\n• Saturday hours 10:30 AM–9:30 PM.\n• The 'platos del día' board changes — prices below are from the current online menu.",
+     "est": 87.02,
+     "menuUrl": "https://www.ristofy.io/menu/es/liguria-lto",
+     "menuLabel": "Menu (Spanish)",
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Liguria — reservations",
+       "url": "https://www.liguria.cl/"
+      }
+     ],
+     "notes": "• Line items (verified, Nov 2026 online menu): Plateada asada con puré picante CLP 21,600 + Pastel de choclo CLP 15,800 + kids' Ñoquis a la italiana y pesto CLP 15,400 + kids' Filete de pollo sandwich CLP 12,800 + papas fritas CLP 5,600 = CLP 71,200.\n• +10% tip = CLP 78,320 ≈ USD 87. Prices include VAT."
+    },
+    {
+     "start": "7:50 PM",
+     "end": "8:05 PM",
+     "title": "Uber back to the hotel",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~2.5 km, 10 min.",
+     "est": 7.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Liguria%2C%20Av.%20Luis%20Thayer%20Ojeda%20019%2C%20Providencia%2C%20Santiago&destination=Hyatt%20Centric%20Las%20Condes%20Santiago%2C%20Enrique%20Foster%2030%2C%20Las%20Condes%2C%20Santiago%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~USD 7 — estimated."
+    },
+    {
+     "start": "8:05 PM",
+     "end": "9:05 PM",
+     "title": "Bedtime routine — lights out 9:00",
+     "typeName": "Logistics",
+     "emoji": "🛏️",
+     "detail": "• Next morning wake-up 7:00 AM."
+    }
+   ]
+  },
+  {
+   "date": "Sunday, December 19, 2027",
+   "title": "Cerro San Cristóbal — cable car, summit, funicular, Bellavista lunch → slide park",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "8:00 AM",
+     "title": "Wake up and get ready",
+     "typeName": "Logistics",
+     "emoji": "⏰",
+     "detail": "• Sneakers and a spare shirt for the kids (water area at Parque de la Infancia)."
+    },
+    {
+     "start": "8:00 AM",
+     "end": "8:45 AM",
+     "title": "Breakfast — Amandine (hotel buffet)",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Globalist breakfast.",
+     "est": 0.0,
+     "menuUrl": "https://www.hyatt.com/hyatt-centric/en-US/sclct-hyatt-centric-las-condes-santiago/dining",
+     "menuLabel": "Restaurant page"
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:35 AM",
+     "title": "Room time — pack day bags, start packing for Patagonia",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• Lay out the cold-weather layers for Monday so the morning is quick."
+    },
+    {
+     "start": "9:35 AM",
+     "end": "9:55 AM",
+     "title": "Uber to the Parquemet Pedro de Valdivia entrance",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~5 km, 15 min. Drop-off at Av. Pedro de Valdivia × Av. El Cerro (no cars inside the park). Boosters in.",
+     "est": 8.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Centric%20Las%20Condes%20Santiago%2C%20Enrique%20Foster%2030%2C%20Las%20Condes%2C%20Santiago%2C%20Chile&destination=Telef%C3%A9rico%20Estaci%C3%B3n%20Oasis%2C%20Av.%20Pedro%20de%20Valdivia%20Norte%2C%20Providencia%2C%20Santiago&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~USD 8 — estimated."
+    },
+    {
+     "start": "9:55 AM",
+     "end": "10:10 AM",
+     "title": "Walk to Estación Oasis, buy the all-day pass",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Uber drop-off on Pedro de Valdivia Norte.\n• Through the main gate at Av. Pedro de Valdivia × Av. El Cerro; Oasis station is a few steps to the right.\n• All-day pass covers the cable car, funicular and park buses.",
+     "est": 36.11,
+     "notes": "• All-day unlimited pass (2025 posted prices): CLP 9,250 adult × 2 + CLP 7,000 child × 2 = CLP 32,500 ≈ USD 36 — estimated.\n• Teleférico runs Tue–Sun from 10:00 (closed Mondays)."
+    },
+    {
+     "start": "10:10 AM",
+     "end": "10:30 AM",
+     "title": "Teleférico Oasis → Tupahue → Cumbre",
+     "typeName": "Excursion",
+     "emoji": "🚡",
+     "detail": "• 6-person gondolas over the wooded hill; the city spreads out below with the Andes behind."
+    },
+    {
+     "start": "10:30 AM",
+     "end": "11:30 AM",
+     "title": "Cumbre — summit terraces and lookouts",
+     "typeName": "Sightseeing",
+     "emoji": "📸",
+     "detail": "• 360° view of Santiago and the snow-capped Andes; clearest in the morning.\n• Shade breaks and water — it's in the high 80s °F by midday."
+    },
+    {
+     "start": "11:30 AM",
+     "end": "11:45 AM",
+     "title": "Funicular down to Pío Nono (Bellavista)",
+     "typeName": "Excursion",
+     "emoji": "🚞",
+     "detail": "• The 1925 funicular runs down the steep face of the hill."
+    },
+    {
+     "start": "11:45 AM",
+     "end": "12:00 PM",
+     "title": "Walk to Galindo, Dardignac 098",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: funicular base on Pío Nono.\n• South down Pío Nono 3 blocks, left (east) on Dardignac 1 block to the corner (~6 min).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Funicular%20de%20Santiago%2C%20P%C3%ADo%20Nono%20450%2C%20Recoleta%2C%20Santiago&destination=Galindo%2C%20Dardignac%20098%2C%20Providencia%2C%20Santiago&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "12:00 PM",
+     "end": "1:00 PM",
+     "title": "Lunch — Galindo, Dardignac 098 (Bellavista)",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Bellavista corner institution since 1968 — Chilean home cooking: pastel de choclo, lomo a lo pobre.\n• Bilingual English/Spanish menu.\n• No kids' menu: chicken milanesa and fettuccine bolognese work for the kids.",
+     "est": 61.11,
+     "menuUrl": "https://galindo.cl/wp-content/uploads/2026/01/202601-galindo-carta-es-en_c.pdf",
+     "menuLabel": "Menu (English/Spanish)",
+     "notes": "• Line items (verified, Jan 2026 menu): Pastel de choclo CLP 11,800 + Lomo a lo pobre CLP 14,900 + kids' Milanesa de pollo CLP 11,500 + kids' Fetuccine bolognesa CLP 11,800 = CLP 50,000.\n• +10% tip = CLP 55,000 ≈ USD 61. Prices include VAT.",
+     "flag": "Confirm Galindo's Sunday lunch hours closer to the date."
+    },
+    {
+     "start": "1:00 PM",
+     "end": "1:20 PM",
+     "title": "Uber to Parque Bicentenario de la Infancia (Recoleta)",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~3 km around the north side of the hill, 10–15 min. Boosters in.",
+     "est": 8.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Galindo%2C%20Dardignac%20098%2C%20Providencia%2C%20Santiago&destination=Parque%20Bicentenario%20de%20la%20Infancia%2C%20Recoleta%2C%20Santiago&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~USD 8 — estimated."
+    },
+    {
+     "start": "1:20 PM",
+     "end": "3:30 PM",
+     "title": "Parque de la Infancia — 40-slide hillside, treehouses, water-sphere forest",
+     "typeName": "Excursion",
+     "emoji": "🛝",
+     "detail": "• Free Parquemet playground park built into the slope of Cerro San Cristóbal: a cascade of about 40 slides, treehouses, swings, musical games and a mist/water-sphere forest.\n• Bring a change of shirt for the water area; shade under the almond trees.\n• Open Tue–Sun (closed Mondays).",
+     "est": 0.0,
+     "flag": "Free entry; kids must be with an adult. Confirm Sunday hours closer to the date."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "3:45 PM",
+     "title": "Bathroom, water refill, request the Uber",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "3:45 PM",
+     "end": "4:10 PM",
+     "title": "Uber back to the hotel",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~8 km, 20–25 min.",
+     "est": 10.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Parque%20Bicentenario%20de%20la%20Infancia%2C%20Recoleta%2C%20Santiago&destination=Hyatt%20Centric%20Las%20Condes%20Santiago%2C%20Enrique%20Foster%2030%2C%20Las%20Condes%2C%20Santiago%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~USD 10 — estimated."
+    },
+    {
+     "start": "4:10 PM",
+     "end": "5:15 PM",
+     "title": "Pack for Patagonia, showers",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• Big bags ready to go tonight — Monday's Uber is at 8:00 AM.\n• Warm layers in the carry-ons for the 50s °F and wind on arrival."
+    },
+    {
+     "start": "5:15 PM",
+     "end": "6:00 PM",
+     "title": "Rooftop terrace — last look at the Andes",
+     "typeName": "Free Time",
+     "emoji": "🌇",
+     "detail": "• Kids can swim if they want; adults enjoy the view before the trip south."
+    },
+    {
+     "start": "6:00 PM",
+     "end": "7:00 PM",
+     "title": "Dinner — Amandine (hotel restaurant)",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Easy last night: dinner downstairs, no ride needed.\n• Contemporary Chilean menu.",
+     "est": 122.22,
+     "menuUrl": "https://www.hyatt.com/hyatt-centric/en-US/sclct-hyatt-centric-las-condes-santiago/dining",
+     "menuLabel": "Restaurant page",
+     "notes": "• ~CLP 110,000 for 2 adult mains + 2 kids' plates incl. 10% tip ≈ USD 122 — estimated (menu with prices not found online).",
+     "flag": "No viewable menu online for Amandine — get it from the hotel, or swap for a restaurant with a published menu."
+    },
+    {
+     "start": "7:00 PM",
+     "end": "8:00 PM",
+     "title": "Bedtime routine — lights out 8:00",
+     "typeName": "Logistics",
+     "emoji": "🛏️",
+     "detail": "• Monday wake-up is 6:00 AM: lights out by 8:00 keeps the kids at 10 hrs."
+    }
+   ]
+  },
+  {
+   "date": "Monday, December 20, 2027",
+   "title": "Fly to Puerto Natales → big grocery run → cabin at Río Serrano",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "6:00 AM",
+     "end": "7:00 AM",
+     "title": "Wake up, dress in layers, last bags closed",
+     "typeName": "Logistics",
+     "emoji": "⏰",
+     "detail": "• Fleece + shell on the plane; Patagonia arrives windy and in the 50s °F."
+    },
+    {
+     "start": "7:00 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast — Amandine (hotel buffet)",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Globalist breakfast.",
+     "est": 0.0,
+     "menuUrl": "https://www.hyatt.com/hyatt-centric/en-US/sclct-hyatt-centric-las-condes-santiago/dining",
+     "menuLabel": "Restaurant page"
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:00 AM",
+     "title": "Check out, request Uber XL",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• Request at 7:50 so the car is at the door at 8:00; boosters in."
+    },
+    {
+     "start": "8:00 AM",
+     "end": "8:50 AM",
+     "title": "Uber XL hotel → SCL (domestic departures)",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• ~30 km on Costanera Norte, 35–50 min in Monday traffic.",
+     "est": 37.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hyatt%20Centric%20Las%20Condes%20Santiago%2C%20Enrique%20Foster%2030%2C%20Las%20Condes%2C%20Santiago%2C%20Chile&destination=Arturo%20Merino%20Ben%C3%ADtez%20International%20Airport%20%28SCL%29%2C%20Santiago%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~CLP 30,000 fare + CLP 3,000 tip ≈ USD 37 — estimated."
+    },
+    {
+     "start": "8:50 AM",
+     "end": "9:35 AM",
+     "title": "LATAM check-in and bag drop (domestic)",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• Domestic check-in area of the terminal; bags checked to Puerto Natales.\n• Boosters go as checked items or carry-ons (needed for the Natales truck)."
+    },
+    {
+     "start": "9:35 AM",
+     "end": "10:15 AM",
+     "title": "Security → gate; buy lunch-to-go for the plane",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• LATAM domestic flights sell snacks only — buy sandwiches airside for the flight.",
+     "est": 30.0,
+     "notes": "• ~USD 30 for sandwiches and water — estimated."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "10:47 AM",
+     "title": "Board LATAM to Puerto Natales",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "10:47 AM",
+     "end": "2:05 PM",
+     "title": "LATAM - SCL → PNT - Nonstop - 3h18m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• Seasonal summer route (LATAM runs ~3 a day in high season).\n• Sit on the left (A) side for the southern ice fields if the sky is clear.",
+     "program": "Cash",
+     "est": 800.0,
+     "route": "SCL → PNT",
+     "flightNo": "LATAM (Nov 2026 schedule shows LA251 ~10:47 → 14:05)",
+     "cabin": "Economy",
+     "seats": "Not yet assigned",
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "LATAM — Santiago to Puerto Natales",
+       "url": "https://www.latamairlines.com/us/en/destinations/chile/flights-from-santiago-to-puerto-natales"
+      }
+     ],
+     "notes": "• Not booked. LATAM's lowest one-way SCL→PNT fares were CLP 72,000–78,000 (~USD 80–90) for Oct–Dec 2026, without a checked bag.\n• Planned at ~USD 200 per person with a checked bag in Christmas week × 4 = USD 800 — estimated.\n• Points option: Delta SkyMiles books LATAM to Punta Arenas (PUQ) at 15,900 miles + USD 8 per person (seen for Dec 2026–Jan 2027) = 63,600 miles + USD 32 for four — but PUQ adds ~3 hrs of driving each way vs. Puerto Natales. No Delta award space was found to PNT.\n• Sky Airline also flies SCL–PNT in season (Nov 2026: 9:25 → 12:42).",
+     "flag": "Dec 2027 schedule isn't loaded yet — confirm the late-morning departure when LATAM opens the dates (~Jan 2027)."
+    },
+    {
+     "start": "2:05 PM",
+     "end": "2:30 PM",
+     "title": "Arrive Puerto Natales (PNT) — bags",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Tiny airport; bags come fast."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "3:00 PM",
+     "title": "Pick up 4x4 pickup — PNT airport",
+     "typeName": "Rental Car",
+     "emoji": "🛻",
+     "detail": "• Toyota Hilux 4x4 double cab or similar — gravel roads in the park, strong crosswinds, and room in the back for 5 days of groceries.\n• Before leaving: check the spare tire and jack, photograph every scratch and the windshield, install the boosters.\n• Open doors facing away from the wind — gusts can bend them (often excluded from coverage).",
+     "program": "Rental",
+     "est": 650.0,
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Kayak — Puerto Natales airport rentals",
+       "url": "https://www.kayak.com/Cheap-Puerto-Natales-Car-Rentals.54143.cars.ksp"
+      }
+     ],
+     "notes": "• Not booked; Dec 2027 not searchable yet. Kayak (Nov 2026): Toyota Hilux 4x4 USD 67–108/day; pickup average USD 91/day, highest in January (USD 93).\n• Planned: USD 110/day × 5 days (Dec 20–25) = USD 550 + additional driver and full-coverage add-ons ~USD 100 = USD 650 — estimated.\n• Agencies at PNT include Sixt, Econorent, Chilean Rent a Car and Lucano; book early — 4x4s sell out at Christmas.\n• If the next leg leaves from Punta Arenas, a one-way drop fee applies.",
+     "flag": "Gravel damage (windshield, tires) is often excluded from basic coverage — check the policy and your credit card's coverage for Chile."
+    },
+    {
+     "start": "3:00 PM",
+     "end": "3:15 PM",
+     "title": "Drive PNT → Puerto Natales center",
+     "typeName": "Drive",
+     "emoji": "🛻",
+     "detail": "• 7 km, 10 min.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Aer%C3%B3dromo%20Teniente%20Julio%20Gallardo%20%28PNT%29%2C%20Puerto%20Natales%2C%20Chile&destination=El%20Asador%20Patag%C3%B3nico%2C%20Arturo%20Prat%20158%2C%20Puerto%20Natales%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions"
+    },
+    {
+     "start": "3:15 PM",
+     "end": "4:15 PM",
+     "title": "Late lunch — El Asador Patagónico, Arturo Prat 158 (main square)",
+     "typeName": "Dining",
+     "emoji": "🥩",
+     "detail": "• Patagonian grill on the Plaza de Armas; menu has English descriptions.\n• No kids' menu: the kids share a sirloin steak with mashed potatoes and rice.",
+     "est": 108.78,
+     "menuUrl": "https://chileqr.cl/asadorpatagonico/",
+     "menuLabel": "Menu (Spanish/English)",
+     "notes": "• Line items (verified, 2026 online menu): Bife de lomo liso 350 g CLP 22,000 + Bife de lomo vetado 350 g CLP 26,900 + papas naturales CLP 4,000 + ensalada chilena CLP 4,800 + kids: Bife de lomo liso 350 g (shared) CLP 22,000 + puré de papas CLP 4,800 + arroz basmati CLP 4,500 = CLP 89,000.\n• +10% tip = CLP 97,900 ≈ USD 109. Prices include VAT.",
+     "flag": "Confirm it's open Monday mid-afternoon (many Natales kitchens close 3:30–7:00 PM)."
+    },
+    {
+     "start": "4:15 PM",
+     "end": "5:15 PM",
+     "title": "Grocery run for 5 days — Unimarc Puerto Natales",
+     "typeName": "Shopping",
+     "emoji": "🛒",
+     "detail": "• This is the only shop: there's no store in Río Serrano, the park or Cerro Castillo, and Natales shops close for Christmas Day.\n• See the 'Groceries — Unimarc, Dec 20' list (Lists lens): 5 breakfasts, 4 packed lunches, 3 cabin dinners incl. Christmas Eve, snacks, water.\n• Buy a soft cooler bag (bolsa térmica) for lunches in the truck.\n• Pan de pascua (Chilean Christmas fruit cake) for Christmas Eve.",
+     "est": 245.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=El%20Asador%20Patag%C3%B3nico%2C%20Arturo%20Prat%20158%2C%20Puerto%20Natales%2C%20Chile&destination=Unimarc%2C%20Puerto%20Natales%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~CLP 210,000 for 5 days of breakfasts, lunches, 3 dinners, snacks and water + CLP 10,000 cooler bag ≈ USD 245 — estimated."
+    },
+    {
+     "start": "5:15 PM",
+     "end": "5:30 PM",
+     "title": "Fill the tank — Puerto Natales",
+     "typeName": "Gasoline",
+     "emoji": "⛽",
+     "detail": "• There's no fuel in Río Serrano or inside the park — fill to the top.\n• The truck arrives full from the rental counter; this tops off after the drive into town.",
+     "est": 0.0
+    },
+    {
+     "start": "5:30 PM",
+     "end": "7:10 PM",
+     "title": "Drive Puerto Natales → Río Serrano (route Y-290)",
+     "typeName": "Drive",
+     "emoji": "🛻",
+     "detail": "• ~80 km: north on Ruta 9, left onto Y-290 past the Milodón Cave turnoff, then ~60 km of gravel to Río Serrano.\n• 1h40 — first views of the Paine Massif across Lago del Toro.\n• Very little phone signal after the first 20 km; download offline Google Maps.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Unimarc%2C%20Puerto%20Natales%2C%20Chile&destination=Caba%C3%B1as%20Lago%20Tyndall%2C%20R%C3%ADo%20Serrano%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions"
+    },
+    {
+     "start": "7:10 PM",
+     "end": "7:40 PM",
+     "title": "Check in — Cabañas Lago Tyndall (5 nights), unload groceries",
+     "typeName": "Hotel",
+     "emoji": "🏡",
+     "detail": "• 2-bedroom cabin with a full kitchen, living room and underfloor heating, a 1-min walk from the Serrano River and ~10 min to the park's Serrano gate.\n• Superior Bungalow: 1 full bed + 2 twins.\n• Fridge first, then set up the boosters' spot by the door.\n• Check-in window 3:00–10:00 PM — send the arrival time in advance.",
+     "nights": "5 nights (Mon–Fri)",
+     "roomType": "Superior Bungalow — 2 bedrooms (1 full bed + 2 twins), kitchen",
+     "address": "Río Serrano s/n, Torres del Paine, Magallanes",
+     "program": "Cash",
+     "est": 1300.0,
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Booking.com — Cabañas Lago Tyndall",
+       "url": "https://www.booking.com/hotel/cl/tyndall.html"
+      }
+     ],
+     "cancelBy": "Not booked — choose a free-cancellation rate when Dec 2027 opens",
+     "notes": "• Not booked; Dec 2027 not loaded yet. Booking.com prices for 2 adults + kids 6 and 8 in one cabin: $490 for 2 nights / $735 for 3 / $980 for 4 (≈ $245/night) in Dec 2026 and on the furthest loaded date (Mar 27–29, 2027); the 2 nights spanning Christmas Eve (Dec 22–24, 2026) were $580.\n• Planned at ~USD 1,300 for Dec 20–25, 2027 (range ~$1,225–1,400) — estimated.\n• Children 4+ are charged as adults here (already in the quotes). No extra beds or cribs.\n• Check-out by 10:00 AM.\n• Confirm whether Chile's 19% VAT is included — foreign tourists paying in USD are usually exempt.",
+     "flag": "Sold out for the same dates this year — book as soon as Dec 2027 opens. Ask for a cabin with working floor heating in both bedrooms."
+    },
+    {
+     "start": "7:40 PM",
+     "end": "7:50 PM",
+     "title": "Walk to De Agostini Restobar at the Río Serrano Hotel",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: cabin at Lago Tyndall.\n• Along the village road toward the big hotel (signed 'Hotel Río Serrano'), ~800 m, 10 min.\n• Bring a jacket — it's windy and in the 40s °F after dark.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Caba%C3%B1as%20Lago%20Tyndall%2C%20R%C3%ADo%20Serrano%2C%20Torres%20del%20Paine%2C%20Chile&destination=R%C3%ADo%20Serrano%20Hotel%20%2B%20Spa%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "7:50 PM",
+     "end": "8:45 PM",
+     "title": "Dinner — De Agostini Restobar (Río Serrano Hotel)",
+     "typeName": "Dining",
+     "emoji": "🍔",
+     "detail": "• The hotel's casual fire-grill bar: burgers, sandwiches, empanadas, pastas — open to non-guests.\n• No kids' menu: lemon pasta and beef empanadas for the kids.",
+     "est": 82.87,
+     "menuUrl": "https://gour.media/de-agostini-bar/comida/?lang=en_US",
+     "menuLabel": "Menu (English)",
+     "notes": "• Line items (verified, current online menu): Classic burger CLP 19,700 + Pulled Beef sandwich CLP 18,200 + kids' Lemon Pasta CLP 18,700 + kids' Beef Empanadas CLP 11,200 = CLP 67,800.\n• +10% tip = CLP 74,580 ≈ USD 83."
+    },
+    {
+     "start": "8:45 PM",
+     "end": "8:55 PM",
+     "title": "Walk back to the cabin",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• Same road back (~10 min). Still light out — sunset is ~10:15 PM.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=R%C3%ADo%20Serrano%20Hotel%20%2B%20Spa%2C%20Torres%20del%20Paine%2C%20Chile&destination=Caba%C3%B1as%20Lago%20Tyndall%2C%20R%C3%ADo%20Serrano%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "8:55 PM",
+     "end": "9:45 PM",
+     "title": "Bedtime routine — lights out 9:45",
+     "typeName": "Logistics",
+     "emoji": "🛏️",
+     "detail": "• Blackout check: sunset is ~10:15 PM — tape a blanket over the window if the curtains leak light.\n• Make Tuesday's lunches tonight if the kids are still up.\n• Next morning wake-up 7:45 AM."
+    }
+   ]
+  },
+  {
+   "date": "Tuesday, December 21, 2027",
+   "title": "Lago Grey — iceberg beach and the Grey Glacier boat",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:45 AM",
+     "end": "8:45 AM",
+     "title": "Wake up and get ready",
+     "typeName": "Logistics",
+     "emoji": "⏰",
+     "detail": "• Warm layers, hats, gloves and windproof shells — it's cold and windy on the lake."
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:30 AM",
+     "title": "Breakfast in the cabin",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Cereal, yogurt, eggs, toast, fruit — from the Natales grocery run.",
+     "est": 0.0,
+     "notes": "• Covered by the Dec 20 grocery shop."
+    },
+    {
+     "start": "9:30 AM",
+     "end": "9:45 AM",
+     "title": "Pack lunches + water, load the truck",
+     "typeName": "Logistics",
+     "emoji": "🥪",
+     "detail": "• Ham-and-cheese rolls, avocado, fruit, cookies, granola bars, juice boxes into the cooler bag.\n• Refill water bottles (2 L per person on park days).",
+     "est": 0.0
+    },
+    {
+     "start": "9:45 AM",
+     "end": "10:45 AM",
+     "title": "Drive Río Serrano → Hotel Lago Grey",
+     "typeName": "Drive",
+     "emoji": "🛻",
+     "detail": "• ~38 km of gravel through the Serrano gate (show the park pass QR) and past the CONAF headquarters.\n• Watch for guanacos on the road.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Caba%C3%B1as%20Lago%20Tyndall%2C%20R%C3%ADo%20Serrano%2C%20Torres%20del%20Paine%2C%20Chile&destination=Hotel%20Lago%20Grey%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions"
+    },
+    {
+     "start": "10:45 AM",
+     "end": "10:45 AM",
+     "title": "Torres del Paine park pass — multi-day (Dec 21–24)",
+     "typeName": "Logistics",
+     "emoji": "🎟️",
+     "detail": "• Bought online only, before the trip; download the PDF/QR and print a copy (no signal at the gates).",
+     "est": 163.33,
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "pasesparques.cl (official CONAF sales)",
+       "url": "https://pasesparques.cl"
+      }
+     ],
+     "notes": "• 2026 fees: international adult multi-day (2–10 days) CLP 48,500 × 2 = CLP 97,000. The park's own site lists children under 12 as free; another 2026 source shows foreign children at CLP 25,000 multi-day.\n• Planned conservatively at CLP 147,000 ≈ USD 163 (≈ USD 108 if kids are free).\n• Tickets are date-specific and non-refundable.",
+     "flag": "Buy once the Grey boat and cabin are confirmed — tickets can't be refunded or changed."
+    },
+    {
+     "start": "10:45 AM",
+     "end": "11:00 AM",
+     "title": "Check in for the noon sailing — Hotel Lago Grey reception",
+     "typeName": "Logistics",
+     "emoji": "🎟️",
+     "detail": "• Check-in opens 1 hr before departure; restrooms here.\n• Free parking at the hotel (overflow at Pingo, 20 min walk)."
+    },
+    {
+     "start": "11:00 AM",
+     "end": "11:45 AM",
+     "title": "Walk to the boat: Pingo suspension bridge → iceberg beach",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Hotel Lago Grey reception.\n• Follow the signed path across the Río Pingo suspension bridge, then along the gravel beach where icebergs strand at the shore, to the boat landing at the far end (30–60 min depending on lake level; flat).\n• Kids can touch the small grounded ice chunks at the waterline."
+    },
+    {
+     "start": "11:45 AM",
+     "end": "2:45 PM",
+     "title": "Grey III catamaran to the face of Grey Glacier",
+     "typeName": "Excursion",
+     "emoji": "🧊",
+     "detail": "• 98-passenger catamaran with an enclosed, heated cabin.\n• Sails up Lago Grey past floating icebergs to the glacier's blue ice wall (~30 m high).\n• Eat the packed lunches on board (no alcohol on board).",
+     "est": 477.78,
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Grey Glacier navigation — booking",
+       "url": "https://www.nomades.com/en/puerto-natales/grey-glacier-navigation-id391"
+      }
+     ],
+     "notes": "• Round trip from Hotel Lago Grey. Oct 2027–Sep 2028 price: CLP 135,000 adult × 2 + CLP 80,000 child (5–12) × 2 = CLP 430,000 ≈ USD 478.\n• Departures 9:00, 12:00 and 15:00 (later sailings only when earlier ones sell out). No minimum age; under-5s free.\n• About 4 hrs total including the beach walks.",
+     "flag": "Strong wind cancels sailings — Friday Dec 24 is kept open as the make-up day."
+    },
+    {
+     "start": "2:45 PM",
+     "end": "3:30 PM",
+     "title": "Walk back along the beach and bridge to the car",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: boat landing.\n• Same beach path and Pingo bridge back to the Hotel Lago Grey car park."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "4:30 PM",
+     "title": "Drive back to the cabin",
+     "typeName": "Drive",
+     "emoji": "🛻",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hotel%20Lago%20Grey%2C%20Torres%20del%20Paine%2C%20Chile&destination=Caba%C3%B1as%20Lago%20Tyndall%2C%20R%C3%ADo%20Serrano%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions"
+    },
+    {
+     "start": "4:30 PM",
+     "end": "5:15 PM",
+     "title": "Showers, dry clothes",
+     "typeName": "Logistics",
+     "emoji": "🚿",
+     "detail": "• Wet gear on the heated floor to dry."
+    },
+    {
+     "start": "5:15 PM",
+     "end": "6:45 PM",
+     "title": "Serrano riverbank — skipping stones, wild horses",
+     "typeName": "Walk",
+     "emoji": "🐴",
+     "detail": "• From: cabin door.\n• 1-min walk down to the Serrano River bank; flat gravel shore with the massif straight ahead.\n• Free-roaming horses graze around the village — admire from a distance (they bite)."
+    },
+    {
+     "start": "6:45 PM",
+     "end": "6:55 PM",
+     "title": "Walk to Qawasqar at the Río Serrano Hotel",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: cabin at Lago Tyndall.\n• Along the village road toward the big hotel (signed 'Hotel Río Serrano'), ~800 m, 10 min.\n• Bring a jacket — it's windy and in the 40s °F after dark.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Caba%C3%B1as%20Lago%20Tyndall%2C%20R%C3%ADo%20Serrano%2C%20Torres%20del%20Paine%2C%20Chile&destination=R%C3%ADo%20Serrano%20Hotel%20%2B%20Spa%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "6:55 PM",
+     "end": "8:05 PM",
+     "title": "Dinner — Qawasqar (Río Serrano Hotel restaurant)",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Patagonian à la carte, open to non-guests: trout, hake, lamb, short rib, pastas.\n• Kids' menu: grilled fish, crispy chicken, sirloin steak, pasta.",
+     "est": 111.96,
+     "menuUrl": "https://gour.media/qawasqar/comida/?lang=en_US",
+     "menuLabel": "Menu (English)",
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Río Serrano Hotel — contact / reservations",
+       "url": "https://rioserrano.com/"
+      }
+     ],
+     "notes": "• Line items (verified, current online menu): Angus Short Rib CLP 35,900 + Rainbow Trout CLP 32,500 + kids' Crispy Chicken CLP 14,500 + kids' Pasta CLP 8,700 = CLP 91,600.\n• +10% tip = CLP 100,760 ≈ USD 112.",
+     "flag": "Reserve as an outside guest — hotel guests on full board fill it in high season."
+    },
+    {
+     "start": "8:05 PM",
+     "end": "8:15 PM",
+     "title": "Walk back to the cabin",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• Same road back (~10 min). Still light out — sunset is ~10:15 PM.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=R%C3%ADo%20Serrano%20Hotel%20%2B%20Spa%2C%20Torres%20del%20Paine%2C%20Chile&destination=Caba%C3%B1as%20Lago%20Tyndall%2C%20R%C3%ADo%20Serrano%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "8:15 PM",
+     "end": "8:30 PM",
+     "title": "Pack Wednesday's lunches",
+     "typeName": "Logistics",
+     "emoji": "🥪",
+     "detail": "• Into the fridge for the morning."
+    },
+    {
+     "start": "8:30 PM",
+     "end": "9:30 PM",
+     "title": "Bedtime routine — lights out 9:30",
+     "typeName": "Logistics",
+     "emoji": "🛏️",
+     "detail": "• Next morning wake-up 7:30 AM."
+    }
+   ]
+  },
+  {
+   "date": "Wednesday, December 22, 2027",
+   "title": "Salto Grande waterfall → Mirador Cuernos → Lago Pehoé",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:30 AM",
+     "title": "Wake up and get ready",
+     "typeName": "Logistics",
+     "emoji": "⏰",
+     "detail": "• Hiking shoes, layers, sunscreen."
+    },
+    {
+     "start": "8:30 AM",
+     "end": "9:15 AM",
+     "title": "Breakfast in the cabin",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Cereal, yogurt, eggs, toast, fruit — from the Natales grocery run.",
+     "est": 0.0,
+     "notes": "• Covered by the Dec 20 grocery shop."
+    },
+    {
+     "start": "9:15 AM",
+     "end": "9:25 AM",
+     "title": "Lunches into the cooler, load the truck",
+     "typeName": "Logistics",
+     "emoji": "🥪",
+     "detail": "• Packed last night.",
+     "est": 0.0
+    },
+    {
+     "start": "9:25 AM",
+     "end": "10:25 AM",
+     "title": "Drive Río Serrano → Pudeto (Lago Pehoé)",
+     "typeName": "Drive",
+     "emoji": "🛻",
+     "detail": "• ~45 km gravel along Lago del Toro and the Serrano valley, then around Lago Pehoé.\n• Park at Pudeto (catamaran dock; toilets).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Caba%C3%B1as%20Lago%20Tyndall%2C%20R%C3%ADo%20Serrano%2C%20Torres%20del%20Paine%2C%20Chile&destination=Pudeto%2C%20Torres%20del%20Paine%20National%20Park%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions"
+    },
+    {
+     "start": "10:25 AM",
+     "end": "10:45 AM",
+     "title": "Walk Pudeto → Salto Grande",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Pudeto car park.\n• Signed gravel path north ~1 km to the falls (15–20 min, flat)."
+    },
+    {
+     "start": "10:45 AM",
+     "end": "11:00 AM",
+     "title": "Salto Grande — turquoise waterfall under the Cuernos",
+     "typeName": "Sightseeing",
+     "emoji": "💦",
+     "detail": "• Lago Nordenskjöld pours into Lago Pehoé here.\n• Gusts at the viewpoint can knock a child over — hold hands near the edge."
+    },
+    {
+     "start": "11:00 AM",
+     "end": "12:15 PM",
+     "title": "Hike Salto Grande → Mirador Cuernos",
+     "typeName": "Excursion",
+     "emoji": "🥾",
+     "detail": "• From: Salto Grande viewpoint.\n• Continue on the signed trail ~2.5 km along Lago Nordenskjöld to the Cuernos lookout; mostly flat, some short rises.\n• Turn around whenever the kids are done — the views start almost immediately."
+    },
+    {
+     "start": "12:15 PM",
+     "end": "1:00 PM",
+     "title": "Packed lunch at Mirador Cuernos",
+     "typeName": "Dining",
+     "emoji": "🥪",
+     "detail": "• Sit in the lee of the rocks; the horned peaks are right across the lake.",
+     "est": 0.0
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:30 PM",
+     "title": "Hike back to Pudeto",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Mirador Cuernos.\n• Same trail back past Salto Grande to the Pudeto car park (~3.5 km)."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "2:45 PM",
+     "title": "Bathroom stop at Pudeto",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "2:45 PM",
+     "end": "3:20 PM",
+     "title": "Mirador Lago Pehoé — the postcard view",
+     "typeName": "Sightseeing",
+     "emoji": "📸",
+     "detail": "• Roadside viewpoint ~10 min from Pudeto toward the park headquarters: turquoise Lago Pehoé with the Cuernos and Paine Grande behind.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Pudeto%2C%20Torres%20del%20Paine%20National%20Park%2C%20Chile&destination=Mirador%20Lago%20Peho%C3%A9%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions"
+    },
+    {
+     "start": "3:20 PM",
+     "end": "4:20 PM",
+     "title": "Drive back to the cabin",
+     "typeName": "Drive",
+     "emoji": "🛻",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Mirador%20Lago%20Peho%C3%A9%2C%20Torres%20del%20Paine%2C%20Chile&destination=Caba%C3%B1as%20Lago%20Tyndall%2C%20R%C3%ADo%20Serrano%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions"
+    },
+    {
+     "start": "4:20 PM",
+     "end": "5:05 PM",
+     "title": "Showers, dry clothes",
+     "typeName": "Logistics",
+     "emoji": "🚿"
+    },
+    {
+     "start": "5:05 PM",
+     "end": "6:00 PM",
+     "title": "Kids' downtime — cards, drawing, porch views",
+     "typeName": "Free Time",
+     "emoji": "⏰",
+     "detail": "• Adults start dinner prep at 6."
+    },
+    {
+     "start": "6:00 PM",
+     "end": "6:45 PM",
+     "title": "Cook dinner in the cabin — pasta bolognese + salad",
+     "typeName": "Dining",
+     "emoji": "🍝",
+     "detail": "• Spaghetti, ground beef, tomato sauce, salad from the Dec 20 shop.",
+     "est": 0.0,
+     "notes": "• Covered by the Dec 20 grocery shop."
+    },
+    {
+     "start": "6:45 PM",
+     "end": "7:30 PM",
+     "title": "Dinner in the cabin",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "est": 0.0
+    },
+    {
+     "start": "7:30 PM",
+     "end": "8:00 PM",
+     "title": "Dishes, pack Thursday's lunches",
+     "typeName": "Logistics",
+     "emoji": "🥪",
+     "detail": "• Thursday is the long drive — extra snacks in the truck."
+    },
+    {
+     "start": "8:00 PM",
+     "end": "9:00 PM",
+     "title": "Bedtime routine — lights out 9:00",
+     "typeName": "Logistics",
+     "emoji": "🛏️",
+     "detail": "• Thursday wake-up 7:00 AM (longer drive)."
+    }
+   ]
+  },
+  {
+   "date": "Thursday, December 23, 2027",
+   "title": "East side — Laguna Amarga, Paine waterfall, Laguna Azul",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "8:00 AM",
+     "title": "Wake up and get ready",
+     "typeName": "Logistics",
+     "emoji": "⏰",
+     "detail": "• Binoculars for guanacos, rheas and condors."
+    },
+    {
+     "start": "8:00 AM",
+     "end": "8:45 AM",
+     "title": "Breakfast in the cabin",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Cereal, yogurt, eggs, toast, fruit — from the Natales grocery run.",
+     "est": 0.0,
+     "notes": "• Covered by the Dec 20 grocery shop."
+    },
+    {
+     "start": "8:45 AM",
+     "end": "8:55 AM",
+     "title": "Lunches into the cooler, load the truck",
+     "typeName": "Logistics",
+     "emoji": "🥪",
+     "detail": "• Packed last night.",
+     "est": 0.0
+    },
+    {
+     "start": "8:55 AM",
+     "end": "10:35 AM",
+     "title": "Drive across the park → Laguna Amarga",
+     "typeName": "Drive",
+     "emoji": "🛻",
+     "detail": "• ~75 km of gravel via Pehoé and Lago Nordenskjöld — the longest drive of the stay.\n• Guanaco herds graze beside the road on the eastern steppe; pull fully off the road to stop.\n• Fuel check: ~250 km since the Natales fill-up — well over half a tank in a Hilux. Today adds ~150 km.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Caba%C3%B1as%20Lago%20Tyndall%2C%20R%C3%ADo%20Serrano%2C%20Torres%20del%20Paine%2C%20Chile&destination=Guarder%C3%ADa%20Laguna%20Amarga%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions"
+    },
+    {
+     "start": "10:35 AM",
+     "end": "10:50 AM",
+     "title": "Laguna Amarga ranger station — the three towers across the lagoon",
+     "typeName": "Sightseeing",
+     "emoji": "📸",
+     "detail": "• Show the park pass; toilets.\n• First full view of the Torres granite spires."
+    },
+    {
+     "start": "10:50 AM",
+     "end": "11:05 AM",
+     "title": "Drive to the Paine River waterfall",
+     "typeName": "Drive",
+     "emoji": "🛻",
+     "detail": "• ~8 km toward Laguna Azul.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Guarder%C3%ADa%20Laguna%20Amarga%2C%20Torres%20del%20Paine%2C%20Chile&destination=Cascada%20R%C3%ADo%20Paine%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions"
+    },
+    {
+     "start": "11:05 AM",
+     "end": "11:35 AM",
+     "title": "Cascada Río Paine — short walk to the falls",
+     "typeName": "Sightseeing",
+     "emoji": "💦",
+     "detail": "• From: roadside car park.\n• 5-min path to the viewpoint over the broad waterfall, the towers behind it."
+    },
+    {
+     "start": "11:35 AM",
+     "end": "11:50 AM",
+     "title": "Drive to Laguna Azul",
+     "typeName": "Drive",
+     "emoji": "🛻",
+     "detail": "• ~8 km.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Cascada%20R%C3%ADo%20Paine%2C%20Torres%20del%20Paine%2C%20Chile&destination=Laguna%20Azul%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions"
+    },
+    {
+     "start": "11:50 AM",
+     "end": "12:45 PM",
+     "title": "Packed lunch at Laguna Azul picnic area",
+     "typeName": "Dining",
+     "emoji": "🥪",
+     "detail": "• Best view of the three towers without trekking.",
+     "est": 0.0
+    },
+    {
+     "start": "12:45 PM",
+     "end": "2:00 PM",
+     "title": "Laguna Azul lakeshore walk",
+     "typeName": "Excursion",
+     "emoji": "🚶",
+     "detail": "• From: Laguna Azul picnic area.\n• Walk the eastern shore toward the small lookout hill; flat, open steppe — easy for both kids.\n• The microclimate here is often the warmest and calmest in the park."
+    },
+    {
+     "start": "2:00 PM",
+     "end": "2:15 PM",
+     "title": "Bathroom, back to the truck",
+     "typeName": "Logistics",
+     "emoji": "⏱️"
+    },
+    {
+     "start": "2:15 PM",
+     "end": "4:30 PM",
+     "title": "Drive back to the cabin",
+     "typeName": "Drive",
+     "emoji": "🛻",
+     "detail": "• Same route west; allow time for wildlife stops.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Laguna%20Azul%2C%20Torres%20del%20Paine%2C%20Chile&destination=Caba%C3%B1as%20Lago%20Tyndall%2C%20R%C3%ADo%20Serrano%2C%20Torres%20del%20Paine%2C%20Chile&travelmode=driving",
+     "menuLabel": "Driving directions"
+    },
+    {
+     "start": "4:30 PM",
+     "end": "5:15 PM",
+     "title": "Showers, dry clothes; start a load of laundry",
+     "typeName": "Logistics",
+     "emoji": "🧺",
+     "detail": "• Mid-stay wash of base layers and socks (ask the cabin office about the laundry)."
+    },
+    {
+     "start": "5:15 PM",
+     "end": "6:00 PM",
+     "title": "Kids' downtime — games, porch",
+     "typeName": "Free Time",
+     "emoji": "⏰"
+    },
+    {
+     "start": "6:00 PM",
+     "end": "6:45 PM",
+     "title": "Cook dinner in the cabin — chicken, rice and vegetables",
+     "typeName": "Dining",
+     "emoji": "🍗",
+     "detail": "• Chicken breasts, rice, carrots/peas from the Dec 20 shop.",
+     "est": 0.0,
+     "notes": "• Covered by the Dec 20 grocery shop."
+    },
+    {
+     "start": "6:45 PM",
+     "end": "7:30 PM",
+     "title": "Dinner in the cabin",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "est": 0.0
+    },
+    {
+     "start": "7:30 PM",
+     "end": "8:30 PM",
+     "title": "Dishes; pack Friday's lunches (in case it's a park day)",
+     "typeName": "Logistics",
+     "emoji": "🥪"
+    },
+    {
+     "start": "8:30 PM",
+     "end": "9:30 PM",
+     "title": "Bedtime routine — lights out 9:30",
+     "typeName": "Logistics",
+     "emoji": "🛏️",
+     "detail": "• Friday wake-up 7:30 AM."
+    }
+   ]
+  },
+  {
+   "date": "Friday, December 24, 2027",
+   "title": "Christmas Eve — weather make-up day, riding, cabin Christmas dinner",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:30 AM",
+     "title": "Wake up and get ready",
+     "typeName": "Logistics",
+     "emoji": "⏰"
+    },
+    {
+     "start": "8:30 AM",
+     "end": "9:15 AM",
+     "title": "Breakfast in the cabin",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Cereal, yogurt, eggs, toast, fruit — from the Natales grocery run.",
+     "est": 0.0,
+     "notes": "• Covered by the Dec 20 grocery shop."
+    },
+    {
+     "start": "9:15 AM",
+     "end": "9:45 AM",
+     "title": "Decide: make-up park day or ranch morning",
+     "typeName": "Logistics",
+     "emoji": "🧭",
+     "detail": "• If wind cancelled Tuesday's Grey boat → drive to Lago Grey for the noon sailing (same plan as Tuesday; lunches already packed).\n• If a park day was lost to weather → repeat it today.\n• Otherwise → horseback morning below."
+    },
+    {
+     "start": "9:45 AM",
+     "end": "12:15 PM",
+     "title": "Horseback ride with a local baqueano (Patagonian ranch guide)",
+     "typeName": "Excursion",
+     "emoji": "🐎",
+     "detail": "• Book with The Massif (the excursion operator based at the Río Serrano Hotel, a 10-min walk) — gentle ride on the Serrano ranch land with the massif in view.\n• Riding is Patagonia's working culture; helmets provided.",
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Río Serrano / The Massif — excursions",
+       "url": "https://rioserrano.com/"
+      }
+     ],
+     "notes": "• Price not published online. Typical Torres del Paine 2-hr rides run ~USD 70–90 per rider — not included in totals until quoted.",
+     "flag": "Ask whether non-hotel guests can book and the minimum riding age — if it's 8+, swap for a Serrano riverside walk."
+    },
+    {
+     "start": "12:15 PM",
+     "end": "1:00 PM",
+     "title": "Lunch in the cabin",
+     "typeName": "Dining",
+     "emoji": "🥪",
+     "detail": "• Sandwiches and fruit.",
+     "est": 0.0
+    },
+    {
+     "start": "1:00 PM",
+     "end": "2:30 PM",
+     "title": "Quiet time — wrap presents, cards, games",
+     "typeName": "Free Time",
+     "emoji": "🎁",
+     "detail": "• Chile celebrates on Christmas Eve night; the 'Viejito Pascuero' (Santa) comes at midnight for local kids."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "4:00 PM",
+     "title": "Riverbank walk and photos with the massif",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: cabin door.\n• Down to the Serrano River and along the bank toward the hotel; turn back whenever the kids are done."
+    },
+    {
+     "start": "4:00 PM",
+     "end": "4:15 PM",
+     "title": "Fuel check — plan Christmas morning",
+     "typeName": "Gasoline",
+     "emoji": "⛽",
+     "detail": "• No fuel in Río Serrano. If below a quarter tank, refuel in Puerto Natales on the way out on Dec 25 (check holiday hours) or at Cerro Castillo.",
+     "est": 0.0,
+     "notes": "• Refuel cost goes with the next leg (depends on where the truck is returned)."
+    },
+    {
+     "start": "4:15 PM",
+     "end": "5:00 PM",
+     "title": "Showers, dress for Christmas Eve",
+     "typeName": "Logistics",
+     "emoji": "🚿"
+    },
+    {
+     "start": "5:00 PM",
+     "end": "6:15 PM",
+     "title": "Cook Christmas Eve dinner — steak, mashed potatoes, salad",
+     "typeName": "Dining",
+     "emoji": "🎄",
+     "detail": "• Lomo (beef tenderloin) and potatoes bought Dec 20; pan de pascua for dessert.",
+     "est": 0.0,
+     "notes": "• Covered by the Dec 20 grocery shop.\n• Option: if the Río Serrano Hotel sells its Christmas Eve dinner to outside guests, book it instead (Hotel Lago Grey charged CLP 98,000 per person for its Christmas dinner in 2026–27 — likely similar)."
+    },
+    {
+     "start": "6:15 PM",
+     "end": "7:15 PM",
+     "title": "Christmas Eve dinner in the cabin",
+     "typeName": "Dining",
+     "emoji": "🎄",
+     "est": 0.0
+    },
+    {
+     "start": "7:15 PM",
+     "end": "8:30 PM",
+     "title": "Christmas Eve — pan de pascua, a movie, stockings out",
+     "typeName": "Free Time",
+     "emoji": "🎁"
+    },
+    {
+     "start": "8:30 PM",
+     "end": "9:30 PM",
+     "title": "Bedtime routine — lights out 9:30",
+     "typeName": "Logistics",
+     "emoji": "🛏️",
+     "detail": "• Christmas morning presents first thing."
+    }
+   ]
+  },
+  {
+   "date": "Saturday, December 25, 2027",
+   "title": "Christmas morning → check out by 10:00 (next leg not planned yet)",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:30 AM",
+     "end": "8:15 AM",
+     "title": "Christmas morning — presents in the cabin",
+     "typeName": "Free Time",
+     "emoji": "🎁"
+    },
+    {
+     "start": "8:15 AM",
+     "end": "9:00 AM",
+     "title": "Breakfast in the cabin",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Cereal, yogurt, eggs, toast, fruit — from the Natales grocery run.",
+     "est": 0.0,
+     "notes": "• Covered by the Dec 20 grocery shop."
+    },
+    {
+     "start": "9:00 AM",
+     "end": "9:50 AM",
+     "title": "Pack, clean the kitchen, bag the trash",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• Leftover snacks and water go in the truck for the drive.\n• Check-out deadline is 10:00 AM."
+    },
+    {
+     "start": "9:50 AM",
+     "end": "10:00 AM",
+     "title": "Check out — Cabañas Lago Tyndall",
+     "typeName": "Logistics",
+     "emoji": "🔑"
+    },
+    {
+     "start": "10:00 AM",
+     "end": "10:00 AM",
+     "title": "Next leg — not planned yet",
+     "typeName": "Logistics",
+     "emoji": "🧭",
+     "detail": "• Christmas Day is a national holiday: most shops in Puerto Natales are closed; fuel stations may run reduced hours.\n• The truck return (PNT vs. Punta Arenas) and the onward flight depend on the next stop."
+    }
+   ]
+  }
+ ],
+ "packing": {
+  "trackerTitle": "Item tracker",
+  "outfitDays": [],
+  "trackerDays": [],
+  "packLists": []
+ },
+ "supplies": [
+  {
+   "name": "Bring from home",
+   "items": [
+    "2 travel booster seats (required by Chilean law under age 9 / 135 cm)",
+    "Windproof shells, fleece, warm hats and gloves for all 4 (Patagonia: 40s–60s °F, gusts over 50 mph)",
+    "Hiking shoes, sunglasses, SPF 50, lip balm",
+    "Swimsuits, flip-flops and a dry-bag (Splash Park Saturday; no pool in Torres)",
+    "Dry-bag for wet swimsuits",
+    "Offline Google Maps for Santiago, Puerto Natales and Torres del Paine",
+    "Printed park pass QR + Grey boat confirmation (no signal at the gates)"
+   ]
+  },
+  {
+   "name": "Groceries — Unimarc Puerto Natales, Mon Dec 20 (5 nights)",
+   "items": [
+    "Breakfasts ×5: cereal, milk (UHT boxes), yogurt, 12 eggs, bread, butter, jam, ham, cheese, fruit, coffee, juice",
+    "Packed lunches ×4: rolls, sliced ham/turkey, cheese, 2 avocados, apples/bananas, cookies, granola bars, juice boxes",
+    "Dinner Wed: spaghetti, 500 g ground beef, tomato sauce, onion, salad",
+    "Dinner Thu: chicken breasts, rice, frozen peas/carrots",
+    "Christmas Eve: ~1 kg lomo (beef tenderloin), potatoes for mash, salad, pan de pascua, a bottle of wine",
+    "Christmas morning: something special for breakfast (pancake mix, chocolate)",
+    "Snacks for the truck: crackers, nuts, dried fruit, chocolate",
+    "Water: 2 × 6 L jugs + refills (tap water at the cabin — ask if it's drinkable)",
+    "Basics: salt, oil, paper towels, dish soap, ziplock bags, foil, trash bags",
+    "Soft cooler bag (bolsa térmica) + 2 ice packs"
+   ]
+  }
+ ],
+ "ideas": [
+  {
+   "name": "Still open / TBD",
+   "items": [
+    {
+     "name": "American AA957 award, Dec 16 (100,000 pts)",
+     "note": "Opens ~Jan 19, 2027. Set a seats.aero alert for MIA→SCL, 4 seats, T class (25,000 + $25.60 each)."
+    },
+    {
+     "name": "Hyatt Centric Las Condes — 4 nights Dec 16–20",
+     "note": "Category 3: 8,000–20,000/night. Planned 60,000 (15,000 × 4). The Dec 16 night holds the room for the 11:30 AM Friday arrival — tell the hotel so it isn't cancelled as a no-show. hyatt.com blocked automated checks — check the calendar."
+    },
+    {
+     "name": "LATAM SCL→PNT, Dec 20 (late-morning flight)",
+     "note": "Dec 2027 schedule not loaded. Planned ~$200 pp with a bag. Points alternative: Delta 15,900 + $8 pp to Punta Arenas (+3 hrs driving)."
+    },
+    {
+     "name": "Cabañas Lago Tyndall — book Dec 20–25, 2027",
+     "note": "Booking.com, ~$245/night for 2 adults + kids 6 & 8 in a 2-bedroom Superior Bungalow. Sold out for Christmas week this year — book the day Dec 2027 loads, free-cancellation rate. Message the property: arrival ~7 PM, working floor heating in both bedrooms, laundry."
+    },
+    {
+     "name": "Dinner reservations at the Río Serrano Hotel (outside guests)",
+     "note": "Qawasqar Tue Dec 21 ~7 PM; De Agostini Mon Dec 20 ~8 PM. Ask whether the Christmas Eve dinner is sold to non-guests and its price (plan is to cook in the cabin)."
+    },
+    {
+     "name": "Grocery run, Mon Dec 20 — Unimarc Puerto Natales",
+     "note": "Only shop for the 5 nights (no stores at Río Serrano; Natales closed Dec 25). Confirm Unimarc's Monday hours and the Asador's mid-afternoon kitchen hours."
+    },
+    {
+     "name": "Torres del Paine park passes (pasesparques.cl)",
+     "note": "Multi-day international pass. Non-refundable — buy after the hotel and boat are confirmed. Check whether kids under 12 are free."
+    },
+    {
+     "name": "Grey III noon sailing, Dec 21",
+     "note": "CLP 135,000 adult / 80,000 child (2027–28). Book once Dec 2027 opens; Dec 24 is the wind make-up day."
+    },
+    {
+     "name": "Horseback ride Dec 24 — minimum age",
+     "note": "Ask The Massif (at the Río Serrano Hotel) whether non-hotel guests can book, the price and the minimum age. If 8+, swap for a riverside walk."
+    },
+    {
+     "name": "Rental car — Puerto Natales 4x4 only",
+     "note": "No car in Santiago (Uber everywhere). PNT 4x4 Dec 20–25: confirm gravel and windshield coverage; Progressive doesn't cover Chile."
+    },
+    {
+     "name": "Fantasilandia Splash Park, Sat Dec 18",
+     "note": "New water park in San Bernardo (opened Dec 2026). Check Dec 2027 Saturday hours, ticket prices and slide height rules; buy online. Fallback: Parque de la Infancia + Hyatt pool."
+    },
+    {
+     "name": "Booster seats",
+     "note": "Bring 2 travel boosters: Chile requires them under age 9 or 135 cm, including Uber/Cabify."
+    },
+    {
+     "name": "Restaurant menus",
+     "note": "Verified: Happening, Liguria, Galindo, El Asador Patagónico, Qawasqar, De Agostini. Estimated: Tip y Tap (2024 menu). Missing menu: Amandine (hotel) — confirm or swap."
+    },
+    {
+     "name": "After Torres del Paine (Dec 25 onward)",
+     "note": "Next leg not planned yet — truck return point and onward flight depend on it."
+    },
+    {
+     "name": "Present tab",
+     "note": "Photos, maps and directions not added yet."
+    }
+   ]
+  }
+ ],
+ "alternatives": {
+  "title": "Alternatives considered — Torres del Paine lodging and the Patagonia flight",
+  "text": "LODGING (5 nights, Dec 20–25)\n• Cabañas Lago Tyndall — PLANNED. ~$1,300 est. for 5 nights (≈ $245/night on Booking.com for all four, Dec 2026 / Mar 2027 reference dates). 2-bedroom cabins with a full kitchen and underfloor heating in Pueblito Serrano, next to the Río Serrano Hotel — same drives to the park. Self-catering: one big grocery shop in Natales, packed lunches, 3 cabin dinners, 2 dinners at the hotel restaurants. No pool.\n• Río Serrano Hotel + Spa, full board — the original pick, dropped on cost: ~$7,750 est. for all four with every meal and box lunches, heated indoor pool. Same location as Tyndall.\n• Airbnb — Serrano River 2-bedroom apartment next to the hotel ~$3,313; townhouse ('Spectacular apartments', Roberto) $5,645 all-in. Same location, more money than Tyndall.\n• Cerro Castillo cabin ~$993 for 5 nights — cheaper, but ~1 hr farther from Grey/Pehoé each way.\n• Puerto Natales Airbnbs $563–1,048 for 5 nights — cheapest, but 1.5–2 hrs each way to the park every day (6–8 extra hours of driving over the stay).\n• The Singular Patagonia (Puerto Natales) — the only easy points option (World of Hyatt via Mr & Mrs Smith, dynamic pricing, no Globalist benefits beyond a possible upgrade). Every room maxes at 2 adults + 1 child, so it takes 2 rooms: $747 per room per night (member B&B rate, Mar 2027, the furthest high-season date loaded) → ~$7,470+ for 5 nights before Christmas-week pricing, plus dinners. 1.5–2 hrs each way to Grey/Pehoé/Laguna Azul every day. Points price couldn't be checked (hyatt.com blocked automated checks); at typical dynamic rates expect several hundred thousand points for 2 rooms.\n• Airbnb — 'Spectacular apartments in Torres del Paine' (Roberto, Superhost, 4.86): 2 bedrooms by the Serrano River next to the hotel. $5,645 all-in for Dec 20–25, 2027, free cancellation before Nov 20, 2027. Same location as the hotel, but no meals (add ~$1,000+ for dinners at the hotel restaurant and groceries from Natales), thin walls and a very basic kitchen per recent reviews, no pool.\n• Hotel Lago Grey — inside the park at the glacier lake; rooms take 2 people with no extra beds, so 2 rooms (~CLP 315,000–430,000 each per night with breakfast, 2026–27). Basic rooms, far from the eastern sector.\n• Explora / Awasi / Tierra Patagonia / Las Torres all-inclusive — built around guided group or private-guide excursions, which you don't want; $3,000+/night.\n\nFLIGHT TO PATAGONIA\n• Planned: cash LATAM Santiago → Puerto Natales (~$800 for 4). PNT is 7 km from town and ~2 hrs from the cabin.\n• Points: Delta SkyMiles on LATAM to Punta Arenas, 15,900 miles + $8 per person (63,600 + $32 for 4). Punta Arenas is ~3 hrs farther by road each way (~5 hrs to Río Serrano)."
+ },
+ "help": {
+  "notes": "Chile emergency numbers work from any phone. Cell signal is weak or absent across most of Torres del Paine — the cabin office or the Río Serrano Hotel front desk can call out.",
+  "emergency": [
+   {
+    "label": "Ambulance (SAMU)",
+    "tel": "131"
+   },
+   {
+    "label": "Fire (Bomberos)",
+    "tel": "132"
+   },
+   {
+    "label": "Police (Carabineros)",
+    "tel": "133"
+   }
+  ],
+  "usgov": [
+   {
+    "label": "US Embassy Santiago — Av. Andrés Bello 2800, Las Condes",
+    "tel": "+56223303000"
+   },
+   {
+    "label": "State Dept overseas citizens services",
+    "tel": "+12025014444"
+   }
+  ]
+ }
+}
