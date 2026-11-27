@@ -1,0 +1,819 @@
+{
+ "meta": {
+  "title": "Japan — Tokyo & Niseko, December 2027",
+  "dates": "Dec 15, 2027 – Jan 2, 2028 (planned through Dec 19) · Miami → Dallas → Tokyo → Niseko",
+  "route": [
+   {
+    "name": "Miami",
+    "sub": "MIA — American 3267 to Dallas (Alaska miles)"
+   },
+   {
+    "name": "Dallas",
+    "sub": "1 night · Grand Hyatt DFW, Terminal D (points)"
+   },
+   {
+    "name": "Tokyo",
+    "sub": "JL11 to Haneda · 5 nights · Grand Hyatt Tokyo, Roppongi (points + Suite Upgrade Award)"
+   },
+   {
+    "name": "Mt. Fuji",
+    "sub": "day trip or overnight — deciding"
+   },
+   {
+    "name": "Niseko",
+    "sub": "from Dec 22 — Christmas and New Year's Eve, not planned yet"
+   }
+  ]
+ },
+ "days": [
+  {
+   "date": "Wednesday, December 15, 2027",
+   "title": "Miami → Dallas (DFW), night at the Grand Hyatt in Terminal D",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "12:30 PM",
+     "end": "1:00 PM",
+     "title": "Lunch at home",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Light lunch before leaving.\n• Dinner is at the airport hotel tonight."
+    },
+    {
+     "start": "1:00 PM",
+     "end": "1:30 PM",
+     "title": "Final bag check",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• All 4 passports in one pouch (US passports: no visa needed for Japan, stays up to 90 days).\n• Visit Japan Web QR codes saved on your phone (immigration + customs).\n• Warm layers in carry-ons: Tokyo is in the 40s–50s °F."
+    },
+    {
+     "start": "1:30 PM",
+     "end": "1:45 PM",
+     "title": "Uber XL home → MIA, American departures",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• From: home in Miami Springs.\n• To: MIA, American Airlines departures level.\n• ~10 min drive; 15-min block for loading bags.",
+     "est": 25.0,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Miami%20Springs%2C%20FL&destination=Miami%20International%20Airport%20%28MIA%29&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~USD 25 for Uber XL incl. tip — estimated."
+    },
+    {
+     "start": "1:45 PM",
+     "end": "2:30 PM",
+     "title": "American check-in and bag drop — check bags only to Dallas",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• This flight is a separate ticket from the Japan flight, so bags go to DFW only.\n• You collect them tonight and recheck them with JAL tomorrow."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "3:00 PM",
+     "title": "TSA PreCheck → walk to the gate",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• PreCheck lane for all four.\n• Refill water bottles after security."
+    },
+    {
+     "start": "3:00 PM",
+     "end": "3:30 PM",
+     "title": "Board AA3267",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Boarding ~30 min before departure.\n• Last bathroom stop at the gate."
+    },
+    {
+     "start": "3:30 PM",
+     "end": "5:50 PM",
+     "title": "American AA3267 - MIA → DFW - Nonstop - 3h20m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• Departs 3:30 PM Miami, lands 5:50 PM Dallas (Dallas is 1 hr behind Miami).\n• Economy, 4 passengers.\n• Booked with Alaska miles on American (Alaska and American are partners).",
+     "program": "Alaska Atmos Rewards",
+     "points": "30000",
+     "est": 102.4,
+     "route": "MIA → DFW",
+     "flightNo": "American 3267",
+     "cabin": "Economy (Main Cabin)",
+     "seats": "Not yet assigned",
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Search award on alaskaair.com",
+       "url": "https://www.alaskaair.com/"
+      }
+     ],
+     "flag": "Separate ticket from the Japan flight — claim bags at DFW and recheck them with JAL.",
+     "notes": "• Award price seen on seats.aero for Oct 2027 dates (the latest bookable): 7,500 Alaska miles + USD 25.60 per person × 4 = 30,000 miles + USD 102.40.\n• Dec 15, 2027 opens for award booking around Jan 18, 2027.\n• Times are the Oct 2027 schedule; December times may shift.\n• Same flight on AAdvantage is also possible if Alaska space disappears."
+    },
+    {
+     "start": "5:50 PM",
+     "end": "6:30 PM",
+     "title": "Land DFW — deplane and baggage claim",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• American domestic flights usually arrive at Terminal A, C or E.\n• Follow signs to baggage claim for AA3267 and collect all bags."
+    },
+    {
+     "start": "6:30 PM",
+     "end": "6:50 PM",
+     "title": "Get to Terminal D and the Grand Hyatt",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: your arrival terminal baggage claim.\n• To: Terminal D — the Grand Hyatt is built into Terminal D.\n• Take the free landside shuttle between terminals (ask at baggage claim), or a short taxi if bags are heavy.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=DFW%20Airport%20Terminal%20C&destination=Grand%20Hyatt%20DFW%2C%202337%20S%20International%20Pkwy%2C%20DFW%20Airport%2C%20TX&travelmode=driving",
+     "menuLabel": "Directions"
+    },
+    {
+     "start": "6:50 PM",
+     "end": "7:05 PM",
+     "title": "Grand Hyatt DFW — check in",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Inside Terminal D, the same terminal JAL departs from tomorrow.\n• Room: 2 Queen Beds for the four of you.\n• Globalist: free breakfast tomorrow at Grand Met.",
+     "nights": "1 night (Wed Dec 15)",
+     "roomType": "2 Queen Beds",
+     "address": "2337 S International Pkwy, DFW Airport, TX",
+     "program": "World of Hyatt",
+     "points": "20000",
+     "est": 0.0,
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Book on hyatt.com",
+       "url": "https://www.hyatt.com/grand-hyatt/en-US/dfwgh-grand-hyatt-dfw"
+      }
+     ],
+     "notes": "• Category 5: 20,000 points for a standard room (seats.aero, Dec 2027 dates). Cash rate seen: USD 337.\n• Dec 2027 is already bookable on hyatt.com.\n• Confirm 2 Queen Beds when booking."
+    },
+    {
+     "start": "7:05 PM",
+     "end": "8:15 PM",
+     "title": "Dinner — Grand Met (Grand Hyatt DFW)",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• The hotel restaurant, a short walk from the room.\n• No kids' menu: pasta and the burger work for the kids.",
+     "est": 171.86,
+     "menuUrl": "https://www.hyatt.com/content/dam/hotel/propertysites/assets/grand/dfwgh/documents/en_US/dining/grand-met/Grand-Met-Dinner-Menu.pdf",
+     "menuLabel": "Dinner menu (PDF)",
+     "notes": "• Line items (verified, current online dinner menu): Seared Bell & Evans chicken breast USD 38 + Campbell River salmon USD 42 + kids: Harvest Bucatini USD 29 + Grand House Burger USD 25 = USD 134.\n• +8.25% Texas sales tax = USD 11.06; +20% automatic service charge (checks of USD 100 or more) = USD 26.80.\n• Total ≈ USD 171.86. No extra tip needed."
+    },
+    {
+     "start": "8:15 PM",
+     "end": "9:15 PM",
+     "title": "Bedtime routine — lights out 9:15",
+     "typeName": "Logistics",
+     "emoji": "🛏️",
+     "detail": "• Wake-up 7:15 AM.\n• Lay out flight clothes tonight."
+    }
+   ]
+  },
+  {
+   "date": "Thursday, December 16, 2027",
+   "title": "Dallas → Tokyo on Japan Airlines JL11",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:15 AM",
+     "end": "8:15 AM",
+     "title": "Wake up, showers, flight clothes",
+     "typeName": "Logistics",
+     "emoji": "🚿",
+     "detail": "• Soft, layered clothes for a 13.5-hr flight.\n• Kids' headphones, tablets and chargers in carry-ons."
+    },
+    {
+     "start": "8:15 AM",
+     "end": "9:00 AM",
+     "title": "Breakfast — Grand Met (Globalist, free)",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• Full breakfast for 2 adults + 2 kids included with Globalist.",
+     "est": 0.0
+    },
+    {
+     "start": "9:00 AM",
+     "end": "9:30 AM",
+     "title": "Pack up and check out",
+     "typeName": "Logistics",
+     "emoji": "🧳"
+    },
+    {
+     "start": "9:30 AM",
+     "end": "9:40 AM",
+     "title": "Walk to JAL check-in, Terminal D",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: the hotel lobby.\n• To: Terminal D departures (ticketing) level — JAL's counters are in Terminal D, no train needed."
+    },
+    {
+     "start": "9:40 AM",
+     "end": "10:20 AM",
+     "title": "JAL check-in and bag drop",
+     "typeName": "Logistics",
+     "emoji": "🧳",
+     "detail": "• International flight: agent checks all 4 passports.\n• Check-in opens about 3 hrs before departure."
+    },
+    {
+     "start": "10:20 AM",
+     "end": "10:50 AM",
+     "title": "Security → gate",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Use PreCheck if it prints on the boarding passes.\n• Refill water bottles after security."
+    },
+    {
+     "start": "10:50 AM",
+     "end": "11:50 AM",
+     "title": "Gate, snacks, board JL11",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Boarding starts about 40 min before departure.",
+     "est": 25.0,
+     "notes": "• ~USD 25 for water and snacks — estimated."
+    },
+    {
+     "start": "11:50 AM",
+     "title": "Japan Airlines JL11 - DFW → HND - Nonstop - 13h30m",
+     "typeName": "Flight",
+     "emoji": "✈️",
+     "detail": "• Departs 11:50 AM Dallas, lands Friday afternoon at Tokyo Haneda.\n• Tokyo is 15 hrs ahead of Dallas, so you lose a day crossing the date line.\n• Airbus A350-1000, Japan Airlines' newest long-haul plane. Two full meals included.\n• Try to sleep in the second half of the flight so the kids are tired at Tokyo bedtime.",
+     "program": "Alaska Atmos Rewards",
+     "points": "150000",
+     "est": 102.4,
+     "route": "DFW → HND",
+     "flightNo": "Japan Airlines 11",
+     "cabin": "Economy",
+     "seats": "Not yet assigned",
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Search award on alaskaair.com",
+       "url": "https://www.alaskaair.com/"
+      }
+     ],
+     "flag": "December schedule not published: in Oct 2027 JL11 lands 3:20 PM; with Dallas off daylight time it would land about 4:20 PM.",
+     "notes": "• Award price seen on seats.aero for Oct 2027 dates: 37,500 Alaska miles + USD 25.60 per person × 4 = 150,000 miles + USD 102.40, with 9 seats showing.\n• AAdvantage priced the same flight at 35,000 miles + USD 5.60 per person.\n• Dec 16, 2027 opens for award booking around Jan 19, 2027.\n• Business class on JL11 rarely shows for partner miles; keep checking after booking economy.\n• American's own DFW → HND (AA175) priced at 114,500 AAdvantage miles — not worth it."
+    }
+   ]
+  },
+  {
+   "date": "Friday, December 17, 2027",
+   "title": "Land at Haneda → Grand Hyatt Tokyo",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "4:20 PM",
+     "end": "5:20 PM",
+     "title": "Land HND Terminal 3 — immigration, bags, customs",
+     "typeName": "Logistics",
+     "emoji": "⏱️",
+     "detail": "• Show the Visit Japan Web QR codes at immigration and customs.\n• 60 min gate-to-curb is realistic with checked bags.\n• Get cash yen from a 7-Bank ATM in the arrivals hall."
+    },
+    {
+     "start": "5:20 PM",
+     "end": "6:10 PM",
+     "title": "Taxi van Haneda → Grand Hyatt Tokyo",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• From: Terminal 3 arrivals taxi stand.\n• To: Grand Hyatt Tokyo, Roppongi Hills (~40 min, longer at rush hour).\n• Ask for a large taxi (jumbo) for 4 people plus suitcases.",
+     "est": 60.13,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Haneda%20Airport%20Terminal%203%2C%20Tokyo&destination=Grand%20Hyatt%20Tokyo%2C%206-10-3%20Roppongi%2C%20Minato%20City%2C%20Tokyo&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~JPY 9,500 incl. expressway tolls ≈ USD 60 — estimated. No tipping in Japan.\n• Alternative: the Airport Limousine Bus stops at the Grand Hyatt (~40 min) for less, but runs less often."
+    },
+    {
+     "start": "6:10 PM",
+     "end": "6:30 PM",
+     "title": "Grand Hyatt Tokyo — check in",
+     "typeName": "Hotel",
+     "emoji": "🏨",
+     "detail": "• Inside Roppongi Hills, a covered walk from Roppongi subway station.\n• Room: Grand Executive Suite (sleeps 4) via a Suite Upgrade Award on a standard award booking.\n• Globalist: free breakfast every morning at The French Kitchen.",
+     "nights": "5 nights (Fri Dec 17 – Wed Dec 22)",
+     "roomType": "Grand Executive Suite (via Suite Upgrade Award)",
+     "address": "6-10-3 Roppongi, Minato City, Tokyo",
+     "program": "World of Hyatt",
+     "points": "200000",
+     "est": 0.0,
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Book on hyatt.com",
+       "url": "https://www.hyatt.com/grand-hyatt/en-US/tyogh-grand-hyatt-tokyo"
+      }
+     ],
+     "flag": "No standard award space showing yet for Dec 17–22 — check hyatt.com and ask your Hyatt concierge.",
+     "notes": "• Category 8: 35,000–45,000 points a night by date; 200,000 is a 5-night estimate (about 40,000 a night).\n• Standard rooms don't fit 4; the Grand Executive Suite does. Apply the Suite Upgrade Award when booking.\n• Kids under 12 stay free in the parents' room.\n• Tokyo lodging tax (3% from Apr 2027) may be charged at the hotel."
+    },
+    {
+     "start": "6:30 PM",
+     "end": "7:30 PM",
+     "title": "Dinner — in-room dining",
+     "typeName": "Dining",
+     "emoji": "🍽️",
+     "detail": "• Easiest on arrival night: kids eat in pajamas.\n• The hotel's in-room kids' menu includes fried shrimp and pan-fried fish.",
+     "est": 85.45,
+     "notes": "• Line items: kids' deep-fried shrimp JPY 1,870 × 1 + kids' pan-fried fish JPY 1,870 × 1 (verified, hotel's family page) + 2 adult mains ~JPY 4,000 each (estimated) = JPY 11,740.\n• +15% hotel service charge (estimated) = JPY 13,501 ≈ USD 85. Tax is usually included in Japanese menu prices."
+    },
+    {
+     "start": "7:30 PM",
+     "end": "8:30 PM",
+     "title": "Bedtime routine — lights out 8:30",
+     "typeName": "Logistics",
+     "emoji": "🛏️",
+     "detail": "• Expect jet-lag wake-ups around 3–4 AM the first nights; keep the room dark."
+    }
+   ]
+  },
+  {
+   "date": "Saturday, December 18, 2027",
+   "title": "Asakusa, Senso-ji and the river boat to Hama-rikyu",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "6:45 AM",
+     "end": "7:30 AM",
+     "title": "Breakfast — The French Kitchen (Globalist, free)",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "detail": "• 2nd floor of the hotel. Jet lag makes an early start easy today.",
+     "est": 0.0
+    },
+    {
+     "start": "7:30 AM",
+     "end": "8:15 AM",
+     "title": "Showers and get ready",
+     "typeName": "Logistics",
+     "emoji": "🚿",
+     "detail": "• Warm jackets: Tokyo mornings in December are in the low 40s °F."
+    },
+    {
+     "start": "8:15 AM",
+     "end": "8:45 AM",
+     "title": "Taxi to Kaminarimon gate, Asakusa",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• From: hotel main entrance.\n• To: Kaminarimon (Thunder Gate), Asakusa (~30 min).",
+     "est": 34.81,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Grand%20Hyatt%20Tokyo%2C%206-10-3%20Roppongi%2C%20Minato%20City%2C%20Tokyo&destination=Kaminarimon%2C%202-3-1%20Asakusa%2C%20Taito%20City%2C%20Tokyo&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~JPY 5,500 ≈ USD 35 — estimated."
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:45 AM",
+     "title": "Senso-ji Temple",
+     "typeName": "Sightseeing",
+     "emoji": "⛩️",
+     "detail": "• Tokyo's oldest and most famous Buddhist temple.\n• Enter under Kaminarimon's giant red paper lantern.\n• Waft incense smoke from the big burner in front of the main hall (said to bring good health), and draw an omikuji fortune for ¥100.\n• Early morning beats the crowds. Free entry.\n• Saturday is busier than a weekday — arriving before 9 AM matters."
+    },
+    {
+     "start": "9:45 AM",
+     "end": "10:30 AM",
+     "title": "Nakamise Street",
+     "typeName": "Shopping",
+     "emoji": "🛍️",
+     "detail": "• The 250 m lane of small shops between the gate and the temple: toys, crafts, fresh rice crackers.\n• Most stalls open around 9–10 AM."
+    },
+    {
+     "start": "10:30 AM",
+     "end": "10:45 AM",
+     "title": "Walk to Daikokuya Tempura",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: the middle of Nakamise Street.\n• Turn west onto Denboin-dori and walk ~2 min; Daikokuya is at 1-38-10 Asakusa.\n• Join the line before the 11:00 AM opening.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Kaminarimon%2C%202-3-1%20Asakusa%2C%20Taito%20City%2C%20Tokyo&destination=Daikokuya%20Tempura%2C%201-38-10%20Asakusa%2C%20Taito%20City%2C%20Tokyo&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "10:45 AM",
+     "end": "12:00 PM",
+     "title": "Lunch — Daikokuya Tempura",
+     "typeName": "Dining",
+     "emoji": "🍤",
+     "detail": "• Asakusa's best-known tempura shop since 1887: shrimp tempura over rice (tendon) with a dark, sweet sauce.\n• Kids eat the shrimp tendon; no kids' menu.\n• There is usually a line at meal times.\n• Saturday lines run longest — be in line by 10:45 for the 11:00 opening.",
+     "est": 62.03,
+     "notes": "• Line items (prices from an April 2025 review, estimated): Tendon B (2 prawns + mixed) JPY 2,500 + Ebi-Tendon C (4 prawns) JPY 2,700 + kids: Tendon A JPY 2,300 × 2 = JPY 9,800 ≈ USD 62.\n• Current menu not confirmed. No tipping in Japan."
+    },
+    {
+     "start": "12:00 PM",
+     "end": "12:15 PM",
+     "title": "Walk to Asakusa Pier",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Daikokuya.\n• Walk east past Kaminarimon to the Sumida River; the Tokyo Cruise pier is at the foot of Azuma Bridge (~10 min).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Daikokuya%20Tempura%2C%201-38-10%20Asakusa%2C%20Taito%20City%2C%20Tokyo&destination=Asakusa%20Pier%20%28Tokyo%20Cruise%29%2C%20Hanakawado%2C%20Taito%20City%2C%20Tokyo&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "12:30 PM",
+     "end": "1:05 PM",
+     "title": "Water bus Asakusa → Hama-rikyu Gardens",
+     "typeName": "Excursion",
+     "emoji": "⛴️",
+     "detail": "• Sightseeing boat down the Sumida River under Tokyo's bridges (~35 min).\n• The fare includes Hama-rikyu Gardens admission.",
+     "est": 20.89,
+     "confLinks": [
+      {
+       "label": "Tokyo Cruise timetable",
+       "url": "https://www.suijobus.co.jp/en/"
+      }
+     ],
+     "flag": "Only about 3 boats a day on this route — confirm the departure time and adjust lunch around it.",
+     "notes": "• Fares (GO TOKYO): adult JPY 1,180 × 2 + child JPY 470 × 2 = JPY 3,300 ≈ USD 21.\n• Hama-rikyu is drop-off only; you can't board there."
+    },
+    {
+     "start": "1:05 PM",
+     "end": "2:30 PM",
+     "title": "Hama-rikyu Gardens",
+     "typeName": "Sightseeing",
+     "emoji": "🌳",
+     "detail": "• A former shogun's garden on Tokyo Bay, with ponds fed by seawater and a teahouse on an island.\n• Easy flat paths with skyscrapers behind the pines.\n• Open 9 AM–5 PM."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "2:50 PM",
+     "title": "Taxi Hama-rikyu → hotel",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• From: the garden's Otemon gate taxi stand.\n• To: Grand Hyatt Tokyo (~15–20 min).",
+     "est": 12.66,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Hama-rikyu%20Gardens%2C%201-1%20Hamarikyuteien%2C%20Chuo%20City%2C%20Tokyo&destination=Grand%20Hyatt%20Tokyo%2C%206-10-3%20Roppongi%2C%20Minato%20City%2C%20Tokyo&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~JPY 2,000 ≈ USD 13 — estimated."
+    },
+    {
+     "start": "2:50 PM",
+     "end": "5:00 PM",
+     "title": "Rest at the hotel",
+     "typeName": "Free Time",
+     "emoji": "🛋️",
+     "detail": "• Hotel pool: kids 4–15 allowed 9 AM–7 PM."
+    },
+    {
+     "start": "5:00 PM",
+     "end": "5:10 PM",
+     "title": "Walk to Gonpachi Nishi-Azabu",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: hotel main entrance.\n• Walk out to Roppongi-dori and head southwest (downhill) about 650 m to the Nishi-Azabu crossing.\n• Gonpachi is the large wooden building on the corner.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Grand%20Hyatt%20Tokyo%2C%206-10-3%20Roppongi%2C%20Minato%20City%2C%20Tokyo&destination=Gonpachi%20Nishi-Azabu%2C%201-13-11%20Nishiazabu%2C%20Minato%20City%2C%20Tokyo&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "5:10 PM",
+     "end": "6:15 PM",
+     "title": "Dinner — Gonpachi Nishi-Azabu",
+     "typeName": "Dining",
+     "emoji": "🏮",
+     "detail": "• A big wooden izakaya styled like an old Edo inn (the inspiration for a famous Kill Bill fight scene).\n• Charcoal-grilled yakitori, soba noodles and rice bowls.\n• Kids: oyako-don (chicken and egg over rice) and chicken skewers.",
+     "est": 32.23,
+     "conf": "NOT BOOKED",
+     "confLinks": [
+      {
+       "label": "Gonpachi — website",
+       "url": "https://gonpachi.jp/"
+      }
+     ],
+     "notes": "• Line items (online menu, undated — estimated): stone-pot unagi rice JPY 1,580 + duck seiro soba JPY 1,450 + kids: oyako-don JPY 800 × 2 = JPY 4,630; +10% for price increases = JPY 5,093 ≈ USD 32.\n• Book ahead for an early table; dinner may add a small table charge."
+    },
+    {
+     "start": "6:15 PM",
+     "end": "6:25 PM",
+     "title": "Walk back to the hotel",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• Same route in reverse: uphill on Roppongi-dori to Roppongi Hills (~10 min).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Gonpachi%20Nishi-Azabu%2C%201-13-11%20Nishiazabu%2C%20Minato%20City%2C%20Tokyo&destination=Grand%20Hyatt%20Tokyo%2C%206-10-3%20Roppongi%2C%20Minato%20City%2C%20Tokyo&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "6:30 PM",
+     "end": "7:30 PM",
+     "title": "Bedtime routine — lights out 7:30",
+     "typeName": "Logistics",
+     "emoji": "🛏️",
+     "detail": "• Wake-up 6:00 AM tomorrow."
+    }
+   ]
+  },
+  {
+   "date": "Sunday, December 19, 2027",
+   "title": "Meiji Jingu, Harajuku and Shibuya",
+   "planned": false,
+   "blocks": [
+    {
+     "start": "7:00 AM",
+     "end": "7:45 AM",
+     "title": "Breakfast — The French Kitchen (Globalist, free)",
+     "typeName": "Dining",
+     "emoji": "🍳",
+     "est": 0.0
+    },
+    {
+     "start": "7:45 AM",
+     "end": "8:30 AM",
+     "title": "Showers and get ready",
+     "typeName": "Logistics",
+     "emoji": "🚿"
+    },
+    {
+     "start": "8:45 AM",
+     "end": "9:00 AM",
+     "title": "Taxi to Meiji Jingu (Harajuku entrance)",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• From: hotel main entrance.\n• To: Jingu-bashi bridge next to JR Harajuku Station (~15 min).",
+     "est": 15.82,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Grand%20Hyatt%20Tokyo%2C%206-10-3%20Roppongi%2C%20Minato%20City%2C%20Tokyo&destination=Jingu-bashi%20Bridge%2C%20Harajuku%20Station%2C%20Shibuya%20City%2C%20Tokyo&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~JPY 2,500 ≈ USD 16 — estimated."
+    },
+    {
+     "start": "9:00 AM",
+     "end": "9:15 AM",
+     "title": "Walk to the shrine",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Jingu-bashi bridge.\n• Pass under the first giant wooden torii gate and follow the wide gravel path north through the forest (~10 min).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Jingu-bashi%20Bridge%2C%20Harajuku%20Station%2C%20Shibuya%20City%2C%20Tokyo&destination=Meiji%20Jingu%2C%201-1%20Yoyogikamizonocho%2C%20Shibuya%20City%2C%20Tokyo&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "9:15 AM",
+     "end": "10:15 AM",
+     "title": "Meiji Jingu",
+     "typeName": "Sightseeing",
+     "emoji": "⛩️",
+     "detail": "• Tokyo's most important Shinto shrine, built for Emperor Meiji, inside a planted forest of about 100,000 trees.\n• Rinse hands at the water basin, see the wall of sake barrels, and write a wish on a wooden ema plaque.\n• Free entry; quiet in the morning."
+    },
+    {
+     "start": "10:15 AM",
+     "end": "10:30 AM",
+     "title": "Walk to Yoyogi Park",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: the main shrine.\n• Walk back south to the Harajuku entrance, then follow signs west to Yoyogi Park's Harajuku Gate (~12 min).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Meiji%20Jingu%2C%201-1%20Yoyogikamizonocho%2C%20Shibuya%20City%2C%20Tokyo&destination=Yoyogi%20Park%20Harajuku%20Gate%2C%20Shibuya%20City%2C%20Tokyo&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "10:30 AM",
+     "end": "11:15 AM",
+     "title": "Yoyogi Park",
+     "typeName": "Free Time",
+     "emoji": "🌳",
+     "detail": "• Big open lawns and a pond: room for the kids to run before the crowds of Harajuku."
+    },
+    {
+     "start": "11:15 AM",
+     "end": "11:25 AM",
+     "title": "Walk to Takeshita Street",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Yoyogi Park Harajuku Gate.\n• Walk back past JR Harajuku Station to its Takeshita exit; Takeshita Street starts across the road (~8 min).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Yoyogi%20Park%20Harajuku%20Gate%2C%20Shibuya%20City%2C%20Tokyo&destination=Takeshita%20Street%2C%20Jingumae%2C%20Shibuya%20City%2C%20Tokyo&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "11:25 AM",
+     "end": "12:05 PM",
+     "title": "Takeshita Street",
+     "typeName": "Shopping",
+     "emoji": "🛍️",
+     "detail": "• A narrow pedestrian street of colorful shops, candy and crepe stands.\n• Packed on Sundays — hold hands."
+    },
+    {
+     "start": "12:05 PM",
+     "end": "12:20 PM",
+     "title": "Walk to Maisen Aoyama",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: the bottom (Meiji-dori) end of Takeshita Street.\n• Turn right on Meiji-dori, then left onto the wide Omotesando avenue; walk ~6 min and turn left into the side street to 4-8-5 Jingumae (~12 min total).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Takeshita%20Street%2C%20Jingumae%2C%20Shibuya%20City%2C%20Tokyo&destination=Tonkatsu%20Maisen%20Aoyama%20Honten%2C%204-8-5%20Jingumae%2C%20Shibuya%20City%2C%20Tokyo&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "12:20 PM",
+     "end": "1:20 PM",
+     "title": "Lunch — Tonkatsu Maisen Aoyama",
+     "typeName": "Dining",
+     "emoji": "🐷",
+     "detail": "• Tokyo's classic tonkatsu (breaded pork cutlet) house, in a converted old public bathhouse.\n• Has a real kids' set: small cutlet with rice and soup.\n• Open 11:00 AM–10:00 PM.",
+     "est": 38.43,
+     "menuUrl": "https://mai-sen.com/",
+     "menuLabel": "Maisen website",
+     "notes": "• Line items (prices from another Maisen branch's menu — estimated): loin cutlet set JPY 1,530 + fillet cutlet set JPY 1,530 + kids' set JPY 1,000 × 2 = JPY 5,060; +20% for the Aoyama flagship = JPY 6,072 ≈ USD 38.\n• Prices include tax. Aoyama menu not confirmed."
+    },
+    {
+     "start": "1:20 PM",
+     "end": "1:40 PM",
+     "title": "Subway Omotesando → Shibuya (Ginza line, 2 stops)",
+     "typeName": "Transportation",
+     "emoji": "🚇",
+     "detail": "• From: Maisen, walk ~4 min to Omotesando Station Exit A2.\n• Ginza line toward Shibuya, 2 stops (~3 min). Tap Suica/PASMO.",
+     "est": 3.39,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Tonkatsu%20Maisen%20Aoyama%20Honten%2C%204-8-5%20Jingumae%2C%20Shibuya%20City%2C%20Tokyo&destination=Omotesando%20Station%20Exit%20A2%2C%20Tokyo&travelmode=walking",
+     "menuLabel": "Walk to the station",
+     "notes": "• ~JPY 180 per adult, half for kids ≈ JPY 536 total ≈ USD 3 — estimated."
+    },
+    {
+     "start": "1:45 PM",
+     "end": "2:30 PM",
+     "title": "Shibuya Crossing and Hachiko",
+     "typeName": "Sightseeing",
+     "emoji": "🚦",
+     "detail": "• The famous scramble crossing, where every direction crosses at once.\n• Start at the Hachiko statue (the loyal dog) by the station exit, cross with the crowd, then watch from the Shibuya Mark City walkway above."
+    },
+    {
+     "start": "2:30 PM",
+     "end": "3:30 PM",
+     "title": "Miyashita Park rooftop",
+     "typeName": "Free Time",
+     "emoji": "🌳",
+     "detail": "• Free rooftop park on top of a low shopping building, a 5-min walk north of the station along the tracks.\n• Lawn, benches and city views; a break before dinner.",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Shibuya%20Scramble%20Crossing%2C%20Tokyo&destination=Miyashita%20Park%2C%206-20-10%20Jingumae%2C%20Shibuya%20City%2C%20Tokyo&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "3:30 PM",
+     "end": "3:45 PM",
+     "title": "Walk to Uobei Shibuya Dogenzaka",
+     "typeName": "Walk",
+     "emoji": "🚶",
+     "detail": "• From: Miyashita Park.\n• Back south past the crossing, then up Dogenzaka hill; Uobei is at 2-29-11 Dogenzaka (~10 min).",
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Miyashita%20Park%2C%206-20-10%20Jingumae%2C%20Shibuya%20City%2C%20Tokyo&destination=Uobei%20Shibuya%20Dogenzaka%2C%202-29-11%20Dogenzaka%2C%20Shibuya%20City%2C%20Tokyo&travelmode=walking",
+     "menuLabel": "Walking directions"
+    },
+    {
+     "start": "3:45 PM",
+     "end": "4:45 PM",
+     "title": "Early dinner — Uobei sushi",
+     "typeName": "Dining",
+     "emoji": "🍣",
+     "detail": "• Kids order on a touch screen and plates race to the seat on a high-speed track.\n• Cooked choices for picky eaters: fried chicken, egg (tamago), corn-mayo rolls.\n• Open 11 AM–11 PM; going early avoids the evening line.",
+     "est": 30.38,
+     "notes": "• Estimated: ~32 plates at ~JPY 150 average = JPY 4,800 ≈ USD 30. Older reviews list JPY 110 per plate; current prices not confirmed."
+    },
+    {
+     "start": "4:45 PM",
+     "end": "5:05 PM",
+     "title": "Taxi Shibuya → hotel",
+     "typeName": "Transportation",
+     "emoji": "🚕",
+     "detail": "• From: Dogenzaka (hail on the main road).\n• To: Grand Hyatt Tokyo (~15–20 min).",
+     "est": 15.82,
+     "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=Uobei%20Shibuya%20Dogenzaka%2C%202-29-11%20Dogenzaka%2C%20Shibuya%20City%2C%20Tokyo&destination=Grand%20Hyatt%20Tokyo%2C%206-10-3%20Roppongi%2C%20Minato%20City%2C%20Tokyo&travelmode=driving",
+     "menuLabel": "Driving directions",
+     "notes": "• ~JPY 2,500 ≈ USD 16 — estimated."
+    },
+    {
+     "start": "5:05 PM",
+     "end": "6:30 PM",
+     "title": "Downtime at the hotel",
+     "typeName": "Free Time",
+     "emoji": "🛋️"
+    },
+    {
+     "start": "6:30 PM",
+     "end": "7:30 PM",
+     "title": "Bedtime routine — lights out 7:30",
+     "typeName": "Logistics",
+     "emoji": "🛏️"
+    }
+   ]
+  },
+  {
+   "date": "Monday, December 20, 2027",
+   "title": "Mt. Fuji — day trip or start of a Fuji stay (deciding)",
+   "planned": false,
+   "blocks": [
+    {
+     "title": "Not planned yet",
+     "typeName": "Logistics",
+     "emoji": "📝"
+    }
+   ]
+  },
+  {
+   "date": "Tuesday, December 21, 2027",
+   "title": "Tokyo — to plan",
+   "planned": false,
+   "blocks": [
+    {
+     "title": "Not planned yet",
+     "typeName": "Logistics",
+     "emoji": "📝"
+    }
+   ]
+  },
+  {
+   "date": "Wednesday, December 22, 2027",
+   "title": "Tokyo → Sapporo → Niseko",
+   "planned": false,
+   "blocks": [
+    {
+     "title": "Not planned yet",
+     "typeName": "Logistics",
+     "emoji": "📝"
+    }
+   ]
+  }
+ ],
+ "packing": {
+  "trackerTitle": "Roque's item tracker",
+  "outfitDays": [],
+  "trackerDays": [],
+  "packLists": []
+ },
+ "supplies": [],
+ "ideas": [
+  {
+   "name": "Still open / TBD",
+   "items": [
+    {
+     "name": "Book Grand Hyatt Tokyo (Dec 17–22) + Suite Upgrade Award",
+     "note": "Bookable now; no standard award space showing yet. Ask the Hyatt concierge."
+    },
+    {
+     "name": "Book Grand Hyatt DFW (Dec 15)",
+     "note": "Bookable now — 20,000 points."
+    },
+    {
+     "name": "Book AA3267 MIA → DFW on Alaska miles",
+     "note": "Dec 15 opens around Jan 18, 2027."
+    },
+    {
+     "name": "Book JL11 DFW → HND on Alaska miles",
+     "note": "Dec 16 opens around Jan 19, 2027; keep watching for business."
+    },
+    {
+     "name": "Confirm JL11 December arrival time",
+     "note": "Winter schedule not published yet."
+    },
+    {
+     "name": "Confirm the Dec 18 water bus departure from Asakusa",
+     "note": "About 3 boats a day."
+    },
+    {
+     "name": "Confirm current menus and prices",
+     "note": "Gonpachi, Daikokuya, Maisen Aoyama, Uobei, Grand Hyatt in-room dining."
+    },
+    {
+     "name": "Reserve Gonpachi for Dec 18, 5:15 PM"
+    },
+    {
+     "name": "Register all 4 on Visit Japan Web",
+     "note": "Immigration + customs QR codes."
+    },
+    {
+     "name": "Decide: Fuji day trip vs. a Fuji overnight"
+    }
+   ]
+  },
+  {
+   "name": "Fuji overnight options",
+   "items": [
+    {
+     "name": "Fuji Speedway Hotel (Hyatt, Category 6)",
+     "note": "Fuji-view rooms for 4, hot-spring baths, indoor pool; ~20 min by free shuttle from Gotemba Station. Kawaguchiko and Chureito are about an hour away by car."
+    },
+    {
+     "name": "Fuji Marriott Hotel Lake Yamanaka",
+     "note": "On Lake Yamanaka, closer to the Fuji Five Lakes; recent lowest award ~40,000 Bonvoy points."
+    }
+   ]
+  }
+ ],
+ "alternatives": {
+  "title": "",
+  "text": ""
+ },
+ "help": {
+  "notes": "Japan emergency numbers work from any phone. Most taxis take cards and IC cards; carry some cash yen for small shops and temples.",
+  "emergency": [
+   {
+    "label": "Police",
+    "tel": "110"
+   },
+   {
+    "label": "Fire / Ambulance",
+    "tel": "119"
+   },
+   {
+    "label": "Japan Visitor Hotline (JNTO, 24 hrs, English)",
+    "tel": "+815038162787"
+   }
+  ],
+  "usgov": [
+   {
+    "label": "US Embassy Tokyo — 1-10-5 Akasaka, Minato City",
+    "tel": "+81332245000"
+   },
+   {
+    "label": "State Dept overseas citizens services",
+    "tel": "+12025014444"
+   }
+  ]
+ }
+}
