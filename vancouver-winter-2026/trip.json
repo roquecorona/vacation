@@ -737,16 +737,15 @@
           "title": "Hyatt Regency Vancouver - valet, check in & relax — BOOKED",
           "typeName": "Hotel",
           "emoji": "🏨",
-          "detail": "• Valet the car and luggage\n• Early check-in requested (Globalist)\n• Up to the room: unpack, showers, change - out the door by 4:00",
+          "detail": "• Valet the car and luggage - free for Globalists on award stays\n• Early check-in requested (Globalist)\n• Up to the room: unpack, showers, change - out the door by 4:00",
           "program": "World of Hyatt",
           "points": 100000,
           "conf": "World of Hyatt — 40023B30138789 (guest: Jennifer Borges)",
           "roomType": "2 Double Beds",
           "nights": "5 nights (Wed-Mon, Dec 23-28)",
           "address": "655 Burrard St, Vancouver, BC V6C 2R7",
-          "est": 187.2,
-          "ccy": "CAD",
-          "notes": "Booked under Jennifer Borges: 4 nights x 25,000 points (Category 5) = 100,000 points + 1 night on a Free Night Award, 2 adults + 2 children; checkout 12:00 PM. Globalist breakfast at Mosaic Grille covers the family. Cost shown is valet: C$52/night x 5 = C$260, about US$187 at ~0.72 - ask whether it's waived on award stays.",
+          "est": 0,
+          "notes": "Booked under Jennifer Borges: 4 nights x 25,000 points (Category 5) = 100,000 points + 1 night on a Free Night Award, 2 adults + 2 children; checkout 12:00 PM. Globalist breakfast at Mosaic Grille covers the family. Valet (C$52/night) is waived for Globalists on award stays.",
           "flag": "Official check-in is 4:00 PM - early check-in requested but not guaranteed.",
           "confLinks": [
             {
@@ -911,9 +910,9 @@
           "typeName": "Transportation",
           "emoji": "🚡",
           "detail": "• Red Skyride to the summit, ~8 min (100-person tram)\n• Family Mountain Admission (2 adults + 2 kids ages 5-12) - show the online ticket\n• Early start beats the Christmas Eve lines",
-          "est": 164.88,
+          "est": 121.68,
           "ccy": "CAD",
-          "notes": "Family Mountain Admission ticket C$229 (2 adults + 2 children 5-12), about US$165 at ~0.72. Grouse's posted rate; ticket is date-specific and non-refundable - buy online.",
+          "notes": "Holiday family rate (Peak of Christmas, Dec 12-25): Family Mountain Admission C$169 (2 adults + 2 children 5-12), about US$122 at ~0.72. Grouse's posted rate; ticket is date-specific and non-refundable - buy online.",
           "conf": "NOT BOOKED",
           "confLinks": [
             {
@@ -2209,7 +2208,7 @@
           "title": "Skybridge Seattle Airport Hotel - check in — BOOKED",
           "typeName": "Hotel",
           "emoji": "🏨",
-          "detail": "• Check-in from 3 PM - drop Jenny, the kids and all the bags in the room\n• Ask the front desk for the first morning shuttle time (need ~5:45 AM)",
+          "detail": "• Check-in from 3 PM - drop Jenny, the kids and all the bags in the room\n• Confirm the 5:00 AM airport shuttle for Dec 29 with the front desk (runs on the hour and half hour)",
           "program": "Marriott Bonvoy (Free Night Award)",
           "points": 0,
           "nights": "1 night (Mon-Tue, Dec 28-29)",
@@ -2239,7 +2238,9 @@
           "emoji": "🚗",
           "detail": "• FROM the hotel → TO Sea-Tac airport (Turo return)\n• Family settles in at the hotel\n• Refuel on International Blvd - return at the same fuel level as pickup\n• Return spot and lockbox steps in the Turo app",
           "menuUrl": "https://www.google.com/maps/dir/?api=1&origin=17338%20International%20Blvd%2C%20SeaTac%2C%20WA%2098188&destination=Seattle-Tacoma%20International%20Airport&travelmode=driving",
-          "menuLabel": "Driving directions"
+          "menuLabel": "Driving directions",
+          "est": 130.0,
+          "notes": "ESTIMATE - gas for the whole trip: about 650 mi in the minivan at ~22 mpg = ~30 gal at ~$4.40/gal (WA) = about $130. Turo expects the same fuel level as at pickup - refuel near SEA before the return."
         },
         {
           "start": "3:40 PM",
